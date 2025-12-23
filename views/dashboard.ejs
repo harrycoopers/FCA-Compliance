@@ -1,0 +1,66 @@
+
+
+<div class="flex flex-col gap-4">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div>
+      <p class="text-xs uppercase tracking-[0.18em] text-emerald-400 mb-1">Dashboard</p>
+      <h1 class="text-2xl font-semibold text-slate-50">Monthly FCA compliance reporting</h1>
+      <p class="text-xs text-slate-400 mt-1">
+        Capture one structured report per month, maintain an auditable trail and export easily for board MI and FCA engagement.
+      </p>
+    </div>
+    <a href="/reports/new" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition">
+      New monthly report
+    </a>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-4 text-xs">
+    <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60">
+      <p class="text-slate-400 mb-1">Reporting Frequency</p>
+      <p class="text-lg font-semibold text-slate-50">Monthly</p>
+      <p class="text-slate-500 mt-1">Submit one report for each calendar month.</p>
+    </div>
+    <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60">
+      <p class="text-slate-400 mb-1">Evidence Trail</p>
+      <p class="text-lg font-semibold text-slate-50">Time-stamped</p>
+      <p class="text-slate-500 mt-1">Each submission is linked to the submitting user.</p>
+    </div>
+    <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60">
+      <p class="text-slate-400 mb-1">Automated Workflows</p>
+      <p class="text-lg font-semibold text-slate-50">Enabled</p>
+      <p class="text-slate-500 mt-1">Reports/results are automatically delivered to downstream systems</p>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <h2 class="text-sm font-semibold text-slate-200 mb-2">Historic submissions</h2>
+    <% if (!reports || reports.length === 0) { %>
+      <p class="text-xs text-slate-400">No reports submitted yet. Once you submit your first monthly report, you&apos;ll see it here.</p>
+    <% } else { %>
+      <div class="overflow-x-auto text-xs">
+        <table class="min-w-full border border-slate-800 rounded-xl overflow-hidden">
+          <thead class="bg-slate-900/80">
+            <tr>
+              <th class="px-3 py-2 text-left font-medium text-slate-300 border-b border-slate-800">Reporting month</th>
+              <th class="px-3 py-2 text-left font-medium text-slate-300 border-b border-slate-800">Submitted</th>
+              <th class="px-3 py-2 text-left font-medium text-slate-300 border-b border-slate-800">Last updated</th>
+              <th class="px-3 py-2 text-right font-medium text-slate-300 border-b border-slate-800">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="bg-slate-950/40">
+            <% reports.forEach(function(report) { %>
+              <tr class="border-b border-slate-900/80 hover:bg-slate-900/60">
+                <td class="px-3 py-2 whitespace-nowrap text-slate-100"><%= report.reporting_month %></td>
+                <td class="px-3 py-2 text-slate-300"><%= new Date(report.created_at).toLocaleString('en-GB', { timeZone: 'Europe/London' }) %></td>
+                <td class="px-3 py-2 text-slate-300"><%= new Date(report.updated_at).toLocaleString('en-GB', { timeZone: 'Europe/London' }) %></td>
+                <td class="px-3 py-2 text-right">
+                  <a href="/reports/<%= report.id %>/edit" class="text-emerald-300 hover:underline">View / Edit</a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>

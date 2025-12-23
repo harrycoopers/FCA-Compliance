@@ -1,0 +1,53 @@
+
+
+<div class="max-w-md mx-auto">
+  <h1 class="text-2xl font-semibold mb-2 text-slate-50">Create your FCA compliance workspace</h1>
+  <p class="text-sm text-slate-400 mb-6">
+    One secure account for your firm. Additional users can be added later under your own governance.
+  </p>
+
+  <form action="/terms" method="GET" class="space-y-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-4">
+    <div>
+      <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+      <input type="text" name="name" required class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+    </div>
+    <div>
+  <label class="block text-sm font-medium text-slate-300 mb-2">
+    Mobile Number
+  </label>
+  <input
+    type="tel"
+    name="mobile_number"
+    placeholder="e.g. 07123 456789"
+    required
+    class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
+  />
+</div>
+    <div>
+      <label class="block text-xs font-medium text-slate-300 mb-1">Work Email</label>
+      <input type="email" name="email" required class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+      <p class="text-[11px] text-slate-500 mt-1">We use this to send secure login and verification links.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-3">
+      <div>
+        <label class="block text-xs font-medium text-slate-300 mb-1">Password</label>
+        <input type="password" name="password" required minlength="8" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-slate-300 mb-1">Confirm Password</label>
+        <input type="password" name="confirmPassword" required minlength="8" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+      </div>
+    </div>
+    <button type="submit" class="w-full mt-2 px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition">
+      Create account
+    </button>
+    <p class="text-xs text-slate-500 mt-2">
+      By creating an account you confirm that you are authorised to act on behalf of your firm and understand this tool does not replace independent legal or regulatory advice.
+    </p>
+  </form>
+
+  <p class="text-sm text-slate-400 mt-4">
+    Already have an account?
+    <a href="/login" class="text-emerald-300 hover:underline">Log in</a>
+  </p>
+</div>

@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment variables (secrets)
+.env
+
+# SQLite databases
+db.sqlite
+*.sqlite
+*.sqlite3
+
+# Logs & system files
+npm-debug.log*
+.DS_Store

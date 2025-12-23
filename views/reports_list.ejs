@@ -1,0 +1,43 @@
+
+
+<div>
+  <div class="flex items-center justify-between mb-3">
+    <div>
+      <p class="text-xs uppercase tracking-[0.18em] text-emerald-400 mb-1">Reports</p>
+      <h1 class="text-2xl font-semibold text-slate-50">Historic FCA monthly reports</h1>
+      <p class="text-xs text-slate-400 mt-1">View and amend previous submissions where corrections are required.</p>
+    </div>
+    <a href="/reports/new" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition">
+      New report
+    </a>
+  </div>
+
+  <% if (!reports || reports.length === 0) { %>
+    <p class="text-xs text-slate-400">No reports submitted yet.</p>
+  <% } else { %>
+    <div class="overflow-x-auto text-xs mt-2">
+      <table class="min-w-full border border-slate-800 rounded-xl overflow-hidden">
+        <thead class="bg-slate-900/80">
+          <tr>
+            <th class="px-3 py-2 text-left font-medium text-slate-300 border-b border-slate-800">Reporting month</th>
+            <th class="px-3 py-2 text-left font-medium text-slate-300 border-b border-slate-800">Submitted</th>
+            <th class="px-3 py-2 text-left font-medium text-slate-300 border-b border-slate-800">Last updated</th>
+            <th class="px-3 py-2 text-right font-medium text-slate-300 border-b border-slate-800">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="bg-slate-950/40">
+          <% reports.forEach(function(report) { %>
+            <tr class="border-b border-slate-900/80 hover:bg-slate-900/60">
+              <td class="px-3 py-2 whitespace-nowrap text-slate-100"><%= report.reporting_month %></td>
+              <td class="px-3 py-2 text-slate-300"><%= new Date(report.created_at).toLocaleString('en-GB') %></td>
+              <td class="px-3 py-2 text-slate-300"><%= new Date(report.updated_at).toLocaleString('en-GB') %></td>
+              <td class="px-3 py-2 text-right">
+                <a href="/reports/<%= report.id %>/edit" class="text-emerald-300 hover:underline">View / edit</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>

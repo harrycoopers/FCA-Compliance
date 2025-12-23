@@ -1,0 +1,664 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  /* Light, modern baseline */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  ==============================
+  Light theme + modern UI polish
+  ==============================
+
+  The templates use Tailwind via CDN and hard-code dark theme utility classes.
+  To keep *all content/text unchanged* while making the site look like a polished,
+  professional light website, we override a handful of those Tailwind utility
+  classes here (this file loads after Tailwind).
+
+  ✅ No template text/content changed.
+  ✅ No JS routes/forms touched, so all functions keep working.
+*/
+
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #fff7ed;
+
+  --border: #e5e7eb;
+
+  /* Text */
+  --text: #0b0b0b;
+  --text-muted: #374151;
+  --text-subtle: #6b7280;
+
+  /* ORANGE THEME */
+  --accent: #f97316;        /* primary orange */
+  --accent-hover: #ea580c;  /* darker orange */
+  --accent-soft: rgba(249, 115, 22, 0.12);
+
+  /* Alerts */
+  --danger: #dc2626;
+  --danger-soft: rgba(220, 38, 38, 0.10);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+/* ===============================
+   ORANGE ACCENT OVERRIDES (GLOBAL)
+   =============================== */
+
+/* Any blue-ish text becomes orange */
+.text-blue-200,
+.text-blue-300,
+.text-blue-400,
+.text-blue-500,
+.text-sky-400,
+.text-sky-500 {
+  color: var(--accent) !important;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Buttons & pills */
+.bg-blue-500,
+.bg-sky-500,
+.bg-indigo-500 {
+  background-color: var(--accent) !important;
+}
+
+.bg-blue-600,
+.bg-sky-600,
+.bg-indigo-600 {
+  background-color: var(--accent-hover) !important;
+}
+
+/* Borders */
+.border-blue-500,
+.border-blue-400,
+.border-sky-400 {
+  border-color: var(--accent) !important;
+}
+
+/* Focus rings */
+.focus\:ring-blue-500:focus,
+.focus\:ring-sky-500:focus {
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.25) !important;
+}
+
+/* Page background + default text */
+.bg-slate-950 { background-color: var(--bg) !important; }
+.text-slate-50,
+.text-slate-100,
+.text-slate-200,
+.text-slate-300,
+.text-slate-900,
+.text-slate-950 { color: var(--text) !important; }
+.text-slate-400,
+.text-slate-500 { color: var(--text-muted) !important; }
+
+/* Borders */
+.border-slate-700,
+.border-slate-800,
+.border-slate-900 { border-color: var(--border) !important; }
+
+/* Surfaces (cards/panels) */
+.bg-slate-900\/40,
+.bg-slate-900\/50,
+.bg-slate-900\/60,
+.bg-slate-900\/80,
+.bg-slate-950\/40,
+.bg-slate-950\/50,
+.bg-slate-950\/60,
+.bg-slate-950\/80 {
+  background-color: var(--surface) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Header polish */
+header.bg-slate-950\/80,
+header.bg-slate-950\/60,
+header.bg-slate-950\/50,
+header.bg-slate-950\/40 {
+  background-color: rgba(255, 255, 255, 0.86) !important;
+}
+header.border-b { box-shadow: 0 1px 0 rgba(2, 6, 23, 0.04); }
+
+/* Links & accent (remap emerald -> blue accent) */
+.text-emerald-200,
+.text-emerald-300,
+.text-emerald-400 { color: var(--accent) !important; }
+
+.bg-emerald-500 { background-color: var(--accent) !important; }
+.bg-emerald-400 { background-color: var(--accent-hover) !important; }
+.bg-emerald-500\/10,
+.bg-emerald-500\/15 { background-color: var(--accent-soft) !important; }
+
+.border-emerald-500,
+.border-emerald-500\/30,
+.border-emerald-500\/40,
+.border-emerald-500\/50 { border-color: rgba(37, 99, 235, 0.45) !important; }
+
+/* Tailwind “ring” util uses CSS variables + box-shadow; we reinforce a nice focus style */
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18) !important;
+}
+.focus\:ring-emerald-500\/70:focus {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.22) !important;
+}
+
+/* Inputs: ensure readable text & modern borders on light background */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  color: var(--text);
+}
+
+/* These classes are used on inputs/buttons across the app */
+.bg-slate-950.border.border-slate-700,
+.bg-slate-950.border.border-slate-800 {
+  background-color: var(--surface-muted) !important;
+  border-color: var(--border) !important;
+}
+
+/* Buttons that were dark-text on emerald now become white-text on blue */
+.bg-emerald-500.text-slate-950 { color: #ffffff !important; }
+
+/* Hover states: keep the same class names, update the look */
+.hover\:text-emerald-400:hover,
+.hover\:text-emerald-300:hover { color: var(--accent-hover) !important; }
+.hover\:border-emerald-500:hover { border-color: rgba(37, 99, 235, 0.65) !important; }
+.hover\:bg-emerald-400:hover { background-color: var(--accent-hover) !important; }
+
+/* Alerts */
+.border-rose-500\/50 { border-color: rgba(220, 38, 38, 0.45) !important; }
+.bg-rose-500\/5 { background-color: var(--danger-soft) !important; }
+.text-rose-200 { color: var(--danger) !important; }
+
+/* Subtle global improvements */
+main { background: linear-gradient(180deg, rgba(248, 250, 252, 1), rgba(255, 255, 255, 1)); }
+
+/* Make cards feel more “website-like” */
+.rounded-2xl,
+.rounded-3xl {
+  box-shadow: var(--shadow-md);
+}
+
+/* Tables (if any) */
+table { border-collapse: separate; border-spacing: 0; }
+th { color: var(--text); }
+td { color: var(--text-muted); }
+
+/* Keep the existing animations below */
+
+/* Custom little animation halo for the compliance card */
+.compliance-orbit {
+  animation: orbitPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes orbitPulse {
+  0% {
+    transform: translateY(4px) scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-4px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.animate-pill {
+  animation: pillFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes pillFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Counter smooth animation */
+.counter {
+  transition: all 0.4s ease-out;
+}
+
+/* ===============================
+   Scroll Animations (Reveal)
+   =============================== */
+
+.sa-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.sa-reveal.sa-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional stagger effect */
+.sa-delay-1 { transition-delay: 0.1s; }
+.sa-delay-2 { transition-delay: 0.2s; }
+.sa-delay-3 { transition-delay: 0.3s; }
+
+/* Respect reduced motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .sa-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===============================
+   Services (Clean agency layout)
+   =============================== */
+
+.services-clean {
+  --line: rgba(15, 23, 42, 0.08);
+}
+
+.services-clean-hero {
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 26px;
+}
+
+.services-clean-hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.services-kicker {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+
+.services-h1 {
+  margin: 8px 0 0;
+  font-weight: 850;
+  font-size: 40px;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.services-intro {
+  margin-top: 12px;
+  max-width: 60ch;
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.services-clean-hero__media {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  box-shadow: var(--shadow-md);
+}
+
+.services-clean-hero__img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Body grid */
+.services-clean-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Clean sections (no cards) */
+.services-clean-section {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.services-clean-section:first-child { padding-top: 0; }
+.services-clean-section:last-child { border-bottom: 0; }
+
+.services-h2 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.services-h3 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.services-p {
+  margin-top: 10px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.services-bullets {
+  margin-top: 10px;
+  padding-left: 18px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+.services-bullets li { margin: 4px 0; }
+
+/* Aside */
+.services-aside-sticky {
+  position: sticky;
+  top: 92px;
+  display: grid;
+  gap: 14px;
+}
+
+.services-aside-note {
+  padding-left: 14px;
+  border-left: 3px solid rgba(37, 99, 235, 0.35);
+}
+
+.services-aside-media {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.services-aside-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .services-clean-hero__grid { grid-template-columns: 1fr; }
+  .services-clean-hero__img { height: 260px; }
+  .services-clean-body { grid-template-columns: 1fr; }
+  .services-aside-sticky { position: static; }
+}
+/* ===============================
+   Important note (emphasised)
+   =============================== */
+
+.services-important-note {
+  margin-top: 48px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: rgba(220, 38, 38, 0.04);
+  border: 1px solid rgba(220, 38, 38, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(220, 38, 38, 0.25),
+    0 0 22px rgba(220, 38, 38, 0.25);
+}
+
+.services-important-note h3 {
+  color: #b91c1c; /* deep red */
+}
+
+.services-important-note .services-p {
+  color: #7f1d1d;
+}
+
+.services-important-note {
+  width: 100%;
+}
+
+/* ===============================
+   FOOTER (ORANGE BAR)
+   =============================== */
+
+footer h3,
+footer h4,
+footer strong {
+  color: #ffffff !important;
+}
+
+footer a {
+  color: #fff7ed !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+footer .text-blue-500,
+footer .text-sky-500 {
+  color: #fff7ed !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ===============================
+   FOOTER – MAIN AREA (ORANGE)
+   =============================== */
+
+/* Target the main footer content area */
+footer > div:first-child {
+  background: linear-gradient(
+    180deg,
+    rgba(249, 115, 22, 0.12),
+    rgba(249, 115, 22, 0.22)
+  );
+  border-top: 1px solid rgba(249, 115, 22, 0.35);
+}
+
+/* Headings like QUICK LINKS / LEGAL */
+footer > div:first-child h3,
+footer > div:first-child h4 {
+  color: #c2410c !important; /* darker orange */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Footer links */
+footer > div:first-child a {
+  color: #111827 !important;
+}
+
+footer > div:first-child a:hover {
+  color: var(--accent-hover) !important;
+  text-decoration: underline;
+}
+
+footer > div:first-child .rounded-2xl,
+footer > div:first-child .rounded-xl {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.15);
+}
+
+/* ===============================
+   FOOTER (CLEAN + ORANGE GET IN TOUCH)
+   =============================== */
+
+/* Make sure footer base stays neutral */
+footer {
+  background: transparent !important;
+}
+
+/* The main footer content area stays white */
+footer > div:first-child {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Footer headings */
+footer h3, footer h4 {
+  color: var(--accent) !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+/* Footer links (non-Get-in-touch columns) */
+footer a {
+  color: #111827 !important;
+}
+footer a:hover {
+  color: var(--accent-hover) !important;
+  text-decoration: underline;
+}
+
+/* ✅ ORANGE BACKGROUND FOR GET IN TOUCH (whole column) */
+.footer-get-in-touch {
+  background: linear-gradient(
+    180deg,
+    rgba(249,115,22,0.18),
+    rgba(249,115,22,0.30)
+  ) !important;
+
+  border-radius: 18px;
+  padding: 18px;
+}
+
+/* Make the inner card blend in (remove the “white box” look) */
+.footer-get-in-touch .rounded-2xl,
+.footer-get-in-touch .rounded-xl {
+  background: transparent !important;
+  border: 1px solid rgba(249,115,22,0.25) !important;
+  box-shadow: none !important;
+}
+
+/* Get in touch text colors */
+.footer-get-in-touch,
+.footer-get-in-touch p,
+.footer-get-in-touch span,
+.footer-get-in-touch strong {
+  color: #111827 !important;
+}
+
+/* Keep the GET IN TOUCH heading orange and bold */
+.footer-get-in-touch h3,
+.footer-get-in-touch h4 {
+  color: var(--accent-hover) !important;
+}
+
+/* ✅ REMOVE orange behind the copyright strip completely */
+.footer-bottom-strip {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.footer-bottom-strip * {
+  background: transparent !important; /* kills the “orange highlight/box” */
+  color: #374151 !important;
+}
+
+.services-clean-hero {
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.services-clean-hero__img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  border: 1px solid rgb(30 41 59);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Scroll animation base */
+.sa-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.sa-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional stagger */
+.sa-delay-1 {
+  transition-delay: 120ms;
+}
+.sa-delay-2 {
+  transition-delay: 240ms;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sa-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Scroll reveal system (used by main.js) */
+.sa-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.sa-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sa-delay-1 { transition-delay: 120ms; }
+.sa-delay-2 { transition-delay: 240ms; }
+
+/* Image sizing/polish */
+.services-clean-hero {
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.services-clean-hero__img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(226, 232, 240, 1);
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.18);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sa-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
