@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>009 Compliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="/headerlogo.png?v=1">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-iqXNtL4GKJ8VimG/rI3iZ4prJ7pXSq6X7P0QakHEzKirMld7ObZfM/C1Jr+6r7aqtmLbXR4Yg8lJWS1d76Z0TQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-50 min-h-screen flex flex-col">
+
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
+    <div class="relative h-20">
+
+      <!-- LEFT: logo + name pinned far left -->
+      <a href="/" class="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-3 group z-10">
+        <img src="/images/logo.png" alt="009 Compliance" class="h-16 md:h-20 w-auto object-contain" />
+        <div class="flex flex-col leading-tight">
+          <span class="font-semibold tracking-tight text-slate-50">009 Compliance</span>
+          <span class="text-xs text-slate-400">FCA Compliance and Reporting Support For Motor Dealers</span>
+        </div>
+      </a>
+
+      <!-- CENTER + RIGHT: content kept inside container -->
+      <div class="max-w-7xl mx-auto px-6 h-full flex items-center">
+        <nav class="w-full flex items-center text-sm">
+
+          <!-- CENTER: page links -->
+          <div class="mx-auto flex items-center gap-10">
+            <a href="/" class="hover:text-emerald-400 transition">Home</a>
+            <a href="/about" class="hover:text-emerald-400 transition">About</a>
+            <a href="/services" class="hover:text-emerald-400 transition">Services</a>
+            <a href="/contact" class="hover:text-emerald-400 transition">Contact</a>
+            <a href="/pricing" class="hover:text-emerald-400 transition">Pricing</a>
+          </div>
+
+          <!-- RIGHT: auth buttons -->
+          <div class="ml-auto flex items-center gap-4">
+            <% if (currentUser) { %>
+              <a href="/dashboard" class="hover:text-emerald-400 transition">Dashboard</a>
+              <span class="text-slate-500 hidden sm:inline">
+                Signed in as <span class="text-slate-100"><%= currentUser.name %></span>
+              </span>
+              <a href="/logout"
+                class="px-3 py-1 rounded-lg border border-slate-700 hover:border-emerald-500 hover:text-emerald-400 transition">
+                Log out
+              </a>
+            <% } else { %>
+              <a href="/login" class="hover:text-emerald-400 transition">Log in</a>
+              <a href="/register"
+                class="px-3 py-1 rounded-lg bg-emerald-500 text-slate-900 font-semibold hover:bg-emerald-400 transition">
+                Get started
+              </a>
+            <% } %>
+          </div>
+
+        </nav>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="max-w-7xl mx-auto px-6 py-6">
+      <% if (success && success.length) { %>
+        <div class="mb-4 rounded-xl border border-emerald-500/50 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-200">
+          <%= success[0] %>
+        </div>
+      <% } %>
+
+      <% if (error && error.length) { %>
+        <div class="mb-4 rounded-xl border border-rose-500/50 bg-rose-500/5 px-4 py-3 text-sm text-rose-200">
+          <%= error[0] %>
+        </div>
+      <% } %>
+
+      <%- body %>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 py-6 mt-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500">
+      <p>© <%= new Date().getFullYear() %> 009 Compliance. All rights reserved.</p>
+      <p>009 Compliance Ltd is a company registered in England and Wales (company number 16910484).</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

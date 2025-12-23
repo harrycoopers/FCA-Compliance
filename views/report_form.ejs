@@ -1,0 +1,288 @@
+<%
+  const isEdit = !!report;
+  const dataObj = report && report.dataObj ? report.dataObj : {};
+
+  // Default reporting month to current month if creating a new report
+  const now = new Date();
+  const defaultYear = now.getFullYear();
+  const defaultMonth = String(now.getMonth() + 1).padStart(2, '0');
+
+  const reportingVal = (report && report.reporting_month)
+    ? report.reporting_month
+    : `${defaultYear}-${defaultMonth}`;
+
+  const parts = reportingVal.split('-');
+  const selectedYear = parts[0];
+  const selectedMonth = parts[1];
+%>
+
+<div class="w-full">
+  <div class="flex items-center justify-between mb-4">
+    <div>
+      <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-2">
+        <%= isEdit ? 'Update Monthly Report' : 'New Monthly Report' %>
+      </p>
+      <h1 class="text-3xl font-semibold text-slate-50">Dealer / Broker Monthly FCA Report</h1>
+      <p class="text-sm text-slate-400 mt-2 max-w-3xl">
+        Complete one report per month. The questions below support monthly oversight and MI capture.
+      </p>
+    </div>
+    <a href="/dashboard" class="hidden sm:inline-flex text-sm text-slate-400 hover:text-emerald-300">Back To Dashboard</a>
+  </div>
+
+  <form
+    action="<%= isEdit ? '/reports/' + report.id + '/edit' : '/reports/new' %>"
+    method="POST"
+    class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 text-base"
+  >
+    <div class="grid lg:grid-cols-2 gap-10">
+      <!-- LEFT COLUMN -->
+      <div class="space-y-8">
+        <!-- Reporting month (compact, doesn't break layout) -->
+
+          <div>
+  <label class="block text-sm font-medium text-slate-300 mb-2">Reporting month</label>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-sm text-slate-400 mb-2">Month</label>
+      <select
+        id="reporting_month_select"
+        class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
+        required
+      >
+        <option value="" disabled>Select month</option>
+        <option value="01">January</option>
+        <option value="02">February</option>
+        <option value="03">March</option>
+        <option value="04">April</option>
+        <option value="05">May</option>
+        <option value="06">June</option>
+        <option value="07">July</option>
+        <option value="08">August</option>
+        <option value="09">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm text-slate-400 mb-2">Year</label>
+      <select
+        id="reporting_year_select"
+        class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
+        required
+      >
+        <option value="" disabled>Select year</option>
+        <%
+          const currentYear = new Date().getFullYear();
+          const maxYear = 2050;
+          for (let y = currentYear; y <= maxYear; y++) {
+        %>
+          <option value="<%= y %>"><%= y %></option>
+        <% } %>
+      </select>
+    </div>
+  </div>
+
+  <!-- This hidden field is what your server receives -->
+  <input
+    type="hidden"
+    name="reporting_month"
+    id="reporting_month_hidden"
+    value="<%= (report && report.reporting_month) ? report.reporting_month : '' %>"
+  />
+
+  <p class="text-sm text-slate-400 mt-2">Submit one report for each calendar month.</p>
+</div>
+
+<script>
+  (function () {
+    const hidden = document.getElementById('reporting_month_hidden');
+    const monthSel = document.getElementById('reporting_month_select');
+    const yearSel = document.getElementById('reporting_year_select');
+    if (!hidden || !monthSel || !yearSel) return;
+
+    // If editing, preselect saved value
+    if (hidden.value && hidden.value.includes('-')) {
+      const [y, m] = hidden.value.split('-');
+      yearSel.value = y;
+      monthSel.value = m;
+    } else {
+      // New report: default to PREVIOUS month
+      const d = new Date();
+      d.setMonth(d.getMonth() - 1);
+
+      const y = String(d.getFullYear());
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+
+      yearSel.value = y;
+      monthSel.value = m;
+      hidden.value = `${y}-${m}`;
+    }
+
+    function updateHidden() {
+      if (monthSel.value && yearSel.value) {
+        hidden.value = `${yearSel.value}-${monthSel.value}`;
+      }
+    }
+
+    monthSel.addEventListener('change', updateHidden);
+    yearSel.addEventListener('change', updateHidden);
+    updateHidden();
+  })();
+</script>
+  
+        <hr class="border-slate-800" />
+        <h2 class="text-lg font-semibold text-slate-200">Monthly Questions</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+              Total Vehicles Sold This Month
+            </label>
+            <input type="number" min="0" name="total_vehicles_sold" value="<%= dataObj.total_vehicles_sold || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+              Vehicles Sold on Finance (Funded Deals)
+            </label>
+            <input type="number" min="0" name="funded_deals" value="<%= dataObj.funded_deals || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-2">Lenders / Brokers used</label>
+          <textarea name="lenders_brokers_used" rows="3"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-4 py-3 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"><%= dataObj.lenders_brokers_used || '' %></textarea>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+              Finance Commission Received (£)
+            </label>
+            <input type="text" name="finance_commission" value="<%= dataObj.finance_commission || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+              Total Business Turnover (all income) (£)
+            </label>
+            <input type="text" name="total_turnover" value="<%= dataObj.total_turnover || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="space-y-8">
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-2">Any Complaints Relating To Finance?</label>
+          <div class="flex gap-6 text-base text-slate-200">
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="finance_complaints" value="No" <%= (dataObj.finance_complaints || '') === 'No' ? 'checked' : '' %> />
+              No
+            </label>
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="finance_complaints" value="Yes" <%= (dataObj.finance_complaints || '') === 'Yes' ? 'checked' : '' %> />
+              Yes
+            </label>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-4">
+            <div>
+              <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]">If Yes: Number of Cases</label>
+              <input type="number" min="0" name="finance_complaints_cases" value="<%= dataObj.finance_complaints_cases || '' %>"
+                class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+            </div>
+            <div>
+              <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]">Details</label>
+              <input type="text" name="finance_complaints_details" value="<%= dataObj.finance_complaints_details || '' %>"
+                class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-2">Fees Paid Out To Brokers / Lead Sources (£)</label>
+          <input type="text" name="fees_paid_brokers" value="<%= dataObj.fees_paid_brokers || '' %>"
+            class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+              Part-exchange finance settlements: number
+            </label>
+            <input type="number" min="0" name="px_settlements_number" value="<%= dataObj.px_settlements_number || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+              Part-exchange finance settlements: value (£)
+            </label>
+            <input type="text" name="px_settlements_value" value="<%= dataObj.px_settlements_value || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-2">Any Changes Since Last Month?</label>
+          <div class="flex gap-6 text-base text-slate-200">
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="changes_since_last_month" value="None" <%= (dataObj.changes_since_last_month || '') === 'None' ? 'checked' : '' %> />
+              None
+            </label>
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="changes_since_last_month" value="Yes" <%= (dataObj.changes_since_last_month || '') === 'Yes' ? 'checked' : '' %> />
+              Yes
+            </label>
+          </div>
+
+          <div class="mt-4">
+            <label class="block text-sm text-slate-400 mb-2">If Yes: Details</label>
+            <input type="text" name="changes_details" value="<%= dataObj.changes_details || '' %>"
+              class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between pt-6 mt-8 border-t border-slate-800">
+      <a href="/dashboard" class="text-sm text-slate-400 hover:text-emerald-300">Cancel</a>
+
+      <button
+        type="submit"
+        class="px-8 py-4 rounded-xl bg-emerald-500 text-slate-950 text-lg font-semibold hover:bg-emerald-400 transition"
+      >
+        <%= isEdit ? 'Save Report' : 'Submit Monthly Report' %>
+      </button>
+    </div>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hidden = document.getElementById('reporting_month_hidden');
+    const monthSel = document.getElementById('reporting_month_select');
+    const yearSel = document.getElementById('reporting_year_select');
+
+    if (!hidden || !monthSel || !yearSel) return;
+
+    function updateHidden() {
+      const m = monthSel.value;
+      const y = yearSel.value;
+      if (m && y) hidden.value = `${y}-${m}`;
+    }
+
+    monthSel.addEventListener('change', updateHidden);
+    yearSel.addEventListener('change', updateHidden);
+
+    // Ensure the hidden value is set on page load too
+    updateHidden();
+  });
+</script>
