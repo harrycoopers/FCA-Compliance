@@ -2,6 +2,9 @@
   const isEdit = !!report;
   const dataObj = report && report.dataObj ? report.dataObj : {};
 
+  // ✅ add this:
+  const formData = locals.formData || {};
+
   // Default reporting month to current month if creating a new report
   const now = new Date();
   const defaultYear = now.getFullYear();
@@ -91,7 +94,7 @@
     type="hidden"
     name="reporting_month"
     id="reporting_month_hidden"
-    value="<%= (report && report.reporting_month) ? report.reporting_month : '' %>"
+    value="<%= (formData.reporting_month ?? (report && report.reporting_month) ?? '') %>"
   />
 
   <p class="text-sm text-slate-400 mt-2">Submit one report for each calendar month.</p>
@@ -142,7 +145,7 @@
             <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
               Total Vehicles Sold This Month
             </label>
-            <input type="number" min="0" name="total_vehicles_sold" value="<%= dataObj.total_vehicles_sold || '' %>"
+            <input type="number" min="0" name="total_vehicles_sold" value="<%= (formData.total_vehicles_sold ?? dataObj.total_vehicles_sold ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
 
@@ -150,7 +153,7 @@
             <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
               Vehicles Sold on Finance (Funded Deals)
             </label>
-            <input type="number" min="0" name="funded_deals" value="<%= dataObj.funded_deals || '' %>"
+            <input type="number" min="0" name="funded_deals" value="<%= (formData.funded_deals ?? dataObj.funded_deals ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
@@ -158,7 +161,7 @@
         <div>
           <label class="block text-sm font-medium text-slate-300 mb-2">Lenders / Brokers used</label>
           <textarea name="lenders_brokers_used" rows="3"
-            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-4 py-3 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"><%= dataObj.lenders_brokers_used || '' %></textarea>
+             class="w-full rounded-lg bg-slate-950 border border-slate-700 px-4 py-3 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"><%= (formData.lenders_brokers_used ?? dataObj.lenders_brokers_used ?? '') %></textarea>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
@@ -166,7 +169,7 @@
             <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
               Finance Commission Received (£)
             </label>
-            <input type="text" name="finance_commission" value="<%= dataObj.finance_commission || '' %>"
+            <input type="text" name="finance_commission" value="<%= (formData.finance_commission ?? dataObj.finance_commission ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
 
@@ -174,7 +177,7 @@
             <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
               Total Business Turnover (all income) (£)
             </label>
-            <input type="text" name="total_turnover" value="<%= dataObj.total_turnover || '' %>"
+            <input type="text" name="total_turnover" value="<%= (formData.total_turnover ?? dataObj.total_turnover ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
@@ -186,11 +189,11 @@
           <label class="block text-sm font-medium text-slate-300 mb-2">Any Complaints Relating To Finance?</label>
           <div class="flex gap-6 text-base text-slate-200">
             <label class="inline-flex items-center gap-2">
-              <input type="radio" name="finance_complaints" value="No" <%= (dataObj.finance_complaints || '') === 'No' ? 'checked' : '' %> />
+              <input type="radio" name="finance_complaints" value="No"<%= ((formData.finance_complaints ?? dataObj.finance_complaints ?? '') === 'No') ? 'checked' : '' %> />
               No
             </label>
             <label class="inline-flex items-center gap-2">
-              <input type="radio" name="finance_complaints" value="Yes" <%= (dataObj.finance_complaints || '') === 'Yes' ? 'checked' : '' %> />
+              <input type="radio" name="finance_complaints" value="Yes"<%= ((formData.finance_complaints ?? dataObj.finance_complaints ?? '') === 'Yes') ? 'checked' : '' %> />
               Yes
             </label>
           </div>
@@ -198,12 +201,12 @@
           <div class="grid md:grid-cols-2 gap-6 mt-4">
             <div>
               <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]">If Yes: Number of Cases</label>
-              <input type="number" min="0" name="finance_complaints_cases" value="<%= dataObj.finance_complaints_cases || '' %>"
+              <input type="number" min="0" name="finance_complaints_cases" value="<%= (formData.finance_complaints_cases ?? dataObj.finance_complaints_cases ?? '') %>"
                 class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
             </div>
             <div>
               <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]">Details</label>
-              <input type="text" name="finance_complaints_details" value="<%= dataObj.finance_complaints_details || '' %>"
+              <input type="text" name="finance_complaints_details"  value="<%= (formData.finance_complaints_details ?? dataObj.finance_complaints_details ?? '') %>"
                 class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
             </div>
           </div>
@@ -211,7 +214,7 @@
 
         <div>
           <label class="block text-sm font-medium text-slate-300 mb-2">Fees Paid Out To Brokers / Lead Sources (£)</label>
-          <input type="text" name="fees_paid_brokers" value="<%= dataObj.fees_paid_brokers || '' %>"
+          <input type="text" name="fees_paid_brokers" value="<%= (formData.fees_paid_brokers ?? dataObj.fees_paid_brokers ?? '') %>"
             class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
         </div>
 
@@ -220,14 +223,14 @@
             <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
               Part-exchange finance settlements: number
             </label>
-            <input type="number" min="0" name="px_settlements_number" value="<%= dataObj.px_settlements_number || '' %>"
+            <input type="number" min="0" name="px_settlements_number" value="<%= (formData.px_settlements_number ?? dataObj.px_settlements_number ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
           <div>
             <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
               Part-exchange finance settlements: value (£)
             </label>
-            <input type="text" name="px_settlements_value" value="<%= dataObj.px_settlements_value || '' %>"
+            <input type="text" name="px_settlements_value" value="<%= (formData.px_settlements_value ?? dataObj.px_settlements_value ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
@@ -236,23 +239,41 @@
           <label class="block text-sm font-medium text-slate-300 mb-2">Any Changes Since Last Month?</label>
           <div class="flex gap-6 text-base text-slate-200">
             <label class="inline-flex items-center gap-2">
-              <input type="radio" name="changes_since_last_month" value="None" <%= (dataObj.changes_since_last_month || '') === 'None' ? 'checked' : '' %> />
+              <input type="radio" name="changes_since_last_month" value="None"<%= ((formData.changes_since_last_month ?? dataObj.changes_since_last_month ?? '') === 'None') ? 'checked' : '' %> />
               None
             </label>
             <label class="inline-flex items-center gap-2">
-              <input type="radio" name="changes_since_last_month" value="Yes" <%= (dataObj.changes_since_last_month || '') === 'Yes' ? 'checked' : '' %> />
+              <input type="radio" name="changes_since_last_month" value="Yes"<%= ((formData.changes_since_last_month ?? dataObj.changes_since_last_month ?? '') === 'Yes') ? 'checked' : '' %> />
               Yes
             </label>
           </div>
 
           <div class="mt-4">
             <label class="block text-sm text-slate-400 mb-2">If Yes: Details</label>
-            <input type="text" name="changes_details" value="<%= dataObj.changes_details || '' %>"
+            <input type="text" name="changes_details" value="<%= (formData.changes_details ?? dataObj.changes_details ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Confirmation checkbox (required) -->
+<div class="mt-6 flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+  <input
+    type="checkbox"
+    name="confirm_submission"
+    id="confirm_submission"
+    value="yes"
+    class="mt-1 h-4 w-4"
+    required
+    <%= (formData && formData.confirm_submission === 'yes') ? 'checked' : '' %>
+  />
+
+  <label for="confirm_submission" class="text-sm text-slate-700">
+    I confirm that the information submitted in this report has been completed by me (or on my behalf) and is accurate and complete to the best of my knowledge. I understand that 009 Compliance Ltd relies entirely on the information I provide and does not check, verify or validate the accuracy of this data. Responsibility for the content, accuracy and any regulatory use of this information remains with my business
+    <span class="text-rose-600 font-semibold">*</span>
+  </label>
+</div>
 
     <div class="flex items-center justify-between pt-6 mt-8 border-t border-slate-800">
       <a href="/dashboard" class="text-sm text-slate-400 hover:text-emerald-300">Cancel</a>
@@ -265,24 +286,3 @@
       </button>
     </div>
 
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const hidden = document.getElementById('reporting_month_hidden');
-    const monthSel = document.getElementById('reporting_month_select');
-    const yearSel = document.getElementById('reporting_year_select');
-
-    if (!hidden || !monthSel || !yearSel) return;
-
-    function updateHidden() {
-      const m = monthSel.value;
-      const y = yearSel.value;
-      if (m && y) hidden.value = `${y}-${m}`;
-    }
-
-    monthSel.addEventListener('change', updateHidden);
-    yearSel.addEventListener('change', updateHidden);
-
-    // Ensure the hidden value is set on page load too
-    updateHidden();
-  });
-</script>

@@ -686,11 +686,23 @@ app.get('/reports/new', ensureAuth, (req, res) => {
 
 app.post('/reports/new', ensureAuth, async (req, res) => {
   const userId = req.session.user.id;
-  const { reporting_month, ...dataFields } = req.body;
+  const { reporting_month, confirm_submission, ...dataFields } = req.body;
+
+  // ✅ Checkbox validation
+  if (confirm_submission !== 'yes') {
+    req.flash('error', 'Please confirm the declaration before submitting.');
+    return res.render('report_form', {
+      report: null,
+      formData: req.body
+    });
+  }
 
   if (!reporting_month) {
     req.flash('error', 'Please choose the reporting month.');
-    return res.redirect('/reports/new');
+    return res.render('report_form', {
+      report: null,
+      formData: req.body
+    });
   }
 
   const dataJson = JSON.stringify(dataFields);
@@ -702,8 +714,17 @@ app.post('/reports/new', ensureAuth, async (req, res) => {
       if (err) {
         console.error(err);
         req.flash('error', 'Unable to save report. Please try again.');
-        return res.redirect('/reports/new');
+        return res.render('report_form', {
+          report: null,
+          formData: req.body
+        });
       }
+
+      req.flash('success', 'Report submitted successfully.');
+      res.redirect('/dashboard?submitted=true');
+    }
+  );
+});
 
       // Append to Google Sheet
 
