@@ -29,8 +29,28 @@ function getUKTimestamp() {
   });
 }
 
+function normalizeUKMobile(input) {
+  if (!input) return '';
+
+  let s = String(input).trim();
+
+  // Remove spaces, dashes, brackets etc (keep digits and leading +)
+  s = s.replace(/[^\d+]/g, '');
+
+  // +44XXXXXXXXXX -> 0XXXXXXXXXX
+  if (s.startsWith('+44')) s = '0' + s.slice(3);
+
+  // 44XXXXXXXXXX -> 0XXXXXXXXXX
+  if (s.startsWith('44')) s = '0' + s.slice(2);
+
+  // 7XXXXXXXXX -> 07XXXXXXXXX
+  if (s.length === 10 && s.startsWith('7')) s = '0' + s;
+
+  return s;
+}
+
 // Database setup (SQLite)
-const dbPath = path.join(__dirname, 'db.sqlite');
+const dbPath = process.env.DB_PATH || path.join(__dirname, 'db.sqlite');
 const db = new sqlite3.Database(dbPath);
 
 
@@ -54,6 +74,8 @@ db.serialize(() => {
   // Add missing columns safely (ignore "duplicate column" errors)
 db.run(`ALTER TABLE users ADD COLUMN is_active INTEGER DEFAULT 1`, (e) => {});
 db.run(`ALTER TABLE users ADD COLUMN unsubscribe_token TEXT`, (e) => {});
+db.run(`ALTER TABLE users ADD COLUMN firm_name TEXT`, (e) => {});
+db.run(`ALTER TABLE users ADD COLUMN fca_firm_ref TEXT`, (e) => {});
 
   db.run(`
     CREATE TABLE IF NOT EXISTS reports (
@@ -100,6 +122,7 @@ app.use((req, res, next) => {
   res.locals.currentUser = req.session.user;
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
+  res.locals.showSubmissionToast = req.flash('showSubmissionToast');
   next();
 });
 
@@ -194,26 +217,25 @@ async function upsertDealerInSheet(dealer) {
     dealer.name || '',            // B
     dealer.email || '',           // C
     dealer.phone || '',           // D
-    dealer.isActive === false ? 'FALSE' : 'TRUE', // E
-    dealer.createdAt || new Date().toISOString(), // F
+    dealer.firmName || '',        // E FirmName
+    dealer.isActive === false ? 'FALSE' : 'TRUE', // F Active
+    dealer.createdAt || new Date().toISOString(), // G CreatedAt
   ];
 
-  if (idx === -1) {
-    // Append A:F first
-    await appendRowToSheet('Dealers', baseValues.concat([
-      "", "", "",                 // G/H/I formulas live here (leave blank)
-      dealer.unsubscribeToken || "" // J
-      // K/L are formulas, leave them out
-    ]));
-    return;
-  }
-
+if (idx === -1) {
+  // Append A:G, leave H:L for formulas, set M UnsubscribeToken
+  await appendRowToSheet('Dealers', baseValues.concat([
+    "", "", "", "", "",          // H/I/J/K/L formula columns
+    dealer.unsubscribeToken || "" // M
+  ]));
+  return;
+}
   const rowNumber = idx + 2;
 
   // Update ONLY A:F (do not touch formula cols)
   await sheets.spreadsheets.values.update({
     spreadsheetId,
-    range: `Dealers!A${rowNumber}:F${rowNumber}`,
+    range: `Dealers!A${rowNumber}:G${rowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: { values: [baseValues] },
   });
@@ -221,9 +243,17 @@ async function upsertDealerInSheet(dealer) {
   // Update ONLY J (UnsubscribeToken)
   await sheets.spreadsheets.values.update({
     spreadsheetId,
-    range: `Dealers!J${rowNumber}:J${rowNumber}`,
+    range: `Dealers!J${rowNumber}:M${rowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: { values: [[dealer.unsubscribeToken || ""]] },
+  });
+
+  // Update ONLY M (FirmName) so we don't touch formula columns
+  await sheets.spreadsheets.values.update({
+    spreadsheetId,
+    range: `Dealers!M${rowNumber}:M${rowNumber}`,
+    valueInputOption: 'USER_ENTERED',
+    requestBody: { values: [[dealer.firmName || ""]] },
   });
 }
 
@@ -274,14 +304,15 @@ app.get('/contact', (req, res) => {
 
 
 app.post('/register', async (req, res) => {
-  const { name, email, password, confirmPassword, mobile_number } = req.body;
+  let { firm_name, fca_firm_ref, name, email, password, confirmPassword, mobile_number } = req.body;
+  mobile_number = normalizeUKMobile(mobile_number);
     
   if (req.body.agree_terms !== 'yes') {
     req.flash('error', 'You must agree to the Client Service Agreement to create an account.');
     return res.redirect('/register');
   }
 
-  if (!name || !email || !password || !mobile_number) {
+  if (!firm_name || !fca_firm_ref || !name || !email || !password || !mobile_number) {
     req.flash('error', 'Please complete all fields.');
     return res.redirect('/register');
   }
@@ -298,8 +329,8 @@ app.post('/register', async (req, res) => {
   const unsubscribeToken = crypto.randomBytes(24).toString('hex');
 
   db.run(
-    'INSERT INTO users (email, password_hash, name, mobile_number, verification_token) VALUES (?, ?, ?, ?, ?)',
-    [email.toLowerCase(), passwordHash, name, mobile_number, verificationToken],
+    'INSERT INTO users (email, password_hash, name, firm_name, fca_firm_ref, mobile_number, verification_token) VALUES (?, ?, ?, ?, ?, ?, ?)',
+    [email.toLowerCase(), passwordHash, name, firm_name, fca_firm_ref, mobile_number, verificationToken],
       async function (err) {
       if (err) {
         console.error(err);
@@ -350,7 +381,8 @@ try {
   dealerId: this.lastID,
   name,
   email: email.toLowerCase(),
-  phone: mobile_number,
+  phone: "'" + mobile_number,
+  firmName: firm_name,
   createdAt: getUKTimestamp(),
   isActive: true,
   unsubscribeToken,
@@ -703,7 +735,7 @@ try {
     user.id,
     user.name,
     user.email,
-    user.mobile_number,
+    "'" + user.mobile_number,
     reporting_month,
     createdAt,
     ...answers,
@@ -716,9 +748,9 @@ try {
 
 
       
-      req.flash('success', 'Report submitted successfully.');
-      res.redirect('/dashboard');
-    }
+     req.flash('showSubmissionToast', 'true');
+     res.redirect('/dashboard');
+     }
   );
 });
 
@@ -730,34 +762,36 @@ async function updateGoogleSheetRowByReportId(reportId, updatedRowValues) {
   await jwt.authorize();
   const sheets = google.sheets({ version: 'v4', auth: jwt });
 
-  // 1) Read column A (Report ID column) to find which row matches
+  const SHEET_NAME = 'Submissions';
+
+  // 1) Read column A from the Submissions tab only
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId,
-    range: 'A:A',
+    range: `${SHEET_NAME}!A:A`,
   });
 
   const colA = res.data.values || [];
-  const rowIndex = colA.findIndex(r => String(r[0]).trim() === String(reportId));
+  const rowIndex = colA.findIndex(r => String(r?.[0] ?? '').trim() === String(reportId).trim());
 
   if (rowIndex === -1) {
-    console.warn(`Report ID ${reportId} not found in sheet, appending instead.`);
-    await appendRowToSheet('Submissions', updatedRowValues);
+    console.warn(`Report ID ${reportId} not found in ${SHEET_NAME}, appending instead.`);
+    await appendRowToSheet(SHEET_NAME, updatedRowValues);
     return;
   }
 
-  // Sheets rows are 1-based, array index is 0-based
+  // Sheets rows are 1-based
   const sheetRowNumber = rowIndex + 1;
 
-  // 2) Update the entire row from A onwards
+  // 2) Update the row starting at column A on the Submissions tab
   await sheets.spreadsheets.values.update({
     spreadsheetId,
-    range: `A${sheetRowNumber}`,
+    range: `${SHEET_NAME}!A${sheetRowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: {
       values: [updatedRowValues],
     },
   });
-}
+  }
 
 // View & edit report
 app.get('/reports/:id/edit', ensureAuth, (req, res) => {
@@ -833,14 +867,15 @@ app.post('/reports/:id/edit', ensureAuth, (req, res) => {
         const answers = FIELD_ORDER.map((k) => (dataFields[k] ?? ''));
 
         const updatedRow = [
-          reportId, // Column A in Google Sheet must be report ID
-          user.id,
-          user.name,
-          user.email,
-          user.mobile_number,
-          reporting_month,
-          ...answers,
-        ];
+          reportId,                // A
+          user.id,                 // B
+          user.name,               // C
+          user.email,              // D
+          "'" + user.mobile_number,// E (keep leading 0)
+          reporting_month,         // F
+           updatedAt,               // G (timestamp)
+          ...answers,              // H onwards
+          ];
 
         await updateGoogleSheetRowByReportId(reportId, updatedRow);
       } catch (e) {

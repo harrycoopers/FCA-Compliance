@@ -10,9 +10,9 @@
   <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
     <div id="termsBox" class="h-[420px] overflow-y-auto rounded-xl border border-slate-800 bg-slate-950 p-4 text-sm text-slate-200 leading-relaxed">
       <pre class="whitespace-pre-wrap font-sans">
-CLIENT SERVICE AGREEMENT
+        CLIENT SERVICE AGREEMENT
 
-Between 009 Compliance Ltd and <strong><%= formData.name %></strong>
+Between 009 Compliance Ltd and <strong><%= formData.firm_name %></strong>
 
 This Agreement is made between 009 Compliance Ltd (“the Service Provider”) and the business or individual receiving, opening, viewing, downloading, storing or otherwise interacting with any written, verbal or digital material issued by the Service Provider (“the Client”). This Agreement is binding automatically without signature, and acceptance occurs at the moment the Client accesses, retains or makes any use of material supplied. The only means of avoiding entry into this contract is permanent deletion of all material received and complete non-engagement with any documentation or communication issued by the Service Provider.
 
@@ -28,7 +28,7 @@ Submission of Regulatory Returns Clause
 
 Where the Service Provider assists in preparing, completing or submitting CCR007, CCR009 or any regulatory return on behalf of the Client, such submission shall be performed strictly and exclusively on the basis of information supplied directly by the Client without assessment, verification, audit or interpretation. The Service Provider shall not check, audit, advise on, compare, analyse or determine the suitability or correctness of any figures, answers, data, policies, processes or records and shall not be required to question the Client even where information appears inconsistent, incomplete or inaccurate. The Client warrants that all information supplied is true, accurate and complete and accepts that they remain solely responsible for all compliance, regulatory outcomes, consumer duty obligations, deadlines, suitability assessments, affordability checks and consequences arising from any return. The Service Provider’s role is clerical and administrative only, consisting of transferring information into FCA systems exactly as provided.
 
-No liability, duty of care, advisory responsibility or obligation to rectify, re-submit or defend a return exists at any time. Should the FCA, any authority, customer or third party challenge, query, investigate or take action against the Client, all responsibility, response and outcome sit exclusively with the Client. The Client indemnifies the Service Provider against all claims, fines, penalties, disputes, losses or regulatory consequences arising from or connected to any return submitted using Client-supplied information. Delays caused by late or incomplete information shall not create any obligation for the Service Provider to meet deadlines.
+No liability, duty of care, advisory responsibility or obligation to rectify, re-submit or defend a return exists at any time. Should the FCA, any authority, customer or third-party challenge, query, investigate or take action against the Client, all responsibility, response and outcome sit exclusively with the Client. The Client indemnifies the Service Provider against all claims, fines, penalties, disputes, losses or regulatory consequences arising from or connected to any return submitted using Client-supplied information. Delays caused by late or incomplete information shall not create any obligation for the Service Provider to meet deadlines.
 
 This arrangement operates as a recurring monthly subscription. All payments made are non-refundable and continued provision of documents, communication and ongoing support is strictly conditional upon payments remaining up to date. If a monthly payment is missed, stopped, fails or is delayed for any reason, all engagement, support and activity by the Service Provider is immediately suspended without notice, and the Service Provider is under no obligation to submit, support or complete CCR007, CCR009 or any other compliance-related submission. The Client understands and agrees that the Service Provider is entirely absolved of responsibility for missed deadlines, regulatory penalties or consequences arising from suspension or cessation due to non-payment, and reinstatement of service shall occur only at the Service Provider’s discretion and only after all arrears are cleared in full together with any additional reconnection or catch-up fees, where applicable.
 
@@ -45,11 +45,31 @@ The Service Provider holds no obligation to provide updates, regulatory monitori
 This Agreement is governed by the laws of England and Wales, and any dispute shall fall exclusively within UK courts. If any provision of this Agreement is deemed unenforceable, the remainder shall continue in full force. This document supersedes all prior discussion, implication or understanding, and no statement outside its wording shall form part of the Agreement unless set out in writing and accepted mutually.
 
 By continuing to hold, retain or use any material from the Service Provider, the Client confirms, acknowledges and agrees that they accept full responsibility for their compliance obligations, data accuracy and regulatory conduct; that they understand materials require modification and internal integration; that they waive permanently any right to reliance, duty, negligence or compensation; and that their use of material constitutes immediate acceptance of this binding Agreement, whereas non-use and complete deletion constitutes rejection. Use equals acceptance. Responsibility remains solely and permanently with the Client.
+
+Payment, Billing and Collection of Fees
+
+All services provided by the Service Provider operate strictly on a prepaid recurring subscription basis, unless otherwise expressly agreed in writing. Fees are payable monthly in advance and must be received in cleared funds prior to any work, communication, document provision, regulatory assistance or engagement of any kind.
+
+Payment shall be made by Direct Debit or Standing Order, at the Service Provider’s sole discretion. Where Direct Debit is used, the Client irrevocably authorises the Service Provider to collect all agreed fees from the nominated bank account in accordance with the Direct Debit mandate provided. Where payment is made by Standing Order, responsibility for ensuring that payments are set up correctly, maintained, amended and remain active rests entirely and exclusively with the Client.
+
+All Direct Debit payments are governed by the Direct Debit Guarantee, which is provided by the Client’s bank. The Client acknowledges and accepts that where a refund is made under the Direct Debit Guarantee, whether correctly or incorrectly, the refunded amount shall immediately become a debt owed to the Service Provider and shall be payable on demand without set-off, dispute or delay. Any administrative, processing or dispute fees incurred as a result of such refund may also be recovered from the Client.
+
+If any payment is missed, stopped, reversed, cancelled, delayed, fails due to insufficient funds or is otherwise not received in full for any reason whatsoever, all services, engagement and activity are immediately suspended without notice. The Service Provider shall have no obligation to continue work, provide documents, respond to correspondence, support FCA submissions or assist with regulatory deadlines while any amount remains outstanding. The Client accepts that suspension may result in missed regulatory deadlines, enforcement action or other consequences, and agrees that all such consequences arise solely from non-payment and remain the exclusive responsibility of the Client.
+
+Where a Direct Debit payment fails, the Service Provider may, at its discretion, re-submit the payment. Re-submission does not constitute a waiver of rights nor create any obligation to continue services during the period of non-payment. Where a Standing Order payment is missed, the Service Provider is under no obligation to notify the Client, chase payment or provide reminders.
+
+All fees paid are non-refundable under all circumstances, including but not limited to dissatisfaction, regulatory outcomes, FCA decisions, delays, non-use of materials, suspension of services due to non-payment, or termination of this Agreement for any reason. The Client acknowledges that fees relate to availability, access and provision of materials and support, not to outcomes or results.
+
+The Service Provider reserves the right to amend subscription fees upon reasonable notice. Where payment is collected by Direct Debit, the amended amount shall be collected automatically following such notice. Where payment is made by Standing Order, it is the Client’s responsibility to amend the Standing Order accordingly. Failure to do so shall constitute non-payment.
+
+Reinstatement of services following suspension for non-payment shall occur only at the Service Provider’s discretion and only once all outstanding sums are cleared in full, together with any additional charges for reinstatement, catch-up work or reconstruction of records where applicable. The Service Provider is under no obligation to prioritise or expedite reinstatement.
       </pre>
     </div>
 
     <form action="/register" method="POST" class="mt-6 space-y-4">
       <!-- pass registration fields through -->
+      <input type="hidden" name="firm_name" value="<%= formData.firm_name || '' %>">
+      <input type="hidden" name="fca_firm_ref" value="<%= formData.fca_firm_ref || '' %>">
       <input type="hidden" name="name" value="<%= formData.name || '' %>">
       <input type="hidden" name="email" value="<%= formData.email || '' %>">
       <input type="hidden" name="mobile_number" value="<%= formData.mobile_number || '' %>">

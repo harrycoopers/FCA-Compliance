@@ -15,59 +15,100 @@
 
 <body class="bg-slate-950 text-slate-50 min-h-screen flex flex-col">
 
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
-    <div class="relative h-20">
-
-      <!-- LEFT: logo + name pinned far left -->
-      <a href="/" class="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-3 group z-10">
-        <img src="/images/logo.png" alt="009 Compliance" class="h-16 md:h-20 w-auto object-contain" />
-        <div class="flex flex-col leading-tight">
-          <span class="font-semibold tracking-tight text-slate-50">009 Compliance</span>
-          <span class="text-xs text-slate-400">FCA Compliance and Reporting Support For Motor Dealers</span>
-        </div>
-      </a>
-
-      <!-- CENTER + RIGHT: content kept inside container -->
-      <div class="max-w-7xl mx-auto px-6 h-full flex items-center">
-        <nav class="w-full flex items-center text-sm">
-
-          <!-- CENTER: page links -->
-          <div class="mx-auto flex items-center gap-10">
-            <a href="/" class="hover:text-emerald-400 transition">Home</a>
-            <a href="/about" class="hover:text-emerald-400 transition">About</a>
-            <a href="/services" class="hover:text-emerald-400 transition">Services</a>
-            <a href="/contact" class="hover:text-emerald-400 transition">Contact</a>
-            <a href="/pricing" class="hover:text-emerald-400 transition">Pricing</a>
-          </div>
-
-          <!-- RIGHT: auth buttons -->
-          <div class="ml-auto flex items-center gap-4">
-            <% if (currentUser) { %>
-              <a href="/dashboard" class="hover:text-emerald-400 transition">Dashboard</a>
-              <span class="text-slate-500 hidden sm:inline">
-                Signed in as <span class="text-slate-100"><%= currentUser.name %></span>
-              </span>
-              <a href="/logout"
-                class="px-3 py-1 rounded-lg border border-slate-700 hover:border-emerald-500 hover:text-emerald-400 transition">
-                Log out
-              </a>
-            <% } else { %>
-              <a href="/login" class="hover:text-emerald-400 transition">Log in</a>
-              <a href="/register"
-                class="px-3 py-1 rounded-lg bg-emerald-500 text-slate-900 font-semibold hover:bg-emerald-400 transition">
-                Get started
-              </a>
-            <% } %>
-          </div>
-
-        </nav>
+<header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center gap-6">
+    <!-- LEFT: logo -->
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <img src="/images/logo.png" alt="009 Compliance" class="h-16 md:h-20 w-auto object-contain" />
+      <!-- Hide the long subtitle on smaller screens so it never collides -->
+      <div class="hidden xl:flex flex-col leading-tight">
+        <span class="font-semibold tracking-tight text-slate-50">009 Compliance</span>
+        <span class="text-xs text-slate-400">FCA Compliance and Reporting Support for Motor Dealers</span>
       </div>
+    </a>
 
+    <!-- DESKTOP NAV -->
+    <nav class="hidden lg:flex items-center gap-8 text-sm mx-auto">
+      <a href="/" class="hover:text-emerald-400 transition">Home</a>
+      <a href="/about" class="hover:text-emerald-400 transition">About</a>
+      <a href="/services" class="hover:text-emerald-400 transition">Services</a>
+      <a href="/contact" class="hover:text-emerald-400 transition">Contact</a>
+      <a href="/pricing" class="hover:text-emerald-400 transition">Pricing</a>
+    </nav>
+
+    <!-- RIGHT: auth buttons (desktop) -->
+    <div class="hidden lg:flex items-center gap-4 shrink-0">
+      <% if (currentUser) { %>
+        <a href="/dashboard" class="hover:text-emerald-400 transition">Dashboard</a>
+        <span class="text-slate-500 hidden xl:inline">
+          Signed in as <span class="text-slate-100"><%= currentUser.name %></span>
+        </span>
+        <a href="/logout"
+          class="px-3 py-1 rounded-lg border border-slate-700 hover:border-emerald-500 hover:text-emerald-400 transition">
+          Log out
+        </a>
+      <% } else { %>
+        <a href="/login" class="hover:text-emerald-400 transition">Log in</a>
+        <a href="/register"
+          class="px-3 py-1 rounded-lg bg-emerald-500 text-slate-900 font-semibold hover:bg-emerald-400 transition">
+          Get started
+        </a>
+      <% } %>
     </div>
-  </header>
+
+    <!-- MOBILE BUTTON -->
+    <button
+      id="mobileMenuBtn"
+      class="lg:hidden ml-auto inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-800 text-slate-200"
+      aria-label="Open menu"
+      type="button"
+    >
+      ☰
+    </button>
+  </div>
+
+ <!-- MOBILE MENU PANEL -->
+<div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white text-slate-900">
+  <div class="max-w-7xl mx-auto px-6 py-4 space-y-3 text-sm">
+    <a href="/" class="block hover:text-orange-500 transition">Home</a>
+    <a href="/about" class="block hover:text-orange-500 transition">About</a>
+    <a href="/services" class="block hover:text-orange-500 transition">Services</a>
+    <a href="/contact" class="block hover:text-orange-500 transition">Contact</a>
+    <a href="/pricing" class="block hover:text-orange-500 transition">Pricing</a>
+
+    <div class="pt-3 border-t border-slate-200 flex items-center gap-3">
+      <% if (currentUser) { %>
+        <a href="/dashboard" class="hover:text-orange-500 transition">Dashboard</a>
+        <a href="/logout"
+          class="ml-auto px-3 py-1 rounded-lg border border-slate-300 hover:border-orange-500 hover:text-orange-500 transition">
+          Log out
+        </a>
+      <% } else { %>
+        <a href="/login" class="hover:text-orange-500 transition">Log in</a>
+        <a href="/register"
+          class="ml-auto px-3 py-1 rounded-lg bg-orange-500 text-white font-semibold hover:bg-orange-400 transition">
+          Get started
+        </a>
+      <% } %>
+    </div>
+  </div>
+</div>
+</header>
+
+<script>
+  (function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  })();
+</script>
 
   <main class="flex-1">
-    <div class="max-w-7xl mx-auto px-6 py-6">
+    <div class="max-w-screen-2xl mx-auto px-6 py-6">
       <% if (success && success.length) { %>
         <div class="mb-4 rounded-xl border border-emerald-500/50 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-200">
           <%= success[0] %>
@@ -86,11 +127,29 @@
 
   <footer class="border-t border-slate-800 py-6 mt-8">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500">
-      <p>© <%= new Date().getFullYear() %> 009 Compliance. All rights reserved.</p>
+      <p>© <%= new Date().getFullYear() %> Baby Harry Media, 009 Compliance. All rights reserved.</p>
       <p>009 Compliance Ltd is a company registered in England and Wales (company number 16910484).</p>
     </div>
   </footer>
 
+    <div id="success-toast"
+     class="fixed top-6 right-6 z-50 hidden max-w-sm rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-4 text-sm text-emerald-200 shadow-lg backdrop-blur">
+  <div class="flex items-start gap-3">
+    <div class="mt-0.5 text-emerald-400">✔</div>
+    <div>
+      <p class="font-semibold text-emerald-300">Monthly Submission Complete</p>
+      <p id="success-toast-message" class="text-emerald-200/90">
+        <!-- JS will fill this -->
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  <% if (locals.showSubmissionToast && locals.showSubmissionToast[0] === "true") { %>
+    window.__TOAST_SUCCESS__ = "You have successfully completed a Monthly Submission Form!";
+  <% } %>
+</script>
   <script src="/js/main.js"></script>
 </body>
 </html>
