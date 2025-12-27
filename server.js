@@ -243,15 +243,15 @@ if (idx === -1) {
   // Update ONLY J (UnsubscribeToken)
   await sheets.spreadsheets.values.update({
     spreadsheetId,
-    range: `Dealers!J${rowNumber}:M${rowNumber}`,
+    range: `Dealers!M${rowNumber}:M${rowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: { values: [[dealer.unsubscribeToken || ""]] },
   });
 
-  // Update ONLY M (FirmName) so we don't touch formula columns
+  // Update ONLY E (FirmName) so we don't touch formula columns
   await sheets.spreadsheets.values.update({
     spreadsheetId,
-    range: `Dealers!M${rowNumber}:M${rowNumber}`,
+    range: `Dealers!E${rowNumber}:M${rowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: { values: [[dealer.firmName || ""]] },
   });
@@ -691,18 +691,12 @@ app.post('/reports/new', ensureAuth, async (req, res) => {
   // ✅ Checkbox validation
   if (confirm_submission !== 'yes') {
     req.flash('error', 'Please confirm the declaration before submitting.');
-    return res.render('report_form', {
-      report: null,
-      formData: req.body
-    });
+    return res.render('report_form', { report: null, formData: req.body });
   }
 
   if (!reporting_month) {
     req.flash('error', 'Please choose the reporting month.');
-    return res.render('report_form', {
-      report: null,
-      formData: req.body
-    });
+    return res.render('report_form', { report: null, formData: req.body });
   }
 
   const dataJson = JSON.stringify(dataFields);
@@ -714,64 +708,53 @@ app.post('/reports/new', ensureAuth, async (req, res) => {
       if (err) {
         console.error(err);
         req.flash('error', 'Unable to save report. Please try again.');
-        return res.render('report_form', {
-          report: null,
-          formData: req.body
-        });
+        return res.render('report_form', { report: null, formData: req.body });
       }
 
+      // ✅ Append to Google Sheet (MUST be inside this async function)
+      try {
+        const user = req.session.user;
+        const createdAt = getUKTimestamp();
+
+        const FIELD_ORDER = [
+          'total_vehicles_sold',
+          'funded_deals',
+          'lenders_brokers_used',
+          'finance_commission',
+          'total_turnover',
+          'finance_complaints',
+          'finance_complaints_cases',
+          'finance_complaints_details',
+          'fees_paid_brokers',
+          'px_settlements_number',
+          'px_settlements_value',
+          'changes_since_last_month',
+          'changes_details',
+        ];
+
+        const answers = FIELD_ORDER.map((key) => (dataFields[key] ?? ''));
+
+        const row = [
+          this.lastID,              // report id
+          user.id,                  // dealer id
+          user.name,
+          user.email,
+          "'" + user.mobile_number, // keep leading 0
+          reporting_month,
+          createdAt,
+          ...answers,
+        ];
+
+        await appendRowToSheet('Submissions', row);
+      } catch (e) {
+        console.error('Sheets error:', e.message);
+      }
+
+      // ✅ show toast once on dashboard
+      req.flash('showSubmissionToast', 'true');
       req.flash('success', 'Report submitted successfully.');
-      res.redirect('/dashboard?submitted=true');
+      return res.redirect('/dashboard');
     }
-  );
-});
-
-      // Append to Google Sheet
-
-try {
-  const user = req.session.user;
-  const createdAt = getUKTimestamp();
-
-  // Keep a consistent column order in Google Sheets:
-  const FIELD_ORDER = [
-    'total_vehicles_sold',
-    'funded_deals',
-    'lenders_brokers_used',
-    'finance_commission',
-    'total_turnover',
-    'finance_complaints',
-    'finance_complaints_cases',
-    'finance_complaints_details',
-    'fees_paid_brokers',
-    'px_settlements_number',
-    'px_settlements_value',
-    'changes_since_last_month',
-    'changes_details',
-  ];
-
-  const answers = FIELD_ORDER.map((key) => (dataFields[key] ?? ''));
-
-  const row = [
-    this.lastID,
-    user.id,
-    user.name,
-    user.email,
-    "'" + user.mobile_number,
-    reporting_month,
-    createdAt,
-    ...answers,
-  ];
-
-  await appendRowToSheet('Submissions', row);
-} catch (e) {
-  console.error('Sheets error:', e.message);
-}
-
-
-      
-     req.flash('showSubmissionToast', 'true');
-     res.redirect('/dashboard');
-     }
   );
 });
 
