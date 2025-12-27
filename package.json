@@ -1,6 +1,7 @@
 {
   "name": "fca-compliance-portal",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "FCA Compliance reporting portal with Google Sheets integration",
   "main": "server.js",
   "scripts": {

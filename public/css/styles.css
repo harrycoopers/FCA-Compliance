@@ -654,11 +654,32 @@ footer a:hover {
   box-shadow: 0 30px 60px rgba(2, 6, 23, 0.18);
 }
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .sa-reveal {
-    transition: none;
-    opacity: 1;
-    transform: none;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
   }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.35s ease-out forwards;
+}
+
+.animate-slide-out {
+  animation: slideOutRight 0.35s ease-in forwards;
 }
