@@ -281,15 +281,45 @@ app.get('/api/metrics', (req, res) => {
   });
 });
 
-// Auth views
 app.get('/register', (req, res) => {
-  res.render('register');
+  res.render('register', { formData: {} });
+});
+
+app.post('/register/precheck', (req, res) => {
+  let { firm_name, fca_firm_ref, name, email, password, confirmPassword, mobile_number } = req.body;
+mobile_number = normalizeUKMobile(mobile_number);
+
+if (!firm_name || !fca_firm_ref || !name || !email || !password || !confirmPassword || !mobile_number) {
+  return res.render('register', {
+    formData: { firm_name, fca_firm_ref, name, email, mobile_number },
+    error: ['Please complete all fields.'],
+    success: []
+  });
+}
+
+if (password !== confirmPassword) {
+  return res.render('register', {
+    formData: { firm_name, fca_firm_ref, name, email, mobile_number },
+    error: ['Passwords do not match.'],
+    success: []
+  });
+}
+
+  // Passed validation → send user to terms with safe fields only
+  // (Do NOT send passwords in querystring)
+  req.session.pendingRegister = { firm_name, fca_firm_ref, name, email, mobile_number };
+  req.session.pendingPassword = password; // stored server-side in session
+  return res.redirect('/terms');
 });
 
 // Terms page shown before registration
 app.get('/terms', (req, res) => {
-  // If you want to prefill what the user typed, pass query params through
-  res.render('terms', { formData: req.query || {} });
+  if (!req.session.pendingRegister || !req.session.pendingPassword) {
+    req.flash('error', 'Please complete registration first.');
+    return res.redirect('/register');
+  }
+
+  res.render('terms', { formData: req.session.pendingRegister });
 });
 
 // About page
@@ -304,30 +334,29 @@ app.get('/contact', (req, res) => {
 
 
 app.post('/register', async (req, res) => {
-  let { firm_name, fca_firm_ref, name, email, password, confirmPassword, mobile_number } = req.body;
+  const pending = req.session.pendingRegister;
+  const password = req.session.pendingPassword;
+
+  if (!pending || !password) {
+    req.flash('error', 'Please start registration again.');
+    return res.redirect('/register');
+  }
+
+  let { firm_name, fca_firm_ref, name, email, mobile_number } = pending;
   mobile_number = normalizeUKMobile(mobile_number);
-    
+
   if (req.body.agree_terms !== 'yes') {
     req.flash('error', 'You must agree to the Client Service Agreement to create an account.');
-    return res.redirect('/register');
-  }
-
-  if (!firm_name || !fca_firm_ref || !name || !email || !password || !mobile_number) {
-    req.flash('error', 'Please complete all fields.');
-    return res.redirect('/register');
-  }
-
-  if (password !== confirmPassword) {
-    req.flash('error', 'Passwords do not match.');
-    return res.redirect('/register');
+    return res.redirect('/terms');
   }
 
   const passwordHash = await bcrypt.hash(password, 10);
   const verificationToken = require('crypto').randomBytes(32).toString('hex');
-  
+
   const crypto = require('crypto');
   const unsubscribeToken = crypto.randomBytes(24).toString('hex');
 
+  // ... keep the db.run INSERT below as-is ...
   db.run(
     'INSERT INTO users (email, password_hash, name, firm_name, fca_firm_ref, mobile_number, verification_token) VALUES (?, ?, ?, ?, ?, ?, ?)',
     [email.toLowerCase(), passwordHash, name, firm_name, fca_firm_ref, mobile_number, verificationToken],
