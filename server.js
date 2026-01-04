@@ -7,9 +7,9 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const sqlite3 = require('sqlite3').verbose();
-const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const expressLayouts = require('express-ejs-layouts');
+const { sendEmail } = require('./utils/email');
 
 const app = express();
 
@@ -126,19 +126,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Nodemailer transporter
-let transporter = null;
-if (process.env.SMTP_HOST) {
-  transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: String(process.env.SMTP_SECURE || 'false') === 'true',
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-}
 
 // Google Sheets setup
 let sheetsClient = null;
@@ -371,21 +358,6 @@ app.post('/register', async (req, res) => {
         return res.redirect('/register');
       }
 
-      // Send verification email (non-blocking)
-      if (transporter) {
-        const verifyUrl = `${BASE_URL}/verify-email?token=${verificationToken}`;
-        transporter.sendMail({
-          from: process.env.FROM_EMAIL || 'no-reply@example.com',
-          to: email,
-          subject: 'Confirm your FCA Compliance account',
-          html: `
-            <p>Hi ${name},</p>
-            <p>Thanks for registering for the FCA Compliance Reporting Portal.</p>
-            <p>Please confirm your email by clicking the link below:</p>
-            <p><a href="${verifyUrl}">Verify my email</a></p>
-          `,
-        }).catch(err => console.error('Email error:', err.message));
-      }
 
       // ✅ Auto-login
       req.session.user = {
@@ -463,6 +435,7 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
+
   if (!email || !password) {
     req.flash('error', 'Please enter your email and password.');
     return res.redirect('/login');
@@ -492,35 +465,24 @@ app.post('/login', (req, res) => {
         is_verified: user.is_verified === 1,
       };
 
+      // Ensure unsubscribe token exists
       const crypto = require('crypto');
-const unsubscribeToken = user.unsubscribe_token || crypto.randomBytes(24).toString('hex');
+      const unsubscribeToken =
+        user.unsubscribe_token || crypto.randomBytes(24).toString('hex');
 
-if (!user.unsubscribe_token) {
-  db.run(
-    'UPDATE users SET unsubscribe_token = ? WHERE id = ?',
-    [unsubscribeToken, user.id]
-  );
-}
-
-
-      // Send login notification email (optional)
-      if (transporter) {
-        transporter.sendMail({
-          from: process.env.FROM_EMAIL || 'no-reply@example.com',
-          to: user.email,
-          subject: 'New login to FCA Compliance portal',
-          html: `
-            <p>Hi ${user.name},</p>
-            <p>There was a new login to your FCA Compliance portal account.</p>
-            <p>If this wasn't you, please reset your password immediately.</p>
-          `,
-        }).catch(err => console.error('Email error:', err.message));
+      if (!user.unsubscribe_token) {
+        db.run(
+          'UPDATE users SET unsubscribe_token = ? WHERE id = ?',
+          [unsubscribeToken, user.id]
+        );
       }
 
-      res.redirect('/dashboard');
+      return res.redirect('/dashboard');
     }
   );
 });
+
+
 
 app.get('/logout', (req, res) => {
   req.session.destroy(() => {
@@ -568,56 +530,64 @@ app.get('/unsubscribe', async (req, res) => {
   }
 });
 
-
 // Forgot password
 app.get('/forgot-password', (req, res) => {
-  res.render('forgot_password');
+  res.render('forgot_password', { error: [], success: [] });
 });
 
 app.post('/forgot-password', (req, res) => {
   const { email } = req.body;
+
   if (!email) {
-    req.flash('error', 'Please enter your email address.');
-    return res.redirect('/forgot-password');
+    return res.render('forgot_password', {
+      error: ['Please enter your email address.'],
+      success: []
+    });
   }
 
-  db.get('SELECT * FROM users WHERE email = ?', [email.toLowerCase()], (err, user) => {
+  db.get('SELECT * FROM users WHERE email = ?', [email.toLowerCase()], async (err, user) => {
+    // Always show success (prevents email enumeration)
+    const genericSuccess = 'If that email exists, a reset link has been sent.';
+
     if (err || !user) {
-      req.flash('success', 'If that email exists, a reset link has been sent.');
-      return res.redirect('/forgot-password');
+      return res.render('forgot_password', { error: [], success: [genericSuccess] });
     }
 
-    const resetToken = require('crypto').randomBytes(32).toString('hex');
+    const crypto = require('crypto');
+    const resetToken = crypto.randomBytes(32).toString('hex');
     const expires = new Date(Date.now() + 1000 * 60 * 60); // 1 hour
 
     db.run(
       'UPDATE users SET reset_token = ?, reset_token_expires = ? WHERE id = ?',
       [resetToken, expires.toISOString(), user.id],
-      (updateErr) => {
+      async (updateErr) => {
         if (updateErr) {
           console.error(updateErr);
-          req.flash('error', 'Unable to generate reset link. Please try again.');
-          return res.redirect('/forgot-password');
+          return res.render('forgot_password', {
+            error: ['Unable to generate reset link. Please try again.'],
+            success: []
+          });
         }
 
-        if (transporter) {
+        try {
           const resetUrl = `${BASE_URL}/reset-password/${resetToken}`;
-          transporter.sendMail({
-            from: process.env.FROM_EMAIL || 'no-reply@example.com',
+
+          await sendEmail({
             to: user.email,
             subject: 'Reset your FCA Compliance password',
             html: `
               <p>Hi ${user.name},</p>
               <p>We received a request to reset your password.</p>
-              <p>You can reset it by clicking the link below (valid for 1 hour):</p>
               <p><a href="${resetUrl}">Reset my password</a></p>
-              <p>If you did not request this, you can ignore this email.</p>
-            `,
-          }).catch(err => console.error('Email error:', err.message));
+              <p>This link is valid for 1 hour.</p>
+            `
+          });
+        } catch (e) {
+          console.error('Email send failed:', e);
+          // Still show generic success to the user
         }
 
-        req.flash('success', 'If that email exists, a reset link has been sent.');
-        res.redirect('/forgot-password');
+        return res.render('forgot_password', { error: [], success: [genericSuccess] });
       }
     );
   });
@@ -625,25 +595,21 @@ app.post('/forgot-password', (req, res) => {
 
 app.get('/reset-password/:token', (req, res) => {
   const token = req.params.token;
-  db.get(
-    'SELECT * FROM users WHERE reset_token = ?',
-    [token],
-    (err, user) => {
-      if (err || !user) {
-        req.flash('error', 'Invalid or expired reset token.');
-        return res.redirect('/login');
-      }
 
-      const now = new Date();
-      const expires = new Date(user.reset_token_expires);
-      if (now > expires) {
-        req.flash('error', 'Reset token has expired. Please request a new one.');
-        return res.redirect('/forgot-password');
-      }
-
-      res.render('reset_password', { token });
+  db.get('SELECT * FROM users WHERE reset_token = ?', [token], (err, user) => {
+    if (err || !user) {
+      return res.redirect('/login');
     }
-  );
+
+    const now = new Date();
+    const expires = new Date(user.reset_token_expires);
+
+    if (now > expires) {
+      return res.redirect('/forgot-password');
+    }
+
+    return res.render('reset_password', { token, error: [], success: [] });
+  });
 });
 
 app.post('/reset-password/:token', async (req, res) => {
@@ -651,44 +617,45 @@ app.post('/reset-password/:token', async (req, res) => {
   const { password, confirmPassword } = req.body;
 
   if (!password || password !== confirmPassword) {
-    req.flash('error', 'Passwords do not match.');
-    return res.redirect(`/reset-password/${token}`);
+    return res.render('reset_password', {
+      token,
+      error: ['Passwords do not match.'],
+      success: []
+    });
   }
 
-  db.get(
-    'SELECT * FROM users WHERE reset_token = ?',
-    [token],
-    async (err, user) => {
-      if (err || !user) {
-        req.flash('error', 'Invalid or expired reset token.');
+  db.get('SELECT * FROM users WHERE reset_token = ?', [token], async (err, user) => {
+    if (err || !user) {
+      return res.redirect('/login');
+    }
+
+    const now = new Date();
+    const expires = new Date(user.reset_token_expires);
+
+    if (now > expires) {
+      return res.redirect('/forgot-password');
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    db.run(
+      'UPDATE users SET password_hash = ?, reset_token = NULL, reset_token_expires = NULL WHERE id = ?',
+      [passwordHash, user.id],
+      (updateErr) => {
+        if (updateErr) {
+          console.error(updateErr);
+          return res.render('reset_password', {
+            token,
+            error: ['Unable to reset password. Please try again.'],
+            success: []
+          });
+        }
+
+        req.flash('success', 'Password has been reset. You can now log in.');
         return res.redirect('/login');
       }
-
-      const now = new Date();
-      const expires = new Date(user.reset_token_expires);
-      if (now > expires) {
-        req.flash('error', 'Reset token has expired. Please request a new one.');
-        return res.redirect('/forgot-password');
-      }
-
-      const passwordHash = await bcrypt.hash(password, 10);
-
-      db.run(
-        'UPDATE users SET password_hash = ?, reset_token = NULL, reset_token_expires = NULL WHERE id = ?',
-        [passwordHash, user.id],
-        (updateErr) => {
-          if (updateErr) {
-            console.error(updateErr);
-            req.flash('error', 'Unable to reset password. Please try again.');
-            return res.redirect('/forgot-password');
-          }
-
-          req.flash('success', 'Password has been reset. You can now log in.');
-          res.redirect('/login');
-        }
-      );
-    }
-  );
+    );
+  });
 });
 
 // Dashboard
@@ -939,6 +906,20 @@ app.get('/reports', ensureAuth, (req, res) => {
   );
 });
 
+app.get('/test-email', async (req, res) => {
+  try {
+    await sendEmail({
+      to: 'YOUR_EMAIL@gmail.com',
+      subject: 'Email system working',
+      html: '<p>Your email setup works 🎉</p>'
+    });
+    res.send('Email sent successfully');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Email failed');
+  }
+});
+
 
 app.get('/services', (req, res) => res.render('services'));
 app.get('/privacy-policy', (req, res) => res.render('privacy_policy'));
@@ -987,3 +968,4 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
