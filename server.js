@@ -117,12 +117,23 @@ app.use(
 );
 app.use(flash());
 
-// Local variables for templates
+// Local variables for templates + SEO defaults
 app.use((req, res, next) => {
   res.locals.currentUser = req.session.user;
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   res.locals.showSubmissionToast = req.flash('showSubmissionToast');
+
+  // ✅ SEO defaults (used by layout.ejs)
+  res.locals.pageTitle = '009 Compliance | FCA Compliance Reporting Portal';
+  res.locals.pageDescription =
+    'Monthly FCA compliance reporting portal for motor dealers. Submit MI, track submissions, and maintain evidence-ready records with 009 Compliance.';
+  res.locals.robots = 'index,follow';
+
+  // ✅ Canonical URL auto-built (works on localhost + live domain)
+  const baseUrl = process.env.BASE_URL || `${req.protocol}://${req.get('host')}`;
+  res.locals.canonicalUrl = `${baseUrl}${req.path}`;
+
   next();
 });
 
@@ -257,7 +268,11 @@ function ensureAuth(req, res, next) {
 
 // Homepage
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    pageTitle: '009 Compliance | FCA Compliance Reporting Portal for Motor Dealers',
+    pageDescription: 'FCA compliance reporting portal for motor dealers. Submit monthly MI, evidence oversight, and support CCR009 workflows.',
+    canonicalUrl: `${process.env.BASE_URL || `${req.protocol}://${req.get('host')}`}/`
+  });
 });
 
 // Metrics API (total users)
@@ -311,12 +326,19 @@ app.get('/terms', (req, res) => {
 
 // About page
 app.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about', {
+    pageTitle: 'About | 009 Compliance',
+    pageDescription: 'Learn about 009 Compliance and our FCA compliance reporting portal built for motor dealers.'
+  });
 });
+
 
 // Contact page
 app.get('/contact', (req, res) => {
-  res.render('contact');
+  res.render('contact', {
+    pageTitle: 'Contact | 009 Compliance',
+    pageDescription: 'Get in touch with 009 Compliance for help with monthly reporting, oversight evidence, and portal support.'
+  });
 });
 
 
@@ -921,7 +943,6 @@ app.get('/test-email', async (req, res) => {
 });
 
 
-app.get('/services', (req, res) => res.render('services'));
 app.get('/privacy-policy', (req, res) => res.render('privacy_policy'));
 app.get('/complaints-policy', (req, res) => res.render('complaints_policy'));
 app.get('/cookie-policy', (req, res) => res.render('cookie_policy'));

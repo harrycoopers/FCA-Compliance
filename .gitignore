@@ -12,5 +12,3 @@ db.sqlite
 # Logs & system files
 npm-debug.log*
 .DS_Store
-
-config.example.env
