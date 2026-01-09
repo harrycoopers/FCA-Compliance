@@ -36,16 +36,6 @@ function normalizeUKMobile(input) {
 
   // Remove spaces, dashes, brackets etc (keep digits and leading +)
   s = s.replace(/[^\d+]/g, '');
-
-  // +44XXXXXXXXXX -> 0XXXXXXXXXX
-  if (s.startsWith('+44')) s = '0' + s.slice(3);
-
-  // 44XXXXXXXXXX -> 0XXXXXXXXXX
-  if (s.startsWith('44')) s = '0' + s.slice(2);
-
-  // 7XXXXXXXXX -> 07XXXXXXXXX
-  if (s.length === 10 && s.startsWith('7')) s = '0' + s;
-
   return s;
 }
 
