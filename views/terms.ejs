@@ -22,6 +22,14 @@ Any verbal discussion, explanation or illustration provided by the Service Provi
 
 Where any marketing, website or promotional wording differs from this Agreement, this Agreement shall prevail.
 
+Where this Agreement is presented electronically, the Client confirms and agrees that creating an account, ticking an acceptance box, submitting any information or accessing or using the Service Provider’s systems, platforms or services constitutes full and binding acceptance of this Agreement and the version of the Agreement in force at the time of acceptance.
+
+The Client acknowledges that electronic acceptance and continued use of the Service Provider’s systems has the same legal effect as a signed written agreement and creates a legally binding contract between the Client and the Service Provider.
+
+The Service Provider may retain electronic records of acceptance, including the date, time, user details and version of the Agreement accepted, and such records shall be conclusive evidence of acceptance for all legal and contractual purposes.
+
+If the Client does not agree to these terms, they must not create an account, must not submit any information and must not access or use any systems, documentation or services provided by the Service Provider.
+
 Submission of Regulatory Returns Clause
 
 Where the Service Provider assists in preparing, completing or submitting CCR007, CCR009 or any regulatory return on behalf of the Client, such submission shall be performed strictly and exclusively on the basis of information supplied directly by the Client without assessment, verification, audit or interpretation. The Service Provider shall not check, audit, advise on, compare, analyse or determine the suitability or correctness of any figures, answers, data, policies, processes or records and shall not be required to question the Client even where information appears inconsistent, incomplete or inaccurate. The Client warrants that all information supplied is true, accurate and complete and accepts that they remain solely responsible for all compliance, regulatory outcomes, consumer duty obligations, deadlines, suitability assessments, affordability checks and consequences arising from any return. The Service Provider’s role is clerical and administrative only, consisting of transferring information into FCA systems exactly as provided.
@@ -61,10 +69,22 @@ All fees paid are non-refundable under all circumstances, including but not limi
 The Service Provider reserves the right to amend subscription fees upon reasonable notice. Where payment is collected by Direct Debit, the amended amount shall be collected automatically following such notice. Where payment is made by Standing Order, it is the Client’s responsibility to amend the Standing Order accordingly. Failure to do so shall constitute non-payment.
 
 Reinstatement of services following suspension for non-payment shall occur only at the Service Provider’s discretion and only once all outstanding sums are cleared in full, together with any additional charges for reinstatement, catch-up work or reconstruction of records where applicable. The Service Provider is under no obligation to prioritise or expedite reinstatement.
+
+The Client authorises the Service Provider to use all business-level information supplied by the Client for the purposes of delivering the Services, administering subscriptions, supporting regulatory reporting and operating any commercial, introducer or funding arrangements connected to the Services.
+
+The Client further authorises the Service Provider to disclose and share relevant business-level information with third parties including finance providers, lenders, brokers, introducers, software providers, payment processors and professional advisers where required or deemed appropriate in the sole discretion of the Service Provider for the administration of the Services, regulatory processes or the operation of subscription funding or partnership arrangements.
+
+Such information may include, without limitation, sales volumes, finance volumes, lender usage, commission totals and other firm-level performance or transactional data.
+
+No personal data relating to individual customers or staff shall be shared unless required by law or expressly authorised by the Client.
+
+Where any third party contributes to, subsidises or otherwise supports the cost of the Client’s subscription or services, the Client acknowledges and agrees that disclosure of lender usage, transaction volumes and related business activity may be necessary to administer, monitor or justify such arrangements and the Client gives full and irrevocable consent to such disclosure.
+
+The Client confirms that all business-level information supplied may be used and disclosed in accordance with this clause and waives any right to object to or restrict such use or disclosure where it falls within the scope of this Agreement.
       </pre>
     </div>
 
-    <form action="/register" method="POST" class="mt-6 space-y-4">
+    <form action="<%= (currentUser ? '/terms/accept' : '/register') %>" method="POST" class="mt-6 space-y-4">
       <!-- pass registration fields through -->
       <input type="hidden" name="firm_name" value="<%= formData.firm_name || '' %>">
       <input type="hidden" name="fca_firm_ref" value="<%= formData.fca_firm_ref || '' %>">
@@ -85,10 +105,12 @@ Reinstatement of services following suspension for non-payment shall occur only 
         disabled
         class="w-full px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-semibold opacity-50 cursor-not-allowed"
       >
-        Agree & Create Account
+        <%= (currentUser ? 'Agree & Continue' : 'Agree & Create Account') %>
       </button>
 
-      <a href="/register" class="block text-center text-sm text-slate-400 hover:text-emerald-300">Go back</a>
+      <a href="<%= (currentUser ? '/logout' : '/register') %>" class="block text-center text-sm text-slate-400 hover:text-emerald-300">
+  <%= (currentUser ? 'Log out' : 'Go back') %>
+</a>
     </form>
   </div>
 </div>
@@ -101,7 +123,7 @@ Reinstatement of services following suspension for non-payment shall occur only 
     const btn = document.getElementById('agreeBtn');
 
     function update() {
-      const atBottom = Math.ceil(box.scrollTop + box.clientHeight) >= box.scrollHeight;
+      const atBottom = box ? (Math.ceil(box.scrollTop + box.clientHeight) >= box.scrollHeight) : true;
       const agreed = checkbox.checked;
       const ok = atBottom && agreed;
 

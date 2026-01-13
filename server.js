@@ -10,6 +10,7 @@ const sqlite3 = require('sqlite3').verbose();
 const { google } = require('googleapis');
 const expressLayouts = require('express-ejs-layouts');
 const { sendEmail } = require('./utils/email');
+const CURRENT_TERMS_VERSION = process.env.TERMS_VERSION || '2026-01-13';
 
 const app = express();
 
@@ -62,6 +63,8 @@ db.serialize(() => {
   `);
 
   // Add missing columns safely (ignore "duplicate column" errors)
+db.run(`ALTER TABLE users ADD COLUMN terms_accepted_at TEXT`, (e) => {});
+db.run(`ALTER TABLE users ADD COLUMN terms_version TEXT`, (e) => {});
 db.run(`ALTER TABLE users ADD COLUMN is_active INTEGER DEFAULT 1`, (e) => {});
 db.run(`ALTER TABLE users ADD COLUMN unsubscribe_token TEXT`, (e) => {});
 db.run(`ALTER TABLE users ADD COLUMN firm_name TEXT`, (e) => {});
@@ -191,7 +194,7 @@ async function upsertDealerInSheet(dealer) {
   await jwt.authorize();
   const sheets = google.sheets({ version: 'v4', auth: jwt });
 
-  // Read DealerIDs
+  // Read DealerIDs (column A)
   const readRes = await sheets.spreadsheets.values.get({
     spreadsheetId,
     range: 'Dealers!A2:A',
@@ -201,26 +204,34 @@ async function upsertDealerInSheet(dealer) {
   const idx = ids.indexOf(String(dealer.dealerId));
 
   const baseValues = [
-    String(dealer.dealerId),      // A
-    dealer.name || '',            // B
-    dealer.email || '',           // C
-    dealer.phone || '',           // D
-    dealer.firmName || '',        // E FirmName
-    dealer.isActive === false ? 'FALSE' : 'TRUE', // F Active
-    dealer.createdAt || new Date().toISOString(), // G CreatedAt
+    String(dealer.dealerId),                          // A
+    dealer.name || '',                                // B
+    dealer.email || '',                               // C
+    dealer.phone || '',                               // D
+    dealer.firmName || '',                            // E
+    dealer.isActive === false ? 'FALSE' : 'TRUE',     // F
+    dealer.createdAt || new Date().toISOString(),     // G
   ];
 
-if (idx === -1) {
-  // Append A:G, leave H:L for formulas, set M UnsubscribeToken
-  await appendRowToSheet('Dealers', baseValues.concat([
-    "", "", "", "", "",          // H/I/J/K/L formula columns
-    dealer.unsubscribeToken || "" // M
-  ]));
-  return;
-}
+  // Your sheet header is "TermsAccepted" but code writes by column position (P)
+  const termsAcceptedAt = dealer.termsAcceptedAt || ''; // P
+  const termsVersion = dealer.termsVersion || '';       // Q
+
+  if (idx === -1) {
+    // Append A:G, leave H:L blank, set M token, N/O blank, then P/Q terms
+    await appendRowToSheet('Dealers', baseValues.concat([
+      "", "", "", "", "",                 // H:I:J:K:L
+      dealer.unsubscribeToken || "",      // M
+      "", "",                             // N:O
+      termsAcceptedAt,                    // P
+      termsVersion                        // Q
+    ]));
+    return;
+  }
+
   const rowNumber = idx + 2;
 
-  // Update ONLY A:F (do not touch formula cols)
+  // Update ONLY A:G
   await sheets.spreadsheets.values.update({
     spreadsheetId,
     range: `Dealers!A${rowNumber}:G${rowNumber}`,
@@ -228,7 +239,7 @@ if (idx === -1) {
     requestBody: { values: [baseValues] },
   });
 
-  // Update ONLY J (UnsubscribeToken)
+  // Update ONLY M (UnsubscribeToken)
   await sheets.spreadsheets.values.update({
     spreadsheetId,
     range: `Dealers!M${rowNumber}:M${rowNumber}`,
@@ -236,12 +247,20 @@ if (idx === -1) {
     requestBody: { values: [[dealer.unsubscribeToken || ""]] },
   });
 
-  // Update ONLY E (FirmName) so we don't touch formula columns
+  // Update ONLY E (FirmName)
   await sheets.spreadsheets.values.update({
     spreadsheetId,
-    range: `Dealers!E${rowNumber}:M${rowNumber}`,
+    range: `Dealers!E${rowNumber}:E${rowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: { values: [[dealer.firmName || ""]] },
+  });
+
+  // Update ONLY P:Q (TermsAccepted + TermsVersion)
+  await sheets.spreadsheets.values.update({
+    spreadsheetId,
+    range: `Dealers!P${rowNumber}:Q${rowNumber}`,
+    valueInputOption: 'USER_ENTERED',
+    requestBody: { values: [[termsAcceptedAt, termsVersion]] },
   });
 }
 
@@ -252,6 +271,24 @@ function ensureAuth(req, res, next) {
   }
   req.flash('error', 'Please log in to access this page.');
   res.redirect('/login');
+}
+
+function ensureTerms(req, res, next) {
+  // must be logged in
+  if (!req.session.user) return res.redirect('/login');
+
+  // allow these pages without terms
+  const allowed = ['/terms', '/logout', '/privacy-policy', '/cookie-policy', '/complaints-policy'];
+  if (allowed.includes(req.path)) return next();
+
+  const user = req.session.user;
+
+  // if user has NOT accepted current version -> force terms
+  if (!user.terms_version || user.terms_version !== CURRENT_TERMS_VERSION) {
+    return res.redirect('/terms');
+  }
+
+  next();
 }
 
 // Routes
@@ -304,15 +341,74 @@ if (password !== confirmPassword) {
   return res.redirect('/terms');
 });
 
-// Terms page shown before registration
 app.get('/terms', (req, res) => {
-  if (!req.session.pendingRegister || !req.session.pendingPassword) {
-    req.flash('error', 'Please complete registration first.');
-    return res.redirect('/register');
+  // Case 1: New registration flow (pending)
+  if (req.session.pendingRegister && req.session.pendingPassword) {
+    return res.render('terms', { formData: req.session.pendingRegister });
   }
 
-  res.render('terms', { formData: req.session.pendingRegister });
+  // Case 2: Existing logged-in user forced to accept new terms
+  if (req.session.user) {
+    return res.render('terms', { formData: {
+      firm_name: req.session.user.firm_name || '',
+      fca_firm_ref: req.session.user.fca_firm_ref || '',
+      name: req.session.user.name || '',
+      email: req.session.user.email || '',
+      mobile_number: req.session.user.mobile_number || ''
+    }});
+  }
+
+  // Otherwise not logged in
+  req.flash('error', 'Please log in to view the terms.');
+  return res.redirect('/login');
 });
+
+app.post('/terms/accept', ensureAuth, async (req, res) => {
+  if (req.body.agree_terms !== 'yes') {
+    req.flash('error', 'You must agree to the Client Service Agreement to continue.');
+    return res.redirect('/terms');
+  }
+
+  const userId = req.session.user.id;
+  const acceptedAt = getUKTimestamp();
+
+  // Save in SQLite
+  db.run(
+    'UPDATE users SET terms_accepted_at = ?, terms_version = ? WHERE id = ?',
+    [acceptedAt, CURRENT_TERMS_VERSION, userId],
+    async (err) => {
+      if (err) {
+        console.error(err);
+        req.flash('error', 'Could not save your agreement. Please try again.');
+        return res.redirect('/terms');
+      }
+
+      // Update session so middleware stops redirecting
+      req.session.user.terms_accepted_at = acceptedAt;
+      req.session.user.terms_version = CURRENT_TERMS_VERSION;
+
+      // Update Google Sheet P/Q
+      try {
+        await upsertDealerInSheet({
+          dealerId: userId,
+          name: req.session.user.name,
+          email: req.session.user.email,
+          phone: req.session.user.mobile_number,
+          firmName: req.session.user.firm_name || '',
+          isActive: true,
+          createdAt: acceptedAt,
+          unsubscribeToken: req.session.user.unsubscribe_token || '',
+          termsAcceptedAt: acceptedAt,
+          termsVersion: CURRENT_TERMS_VERSION
+        });
+      } catch (e) {
+        console.error('Dealer Sheets terms update failed:', e.message);
+      }
+
+      return res.redirect('/dashboard');
+      }
+    );
+  });
 
 // About page
 app.get('/about', (req, res) => {
@@ -355,6 +451,10 @@ app.post('/register', async (req, res) => {
   const crypto = require('crypto');
   const unsubscribeToken = crypto.randomBytes(24).toString('hex');
 
+  const termsAcceptedAt = getUKTimestamp();
+const termsVersion = CURRENT_TERMS_VERSION;
+
+
   // ... keep the db.run INSERT below as-is ...
   db.run(
     'INSERT INTO users (email, password_hash, name, firm_name, fca_firm_ref, mobile_number, verification_token) VALUES (?, ?, ?, ?, ?, ?, ?)',
@@ -371,21 +471,31 @@ app.post('/register', async (req, res) => {
       }
 
 
-      // ✅ Auto-login
       req.session.user = {
-        id: this.lastID,
-        email: email.toLowerCase(),
-        name,
-        mobile_number,
-        is_verified: 0,
-      };
+  id: this.lastID,
+  email: email.toLowerCase(),
+  name,
+  mobile_number,
+  is_verified: 0,
+  terms_version: termsVersion,
+  terms_accepted_at: termsAcceptedAt,
+  firm_name,
+  fca_firm_ref,
+  unsubscribe_token: unsubscribeToken
+};
+
 
       req.flash('success', 'Welcome! Your account has been created.');
      
  // ✅ Add/Update dealer in Google Sheets "Dealers" tab
 db.run(
-  'UPDATE users SET unsubscribe_token = ?, is_active = 1 WHERE id = ?',
-  [unsubscribeToken, this.lastID]
+  `UPDATE users
+   SET unsubscribe_token = ?,
+       is_active = 1,
+       terms_accepted_at = ?,
+       terms_version = ?
+   WHERE id = ?`,
+  [unsubscribeToken, termsAcceptedAt, termsVersion, this.lastID]
 );
     
       
@@ -394,11 +504,13 @@ try {
   dealerId: this.lastID,
   name,
   email: email.toLowerCase(),
-  phone: "'" + mobile_number,
+  phone: mobile_number,
   firmName: firm_name,
   createdAt: getUKTimestamp(),
   isActive: true,
   unsubscribeToken,
+  termsAcceptedAt,
+  termsVersion,
 });
 } catch (e) {
   console.error('Dealer Sheets upsert failed:', e.message);
@@ -468,14 +580,20 @@ app.post('/login', (req, res) => {
         return res.redirect('/login');
       }
 
-      // Logged in
       req.session.user = {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        mobile_number: user.mobile_number,
-        is_verified: user.is_verified === 1,
-      };
+  id: user.id,
+  email: user.email,
+  name: user.name,
+  mobile_number: user.mobile_number,
+  is_verified: user.is_verified === 1,
+  terms_version: user.terms_version || null,
+  terms_accepted_at: user.terms_accepted_at || null,
+  firm_name: user.firm_name || '',
+  fca_firm_ref: user.fca_firm_ref || '',
+  unsubscribe_token: user.unsubscribe_token || ''
+};
+
+
 
       // Ensure unsubscribe token exists
       const crypto = require('crypto');
@@ -671,7 +789,7 @@ app.post('/reset-password/:token', async (req, res) => {
 });
 
 // Dashboard
-app.get('/dashboard', ensureAuth, (req, res) => {
+app.get('/dashboard', ensureAuth, ensureTerms, (req, res) => {
   const userId = req.session.user.id;
 
   db.all(
@@ -688,11 +806,11 @@ app.get('/dashboard', ensureAuth, (req, res) => {
 });
 
 // New report form
-app.get('/reports/new', ensureAuth, (req, res) => {
+app.get('/reports/new', ensureAuth, ensureTerms, (req, res) => {
   res.render('report_form', { report: null });
 });
 
-app.post('/reports/new', ensureAuth, async (req, res) => {
+app.post('/reports/new', ensureAuth, ensureTerms, async (req, res) => {
   const userId = req.session.user.id;
   const { reporting_month, confirm_submission, ...dataFields } = req.body;
 
@@ -806,7 +924,7 @@ async function updateGoogleSheetRowByReportId(reportId, updatedRowValues) {
   }
 
 // View & edit report
-app.get('/reports/:id/edit', ensureAuth, (req, res) => {
+app.get('/reports/:id/edit', ensureAuth, ensureTerms, (req, res) => {
   const reportId = req.params.id;
   const userId = req.session.user.id;
 
@@ -829,7 +947,7 @@ app.get('/reports/:id/edit', ensureAuth, (req, res) => {
   );
 });
 
-app.post('/reports/:id/edit', ensureAuth, (req, res) => {
+app.post('/reports/:id/edit', ensureAuth, ensureTerms, (req, res) => {
   const reportId = req.params.id;
   const userId = req.session.user.id;
   const { reporting_month, ...dataFields } = req.body;
@@ -901,7 +1019,7 @@ app.post('/reports/:id/edit', ensureAuth, (req, res) => {
 });
 
 // List reports (history)
-app.get('/reports', ensureAuth, (req, res) => {
+app.get('/reports', ensureAuth, ensureTerms, (req, res) => {
   const userId = req.session.user.id;
 
   db.all(
@@ -979,4 +1097,3 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
