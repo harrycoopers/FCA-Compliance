@@ -136,8 +136,21 @@ The Client confirms that all business-level information supplied may be used and
     const checkbox = document.getElementById('agree');
     const btn = document.getElementById('agreeBtn');
 
+    if (!checkbox || !btn) return;
+
+    function isAtBottom(el) {
+      if (!el) return true;
+
+      // If it doesn't actually scroll (content fits), treat as "at bottom"
+      if (el.scrollHeight <= el.clientHeight + 2) return true;
+
+      // Tolerance fixes sub-pixel / mobile browser rounding issues
+      const remaining = el.scrollHeight - el.scrollTop - el.clientHeight;
+      return remaining <= 3;
+    }
+
     function update() {
-      const atBottom = box ? (Math.ceil(box.scrollTop + box.clientHeight) >= box.scrollHeight) : true;
+      const atBottom = isAtBottom(box);
       const agreed = checkbox.checked;
       const ok = atBottom && agreed;
 
@@ -147,8 +160,19 @@ The Client confirms that all business-level information supplied may be used and
       btn.classList.toggle('hover:bg-emerald-400', ok);
     }
 
-    box.addEventListener('scroll', update);
+    // Some browsers don't reliably fire scroll the way you'd expect
+    if (box) {
+      box.addEventListener('scroll', update, { passive: true });
+      box.addEventListener('touchmove', update, { passive: true });
+    }
     checkbox.addEventListener('change', update);
+
+    // Re-check after layout/font changes
+    window.addEventListener('load', update);
+    window.addEventListener('resize', update);
+    setTimeout(update, 250);
+    setTimeout(update, 1000);
+
     update();
   })();
 </script>
