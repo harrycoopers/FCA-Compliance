@@ -30,6 +30,19 @@ function getUKTimestamp() {
   });
 }
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function cleanEmailHeader(value = '') {
+  return String(value).replace(/[\r\n]/g, ' ').trim();
+}
+
 function normalizeUKMobile(input) {
   if (!input) return '';
 
@@ -425,6 +438,105 @@ app.get('/contact', (req, res) => {
     pageTitle: 'Contact | 009 Compliance',
     pageDescription: 'Get in touch with 009 Compliance for help with monthly reporting, oversight evidence, and portal support.'
   });
+});
+
+app.post('/contact', async (req, res) => {
+  const {
+    first_name,
+    last_name,
+    phone_number,
+    company_name,
+    email,
+    message
+  } = req.body;
+
+  const enquiry = {
+    first_name: String(first_name || '').trim(),
+    last_name: String(last_name || '').trim(),
+    phone_number: String(phone_number || '').trim(),
+    company_name: String(company_name || '').trim(),
+    email: String(email || '').trim(),
+    message: String(message || '').trim()
+  };
+
+  const requiredFields = Object.values(enquiry);
+  const wantsJson = req.xhr || req.headers.accept?.includes('application/json');
+
+  if (requiredFields.some((field) => !String(field || '').trim())) {
+    if (wantsJson) {
+      return res.status(400).json({
+        ok: false,
+        message: 'Please complete all required fields before submitting your enquiry.'
+      });
+    }
+
+    req.flash('error', 'Please complete all required fields before submitting your enquiry.');
+    return res.redirect('/contact');
+  }
+
+  const submittedAt = getUKTimestamp();
+
+  try {
+    await sendEmail({
+      to: 'info@009compliance.com',
+      replyTo: cleanEmailHeader(enquiry.email),
+      subject: cleanEmailHeader(`New website enquiry from ${enquiry.first_name} ${enquiry.last_name}`),
+      html: `
+        <h2>New website enquiry</h2>
+        <p>A new enquiry has been submitted through the 009 Compliance contact page.</p>
+        <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 720px;">
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>First Name</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(enquiry.first_name)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Last Name</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(enquiry.last_name)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Phone Number</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(enquiry.phone_number)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Company Name</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(enquiry.company_name)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Email</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(enquiry.email)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Submitted</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(submittedAt)}</td>
+          </tr>
+        </table>
+        <h3>Message</h3>
+        <p style="white-space: pre-line;">${escapeHtml(enquiry.message)}</p>
+      `
+    });
+
+    if (wantsJson) {
+      return res.json({
+        ok: true,
+        message: 'Enquiry Sent'
+      });
+    }
+
+    req.flash('success', 'Thank you. Your enquiry has been sent and we will get back to you as soon as possible.');
+    return res.redirect('/contact');
+  } catch (err) {
+    console.error('Contact enquiry email failed:', err);
+
+    if (wantsJson) {
+      return res.status(500).json({
+        ok: false,
+        message: 'Unable to send your enquiry at the moment. Please email info@009compliance.com directly.'
+      });
+    }
+
+    req.flash('error', 'Unable to send your enquiry at the moment. Please email info@009compliance.com directly.');
+    return res.redirect('/contact');
+  }
 });
 
 
@@ -1064,6 +1176,17 @@ app.get('/debug-env', (req, res) => {
 
 app.get('/services', (req, res) => {
   res.render('services');
+});
+
+app.get('/ccr009-return-assistance-motor-dealers', (req, res) => {
+  res.render('ccr009_return_assistance_motor_dealers', {
+    pageTitle: 'CCR009 Return Assistance for Motor Dealers | FCA CCR009 Reporting Support | 009 Compliance Ltd',
+    pageDescription: 'CCR009 return assistance for FCA authorised motor dealers. Practical support with FCA CCR009 reporting, RegData submissions, finance introductions, commission reporting, lender relationships, prudential resources and annual FCA reporting obligations',
+    robots: 'index,follow',
+    ogTitle: 'CCR009 Return Assistance for Motor Dealers | 009 Compliance Ltd',
+    ogDescription: 'Practical FCA CCR009 reporting support for motor dealers, including RegData preparation, finance introductions, commission reporting and lender relationship information.',
+    ogType: 'article'
+  });
 });
 
 app.get('/pricing', (req, res) => {

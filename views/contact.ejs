@@ -61,8 +61,72 @@
     <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
       <p class="text-slate-200 font-semibold">Prefer Email?</p>
       <p class="text-sm text-slate-400 mt-2">
-        Send your firm name and what you need help with — monthly reporting, CCR support, or portal setup.
+        Send your firm name and what you need help with monthly reporting, CCR support or portal setup.
       </p>
     </div>
+
+    <section id="send-message" class="contact-enquiry-card" aria-labelledby="contact-enquiry-title">
+      <div class="contact-enquiry-toast" data-contact-enquiry-toast role="status" aria-live="polite">
+        <div class="contact-enquiry-toast__icon">✓</div>
+        <div>
+          <p class="contact-enquiry-toast__title">Enquiry Sent</p>
+          <p class="contact-enquiry-toast__text">Thank you. We'll get back to you as soon as possible.</p>
+        </div>
+      </div>
+
+      <div class="contact-enquiry-panel">
+        <div class="contact-enquiry-accent">
+          <p class="contact-enquiry-kicker">FCA Compliance Enquiry</p>
+          <h2 id="contact-enquiry-title">Send Us a Message</h2>
+          <p>Complete the form below and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <form class="contact-enquiry-form" action="/contact" method="POST" data-contact-enquiry-form novalidate>
+          <div class="contact-form-status" data-contact-form-status aria-live="polite"></div>
+
+          <div class="contact-field-grid">
+            <div class="contact-field">
+              <label for="contactFirstName">First Name</label>
+              <input id="contactFirstName" name="first_name" type="text" autocomplete="given-name" required />
+              <p class="contact-field-error" data-error-for="contactFirstName"></p>
+            </div>
+
+            <div class="contact-field">
+              <label for="contactLastName">Last Name</label>
+              <input id="contactLastName" name="last_name" type="text" autocomplete="family-name" required />
+              <p class="contact-field-error" data-error-for="contactLastName"></p>
+            </div>
+
+            <div class="contact-field">
+              <label for="contactPhone">Phone Number</label>
+              <input id="contactPhone" name="phone_number" type="tel" autocomplete="tel" required />
+              <p class="contact-field-error" data-error-for="contactPhone"></p>
+            </div>
+
+            <div class="contact-field">
+              <label for="contactCompany">Company Name</label>
+              <input id="contactCompany" name="company_name" type="text" autocomplete="organization" required />
+              <p class="contact-field-error" data-error-for="contactCompany"></p>
+            </div>
+          </div>
+
+          <div class="contact-field">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" required />
+            <p class="contact-field-error" data-error-for="contactEmail"></p>
+          </div>
+
+          <div class="contact-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="7" required></textarea>
+            <p class="contact-field-error" data-error-for="contactMessage"></p>
+          </div>
+
+          <div class="contact-form-actions">
+            <button type="submit" class="contact-submit-button">Submit enquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
   </div>
 </div>
