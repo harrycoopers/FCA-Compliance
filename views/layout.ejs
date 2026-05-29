@@ -77,7 +77,29 @@
     <nav class="hidden lg:flex items-center gap-8 text-sm mx-auto">
       <a href="/" class="hover:text-emerald-400 transition">Home</a>
       <a href="/about" class="hover:text-emerald-400 transition">About</a>
-      <a href="/services" class="hover:text-emerald-400 transition">Services</a>
+      <div class="relative group">
+        <a
+          href="/services"
+          class="inline-flex items-center gap-1 hover:text-emerald-400 transition"
+          aria-haspopup="true"
+        >
+          Services
+          <span class="text-xs" aria-hidden="true">▾</span>
+        </a>
+        <div class="pointer-events-none absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+          <div class="rounded-xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-950/20">
+            <a href="/fca-authorisation-motor-dealers" class="block rounded-lg px-3 py-2 text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+              FCA Licence
+            </a>
+            <a href="/motor-dealer-compliance" class="block rounded-lg px-3 py-2 text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+              Motor Dealer Compliance
+            </a>
+            <a href="/ccr009-return-assistance-motor-dealers" class="block rounded-lg px-3 py-2 text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+              CCR009
+            </a>
+          </div>
+        </div>
+      </div>
       <a href="/contact" class="hover:text-emerald-400 transition">Contact</a>
       <a href="/pricing" class="hover:text-emerald-400 transition">Pricing</a>
     </nav>
@@ -119,6 +141,11 @@
     <a href="/" class="block hover:text-orange-500 transition">Home</a>
     <a href="/about" class="block hover:text-orange-500 transition">About</a>
     <a href="/services" class="block hover:text-orange-500 transition">Services</a>
+    <div class="pl-4 space-y-2 border-l border-slate-200">
+      <a href="/fca-authorisation-motor-dealers" class="block hover:text-orange-500 transition">FCA Licence</a>
+      <a href="/motor-dealer-compliance" class="block hover:text-orange-500 transition">Motor Dealer Compliance</a>
+      <a href="/ccr009-return-assistance-motor-dealers" class="block hover:text-orange-500 transition">CCR009</a>
+    </div>
     <a href="/contact" class="block hover:text-orange-500 transition">Contact</a>
     <a href="/pricing" class="block hover:text-orange-500 transition">Pricing</a>
 
