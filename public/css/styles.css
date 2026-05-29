@@ -1825,3 +1825,44 @@ footer a:hover {
     filter: none;
   }
 }
+
+/* ===============================
+   FCA Authorisation Page
+   =============================== */
+
+.authorisation-page .ccr009-hero h1 {
+  max-width: 13ch;
+}
+
+.authorisation-page .ccr009-hero__lead {
+  max-width: 62ch;
+}
+
+.authorisation-fee-panel .ccr009-hero__panel-top p {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.authorisation-note {
+  border-color: rgba(220, 38, 38, 0.45);
+  background: rgba(220, 38, 38, 0.04);
+  box-shadow:
+    0 0 0 1px rgba(220, 38, 38, 0.25),
+    0 0 22px rgba(220, 38, 38, 0.25);
+}
+
+.authorisation-note .services-h2 {
+  color: #b91c1c;
+}
+
+.authorisation-note .services-p {
+  color: #7f1d1d;
+}
+
+@media (max-width: 640px) {
+  .authorisation-page .ccr009-hero h1 {
+    max-width: 11ch;
+  }
+}

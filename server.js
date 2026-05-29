@@ -1189,6 +1189,28 @@ app.get('/ccr009-return-assistance-motor-dealers', (req, res) => {
   });
 });
 
+app.get('/fca-authorisation-motor-dealers', (req, res) => {
+  res.render('fca_authorisation_motor_dealers', {
+    pageTitle: 'FCA Authorisation for Motor Dealers - Fixed Fee £1,000 | FCA Licence Application Support',
+    pageDescription: 'Apply for FCA authorisation for a fixed fee of £1,000 plus FCA fees. Includes business plan, compliance documents, FCA Connect application support, interview preparation and ongoing assistance for motor dealers seeking FCA approval and credit broking permissions.',
+    robots: 'index,follow',
+    ogTitle: 'FCA Authorisation for Motor Dealers | Fixed Fee £1,000',
+    ogDescription: 'Fixed-fee FCA authorisation and credit broking application support for motor dealers, including business plan, compliance documents, FCA Connect support and interview preparation.',
+    ogType: 'article'
+  });
+});
+
+app.get('/motor-dealer-compliance', (req, res) => {
+  res.render('motor_dealer_compliance', {
+    pageTitle: 'Motor Dealer Compliance | FCA Compliance Support for Motor Dealers | 009 Compliance Ltd',
+    pageDescription: 'Practical motor dealer compliance support including FCA authorisation, CCR009 reporting, CCR007 reporting, Consumer Duty, compliance documentation, website compliance reviews and ongoing FCA compliance assistance for motor dealers.',
+    robots: 'index,follow',
+    ogTitle: 'Motor Dealer Compliance | 009 Compliance Ltd',
+    ogDescription: 'Practical FCA compliance support for motor dealers, including authorisation, CCR009, CCR007, Consumer Duty, documentation, website reviews and ongoing compliance assistance.',
+    ogType: 'article'
+  });
+});
+
 app.get('/pricing', (req, res) => {
   res.render('pricing');
 });
