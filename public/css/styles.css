@@ -1838,6 +1838,24 @@ footer a:hover {
   max-width: 62ch;
 }
 
+.authorisation-price-highlight {
+  display: inline-block;
+  margin: 0;
+  padding: 0 1px;
+  color: #c2410c;
+  font-size: clamp(1.3rem, 1.05rem + 0.8vw, 1.85rem);
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.authorisation-fee-panel .authorisation-price-highlight {
+  margin-top: 4px;
+  padding: 0 1px;
+  color: #b91c1c;
+  font-size: clamp(2.3rem, 1.75rem + 2vw, 3.5rem);
+}
+
 .authorisation-fee-panel .ccr009-hero__panel-top p {
   margin-top: 10px;
   color: #475569;
