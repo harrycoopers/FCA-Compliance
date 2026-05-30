@@ -1884,3 +1884,62 @@ footer a:hover {
     max-width: 11ch;
   }
 }
+@keyframes fca-license-border-pulse {
+  0% {
+    border-color: rgba(239, 68, 68, 0.75);
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.28), 0 22px 44px rgba(127, 29, 29, 0.34);
+  }
+
+  33% {
+    border-color: rgba(250, 204, 21, 0.85);
+    box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.32), 0 22px 44px rgba(133, 77, 14, 0.3);
+  }
+
+  66% {
+    border-color: rgba(16, 185, 129, 0.8);
+    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.3), 0 22px 44px rgba(6, 78, 59, 0.32);
+  }
+
+  100% {
+    border-color: rgba(239, 68, 68, 0.75);
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.28), 0 22px 44px rgba(127, 29, 29, 0.34);
+  }
+}
+
+.pricing-card--fca-license {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  animation: fca-license-border-pulse 4s ease-in-out infinite;
+}
+
+.pricing-card--fca-license::before {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -58px;
+  z-index: -1;
+  width: 260px;
+  height: 160px;
+  border-radius: 999px;
+  background: rgba(239, 68, 68, 0.24);
+  filter: blur(36px);
+  animation: homeCcrCtaGlow 7s ease-in-out infinite alternate;
+}
+
+.pricing-card--fca-license > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card--fca-license {
+    animation: none;
+    border-color: rgba(239, 68, 68, 0.75);
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.28), 0 22px 44px rgba(127, 29, 29, 0.34);
+  }
+
+  .pricing-card--fca-license::before {
+    animation: none;
+  }
+}
