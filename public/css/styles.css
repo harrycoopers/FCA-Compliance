@@ -1642,6 +1642,7 @@ footer a:hover {
 
 .ccr009-section,
 .ccr009-final-cta {
+  scroll-margin-top: 104px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.94);
@@ -1786,6 +1787,180 @@ footer a:hover {
   border-bottom: 0;
 }
 
+.ccr009-aside__card a {
+  display: block;
+  color: #334155;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.ccr009-aside__card a:hover {
+  color: #c2410c;
+  text-decoration: none;
+}
+
+.ccr009-guide-page {
+  padding: 48px 0 64px;
+}
+
+.ccr009-guide-hero .ccr009-hero h1,
+.ccr009-guide-hero h1 {
+  max-width: 13ch;
+}
+
+.ccr009-guide-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.ccr009-guide-card {
+  position: relative;
+  min-height: 156px;
+  padding: 18px 18px 18px 52px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 247, 237, 0.65), rgba(255, 255, 255, 0.96)),
+    #ffffff;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.055);
+}
+
+.ccr009-guide-card__tick {
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #f97316;
+  box-shadow: 0 0 0 5px rgba(249, 115, 22, 0.13);
+}
+
+.ccr009-guide-card__tick::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  width: 7px;
+  height: 11px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.ccr009-guide-card .services-p {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.ccr009-guide-card__details {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.ccr009-guide-card__details div {
+  padding-top: 10px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.ccr009-guide-card__details dt {
+  color: #9a3412;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ccr009-guide-card__details dd {
+  margin: 4px 0 0;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ccr009-guide-note {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid rgba(249, 115, 22, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 247, 237, 0.72);
+}
+
+.ccr009-guide-table-wrap {
+  width: 100%;
+  margin-top: 22px;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.055);
+}
+
+.ccr009-guide-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.ccr009-guide-table th,
+.ccr009-guide-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: left;
+  vertical-align: top;
+}
+
+.ccr009-guide-table th {
+  background: #fff7ed;
+  color: #111827;
+  font-weight: 850;
+}
+
+.ccr009-guide-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.ccr009-guide-table a,
+.ccr009-section a {
+  color: #c2410c;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ccr009-guide-table a:hover,
+.ccr009-section a:hover {
+  color: #9a3412;
+  text-decoration: none;
+}
+
+.ccr009-guide-support {
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.ccr009-guide-official .ccr009-bullets li span {
+  display: block;
+  margin-top: 4px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.ccr009-guide-cta-grid {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.ccr009-guide-disclaimer {
+  margin-top: 28px;
+}
+
 /* Subtle one-time reveal animation used by main.js */
 .sa-reveal {
   opacity: 1;
@@ -1870,6 +2045,14 @@ footer a:hover {
 
   .ccr009-stat-grid div:last-child {
     border-bottom: 0;
+  }
+
+  .ccr009-guide-page {
+    padding-top: 28px;
+  }
+
+  .ccr009-guide-card-grid {
+    grid-template-columns: 1fr;
   }
 }
 

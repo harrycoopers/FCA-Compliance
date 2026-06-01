@@ -1,0 +1,201 @@
+<%
+  const guideSectionId = (section, index) => section.id || `${page.slug.replace(/^\//, '')}-section-${index + 1}`;
+%>
+<main class="ccr009-page ccr009-guide-page">
+  <section class="ccr009-hero ccr009-guide-hero sa-reveal">
+    <div class="ccr009-hero__inner">
+      <div class="ccr009-hero__copy">
+        <p class="ccr009-eyebrow"><%= page.eyebrow %></p>
+        <h1><%= page.h1 %></h1>
+        <p class="ccr009-hero__lead"><%= page.intro %></p>
+        <div class="ccr009-actions">
+          <a class="ccr009-btn ccr009-btn--primary" href="<%= page.primaryLink.href %>"><%= page.primaryLink.label %></a>
+          <a class="ccr009-btn ccr009-btn--secondary" href="<%= page.secondaryLink?.href || '/contact' %>"><%= page.secondaryLink?.label || 'Ask a Question' %></a>
+        </div>
+      </div>
+      <div class="ccr009-hero__panel" aria-label="<%= page.panel.title %>">
+        <div class="ccr009-hero__panel-top">
+          <span><%= page.panel.kicker %></span>
+          <strong><%= page.panel.title %></strong>
+        </div>
+        <div class="ccr009-stat-grid">
+          <% page.panel.stats.forEach((stat) => { %>
+            <div>
+              <span><%= stat.label %></span>
+              <strong><%= stat.value %></strong>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ccr009-content">
+    <div class="ccr009-content__main">
+      <% if (page.summaryCards) { %>
+        <section class="ccr009-section ccr009-guide-summary sa-reveal">
+          <h2 class="services-h2"><%= page.summaryHeading || 'What this guide covers' %></h2>
+          <div class="ccr009-guide-card-grid">
+            <% page.summaryCards.forEach((card) => { %>
+              <div class="ccr009-guide-card">
+                <span class="ccr009-guide-card__tick" aria-hidden="true"></span>
+                <h3 class="services-h3"><%= card.title %></h3>
+                <p class="services-p"><%- card.text %></p>
+              </div>
+            <% }) %>
+          </div>
+        </section>
+      <% } %>
+
+      <% page.sections.forEach((section, index) => { %>
+        <article id="<%= guideSectionId(section, index) %>" class="ccr009-section <%= index === 0 ? 'ccr009-section--feature' : '' %> sa-reveal">
+          <h2 class="services-h2"><%= section.heading %></h2>
+
+          <% if (section.text) { %>
+            <% section.text.forEach((paragraph) => { %>
+              <p class="services-p"><%- paragraph %></p>
+            <% }) %>
+          <% } %>
+
+          <% if (section.items) { %>
+            <ul class="services-bullets ccr009-bullets <%= section.grid ? 'ccr009-bullets--grid' : '' %>">
+              <% section.items.forEach((item) => { %>
+                <li><%- item %></li>
+              <% }) %>
+            </ul>
+          <% } %>
+
+          <% if (section.cards) { %>
+            <div class="ccr009-guide-card-grid">
+              <% section.cards.forEach((card) => { %>
+                <div class="ccr009-guide-card">
+                  <span class="ccr009-guide-card__tick" aria-hidden="true"></span>
+                  <h3 class="services-h3"><%= card.title %></h3>
+                  <p class="services-p"><%- card.text %></p>
+                  <% if (card.details) { %>
+                    <dl class="ccr009-guide-card__details">
+                      <% card.details.forEach((detail) => { %>
+                        <div>
+                          <dt><%= detail.label %></dt>
+                          <dd><%- detail.text %></dd>
+                        </div>
+                      <% }) %>
+                    </dl>
+                  <% } %>
+                </div>
+              <% }) %>
+            </div>
+          <% } %>
+
+          <% if (section.table) { %>
+            <div class="ccr009-guide-table-wrap">
+              <table class="ccr009-guide-table">
+                <thead>
+                  <tr>
+                    <% section.table.headers.forEach((header) => { %>
+                      <th><%= header %></th>
+                    <% }) %>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% section.table.rows.forEach((row) => { %>
+                    <tr>
+                      <% row.forEach((cell) => { %>
+                        <td><%- cell %></td>
+                      <% }) %>
+                    </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+          <% } %>
+
+          <% if (section.note) { %>
+            <div class="ccr009-guide-note">
+              <h3 class="services-h3"><%= section.note.title %></h3>
+              <p class="services-p"><%- section.note.text %></p>
+            </div>
+          <% } %>
+        </article>
+      <% }) %>
+
+      <% if (!page.hideSupportBox) { %>
+        <article class="ccr009-guide-support ccr009-section ccr009-section--accent sa-reveal">
+          <span class="ccr009-eyebrow">Need help with this?</span>
+          <h2 class="services-h2"><%= page.support.title %></h2>
+          <p class="services-p"><%= page.support.text %></p>
+          <div class="ccr009-actions ccr009-actions--section">
+            <a class="ccr009-btn ccr009-btn--primary" href="<%= page.support.href %>"><%= page.support.button %></a>
+            <a class="ccr009-btn ccr009-btn--secondary" href="/contact">Contact 009 Compliance</a>
+          </div>
+        </article>
+      <% } %>
+
+      <section class="ccr009-section ccr009-faq sa-reveal">
+        <h2 class="services-h2">Frequently Asked Questions</h2>
+        <% page.faqs.forEach((faq) => { %>
+          <div class="ccr009-faq__item">
+            <h3 class="services-h3"><%= faq.question %></h3>
+            <p class="services-p"><%= faq.answer %></p>
+          </div>
+        <% }) %>
+      </section>
+
+      <% if (page.officialLinks) { %>
+        <section class="ccr009-section ccr009-guide-official sa-reveal">
+          <h2 class="services-h2"><%= page.officialHeading || 'Official FCA resources' %></h2>
+          <p class="services-p">These official FCA pages may help you check the current position before making decisions or submitting information.</p>
+          <ul class="services-bullets ccr009-bullets">
+            <% page.officialLinks.forEach((link) => { %>
+              <li><a href="<%= link.href %>" target="_blank" rel="noopener noreferrer"><%= link.label %></a> <span><%= link.text %></span></li>
+            <% }) %>
+          </ul>
+        </section>
+      <% } %>
+    </div>
+
+    <aside class="ccr009-aside sa-reveal">
+      <div class="ccr009-aside__card">
+        <span><%= page.guideLabel || 'Guide' %></span>
+        <ul>
+          <% page.sections.forEach((section, index) => { %>
+            <li><a href="#<%= guideSectionId(section, index) %>"><%= section.heading %></a></li>
+          <% }) %>
+        </ul>
+        <a class="ccr009-btn ccr009-btn--primary ccr009-btn--full" href="<%= page.primaryLink.href %>"><%= page.primaryLink.label %></a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="ccr009-final-cta sa-reveal">
+    <span class="ccr009-eyebrow"><%= page.cta.eyebrow || 'Practical support' %></span>
+    <h2 class="services-h2"><%= page.cta.title %></h2>
+    <p class="services-p"><%= page.cta.text %></p>
+    <% if (page.cta.cards) { %>
+      <div class="services-link-grid ccr009-guide-cta-grid">
+        <% page.cta.cards.forEach((card) => { %>
+          <a class="services-link-card" href="<%= card.href %>">
+            <span class="services-link-card__label"><%= card.title %></span>
+            <span class="services-link-card__text"><%= card.text %></span>
+            <span class="services-link-card__cta"><%= card.button %></span>
+          </a>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <div class="ccr009-actions ccr009-actions--section">
+        <a class="ccr009-btn ccr009-btn--primary" href="<%= page.cta.href %>"><%= page.cta.button %></a>
+      </div>
+    <% } %>
+  </section>
+
+  <section class="services-important-note ccr009-guide-disclaimer sa-reveal">
+    <h3 class="services-h3">Guidance note</h3>
+    <p class="services-p">
+      This page provides general information only. It is not legal or regulatory advice. Firms remain responsible for checking their own FCA permissions, RegData schedule and reporting obligations.
+    </p>
+  </section>
+</main>
+
+<script type="application/ld+json">
+<%- JSON.stringify(faqSchema, null, 2) %>
+</script>
