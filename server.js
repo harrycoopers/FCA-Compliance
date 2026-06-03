@@ -1185,7 +1185,8 @@ app.get('/ccr009-return-assistance-motor-dealers', (req, res) => {
     robots: 'index,follow',
     ogTitle: 'CCR009 Return Assistance for Motor Dealers | 009 Compliance Ltd',
     ogDescription: 'Practical FCA CCR009 reporting support for motor dealers, including RegData preparation, finance introductions, commission reporting and lender relationship information.',
-    ogType: 'article'
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/ccr009-return-assistance-motor-dealers'
   });
 });
 
@@ -1788,6 +1789,61 @@ function enrichGuidePage(page) {
     }
   }
 
+  if (!page.hubCta) {
+    if (page.slug.includes('ccr009') || page.slug.includes('when-is')) {
+      page.hubCta = {
+        top: {
+          eyebrow: 'CCR009 support for motor dealers',
+          title: 'CCR009 return assistance for motor dealers',
+          text: 'Use this guide alongside practical CCR009 return assistance for motor dealers.',
+          href: '/ccr009-return-assistance-motor-dealers',
+          primaryLabel: 'View CCR009 Return Assistance'
+        },
+        bottom: {
+          eyebrow: 'CCR009 return assistance',
+          title: 'Get CCR009 support for motor dealers',
+          text: 'For practical help organising CCR009 reporting information, use the main CCR009 return assistance service page.',
+          href: '/ccr009-return-assistance-motor-dealers',
+          primaryLabel: 'Get CCR009 Support'
+        }
+      };
+    } else if (page.slug.includes('consumer-duty') || page.slug.includes('website-compliance') || page.slug.includes('compliance')) {
+      page.hubCta = {
+        top: {
+          eyebrow: 'FCA compliance support for motor dealers',
+          title: 'Motor dealer compliance support',
+          text: 'Use this guide alongside ongoing FCA compliance support for motor dealers.',
+          href: '/motor-dealer-compliance',
+          primaryLabel: 'View Motor Dealer Compliance Support'
+        },
+        bottom: {
+          eyebrow: 'Ongoing FCA compliance support',
+          title: 'Get ongoing FCA compliance support',
+          text: 'For practical help keeping motor dealer compliance organised, use the main motor dealer compliance support page.',
+          href: '/motor-dealer-compliance',
+          primaryLabel: 'Get Ongoing FCA Compliance Support'
+        }
+      };
+    } else if (page.slug.includes('fca') || page.slug.includes('credit-broking') || page.slug.includes('approval')) {
+      page.hubCta = {
+        top: {
+          eyebrow: 'FCA authorisation support for motor dealers',
+          title: 'FCA authorisation for motor dealers',
+          text: 'Use this guide alongside the main FCA authorisation support for motor dealers service page.',
+          href: '/fca-authorisation-motor-dealers',
+          primaryLabel: 'View FCA Authorisation Support'
+        },
+        bottom: {
+          eyebrow: 'FCA licence application support',
+          title: 'Get FCA application support',
+          text: 'For practical help with FCA authorisation preparation, use the main FCA authorisation support page.',
+          href: '/fca-authorisation-motor-dealers',
+          primaryLabel: 'Get FCA Application Support'
+        }
+      };
+    }
+  }
+
   const firstSection = page.sections && page.sections[0];
   if (firstSection && !firstSection.note) {
     firstSection.note = {
@@ -1944,6 +2000,830 @@ if (ccr009Prepare) {
     text: 'Ask whether the finance introduction totals, commission totals, lender list and complaints records look consistent with the dealership’s trading activity for the period.'
   };
 }
+
+app.get('/what-is-ccr009', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is CCR009 the same for every firm?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "No. While all firms complete the core sections, additional questions are tailored according to a firm's permissions, business model and regulated activities."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I know if my business needs to complete CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "The easiest way to check is by reviewing your firm's reporting schedule within RegData. This will show which FCA regulatory returns apply to your business."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What happens if a CCR009 return is submitted late?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Firms are expected to submit regulatory returns by the deadline set by the FCA. Late submissions can lead to regulatory attention and potential action, so it is important to understand your reporting obligations and prepare in advance.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where can I find CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "CCR009 is completed and submitted through the FCA's RegData reporting system."
+        }
+      }
+    ]
+  };
+
+  res.render('what_is_ccr009', {
+    pageTitle: 'What Is CCR009? FCA Return Guide for Motor Dealers | 009 Compliance',
+    pageDescription: 'Learn what CCR009 is, who needs to complete it, what information it collects and how motor dealers can prepare for FCA RegData reporting.',
+    robots: 'index,follow',
+    ogTitle: 'What Is CCR009? FCA Return Guide for Motor Dealers | 009 Compliance',
+    ogDescription: 'Learn what CCR009 is, who needs to complete it, what information it collects and how motor dealers can prepare for FCA RegData reporting.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/what-is-ccr009',
+    faqSchema
+  });
+});
+
+app.get('/who-needs-to-submit-ccr009', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do all motor dealers need to submit CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. Whether a dealership must complete CCR009 depends on its FCA permissions, business activities and reporting profile. The best way to confirm this is by checking your reporting schedule within RegData.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I know if my dealership has credit broking permissions?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "You can review your firm's entry on the FCA Register, which will show the permissions held by your business."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where is CCR009 submitted?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "CCR009 is completed and submitted through the FCA's RegData reporting system."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is CCR009 completed annually?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Many firms complete CCR009 annually, although reporting requirements can vary depending on the firm's circumstances and FCA reporting profile."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What information is included in CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "CCR009 contains questions relating to areas such as permissions, business model, marketing, revenue and staff. Additional questions may be included depending on the firm's activities and permissions."
+        }
+      }
+    ]
+  };
+
+  res.render('who_needs_to_submit_ccr009', {
+    pageTitle: 'Who Needs to Submit CCR009? FCA Guide for Motor Dealers | 009 Compliance',
+    pageDescription: 'Find out who may need to submit a CCR009 return, how motor dealers can check their FCA reporting schedule, and what signs may indicate CCR009 applies.',
+    robots: 'index,follow',
+    ogTitle: 'Who Needs to Submit CCR009? FCA Guide for Motor Dealers | 009 Compliance',
+    ogDescription: 'Find out who may need to submit a CCR009 return, how motor dealers can check their FCA reporting schedule, and what signs may indicate CCR009 applies.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/who-needs-to-submit-ccr009',
+    faqSchema
+  });
+});
+
+app.get('/what-information-is-needed-for-ccr009', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Does every motor dealer need the same information for CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "No. The information required depends on the firm's permissions, activities and business model. The questions presented within CCR009 may vary between businesses."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where is CCR009 completed?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "CCR009 is completed and submitted through the FCA's RegData reporting system."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What records should motor dealers keep for CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Many firms keep records relating to finance introductions, regulated income, marketing activity, business operations and staff involved in regulated activities.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'When should I start preparing for CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The best approach is to maintain accurate records throughout the year rather than waiting until the reporting deadline approaches.'
+        }
+      }
+    ]
+  };
+
+  res.render('what_information_is_needed_for_ccr009', {
+    pageTitle: 'What Information Is Needed for CCR009? FCA Guide for Motor Dealers | 009 Compliance',
+    pageDescription: 'Learn what information may be needed for CCR009, including finance introductions, regulated income, marketing activity, staff details and FCA RegData reporting records.',
+    robots: 'index,follow',
+    ogTitle: 'What Information Is Needed for CCR009? FCA Guide for Motor Dealers | 009 Compliance',
+    ogDescription: 'Learn what information may be needed for CCR009, including finance introductions, regulated income, marketing activity, staff details and FCA RegData reporting records.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/what-information-is-needed-for-ccr009',
+    faqSchema
+  });
+});
+
+app.get('/ccr009-reporting-checklist-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do all motor dealers need to complete CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "No. Whether CCR009 applies depends on the firm's FCA permissions, activities and reporting profile. Dealers should review their reporting schedule within RegData."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where is CCR009 submitted?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "CCR009 is completed and submitted through the FCA's RegData reporting system."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What information is needed for CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The exact questions vary between firms, but commonly relate to permissions, business model, marketing, revenue and staff involved in regulated activities.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'When should I start preparing for CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The best approach is to maintain records throughout the year rather than waiting until the reporting window opens.'
+        }
+      }
+    ]
+  };
+
+  res.render('ccr009_reporting_checklist_motor_dealers_exact', {
+    pageTitle: 'CCR009 Reporting Checklist for Motor Dealers | 009 Compliance',
+    pageDescription: 'Use this CCR009 reporting checklist to help motor dealers prepare records, revenue information, marketing activity and staff details for FCA RegData reporting.',
+    robots: 'index,follow',
+    ogTitle: 'CCR009 Reporting Checklist for Motor Dealers | 009 Compliance',
+    ogDescription: 'Use this CCR009 reporting checklist to help motor dealers prepare records, revenue information, marketing activity and staff details for FCA RegData reporting.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/ccr009-reporting-checklist-motor-dealers',
+    faqSchema
+  });
+});
+
+app.get('/ccr009-vs-ccr007', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is CCR009 the Same as CCR007?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. CCR007 and CCR009 are separate FCA regulatory returns that collect different types of information.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Has CCR009 Replaced CCR007?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "For many FCA-authorised motor dealers, no. CCR007 and CCR009 are often completed alongside one another as part of a firm's FCA reporting obligations."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Which Return Is More Important?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Both returns are important where they form part of a firm's reporting schedule. Businesses should ensure all required FCA returns are completed accurately and on time."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where Can I Check Which Returns Apply to My Business?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "The FCA's RegData system provides a reporting schedule showing which regulatory returns apply to your firm and when they must be submitted."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Why Do Some Dealers Have Different Reporting Requirements?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "FCA reporting requirements are based on a firm's permissions, activities and reporting profile. As a result, different businesses may have different reporting obligations."
+        }
+      }
+    ]
+  };
+
+  res.render('ccr009_vs_ccr007_exact', {
+    pageTitle: "CCR009 vs CCR007: What's the Difference? | 009 Compliance",
+    pageDescription: 'Understand the difference between CCR009 and CCR007, whether motor dealers may need to complete both FCA returns, and how to check your RegData reporting schedule.',
+    robots: 'index,follow',
+    ogTitle: "CCR009 vs CCR007: What's the Difference? | 009 Compliance",
+    ogDescription: 'Understand the difference between CCR009 and CCR007, whether motor dealers may need to complete both FCA returns, and how to check your RegData reporting schedule.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/ccr009-vs-ccr007',
+    faqSchema
+  });
+});
+
+app.get('/common-ccr009-reporting-mistakes', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What are the most common CCR009 reporting mistakes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Common mistakes include leaving preparation until the deadline, using incomplete records, misunderstanding reporting requirements and failing to review information before submission.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does every business complete the same CCR009 return?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "No. CCR009 contains questions tailored to a firm's permissions, activities and business model. Different firms may see different questions."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Why do firms struggle with CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Many firms only begin preparing information when the reporting window opens. This often results in time being spent gathering records that could have been organised throughout the year.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How can motor dealers reduce the risk of CCR009 reporting errors?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Maintaining accurate records, reviewing reporting requirements regularly and carrying out a final review before submission can significantly reduce the risk of mistakes.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where can I check my CCR009 reporting requirements?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "The FCA's RegData system provides details of reporting obligations, reporting periods and submission deadlines."
+        }
+      }
+    ]
+  };
+
+  res.render('common_ccr009_reporting_mistakes_exact', {
+    pageTitle: 'Common CCR009 Reporting Mistakes Motor Dealers Should Avoid | 009 Compliance',
+    pageDescription: 'Learn common CCR009 reporting mistakes motor dealers should avoid, including late preparation, incomplete records, RegData issues, revenue information and final review errors.',
+    robots: 'index,follow',
+    ogTitle: 'Common CCR009 Reporting Mistakes Motor Dealers Should Avoid | 009 Compliance',
+    ogDescription: 'Learn common CCR009 reporting mistakes motor dealers should avoid, including late preparation, incomplete records, RegData issues, revenue information and final review errors.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/common-ccr009-reporting-mistakes',
+    faqSchema
+  });
+});
+
+app.get('/how-to-prepare-for-ccr009-return', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'When Should I Start Preparing for a CCR009 Return?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The best approach is to maintain accurate records throughout the year rather than waiting until the reporting deadline approaches.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What Information Should Motor Dealers Prepare for CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'This may include information relating to finance introductions, regulated income, business activities, marketing methods and staff involved in regulated activities.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do All Firms Complete the Same CCR009 Return?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "No. CCR009 contains questions tailored to a firm's permissions, activities and business model."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where Is CCR009 Completed?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "CCR009 is completed and submitted through the FCA's RegData reporting system."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Can I Make CCR009 Easier to Complete?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Maintaining organised records throughout the year and reviewing your reporting requirements regularly can significantly reduce the time required to prepare a return.'
+        }
+      }
+    ]
+  };
+
+  res.render('how_to_prepare_for_ccr009_return_exact', {
+    pageTitle: 'How to Prepare for a CCR009 Return | Motor Dealer FCA Guide | 009 Compliance',
+    pageDescription: 'Learn how motor dealers can prepare for a CCR009 return by checking RegData, organising finance, revenue, marketing and staff records, and avoiding reporting delays.',
+    robots: 'index,follow',
+    ogTitle: 'How to Prepare for a CCR009 Return | Motor Dealer FCA Guide | 009 Compliance',
+    ogDescription: 'Learn how motor dealers can prepare for a CCR009 return by checking RegData, organising finance, revenue, marketing and staff records, and avoiding reporting delays.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/how-to-prepare-for-ccr009-return',
+    faqSchema
+  });
+});
+
+app.get('/do-motor-dealers-need-fca-authorisation', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do Motor Dealers Need FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Motor dealers generally require FCA authorisation if they introduce customers to finance providers or carry out regulated consumer credit activities. Selling vehicles alone does not automatically require FCA authorisation.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Car Dealers Need FCA Approval to Offer Finance?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'In most cases, yes. Dealerships involved in finance introductions or credit broking activities will usually require FCA authorisation or Appointed Representative status.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What FCA Permissions Do Motor Dealers Usually Need?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Many motor dealers hold permissions relating to credit broking and associated consumer credit activities. The exact permissions required depend on the firm's business model and activities."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What Is the Difference Between Limited Permission and Full Permission?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Limited Permission is often suitable where finance activity is secondary to the sale of vehicles. Full Permission may be required where broader consumer credit activities are undertaken.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I Introduce Customers to Finance Providers Without FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Where finance introductions constitute regulated activities, FCA authorisation or Appointed Representative status will generally be required.'
+        }
+      }
+    ]
+  };
+
+  res.render('do_motor_dealers_need_fca_authorisation_exact', {
+    pageTitle: 'Do Motor Dealers Need FCA Authorisation? | 009 Compliance',
+    pageDescription: 'Find out when motor dealers may need FCA authorisation, including finance introductions, credit broking activities, Limited Permission and Full Permission requirements.',
+    robots: 'index,follow',
+    ogTitle: 'Do Motor Dealers Need FCA Authorisation? | 009 Compliance',
+    ogDescription: 'Find out when motor dealers may need FCA authorisation, including finance introductions, credit broking activities, Limited Permission and Full Permission requirements.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/do-motor-dealers-need-fca-authorisation',
+    faqSchema
+  });
+});
+
+app.get('/fca-licence-car-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do Car Dealers Need an FCA Licence?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Car dealers generally require FCA authorisation if they introduce customers to finance providers or carry out regulated consumer credit activities. Selling vehicles alone does not automatically require FCA authorisation.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Used Car Dealers Need FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Used car dealers may require FCA authorisation where they introduce customers to finance providers or undertake regulated consumer credit activities.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What FCA Permissions Do Car Dealers Usually Hold?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Many car dealers hold permissions relating to credit broking and associated consumer credit activities. The exact permissions required depend on the dealership's activities and business model."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What Is the Difference Between Limited Permission and Full Permission?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Limited Permission is often appropriate where finance activity is secondary to vehicle sales. Full Permission may be required where broader regulated consumer credit activities are carried out.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I Introduce Customers to Finance Providers Without FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Where finance introductions constitute regulated activities, FCA authorisation or Appointed Representative status will generally be required.'
+        }
+      }
+    ]
+  };
+
+  res.render('fca_licence_car_dealers_exact', {
+    pageTitle: 'FCA Licence for Car Dealers: Do You Need FCA Authorisation? | 009 Compliance',
+    pageDescription: 'Find out when car dealers may need an FCA licence or authorisation, including finance introductions, credit broking permissions, Limited Permission and Full Permission.',
+    robots: 'index,follow',
+    ogTitle: 'FCA Licence for Car Dealers: Do You Need FCA Authorisation? | 009 Compliance',
+    ogDescription: 'Find out when car dealers may need an FCA licence or authorisation, including finance introductions, credit broking permissions, Limited Permission and Full Permission.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/fca-licence-car-dealers',
+    faqSchema
+  });
+});
+
+app.get('/limited-permission-fca-authorisation-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What Is Limited Permission FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Limited Permission is a category of FCA authorisation available to certain businesses carrying out consumer credit activities where those activities meet the FCA's Limited Permission criteria."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Most Motor Dealers Have Limited Permission FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Many FCA-authorised motor dealers operate under Limited Permission FCA authorisation where finance activity is connected to vehicle sales and forms a secondary part of the business.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What Is the Difference Between Limited Permission and Full Permission FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Limited Permission is often suitable where consumer credit activities are secondary to vehicle sales. Full Permission may be required where broader regulated consumer credit activities are undertaken.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can a Motor Dealer Introduce Customers to Finance Providers Without FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Where finance introductions constitute regulated activities, FCA authorisation or Appointed Representative status will generally be required.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Can I Check Which FCA Permission My Business Needs?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The permissions required depend on the activities carried out by the business. Businesses should review their activities carefully and ensure the permissions sought accurately reflect those activities.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Long Does FCA Authorisation Take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Application times vary depending on the permissions being sought and the information provided to the FCA. Ensuring that an application is complete and accurate can help avoid unnecessary delays.'
+        }
+      }
+    ]
+  };
+
+  res.render('limited_permission_fca_authorisation_motor_dealers_exact', {
+    pageTitle: 'Limited Permission FCA Authorisation for Motor Dealers | 009 Compliance',
+    pageDescription: 'Learn what Limited Permission FCA authorisation means for motor dealers, when it may apply, how it differs from Full Permission and how to prepare an FCA application.',
+    robots: 'index,follow',
+    ogTitle: 'Limited Permission FCA Authorisation for Motor Dealers | 009 Compliance',
+    ogDescription: 'Learn what Limited Permission FCA authorisation means for motor dealers, when it may apply, how it differs from Full Permission and how to prepare an FCA application.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/limited-permission-fca-authorisation-motor-dealers',
+    faqSchema
+  });
+});
+
+app.get('/credit-broking-permission-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What Is Credit Broking?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Credit broking generally involves introducing customers to lenders or finance providers in connection with a credit agreement.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Motor Dealers Carry Out Credit Broking?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Many motor dealers carry out credit broking activities where they introduce customers to vehicle finance providers as part of the vehicle sales process.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Credit Broking Require FCA Permission?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Credit broking is a regulated activity and may require FCA permission depending on the activities carried out by the business.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is Credit Broking Permission the Same as FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Credit broking permission is one of the permissions commonly held by FCA-authorised motor dealers. The permissions required will depend on the activities undertaken by the business.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Does Credit Broking Connect to CCR009?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Credit broking activity may be relevant to FCA consumer credit reporting, including CCR009 where applicable.'
+        }
+      }
+    ]
+  };
+
+  res.render('credit_broking_permission_motor_dealers_exact', {
+    pageTitle: 'Credit Broking Permission for Motor Dealers | 009 Compliance',
+    pageDescription: 'Learn what credit broking permission means for motor dealers, when finance introductions may require FCA authorisation, and how it connects to FCA compliance and CCR009.',
+    robots: 'index,follow',
+    ogTitle: 'Credit Broking Permission for Motor Dealers | 009 Compliance',
+    ogDescription: 'Learn what credit broking permission means for motor dealers, when finance introductions may require FCA authorisation, and how it connects to FCA compliance and CCR009.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/credit-broking-permission-motor-dealers',
+    faqSchema
+  });
+});
+
+app.get('/fca-application-documents-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What Documents Do Motor Dealers Need for FCA Authorisation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The documents required will depend on the permissions being sought and the nature of the business. Common requirements include business information, details of regulated activities, compliance documentation and supporting operational information.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Every FCA Application Require the Same Documents?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. The information required will vary depending on the permissions applied for and the activities carried out by the business.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Motor Dealers Need Compliance Policies Before Applying?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Many applications require businesses to demonstrate how they intend to manage compliance obligations. The documentation required will depend on the firm's circumstances and permissions."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can Website Content Affect an FCA Application?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Website wording should accurately reflect the activities carried out by the business and be consistent with the permissions being sought.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Long Does an FCA Application Take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Timescales vary depending on the application and the information provided. Ensuring documentation is complete and accurate can help avoid unnecessary delays.'
+        }
+      }
+    ]
+  };
+
+  res.render('fca_application_documents_motor_dealers_exact', {
+    pageTitle: 'FCA Application Documents for Motor Dealers | 009 Compliance',
+    pageDescription: 'Learn what documents and information motor dealers may need for an FCA application, including business details, regulated activities, policies, website wording and customer processes.',
+    robots: 'index,follow',
+    ogTitle: 'FCA Application Documents for Motor Dealers | 009 Compliance',
+    ogDescription: 'Learn what documents and information motor dealers may need for an FCA application, including business details, regulated activities, policies, website wording and customer processes.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/fca-application-documents-motor-dealers',
+    faqSchema
+  });
+});
+
+app.get('/why-fca-applications-get-delayed', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Why Is My FCA Application Taking So Long?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Application times vary depending on the permissions sought, the quality of the information provided and whether the FCA requires further clarification.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does the FCA Ask Additional Questions During an Application?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. It is common for the FCA to request further information where clarification is required.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can Website Issues Delay an FCA Application?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Inconsistencies between website content and the information provided within an application can result in additional questions.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can Incorrect Permissions Delay an FCA Application?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. If the permissions requested do not accurately reflect the activities carried out by the business, the FCA may seek clarification before progressing the application.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Can Motor Dealers Reduce Application Delays?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Preparation, accurate documentation, consistent information and prompt responses to FCA requests can all help reduce the risk of delays.'
+        }
+      }
+    ]
+  };
+
+  res.render('why_fca_applications_get_delayed_exact', {
+    pageTitle: 'Why FCA Applications Get Delayed | Motor Dealer FCA Guide | 009 Compliance',
+    pageDescription: 'Learn why FCA applications get delayed, including incomplete information, incorrect permissions, website issues, unclear customer journeys and missing documentation.',
+    robots: 'index,follow',
+    ogTitle: 'Why FCA Applications Get Delayed | Motor Dealer FCA Guide | 009 Compliance',
+    ogDescription: 'Learn why FCA applications get delayed, including incomplete information, incorrect permissions, website issues, unclear customer journeys and missing documentation.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/why-fca-applications-get-delayed',
+    faqSchema
+  });
+});
+
+app.get('/after-fca-approval-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What Happens After FCA Authorisation Is Approved?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Once authorised, a business can carry out the regulated activities covered by its permissions and must comply with ongoing FCA requirements.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Motor Dealers Have Reporting Obligations After FCA Approval?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Many FCA-authorised motor dealers have regulatory reporting obligations and may be required to submit returns through RegData.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Should a Website Be Reviewed After FCA Approval?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Yes. Website content should accurately reflect the firm's permissions, FCA status and regulated activities."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Staff Need FCA Compliance Training?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Staff involved in regulated activities should understand the dealership's compliance responsibilities and internal procedures."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is FCA Approval the End of the Compliance Process?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. FCA authorisation creates ongoing responsibilities relating to compliance, reporting, record keeping and customer outcomes.'
+        }
+      }
+    ]
+  };
+
+  res.render('after_fca_approval_motor_dealers_exact', {
+    pageTitle: 'After FCA Approval: What Motor Dealers Need to Do Next | 009 Compliance',
+    pageDescription: 'Learn what motor dealers need to do after FCA approval, including checking FCA Register details, website compliance, records, reporting obligations and staff training.',
+    robots: 'index,follow',
+    ogTitle: 'After FCA Approval: What Motor Dealers Need to Do Next | 009 Compliance',
+    ogDescription: 'Learn what motor dealers need to do after FCA approval, including checking FCA Register details, website compliance, records, reporting obligations and staff training.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/after-fca-approval-motor-dealers',
+    faqSchema
+  });
+});
 
 ccr009GuidePages.forEach(enrichGuidePage);
 
@@ -2728,6 +3608,126 @@ if (websiteCompliance) {
   });
 }
 
+app.get('/consumer-duty-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Does Consumer Duty Apply to Motor Dealers?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Consumer Duty can apply where motor dealers carry out FCA-regulated activities, including certain consumer credit and finance-related activities.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What Does Consumer Duty Mean for Motor Dealers?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Consumer Duty encourages firms to focus on customer outcomes, understanding, support, fair value and ongoing monitoring.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Does Consumer Duty Affect Vehicle Finance?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Consumer Duty influences how finance options, disclosures, customer communications and support are provided throughout the finance journey.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Consumer Duty Apply to Vulnerable Customers?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Consumer Duty encourages firms to consider whether customers may require additional support because of their circumstances.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Can Motor Dealers Evidence Consumer Duty?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Businesses can often demonstrate Consumer Duty through monitoring, file reviews, complaints analysis, customer feedback, staff training records and compliance reviews.'
+        }
+      }
+    ]
+  };
+
+  res.render('consumer_duty_motor_dealers_exact', {
+    pageTitle: 'Consumer Duty for Motor Dealers: FCA Expectations | 009 Compliance',
+    pageDescription: 'Learn what Consumer Duty means for motor dealers, including customer outcomes, vehicle finance, vulnerable customers, commission disclosure, monitoring and FCA compliance.',
+    robots: 'index,follow',
+    ogTitle: 'Consumer Duty for Motor Dealers: FCA Expectations | 009 Compliance',
+    ogDescription: 'Learn what Consumer Duty means for motor dealers, including customer outcomes, vehicle finance, vulnerable customers, commission disclosure, monitoring and FCA compliance.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/consumer-duty-motor-dealers',
+    faqSchema
+  });
+});
+
+app.get('/website-compliance-motor-dealers', (req, res) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do Motor Dealer Websites Need FCA Wording?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Where a dealership carries out regulated finance activities, website wording should accurately describe FCA status, permissions and the firm's role within the finance process."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can Website Content Affect FCA Compliance?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Yes. Public-facing information should be consistent with the dealership's permissions, disclosures and customer processes."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What Finance Wording Should Motor Dealers Review?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Dealers should review wording relating to finance introductions, credit broking, finance availability, commission disclosure and customer eligibility.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Consumer Duty Apply to Website Content?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Consumer Duty encourages firms to consider whether customers can understand the information presented to them and make informed decisions.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How Often Should a Motor Dealer Review Its Website?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Website reviews should form part of ongoing compliance monitoring and should also be completed following significant business changes.'
+        }
+      }
+    ]
+  };
+
+  res.render('website_compliance_motor_dealers_exact', {
+    pageTitle: 'Website Compliance for Motor Dealers: FCA Guide | 009 Compliance',
+    pageDescription: 'Learn how motor dealers can review website compliance, including FCA status wording, finance disclosures, commission wording, complaints information and Consumer Duty.',
+    robots: 'index,follow',
+    ogTitle: 'Website Compliance for Motor Dealers: FCA Guide | 009 Compliance',
+    ogDescription: 'Learn how motor dealers can review website compliance, including FCA status wording, finance disclosures, commission wording, complaints information and Consumer Duty.',
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/website-compliance-motor-dealers',
+    faqSchema
+  });
+});
+
 motorDealerSeoPages.forEach(enrichGuidePage);
 
 motorDealerSeoPages.forEach((page) => {
@@ -2766,7 +3766,8 @@ app.get('/fca-authorisation-motor-dealers', (req, res) => {
     robots: 'index,follow',
     ogTitle: 'FCA Authorisation for Motor Dealers | Fixed Fee £1,000',
     ogDescription: 'Fixed-fee FCA authorisation and credit broking application support for motor dealers, including business plan, compliance documents, FCA Connect support and interview preparation.',
-    ogType: 'article'
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/fca-authorisation-motor-dealers'
   });
 });
 
@@ -2777,7 +3778,8 @@ app.get('/motor-dealer-compliance', (req, res) => {
     robots: 'index,follow',
     ogTitle: 'Motor Dealer Compliance | 009 Compliance Ltd',
     ogDescription: 'Practical FCA compliance support for motor dealers, including authorisation, CCR009, CCR007, Consumer Duty, documentation, website reviews and ongoing compliance assistance.',
-    ogType: 'article'
+    ogType: 'article',
+    canonicalUrl: 'https://009compliance.com/motor-dealer-compliance'
   });
 });
 

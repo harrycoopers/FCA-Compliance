@@ -32,6 +32,10 @@
 
   <section class="ccr009-content">
     <div class="ccr009-content__main">
+      <% if (page.hubCta) { %>
+        <%- include('partials/hub_cta', page.hubCta.top || page.hubCta) %>
+      <% } %>
+
       <% if (page.summaryCards) { %>
         <section class="ccr009-section ccr009-guide-summary sa-reveal">
           <h2 class="services-h2"><%= page.summaryHeading || 'What this guide covers' %></h2>
@@ -152,17 +156,21 @@
           </ul>
         </section>
       <% } %>
+
+      <% if (page.hubCta) { %>
+        <%- include('partials/hub_cta', page.hubCta.bottom || page.hubCta) %>
+      <% } %>
     </div>
 
     <aside class="ccr009-aside sa-reveal">
       <div class="ccr009-aside__card">
         <span><%= page.guideLabel || 'Guide' %></span>
+        <a class="ccr009-btn ccr009-btn--primary ccr009-btn--full ccr009-btn--sidebar-hub" href="<%= page.primaryLink.href %>"><%= page.primaryLink.label %></a>
         <ul>
           <% page.sections.forEach((section, index) => { %>
             <li><a href="#<%= guideSectionId(section, index) %>"><%= section.heading %></a></li>
           <% }) %>
         </ul>
-        <a class="ccr009-btn ccr009-btn--primary ccr009-btn--full" href="<%= page.primaryLink.href %>"><%= page.primaryLink.label %></a>
       </div>
     </aside>
   </section>

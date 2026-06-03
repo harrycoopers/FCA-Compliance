@@ -1564,6 +1564,15 @@ footer a:hover {
   width: 100%;
 }
 
+.ccr009-btn--sidebar-hub {
+  align-self: flex-start;
+  width: auto;
+  min-height: 0;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
 .ccr009-hero__panel {
   border: 1px solid rgba(15, 23, 42, 0.10);
   border-radius: 18px;
@@ -1759,17 +1768,21 @@ footer a:hover {
 }
 
 .ccr009-aside__card {
-  padding: 22px;
+  padding: 18px 22px 22px;
   border: 1px solid rgba(15, 23, 42, 0.09);
   border-radius: 18px;
   background: #ffffff;
   box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08);
 }
 
+.ccr009-aside__card > span {
+  margin-bottom: 12px;
+}
+
 .ccr009-aside__card ul {
   display: grid;
   gap: 10px;
-  margin: 18px 0 20px;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
