@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isLongServicePage = Boolean(
+    document.querySelector(".ccr009-page, .services-clean")
+  );
 
   // Animate user count metric
   const counterEl = document.getElementById("user-count");
@@ -43,6 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ".sa-reveal, .services-clean-hero, .services-clean-hero__img, .services-clean-section, .services-clean-aside, .services-important-note"
     )
   );
+
+  if (isLongServicePage) {
+    revealElements.forEach((el) => {
+      el.classList.add("sa-reveal", "sa-visible");
+      el.classList.remove("sa-delay-1", "sa-delay-2", "sa-delay-3");
+    });
+    return;
+  }
 
   if (!prefersReducedMotion && revealElements.length) {
     document.body.classList.add("sa-animations");
