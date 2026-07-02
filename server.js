@@ -18,6 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const SESSION_SECRET = process.env.SESSION_SECRET || 'dev_secret';
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const CANONICAL_BASE_URL = process.env.CANONICAL_BASE_URL || 'https://009compliance.com';
 function getUKTimestamp() {
   return new Date().toLocaleString('en-GB', {
     timeZone: 'Europe/London',
@@ -102,9 +103,30 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(expressLayouts);
 app.set('layout', 'layout');
+app.set('trust proxy', true);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+app.use((req, res, next) => {
+  const host = req.get('host') || '';
+  const isLiveDomain = /(^|\.)009compliance\.com$/i.test(host);
+  const isAuthorisationPath = req.path === '/fca-authorisation-motor-dealers' || req.path === '/fca-authorisation-motor-dealers/';
+
+  if (isLiveDomain && isAuthorisationPath) {
+    const canonicalPath = '/fca-authorisation-motor-dealers';
+    const needsHostRedirect = host.toLowerCase() !== '009compliance.com';
+    const needsProtocolRedirect = req.protocol !== 'https';
+    const needsPathRedirect = req.path !== canonicalPath;
+    const needsQueryRedirect = Boolean(req.originalUrl.split('?')[1]);
+
+    if (needsHostRedirect || needsProtocolRedirect || needsPathRedirect || needsQueryRedirect) {
+      return res.redirect(301, `https://009compliance.com${canonicalPath}`);
+    }
+  }
+
+  next();
+});
 
 // Static
 app.use(express.static(path.join(__dirname, 'public')));
@@ -136,9 +158,8 @@ app.use((req, res, next) => {
     'Monthly FCA compliance reporting portal for motor dealers. Submit MI, track submissions, and maintain evidence-ready records with 009 Compliance.';
   res.locals.robots = 'index,follow';
 
-  // ✅ Canonical URL auto-built (works on localhost + live domain)
-  const baseUrl = process.env.BASE_URL || `${req.protocol}://${req.get('host')}`;
-  res.locals.canonicalUrl = `${baseUrl}${req.path}`;
+  // Canonical URL auto-built from the public site domain.
+  res.locals.canonicalUrl = `${CANONICAL_BASE_URL}${req.path}`;
 
   next();
 });
@@ -311,7 +332,7 @@ app.get('/', (req, res) => {
   res.render('index', {
     pageTitle: '009 Compliance | FCA Compliance Reporting Portal for Motor Dealers',
     pageDescription: 'FCA compliance reporting portal for motor dealers. Submit monthly MI, evidence oversight, and support CCR009 workflows.',
-    canonicalUrl: `${process.env.BASE_URL || `${req.protocol}://${req.get('host')}`}/`
+    canonicalUrl: `${CANONICAL_BASE_URL}/`
   });
 });
 
@@ -1175,7 +1196,15 @@ app.get('/debug-env', (req, res) => {
 });
 
 app.get('/services', (req, res) => {
-  res.render('services');
+  res.render('services', {
+    pageTitle: 'Services | 009 Compliance',
+    pageDescription: 'Practical FCA compliance, authorisation and reporting support services for motor dealers.',
+    canonicalUrl: 'https://009compliance.com/services',
+    robots: 'index,follow',
+    ogTitle: 'Services | 009 Compliance',
+    ogDescription: 'Practical FCA compliance, authorisation and reporting support services for motor dealers.',
+    ogType: 'website'
+  });
 });
 
 app.get('/ccr009-return-assistance-motor-dealers', (req, res) => {
@@ -3760,14 +3789,123 @@ motorDealerSeoPages.forEach((page) => {
 });
 
 app.get('/fca-authorisation-motor-dealers', (req, res) => {
+  const authorisationPageSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://009compliance.com/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://009compliance.com/services'
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'FCA Authorisation for Motor Dealers',
+          item: 'https://009compliance.com/fca-authorisation-motor-dealers'
+        }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      '@id': 'https://009compliance.com/fca-authorisation-motor-dealers#service',
+      name: 'FCA Authorisation for Motor Dealers',
+      url: 'https://009compliance.com/fca-authorisation-motor-dealers',
+      serviceType: 'FCA authorisation application support for motor dealers',
+      provider: {
+        '@id': 'https://009compliance.com/#organization'
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'United Kingdom'
+      },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Motor dealers'
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '1000',
+        priceCurrency: 'GBP',
+        url: 'https://009compliance.com/fca-authorisation-motor-dealers',
+        description: 'Fixed fee plus the FCA application fee payable directly to the Financial Conduct Authority.'
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How much does FCA authorisation cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Our fixed fee is £1,000 plus the FCA application fee payable directly to the FCA.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need a business plan?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The FCA expects firms to explain how the business operates, how customers are treated and how regulatory responsibilities will be managed. We prepare the business plan following a discussion about your business and objectives.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you provide the compliance documents?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Our service includes a comprehensive package of bespoke documentation commonly required for a motor dealer FCA application.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does FCA authorisation take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Timescales vary depending on the application and FCA workload. The FCA controls the approval process and timescales cannot be guaranteed.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you guarantee FCA approval?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. Only the FCA can decide whether authorisation will be granted.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What permissions do motor dealers normally apply for?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Many motor dealers apply for permissions relating to credit broking and associated consumer credit activities. The precise permissions required depend on the activities carried on by the business.'
+          }
+        }
+      ]
+    }
+  ];
+
   res.render('fca_authorisation_motor_dealers', {
-    pageTitle: 'FCA Authorisation for Motor Dealers - Fixed Fee £1,000 | FCA Licence Application Support',
-    pageDescription: 'Apply for FCA authorisation for a fixed fee of £1,000 plus FCA fees. Includes business plan, compliance documents, FCA Connect application support, interview preparation and ongoing assistance for motor dealers seeking FCA approval and credit broking permissions.',
+    pageTitle: 'FCA Authorisation for Motor Dealers | £1,000 Fixed Fee',
+    pageDescription: 'Apply for FCA authorisation with fixed-fee support for motor dealers. Includes application documents, business plan, FCA Connect and ongoing guidance.',
     robots: 'index,follow',
-    ogTitle: 'FCA Authorisation for Motor Dealers | Fixed Fee £1,000',
-    ogDescription: 'Fixed-fee FCA authorisation and credit broking application support for motor dealers, including business plan, compliance documents, FCA Connect support and interview preparation.',
-    ogType: 'article',
-    canonicalUrl: 'https://009compliance.com/fca-authorisation-motor-dealers'
+    ogTitle: 'FCA Authorisation for Motor Dealers | £1,000 Fixed Fee',
+    ogDescription: 'Fixed-fee FCA authorisation application support for motor dealers, including documents, business plan and FCA Connect support.',
+    ogType: 'website',
+    ogImage: 'https://009compliance.com/images/logo1resized.png',
+    canonicalUrl: 'https://009compliance.com/fca-authorisation-motor-dealers',
+    pageSchema: authorisationPageSchema
   });
 });
 

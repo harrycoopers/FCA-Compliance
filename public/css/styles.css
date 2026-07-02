@@ -357,6 +357,43 @@ td { color: var(--text-muted); }
   transform: translateY(-2px);
 }
 
+.seo-breadcrumbs {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.seo-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.seo-breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seo-breadcrumbs li:not(:last-child)::after {
+  content: ">";
+  color: #64748b;
+}
+
+.seo-breadcrumbs a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.seo-breadcrumbs a:hover {
+  color: #34d399;
+}
+
 .services-link-card__label {
   color: var(--text);
   font-size: 18px;

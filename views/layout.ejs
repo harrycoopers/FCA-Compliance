@@ -14,9 +14,14 @@
 <meta property="og:type" content="<%= (typeof ogType !== 'undefined' && ogType) ? ogType : 'website' %>">
 <meta property="og:url" content="<%= (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : '' %>">
 <meta property="og:site_name" content="009 Compliance">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="<%= (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://009compliance.com/images/logo1resized.png' %>">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="009 Compliance logo">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<%= (typeof ogTitle !== 'undefined' && ogTitle) ? ogTitle : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle : '009 Compliance | FCA Compliance Reporting Portal') %>">
 <meta name="twitter:description" content="<%= (typeof ogDescription !== 'undefined' && ogDescription) ? ogDescription : ((typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : 'Monthly FCA compliance reporting portal for motor dealers. Submit MI, track submissions, and maintain evidence-ready records with 009 Compliance.') %>">
+<meta name="twitter:image" content="<%= (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://009compliance.com/images/logo1resized.png' %>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Schema.org Organization -->
@@ -24,6 +29,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://009compliance.com/#organization",
   "name": "009 Compliance",
   "url": "https://009compliance.com",
   "logo": "https://009compliance.com/images/logo1resized.png",
@@ -38,6 +44,14 @@
   }
 }
 </script>
+
+<% if (typeof pageSchema !== 'undefined' && pageSchema) { %>
+  <% (Array.isArray(pageSchema) ? pageSchema : [pageSchema]).forEach((schemaItem) => { %>
+<script type="application/ld+json">
+<%- JSON.stringify(schemaItem, null, 2) %>
+</script>
+  <% }) %>
+<% } %>
 
   <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMQFTHWWKP"></script>
@@ -55,7 +69,7 @@
    <link rel="apple-touch-icon" href="/logo-dark.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-iqXNtL4GKJ8VimG/rI3iZ4prJ7pXSq6X7P0QakHEzKirMld7ObZfM/C1Jr+6r7aqtmLbXR4Yg8lJWS1d76Z0TQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-iqXNtL4GKJ8VimG/rI3iZ4prJ7pXSq6X7P0QakHEzKirMld7ObZfM/C1Jr+6r7aqtmLbXR4Yg8lJWS1d76Z0TQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
@@ -65,7 +79,7 @@
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center gap-6">
     <!-- LEFT: logo -->
     <a href="/" class="flex items-center gap-3 shrink-0">
-      <img src="/images/logo1resized.png" alt="009 Compliance" class="h-16 md:h-20 w-auto object-contain" />
+      <img src="/images/logo1resized.png" alt="009 Compliance" width="512" height="512" fetchpriority="high" class="h-16 md:h-20 w-auto object-contain" />
       <!-- Hide the long subtitle on smaller screens so it never collides -->
       <div class="hidden xl:flex flex-col leading-tight">
         <span class="font-semibold tracking-tight text-slate-50">009 Compliance</span>
@@ -230,6 +244,6 @@
     window.__TOAST_SUCCESS__ = "You have successfully completed a Monthly Submission Form!";
   <% } %>
 </script>
-  <script src="/js/main.js"></script>
+  <script defer src="/js/main.js"></script>
 </body>
 </html>
