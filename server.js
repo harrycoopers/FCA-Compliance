@@ -3897,8 +3897,8 @@ app.get('/fca-authorisation-motor-dealers', (req, res) => {
   ];
 
   res.render('fca_authorisation_motor_dealers', {
-    pageTitle: 'FCA Authorisation for Motor Dealers | £1,000 Fixed Fee',
-    pageDescription: 'Apply for FCA authorisation with fixed-fee support for motor dealers. Includes application documents, business plan, FCA Connect and ongoing guidance.',
+    pageTitle: 'FCA Authorisation for Motor Dealers | Fixed Fee £1000',
+    pageDescription: 'Apply for FCA authorisation with fixed-fee support for motor dealers for £1000. Includes application documents, business plan, FCA Connect and ongoing guidance.',
     robots: 'index,follow',
     ogTitle: 'FCA Authorisation for Motor Dealers | £1,000 Fixed Fee',
     ogDescription: 'Fixed-fee FCA authorisation application support for motor dealers, including documents, business plan and FCA Connect support.',
