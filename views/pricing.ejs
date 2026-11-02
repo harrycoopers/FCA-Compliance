@@ -1,179 +1,29 @@
-<div class="max-w-6xl mx-auto">
-  <div class="mb-8">
-    <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-2">Pricing</p>
-    <h1 class="text-3xl font-semibold text-slate-50">Fixed monthly support</h1>
-    <p class="text-slate-400 mt-2 max-w-3xl">
-      Simple, predictable pricing built for ongoing compliance support without call centres or ticketing systems.
-    </p>
-  </div>
-
-  <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-start">
-    <!-- LEFT: Details -->
-    <div class="space-y-6">
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-lg font-semibold text-slate-100">Typical fee</h2>
-        <p class="mt-3 text-slate-300 leading-relaxed">
-          Our services are provided on a fixed monthly support basis. The monthly fee provides ongoing access to compliance support,
-          structured assistance and periodic reviews as outlined in the Services section.
-        </p>
-        <p class="mt-3 text-slate-300 leading-relaxed">
-          Final pricing is confirmed before engagement and may vary depending on how support is used over time.
-          </p>
-          <p class="mt-3 text-slate-300 leading-relaxed"></p>
-          Support is designed to be practical proportionate and delivered on a fair use basis reflecting the nature of the ongoing support provided.
-        </p>
-
-        <div class="mt-5 flex flex-wrap gap-3">
-          <a href="/contact#send-message"
-             class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition">
-            Discuss Pricing
-          </a>
-          <a href="/services"
-             class="px-4 py-2 rounded-xl border border-slate-700 text-sm text-slate-100 hover:border-emerald-500 hover:text-emerald-300 transition">
-            View Services
-          </a>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-lg font-semibold text-slate-100">What the monthly fee includes</h2>
-        <p class="mt-3 text-slate-300 leading-relaxed">
-          The monthly fee covers ongoing compliance support and availability to discuss FCA related questions as they arise. 
-          Support is provided in plain English by experienced professionals who understand how motor dealerships operate in practice, 
-          helping compliance feel clear, structured and manageable.
-        </p>
-        <p class="mt-3 text-slate-300 leading-relaxed">
-          It also includes structured assistance with the preparation and organisation of key compliance documentation. 
-          Bespoke policies and supporting documents are prepared to reflect how your business operates in practice, covering areas such as vulnerable customers, 
-          compliance monitoring, customer journey mapping, regulatory status disclosure, suitability and fair treatment, complaints handling and financial crime awareness.
-           Documentation is structured proportionately to support consistent processes and record keeping across the business.
-        </p>
-        <p class="mt-3 text-slate-300 leading-relaxed">
-          The monthly fee also covers support with ongoing data collection and regulatory reporting preparation throughout the year. 
-          Spreading information gathering and periodic reviews over time helps reduce pressure, improve accuracy and keep compliance organised rather than reactive.
-        </p>
-
-        <div class="mt-4 rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-sm text-slate-200">
-          <p class="font-semibold text-slate-100 mb-2">Included</p>
-          <ul class="list-disc list-inside space-y-1 text-slate-300">
-            <li>Ongoing compliance support explained in plain English</li>
-            <li>Assistance with bespoke compliance documentation and record keeping</li>
-            <li>CCR007 and CCR009 preparation and organisation support</li>
-            <li>Ongoing data collection and monitoring throughout the year</li>
-            <li>Periodic reviews including website regulatory content, complaints and customer feedback</li>
+<link rel="stylesheet" href="<%= assetPath('/css/pricing-services.css?v=55') %>"><script defer src="<%= assetPath('/js/pricing-services.js?v=55') %>"></script>
+<% const c=campaign; %><div class="pricing-services">
+<section class="sec ps-hero"><div class="wrap"><h1 class="display-xl">The right support.<br><span class="serif">Clear pricing.</span></h1><p class="lede">Starting out, preparing a return or keeping on top of compliance? Choose the help your dealership needs. We’ll agree the scope and fees before work begins.</p><a class="text-link" href="#service-prices">Find your service ↓</a></div></section>
+<section class="sec sec--flush-top" id="service-prices" aria-label="Service pricing"><div class="wrap"><div class="ps-grid">
+<article class="ps-card ps-card--0" data-pricing-card><div class="ps-art" aria-hidden="true"><span class="ps-orbit"></span><svg viewBox="0 0 230 175" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="ps-paper-back"><rect x="41" y="28" width="110" height="124" rx="12" fill="#d4e6ff" stroke="#8cb5ee"/></g><g class="ps-main-doc"><rect x="66" y="19" width="111" height="132" rx="13" fill="#fff" stroke="#7eaaf0"/><rect x="82" y="37" width="51" height="6" rx="3" fill="#2563eb" stroke="none"/><path d="M83 56h72m-72 14h48" stroke="#b5cdef"/><g class="ps-doc-lines"><path d="M104 91h49M104 111h37M104 131h44" stroke="#b5cdef"/><path d="m81 90 5 5 8-10m-13 25 5 5 8-10m-13 25 5 5 8-10" stroke="#2563eb" stroke-width="2.5"/></g></g><g class="ps-seal"><circle cx="176" cy="126" r="25" fill="#2563eb" stroke="#fff" stroke-width="4"/><path d="m164 126 8 8 16-18" stroke="#fff" stroke-width="3"/></g></svg></div><div class="ps-content"><h2>FCA Authorisation Assistance</h2><p class="ps-hook">Introducing finance? Start here.</p><p class="ps-description">Application and FCA response support for car, motorcycle, van and commercial vehicle dealers.</p><div class="ps-price"><% if(c.showPrice){ %><% if(c.active){ %><a class="ps-festive-ticket" href="/fca-authorisation-motor-dealers#offer"><span class="ps-ticket-icon" aria-hidden="true">✦</span><span><strong>Christmas offer</strong><small>Limited time · closes <%= c.closingLabel %></small></span><span class="ps-ticket-arrow" aria-hidden="true">↗</span><i aria-hidden="true"></i></a><% } %><strong>£<%= offer.startPayment %> <small>to get started</small></strong><span>Then £<%= offer.monthlyPayment %> per month</span><p class="ps-qualification"><%= offer.qualifier %><% if(offer.vatStatement){ %> <%= offer.vatStatement %><% } %></p><% }else{ %><strong>Let’s talk</strong><span>Current pricing confirmed before you start.</span><% } %></div><ul><li>FCA Connect application support</li><li>Business plan and supporting documents</li><li>FCA questions and interview preparation</li></ul><div class="ps-actions"><a class="btn btn--primary" href="#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a><a class="text-link" href="/fca-authorisation-motor-dealers">Explore authorisation assistance →</a></div></div></article><article class="ps-card ps-card--1" data-pricing-card><div class="ps-art" aria-hidden="true"><span class="ps-orbit"></span><svg viewBox="0 0 230 175" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="28" y="28" width="174" height="118" rx="15" fill="#fff" stroke="#92ccc4"/><path d="M29 51h172" stroke="#d5ece7"/><circle cx="42" cy="40" r="3" fill="#13a095" stroke="none"/><path d="M54 40h42" stroke="#a2cec7"/><path d="M48 126h134M48 102h134M48 78h134" stroke="#e1f0ed" stroke-width="1"/><g class="ps-data-bars" fill="#17978e" stroke="none"><rect x="57" y="101" width="21" height="25" rx="4"/><rect x="96" y="84" width="21" height="42" rx="4"/><rect x="135" y="64" width="21" height="62" rx="4"/></g><path class="ps-trend" d="m58 89 47-21 43-17 25-12" stroke="#52b6aa" stroke-width="3"/><g class="ps-mini-document"><rect x="163" y="98" width="44" height="57" rx="8" fill="#e1f5ef" stroke="#78bfb1"/><path d="M175 112h19m-19 10h15m-14 14 5 5 10-12" stroke="#13867e" stroke-width="2"/></g></svg></div><div class="ps-content"><h2>CCR009 Return Assistance</h2><p class="ps-hook">A return to complete? Get organised.</p><p class="ps-description">Make sense of the information required and prepare your records with practical support.</p><div class="ps-price"><strong>Priced to scope</strong><span>Tell us about your return.</span><p class="ps-qualification">Scope and pricing confirmed before engagement. Your firm remains responsible for its submission.</p></div><ul><li>Finance and commission records</li><li>Lender, broker and complaints information</li><li>Preparation for your RegData return</li></ul><div class="ps-actions"><a class="btn btn--primary" href="#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a><a class="text-link" href="/ccr009-return-assistance-motor-dealers">Explore CCR009 assistance →</a></div></div></article><article class="ps-card ps-card--2" data-pricing-card><div class="ps-art" aria-hidden="true"><span class="ps-orbit"></span><svg viewBox="0 0 230 175" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="ps-support-card ps-support-card--left"><rect x="24" y="61" width="63" height="81" rx="11" fill="#fff" stroke="#b8a8de"/><path d="M38 79h31m-31 13h23m-23 13h28" stroke="#c7b9e4"/></g><g class="ps-support-card ps-support-card--right"><rect x="151" y="45" width="51" height="69" rx="10" fill="#fff" stroke="#b8a8de"/><path d="M162 63h27m-27 12h20m-20 12h24" stroke="#c7b9e4"/></g><g class="ps-shield"><path d="m113 22 47 20v34c0 30-22 52-47 65-25-13-47-35-47-65V42Z" fill="#7655b9" stroke="#e7ddfa" stroke-width="3"/><path d="m113 35 35 15v27c0 21-15 40-35 51-20-11-35-30-35-51V50Z" stroke="#b8a2df" stroke-width="1.5"/><path class="ps-shield-tick" d="m94 77 13 13 26-29" stroke="#fff" stroke-width="4"/></g><g class="ps-support-dot"><circle cx="173" cy="132" r="16" fill="#e9e2f7" stroke="#b29bd6"/><path d="M166 132h14m-7-7v14" stroke="#7655b9" stroke-width="2"/></g></svg></div><div class="ps-content"><h2>Ongoing Compliance Support</h2><p class="ps-hook">Already authorised? Keep support close.</p><p class="ps-description">Regular administrative help, documentation support and periodic reviews within your agreed scope.</p><div class="ps-price"><strong>Monthly support</strong><span>Your fee agreed before you start.</span><p class="ps-qualification">Fixed monthly support on a fair-use basis. Scope, frequency and fees depend on the support required.</p></div><ul><li>Plain-English compliance support</li><li>Documentation and record keeping</li><li>Periodic reviews and reporting preparation</li></ul><div class="ps-actions"><a class="btn btn--primary" href="#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a><a class="text-link" href="/motor-dealer-compliance">Explore ongoing support →</a></div></div></article></div></div></section>
+<section class="sec ps-scope" id="payments"><div class="wrap"><div class="sec-head"><h2 class="display-l">Know what’s included.<br><span class="serif">Before you begin.</span></h2><p>Each service has its own scope and pricing. The authorisation offer does not apply to every service.</p></div><div class="ps-terms">
+<details><summary>FCA authorisation: payments and service scope</summary><div class="ps-terms-body"><% if(c.showPrice){ %><p><%= offer.minimumTotal.explanation %> <%= offer.afterMinimumTerm %> <%= offer.decisionTimingTerms %></p><% } %>        <div class="panel panel--soft">
+          <h3 style="font-size:21px;margin:0">Not included</h3>
+          <ul class="x-list">
+            <li>The FCA application fee, which is paid separately.</li>
+            <li>A guarantee of FCA approval, authorisation or application timescales. All decisions remain with the FCA.</li>
+            <li>Legal advice.</li>
+            <li>CCR009 Return Assistance and Ongoing Motor Dealer Compliance Support, which are separate services with their own scope and pricing.</li>
           </ul>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-6">
-        <h2 class="text-lg font-semibold text-slate-100">What is not included</h2>
-        <p class="mt-3 text-slate-200 leading-relaxed">
-          Certain work may fall outside the scope of the monthly support fee and would be discussed and agreed in advance before being undertaken.
-          This may include more extensive remediation work following regulatory issues, one-off projects that sit outside the normal scope of
-          ongoing support, or assistance relating to historic matters prior to the start of the engagement.
-        </p>
-        <p class="mt-3 text-slate-200 leading-relaxed">
-          The monthly support fee provides access to compliance support on a fair-use basis and does not guarantee delivery of every service listed. The level, frequency and focus of support may vary depending on client needs and usage.
-        </p>
-        <p class="mt-3 text-slate-200 leading-relaxed">
-          Any additional work is only carried out once scope, timing and costs have been agreed.
-        </p>
-      </div>
-    </div>
-
-    <!-- RIGHT: Summary cards -->
-    <div class="space-y-6">
-      <div class="rounded-3xl border border-emerald-500/30 bg-slate-900/60 p-6 shadow-2xl shadow-emerald-900/30">
-        <div class="text-xs text-slate-400 flex items-center justify-between">
-          <span class="flex items-center gap-2">
-            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Fixed monthly support
-          </span>
-          <span>Fair-use pricing</span>
-        </div>
-
-        <div class="mt-4">
-          <div class="mt-2 text-4xl font-semibold text-emerald-400">Speak To Us About Pricing</div>
-        </div>
-
-        <div class="mt-6 space-y-3 text-sm">
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-            <div class="font-semibold text-slate-100">Ongoing support</div>
-            <div class="text-slate-300 mt-1">Plain-English, practical compliance help.</div>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-            <div class="font-semibold text-slate-100">Structured assistance</div>
-            <div class="text-slate-300 mt-1">Documentation record keeping and reporting support</div>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-            <div class="font-semibold text-slate-100">Periodic reviews</div>
-            <div class="text-slate-300 mt-1">Website complaints and customer feedback</div>
-          </div>
-        </div>
-
-        <div class="mt-6">
-          <a href="ccr009-return-assistance-motor-dealers"
-             class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition">
-            View CCR009 Return Assistance
-          </a>
-          <a href="/contact"
-             class="block w-full text-center mt-3 px-4 py-3 rounded-xl border border-slate-700 text-sm text-slate-100 hover:border-emerald-500 hover:text-emerald-300 transition">
-            Contact us
-          </a>
-        </div>
-
-        <p class="mt-5 text-xs text-slate-500">
-          For guidance only - does not constitute legal or regulatory advice.
-        </p>
-      </div>
-
-      <div class="pricing-card--fca-license rounded-3xl border border-emerald-500/30 bg-slate-900/60 p-6 shadow-2xl shadow-emerald-900/30">
-        <div class="text-xs text-slate-400 flex items-center justify-between">
-          <span class="flex items-center gap-2">
-            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            FCA Licence
-          </span>
-          <span>Fixed fee</span>
-        </div>
-
-        <div class="mt-4">
-          <div class="text-sm font-semibold text-slate-100">Standard motor dealer package</div>
-          <div class="mt-2 text-4xl font-semibold text-red-500">Fixed Fee &pound;1,000</div>
-          <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-            Plus the FCA application fee payable directly to the Financial Conduct Authority.
-          </p>
-        </div>
-
-        <div class="mt-6 space-y-3 text-sm">
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-            <div class="font-semibold text-slate-100">FCA application support</div>
-            <div class="text-slate-300 mt-1">Start-to-finish support for motor dealers.</div>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-            <div class="font-semibold text-slate-100">Bespoke documents</div>
-            <div class="text-slate-300 mt-1">Application documentation prepared around your business.</div>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-            <div class="font-semibold text-slate-100">Direct support</div>
-            <div class="text-slate-300 mt-1">Direct access to experienced professionals throughout the application process.</div>
-          </div>
-        </div>
-
-        <div class="mt-6">
-          <a href="/fca-authorisation-motor-dealers"
-             class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition">
-            View FCA Licence
-          </a>
-          <a href="/contact#send-message"
-             class="block w-full text-center mt-3 px-4 py-3 rounded-xl border border-slate-700 text-sm text-slate-100 hover:border-emerald-500 hover:text-emerald-300 transition">
-            Contact us
-          </a>
-        </div>
-
-        <p class="mt-5 text-xs text-slate-500">
-          For guidance only - does not constitute legal or regulatory advice.
-        </p>
-      </div>
-    </div>
-  </div>
+          <p class="fine" style="margin-top:18px">Continuing reporting support is £<%= offer.reportingMonthly %> per month before active referral discounts, which carry on after authorisation.</p>
+          <p class="fine" style="margin-top:8px">Responsibility for the accuracy of information supplied, business operations, regulatory decisions and compliance with FCA requirements remains with the applicant firm.</p>
+        </div></div></details>
+<details><summary>CCR009: scope and responsibilities</summary><div class="ps-terms-body"><p>We help you understand the return and organise the information required. Scope and fees are agreed before engagement. Your firm remains responsible for checking its reporting obligations and making its submission.</p><a class="text-link" href="/ccr009-return-assistance-motor-dealers">See CCR009 service details →</a></div></details>
+<details><summary>Ongoing support: fair use and additional work</summary><div class="ps-terms-body">      <div class="panel panel--soft" style="margin-top:20px">
+        <h3 style="font-size:19px;margin:0 0 8px">What ongoing support doesn’t cover</h3>
+        <p class="muted" style="margin:0 0 8px">Certain work may fall outside the scope of the monthly support fee and would be discussed and agreed in advance before being undertaken. This may include more extensive remediation work following regulatory issues, one-off projects that sit outside the normal scope of ongoing support, or assistance relating to historic matters prior to the start of the engagement.</p>
+        <p class="muted" style="margin:0 0 8px">The monthly support fee provides access to compliance support on a fair-use basis and does not guarantee delivery of every service listed. The level, frequency and focus of support may vary depending on client needs and usage.</p>
+        <p class="muted" style="margin:0">Any additional work is only carried out once scope, timing and costs have been agreed.</p>
+      </div></div></details></div></div></section>
+<section class="sec"><div class="wrap ps-help"><div><h2 class="display-m">Not sure which service fits?</h2><p>Tell us where your dealership is today. We’ll talk through the support that’s relevant to you.</p></div><a class="btn btn--primary" href="#book-meeting">Book a 15-minute call →</a></div></section>
+<section class="sec sec--flush-top"><div class="wrap ps-referral"><p><strong>Referring another dealer?</strong> Explore savings on eligible authorisation and continuing reporting subscription fees.</p><a class="text-link" href="/referral">View referral terms →</a></div></section>
+<section class="sec"><div class="wrap faq"><h2 class="display-l">Your questions.<br><span class="serif">Clear answers.</span></h2><%- include('partials/faq_list', { faqs: faqs, openFirst:false }) %></div></section>
+<%- include('partials/meeting_section', {defaultTopic:'unsure'}) %>
 </div>

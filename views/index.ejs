@@ -1,257 +1,383 @@
-<section class="pt-6 pb-16">
-  <div class="grid lg:grid-cols-[1fr_1fr] gap-10 items-start">
-    <div>
-      <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/5 px-3 py-1 text-xs text-emerald-200 mb-4 animate-pill">
-        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-        Built Specifically for FCA Authorised Motor Dealers
-      </div>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-50 mb-4 leading-tight">
-        009 Compliance
-      </h1>
+<link rel="stylesheet" href="<%= assetPath('/css/service-range.css?v=74') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/home-service-cards.css') %>">
+<script defer src="<%= assetPath('/js/home-service-cards.js') %>"></script>
+<script defer src="<%= assetPath('/js/home-experience.js') %>"></script>
+<script defer src="<%= assetPath('/js/home-offer.js') %>"></script>
+<link rel="stylesheet" href="<%= assetPath('/css/home-offer.css') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/home-christmas-van.css') %>">
+<%
+  const tick = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const c = campaign;
+  /* ---- Testimonials: all 16, embedded here exactly as supplied (do not edit wording,
+         punctuation or highlights). No partial is used. ---- */
+  const reviews = [
+    {
+      "paragraphs": [
+        "We have known and worked closely with John for the past 15 years, he takes care of all our finance and compliance requirements to a very professional and high standard"
+      ],
+      "attribution": "Ian, Director (Ocean Drive (GB) Ltd, Sheffield.",
+      "excerpt": "We have known and worked closely with John for the past 15 years, he takes care of all our finance and compliance requirements to a very professional and high standard",
+      "highlights": [
+        "15",
+        "very professional and high standard"
+      ]
+    },
+    {
+      "paragraphs": [
+        "I can’t recommend Jon highly enough. He looked after the whole FCA application process for me and helped me successfully obtain my licence.From start to finish, he made what could have been a very stressful and complicated process genuinely straightforward and stress-free. Jon handled everything that needed doing, kept me informed throughout and made sure I was properly prepared.All I really had to do was turn up for the FCA interview… and pay Jon’s bill! Seriously though, the service was excellent and having someone who knows the FCA process inside out made a massive difference. If you’re looking for help with FCA authorisation, I’d definitely recommend Jon.Thanks again for all your help."
+      ],
+      "attribution": "David Grenfell, Managing Director, DG Motor Sales Ltd, West Midlands",
+      "excerpt": "… From start to finish, he made what could have been a very stressful and complicated process genuinely straightforward and stress-free. Jon handled everything that needed doing, kept me informed throughout and made sure I was properly prepared. …",
+      "highlights": [
+        "straightforward and stress-free",
+        "kept me informed throughout"
+      ]
+    },
+    {
+      "paragraphs": [
+        "Jon and his team have been an absolute breath of fresh air. They helped me obtain my FCA licence and made sure I fully understood the policies and procedures involved, all within a very quick timeframe.",
+        "009 Compliance now assists me with all of my ongoing compliance needs, and I wouldn’t have it any other way. They are knowledgeable, approachable and completely trustworthy."
+      ],
+      "attribution": "Clarke, Director, 4 Motion Cars Limited, Derby",
+      "excerpt": "… They helped me obtain my FCA licence and made sure I fully understood the policies and procedures involved, all within a very quick timeframe. … They are knowledgeable, approachable and completely trustworthy.",
+      "highlights": [
+        "very quick timeframe",
+        "knowledgeable, approachable and completely trustworthy"
+      ]
+    },
+    {
+      "paragraphs": [
+        "009 Compliance are a different kind of gravy. The team there are super-efficient, knowledgeable and we simply wouldn’t use any other company. Thanks for everything guys!!"
+      ],
+      "attribution": "Andy, Manager, S Cars Limited, Shaw",
+      "excerpt": "009 Compliance are a different kind of gravy. The team there are super-efficient, knowledgeable and we simply wouldn’t use any other company. Thanks for everything guys!!",
+      "highlights": [
+        "super-efficient, knowledgeable",
+        "wouldn’t use any other company"
+      ]
+    },
+    {
+      "paragraphs": [
+        "Jon helped us get our FCA licence in place and made the whole process much easier than we expected. He was always easy to get hold of, explained everything clearly and kept us updated from start to finish.",
+        "We now use 009 Compliance every month to help us keep on top of our ongoing compliance requirements and make sure everything is kept in order.",
+        "It’s a very straightforward, reliable service and Jon is someone we know we can trust. We’d happily recommend 009 Compliance to any other motor dealer."
+      ],
+      "attribution": "Muhammad, Director, Apex Auto Traders Ltd, Bradford",
+      "excerpt": "Jon helped us get our FCA licence in place and made the whole process much easier than we expected. He was always easy to get hold of, explained everything clearly and kept us updated from start to finish. …",
+      "highlights": [
+        "much easier than we expected",
+        "explained everything clearly"
+      ]
+    },
+    {
+      "paragraphs": [
+        "009 Compliance came highly recommended when I needed help getting my FCA licence, and they’ve been great to deal with ever since.",
+        "Jon is really easy to talk to, always approachable and never makes anything feel complicated. They now look after our ongoing compliance and whenever I need something, it gets dealt with quickly without any fuss.",
+        "The level of service is excellent and nothing ever seems too much trouble. I’d definitely recommend 009 Compliance to other motor dealers."
+      ],
+      "attribution": "Jimmy, Director, SNWN Automotive Ltd, Cardiff",
+      "excerpt": "… Jon is really easy to talk to, always approachable and never makes anything feel complicated. They now look after our ongoing compliance and whenever I need something, it gets dealt with quickly without any fuss. …",
+      "highlights": [
+        "easy to talk to",
+        "quickly without any fuss"
+      ]
+    },
+    {
+      "paragraphs": [
+        "Running a busy garage and MOT station means there’s already plenty to stay on top of, so having Jon and 009 Compliance deal with the FCA side has been a massive help.",
+        "Jon helped me get my licence in place and made the whole process easy to understand. Since then, he’s continued to help with the ongoing compliance side whenever anything needs dealing with.",
+        "It means I can concentrate on running the business knowing the FCA requirements are being kept on top of. Jon is reliable, easy to get hold of and always gets things sorted."
+      ],
+      "attribution": "Jordan, Director, JP Motors Burnley Limited, Burnley",
+      "excerpt": "… It means I can concentrate on running the business knowing the FCA requirements are being kept on top of. Jon is reliable, easy to get hold of and always gets things sorted.",
+      "highlights": [
+        "concentrate on running the business",
+        "reliable, easy to get hold of"
+      ]
+    },
+    {
+      "paragraphs": [
+        "I was referred to Jon and 009 Compliance by a good friend who works in motor finance, and looking back I genuinely wouldn’t have wanted to go through the FCA application process without them.",
+        "Jon and his team were there whenever we needed them. It honestly felt like they were on call day and night, and having that level of support made a complicated process feel far less daunting.",
+        "Jon’s been in the motor and finance industry for around 30 years and that experience really shows. He understands the business, understands the FCA side and, most importantly, understands the pressures dealers are under.",
+        "When it comes to compliance, I want someone in my corner that I know I can rely on. I wouldn’t have anyone other than Jon and the 009 Compliance team."
+      ],
+      "attribution": "Jasper, Managing Director, Wingrove Motor Group Limited, Newcastle upon Tyne",
+      "excerpt": "… Jon’s been in the motor and finance industry for around 30 years and that experience really shows. He understands the business, understands the FCA side and, most importantly, understands the pressures dealers are under. …",
+      "highlights": [
+        "30",
+        "understands the pressures dealers are under"
+      ]
+    },
+    {
+      "paragraphs": [
+        "Jon helped me get my FCA licence sorted and made the whole thing feel easy from start to finish.",
+        "He’s always approachable, easy to get hold of and just gets things done. We still use 009 Compliance for our ongoing requirements and it’s reassuring knowing Jon is there whenever we need him.",
+        "Already recommended them."
+      ],
+      "attribution": "Nouman, Manager, UE Motors Ltd, Stourbridge",
+      "excerpt": "Jon helped me get my FCA licence sorted and made the whole thing feel easy from start to finish. … He’s always approachable, easy to get hold of and just gets things done. …",
+      "highlights": [
+        "easy from start to finish",
+        "approachable, easy to get hold of"
+      ]
+    },
+    {
+      "paragraphs": [
+        "We use 009 Compliance for our FCA reporting and it’s one less thing for us to worry about.",
+        "Jon makes the process simple, keeps everything organised and makes sure the reporting is dealt with properly and on time. It’s a straightforward, reliable service and exactly what we need."
+      ],
+      "attribution": "Ben, Director, CBS Autos Ltd, Preston",
+      "excerpt": "We use 009 Compliance for our FCA reporting and it’s one less thing for us to worry about. … Jon makes the process simple, keeps everything organised and makes sure the reporting is dealt with properly and on time. It’s a straightforward, reliable service and exactly what we need.",
+      "highlights": [
+        "makes the process simple",
+        "straightforward, reliable service"
+      ]
+    },
+    {
+      "paragraphs": [
+        "I have known and worked with Jon personally for around 25 years and trust him implicitly.",
+        "Over that time, I have always found him to be knowledgeable, dependable and completely straightforward to deal with. I have no hesitation in recommending Jon and 009 Compliance, and we refer all of our company’s compliance work to him with complete confidence."
+      ],
+      "attribution": "Iain King, Director, Rocket Financial Services Ltd, Guiseley",
+      "excerpt": "I have known and worked with Jon personally for around 25 years and trust him implicitly. … Over that time, I have always found him to be knowledgeable, dependable and completely straightforward to deal with. …",
+      "highlights": [
+        "25",
+        "trust him implicitly",
+        "completely straightforward to deal with"
+      ]
+    },
+    {
+      "paragraphs": [
+        "Jon helped us obtain our FCA licence and was brilliant throughout the whole process. He was patient, quick to respond and always made time to explain what was needed without overcomplicating things.",
+        "My father has known Jon for around 30 years through the financial services industry, so there was already a lot of trust there before we started working together.",
+        "That trust was completely justified. The application was handled efficiently from start to finish and I’d have no hesitation recommending Jon and 009 Compliance to other motor dealers."
+      ],
+      "attribution": "Saief, Director, Carbon Auto Sales Ltd, Dewsbury",
+      "excerpt": "Jon helped us obtain our FCA licence and was brilliant throughout the whole process. He was patient, quick to respond and always made time to explain what was needed without overcomplicating things. …",
+      "highlights": [
+        "patient, quick to respond",
+        "without overcomplicating things"
+      ]
+    },
+    {
+      "paragraphs": [
+        "We’ve worked with Jon for over 15 years and he’s someone we know we can rely on completely.",
+        "009 Compliance assists us with all of our FCA work and car finance requirements. Jon is always there when we need him. He knows the industry inside out, understands our business and makes everything straightforward.",
+        "After working together for this long, the trust is already there. We wouldn’t hesitate to recommend Jon and 009 Compliance."
+      ],
+      "attribution": "Mohammed, Owner, the Car Shop, Birmingham",
+      "excerpt": "We’ve worked with Jon for over 15 years and he’s someone we know we can rely on completely. … Jon is always there when we need him. He knows the industry inside out, understands our business and makes everything straightforward. …",
+      "highlights": [
+        "15",
+        "rely on completely",
+        "makes everything straightforward"
+      ]
+    },
+    {
+      "paragraphs": [
+        "I’ve known Jon for around 20 years and have always found him completely trustworthy and reliable.",
+        "We use 009 Compliance for our FCA reporting and know it will be handled properly and on time. After working with Jon for this long, there’s a level of trust there that’s hard to replace.",
+        "I’d have no hesitation recommending Jon and 009 Compliance."
+      ],
+      "attribution": "Nad, Sales Manager, Niche Motor Sales Ltd, Bradford",
+      "excerpt": "I’ve known Jon for around 20 years and have always found him completely trustworthy and reliable. … We use 009 Compliance for our FCA reporting and know it will be handled properly and on time. …",
+      "highlights": [
+        "20",
+        "completely trustworthy and reliable"
+      ]
+    },
+    {
+      "paragraphs": [
+        "We were referred to Jon and 009 Compliance by a trusted contact in the financial services industry. As a larger motor group operating across a number of sites, we need our FCA reporting handled efficiently and with minimal fuss. 009 Compliance looks after our annual reporting and we’ve found the service to be reliable, professional and very easy to deal with. Everything is handled promptly and we have complete confidence in the work they do."
+      ],
+      "attribution": "Indy, Director, Motorland 2008 Ltd, Cannock",
+      "excerpt": "… 009 Compliance looks after our annual reporting and we’ve found the service to be reliable, professional and very easy to deal with. Everything is handled promptly and we have complete confidence in the work they do.",
+      "highlights": [
+        "very easy to deal with",
+        "complete confidence"
+      ]
+    },
+    {
+      "paragraphs": [
+        "I’ve known Jon for around 15 years, so when Opal VS Ltd needed help with our FCA application, 009 Compliance was the obvious choice. Jon and his team got the licence in place promptly and made the whole process straightforward with very little hassle. The service was efficient, professional and exactly what we needed."
+      ],
+      "attribution": "Arfan, Director, Opal VS Ltd, Bradford",
+      "excerpt": "I’ve known Jon for around 15 years, so when Opal VS Ltd needed help with our FCA application, 009 Compliance was the obvious choice. Jon and his team got the licence in place promptly and made the whole process straightforward with very little hassle. The service was efficient, professional and exactly what we needed.",
+      "highlights": [
+        "15",
+        "straightforward with very little hassle",
+        "efficient, professional"
+      ]
+    }
+  ];
+  const excerptSegments = (text, phrases) => {
+    const ranges = phrases.map(phrase => ({ start: text.indexOf(phrase), text: phrase }))
+      .filter(range => range.start >= 0).sort((a, b) => a.start - b.start);
+    const segments = []; let position = 0;
+    ranges.forEach(range => {
+      if (range.start < position) return;
+      segments.push({ text: text.slice(position, range.start), highlighted: false });
+      segments.push({ text: range.text, highlighted: true });
+      position = range.start + range.text.length;
+    });
+    segments.push({ text: text.slice(position), highlighted: false });
+    return segments;
+  };
+  // Splits the attribution into display lines; the lines concatenate back to the exact original.
+  const attributionLines = (attribution) => {
+    const nameEnd = attribution.indexOf(',');
+    const paren = attribution.indexOf(' (');
+    const special = paren > -1;
+    const roleEnd = special ? paren : attribution.indexOf(',', nameEnd + 1);
+    const locationStart = attribution.lastIndexOf(',') + 1;
+    const roleStop = roleEnd + (special ? 0 : 1);
+    return {
+      name: attribution.slice(0, nameEnd + 1),
+      role: attribution.slice(nameEnd + 1, roleStop),
+      business: attribution.slice(roleStop, locationStart),
+      location: attribution.slice(locationStart)
+    };
+  };
+%>
+<div class="home v9<%= c.active && c.showPrice ? ' has-festive-offer' : '' %>">
 
-      <p class="text-lg font-semibold text-slate-50">
-        Built on Real Industry Experience
-        <span class="block font-semibold text-emerald-400">
-           We Understand the Motor Trade because We've Worked in it, Not because We've Read About it.
-        </span>
-      </p>
-      
-      <div class="flex flex-wrap items-center gap-3 mb-6">
-        <a href="/register" class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition flex items-center gap-2">
-          Get started in minutes
-          <span class="text-xs">→</span>
-        </a>
-        <a href="/login" class="text-sm text-slate-300 hover:text-emerald-300 underline-offset-4 hover:underline">
-          Already a client? Log in
-        </a>
-      </div>
-
-      <dl class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm mt-4">
-
-  <!-- PRICE -->
-  <div class="p-3 rounded-xl border border-slate-800 bg-slate-900/40">
-    <dt class="text-slate-400 mb-1">Fixed Monthly Support</dt>
-
-    <dd class="text-lg font-semibold text-emerald-400 leading-tight">
-      <span class="block text-sm text-slate-400 mb-1">
-        Typical Fee
-      </span>
-
-      <a href="/contact" class="home-fee-contact-button">
-        Contact Us
-      </a>
-    </dd>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="p-3 rounded-xl border border-slate-800 bg-slate-900/40">
-    <dt class="text-slate-400 mb-1">Experience</dt>
-    <dd class="text-sm text-slate-50">
-      Over <span class="text-lg font-semibold text-emerald-400">Decades</span>
-      of Experience in FCA-Regulated Motor Finance
-    </dd>
-  </div>
-
-  <!-- CCR009 -->
-  <div class="p-3 rounded-xl border border-slate-800 bg-slate-900/40">
-    <dt class="text-slate-400 mb-1">CCR009 Ready</dt>
-    <dd class="text-lg font-semibold text-slate-50">Yes</dd>
-  </div>
-
-</dl>
-</div>
-
-
-    <div class="relative">
-      <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl opacity-60 pointer-events-none compliance-orbit"></div>
-      <div class="relative rounded-3xl border border-emerald-500/30 bg-slate-900/60 p-4 shadow-2xl shadow-emerald-900/40">
-        <div class="flex items-center justify-between mb-3 text-xs text-slate-400">
-          <span class="flex items-center gap-2">
-            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            CCR Monthly Dealer Report
-          </span>
-          <span>What We Provide</span>
+  <!-- Homepage: introduce the full service offering. -->
+  <section class="hero9 home-overview" aria-labelledby="hero-title">
+    <div class="hero9__bg" aria-hidden="true"><span class="hero9__grid"></span></div>
+    <div class="wrap hero9__grid-wrap">
+      <div class="hero9__copy">
+        
+        <h1 class="display-xl" id="hero-title">Motor dealer compliance.<br><span class="serif">Made simpler.</span></h1>
+        <p class="lede">Practical help with FCA authorisation, CCR009 returns, ongoing compliance administration and motor-finance broker support.</p>
+        <div class="actions">
+          <a class="btn btn--primary btn--sheen btn--lg" href="#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="text-link" href="#services">Explore our services</a>
         </div>
-
-        <div class="space-y-3 text-xs">
-          <div class="flex justify-between items-center rounded-2xl bg-slate-900/80 border border-slate-800 px-3 py-2">
-            <div>
-              <p class="text-slate-300">FCA Authorisation Assistance</p>
-              <p class="text-slate-500 text-[11px]">CCR007 and CCR009 returns assistance</p>
-            </div>
-            <span class="px-2 py-1 rounded-full bg-orange-600/30 text-black text-[11px]">
-              Returns
-            </span>
-          </div>
-          <div class="flex justify-between items-center rounded-2xl bg-slate-900/80 border border-slate-800 px-3 py-2">
-            <div>
-              <p class="text-slate-300">Annual FCA and Companies House Alignments Check</p>
-              <p class="text-slate-500 text-[11px]">Annual Website Regulatory Review</p>
-            </div>
-            <span class="px-2 py-1 rounded-full bg-sky-500/10 text-sky-300 text-[11px]">
-              Annual Reviews
-            </span>
-          </div>
-          <div class="flex justify-between items-center rounded-2xl bg-slate-900/80 border border-slate-800 px-3 py-2">
-            <div>
-              <p class="text-slate-300">Quarterly Complaints and Customer Feedback Review</p>
-              <p class="text-slate-500 text-[11px]">Quarterly Vulnerable Customer Awareness Review</p>
-            </div>
-            <span class="px-2 py-1 rounded-full bg-sky-500/10 text-sky-300 text-[11px]">
-              Quarterly Reviews
-            </span>
-          </div>
+        <p class="hero9__note">Support from people who understand the motor trade, tailored to where your dealership is today.</p>
+        <div class="experience-feature" data-experience aria-label="30 plus years of motor trade experience">
+          <div class="experience-feature__number" aria-hidden="true"><span><span data-experience-count>30</span><sup>+</sup></span><svg class="experience-feature__arc" viewBox="0 0 150 32" fill="none"><path d="M12 27 Q75 -9 138 27"/><path class="experience-feature__progress" pathLength="100" d="M12 27 Q75 -9 138 27"/></svg></div>
+          <div class="experience-feature__copy" aria-hidden="true"><strong>Years of motor<br>trade experience.</strong><span>Experience behind every conversation.</span></div>
+          <span class="experience-feature__shine" aria-hidden="true"></span>
         </div>
+        <figure class="home-hero-review"><span class="home-hero-review__mark" aria-hidden="true">“</span>
+          <blockquote>“Everything is handled promptly and we have complete confidence in the work they do.”</blockquote>
+          <figcaption><span class="home-hero-review__avatar" aria-hidden="true">I</span><span><%= reviews[14].attribution %></span></figcaption>
+        </figure>
+      </div>
+      <% if (c.showPrice) { %><section id="offer" data-home-offer data-deadline="<%= c.deadlineIso %>" class="offer-demo compact-offer" aria-labelledby="offer-head"><div class="offer-shell paused" data-offer-card><div class="festive-snow" aria-hidden="true"><i style="--x:0%;--d:5s;--delay:-0.0s;--size:2px"></i><i style="--x:37%;--d:6s;--delay:-0.7s;--size:3px"></i><i style="--x:74%;--d:7s;--delay:-1.4s;--size:4px"></i><i style="--x:11%;--d:8s;--delay:-2.0999999999999996s;--size:2px"></i><i style="--x:48%;--d:9s;--delay:-2.8s;--size:3px"></i><i style="--x:85%;--d:5s;--delay:-3.5s;--size:4px"></i><i style="--x:22%;--d:6s;--delay:-4.199999999999999s;--size:2px"></i><i style="--x:59%;--d:7s;--delay:-4.8999999999999995s;--size:3px"></i><i style="--x:96%;--d:8s;--delay:-5.6s;--size:4px"></i><i style="--x:33%;--d:9s;--delay:-6.3s;--size:2px"></i><i style="--x:70%;--d:5s;--delay:-7.0s;--size:3px"></i><i style="--x:7%;--d:6s;--delay:-7.699999999999999s;--size:4px"></i><i style="--x:44%;--d:7s;--delay:-8.399999999999999s;--size:2px"></i><i style="--x:81%;--d:8s;--delay:-9.1s;--size:3px"></i><i style="--x:18%;--d:9s;--delay:-9.799999999999999s;--size:4px"></i><i style="--x:55%;--d:5s;--delay:-10.5s;--size:2px"></i><i style="--x:92%;--d:6s;--delay:-11.2s;--size:3px"></i><i style="--x:29%;--d:7s;--delay:-11.899999999999999s;--size:4px"></i><i style="--x:66%;--d:8s;--delay:-12.6s;--size:2px"></i><i style="--x:3%;--d:9s;--delay:-13.299999999999999s;--size:3px"></i><i style="--x:40%;--d:5s;--delay:-14.0s;--size:4px"></i><i style="--x:77%;--d:6s;--delay:-14.7s;--size:2px"></i><i style="--x:14%;--d:7s;--delay:-15.399999999999999s;--size:3px"></i></div><div class="festive-frost" aria-hidden="true"></div><div class="offer-copy"><h2 id="offer-head">Your FCA application.<br><em>Start with support.</em></h2><p class="offer-description">FCA authorisation assistance for car, motorcycle, van and commercial vehicle dealers.</p><div class="offer-price"><strong>£<%= offer.startPayment %></strong><span>to get started<br><b>then £<%= offer.monthlyPayment %> per month</b></span></div><a class="offer-button" href="/fca-authorisation-motor-dealers">Check Out The Offer <span>↗</span></a><p class="offer-terms"><%= offer.qualifier %><% if (c.active) { %> Offer closes <%= c.closingLabel %>.<% } %></p></div><div class="offer-art"><svg class="delivery-van" viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="vanpaint" x2="0" y2="1"><stop stop-color="#f0646c"/><stop offset="1" stop-color="#a91532"/></linearGradient><linearGradient id="vanglass" x2="1" y2="1"><stop stop-color="#effaff"/><stop offset="1" stop-color="#8dc9e5"/></linearGradient></defs><g class="van-drive"><g class="van-snow-kick" fill="#fff5e4"><ellipse cx="92" cy="251" rx="14" ry="5"/><ellipse cx="70" cy="246" rx="10" ry="7"/><circle cx="48" cy="241" r="5"/><circle cx="67" cy="231" r="3"/><path d="M53 262H106M72 268H119" fill="none" stroke="#e7eefa" stroke-width="2" stroke-linecap="round"/></g><ellipse cx="205" cy="260" rx="123" ry="10" fill="#340918" opacity=".25"/><g class="van-suspension"><path d="M79 246V169Q79 154 96 154H235L264 177H292L327 213V246Z" fill="url(#vanpaint)" stroke="#ffb2ad" stroke-width="2"/><path d="M245 179H284L310 211H245Z" fill="url(#vanglass)"/><path d="M245 179V246" fill="none" stroke="#80172e" stroke-width="2"/><path d="M282 182 305 208H286Z" fill="#fff" opacity=".28"/><rect x="253" y="218" width="12" height="4" rx="2" fill="#ffe5a4"/><path d="M81 231H326" stroke="#eec481" stroke-width="5"/><rect x="72" y="238" width="262" height="12" rx="5" fill="#651a2c"/><rect x="318" y="218" width="13" height="10" rx="3" fill="#fff1be"/><rect x="78" y="215" width="7" height="12" rx="2" fill="#ffbd70"/><path d="M95 157Q141 151 184 156T233 157" stroke="#fff4e2" stroke-width="6" stroke-linecap="round"/><path d="M115 152H225" stroke="#d4b47e" stroke-width="5"/><path d="M171 148V120" stroke="#8c6042" stroke-width="7"/><path d="m171 69-23 35h10l-23 28h15l-21 20h85l-22-20h15l-23-28h10Z" fill="#235c47" stroke="#659780" stroke-width="2"/><path d="m171 69-23 35h10m-23 28h15m-21 20h85" stroke="#e8f1df" stroke-width="4" stroke-linecap="round"/><path d="m157 107 29 6m-39 17 48 7" stroke="#efce83" stroke-width="3"/><circle cx="162" cy="104" r="3" fill="#eebf62"/><circle cx="188" cy="132" r="3" fill="#ed6871"/><path d="M153 153V141M196 153V142" stroke="#e7bc70" stroke-width="3"/><rect x="107" y="180" width="100" height="38" rx="8" fill="#7f1a30" opacity=".55"/><text x="157" y="204" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="700" font-size="21" fill="#fff0d0">009</text></g><g class="van-santa"><path d="M82 168h28v67H81Z" fill="#50172a" stroke="#eab98a" stroke-width="2"/><path class="van-back-door" d="m82 168-17 8v61l17-2Z" fill="#b92a43" stroke="#ffd59f" stroke-width="2"/><g class="santa-lean"><path d="M83 189Q62 190 61 220L91 229 108 210 99 190Z" fill="#e44a54" stroke="#a51c33" stroke-width="1.5"/><path d="m63 216 30 10" stroke="#fff1dc" stroke-width="5"/><path d="m66 208 31 10" stroke="#263348" stroke-width="7"/><path d="m79 208 9 3-3 7-9-3Z" fill="#f5c96f"/><g class="santa-throw-arm"><path d="M85 196Q68 200 59 190" fill="none" stroke="#d7374c" stroke-width="12" stroke-linecap="round"/><path d="m60 187-4 7" stroke="#fff1dc" stroke-width="5" stroke-linecap="round"/><ellipse cx="54" cy="188" rx="6" ry="5" fill="#273449"/></g><ellipse cx="83" cy="175" rx="17" ry="19" fill="#fff4df"/><ellipse cx="81" cy="170" rx="14" ry="14" fill="#f3c09f"/><path d="M66 176Q65 190 81 197Q97 193 99 178L91 180 82 179 74 181Z" fill="#fff8e9"/><circle cx="76" cy="170" r="1.5" fill="#263348"/><circle cx="87" cy="170" r="1.5" fill="#263348"/><path d="M73 166h6m5 0h6" stroke="#fff5e4" stroke-width="2.3" stroke-linecap="round"/><ellipse cx="81" cy="176" rx="3.5" ry="3" fill="#e99b85"/><path d="M76 182q5 4 10 0" fill="none" stroke="#9f4c46" stroke-width="2"/><path d="M66 157Q76 129 93 141L105 158 91 151 96 160Z" fill="#d72d43"/><path d="M66 158Q82 153 96 161" fill="none" stroke="#fff5e5" stroke-width="6" stroke-linecap="round"/><circle cx="105" cy="159" r="5" fill="#fff5e5"/></g></g><g class="van-wheel" style="transform-origin:126px 247px"><circle cx="126" cy="247" r="21" fill="#18263b"/><circle cx="126" cy="247" r="12" fill="#aab8c7"/><path d="M126 237V257M116 247H136" stroke="#46586c" stroke-width="3"/><circle cx="126" cy="247" r="4" fill="#e5f1fc"/></g><g class="van-wheel" style="transform-origin:285px 247px"><circle cx="285" cy="247" r="21" fill="#18263b"/><circle cx="285" cy="247" r="12" fill="#aab8c7"/><path d="M285 237V257M275 247H295" stroke="#46586c" stroke-width="3"/><circle cx="285" cy="247" r="4" fill="#e5f1fc"/></g></g></svg><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="star star1">✦</div><div class="star star2">✦</div><div class="star star3">✦</div><svg class="present" viewBox="55 -15 290 370" aria-hidden="true"><defs><linearGradient id="box" x2="1" y2="1"><stop stop-color="#5c9dff"/><stop offset="1" stop-color="#2563eb"/></linearGradient><linearGradient id="side"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1743a3"/></linearGradient><radialGradient id="light"><stop stop-color="#d4eeff" stop-opacity=".7"/><stop offset="1" stop-color="#a8d5f5" stop-opacity="0"/></radialGradient></defs><ellipse cx="200" cy="316" rx="110" ry="15" fill="#060f21" opacity=".3"/><ellipse class="gift-glow" cx="200" cy="180" rx="160" ry="140" fill="url(#light)"/><g class="gift-burst" aria-hidden="true" fill="none" stroke="#CDEAFF" stroke-width="5" stroke-linecap="round"><path d="M145 168 103 139"/><path d="M160 141 140 102"/><path d="M200 130 200 86"/><path d="M240 141 262 102"/><path d="M255 168 299 139"/><path d="M132 200 87 198"/><path d="M268 200 313 198"/></g><g class="price-ticket"><text x="200" y="172" text-anchor="middle" fill="#FAFBFD" font-size="54" font-weight="700" font-family="Figtree, sans-serif">£<%= offer.startPayment %></text></g><path d="M99 204 200 180 302 204 302 293 200 322 99 293Z" fill="url(#box)"/><path d="M200 230 302 204V293L200 322Z" fill="url(#side)"/><path d="m145 216 30 7v92l-30-9zM235 220l28-8v92l-28 9z" fill="#d6edff"/><g class="gift-lid"><path d="m89 190 111-32 113 32-113 32z" fill="#82b9ff"/><path d="M89 190v23l111 33v-24z" fill="#5093f7"/><path d="m200 222 113-32v23l-113 33z" fill="#2563eb"/><path d="m139 176 29-8 114 31-30 9z" fill="#e5f1fc"/><path d="m250 172 28 8-113 32-28-8z" fill="#d0e9ff"/><path d="M199 173c-98-4-61-75-25-35l25 35c95-3 59-77 25-36z" fill="none" stroke="#e5f1fc" stroke-width="13" stroke-linejoin="round"/></g></svg></div></div></section><% } %><nav data-home-offer-fallback <%= c.showPrice ? 'hidden' : '' %> class="home-service-guide" aria-label="Find the right compliance service">
+        
+        <a href="/fca-authorisation-motor-dealers"><span class="home-service-guide__number">01</span><span><strong>I need FCA authorisation</strong></span><span aria-hidden="true">↗</span></a>
+        <a href="/ccr009-return-assistance-motor-dealers"><span class="home-service-guide__number">02</span><span><strong>I need help with my CCR009 return</strong></span><span aria-hidden="true">↗</span></a>
+        <a href="/motor-dealer-compliance"><span class="home-service-guide__number">03</span><span><strong>I need ongoing compliance support</strong></span><span aria-hidden="true">↗</span></a>
+        <p>Not sure which service fits? <a href="#book-meeting">Speak to us.</a></p>
+      </nav>
+    </div>
+  </section>
 
-        <div class="mt-4 rounded-2xl border border-emerald-500/30 bg-slate-900/80 px-3 py-2 text-[11px] text-slate-300 flex items-center justify-between">
+  <!-- Four equally prominent services. -->
+  <section class="sec home-services" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="sec-head"><div><h2 class="display-l" id="services-title">The right support.<br><span class="serif">At every stage.</span></h2></div></div>
+      <div class="home-services__grid animated-services">
+        <article class="service"><% if (c.active && c.showPrice) { %><a class="corner-offer" data-seasonal-offer data-deadline="<%= c.deadlineIso %>" href="/fca-authorisation-motor-dealers#offer" aria-label="Currently on offer: view FCA authorisation offer"><span class="corner-reveal"><strong>Currently<br>On Offer</strong><span aria-hidden="true">↗</span></span><span class="corner-cover" aria-hidden="true"></span><span class="corner-fold" aria-hidden="true"></span></a><% } %><div class="art" aria-hidden="true"><span class="index">01</span><svg viewBox="0 0 360 230" aria-hidden="true"><defs><filter id="service-shadow"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#14243a" flood-opacity=".12"/></filter></defs><g class="sheet sheet-back"><rect x="116" y="35" width="145" height="170" rx="12" fill="#a8d5f5" stroke="#8bbce6"/></g><g class="sheet sheet-mid"><rect x="95" y="25" width="145" height="170" rx="12" fill="#d6eaff" stroke="#a4c6eb"/></g><g class="sheet sheet-front" filter="url(#service-shadow)"><rect x="74" y="20" width="145" height="170" rx="12" fill="white" stroke="#bdd1e7"/><rect x="91" y="39" width="30" height="30" rx="8" fill="#2563eb"/><path d="M100 48h12m-12 6h9m-9 6h12" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="133" y="50" fill="#14243a" font-size="10" font-weight="700">APPLICATION</text><text x="133" y="64" fill="#7591b0" font-size="8">Getting organised</text><path d="M92 87h104" stroke="#dfebf5"/><g fill="#edf4fb"><rect x="92" y="102" width="13" height="13" rx="4"/><rect x="92" y="128" width="13" height="13" rx="4"/><rect x="92" y="154" width="13" height="13" rx="4"/></g><g stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="tick t1" pathLength="1" d="m95 108 3 3 5-6"/><path class="tick t2" pathLength="1" d="m95 134 3 3 5-6"/><path class="tick t3" pathLength="1" d="m95 160 3 3 5-6"/></g><g stroke="#b5c8dc" stroke-width="4" stroke-linecap="round"><path d="M117 108h67"/><path d="M117 134h54"/><path d="M117 160h62"/></g></g><g class="floating-note" filter="url(#service-shadow)"><rect x="195" y="139" width="113" height="49" rx="12" fill="#14243a"/><circle cx="214" cy="163" r="10" fill="#315374"/><path d="m210 163 3 3 5-6" stroke="#a8d5f5" stroke-width="2" fill="none"/><text x="232" y="160" font-size="9" fill="#fff" font-weight="700">STEP BY STEP</text><text x="232" y="174" font-size="8" fill="#a8c7e6">With you throughout</text></g><g class="paper-spark" stroke="#2563eb" stroke-width="2"><path d="M270 60v14m-7-7h14M50 142v10m-5-5h10"/></g></svg></div><div class="content"><h3>FCA Authorisation Assistance</h3><p><strong class="home-service__intro">Starting a dealership or introducing finance?</strong>We help organise your application, prepare supporting documents and respond to FCA information requests.</p><ul><li>Application preparation</li><li>Business plans and policies</li><li>Support with FCA questions</li></ul><a class="text-link" href="/fca-authorisation-motor-dealers">Explore authorisation assistance <span aria-hidden="true">→</span></a></div></article>
+        <article class="service"><div class="art" aria-hidden="true"><span class="index">02</span><svg viewBox="0 0 360 230" aria-hidden="true"><g class="report-board" filter="url(#service-shadow)"><rect x="57" y="35" width="246" height="158" rx="15" fill="white" stroke="#b2dcd3"/><path d="M58 68h244" stroke="#d3ebe4"/><circle cx="74" cy="52" r="3" fill="#a9d2c8"/><circle cx="84" cy="52" r="3" fill="#a9d2c8"/><circle cx="94" cy="52" r="3" fill="#a9d2c8"/><text x="117" y="56" font-size="11" font-weight="700" fill="#14243a">CCR009</text><rect x="242" y="45" width="44" height="14" rx="7" fill="#d5f5ec"/><g stroke="#e1f0eb"><path d="M74 99h212M74 127h212M74 155h212M146 80v94M219 80v94"/></g><g class="report-row row-one" fill="#99c9c3"><rect x="76" y="83" width="49" height="5" rx="2"/><rect x="160" y="83" width="34" height="5" rx="2"/><rect x="236" y="83" width="38" height="5" rx="2"/></g><g class="report-row row-two" fill="#75b8ae"><rect x="76" y="111" width="37" height="5" rx="2"/><rect x="160" y="111" width="42" height="5" rx="2"/><rect x="236" y="111" width="30" height="5" rx="2"/></g><g class="report-row row-three" fill="#56a69a"><rect x="76" y="139" width="52" height="5" rx="2"/><rect x="160" y="139" width="31" height="5" rx="2"/><rect x="236" y="139" width="36" height="5" rx="2"/></g><rect class="scan-line" x="65" y="76" width="230" height="25" rx="5" fill="#0d9488" opacity=".1"/></g><g class="data-tile tile-one" filter="url(#service-shadow)"><rect x="25" y="122" width="76" height="73" rx="14" fill="#0d9488"/><g fill="#fff"><rect x="40" y="155" width="10" height="23" rx="3"/><rect x="57" y="142" width="10" height="36" rx="3"/><rect x="74" y="133" width="10" height="45" rx="3"/></g></g><g class="data-tile tile-two" filter="url(#service-shadow)"><rect x="240" y="18" width="78" height="58" rx="12" fill="#14243a"/><path d="m257 41 8 8 18-17" stroke="#99f6e4" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M257 60h42" stroke="#59b7ad" stroke-width="3" stroke-linecap="round"/></g></svg></div><div class="content"><h3>CCR009 Return Assistance</h3><p><strong class="home-service__intro">Have a CCR009 return to complete?</strong>We help you understand the return and organise the information needed for your submission.</p><ul><li>Understand the return</li><li>Organise supporting records</li><li>Help preparing your reporting</li></ul><a class="text-link" href="/ccr009-return-assistance-motor-dealers">Explore CCR009 assistance <span aria-hidden="true">→</span></a></div></article>
+        <article class="service"><div class="art" aria-hidden="true"><span class="index">03</span><svg viewBox="0 0 360 230" aria-hidden="true"><circle cx="180" cy="115" r="89" fill="none" stroke="#cdb8ed" stroke-dasharray="3 8"/><ellipse cx="180" cy="115" rx="135" ry="62" fill="none" stroke="#e0d1f1"/><g class="orbit-bead"><circle cx="180" cy="26" r="6" fill="#8050cf"/><circle cx="180" cy="26" r="12" fill="#8050cf" opacity=".1"/></g><g class="calendar" filter="url(#service-shadow)"><rect x="116" y="51" width="132" height="135" rx="16" fill="white" stroke="#d3bfeb"/><path d="M116 84h132" stroke="#e9def5"/><path d="M145 45v18M219 45v18" stroke="#14243a" stroke-width="5" stroke-linecap="round"/><text x="150" y="75" font-size="10" font-weight="700" fill="#14243a">ONGOING SUPPORT</text><g fill="#e8ddf5"><rect x="134" y="99" width="15" height="14" rx="4"/><rect x="159" y="99" width="15" height="14" rx="4"/><rect x="184" y="99" width="15" height="14" rx="4"/><rect x="209" y="99" width="15" height="14" rx="4"/><rect x="134" y="122" width="15" height="14" rx="4"/><rect x="159" y="122" width="15" height="14" rx="4"/><rect x="184" y="122" width="15" height="14" rx="4"/><rect x="209" y="122" width="15" height="14" rx="4"/><rect x="134" y="145" width="15" height="14" rx="4"/><rect x="159" y="145" width="15" height="14" rx="4"/><rect x="184" y="145" width="15" height="14" rx="4"/><rect x="209" y="145" width="15" height="14" rx="4"/></g><rect class="calendar-day" x="184" y="122" width="15" height="14" rx="4" fill="#8050cf"/><path d="m188 128 3 3 5-6" stroke="white" fill="none" stroke-width="1.6" stroke-linecap="round"/></g><g class="chat-one" filter="url(#service-shadow)"><path d="M38 71q0-12 12-12h60q12 0 12 12v28q0 12-12 12H65l-15 12v-12q-12 0-12-12Z" fill="#14243a"/><g fill="#d6bafa"><circle class="chat-dot dot1" cx="60" cy="85" r="4"/><circle class="chat-dot dot2" cx="80" cy="85" r="4"/><circle class="chat-dot dot3" cx="100" cy="85" r="4"/></g></g><g class="chat-two" filter="url(#service-shadow)"><path d="M235 136q0-12 12-12h61q12 0 12 12v28q0 12-12 12h-8v12l-16-12h-37q-12 0-12-12Z" fill="#8050cf"/><path d="M251 144h52m-52 12h33" stroke="#f2eaff" stroke-width="4" stroke-linecap="round"/></g></svg></div><div class="content"><h3>Ongoing Compliance Support</h3><p><strong class="home-service__intro">Already authorised and need regular help?</strong>Get practical help with compliance administration, documentation and periodic reviews within your agreed scope.</p><ul><li>Day-to-day administration support</li><li>Help with compliance documents</li><li>Periodic reviews within your agreed scope</li></ul><a class="text-link" href="/motor-dealer-compliance">Explore ongoing support <span aria-hidden="true">→</span></a></div></article>
+        <article class="service service-finance"><div class="art" aria-hidden="true"><span class="index">04</span><%- include('partials/finance_service_art') %></div><div class="content"><h3>Motor Finance for Dealerships</h3><p><strong class="home-service__intro">Want to offer finance to your customers?</strong>Explore motor-finance broker support backed by 30+ years of motor-finance experience.</p><ul><li>Discuss your dealership’s finance needs</li><li>Understand the broker relationship</li><li>Explore the setup and next steps</li></ul><a class="text-link" href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">→</span></a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Existing testimonial carousel (v7 behaviour, unchanged) -->
+  <section class="sec sec--flush-top" aria-labelledby="testimonials-heading">
+    <div class="wrap">
+      <div class="proof" data-testimonials aria-roledescription="carousel" aria-labelledby="testimonials-heading">
+        <div class="proof__head">
           <div>
-            <p class="font-medium text-slate-100 mb-0.5">Ongoing Compliance Support</p>
-            <p>Compliance Documentation Support</p>
+            
+            <h2 class="display-m" id="testimonials-heading">What motor dealers say about <span class="serif">working with us.</span></h2><p style="margin-top:16px"><a class="text-link" href="/testimonials">Read all client testimonials <span aria-hidden="true">→</span></a></p>
           </div>
-          <span class="px-2 py-1 rounded-full bg-orange-600/30 text-black text-[11px]">
-              Compliance
-            </span>         
-          </div>
-      </div>
-    </div>
-</section>
-
-<section class="border-t border-slate-800 pt-10 mt-4">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="grid lg:grid-cols-3 gap-8 text-sm items-start">
-
-  <!-- LEFT: SERVICES IMAGE -->
-  <div class="lg:col-span-2 services-clean-hero sa-reveal">
-    <img
-      src="/images/services-hero.png"
-      alt="009 Compliance service dashboard"
-      width="612"
-      height="421"
-      class="services-clean-hero__img"
-      loading="lazy"
-    />
-  </div>
-
-<!-- RIGHT: CCR009 BOX -->
-<div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 shadow-lg services-important-note sa-reveal">
-  <h3 class="font-semibold text-slate-50 mb-2">What is CCR009?</h3>
-    <p class="text-slate-300 mb-3">
-      CCR009 is the FCA’s regulatory return used to collect detailed information relating to a firm’s consumer credit activities, including credit broking relationships, finance introductions, commission structures, sales channels and related regulated activity.
-  </p>
-
-  <p class="text-slate-300 mb-3">
-    As FCA reporting requirements continue to evolve, firms are expected to maintain accurate underlying records, clear management information and appropriate oversight so regulatory returns can be completed accurately and on time.
-  </p>
-
-  <p class="text-slate-300">
-    By maintaining structured monthly records relating to dealer and broker activity, finance introductions, commission income and related operational data, firms can reduce last-minute pressure during reporting periods and improve day-to-day visibility of their regulated activities.
-  </p>
-
-  <a href="/ccr009-return-assistance-motor-dealers" class="inline-flex mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-400 underline-offset-4 hover:underline">
-    Read more about CCR009 return assistance for motor dealers
-  </a>
-</div>
-</div>
-</section>
-
-<section class="home-ccr009-cta sa-reveal" aria-labelledby="home-ccr009-cta-title">
-  <div class="home-ccr009-cta__inner">
-    <div class="home-ccr009-cta__glow" aria-hidden="true"></div>
-    <div class="home-ccr009-cta__content">
-      <div class="home-ccr009-cta__copy">
-        <p class="home-ccr009-cta__label">CCR009 ENQUIRY</p>
-        <h2 id="home-ccr009-cta-title">Need assistance with your CCR009 return?</h2>
-        <p>
-          Get clear, practical guidance before reporting deadlines become a pressure point.
-        </p>
-      </div>
-
-      <div class="home-ccr009-cta__actions">
-        <div class="home-ccr009-cta__buttons">
-          <a class="home-ccr009-cta__button home-ccr009-cta__button--primary" href="/contact#send-message">
-            Start a CCR009 enquiry
-          </a>
-          <a class="home-ccr009-cta__button home-ccr009-cta__button--secondary" href="/contact">
-            Contact us
-          </a>
-        </div>
-        <p>A quick enquiry can help clarify the right next step.</p>
-      </div>
-    </div>
-  </div>
-</section>
-  
-<section class="border-t border-slate-800 mt-10 pt-10 text-sm">
-  <h2 class="text-xl font-semibold mb-4">How It Works</h2>
-  <div class="grid md:grid-cols-3 gap-4">
-    <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/50">
-      <p class="text-xs font-semibold text-emerald-300 mb-1">1. Create An Account</p>
-      <p class="text-slate-300">
-        Create an account using your basic business details. This provides access to the monthly reporting form and allows us to support you when required.
-      </p>
-    </div>
-    <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/50">
-      <p class="text-xs font-semibold text-emerald-300 mb-1">2. Complete the monthly report</p>
-      <p class="text-slate-300">
-        Each month, log in and complete the structured compliance information using the reporting form provided.
-      </p>
-    </div>
-    <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/50">
-      <p class="text-xs font-semibold text-emerald-300 mb-1">3. Ongoing Support</p>
-      <p class="text-slate-300">
-        We review the information submitted and may contact you if clarification is needed, helping keep records accurate, organised and up to date.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="mt-16 border-t border-slate-800">
-  <div class="bg-slate-950/60">
-    <div class="max-w-6xl mx-auto px-4 py-10">
-      <div class="grid gap-10 md:grid-cols-3">
-        <!-- QUICK LINKS -->
-        <div>
-          <h3 class="text-xs font-semibold tracking-[0.2em] text-emerald-400 uppercase">Quick links</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-200">
-            <li><a class="hover:text-emerald-300" href="/">Home</a></li>
-            <li><a class="hover:text-emerald-300" href="/contact">Contact</a></li>
-            <li><a class="hover:text-emerald-300" href="/services">Services</a></li>
-            <li><a class="hover:text-emerald-300" href="/fca-authorisation-motor-dealers">FCA Authorisation for Motor Dealers</a></li>
-            <li><a class="hover:text-emerald-300" href="/motor-dealer-compliance">Motor Dealer Compliance</a></li>
-            <li><a class="hover:text-emerald-300" href="/ccr009-return-assistance-motor-dealers">CCR009 Return Assistance</a></li>
-          </ul>
-        </div>
-
-        <!-- LEGAL -->
-        <div>
-          <h3 class="text-xs font-semibold tracking-[0.2em] text-emerald-400 uppercase">Legal</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-200">
-            <li><a class="hover:text-emerald-300" href="/privacy-policy">Privacy Policy</a></li>
-            <li><a class="hover:text-emerald-300" href="/complaints-policy">Complaints Policy</a></li>
-            <li><a class="hover:text-emerald-300" href="/cookie-policy">Cookies</a></li>
-          </ul>
-        </div>
-
-        <!-- GET IN TOUCH -->
-        <div>
-          <h3 class="text-xs font-semibold tracking-[0.2em] text-emerald-400 uppercase">Get in touch</h3>
-          <div class="mt-4 space-y-3 text-sm text-slate-200">
-            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-              <div class="font-semibold text-slate-50">009 Compliance Ltd</div>
-              <div class="mt-2 text-slate-300">
-                <div>
-                  <span class="text-slate-400">Email:</span>
-                  <a class="hover:text-emerald-300" href="mailto:info@009compliance.com">info@009compliance.com</a>
-                </div>
-                <div class="mt-1">
-                  <span class="text-slate-400">Phone:</span>
-                  <a class="hover:text-emerald-300" href="tel:03300432377">03300432377</a>
-                </div>
-              </div>
+          <div class="testimonial-controls" data-carousel-controls hidden>
+            <div class="testimonial-control-buttons">
+              <button type="button" class="carousel-control" data-carousel-prev aria-label="Previous testimonial" aria-controls="testimonial-stage"><span aria-hidden="true">←</span></button>
+              <button type="button" class="carousel-control" data-carousel-next aria-label="Next testimonial" aria-controls="testimonial-stage"><span aria-hidden="true">→</span></button>
             </div>
-            <p class="text-xs text-slate-500">
-            </p>
           </div>
         </div>
+        <div id="testimonial-stage" class="testimonial-stage" data-carousel-stage aria-live="off">
+          <% reviews.forEach((review, index) => { const lines = attributionLines(review.attribution); %>
+            <article class="testimonial-card" data-review-index="<%= index %>" role="group" aria-roledescription="slide" aria-label="Testimonial <%= index + 1 %> of <%= reviews.length %>">
+              <header class="testimonial-person">
+                <p class="testimonial-person-lines"><strong class="testimonial-name"><%= lines.name %></strong><span class="testimonial-role"><%= lines.role %></span><span class="testimonial-business"><%= lines.business %></span><span class="testimonial-location"><%= lines.location %></span></p>
+                <p class="sales-sr-only" data-attribution aria-hidden="true"><%= review.attribution %></p>
+              </header>
+              <blockquote class="testimonial-excerpt"><p><% excerptSegments(review.excerpt, review.highlights).forEach(segment => { %><% if (segment.highlighted) { %><strong class="testimonial-highlight"><%= segment.text %></strong><% } else { %><%= segment.text %><% } %><% }); %></p></blockquote>
+              <details class="testimonial-details" data-full-review>
+                <summary>Read full review</summary>
+                <div class="testimonial-full" data-full-text>
+                  <% review.paragraphs.forEach(paragraph => { %><p><%= paragraph %></p><% }) %>
+                </div>
+              </details>
+            </article>
+          <% }) %>
+        </div>
+        <p class="sales-sr-only" data-carousel-announcement aria-live="polite" aria-atomic="true"></p>
+        <dialog class="testimonial-dialog" data-review-dialog aria-labelledby="review-dialog-title">
+          <div class="testimonial-dialog-top"><button type="button" class="carousel-control" data-review-close aria-label="Close full review">✕</button></div>
+          <h3 id="review-dialog-title">Full review</h3>
+          <blockquote data-dialog-quote></blockquote>
+          <p class="testimonial-attribution" data-dialog-attribution></p>
+        </dialog>
       </div>
-</section>
+    </div>
+  </section>
+
+  <!-- 5. Reasons to choose 009 Compliance -->
+  <section class="sec sec--flush-top" aria-labelledby="reasons-title">
+    <div class="wrap">
+      <%- include('partials/reasons_card') %>
+    </div>
+  </section>
+
+  <!-- 6. Simple engagement process -->
+<link rel="stylesheet" href="<%= assetPath('/css/simple-process.css?v=47') %>"><script defer src="<%= assetPath('/js/simple-process.js') %>"></script>
+  <section class="sec simple-process" aria-labelledby="how-title"><div class="wrap">
+    <div class="sec-head"><h2 class="display-l" id="how-title">Getting started <span class="serif">is simple.</span></h2></div>
+    <ol class="simple-process__steps" data-simple-process>
+<li style="--step:0"><div class="simple-process__track" aria-hidden="true"><span class="simple-process__fill"></span></div><div class="simple-process__top"><span class="simple-process__number">01</span><span class="simple-process__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="process-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h30v20H22l-9 7v-7H9Z"/><path d="M17 20h14m-14 5h9"/></svg></div><h3>Let’s have a quick chat</h3><p>Book a 15-minute call or email us about your dealership.</p></li><li style="--step:1"><div class="simple-process__track" aria-hidden="true"><span class="simple-process__fill"></span></div><div class="simple-process__top"><span class="simple-process__number">02</span><span class="simple-process__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="process-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="30" height="30" rx="7"/><path d="m17 24 5 5 11-12"/></svg></div><h3>Choose your support</h3><p>We’ll explain the right service, what’s included and the cost.</p></li><li style="--step:2"><div class="simple-process__track" aria-hidden="true"><span class="simple-process__fill"></span></div><div class="simple-process__top"><span class="simple-process__number">03</span><span class="simple-process__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="process-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17h13l4 5h14v18H9Z"/><path d="M15 17V8h18v14m-13-8h8"/></svg></div><h3>Share your information</h3><p>We’ll guide you through the details and documents we need.</p></li><li style="--step:3"><div class="simple-process__track" aria-hidden="true"><span class="simple-process__fill"></span></div><div class="simple-process__top"><span class="simple-process__number">04</span><span class="simple-process__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="process-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="9" width="27" height="32" rx="5"/><path d="m17 19 2 2 4-4m-6 12 2 2 4-4m5-8h4m-4 10h4"/></svg></div><h3>We get to work</h3><p>We help move things forward and keep you clear on what happens next.</p></li></ol><div class="simple-process__footer"><a class="btn btn--primary btn--sheen" href="#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a></div>
+    
+  </div></section>
+
+
+
+  <section class="wrap referral-spotlight" aria-labelledby="referral-spotlight-title">
+    <div class="referral-spotlight__art" aria-hidden="true"><svg viewBox="0 0 260 150" fill="none"><path class="referral-link-line" d="M70 75h120" stroke="#91c5f2" stroke-width="3" stroke-dasharray="5 7"/><g class="referral-dealer referral-dealer--one"><rect x="15" y="25" width="100" height="100" rx="23" fill="#21466e" stroke="#76aadd"/><path d="m36 65 29-21 29 21v36H36Z" stroke="#d9efff" stroke-width="2"/><path d="M47 100V76h36v24m-36-16h36m-26-27h15" stroke="#a8d5f5" stroke-width="2"/></g><g class="referral-dealer referral-dealer--two"><rect x="145" y="25" width="100" height="100" rx="23" fill="#2563eb" stroke="#a8d5f5"/><path d="m166 65 29-21 29 21v36h-58Z" stroke="#fff" stroke-width="2"/><path d="M177 100V76h36v24m-36-16h36m-26-27h15" stroke="#d9efff" stroke-width="2"/></g><circle cx="130" cy="75" r="17" fill="#a8d5f5"/><path d="M122 75h16m-6-6 7 6-7 6" stroke="#14243a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="referral-spotlight__copy"><h2 id="referral-spotlight-title">Know another dealer?<br><span>Make an introduction.</span></h2><p>Each active qualifying referral saves you 25% on your monthly subscription, including reporting after authorisation. If one cancels, their discount ends from your next invoice.</p><a class="referral-spotlight__button" href="/referral">Explore our referral programme <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <!-- 8. Focused FAQs -->
+  <section class="sec" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <div>
+        
+        <h2 class="display-l" id="faq-title">Good to know <span class="serif">before we speak.</span></h2>
+        <p class="lede">Anything else, ask us in your call.</p>
+        <div class="guide-mini">
+          <p class="fine">Want the detail first?</p>
+          <a href="/do-motor-dealers-need-fca-authorisation">Do motor dealers need FCA authorisation?</a>
+          <a href="/what-is-ccr009">What is CCR009?</a>
+          <a href="/motor-dealer-compliance">Ongoing motor dealer compliance support</a>
+        </div>
+      </div>
+      <%- include('partials/faq_list', { faqs: faqs, openFirst: true }) %>
+    </div>
+  </section>
+
+  <!-- 9. Closing call request -->
+  <%- include('partials/meeting_section', { defaultTopic: 'unsure' }) %>
+</div>
+<script defer src="<%= assetPath('/js/testimonials.js') %>"></script>
+
+
+
+

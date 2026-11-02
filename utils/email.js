@@ -4,6 +4,7 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 587,
   secure: false,
+  requireTLS: true,
   connectionTimeout: 10000,
   greetingTimeout: 10000,
   socketTimeout: 20000,
@@ -22,13 +23,14 @@ async function sendEmail({ to, subject, html, replyTo }) {
     html
   });
 
+  let timer;
   const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => {
+    timer = setTimeout(() => {
       reject(new Error('Email send timed out. Check SMTP access and credentials.'));
     }, 25000);
   });
 
-  await Promise.race([sendPromise, timeoutPromise]);
+  try { await Promise.race([sendPromise, timeoutPromise]); } finally { clearTimeout(timer); }
 }
 
 module.exports = { sendEmail };

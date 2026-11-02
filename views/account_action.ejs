@@ -1,0 +1,12 @@
+<section class="section"><div class="container" style="max-width:680px">
+  <h1 class="display-m"><%= title %></h1>
+  <p><%= message %></p>
+  <% if (action) { %>
+  <form method="POST" action="<%= action %>">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <% if (token) { %><input type="hidden" name="token" value="<%= token %>"><% } %>
+    <button class="btn btn--primary" type="submit"><%= button %></button>
+  </form>
+  <% } %>
+  <p><a href="/">Return to homepage</a></p>
+</div></section>

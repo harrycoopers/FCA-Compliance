@@ -1,14 +1,43 @@
-# Dependencies
+# Installed dependencies
 node_modules/
 
-# Environment variables (secrets)
+# Environment variables and secrets
 .env
+.env.*
+!*.env.example
 
-# SQLite databases
-db.sqlite
+# Customer and staff databases, including temporary database files
 *.sqlite
+*.sqlite-*
 *.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
 
-# Logs & system files
-npm-debug.log*
+# Private dashboard records and uploaded/generated documents
+.009-dashboard-data/
+.009-dashboard-data.import-*/
+
+# Logs
+*.log
+logs/
+
+# Test output and caches
+coverage/
+.nyc_output/
+.cache/
+
+# Old Cloudflare local development data
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Operating system files
 .DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary editor files
+*.swp
+*.swo
+*~

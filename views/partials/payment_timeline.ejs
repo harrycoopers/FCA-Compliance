@@ -1,0 +1,21 @@
+<%
+  /* How the subscription works, as a month-by-month timeline. Confirmed terms only. */
+  const _o = offer;
+%>
+<div class="paytime" data-reveal>
+  <ol class="paytime__track" aria-label="Payment timeline">
+    <li class="paytime__m paytime__m--first"><b>Month 1</b><span>£<%= _o.startPayment %> to get started</span><em>This is your first monthly payment</em></li>
+    <% for (let m = 2; m <= _o.minimumTermMonths; m++) { %>
+      <li class="paytime__m" style="--i:<%= m - 1 %>"><b>Month <%= m %></b><span>£<%= _o.monthlyPayment %></span></li>
+    <% } %>
+    <li class="paytime__m paytime__m--more" style="--i:<%= _o.minimumTermMonths %>"><b>Month <%= _o.minimumTermMonths + 1 %> onwards</b><span>£<%= _o.monthlyPayment %> per month</span><strong class="paytime__support-label">Ongoing Compliance Support</strong><em>Continues until you cancel</em></li>
+  </ol>
+  <div class="paytime__brace" aria-hidden="true"><span><%= _o.minimumTermTitle %>-month minimum term · £<%= _o.minimumTotal.amount %> minimum commitment</span></div>
+  <div class="paytime__notes">
+    <div class="paytime__note"><span class="paytime__ico" aria-hidden="true">★</span><p><strong>Approved sooner?</strong> <%= _o.decisionTimingTerms %> Continuing reporting support is £<%= _o.reportingMonthly %> per month before any active referral discounts, which continue after authorisation.</p></div>
+    <div class="paytime__note paytime__note--sep"><span class="paytime__ico" aria-hidden="true">＋</span><p><strong>Paid separately:</strong> the FCA application fee. It isn’t part of our monthly payments.</p></div>
+    <div class="paytime__note"><span class="paytime__ico" aria-hidden="true">!</span><p><strong>Not an FCA timescale.</strong> The six-month term is our contract term. The FCA decides applications and how long they take, and approval isn’t guaranteed.</p></div>
+  </div>
+  <% if (_o.vatStatement) { %><p class="fine"><%= _o.vatStatement %></p><% } %>
+  <p class="fine">Payments are collected by <%= _o.paymentMethod %>. <%= _o.afterMinimumTerm %><% if (_o.cancellationNotice) { %> <%= _o.cancellationNotice %><% } %></p>
+</div>

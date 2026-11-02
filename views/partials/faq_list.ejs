@@ -1,0 +1,15 @@
+<%
+  /* Renders a list of { question, answer, link? } as accessible disclosure widgets.
+     Answers are plain text (escaped). */
+%>
+<div class="faq__list">
+  <% (faqs || []).forEach(function (faq, i) { %>
+    <details<%= (typeof openFirst !== 'undefined' && openFirst && i === 0) ? ' open' : '' %>>
+      <summary><%= faq.question %></summary>
+      <div class="faq__a">
+        <p><%= faq.answer %></p>
+        <% if (faq.link) { %><a href="<%= faq.link.href %>"><%= faq.link.label %> →</a><% } %>
+      </div>
+    </details>
+  <% }) %>
+</div>

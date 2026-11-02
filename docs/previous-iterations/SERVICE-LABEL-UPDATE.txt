@@ -1,0 +1,4 @@
+Removed only Getting authorised, Preparing your return and Staying organised from the homepage service cards.
+Stop the server, replace views/index.ejs from this ZIP, restart with npm run dev, then refresh.
+Keep your existing .env and database. No other application files changed.
+Verified exact three-element removal and actual EJS guest/signed-in rendering. No browser testing performed.

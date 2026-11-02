@@ -1,0 +1,23 @@
+'use strict';
+const {createService,safeEqual}=require('./service');
+const {rateLimit}=require('../utils/security');
+module.exports=function mountBookings(app,options){
+ const env=options.env||process.env,service=createService(options);
+ const wrap=fn=>(req,res,next)=>Promise.resolve(fn(req,res)).catch(e=>{res.status(e.status||503).json({error:e.status===409?e.message:'Booking could not be completed. Please retry shortly or contact us.'});});
+ const internal=(req,res,next)=>{const token=req.headers.authorization?.replace(/^Bearer /,'');if(!env.BOOKING_API_KEY||env.BOOKING_API_KEY.length<32||!safeEqual(token,env.BOOKING_API_KEY))return res.status(401).json({error:'Unauthorized'});next();};
+ const origin=(req,res,next)=>{if(req.headers.origin!==(env.BOOKING_PUBLIC_URL ? new URL(env.BOOKING_PUBLIC_URL).origin : `${req.protocol}://${req.get('host')}`))return res.status(403).json({error:'Invalid origin'});next();};
+ const publicBooking=b=>({id:b.id,status:b.status,date:b.date,time:b.time,kind:b.kind,confirmationEmail:b.email_status});
+ app.use(['/api/bookings','/internal/bookings'],(req,res,next)=>{res.set('Cache-Control','no-store');next();});
+ app.get('/api/bookings/availability',rateLimit(options.db,'booking-availability',90,60000),wrap(async(req,res)=>{const status=await service.status();if(!status.configured||!status.connected)return res.status(503).json({error:'Online call booking is not configured yet. Please contact us to arrange a call.'});res.json({date:req.query.date,times:await service.freeTimes(req.query.date)});}));
+ app.post('/api/bookings',origin,wrap(async(req,res)=>{if(!await service.limit(req.ip||''))return res.status(429).json({error:'Too many requests. Please try again later.'});let b;try{b=await service.reserve(req.body,req.headers['idempotency-key']);}catch(e){if(!e.status&&/check|Invalid|different details|upcoming|valid phone number/.test(e.message))return res.status(400).json({error:e.message});throw e;}processQueue().catch(()=>{});res.status(b.status==='confirmed'?201:202).json(publicBooking(b));}));
+ app.get('/api/bookings/status/:key',rateLimit(options.db,'booking-status',120,60000),wrap(async(req,res)=>{if(!/^[a-f0-9-]{32,64}$/i.test(req.params.key))return res.sendStatus(404);await service.ready;const b=await service.get('SELECT * FROM meeting_bookings WHERE request_key=?',[req.params.key]);if(!b)return res.sendStatus(404);res.json(publicBooking(b));}));
+ app.get('/api/bookings/google/callback',(req,res)=>res.status(410).type('text').send('Video booking connections have been retired. Calls are managed in your private dashboard.'));
+ app.get('/internal/bookings',internal,wrap(async(req,res)=>{await service.ready;res.json({...(await service.status()),bookings:await service.all('SELECT id,name,email,company,phone,kind,date,time,topic,status,start,created,updated,error,email_status AS confirmationEmail FROM meeting_bookings ORDER BY start DESC LIMIT 2000')});}));
+ app.post('/internal/bookings/connect',internal,(req,res)=>res.status(410).json({error:'Google connection is no longer needed for phone calls.'}));
+ app.post('/internal/bookings/process',internal,wrap(async(req,res)=>{await service.processPending();res.json({ok:true});}));
+ let stopped=false,running=null;
+ const processQueue=()=>{if(stopped)return Promise.resolve();if(!running)running=service.processPending().finally(()=>{running=null;});return running;};
+ const timer=setInterval(()=>processQueue().catch(()=>{}),60000);timer.unref();
+ service.ready.then(processQueue).catch(()=>console.error('[009 Booking] Booking database could not be initialized.'));
+ return {...service,stop:async()=>{stopped=true;clearInterval(timer);await service.ready.catch(()=>{});if(running)await running.catch(()=>{});}};
+};

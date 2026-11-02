@@ -1,11 +1,11 @@
 <%
   const guideSectionId = (section, index) => section.id || `${page.slug.replace(/^\//, '')}-section-${index + 1}`;
 %>
-<main class="ccr009-page ccr009-guide-page">
+<div class="ccr009-page ccr009-guide-page">
   <section class="ccr009-hero ccr009-guide-hero sa-reveal">
     <div class="ccr009-hero__inner">
       <div class="ccr009-hero__copy">
-        <p class="ccr009-eyebrow"><%= page.eyebrow %></p>
+        
         <h1><%= page.h1 %></h1>
         <p class="ccr009-hero__lead"><%= page.intro %></p>
         <div class="ccr009-actions">
@@ -125,7 +125,7 @@
 
       <% if (!page.hideSupportBox) { %>
         <article class="ccr009-guide-support ccr009-section ccr009-section--accent sa-reveal">
-          <span class="ccr009-eyebrow">Need help with this?</span>
+          
           <h2 class="services-h2"><%= page.support.title %></h2>
           <p class="services-p"><%= page.support.text %></p>
           <div class="ccr009-actions ccr009-actions--section">
@@ -176,7 +176,7 @@
   </section>
 
   <section class="ccr009-final-cta sa-reveal">
-    <span class="ccr009-eyebrow"><%= page.cta.eyebrow || 'Practical support' %></span>
+    
     <h2 class="services-h2"><%= page.cta.title %></h2>
     <p class="services-p"><%= page.cta.text %></p>
     <% if (page.cta.cards) { %>
@@ -202,7 +202,7 @@
       This page provides general information only. It is not legal or regulatory advice. Firms remain responsible for checking their own FCA permissions, RegData schedule and reporting obligations.
     </p>
   </section>
-</main>
+</div>
 
 <script type="application/ld+json">
 <%- JSON.stringify(faqSchema, null, 2) %>

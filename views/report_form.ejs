@@ -1,3 +1,4 @@
+<div class="portal-page report-form-page">
 <%
   const isEdit = !!report;
   const dataObj = report && report.dataObj ? report.dataObj : {};
@@ -38,6 +39,8 @@
     method="POST"
     class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 text-base"
   >
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <% if (report) { %><input type="hidden" name="revision" value="<%= formData.revision ?? report.revision %>"><% } %>
     <div class="grid lg:grid-cols-2 gap-10">
       <!-- LEFT COLUMN -->
       <div class="space-y-8">
@@ -48,9 +51,10 @@
 
   <div class="grid md:grid-cols-2 gap-6">
     <div>
-      <label class="block text-sm text-slate-400 mb-2">Month</label>
+      <label class="block text-sm text-slate-400 mb-2" for="reporting_month_select">Month</label>
       <select
         id="reporting_month_select"
+        name="report_month"
         class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
         required
       >
@@ -71,17 +75,19 @@
     </div>
 
     <div>
-      <label class="block text-sm text-slate-400 mb-2">Year</label>
+      <label class="block text-sm text-slate-400 mb-2" for="reporting_year_select">Year</label>
       <select
         id="reporting_year_select"
+        name="report_year"
         class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
         required
       >
         <option value="" disabled>Select year</option>
         <%
           const currentYear = new Date().getFullYear();
-          const maxYear = 2050;
-          for (let y = currentYear; y <= maxYear; y++) {
+          const years = new Set([currentYear,currentYear-1,currentYear-2,currentYear-3]);
+          if (report && /^\d{4}-\d{2}$/.test(report.reporting_month)) years.add(Number(report.reporting_month.slice(0,4)));
+          for (const y of [...years].sort((a,b)=>b-a)) {
         %>
           <option value="<%= y %>"><%= y %></option>
         <% } %>
@@ -94,6 +100,7 @@
     type="hidden"
     name="reporting_month"
     id="reporting_month_hidden"
+    disabled
     value="<%= (formData.reporting_month ?? (report && report.reporting_month) ?? '') %>"
   />
 
@@ -106,6 +113,7 @@
     const monthSel = document.getElementById('reporting_month_select');
     const yearSel = document.getElementById('reporting_year_select');
     if (!hidden || !monthSel || !yearSel) return;
+    hidden.disabled = false;
 
     // If editing, preselect saved value
     if (hidden.value && hidden.value.includes('-')) {
@@ -115,6 +123,7 @@
     } else {
       // New report: default to PREVIOUS month
       const d = new Date();
+      d.setDate(1);
       d.setMonth(d.getMonth() - 1);
 
       const y = String(d.getFullYear());
@@ -142,42 +151,42 @@
 
         <div class="grid md:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]" for="field-total_vehicles_sold">
               Total Vehicles Sold This Month
             </label>
-            <input type="number" min="0" name="total_vehicles_sold" value="<%= (formData.total_vehicles_sold ?? dataObj.total_vehicles_sold ?? '') %>"
+            <input id="field-total_vehicles_sold" type="number" min="0" name="total_vehicles_sold" inputmode="numeric" step="1" value="<%= (formData.total_vehicles_sold ?? dataObj.total_vehicles_sold ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]" for="field-funded_deals">
               Vehicles Sold on Finance (Funded Deals)
             </label>
-            <input type="number" min="0" name="funded_deals" value="<%= (formData.funded_deals ?? dataObj.funded_deals ?? '') %>"
+            <input id="field-funded_deals" type="number" min="0" name="funded_deals" inputmode="numeric" step="1" value="<%= (formData.funded_deals ?? dataObj.funded_deals ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-300 mb-2">Lenders / Brokers Used This Month (with commission received per lender)</label>
-          <textarea name="lenders_brokers_used" rows="3"
+          <label class="block text-sm font-medium text-slate-300 mb-2" for="field-lenders_brokers_used">Lenders / Brokers Used This Month (with commission received per lender)</label>
+          <textarea id="field-lenders_brokers_used" name="lenders_brokers_used" rows="3"
              class="w-full rounded-lg bg-slate-950 border border-slate-700 px-4 py-3 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"><%= (formData.lenders_brokers_used ?? dataObj.lenders_brokers_used ?? '') %></textarea>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]" for="field-finance_commission">
               Total Finance Commission Received (£)
             </label>
-            <input type="text" name="finance_commission" value="<%= (formData.finance_commission ?? dataObj.finance_commission ?? '') %>"
+            <input id="field-finance_commission" type="text" name="finance_commission" inputmode="decimal" value="<%= (formData.finance_commission ?? dataObj.finance_commission ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]" for="field-total_turnover">
               Total Business Turnover (all income) (£)
             </label>
-            <input type="text" name="total_turnover" value="<%= (formData.total_turnover ?? dataObj.total_turnover ?? '') %>"
+            <input id="field-total_turnover" type="text" name="total_turnover" inputmode="decimal" value="<%= (formData.total_turnover ?? dataObj.total_turnover ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
@@ -200,37 +209,37 @@
 
           <div class="grid md:grid-cols-2 gap-6 mt-4">
             <div>
-              <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]">If Yes: Number of Cases</label>
-              <input type="number" min="0" name="finance_complaints_cases" value="<%= (formData.finance_complaints_cases ?? dataObj.finance_complaints_cases ?? '') %>"
+              <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]" for="field-finance_complaints_cases">If Yes: Number of Cases</label>
+              <input type="number" min="0" id="field-finance_complaints_cases" name="finance_complaints_cases" inputmode="numeric" step="1" value="<%= (formData.finance_complaints_cases ?? dataObj.finance_complaints_cases ?? '') %>"
                 class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
             </div>
             <div>
-              <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]">Details</label>
-              <input type="text" name="finance_complaints_details"  value="<%= (formData.finance_complaints_details ?? dataObj.finance_complaints_details ?? '') %>"
+              <label class="block text-sm text-slate-400 mb-2 leading-snug min-h-[44px]" for="field-finance_complaints_details">Details</label>
+              <input id="field-finance_complaints_details" type="text" name="finance_complaints_details"  value="<%= (formData.finance_complaints_details ?? dataObj.finance_complaints_details ?? '') %>"
                 class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
             </div>
           </div>
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-300 mb-2">Fees Paid Out To Brokers / Lead Sources (£)</label>
-          <input type="text" name="fees_paid_brokers" value="<%= (formData.fees_paid_brokers ?? dataObj.fees_paid_brokers ?? '') %>"
+          <label class="block text-sm font-medium text-slate-300 mb-2" for="field-fees_paid_brokers">Fees Paid Out To Brokers / Lead Sources (£)</label>
+          <input id="field-fees_paid_brokers" type="text" name="fees_paid_brokers" inputmode="decimal" value="<%= (formData.fees_paid_brokers ?? dataObj.fees_paid_brokers ?? '') %>"
             class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]" for="field-px_settlements_number">
               Part-exchange finance settlements: number
             </label>
-            <input type="number" min="0" name="px_settlements_number" value="<%= (formData.px_settlements_number ?? dataObj.px_settlements_number ?? '') %>"
+            <input id="field-px_settlements_number" type="number" min="0" name="px_settlements_number" inputmode="numeric" step="1" value="<%= (formData.px_settlements_number ?? dataObj.px_settlements_number ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]">
+            <label class="block text-sm font-medium text-slate-300 mb-2 leading-snug min-h-[44px]" for="field-px_settlements_value">
               Part-exchange finance settlements: value (£)
             </label>
-            <input type="text" name="px_settlements_value" value="<%= (formData.px_settlements_value ?? dataObj.px_settlements_value ?? '') %>"
+            <input id="field-px_settlements_value" type="text" name="px_settlements_value" inputmode="decimal" value="<%= (formData.px_settlements_value ?? dataObj.px_settlements_value ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
@@ -249,8 +258,8 @@
           </div>
 
           <div class="mt-4">
-            <label class="block text-sm text-slate-400 mb-2">If Yes: Details</label>
-            <input type="text" name="changes_details" value="<%= (formData.changes_details ?? dataObj.changes_details ?? '') %>"
+            <label class="block text-sm text-slate-400 mb-2" for="field-changes_details">If Yes: Details</label>
+            <input type="text" id="field-changes_details" name="changes_details" value="<%= (formData.changes_details ?? dataObj.changes_details ?? '') %>"
               class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70" />
           </div>
         </div>
@@ -285,4 +294,7 @@
         <%= isEdit ? 'Save Report' : 'Submit Monthly Report' %>
       </button>
     </div>
+  </form>
+</div>
 
+</div>

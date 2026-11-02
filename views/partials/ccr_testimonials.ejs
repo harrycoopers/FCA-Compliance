@@ -1,0 +1,74 @@
+<% const reviews = testimonials.reviews;
+  const excerptSegments = (text, phrases) => {
+    const ranges = phrases.map(phrase => ({ start: text.indexOf(phrase), text: phrase }))
+      .filter(range => range.start >= 0).sort((a, b) => a.start - b.start);
+    const segments = []; let position = 0;
+    ranges.forEach(range => {
+      if (range.start < position) return;
+      segments.push({ text: text.slice(position, range.start), highlighted: false });
+      segments.push({ text: range.text, highlighted: true });
+      position = range.start + range.text.length;
+    });
+    segments.push({ text: text.slice(position), highlighted: false });
+    return segments;
+  };
+  // Splits the attribution into display lines; the lines concatenate back to the exact original.
+  const attributionLines = (attribution) => {
+    const nameEnd = attribution.indexOf(',');
+    const paren = attribution.indexOf(' (');
+    const special = paren > -1;
+    const roleEnd = special ? paren : attribution.indexOf(',', nameEnd + 1);
+    const locationStart = attribution.lastIndexOf(',') + 1;
+    const roleStop = roleEnd + (special ? 0 : 1);
+    return {
+      name: attribution.slice(0, nameEnd + 1),
+      role: attribution.slice(nameEnd + 1, roleStop),
+      business: attribution.slice(roleStop, locationStart),
+      location: attribution.slice(locationStart)
+    };
+  };
+%>
+  <section class="sec sec--flush-top" aria-labelledby="testimonials-heading">
+    <div class="wrap">
+      <div class="proof" data-testimonials aria-roledescription="carousel" aria-labelledby="testimonials-heading">
+        <div class="proof__head">
+          <div>
+            
+            <h2 class="display-m" id="testimonials-heading">What motor dealers say about <span class="serif">working with us.</span></h2>
+          </div>
+          <div class="testimonial-controls" data-carousel-controls hidden>
+            <div class="testimonial-control-buttons">
+              <button type="button" class="carousel-control" data-carousel-prev aria-label="Previous testimonial" aria-controls="testimonial-stage"><span aria-hidden="true">←</span></button>
+              <button type="button" class="carousel-control" data-carousel-next aria-label="Next testimonial" aria-controls="testimonial-stage"><span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="testimonial-stage" class="testimonial-stage" data-carousel-stage aria-live="off">
+          <% reviews.forEach((review, index) => { const lines = attributionLines(review.attribution); %>
+            <article class="testimonial-card" data-review-index="<%= index %>" role="group" aria-roledescription="slide" aria-label="Testimonial <%= index + 1 %> of <%= reviews.length %>">
+              <header class="testimonial-person">
+                <p class="testimonial-person-lines"><strong class="testimonial-name"><%= lines.name %></strong><span class="testimonial-role"><%= lines.role %></span><span class="testimonial-business"><%= lines.business %></span><span class="testimonial-location"><%= lines.location %></span></p>
+                <p class="sales-sr-only" data-attribution aria-hidden="true"><%= review.attribution %></p>
+              </header>
+              <blockquote class="testimonial-excerpt"><p><% excerptSegments(review.excerpt, review.highlights).forEach(segment => { %><% if (segment.highlighted) { %><strong class="testimonial-highlight"><%= segment.text %></strong><% } else { %><%= segment.text %><% } %><% }); %></p></blockquote>
+              <details class="testimonial-details" data-full-review>
+                <summary>Read full review</summary>
+                <div class="testimonial-full" data-full-text>
+                  <% review.paragraphs.forEach(paragraph => { %><p><%= paragraph %></p><% }) %>
+                </div>
+              </details>
+            </article>
+          <% }) %>
+        </div>
+        <p class="sales-sr-only" data-carousel-announcement aria-live="polite" aria-atomic="true"></p>
+        <dialog class="testimonial-dialog" data-review-dialog aria-labelledby="review-dialog-title">
+          <div class="testimonial-dialog-top"><button type="button" class="carousel-control" data-review-close aria-label="Close full review">✕</button></div>
+          <h3 id="review-dialog-title">Full review</h3>
+          <blockquote data-dialog-quote></blockquote>
+          <p class="testimonial-attribution" data-dialog-attribution></p>
+        </dialog>
+      </div>
+    </div>
+  </section>
+
+<script defer src="<%= assetPath('/js/testimonials.js') %>"></script>

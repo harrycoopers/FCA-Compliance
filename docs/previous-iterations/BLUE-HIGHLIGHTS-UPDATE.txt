@@ -1,0 +1,14 @@
+BLUE TESTIMONIAL EMPHASIS
+Replace views/index.ejs and public/css/home-sales.css in your existing project.
+Stop the server first, restart with npm run dev, then refresh with Ctrl+F5.
+Keep your .env, database, node_modules and configuration unchanged.
+
+Selected exact phrases and experience numbers are shown in deeper blue (#1D4ED8)
+with semibold weight. Emphasis applies only to carousel excerpts. Full reviews,
+attributions, excerpt wording, card layout and carousel JavaScript are unchanged.
+No phrases were rewritten or invented. All text remains HTML-escaped by EJS.
+
+Checks: actual EJS renders for guest/signed-in data without partials; rendered
+excerpt text compared with baseline; full review/attribution source unchanged;
+all other application files unchanged. Browser rendering, wrapping and mobile
+visual fit remain unverified. Existing check reports refer to earlier updates.

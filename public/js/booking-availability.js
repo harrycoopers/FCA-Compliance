@@ -1,0 +1,26 @@
+/* Reserved availability, not customer bookings. Europe/London dates.
+ * Three slots every day, today through three calendar days ahead.
+ * Explicit dates/weekly blocks can be added for genuine commitments.
+ */
+window.bookingAvailability = {
+  dates: {}, weekly: {},
+  reservedSlots(date, today, slots) {
+    const selected = new Date(date + 'T12:00:00Z');
+    const offset = (selected - new Date(today + 'T12:00:00Z')) / 86400000;
+    if (!Number.isInteger(offset) || offset < 0 || offset > 3) return [];
+    let seed = 2166136261;
+    for (const char of '009-reserved-v1:' + date) {
+      seed = Math.imul(seed ^ char.charCodeAt(0), 16777619) >>> 0;
+    }
+    const random = () => {
+      seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5;
+      return (seed >>> 0) / 4294967296;
+    };
+    const choices = [...new Set(slots)];
+    for (let i = choices.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [choices[i], choices[j]] = [choices[j], choices[i]];
+    }
+    return choices.slice(0, 3).sort();
+  }
+};

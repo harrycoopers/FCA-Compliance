@@ -1,138 +1,36 @@
-<div class="max-w-7xl mx-auto">
-  <div class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8 sm:p-10">
-    <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-3 js-reveal">
-      About 009 Compliance
-    </p>
-
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-      <!-- LEFT: main narrative -->
-      <div>
-        <h1 class="text-4xl font-semibold text-slate-50 leading-tight js-reveal">
-          Real people. Real experience. Practical FCA support.
-        </h1>
-
-        <p class="text-slate-300 mt-5 leading-relaxed js-reveal">
-          At 009 Compliance Ltd you deal directly with experienced professionals not a call centre or a ticketing system.
-        </p>
-
-        <p class="text-slate-300 mt-4 leading-relaxed js-reveal">
-          We provide calm practical compliance support to FCA authorised motor dealers who want clarity structure and straight answers without unnecessary jargon or complexity.
-        </p>
-
-        <p class="text-slate-300 mt-4 leading-relaxed js-reveal">
-          Our focus is on helping firms understand what the FCA expects in practice and supporting them to stay organised consistent and prepared as regulatory requirements continue to evolve.
-        </p>
-
-        <div class="mt-10 js-reveal">
-          <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-3">
-            Built on real industry experience
-          </p>
-
-          <p class="text-slate-300 leading-relaxed">
-            Our work draws on <span class="text-slate-100 font-medium">Decades of Experience</span> gained across vehicle finance and the motor trade.
-          </p>
-
-          <p class="text-slate-300 mt-4 leading-relaxed">
-            We have worked within dealerships and vehicle finance environments ourselves so we understand how compliance requirements sit alongside day to day trading realities.
-            That experience shapes everything we do from the way information is structured to how FCA requests and reporting obligations are approached.
-          </p>
-
-          <p class="text-slate-300 mt-4 leading-relaxed">
-            We are not theorists. We work with how dealerships actually operate.
-          </p>
-        </div>
-
-        <div class="mt-10 js-reveal">
-          <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-3">
-            Our role
-          </p>
-
-          <p class="text-slate-300 leading-relaxed">
-            009 Compliance Ltd provides structured compliance support and administrative assistance.
-            We help firms organise information prepare documentation understand regulatory expectations and maintain oversight across the year.
-          </p>
-
-          <p class="text-slate-300 mt-4 leading-relaxed">
-            Responsibility for regulatory decisions interpretations and submissions remains with the authorised firm.
-          </p>
-        </div>
-
-        <div class="mt-8 flex flex-wrap gap-3 js-reveal">
-          <a
-            href="/contact"
-            class="px-5 py-3 rounded-xl bg-emerald-500 text-slate-950 font-semibold hover:bg-emerald-400 transition"
-          >
-            Speak to the team
-          </a>
-          <a
-            href="/services"
-            class="px-5 py-3 rounded-xl border border-slate-700 text-slate-200 hover:border-emerald-500 hover:text-emerald-300 transition"
-          >
-            Our services
-          </a>
-        </div>
-      </div>
-
-      <!-- RIGHT: highlights -->
-      <div>
-        <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-3 js-reveal">
-          How we support firms
-        </p>
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5 js-reveal">
-            <p class="text-emerald-300 font-semibold">Direct access</p>
-            <p class="text-sm text-slate-400 mt-2">
-              Work directly with experienced compliance professionals. No call centres. No ticket queues.
-            </p>
-          </div>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5 js-reveal">
-            <p class="text-emerald-300 font-semibold">Vehicle finance specialists</p>
-            <p class="text-sm text-slate-400 mt-2">
-              FCA compliance support shaped by real world experience in motor trade finance.
-            </p>
-          </div>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5 js-reveal">
-            <p class="text-emerald-300 font-semibold">Plain English guidance</p>
-            <p class="text-sm text-slate-400 mt-2">
-              Clear explanations of FCA rules expectations and common interpretations without unnecessary complexity.
-            </p>
-          </div>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5 js-reveal">
-            <p class="text-emerald-300 font-semibold">Calm practical support</p>
-            <p class="text-sm text-slate-400 mt-2">
-              Helping normalise compliance so it feels manageable structured and proportionate rather than overwhelming.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<%
+const highlightReview = (text, phrases) => {
+  const ranges = [];
+  (phrases || []).forEach(phrase => {
+    if (!phrase) return;
+    let start = text.indexOf(phrase);
+    while (start !== -1) { ranges.push({start, end:start+phrase.length}); start=text.indexOf(phrase,start+phrase.length); }
+  });
+  ranges.sort((a,b)=>a.start-b.start || b.end-a.end);
+  const segments=[];let position=0;
+  ranges.forEach(range=>{if(range.start<position)return;segments.push({text:text.slice(position,range.start),highlight:false});segments.push({text:text.slice(range.start,range.end),highlight:true});position=range.end;});
+  segments.push({text:text.slice(position),highlight:false});return segments;
+};
+%>
+<link rel="stylesheet" href="<%= assetPath('/css/about-refresh.css?v=64') %>">
+<div class="about-refresh">
+  <section class="sec ar-hero"><div class="wrap ar-hero-grid">
+    <div><h1 id="about-title">Motor-trade experience.<br><span class="serif">People you can turn to.</span></h1><p class="ar-lede">Practical compliance support from people who understand your dealership.</p><p>We bring experience from dealerships and vehicle finance to FCA authorisation, CCR009 returns and ongoing compliance administration. Clear explanations, direct contact and help getting organised.</p><div class="actions"><a class="btn btn--primary" href="/contact#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a><a class="text-link" href="/services">Explore our services</a></div></div>
+    <div class="ar-experience" data-ar-motion><div class="ar-orbit" aria-hidden="true"></div><span class="ar-years">30<span>+</span></span><h2>years of motor-trade<br>experience</h2><p>Real experience.<br>Practical understanding.</p><div class="ar-road" aria-hidden="true"><i></i></div></div>
+  </div></section>
+  <section class="sec sec--flush-top"><div class="wrap"><figure class="ar-feature" data-ar-motion><span class="ar-quote-mark" aria-hidden="true">“</span><blockquote>The team there are <strong>super-efficient, knowledgeable</strong> and we simply <strong>wouldn’t use any other company.</strong></blockquote><figcaption>Andy, Manager, S Cars Limited, Shaw</figcaption><a href="/testimonials">Read our client reviews <span aria-hidden="true">↗</span></a></figure></div></section>
+  <section class="sec ar-values" aria-labelledby="ar-values-title"><div class="wrap"><div class="sec-head"><h2 class="display-l" id="ar-values-title">Support that feels<br><span class="serif">personal.</span></h2><p>We understand that compliance sits alongside customers, vehicles and the day-to-day running of your dealership. Our job is to help make it more manageable.</p></div><div class="ar-value-grid">
+<article class="ar-value" data-ar-motion><div class="ar-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M8 9h26v19H20l-9 7v-7H8zM15 16h12M15 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Direct contact</h3><p>Talk directly with experienced professionals who can help you work through your questions.</p></article><article class="ar-value" data-ar-motion><div class="ar-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M12 5h16l7 7v27H12zM28 5v9h7M18 22h11M18 29h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Clear explanations</h3><p>Understand what’s needed, why it matters and what to do next, without unnecessary jargon.</p></article><article class="ar-value" data-ar-motion><div class="ar-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="m22 5 13 5v12c0 8-7 14-13 18-6-4-13-10-13-18V10zM16 22l4 4 9-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Practical assistance</h3><p>Get help organising information and preparing documentation within the scope agreed with your dealership.</p></article></div></div></section>
+  <section class="sec" aria-labelledby="ar-trust-title"><div class="wrap"><div class="sec-head"><h2 class="display-l" id="ar-trust-title">Trust built over time.<br><span class="serif">In their own words.</span></h2><p>Clients describe the experience, reliability and personal working relationships that matter to them.</p></div><div class="ar-review-grid">
+<% const aboutReviews = [
+ {name:'Iain King,', paragraph:0, phrases:['25 years','trust him implicitly']},
+ {name:'Jasper,', paragraph:2, phrases:['that experience really shows','understands the pressures dealers are under']},
+ {name:'Indy,', quote:'Everything is handled promptly and we have complete confidence in the work they do.', phrases:['complete confidence']}
+]; aboutReviews.forEach(item => { const review = testimonials.reviews.find(r => r.attribution.startsWith(item.name)); const quote = item.quote || review.paragraphs[item.paragraph]; %>
+<figure class="ar-review" data-ar-motion><span class="ar-review-mark" aria-hidden="true">“</span><blockquote><% highlightReview(quote,item.phrases).forEach(segment => { %><% if(segment.highlight){ %><strong><%= segment.text %></strong><% }else{ %><%= segment.text %><% } %><% }); %></blockquote><figcaption><%= review.attribution %></figcaption></figure>
+<% }); %>
+</div><div class="ar-review-footer"><p>Exact extracts from client reviews. Some describe personal working relationships with Jon.</p><a class="text-link" href="/testimonials">Read all testimonials →</a></div></div></section>
+  <section class="sec sec--flush-top"><div class="wrap ar-scope"><div><h2 class="display-m">Clear about<br><span class="serif">how we help.</span></h2><p>We agree the service and scope with you, then help organise information, prepare documentation and work through the next steps.</p></div><div><a href="/fca-authorisation-motor-dealers">FCA Authorisation Assistance <span aria-hidden="true">↗</span></a><a href="/ccr009-return-assistance-motor-dealers">CCR009 Return Assistance <span aria-hidden="true">↗</span></a><a href="/motor-dealer-compliance">Ongoing Compliance Support <span aria-hidden="true">↗</span></a><p class="ar-scope-note">009 Compliance Ltd provides clerical, administrative and compliance support. Your firm remains responsible for its information, regulatory decisions and obligations. FCA approval and timescales are not guaranteed.</p></div></div></section>
+  <section class="sec sec--flush-top"><div class="wrap"><div class="ar-invite" data-ar-motion><div><h2>Get to know the people<br><span class="serif">behind your support.</span></h2><p>Tell us about your dealership and see if 009 Compliance is the right fit.</p></div><a class="btn btn--primary" href="/contact#book-meeting">Book a 15-minute call <span aria-hidden="true">↗</span></a></div></div></section>
 </div>
-
-<script>
-  // simple reveal-on-scroll (no dependencies)
-  (function () {
-    const els = Array.from(document.querySelectorAll('.js-reveal'));
-    els.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(14px)';
-      el.style.transition = 'opacity 700ms ease, transform 700ms ease';
-      el.style.willChange = 'opacity, transform';
-    });
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-</script>
+<script defer src="<%= assetPath('/js/about-refresh.js?v=64') %>"></script>

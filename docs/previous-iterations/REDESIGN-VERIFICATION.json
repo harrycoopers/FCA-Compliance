@@ -1,0 +1,16 @@
+{
+  "scope": "Homepage testimonials",
+  "reference_image_inspected": true,
+  "modified_application_files": [
+    "views/index.ejs",
+    "public/css/home-sales.css",
+    "public/js/testimonials.js"
+  ],
+  "exact_review_data_preserved": 16,
+  "exact_displayed_attributions_verified": 16,
+  "actual_ejs_render_contexts": 2,
+  "isolated_mock_assertions_passed": 84,
+  "other_application_files_unchanged": true,
+  "real_browser_tests": false,
+  "end_to_end_tests": false
+}

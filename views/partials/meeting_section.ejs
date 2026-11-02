@@ -1,0 +1,28 @@
+<%
+  /* Closing meeting-request section for sales pages (id="book-meeting").
+     Params: meetingTitle, meetingSerif, meetingText, defaultTopic. */
+  const _mt = 'See if 009 Compliance is';
+  const _ms = 'the right fit for you.';
+  const _mx = 'Schedule a quick, 15-minute call to explore how 009 Compliance can support your dealership with FCA authorisation, CCR009 returns, ongoing compliance administration or motor finance.';
+  const _tp = (typeof defaultTopic !== 'undefined' && defaultTopic) ? defaultTopic : 'authorisation';
+  const _tk = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+%>
+<section class="sec meet-sec<%= campaign.active ? ' is-festive' : '' %>" id="book-meeting" aria-labelledby="book-title" data-motion>
+  <div class="meet-sec__sky" aria-hidden="true"><% if (campaign.active) { %><span class="flake-field"></span><% } %></div>
+  <div class="wrap booking">
+    <div class="booking__intro">
+      
+      <h2 class="display-l" id="book-title"><%= _mt %> <span class="serif"><%= _ms %></span></h2>
+      <p class="lede"><%= _mx %></p>
+      <p class="meet-note">
+        <% if (bookingUrl) { %>
+          Choose a time in the scheduler. Your booking is confirmed by the scheduling service.
+        <% } else { %>
+          Choose an available time and enter your name, email address, company and phone number. We’ll call you at that time.
+        <% } %>
+      </p>
+      <%- include('email_invite') %>
+    </div>
+    <%- include('meeting_form', { defaultTopic: _tp }) %>
+  </div>
+</section>

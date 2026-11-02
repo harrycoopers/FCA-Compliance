@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="<%= assetPath('/css/guide-content.css') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-final-cta.css') %>">
+<% if (guide.finance) { %><link rel="stylesheet" href="<%= assetPath('/css/motor-finance.css') %>"><% } %>
+<div class="ccr009-page ccr009-guide-page researched-guide">
+  <section class="ccr009-hero ccr009-guide-hero" aria-labelledby="guide-title">
+    <div class="ccr009-hero__inner">
+      <div class="ccr009-hero__copy">
+        <nav class="guide-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true"> / </span><% if (guidePath !== '/fca-compliance-motor-dealers-guide') { %><a href="/fca-compliance-motor-dealers-guide">Motor dealer guides</a><% } else { %><span>Motor dealer guides</span><% } %></nav>
+        <h1 id="guide-title"><%= guide.title %></h1>
+        <p class="ccr009-hero__lead guide-answer"><%= guide.answer %></p>
+        <p class="guide-reviewed">Published by 009 Compliance · Sources checked <time datetime="<%= guide.reviewed %>">1 November 2026</time></p>
+        <div class="ccr009-actions"><a class="btn btn--primary btn--sheen" href="/contact#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a><a class="ccr009-btn ccr009-btn--secondary" href="#guide-sources">View FCA sources</a></div>
+      </div>
+      <div class="ccr009-hero__panel guide-summary"><div class="ccr009-hero__panel-top"><span>Your guide to</span><strong><%= guide.group === 'ccr' ? 'CCR009 reporting' : guide.group === 'fca' ? 'FCA authorisation' : 'Ongoing compliance' %></strong></div><p>Practical explanations for motor dealers, with official sources and clear next steps.</p><a href="#guide-section-1">Read the guide <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </section>
+  <div class="ccr009-content">
+    <div class="ccr009-content__main">
+      <% guide.sections.forEach((section, index) => { %>
+      <section id="<%= section.id %>" class="ccr009-section" aria-labelledby="<%= section.id %>-title">
+        <h2 class="services-h2" id="<%= section.id %>-title"><%= section.title %></h2>
+        <% section.paragraphs.forEach(p => { %><p class="services-p"><%= p %></p><% }); %>
+        <% if (section.rows.length) { %>
+        <div class="guide-table-wrap" role="region" aria-label="<%= section.title %> table" tabindex="0"><table class="guide-table"><caption><%= section.title %></caption><thead><tr><% section.columns.forEach(col => { %><th scope="col"><%= col %></th><% }); %></tr></thead><tbody><% section.rows.forEach(row => { %><tr><% row.forEach((cell, ci) => { %><% if(ci === 0) { %><th scope="row"><%= cell %></th><% } else { %><td><%= cell %></td><% } %><% }); %></tr><% }); %></tbody></table></div>
+        <% } %>
+        <% if (section.bullets.length) { %><ul class="services-bullets ccr009-bullets"><% section.bullets.forEach(item => { %><li><%= item %></li><% }); %></ul><% } %>
+        <% if (section.links.length) { %><ul class="guide-links"><% section.links.forEach(link => { %><li><a href="<%= link[0] %>"><%= link[1] %> <span aria-hidden="true">→</span></a></li><% }); %></ul><% } %>
+        <% if (section.sources.length) { %><p class="guide-section-sources">Official sources: <% section.sources.forEach((source, si) => { %><% if(si) { %> · <% } %><a href="<%= source.href %>"><%= source.label %></a><% }); %></p><% } %>
+      </section>
+      <% if(index === 1 && guide.group === 'fca') { %><%- include('partials/guide_offer', {compact: false}) %><% } %>
+      <% }); %>
+      <section class="ccr009-section ccr009-faq" id="guide-faq" aria-labelledby="guide-faq-title"><h2 class="services-h2" id="guide-faq-title">Frequently asked questions</h2><% guide.faqs.forEach(faq => { %><details class="ccr009-faq__item"><summary><%= faq.question %></summary><p class="services-p"><%= faq.answer %></p></details><% }); %></section>
+      <section class="ccr009-section guide-source-list" id="guide-sources" aria-labelledby="guide-sources-title"><h2 class="services-h2" id="guide-sources-title">Sources and scope</h2><p class="services-p">The regulatory explanations above were checked against these official sources on 1 November 2026. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.</p><ul class="guide-links"><% guide.sources.forEach(source => { %><li><a href="<%= source.href %>"><%= source.label %></a></li><% }); %></ul><p class="services-p">009 Compliance provides administrative assistance, not legal or regulatory advice. The applicant or authorised firm remains responsible for its information, activities and obligations. The FCA makes authorisation decisions.</p></section>
+      <section class="ccr009-section" id="related-guides" aria-labelledby="related-title"><h2 class="services-h2" id="related-title">Continue with a related guide</h2><ul class="guide-links"><% guide.related.forEach(url => { %><li><a href="<%= url %>"><%= guideTitles[url] %> <span aria-hidden="true">→</span></a></li><% }); %></ul></section>
+    </div>
+    <aside class="ccr009-aside" aria-label="Guide navigation"><nav class="ccr009-aside__card"><h2>On this page</h2><ul class="guide-links"><% guide.sections.forEach(section => { %><li><a href="#<%= section.id %>"><%= section.title %></a></li><% }); %><li><a href="#guide-faq">Frequently asked questions</a></li><li><a href="#guide-sources">Sources and scope</a></li></ul></nav><div class="ccr009-aside__card guide-support"><h2><%= guide.group === 'ccr' ? 'Help with your CCR009 return' : guide.group === 'fca' ? 'Help with your FCA application' : 'Support for your dealership' %></h2><p><%= guide.group === 'ccr' ? 'Get administrative help organising the information and preparing your return.' : guide.group === 'fca' ? 'Practical assistance with your application and supporting documents.' : 'Organise your ongoing compliance administration with practical support.' %></p><a href="<%= guide.group === 'ccr' ? '/ccr009-return-assistance-motor-dealers' : guide.group === 'fca' ? '/fca-authorisation-motor-dealers' : '/motor-dealer-compliance' %>">Explore the support <span aria-hidden="true">→</span></a></div></aside>
+  </div>
+  <% if(guide.group !== 'fca') { %><div class="guide-offer-bottom"><%- include('partials/guide_offer', {compact: true}) %></div><% } %>
+  <% if(guide.finance) { %><section class="sec mf-promo-section" aria-labelledby="guide-finance-title"><div class="mf-promo"><div><h2 id="guide-finance-title">Planning your next step<br><span class="serif">with motor finance?</span></h2><p>Explore motor-finance broker support for your dealership. Talk through the proposed arrangement, responsibilities and next steps.</p><div class="actions"><a class="btn btn--primary btn--sheen" href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a><a class="text-link" href="/contact?topic=finance#book-meeting">Discuss your dealership</a></div><p class="mf-qualification">Separate from FCA authorisation assistance. Required permissions and broker onboarding must be in place. Customer finance is subject to lender assessment and terms; approval is not guaranteed.</p></div><%- include('partials/motor_finance_art') %></div></section><% } %>
+  <%- include('partials/guide_booking') %>
+</div>
+<script defer src="<%= assetPath('/js/auth-final-cta.js') %>"></script>
+<% if(guide.finance) { %><script defer src="<%= assetPath('/js/motor-finance.js') %>"></script><% } %>

@@ -1,0 +1,46 @@
+<%
+  /* The 15-minute call invitation. Param: meetingContext ('authorisation' default | 'general'). */
+  const _general = (typeof meetingContext !== 'undefined' && meetingContext === 'general');
+%>
+<link rel="stylesheet" href="<%= assetPath('/css/meeting-invite-refresh.css?v=71') %>">
+<section class="sec meeting-invite-refresh" aria-labelledby="meet-title">
+  <div class="wrap">
+    <div class="meet" data-reveal>
+      <div class="meet__grid">
+        <div class="meet__copy">
+          
+          <h2 class="display-l" id="meet-title">See if 009 Compliance is <span class="serif">the right fit for you.</span></h2>
+          <p class="lede">Schedule a quick, 15-minute call to explore how 009 Compliance can support your dealership with FCA authorisation, CCR009 returns, ongoing compliance administration or motor finance.</p>
+          <ul class="meet__list">
+            <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Talk through how your dealership operates and the help you need.</li>
+            <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><%= _general ? 'Understand how our support could fit your business.' : 'Understand how our application support could fit your business.' %></li>
+            <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><%= _general ? 'Go through the proposed scope and pricing.' : 'Go through the proposed scope, payments and commitment.' %></li>
+            <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Agree the next steps if the service is right for you.</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn--primary btn--sheen" href="/contact#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="meet-message-cta" href="/contact#send-message"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H9l-5 4V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 8h8M8 12h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Or send us a message</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="meet__not">The call is a conversation to help you decide. <%= _general ? 'It isn’t regulatory advice and it doesn’t replace the agreed work.' : 'It isn’t regulatory advice, it doesn’t confirm eligibility and it doesn’t produce your application.' %></p>
+        </div>
+        <div class="meet__art g-lilac" aria-hidden="true">
+          <div class="ticket">
+            <div class="ticket__top">
+              <span class="clock"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <div><b>15-minute call</b><span>With 009 Compliance</span></div>
+            </div>
+            <ol>
+              <li>About your dealership</li>
+              <li>How our support could fit</li>
+              <li><%= _general ? 'Scope and pricing' : 'Scope, payments and commitment' %></li>
+              <li>Your next steps</li>
+            </ol>
+            <div class="ticket__foot"><span>Monday–Friday</span><span>UK time</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script defer src="<%= assetPath('/js/meeting-invite-refresh.js?v=71') %>"></script>

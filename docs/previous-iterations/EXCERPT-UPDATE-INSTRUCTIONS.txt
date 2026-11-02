@@ -1,0 +1,35 @@
+V7 CAROUSEL — TESTIMONIAL EXCERPT UPDATE
+
+INSTALLATION
+1. Stop the server with Ctrl+C and back up your existing views/index.ejs.
+2. From this ZIP, copy fca-compliance-portal/views/index.ejs into your existing
+   project's views folder, replacing index.ejs.
+3. Restart with npm run dev and refresh the homepage.
+Only this file needs replacing. Keep your existing .env, database, installed
+packages and configuration. No dependency installation is required.
+
+Only the 16 excerpt values were reviewed/selected; suitable short originals
+were retained. Excerpts range from 26 to 54 words. Full reviews, attribution,
+carousel script, speed, CSS, controls, other content and backend are unchanged.
+See TESTIMONIAL-EXCERPT-SELECTIONS.txt for every selection and its rationale.
+That report is not displayed on the website.
+
+CHECKS COMPLETED
+- All 16 excerpts verified as verbatim source passages in original order.
+- Full-review paragraphs and attribution strings unchanged.
+- Source comparison confirms only excerpt values changed in views/index.ejs.
+- Every other supplied application file is byte-identical.
+- Actual EJS renders pass for guest and signed-in data without a partial folder.
+- All 16 rendered card excerpts match the selection report; modal retained.
+
+LIMITATIONS
+No real-browser or end-to-end tests were run. Desktop/tablet/mobile visual fit,
+clipping and overlap remain unverified. The existing carousel measures card
+height; longer excerpts can increase its measured stage height. No font sizes,
+card dimensions or layout rules were changed. Animation and interaction code
+is unchanged; interaction checks from previous versions were not rerun for
+this copy-only update. Existing REDESIGN documents describe earlier work;
+this file records the current excerpt-only update and checks.
+
+The full source ZIP excludes credentials, runtime data, databases and
+node_modules. Use the one-file replacement above to preserve your installation.

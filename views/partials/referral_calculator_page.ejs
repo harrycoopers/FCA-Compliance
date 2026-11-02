@@ -1,0 +1,42 @@
+      <div class="calc rr-calculator<%= c.active ? ' is-festive' : '' %>" data-calc data-step="<%= referral.STEP %>" data-max="<%= referral.MAX_REFERRALS %>" data-monthly="<%= offer.monthlyPayment %>">
+        <form class="calc__top" action="/referral#calculator" method="get" data-calc-form>
+          <p class="ref-start">£<%= offer.startPayment %> to start, including your first month. Referral discounts apply to subsequent eligible monthly payments.</p><div class="calc__head">
+            <div>
+              <h2 class="calc__title" id="calc-title">Your referrals. Your savings.</h2>
+              <p class="calc__sub">Each one adds <strong>25%</strong> off eligible authorisation and continuing reporting subscription fees.</p>
+            </div>
+            <output class="calc__count" for="referralCount" data-calc-count aria-hidden="true"><%= n %></output>
+          </div>
+
+          <div class="calc__gifts" aria-hidden="true">
+            <% for (let g = 1; g <= referral.MAX_REFERRALS; g++) { %>
+              <span class="calc__gift<%= g <= n ? ' is-on' : '' %>" data-gift="<%= g %>">
+                <svg viewBox="0 0 40 40" width="40" height="40" fill="none"><rect x="6" y="10" width="28" height="25" rx="5" fill="currentColor" opacity=".15"/><path d="M8 31V13l12-7 12 7v18M5 32h30M15 32v-9h10v9M14 16h2m8 0h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="rr-dealer-tick" d="m24 9 4 4 7-8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                <small><%= g %> referral<%= g === 1 ? '' : 's' %></small><b><%= g * referral.STEP %>%</b>
+              </span>
+            <% } %>
+          </div>
+
+          <div class="calc__slider">
+            <label for="referralCount" class="calc__label">Choose a number of active qualifying referrals (0 to <%= referral.MAX_REFERRALS %>)</label>
+            <input type="range" id="referralCount" name="referrals" min="0" max="<%= referral.MAX_REFERRALS %>" step="1" value="<%= n %>"
+                   aria-valuetext="<%= n %> active qualifying referral<%= n === 1 ? '' : 's' %>, <%= pct %>% off eligible authorisation and continuing reporting subscription fees"
+                   style="--fill:<%= (n / referral.MAX_REFERRALS) * 100 %>%" data-calc-range>
+            <ol class="calc__ticks" aria-hidden="true"><% referral.tiers.forEach(function (t) { %><li><%= t.referrals %></li><% }) %></ol>
+          </div>
+          <button type="submit" class="btn btn--primary btn--sm calc__submit" data-calc-submit>Show discount</button>
+        </form>
+
+        <div class="calc__result" data-calc-result>
+          <div class="calc__result-row">
+            <p class="calc__result-k">Your monthly subscription</p><p class="ref-monthly">£<span data-calc-monthly><%= offer.monthlyPayment * (1 - pct / 100) %></span><small>/month</small></p>
+            <p class="calc__pct" aria-hidden="true"><span data-calc-pct><%= pct %></span>%<small> off</small></p>
+          </div>
+          <div class="calc__meter" aria-hidden="true">
+            <% for (let s = 1; s <= referral.MAX_REFERRALS; s++) { %><span class="<%= s <= n ? 'is-on' : '' %>" data-seg="<%= s %>"><%= s * referral.STEP %>%</span><% } %>
+          </div>
+          <p class="calc__note" data-calc-note><%= resultNote(n) %></p>
+          <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-calc-announce><%= calculatorSubmitted ? (n + ' active qualifying referral' + (n === 1 ? '' : 's') + ': ' + pct + '% off eligible authorisation and continuing reporting subscription fees.') : '' %></p>
+          <p class="calc__fine">This calculator shows potential savings, not your referral balance. The initial £<%= offer.startPayment %> payment is required at every tier. FCA application fee separate. Your discount continues into reporting support on the same subscription. Each referral must remain subscribed and up to date with payments; if one cancels or stops qualifying, its 25% discount ends from your next invoice.</p>
+        </div>
+      </div>

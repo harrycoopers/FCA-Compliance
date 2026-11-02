@@ -1,0 +1,17 @@
+<%
+  /* Referral tier ladder — readable without JavaScript. Entrance animation fills
+     each rung in turn as an ILLUSTRATION of how tiers build (it never says the
+     visitor has earned anything). Param: ladderCompact (bool). */
+  const _compact = (typeof ladderCompact !== 'undefined') && ladderCompact;
+  const _rungs = referral.tiers.filter(t => t.referrals > 0);
+%>
+<ol class="ladder<%= _compact ? ' ladder--compact' : '' %>" data-ladder aria-label="Referral discount tiers">
+  <% _rungs.forEach(function (t, i) { %>
+    <li class="ladder__rung" style="--i:<%= i %>">
+      <span class="ladder__gift" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="3.5" y="9" width="17" height="11.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 9h19v-3h-19zM12 6v14.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6C10 2.5 6.5 3 7 5s5 1 5 1 4.5 1 5-1-3-2.5-5 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+      <span class="ladder__count"><%= t.referrals %> active qualifying referral<%= t.referrals === 1 ? '' : 's' %></span>
+      <span class="ladder__bar" aria-hidden="true"><i style="width:<%= t.percent %>%"></i></span>
+      <strong class="ladder__pct"><%= t.percent %>%<span class="sr-only"> off eligible authorisation and continuing reporting subscription fees</span></strong>
+    </li>
+  <% }) %>
+</ol>

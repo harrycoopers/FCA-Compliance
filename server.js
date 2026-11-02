@@ -4,20 +4,37 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const security = require('./utils/security');
+const { query, wrap, rateLimit } = security;
+const crypto = require('node:crypto');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const sqlite3 = require('sqlite3').verbose();
 const { google } = require('googleapis');
 const expressLayouts = require('express-ejs-layouts');
 const { sendEmail } = require('./utils/email');
-const CURRENT_TERMS_VERSION = process.env.TERMS_VERSION || '2026-01-13';
+const offer = require('./config/offer');
+const testimonialData = require('./data/testimonials');
+const faqData = require('./data/faqs');
+const campaign = require('./config/campaign');
+const referral = require('./config/referral');
+const competitors = require('./data/competitors');
+// The 15-minute call booking link lives in ONE setting: config/booking.js (or BOOKING_URL in .env).
+// When unset, the site uses an honestly labelled meeting-request form instead of live booking.
+const BOOKING_URL = require('./config/booking');
+// Version must identify the exact agreement displayed, not a stale environment value.
+const CURRENT_TERMS_VERSION = '009/13-2026-11-01-revision-2026-10-29';
 
 const app = express();
 
 // Basic config
-const PORT = process.env.PORT || 3000;
-const SESSION_SECRET = process.env.SESSION_SECRET || 'dev_secret';
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const portArg = process.argv.indexOf('--port');
+const PORT = process.env.PORT || (portArg >= 0 && process.argv[portArg + 1]) || 3000;
+const production = process.env.NODE_ENV === 'production';
+if (production && (!process.env.SESSION_SECRET || process.env.SESSION_SECRET.length < 32 || process.env.SESSION_SECRET === 'dev_secret')) throw new Error('Set SESSION_SECRET to a strong random value of at least 32 characters.');
+const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(48).toString('hex');
+const BASE_URL = (process.env.BASE_URL || (production ? 'https://009compliance.com' : `http://localhost:${PORT}`)).replace(/\/$/, '');
+if (!['http:', 'https:'].includes(new URL(BASE_URL).protocol) || (production && new URL(BASE_URL).protocol !== 'https:') || new URL(BASE_URL).username || new URL(BASE_URL).password) throw new Error('BASE_URL must be your public HTTPS origin in production.');
 const CANONICAL_BASE_URL = process.env.CANONICAL_BASE_URL || 'https://009compliance.com';
 function getUKTimestamp() {
   return new Date().toLocaleString('en-GB', {
@@ -56,11 +73,15 @@ function normalizeUKMobile(input) {
 
 // Database setup (SQLite)
 const dbPath = process.env.DB_PATH || path.join(__dirname, 'db.sqlite');
-const db = new sqlite3.Database(dbPath);
+if (production && (!process.env.DB_PATH || !path.isAbsolute(process.env.DB_PATH) || !require('node:fs').existsSync(dbPath))) throw Error('Production DB_PATH must name the existing customer database on persistent storage.');
+const db = new sqlite3.Database(dbPath, production ? sqlite3.OPEN_READWRITE : sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE);
+const customerDatabaseReady = production
+  ? require('./utils/customer-database').checkProductionDatabase(dbPath, sqlite3, process.env.CUSTOMER_ID_FLOOR)
+  : Promise.resolve();
 
 
 // Create tables if they don't exist
-db.serialize(() => {
+const schemaReady = customerDatabaseReady.then(() => { db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -97,66 +118,102 @@ db.run(`ALTER TABLE users ADD COLUMN fca_firm_ref TEXT`, (e) => {});
   `);
 });
 
+});
+
 // View engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(expressLayouts);
 app.set('layout', 'layout');
-app.set('trust proxy', true);
+// Render terminates HTTPS at one reverse-proxy hop. Override with a trusted IP/subnet list if needed.
+app.set('trust proxy', process.env.TRUST_PROXY ? (/^\d+$/.test(process.env.TRUST_PROXY) ? Number(process.env.TRUST_PROXY) : process.env.TRUST_PROXY) : (production ? 1 : false));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use((req, res, next) => {
-  const host = req.get('host') || '';
-  const isLiveDomain = /(^|\.)009compliance\.com$/i.test(host);
-  const isAuthorisationPath = req.path === '/fca-authorisation-motor-dealers' || req.path === '/fca-authorisation-motor-dealers/';
-
-  if (isLiveDomain && isAuthorisationPath) {
-    const canonicalPath = '/fca-authorisation-motor-dealers';
-    const needsHostRedirect = host.toLowerCase() !== '009compliance.com';
-    const needsProtocolRedirect = req.protocol !== 'https';
-    const needsPathRedirect = req.path !== canonicalPath;
-    const needsQueryRedirect = Boolean(req.originalUrl.split('?')[1]);
-
-    if (needsHostRedirect || needsProtocolRedirect || needsPathRedirect || needsQueryRedirect) {
-      return res.redirect(301, `https://009compliance.com${canonicalPath}`);
-    }
-  }
-
+const seo = require('./utils/seo');
+const compression = require('compression');
+app.disable('x-powered-by');
+app.use(compression());
+app.use((req,res,next) => {
+  res.set('X-Content-Type-Options','nosniff');
+  res.set('X-Frame-Options','SAMEORIGIN');
+  // Native form POSTs under no-referrer send Origin: null, failing our origin
+  // check. Preserve same-origin form origins without sending external referrers.
+  res.set('Referrer-Policy','same-origin');
+  res.set('Content-Security-Policy',"base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'");
+  if (production && req.secure) res.set('Strict-Transport-Security','max-age=31536000');
   next();
 });
+app.use(seo.publicSeo);
+app.get('/robots.txt', seo.robots);
+app.get('/sitemap.xml', seo.sitemap);
 
-// Static
-app.use(express.static(path.join(__dirname, 'public')));
+// Fingerprinted files may be cached indefinitely; other files revalidate normally.
+app.use('/build', express.static(path.join(__dirname, 'public/build'), { maxAge: '1y', immutable: true }));
+app.use(express.static(path.join(__dirname, 'public'), { setHeaders(res, file) {
+  if (/\.(woff2|png|jpg|jpeg|webp|svg)$/i.test(file)) res.setHeader('Cache-Control', 'public, max-age=604800');
+} }));
 
 // Body parsing
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false, limit: '64kb', parameterLimit: 100 }));
+app.use(bodyParser.json({ limit: '64kb' }));
+const databaseReady = schemaReady.then(() => security.initialize(db));
+databaseReady.catch(() => console.error('Database security migration failed; requests are blocked.'));
+app.use(wrap(async (req,res,next) => { await databaseReady; next(); }));
 
 // Session & flash
+const sessionStore = new security.SQLiteSessionStore(db, databaseReady);
 app.use(
   session({
+    name: '009.sid',
     secret: SESSION_SECRET,
+    store: sessionStore,
+    cookie: { httpOnly: true, secure: production, sameSite: 'lax', maxAge: 8 * 60 * 60 * 1000 },
+    rolling: true,
     resave: false,
     saveUninitialized: false,
   })
 );
 app.use(flash());
+app.use(security.csrf);
+app.use(seo.templateSeo);
+
+// Durable phone calls and the private dashboard bridge.
+const bookings = require('./booking/routes')(app, { db, sendEmail, ready: databaseReady });
+const sheetsSync = require('./utils/sheets-sync').createSheetsSync({ db, google, ready: databaseReady });
+sheetsSync.start();
+app.locals.databaseReady = databaseReady;
+app.locals.db = db;
+app.locals.sheetsSync = sheetsSync;
+app.locals.stopBackgroundTasks = async () => { await bookings.stop(); sessionStore.close(); await sheetsSync.stop(); };
 
 // Local variables for templates + SEO defaults
 app.use((req, res, next) => {
   res.locals.currentUser = req.session.user;
-  res.locals.success = req.flash('success');
-  res.locals.error = req.flash('error');
-  res.locals.showSubmissionToast = req.flash('showSubmissionToast');
+  res.locals.sensitivePage = Boolean(req.session.user) || !Object.hasOwn(require('./config/seo-pages.json'),req.path) || /(?:token|code|password|email)/i.test(Object.keys(req.query).join(' '));
+  if (res.locals.sensitivePage) res.set('Cache-Control','no-store');
+  res.locals.success = (req.session.flash?.success ? req.flash('success') : []);
+  res.locals.error = (req.session.flash?.error ? req.flash('error') : []);
+  res.locals.showSubmissionToast = (req.session.flash?.showSubmissionToast ? req.flash('showSubmissionToast') : []);
 
   // ✅ SEO defaults (used by layout.ejs)
   res.locals.pageTitle = '009 Compliance | FCA Compliance Reporting Portal';
   res.locals.pageDescription =
     'Monthly FCA compliance reporting portal for motor dealers. Submit MI, track submissions, and maintain evidence-ready records with 009 Compliance.';
   res.locals.robots = 'index,follow';
+
+  // Sales-site data shared by templates.
+  res.locals.offer = offer;
+  res.locals.testimonials = testimonialData;
+  res.locals.bookingUrl = BOOKING_URL;
+  res.locals.campaign = campaign.state();
+  res.locals.referral = referral;
+  res.locals.competitors = competitors;
+  res.locals.inPageMeeting = false;
+  res.locals.currentPath = req.path;
+  res.locals.salesPage = false;
 
   // Canonical URL auto-built from the public site domain.
   res.locals.canonicalUrl = `${CANONICAL_BASE_URL}${req.path}`;
@@ -165,147 +222,8 @@ app.use((req, res, next) => {
 });
 
 
-// Google Sheets setup
-let sheetsClient = null;
-
-function getSheetsClient() {
-  if (sheetsClient) return sheetsClient;
-
-  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const key = process.env.GOOGLE_PRIVATE_KEY;
-  const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
-
-  if (!email || !key || !spreadsheetId) {
-    console.warn('Google Sheets not fully configured. Skipping Sheets integration.');
-    return null;
-  }
-
-  // Handle escaped newlines in env
-  const fixedKey = key.replace(/\\n/g, '\n');
-
-  const jwt = new google.auth.JWT(
-    email,
-    null,
-    fixedKey,
-    ['https://www.googleapis.com/auth/spreadsheets'],
-    null
-  );
-
-  sheetsClient = {
-    jwt,
-    spreadsheetId,
-  };
-
-  return sheetsClient;
-}
-
-async function appendRowToSheet(sheetName, rowValues) {
-  const client = getSheetsClient();
-  if (!client) return;
-
-  const { jwt, spreadsheetId } = client;
-  await jwt.authorize();
-  const sheets = google.sheets({ version: 'v4', auth: jwt });
-
-  try {
-    await sheets.spreadsheets.values.append({
-      spreadsheetId,
-      range: `${sheetName}!A1`,
-      valueInputOption: 'USER_ENTERED',
-      insertDataOption: 'INSERT_ROWS',
-      requestBody: { values: [rowValues] },
-    });
-  } catch (err) {
-    console.error(`Error appending to Google Sheet (${sheetName}):`, err.message);
-  }
-}
-
-async function upsertDealerInSheet(dealer) {
-  const client = getSheetsClient();
-  if (!client) return;
-
-  const { jwt, spreadsheetId } = client;
-  await jwt.authorize();
-  const sheets = google.sheets({ version: 'v4', auth: jwt });
-
-  // Read DealerIDs (column A)
-  const readRes = await sheets.spreadsheets.values.get({
-    spreadsheetId,
-    range: 'Dealers!A2:A',
-  });
-
-  const ids = (readRes.data.values || []).flat().map(String);
-  const idx = ids.indexOf(String(dealer.dealerId));
-
-  const baseValues = [
-    String(dealer.dealerId),                          // A
-    dealer.name || '',                                // B
-    dealer.email || '',                               // C
-    dealer.phone || '',                               // D
-    dealer.firmName || '',                            // E
-    dealer.isActive === false ? 'FALSE' : 'TRUE',     // F
-    dealer.createdAt || new Date().toISOString(),     // G
-  ];
-
-  // Your sheet header is "TermsAccepted" but code writes by column position (P)
-  const termsAcceptedAt = dealer.termsAcceptedAt || ''; // P
-  const termsVersion = dealer.termsVersion || '';       // Q
-
-  if (idx === -1) {
-    // Append A:G, leave H:L blank, set M token, N/O blank, then P/Q terms
-    await appendRowToSheet('Dealers', baseValues.concat([
-      "", "", "", "", "",                 // H:I:J:K:L
-      dealer.unsubscribeToken || "",      // M
-      "", "",                             // N:O
-      termsAcceptedAt,                    // P
-      termsVersion                        // Q
-    ]));
-    return;
-  }
-
-  const rowNumber = idx + 2;
-
-  // Update ONLY A:G
-  await sheets.spreadsheets.values.update({
-    spreadsheetId,
-    range: `Dealers!A${rowNumber}:G${rowNumber}`,
-    valueInputOption: 'USER_ENTERED',
-    requestBody: { values: [baseValues] },
-  });
-
-  // Update ONLY M (UnsubscribeToken)
-  await sheets.spreadsheets.values.update({
-    spreadsheetId,
-    range: `Dealers!M${rowNumber}:M${rowNumber}`,
-    valueInputOption: 'USER_ENTERED',
-    requestBody: { values: [[dealer.unsubscribeToken || ""]] },
-  });
-
-  // Update ONLY E (FirmName)
-  await sheets.spreadsheets.values.update({
-    spreadsheetId,
-    range: `Dealers!E${rowNumber}:E${rowNumber}`,
-    valueInputOption: 'USER_ENTERED',
-    requestBody: { values: [[dealer.firmName || ""]] },
-  });
-
-  // Update ONLY P:Q (TermsAccepted + TermsVersion)
-  await sheets.spreadsheets.values.update({
-    spreadsheetId,
-    range: `Dealers!P${rowNumber}:Q${rowNumber}`,
-    valueInputOption: 'USER_ENTERED',
-    requestBody: { values: [[termsAcceptedAt, termsVersion]] },
-  });
-}
-
-// Auth middleware (email verification disabled)
-function ensureAuth(req, res, next) {
-  if (req.session.user) {
-    return next();
-  }
-  req.flash('error', 'Please log in to access this page.');
-  res.redirect('/login');
-}
+const accounts = require('./utils/accounts').createAccounts({ db, bcrypt, sendEmail, baseUrl: BASE_URL, termsVersion: CURRENT_TERMS_VERSION, sync: sheetsSync });
+const ensureAuth = accounts.ensureAuth;
 
 function ensureTerms(req, res, next) {
   // must be logged in
@@ -325,14 +243,106 @@ function ensureTerms(req, res, next) {
   next();
 }
 
+// Structured data for the lead offer. Uses confirmed terms only, and drops the
+// price entirely once the Christmas campaign ends unless a post-campaign offer is confirmed.
+function authorisationServiceSchema() {
+  const c = campaign.state();
+  const service = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://009compliance.com/fca-authorisation-motor-dealers#service',
+    name: 'FCA Authorisation Assistance for Motor Dealers',
+    url: 'https://009compliance.com/fca-authorisation-motor-dealers',
+    serviceType: 'FCA authorisation application assistance for motor dealers',
+    provider: { '@id': 'https://009compliance.com/#organization' },
+    areaServed: { '@type': 'Country', name: 'United Kingdom' },
+    audience: { '@type': 'BusinessAudience', audienceType: offer.audience }
+  };
+  if (!c.showPrice) return service;
+  service.offers = {
+    '@type': 'Offer',
+    url: 'https://009compliance.com/fca-authorisation-motor-dealers',
+    priceCurrency: 'GBP',
+    price: String(offer.monthlyPayment),
+    description: `${offer.summary} The first £${offer.startPayment} is the first monthly payment. Minimum service commitment £${offer.minimumTotal.amount}. Payments continue monthly until cancellation. The FCA application fee is payable separately. FCA approval and timescales are decided by the FCA and are not guaranteed.`,
+    priceSpecification: [
+      { '@type': 'UnitPriceSpecification', name: 'Monthly payment (the first payment is due when you start)', price: String(offer.monthlyPayment), priceCurrency: 'GBP', unitCode: 'MON', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } }
+    ],
+    eligibleDuration: { '@type': 'QuantitativeValue', minValue: offer.minimumTermMonths, unitCode: 'MON', description: 'Minimum term' }
+  };
+  if (c.active) service.offers.validThrough = c.deadlineIso;
+  return service;
+}
+
+if (offer.unconfirmed.length) {
+  console.warn('[009 Compliance] Offer terms awaiting confirmation (hidden from visitors until set in config/offer.js):\n  - ' + offer.unconfirmed.join('\n  - '));
+}
+// Referral scheme terms are configured in config/referral.js; billing is not connected.
+if (campaign.postCampaign.mode === 'unconfirmed') {
+  console.warn(`[009 Compliance] Christmas campaign ends ${campaign.CLOSING_LABEL}. The post-campaign offer is unconfirmed (config/campaign.js → postCampaign).`);
+}
+if (!BOOKING_URL) {
+  console.info('[009 Compliance] Using the phone-booking card. Configure BOOKING_ENABLED, BOOKING_PUBLIC_URL and BOOKING_API_KEY, and connect the private dashboard before accepting calls.');
+}
+
 // Routes
+
+// Sales-page metadata. Price claims appear only while a price is actually on offer.
+function priceTag() {
+  const c = campaign.state();
+  return c.showPrice ? `£${offer.startPayment} to Get Started, Then £${offer.monthlyPayment}/Month` : 'Book a 15-Minute Call';
+}
+function priceSentence() {
+  const c = campaign.state();
+  if (!c.showPrice) return 'Book a 15-minute call to discuss current pricing.';
+  return `${offer.summary} Minimum service commitment £${offer.minimumTotal.amount}. FCA application fee payable separately.${c.active ? ` Christmas offer closes ${c.closingLabel}.` : ''}`;
+}
 
 // Homepage
 app.get('/', (req, res) => {
+  const faqs = faqData.home();
   res.render('index', {
-    pageTitle: '009 Compliance | FCA Compliance Reporting Portal for Motor Dealers',
-    pageDescription: 'FCA compliance reporting portal for motor dealers. Submit monthly MI, evidence oversight, and support CCR009 workflows.',
-    canonicalUrl: `${CANONICAL_BASE_URL}/`
+    salesPage: true,
+    inPageMeeting: true,
+    pageTitle: 'Motor Dealer Compliance Support | 009 Compliance',
+    pageDescription: 'FCA authorisation assistance, CCR009 returns, ongoing compliance and motor-finance broker support for motor dealers. Explore our services and book a 15-minute call.',
+    ogTitle: 'Compliance support for motor dealers | 009 Compliance',
+    ogDescription: 'Practical support for your dealership: FCA authorisation assistance, CCR009 returns, ongoing compliance administration and motor-finance broker support.',
+    canonicalUrl: `${CANONICAL_BASE_URL}/`,
+    faqs,
+    pageSchema: [faqData.toSchema(faqs)]
+  });
+});
+
+// Public referral savings calculator; no live referral tracking or billing ledger.
+app.get('/referral', (req, res) => {
+  const faqs = faqData.referral();
+  // Without JavaScript the calculator submits ?referrals=n (GET) and the server shows the result.
+  const requested = Number.parseInt(String(req.query.referrals ?? ''), 10);
+  const selectedReferrals = Number.isInteger(requested) ? Math.min(Math.max(requested, 0), referral.MAX_REFERRALS) : 0;
+  res.render('referral', {
+    selectedReferrals,
+    selectedPercent: referral.tiers[selectedReferrals].percent,
+    calculatorSubmitted: Number.isInteger(requested),
+    salesPage: true,
+    inPageMeeting: true,
+    pageTitle: 'Referral Programme | Refer a Dealer, Reduce Your Monthly Subscription | 009 Compliance',
+    pageDescription: 'Refer a motor dealer to 009 Compliance. Each successful referral adds 25% off eligible authorisation and continuing reporting subscription fees, up to 100%. Continues into reporting on the same subscription while referrals remain active and paid up. Initial payment and FCA fees excluded.',
+    ogTitle: 'Refer a dealer. Reduce your monthly subscription. | 009 Compliance',
+    ogDescription: '25% off eligible authorisation and continuing reporting subscription fees for every successful referral, up to 100%. Discounts continue into reporting; each ends from the next invoice if its referral cancels or stops qualifying. Initial payment and FCA fees excluded.',
+    canonicalUrl: `${CANONICAL_BASE_URL}/referral`,
+    faqs,
+    pageSchema: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://009compliance.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Referral programme', item: 'https://009compliance.com/referral' }
+        ]
+      },
+      faqData.toSchema(faqs)
+    ]
   });
 });
 
@@ -344,124 +354,71 @@ app.get('/api/metrics', (req, res) => {
   });
 });
 
-app.get('/register', (req, res) => {
-  res.render('register', { formData: {} });
-});
-
-app.post('/register/precheck', (req, res) => {
-  let { firm_name, fca_firm_ref, name, email, password, confirmPassword, mobile_number } = req.body;
-mobile_number = normalizeUKMobile(mobile_number);
-
-if (!firm_name || !fca_firm_ref || !name || !email || !password || !confirmPassword || !mobile_number) {
-  return res.render('register', {
-    formData: { firm_name, fca_firm_ref, name, email, mobile_number },
-    error: ['Please complete all fields.'],
-    success: []
-  });
-}
-
-if (password !== confirmPassword) {
-  return res.render('register', {
-    formData: { firm_name, fca_firm_ref, name, email, mobile_number },
-    error: ['Passwords do not match.'],
-    success: []
-  });
-}
-
-  // Passed validation → send user to terms with safe fields only
-  // (Do NOT send passwords in querystring)
-  req.session.pendingRegister = { firm_name, fca_firm_ref, name, email, mobile_number };
-  req.session.pendingPassword = password; // stored server-side in session
-  return res.redirect('/terms');
-});
-
-app.get('/terms', (req, res) => {
-  // Case 1: New registration flow (pending)
-  if (req.session.pendingRegister && req.session.pendingPassword) {
-    return res.render('terms', { formData: req.session.pendingRegister });
-  }
-
-  // Case 2: Existing logged-in user forced to accept new terms
-  if (req.session.user) {
-    return res.render('terms', { formData: {
-      firm_name: req.session.user.firm_name || '',
-      fca_firm_ref: req.session.user.fca_firm_ref || '',
-      name: req.session.user.name || '',
-      email: req.session.user.email || '',
-      mobile_number: req.session.user.mobile_number || ''
-    }});
-  }
-
-  // Otherwise not logged in
-  req.flash('error', 'Please log in to view the terms.');
-  return res.redirect('/login');
-});
-
-app.post('/terms/accept', ensureAuth, async (req, res) => {
-  if (req.body.agree_terms !== 'yes') {
-    req.flash('error', 'You must agree to the Client Service Agreement to continue.');
-    return res.redirect('/terms');
-  }
-
-  const userId = req.session.user.id;
-  const acceptedAt = getUKTimestamp();
-
-  // Save in SQLite
-  db.run(
-    'UPDATE users SET terms_accepted_at = ?, terms_version = ? WHERE id = ?',
-    [acceptedAt, CURRENT_TERMS_VERSION, userId],
-    async (err) => {
-      if (err) {
-        console.error(err);
-        req.flash('error', 'Could not save your agreement. Please try again.');
-        return res.redirect('/terms');
-      }
-
-      // Update session so middleware stops redirecting
-      req.session.user.terms_accepted_at = acceptedAt;
-      req.session.user.terms_version = CURRENT_TERMS_VERSION;
-
-      // Update Google Sheet P/Q
-      try {
-        await upsertDealerInSheet({
-          dealerId: userId,
-          name: req.session.user.name,
-          email: req.session.user.email,
-          phone: req.session.user.mobile_number,
-          firmName: req.session.user.firm_name || '',
-          isActive: true,
-          createdAt: acceptedAt,
-          unsubscribeToken: req.session.user.unsubscribe_token || '',
-          termsAcceptedAt: acceptedAt,
-          termsVersion: CURRENT_TERMS_VERSION
-        });
-      } catch (e) {
-        console.error('Dealer Sheets terms update failed:', e.message);
-      }
-
-      return res.redirect('/dashboard');
-      }
-    );
-  });
+accounts.mount(app);
 
 // About page
 app.get('/about', (req, res) => {
   res.render('about', {
-    pageTitle: 'About | 009 Compliance',
-    pageDescription: 'Learn about 009 Compliance and our FCA compliance reporting portal built for motor dealers.'
+    salesPage: true,
+    pageTitle: 'About 009 Compliance | 30+ Years of Motor Trade Experience',
+    pageDescription: '30+ years of motor-trade experience. Meet 009 Compliance and hear from clients about our FCA authorisation assistance, CCR009 returns and ongoing compliance support.'
   });
 });
 
+
+app.get('/testimonials', (req, res) => {
+  res.render('testimonials', {
+    salesPage: true,
+    pageTitle: 'Motor Dealer Testimonials | 009 Compliance',
+    pageDescription: 'Read motor dealers’ experiences of working with 009 Compliance on FCA authorisation, reporting and ongoing compliance support.',
+    canonicalUrl: 'https://009compliance.com/testimonials'
+  });
+});
 
 // Contact page
 app.get('/contact', (req, res) => {
   res.render('contact', {
-    pageTitle: 'Contact | 009 Compliance',
-    pageDescription: 'Get in touch with 009 Compliance for help with monthly reporting, oversight evidence, and portal support.'
+    salesPage: true,
+    hideStickyCta: true,
+    pageTitle: 'Book a 15-Minute Call | Contact 009 Compliance',
+    pageDescription: 'Book a 15-minute call with 009 Compliance to talk through FCA authorisation assistance, CCR009 support or ongoing compliance for your dealership. Or call, email or send an enquiry.'
   });
 });
 
-app.post('/contact', async (req, res) => {
+const MEETING_TOPICS = {
+  authorisation: 'FCA authorisation assistance',
+  ccr009: 'CCR009 return assistance',
+  ongoing: 'Ongoing compliance support',
+  referral: 'Referral programme',
+  finance: 'Finance',
+  unsure: 'Not sure yet'
+};
+
+function parseMeetingRequest(body) {
+  const date = String(body.preferred_date || '').trim();
+  const time = String(body.preferred_time || '').trim();
+  const alt = String(body.alternative_time || '').trim().slice(0, 200);
+  const topicKey = String(body.topic || '').trim();
+  const parsed = /^\d{4}-\d{2}-\d{2}$/.test(date) ? new Date(`${date}T12:00:00Z`) : null;
+  const todayUK = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/London' });
+  const validDate = Boolean(parsed) && !Number.isNaN(parsed.getTime()) &&
+    parsed.toISOString().slice(0,10) === date && parsed.getUTCDay() !== 0 && parsed.getUTCDay() !== 6 && date > todayUK && date < new Date(Date.now()+180*86400000).toISOString().slice(0,10);
+  const validTime = /^(?:09|1[0-6]):(?:00|30)$|^17:00$/.test(time);
+  let readableDate = date;
+  if (validDate) {
+    readableDate = new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/London'
+    });
+  }
+  return {
+    date, time, alt, validDate, validTime, readableDate,
+    topic: MEETING_TOPICS[topicKey] || MEETING_TOPICS.unsure,
+    visitorTimezone: String(body.visitor_timezone || '').trim().slice(0, 64)
+  };
+}
+
+app.post('/contact', rateLimit(db,'contact',10,15*60000), wrap(async (req, res) => {
+  if (Object.values(req.body).some(value => typeof value !== 'string')) return res.status(400).json({ok:false,message:'Please check the enquiry fields.'});
   const {
     first_name,
     last_name,
@@ -471,41 +428,81 @@ app.post('/contact', async (req, res) => {
     message
   } = req.body;
 
+  const isMeetingRequest = String(req.body.request_type || '') === 'call';
+  const call = isMeetingRequest ? parseMeetingRequest(req.body) : null;
+  const redirectTarget = isMeetingRequest ? '/contact#book-meeting' : '/contact';
+
   const enquiry = {
     first_name: String(first_name || '').trim(),
     last_name: String(last_name || '').trim(),
     phone_number: String(phone_number || '').trim(),
     company_name: String(company_name || '').trim(),
     email: String(email || '').trim(),
-    message: String(message || '').trim()
+    // Notes are optional on a call request; the requested time is the substance.
+    message: String(message || '').trim() || (isMeetingRequest ? '(No additional notes provided.)' : '')
   };
 
   const requiredFields = Object.values(enquiry);
   const wantsJson = req.xhr || req.headers.accept?.includes('application/json');
 
-  if (requiredFields.some((field) => !String(field || '').trim())) {
+  const missingFields = requiredFields.some((field) => !String(field || '').trim()) || !security.validEmail(enquiry.email) || Object.entries(enquiry).some(([key,value]) => value.length > (key === 'message' ? 5000 : 254)) || Object.values(req.body).some(value => typeof value !== 'string');
+  const invalidMeeting = isMeetingRequest && (!call.validDate || !call.validTime);
+
+  if (missingFields || invalidMeeting) {
+    const failMessage = invalidMeeting && !missingFields
+      ? 'Please choose a weekday from tomorrow onwards and a preferred time for your 15-minute call.'
+      : 'Please complete all required fields before submitting your enquiry.';
     if (wantsJson) {
-      return res.status(400).json({
-        ok: false,
-        message: 'Please complete all required fields before submitting your enquiry.'
-      });
+      return res.status(400).json({ ok: false, message: failMessage });
     }
 
-    req.flash('error', 'Please complete all required fields before submitting your enquiry.');
-    return res.redirect('/contact');
+    req.flash('error', failMessage);
+    return res.redirect(redirectTarget);
   }
 
   const submittedAt = getUKTimestamp();
+
+  const meetingRows = isMeetingRequest ? `
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Request type</strong></td>
+            <td style="border: 1px solid #e5e7eb;">15-minute call request (NOT yet confirmed &mdash; please reply to confirm a time)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Preferred date</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(call.readableDate)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Preferred time (UK time)</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(call.time)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Alternative times</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(call.alt || 'None given')}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Topic</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(call.topic)}</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #e5e7eb;"><strong>Visitor's browser time zone</strong></td>
+            <td style="border: 1px solid #e5e7eb;">${escapeHtml(call.visitorTimezone || 'Not provided')}</td>
+          </tr>` : '';
+
+  const subject = isMeetingRequest
+    ? `15-minute call request: ${enquiry.first_name} ${enquiry.last_name}, ${enquiry.company_name} (${call.readableDate}, ${call.time} UK)`
+    : `New website enquiry from ${enquiry.first_name} ${enquiry.last_name}`;
 
   try {
     await sendEmail({
       to: 'info@009compliance.com',
       replyTo: cleanEmailHeader(enquiry.email),
-      subject: cleanEmailHeader(`New website enquiry from ${enquiry.first_name} ${enquiry.last_name}`),
+      subject: cleanEmailHeader(subject),
       html: `
-        <h2>New website enquiry</h2>
-        <p>A new enquiry has been submitted through the 009 Compliance contact page.</p>
-        <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 720px;">
+        <h2>${isMeetingRequest ? '15-minute call request' : 'New website enquiry'}</h2>
+        <p>${isMeetingRequest
+          ? 'A visitor has requested a 15-minute call through the 009 Compliance website. The visitor has been told this time is awaiting confirmation.'
+          : 'A new enquiry has been submitted through the 009 Compliance contact page.'}</p>
+        <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 720px;">${meetingRows}
           <tr>
             <td style="border: 1px solid #e5e7eb;"><strong>First Name</strong></td>
             <td style="border: 1px solid #e5e7eb;">${escapeHtml(enquiry.first_name)}</td>
@@ -531,395 +528,42 @@ app.post('/contact', async (req, res) => {
             <td style="border: 1px solid #e5e7eb;">${escapeHtml(submittedAt)}</td>
           </tr>
         </table>
-        <h3>Message</h3>
+        <h3>${isMeetingRequest ? 'Notes' : 'Message'}</h3>
         <p style="white-space: pre-line;">${escapeHtml(enquiry.message)}</p>
       `
     });
 
     if (wantsJson) {
-      return res.json({
-        ok: true,
-        message: 'Enquiry Sent'
-      });
+      return res.json(isMeetingRequest
+        ? {
+            ok: true,
+            status: 'requested',
+            message: 'Call request sent',
+            requested: { date: call.readableDate, time: call.time, timezone: 'UK time (Europe/London)' }
+          }
+        : { ok: true, message: 'Enquiry Sent' });
     }
 
-    req.flash('success', 'Thank you. Your enquiry has been sent and we will get back to you as soon as possible.');
-    return res.redirect('/contact');
+    req.flash('success', isMeetingRequest
+      ? `Thank you. Your request for a 15-minute call on ${call.readableDate} at ${call.time} (UK time) has been sent. This is not yet a confirmed appointment — we will contact you to confirm a time.`
+      : 'Thank you. Your enquiry has been sent and we will get back to you as soon as possible.');
+    return res.redirect(redirectTarget);
   } catch (err) {
-    console.error('Contact enquiry email failed:', err);
+    console.error('Contact enquiry email failed.');
+
+    const failure = isMeetingRequest
+      ? 'We could not send your call request just now, so no call has been requested. Please call 03300432377 or email info@009compliance.com.'
+      : 'Unable to send your enquiry at the moment. Please email info@009compliance.com directly.';
 
     if (wantsJson) {
-      return res.status(500).json({
-        ok: false,
-        message: 'Unable to send your enquiry at the moment. Please email info@009compliance.com directly.'
-      });
+      return res.status(500).json({ ok: false, message: failure });
     }
 
-    req.flash('error', 'Unable to send your enquiry at the moment. Please email info@009compliance.com directly.');
-    return res.redirect('/contact');
+    req.flash('error', failure);
+    return res.redirect(redirectTarget);
   }
-});
+}));
 
-
-app.post('/register', async (req, res) => {
-  const pending = req.session.pendingRegister;
-  const password = req.session.pendingPassword;
-
-  if (!pending || !password) {
-    req.flash('error', 'Please start registration again.');
-    return res.redirect('/register');
-  }
-
-  let { firm_name, fca_firm_ref, name, email, mobile_number } = pending;
-  mobile_number = normalizeUKMobile(mobile_number);
-
-  if (req.body.agree_terms !== 'yes') {
-    req.flash('error', 'You must agree to the Client Service Agreement to create an account.');
-    return res.redirect('/terms');
-  }
-
-  const passwordHash = await bcrypt.hash(password, 10);
-  const verificationToken = require('crypto').randomBytes(32).toString('hex');
-
-  const crypto = require('crypto');
-  const unsubscribeToken = crypto.randomBytes(24).toString('hex');
-
-  const termsAcceptedAt = getUKTimestamp();
-const termsVersion = CURRENT_TERMS_VERSION;
-
-
-  // ... keep the db.run INSERT below as-is ...
-  db.run(
-    'INSERT INTO users (email, password_hash, name, firm_name, fca_firm_ref, mobile_number, verification_token) VALUES (?, ?, ?, ?, ?, ?, ?)',
-    [email.toLowerCase(), passwordHash, name, firm_name, fca_firm_ref, mobile_number, verificationToken],
-      async function (err) {
-      if (err) {
-        console.error(err);
-        if (err.message.includes('UNIQUE')) {
-          req.flash('error', 'An account with that email already exists.');
-        } else {
-          req.flash('error', 'Unable to create account. Please try again.');
-        }
-        return res.redirect('/register');
-      }
-
-
-      req.session.user = {
-  id: this.lastID,
-  email: email.toLowerCase(),
-  name,
-  mobile_number,
-  is_verified: 0,
-  terms_version: termsVersion,
-  terms_accepted_at: termsAcceptedAt,
-  firm_name,
-  fca_firm_ref,
-  unsubscribe_token: unsubscribeToken
-};
-
-
-      req.flash('success', 'Welcome! Your account has been created.');
-     
- // ✅ Add/Update dealer in Google Sheets "Dealers" tab
-db.run(
-  `UPDATE users
-   SET unsubscribe_token = ?,
-       is_active = 1,
-       terms_accepted_at = ?,
-       terms_version = ?
-   WHERE id = ?`,
-  [unsubscribeToken, termsAcceptedAt, termsVersion, this.lastID]
-);
-    
-      
-try {
-  await upsertDealerInSheet({
-  dealerId: this.lastID,
-  name,
-  email: email.toLowerCase(),
-  phone: mobile_number,
-  firmName: firm_name,
-  createdAt: getUKTimestamp(),
-  isActive: true,
-  unsubscribeToken,
-  termsAcceptedAt,
-  termsVersion,
-});
-} catch (e) {
-  console.error('Dealer Sheets upsert failed:', e.message);
-}
-      res.redirect('/dashboard');
-    }
-  );
-});
-
-app.get('/verify-email-notice', (req, res) => {
-  res.render('verify_email_notice');
-});
-
-app.get('/verify-email', (req, res) => {
-  const token = req.query.token;
-  if (!token) {
-    req.flash('error', 'Missing verification token.');
-    return res.redirect('/login');
-  }
-
-  db.get('SELECT * FROM users WHERE verification_token = ?', [token], (err, user) => {
-    if (err || !user) {
-      req.flash('error', 'Invalid or expired verification token.');
-      return res.redirect('/login');
-    }
-
-    db.run(
-      'UPDATE users SET is_verified = 1, verification_token = NULL WHERE id = ?',
-      [user.id],
-      function (updateErr) {
-        if (updateErr) {
-          console.error(updateErr);
-          req.flash('error', 'Unable to verify email. Please try again.');
-          return res.redirect('/login');
-        }
-        req.flash('success', 'Email verified. You can now log in.');
-        res.redirect('/login');
-      }
-    );
-  });
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.post('/login', (req, res) => {
-  const { email, password } = req.body;
-
-  if (!email || !password) {
-    req.flash('error', 'Please enter your email and password.');
-    return res.redirect('/login');
-  }
-
-  db.get(
-    'SELECT * FROM users WHERE email = ?',
-    [email.toLowerCase()],
-    async (err, user) => {
-      if (err || !user) {
-        req.flash('error', 'Invalid email or password.');
-        return res.redirect('/login');
-      }
-
-      const match = await bcrypt.compare(password, user.password_hash);
-      if (!match) {
-        req.flash('error', 'Invalid email or password.');
-        return res.redirect('/login');
-      }
-
-      req.session.user = {
-  id: user.id,
-  email: user.email,
-  name: user.name,
-  mobile_number: user.mobile_number,
-  is_verified: user.is_verified === 1,
-  terms_version: user.terms_version || null,
-  terms_accepted_at: user.terms_accepted_at || null,
-  firm_name: user.firm_name || '',
-  fca_firm_ref: user.fca_firm_ref || '',
-  unsubscribe_token: user.unsubscribe_token || ''
-};
-
-
-
-      // Ensure unsubscribe token exists
-      const crypto = require('crypto');
-      const unsubscribeToken =
-        user.unsubscribe_token || crypto.randomBytes(24).toString('hex');
-
-      if (!user.unsubscribe_token) {
-        db.run(
-          'UPDATE users SET unsubscribe_token = ? WHERE id = ?',
-          [unsubscribeToken, user.id]
-        );
-      }
-
-      return res.redirect('/dashboard');
-    }
-  );
-});
-
-
-
-app.get('/logout', (req, res) => {
-  req.session.destroy(() => {
-    res.redirect('/');
-  });
-});
-
-app.get('/unsubscribe', async (req, res) => {
-  try {
-    const token = String(req.query.token || '').trim();
-    if (!token) return res.status(400).send('Missing token.');
-
-    db.get(
-      'SELECT id, name, email, mobile_number FROM users WHERE unsubscribe_token = ?',
-      [token],
-      async (err, user) => {
-        if (err || !user) return res.status(404).send('Invalid unsubscribe link.');
-
-        // mark inactive in DB
-        db.run('UPDATE users SET is_active = 0 WHERE id = ?', [user.id], async (uErr) => {
-          if (uErr) return res.status(500).send('Could not unsubscribe. Please try again.');
-
-          // update Google Sheets (Active -> FALSE)
-          try {
-            await upsertDealerInSheet({
-              dealerId: user.id,
-              name: user.name,
-              email: user.email,
-              phone: user.mobile_number,
-              createdAt: getUKTimestamp(),
-              isActive: false,
-              unsubscribeToken: token,
-            });
-          } catch (e) {
-            console.error('Dealer Sheets upsert failed:', e.message);
-          }
-
-          res.send('You have been unsubscribed. You will no longer receive reminders.');
-        });
-      }
-    );
-  } catch (e) {
-    console.error(e);
-    res.status(500).send('Something went wrong.');
-  }
-});
-
-// Forgot password
-app.get('/forgot-password', (req, res) => {
-  res.render('forgot_password', { error: [], success: [] });
-});
-
-app.post('/forgot-password', (req, res) => {
-  const { email } = req.body;
-
-  if (!email) {
-    return res.render('forgot_password', {
-      error: ['Please enter your email address.'],
-      success: []
-    });
-  }
-
-  db.get('SELECT * FROM users WHERE email = ?', [email.toLowerCase()], async (err, user) => {
-    // Always show success (prevents email enumeration)
-    const genericSuccess = 'If that email exists, a reset link has been sent.';
-
-    if (err || !user) {
-      return res.render('forgot_password', { error: [], success: [genericSuccess] });
-    }
-
-    const crypto = require('crypto');
-    const resetToken = crypto.randomBytes(32).toString('hex');
-    const expires = new Date(Date.now() + 1000 * 60 * 60); // 1 hour
-
-    db.run(
-      'UPDATE users SET reset_token = ?, reset_token_expires = ? WHERE id = ?',
-      [resetToken, expires.toISOString(), user.id],
-      async (updateErr) => {
-        if (updateErr) {
-          console.error(updateErr);
-          return res.render('forgot_password', {
-            error: ['Unable to generate reset link. Please try again.'],
-            success: []
-          });
-        }
-
-        try {
-          const resetUrl = `${BASE_URL}/reset-password/${resetToken}`;
-
-          await sendEmail({
-            to: user.email,
-            subject: 'Reset your FCA Compliance password',
-            html: `
-              <p>Hi ${user.name},</p>
-              <p>We received a request to reset your password.</p>
-              <p><a href="${resetUrl}">Reset my password</a></p>
-              <p>This link is valid for 1 hour.</p>
-            `
-          });
-        } catch (e) {
-          console.error('Email send failed:', e);
-          // Still show generic success to the user
-        }
-
-        return res.render('forgot_password', { error: [], success: [genericSuccess] });
-      }
-    );
-  });
-});
-
-app.get('/reset-password/:token', (req, res) => {
-  const token = req.params.token;
-
-  db.get('SELECT * FROM users WHERE reset_token = ?', [token], (err, user) => {
-    if (err || !user) {
-      return res.redirect('/login');
-    }
-
-    const now = new Date();
-    const expires = new Date(user.reset_token_expires);
-
-    if (now > expires) {
-      return res.redirect('/forgot-password');
-    }
-
-    return res.render('reset_password', { token, error: [], success: [] });
-  });
-});
-
-app.post('/reset-password/:token', async (req, res) => {
-  const token = req.params.token;
-  const { password, confirmPassword } = req.body;
-
-  if (!password || password !== confirmPassword) {
-    return res.render('reset_password', {
-      token,
-      error: ['Passwords do not match.'],
-      success: []
-    });
-  }
-
-  db.get('SELECT * FROM users WHERE reset_token = ?', [token], async (err, user) => {
-    if (err || !user) {
-      return res.redirect('/login');
-    }
-
-    const now = new Date();
-    const expires = new Date(user.reset_token_expires);
-
-    if (now > expires) {
-      return res.redirect('/forgot-password');
-    }
-
-    const passwordHash = await bcrypt.hash(password, 10);
-
-    db.run(
-      'UPDATE users SET password_hash = ?, reset_token = NULL, reset_token_expires = NULL WHERE id = ?',
-      [passwordHash, user.id],
-      (updateErr) => {
-        if (updateErr) {
-          console.error(updateErr);
-          return res.render('reset_password', {
-            token,
-            error: ['Unable to reset password. Please try again.'],
-            success: []
-          });
-        }
-
-        req.flash('success', 'Password has been reset. You can now log in.');
-        return res.redirect('/login');
-      }
-    );
-  });
-});
 
 // Dashboard
 app.get('/dashboard', ensureAuth, ensureTerms, (req, res) => {
@@ -943,213 +587,45 @@ app.get('/reports/new', ensureAuth, ensureTerms, (req, res) => {
   res.render('report_form', { report: null });
 });
 
-app.post('/reports/new', ensureAuth, ensureTerms, async (req, res) => {
-  const userId = req.session.user.id;
-  const { reporting_month, confirm_submission, ...dataFields } = req.body;
-
-  // ✅ Checkbox validation
-  if (confirm_submission !== 'yes') {
-    req.flash('error', 'Please confirm the declaration before submitting.');
-    return res.render('report_form', { report: null, formData: req.body });
-  }
-
-  if (!reporting_month) {
-    req.flash('error', 'Please choose the reporting month.');
-    return res.render('report_form', { report: null, formData: req.body });
-  }
-
-  const dataJson = JSON.stringify(dataFields);
-
-  db.run(
-    'INSERT INTO reports (user_id, reporting_month, data) VALUES (?, ?, ?)',
-    [userId, reporting_month, dataJson],
-    async function (err) {
-      if (err) {
-        console.error(err);
-        req.flash('error', 'Unable to save report. Please try again.');
-        return res.render('report_form', { report: null, formData: req.body });
-      }
-
-      // ✅ Append to Google Sheet (MUST be inside this async function)
-      try {
-        const user = req.session.user;
-        const createdAt = getUKTimestamp();
-
-        const FIELD_ORDER = [
-          'total_vehicles_sold',
-          'funded_deals',
-          'lenders_brokers_used',
-          'finance_commission',
-          'total_turnover',
-          'finance_complaints',
-          'finance_complaints_cases',
-          'finance_complaints_details',
-          'fees_paid_brokers',
-          'px_settlements_number',
-          'px_settlements_value',
-          'changes_since_last_month',
-          'changes_details',
-        ];
-
-        const answers = FIELD_ORDER.map((key) => (dataFields[key] ?? ''));
-
-        const row = [
-          this.lastID,              // report id
-          user.id,                  // dealer id
-          user.name,
-          user.email,
-          "'" + user.mobile_number, // keep leading 0
-          reporting_month,
-          createdAt,
-          ...answers,
-        ];
-
-        await appendRowToSheet('Submissions', row);
-      } catch (e) {
-        console.error('Sheets error:', e.message);
-      }
-
-      // ✅ show toast once on dashboard
-      req.flash('showSubmissionToast', 'true');
-      req.flash('success', 'Report submitted successfully.');
-      return res.redirect('/dashboard');
-    }
-  );
-});
-
-async function updateGoogleSheetRowByReportId(reportId, updatedRowValues) {
-  const client = getSheetsClient();
-  if (!client) return;
-
-  const { jwt, spreadsheetId } = client;
-  await jwt.authorize();
-  const sheets = google.sheets({ version: 'v4', auth: jwt });
-
-  const SHEET_NAME = 'Submissions';
-
-  // 1) Read column A from the Submissions tab only
-  const res = await sheets.spreadsheets.values.get({
-    spreadsheetId,
-    range: `${SHEET_NAME}!A:A`,
-  });
-
-  const colA = res.data.values || [];
-  const rowIndex = colA.findIndex(r => String(r?.[0] ?? '').trim() === String(reportId).trim());
-
-  if (rowIndex === -1) {
-    console.warn(`Report ID ${reportId} not found in ${SHEET_NAME}, appending instead.`);
-    await appendRowToSheet(SHEET_NAME, updatedRowValues);
-    return;
-  }
-
-  // Sheets rows are 1-based
-  const sheetRowNumber = rowIndex + 1;
-
-  // 2) Update the row starting at column A on the Submissions tab
-  await sheets.spreadsheets.values.update({
-    spreadsheetId,
-    range: `${SHEET_NAME}!A${sheetRowNumber}`,
-    valueInputOption: 'USER_ENTERED',
-    requestBody: {
-      values: [updatedRowValues],
-    },
-  });
-  }
-
-// View & edit report
-app.get('/reports/:id/edit', ensureAuth, ensureTerms, (req, res) => {
-  const reportId = req.params.id;
-  const userId = req.session.user.id;
-
-  db.get(
-    'SELECT * FROM reports WHERE id = ? AND user_id = ?',
-    [reportId, userId],
-    (err, report) => {
-      if (err || !report) {
-        req.flash('error', 'Report not found.');
-        return res.redirect('/dashboard');
-      }
-
-      report.dataObj = {};
-      try {
-        report.dataObj = JSON.parse(report.data);
-      } catch (e) {}
-
-      res.render('report_form', { report });
-    }
-  );
-});
-
-app.post('/reports/:id/edit', ensureAuth, ensureTerms, (req, res) => {
-  const reportId = req.params.id;
-  const userId = req.session.user.id;
-  const { reporting_month, ...dataFields } = req.body;
-
-  if (!reporting_month) {
-    req.flash('error', 'Please choose the reporting month.');
-    return res.redirect(`/reports/${reportId}/edit`);
-  }
-
-  const dataJson = JSON.stringify(dataFields);
-
-  db.run(
-    `
-      UPDATE reports
-      SET reporting_month = ?, data = ?, updated_at = CURRENT_TIMESTAMP
-      WHERE id = ? AND user_id = ?
-    `,
-    [reporting_month, dataJson, reportId, userId],
-    async (err) => {
-      if (err) {
-        console.error(err);
-        req.flash('error', 'Unable to update report. Please try again.');
-        return res.redirect(`/reports/${reportId}/edit`);
-      }
-
-      // ✅ Update Google Sheet row (if configured)
-      try {
-        const user = req.session.user;
-        const updatedAt = getUKTimestamp();
-
-        const FIELD_ORDER = [
-          'total_vehicles_sold',
-          'funded_deals',
-          'lenders_brokers_used',
-          'finance_commission',
-          'total_turnover',
-          'finance_complaints',
-          'finance_complaints_cases',
-          'finance_complaints_details',
-          'fees_paid_brokers',
-          'px_settlements_number',
-          'px_settlements_value',
-          'changes_since_last_month',
-          'changes_details',
-        ];
-
-        const answers = FIELD_ORDER.map((k) => (dataFields[k] ?? ''));
-
-        const updatedRow = [
-          reportId,                // A
-          user.id,                 // B
-          user.name,               // C
-          user.email,              // D
-          "'" + user.mobile_number,// E (keep leading 0)
-          reporting_month,         // F
-           updatedAt,               // G (timestamp)
-          ...answers,              // H onwards
-          ];
-
-        await updateGoogleSheetRowByReportId(reportId, updatedRow);
-      } catch (e) {
-        console.error('Google Sheets update failed:', e.message);
-      }
-
-      req.flash('success', 'Report updated successfully.');
-      res.redirect('/dashboard');
-    }
-  );
-});
+const reportValidation = require('./utils/report-validation');
+const q = query(db);
+const reportLimit = rateLimit(db, 'reports', 60, 15 * 60000, req => req.session.user.id);
+function syncMessage(status, updated) {
+  return (updated ? 'Report updated in your portal.' : 'Report saved in your portal.') + (status === 'synced' ? ' Google Sheets synchronisation completed.' : ' Google Sheets synchronisation is pending; your saved report is queued for retry.');
+}
+app.post('/reports/new', ensureAuth, ensureTerms, reportLimit, wrap(async (req,res) => {
+  const validated = reportValidation.validate(req.body);
+  if (validated.error) return res.status(400).render('report_form', { report:null, formData:req.body, error:[validated.error] });
+  let saved;
+  try { saved = await q.run("INSERT INTO reports(user_id,reporting_month,data,sync_status) VALUES(?,?,?,'pending')", [req.session.user.id,validated.month,JSON.stringify(validated.data)]); }
+  catch(e) { if (!e.message.includes('duplicate_report_month')) throw e; return res.status(409).render('report_form',{report:null,formData:req.body,error:['A report already exists for that month. Edit the existing report from your dashboard.']}); }
+  await sheetsSync.flush();
+  const report = await q.get('SELECT sync_status FROM reports WHERE id=? AND user_id=?',[saved.id,req.session.user.id]);
+  req.flash('showSubmissionToast','true');req.flash('success',syncMessage(report.sync_status,false));res.redirect('/dashboard');
+}));
+app.get('/reports/:id/edit', ensureAuth, ensureTerms, wrap(async(req,res) => {
+  if(!/^[1-9]\d*$/.test(req.params.id))return res.status(404).render('404');
+  const report = await q.get('SELECT * FROM reports WHERE id=? AND user_id=?',[req.params.id,req.session.user.id]);
+  if(!report)return res.status(404).render('404');
+  report.dataObj=JSON.parse(report.data);res.render('report_form',{report});
+}));
+app.post('/reports/:id/edit', ensureAuth, ensureTerms, reportLimit, wrap(async(req,res) => {
+  if(!/^[1-9]\d*$/.test(req.params.id))return res.status(404).render('404');
+  // Ownership is established BEFORE validation, writes, queues or external calls.
+  const report = await q.get('SELECT * FROM reports WHERE id=? AND user_id=?',[req.params.id,req.session.user.id]);
+  if(!report)return res.status(404).render('404');
+  report.dataObj=JSON.parse(report.data);
+  const validated=reportValidation.validate(req.body,report.reporting_month);
+  if(validated.error)return res.status(400).render('report_form',{report,formData:req.body,error:[validated.error]});
+  if(typeof req.body.revision!=='string'||!/^\d+$/.test(req.body.revision)||Number(req.body.revision)!==report.revision)return res.status(409).render('report_form',{report,formData:req.body,error:['This report changed since you opened it. Reload it and review the latest version before saving.']});
+  let result;
+  try { result=await q.run("UPDATE reports SET reporting_month=?,data=?,updated_at=CURRENT_TIMESTAMP,revision=revision+1,sync_status='pending' WHERE id=? AND user_id=? AND revision=?",[validated.month,JSON.stringify(validated.data),report.id,req.session.user.id,report.revision]); }
+  catch(e) { if(!e.message.includes('duplicate_report_month'))throw e;return res.status(409).render('report_form',{report,formData:req.body,error:['Another report already exists for that month.']}); }
+  if(result.changes!==1)return res.status(409).send('This report changed. Reload and try again.');
+  await sheetsSync.flush();
+  const saved=await q.get('SELECT sync_status FROM reports WHERE id=? AND user_id=?',[report.id,req.session.user.id]);
+  req.flash('success',syncMessage(saved.sync_status,true));res.redirect('/dashboard');
+}));
 
 // List reports (history)
 app.get('/reports', ensureAuth, ensureTerms, (req, res) => {
@@ -1169,48 +645,28 @@ app.get('/reports', ensureAuth, ensureTerms, (req, res) => {
   );
 });
 
-app.get('/test-email', async (req, res) => {
-  try {
-    await sendEmail({
-      to: 'YOUR_EMAIL@gmail.com',
-      subject: 'Email system working',
-      html: '<p>Your email setup works 🎉</p>'
-    });
-    res.send('Email sent successfully');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Email failed');
-  }
-});
-
-
 app.get('/privacy-policy', (req, res) => res.render('privacy_policy'));
 app.get('/complaints-policy', (req, res) => res.render('complaints_policy'));
 app.get('/cookie-policy', (req, res) => res.render('cookie_policy'));
 
-app.get('/debug-env', (req, res) => {
-  res.json({
-    sheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
-    serviceAccount: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
-  });
-});
-
 app.get('/services', (req, res) => {
   res.render('services', {
-    pageTitle: 'Services | 009 Compliance',
-    pageDescription: 'Practical FCA compliance, authorisation and reporting support services for motor dealers.',
+    salesPage: true,
+    pageTitle: 'Motor Dealer Services | Compliance & Motor Finance | 009 Compliance',
+    pageDescription: 'Services for motor dealers: FCA authorisation assistance, CCR009 return assistance, ongoing compliance support and motor-finance broker support. Book a 15-minute call to find the right fit.',
     canonicalUrl: 'https://009compliance.com/services',
     robots: 'index,follow',
     ogTitle: 'Services | 009 Compliance',
-    ogDescription: 'Practical FCA compliance, authorisation and reporting support services for motor dealers.',
+    ogDescription: 'FCA authorisation, CCR009 returns, ongoing compliance and motor-finance broker support for motor dealers.',
     ogType: 'website'
   });
 });
 
 app.get('/ccr009-return-assistance-motor-dealers', (req, res) => {
   res.render('ccr009_return_assistance_motor_dealers', {
+    salesPage: true,
     pageTitle: 'CCR009 Return Assistance for Motor Dealers | FCA CCR009 Reporting Support | 009 Compliance Ltd',
-    pageDescription: 'CCR009 return assistance for FCA authorised motor dealers. Practical support with FCA CCR009 reporting, RegData submissions, finance introductions, commission reporting, lender relationships, prudential resources and annual FCA reporting obligations',
+    pageDescription: 'CCR009 return assistance for FCA authorised motor dealers. Practical help organising finance introductions, commission, lender relationships and the records behind your RegData return, with monthly MI throughout the year.',
     robots: 'index,follow',
     ogTitle: 'CCR009 Return Assistance for Motor Dealers | 009 Compliance Ltd',
     ogDescription: 'Practical FCA CCR009 reporting support for motor dealers, including RegData preparation, finance introductions, commission reporting and lender relationship information.',
@@ -2857,6 +2313,7 @@ app.get('/after-fca-approval-motor-dealers', (req, res) => {
 ccr009GuidePages.forEach(enrichGuidePage);
 
 ccr009GuidePages.forEach((page) => {
+  if (app._router.stack.some(layer => layer.route?.path === page.slug && layer.route.methods.get)) return;
   app.get(page.slug, (req, res) => {
     const faqSchema = {
       '@context': 'https://schema.org',
@@ -3760,6 +3217,7 @@ app.get('/website-compliance-motor-dealers', (req, res) => {
 motorDealerSeoPages.forEach(enrichGuidePage);
 
 motorDealerSeoPages.forEach((page) => {
+  if (app._router.stack.some(layer => layer.route?.path === page.slug && layer.route.methods.get)) return;
   app.get(page.slug, (req, res) => {
     const faqSchema = {
       '@context': 'https://schema.org',
@@ -3794,114 +3252,22 @@ app.get('/fca-authorisation-motor-dealers', (req, res) => {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: 'https://009compliance.com/'
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Services',
-          item: 'https://009compliance.com/services'
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'FCA Authorisation for Motor Dealers',
-          item: 'https://009compliance.com/fca-authorisation-motor-dealers'
-        }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://009compliance.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://009compliance.com/services' },
+        { '@type': 'ListItem', position: 3, name: 'FCA Authorisation for Motor Dealers', item: 'https://009compliance.com/fca-authorisation-motor-dealers' }
       ]
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      '@id': 'https://009compliance.com/fca-authorisation-motor-dealers#service',
-      name: 'FCA Authorisation for Motor Dealers',
-      url: 'https://009compliance.com/fca-authorisation-motor-dealers',
-      serviceType: 'FCA authorisation application support for motor dealers',
-      provider: {
-        '@id': 'https://009compliance.com/#organization'
-      },
-      areaServed: {
-        '@type': 'Country',
-        name: 'United Kingdom'
-      },
-      audience: {
-        '@type': 'BusinessAudience',
-        audienceType: 'Motor dealers'
-      },
-      offers: {
-        '@type': 'Offer',
-        price: '1000',
-        priceCurrency: 'GBP',
-        url: 'https://009compliance.com/fca-authorisation-motor-dealers',
-        description: 'Fixed fee plus the FCA application fee payable directly to the Financial Conduct Authority.'
-      }
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'How much does FCA authorisation cost?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Our fixed fee is £1,000 plus the FCA application fee payable directly to the FCA.'
-          }
-        },
-        {
-          '@type': 'Question',
-          name: 'Do I need a business plan?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. The FCA expects firms to explain how the business operates, how customers are treated and how regulatory responsibilities will be managed. We prepare the business plan following a discussion about your business and objectives.'
-          }
-        },
-        {
-          '@type': 'Question',
-          name: 'Do you provide the compliance documents?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. Our service includes a comprehensive package of bespoke documentation commonly required for a motor dealer FCA application.'
-          }
-        },
-        {
-          '@type': 'Question',
-          name: 'How long does FCA authorisation take?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Timescales vary depending on the application and FCA workload. The FCA controls the approval process and timescales cannot be guaranteed.'
-          }
-        },
-        {
-          '@type': 'Question',
-          name: 'Do you guarantee FCA approval?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Only the FCA can decide whether authorisation will be granted.'
-          }
-        },
-        {
-          '@type': 'Question',
-          name: 'What permissions do motor dealers normally apply for?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Many motor dealers apply for permissions relating to credit broking and associated consumer credit activities. The precise permissions required depend on the activities carried on by the business.'
-          }
-        }
-      ]
-    }
+    authorisationServiceSchema()
   ];
 
   res.render('fca_authorisation_motor_dealers', {
-    pageTitle: 'FCA Authorisation for Motor Dealers | Fixed Fee £1000',
-    pageDescription: 'Apply for FCA authorisation with fixed-fee support for motor dealers for £1000. Includes application documents, business plan, FCA Connect and ongoing guidance.',
+    salesPage: true,
+    inPageMeeting: true,
+    pageTitle: `FCA Authorisation for Motor Dealers | ${priceTag()} | 009 Compliance`,
+    pageDescription: `FCA authorisation assistance for motor dealers: application organisation, supporting documents and help with FCA information requests. ${priceSentence()}`,
     robots: 'index,follow',
-    ogTitle: 'FCA Authorisation for Motor Dealers | £1,000 Fixed Fee',
-    ogDescription: 'Fixed-fee FCA authorisation application support for motor dealers, including documents, business plan and FCA Connect support.',
+    ogTitle: 'FCA authorisation assistance for motor dealers | 009 Compliance',
+    ogDescription: `Spread the cost of your FCA authorisation assistance, with reporting and compliance support continuing after approval. ${priceSentence()}`,
     ogType: 'website',
     ogImage: 'https://009compliance.com/images/logo1resized.png',
     canonicalUrl: 'https://009compliance.com/fca-authorisation-motor-dealers',
@@ -3909,39 +3275,45 @@ app.get('/fca-authorisation-motor-dealers', (req, res) => {
   });
 });
 
+app.get('/motor-finance-for-dealerships', (req, res) => {
+  res.render('motor_finance', {
+    salesPage: true,
+    pageTitle: 'Motor Finance for Dealerships | 009 Compliance',
+    pageDescription: 'Explore motor-finance broker support for your dealership, backed by 30+ years of motor-finance experience. Start with a conversation about your next steps.',
+    canonicalUrl: 'https://009compliance.com/motor-finance-for-dealerships'
+  });
+});
+
 app.get('/motor-dealer-compliance', (req, res) => {
   res.render('motor_dealer_compliance', {
-    pageTitle: 'Motor Dealer Compliance | FCA Compliance Support for Motor Dealers | 009 Compliance Ltd',
-    pageDescription: 'Practical motor dealer compliance support including FCA authorisation, CCR009 reporting, CCR007 reporting, Consumer Duty, compliance documentation, website compliance reviews and ongoing FCA compliance assistance for motor dealers.',
+    salesPage: true,
+    pageTitle: 'Motor Dealer Compliance | Ongoing FCA Compliance Support for Motor Dealers | 009 Compliance Ltd',
+    pageDescription: 'Ongoing FCA compliance support for motor dealers: plain-English help, compliance documentation, CCR007 and CCR009 preparation, Consumer Duty, website reviews and periodic reviews, on a fixed monthly fair-use basis.',
     robots: 'index,follow',
     ogTitle: 'Motor Dealer Compliance | 009 Compliance Ltd',
-    ogDescription: 'Practical FCA compliance support for motor dealers, including authorisation, CCR009, CCR007, Consumer Duty, documentation, website reviews and ongoing compliance assistance.',
+    ogDescription: 'Practical ongoing FCA compliance support for motor dealers, including documentation, reporting preparation, Consumer Duty and periodic reviews.',
     ogType: 'article',
     canonicalUrl: 'https://009compliance.com/motor-dealer-compliance'
   });
 });
 
 app.get('/pricing', (req, res) => {
-  res.render('pricing');
-});
-
-// 🔧 TEST GOOGLE SHEETS CONNECTION
-app.get('/test-sheets', async (req, res) => {
-  try {
-    await appendRowToSheet('Submissions', [
-      "TEST_REPORT",
-      "123",
-      "test@example.com",
-      "Test User",
-      "2024-01",
-      getUKTimestamp(),
-      "{}"
-    ]);
-    res.send("SUCCESS: A test row should now appear in Google Sheets.");
-  } catch (err) {
-    console.error("GOOGLE SHEETS ERROR:", err);
-    res.send("FAILED: " + err.message);
-  }
+  const faqs = [
+    {question:'Does the authorisation offer cover every service?',answer:'No. FCA Authorisation Assistance, CCR009 Return Assistance and Ongoing Compliance Support are separate services with their own scope and pricing.'},
+    {question:'How do you price CCR009 assistance?',answer:'We discuss your reporting needs and agree the scope and fee before engagement. Your firm remains responsible for its submission.'},
+    {question:'How does ongoing support work?',answer:'Ongoing support is provided on a fixed monthly, fair-use basis. We agree the scope and fees before work begins. Additional work is discussed and agreed separately.'},
+    {question:'Can I speak to you before choosing?',answer:'Yes. Book a 15-minute call to talk through your dealership and find out which support could fit.'},
+    ...faqData.pricing()
+  ];
+  res.render('pricing', {
+    salesPage: true,
+    inPageMeeting: true,
+    pageTitle: 'Service Pricing | FCA Authorisation, CCR009 & Ongoing Support | 009 Compliance',
+    pageDescription: `Clear pricing for motor dealers. FCA authorisation assistance: ${priceSentence()} CCR009 Return Assistance and Ongoing Compliance Support are priced separately.`,
+    canonicalUrl: 'https://009compliance.com/pricing',
+    faqs,
+    pageSchema: [faqData.toSchema(faqs)]
+  });
 });
 
 // 404 fallback
@@ -3949,6 +3321,17 @@ app.use((req, res) => {
   res.status(404).render('404');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.use((err,req,res,next) => {
+  console.error('Request failed:', err.type === 'entity.too.large' ? 'request too large' : 'internal error');
+  if (res.headersSent) return next(err);
+  const status=err.type==='entity.too.large'?413:(err.type==='entity.parse.failed'?400:500);
+  res.status(status).format({ json:()=>res.json({ok:false,error:'The request could not be completed. Please try again.',message:'The request could not be completed. Please try again.'}), default:()=>res.type('text').send('The request could not be completed. Please try again.') });
 });
+if (require.main === module) {
+  databaseReady.then(() => {
+    const server=app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+    const shutdown=()=>server.close(async()=>{await app.locals.stopBackgroundTasks();db.close();});
+    process.once('SIGTERM',shutdown);process.once('SIGINT',shutdown);
+  }).catch(async()=>{await app.locals.stopBackgroundTasks();process.exitCode=1;db.close();});
+}
+module.exports = app;

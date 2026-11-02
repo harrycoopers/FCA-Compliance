@@ -1,0 +1,2 @@
+self.addEventListener('push',event=>{let d={title:'Compliance Manager',body:'You have an upcoming return.',url:'/'};try{d={...d,...event.data.json()}}catch{}event.waitUntil(self.registration.showNotification(d.title,{body:d.body,tag:d.tag,icon:'/favicon.svg',data:{url:d.url}}))});
+self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil(clients.openWindow(new URL(event.notification.data.url,self.location.origin).href))});

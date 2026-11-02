@@ -1,0 +1,14 @@
+export type Company={tradingName?:string;addressLine1?:string;addressLine2?:string;city?:string;postcode?:string;vat?:string;jobTitle?:string;id:string;name:string;contact:string;email:string;phone:string;registration:string;fca:string;notes:string;archived:boolean};
+export type ReturnItem={id:string;companyId:string;contact:string;title:string;type:string;due:string;time:string;status:string;notes:string;offsets:number[];recurrence:number;completedAt:string;reference:string;version:string;scheduled:{offset:number;at:string}[];series?:string};
+export type Settings={brand:string;name:string;timezone:string;reminderTime:string;offsets:number[];privacy:boolean};
+export type Data={companies:Company[];returns:ReturnItem[];activity:{id:string;text:string;at:string}[];settings:Settings};
+export const defaults:Settings={brand:'009 Compliance',name:'Administrator',timezone:'Europe/London',reminderTime:'09:00',offsets:[30,14,7,3,1],privacy:false};
+export const empty=():Data=>({companies:[],returns:[],activity:[],settings:{...defaults}});
+export function dayInZone(zone='Europe/London',now=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit'}).format(now)}
+export function shift(date:string,n:number){const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
+export function daysLeft(due:string,zone='Europe/London'){return Math.round((Date.parse(due+'T12:00:00Z')-Date.parse(dayInZone(zone)+'T12:00:00Z'))/86400000)}
+export function pretty(date:string){return new Date(date+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}
+export function localInstant(date:string,time:string,zone:string){let guess=Date.parse(`${date}T${time}:00Z`);const target=guess;for(let i=0;i<3;i++){const p=new Intl.DateTimeFormat('en-GB',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date(guess));const v=Object.fromEntries(p.map(x=>[x.type,x.value]));const represented=Date.parse(`${v.year}-${v.month}-${v.day}T${v.hour}:${v.minute}:${v.second}Z`);guess+=target-represented;}return new Date(guess).toISOString()}
+export function schedule(r:ReturnItem,s:Settings){return r.offsets.map(offset=>({offset,at:localInstant(shift(r.due,-offset),s.reminderTime,s.timezone)}))}
+export function urgency(r:ReturnItem,zone:string){if(r.status==='Completed')return 'completed';let d=daysLeft(r.due,zone);if(d<0||(d===0&&r.time&&Date.parse(localInstant(r.due,r.time,zone))<Date.now()))return 'overdue';return d<=7?'soon':'upcoming'}
+export function nextMonth(date:string,n:number){const [y,m,d]=date.split('-').map(Number);const end=new Date(Date.UTC(y,m-1+n+1,0)).getUTCDate();return new Date(Date.UTC(y,m-1+n,Math.min(d,end))).toISOString().slice(0,10)}

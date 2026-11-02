@@ -1,0 +1,9 @@
+(() => {
+ const items=[...document.querySelectorAll('.meeting-invite-refresh')];
+ if(!items.length || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const states=new Map();
+ const sync=el=>el.classList.toggle('mi-paused',!states.get(el)||document.hidden);
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{states.set(entry.target,entry.isIntersecting);if(entry.isIntersecting)entry.target.classList.add('mi-running');sync(entry.target);}),{threshold:0});
+ items.forEach(el=>observer.observe(el));
+ document.addEventListener('visibilitychange',()=>items.forEach(sync));
+})();

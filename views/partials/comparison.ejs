@@ -1,0 +1,39 @@
+<%
+  /* Advertised-price comparison. Values come from data/competitors.js (checked date shown).
+     Deliberately no bar chart: the services have different payment structures and scope,
+     so bars of "price" would imply a like-for-like total that doesn't exist. */
+  const _o = offer;
+  const _list = competitors.providers;
+%>
+<div class="compare" data-reveal>
+  <div class="compare__scroll" role="region" aria-labelledby="compare-title" tabindex="0">
+    <table class="compare__table">
+      <caption class="sr-only">Advertised prices for FCA authorisation support for motor dealers, checked <%= competitors.checked %></caption>
+      <thead>
+        <tr><th scope="col">Provider</th><th scope="col">Advertised professional fee</th><th scope="col">How it’s paid</th><th scope="col">VAT</th><th scope="col">FCA application fee</th></tr>
+      </thead>
+      <tbody>
+        <tr class="compare__ours">
+          <th scope="row"><span class="compare__name">009 Compliance</span><span class="compare__badge">Subscription</span></th>
+          <td><strong>£<%= _o.startPayment %> first payment, then £<%= _o.monthlyPayment %>/month</strong><span>£<%= _o.minimumTotal.amount %> minimum service commitment before applicable referral adjustments</span></td>
+          <td><%= _o.minimumTermTitle %>-month minimum by <%= _o.paymentMethod %>. Payments continue until cancellation, with reporting and compliance support after approval.</td>
+          <td><%= _o.vatShort || 'Being confirmed' %></td>
+          <td>Separate</td>
+        </tr>
+        <% _list.forEach(function (p, i) { %>
+          <tr style="--i:<%= i + 1 %>">
+            <th scope="row"><span class="compare__name"><%= p.name %></span><a class="compare__src" href="<%= p.url %>" target="_blank" rel="noopener nofollow">Source<span class="sr-only"> for <%= p.name %> (opens in a new tab)</span></a></th>
+            <td><strong><%= p.headline %></strong><span>Fixed application fee</span></td>
+            <td><%= p.structure %></td>
+            <td><%= p.vat %></td>
+            <td><%= p.fcaFee %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <div class="compare__notes">
+    <p><strong>Different models, not a like-for-like total.</strong> The providers above advertise fixed application fees, some split into two payments. Ours is an ongoing monthly subscription that continues after approval until you cancel, so the total you pay depends on how long you keep the service. We haven’t assumed any provider’s service scope matches ours.</p>
+    <p class="fine">Prices as advertised on each provider’s own website, checked <%= competitors.checked %>. Prices and terms can change, so please check the source links.<% if (!_o.vatShort) { %> VAT treatment for 009 Compliance prices is being confirmed.<% } %></p>
+  </div>
+</div>

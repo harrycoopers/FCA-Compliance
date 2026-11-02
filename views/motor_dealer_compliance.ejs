@@ -1,395 +1,164 @@
-<main class="ccr009-page motor-dealer-compliance-page">
-  <section class="ccr009-hero sa-reveal">
-    <div class="ccr009-hero__inner">
-      <div class="ccr009-hero__copy">
-        <p class="ccr009-eyebrow">Motor dealer compliance</p>
-        <h1>Practical FCA Compliance Support for Motor Dealers</h1>
-        <p class="ccr009-hero__lead">
-          Practical, plain-English FCA compliance support designed specifically for motor dealers.
-        </p>
-        <div class="ccr009-actions">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Contact Us</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/services">View Services</a>
-        </div>
-      </div>
+<link rel="stylesheet" href="<%= assetPath('/css/ongoing-refresh.css?v=74') %>">
+<% const tick = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'; %>
+<div class="compliance-sales">
 
-      <div class="ccr009-hero__panel" aria-label="Motor dealer compliance support overview">
-        <div class="ccr009-hero__panel-top">
-          <span>009 Compliance Ltd</span>
-          <strong>Built around motor dealers</strong>
-          <p>Support with FCA authorisation, Consumer Duty, CCR009, CCR007 and ongoing compliance monitoring.</p>
+  <section class="page-hero" aria-labelledby="mdc-title">
+    <div class="wrap">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li aria-current="page">Motor Dealer Compliance Support</li></ol></nav>
+      <div class="page-hero__grid">
+        <div>
+          
+          <h1 class="display-xl" id="mdc-title">Less compliance admin.<br><span class="serif">More time for your dealership.</span></h1>
+          <p class="lede">You run the dealership. We help organise the compliance paperwork, explain what’s needed and work through your questions — with practical support throughout the year.</p>
+          <div class="actions">
+            <a class="btn btn--primary btn--sheen" href="/contact#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="text-link" href="#included">What the monthly support includes</a>
+          </div>
+          <p class="hero__cta-note">Fixed monthly support on a fair-use basis. Priced separately and confirmed before engagement.</p>
         </div>
-        <div class="ccr009-stat-grid">
-          <div><span>Focus</span><strong>Motor trade</strong></div>
-          <div><span>Support</span><strong>Plain-English</strong></div>
-          <div><span>Reporting</span><strong>CCR009 &amp; CCR007</strong></div>
-          <div><span>Access</span><strong>Direct support</strong></div>
+        <div class="oc-dashboard" data-oc-motion aria-hidden="true">
+          <div class="oc-dashboard-head"><span>Your compliance, organised</span><i></i></div>
+          <div class="oc-dashboard-body"><div class="oc-calendar"><span>ONGOING SUPPORT</span><strong>One step<br>at a time.</strong><div class="oc-calendar-grid"><% for(let i=0;i<12;i++){ %><i style="--oc-i:<%= i %>"></i><% } %></div></div>
+          <div class="oc-tasks"><% ['Information organised','Documents prepared','Questions explained'].forEach((label,i)=>{ %><div style="--oc-i:<%= i %>"><span class="oc-task-check">✓</span><span><%= label %></span></div><% }); %></div></div>
+          <div class="oc-contact"><span class="oc-contact-icon">↔</span><span><b>A person you can turn to</b><small>Clear answers. Practical next steps.</small></span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ccr009-content">
-    <div class="ccr009-content__main">
-      <article class="ccr009-section ccr009-section--feature sa-reveal">
-        <h2 class="services-h2">Motor Dealer Compliance</h2>
-        <p class="services-p">FCA compliance for motor dealers has become increasingly important as regulatory expectations continue to evolve.</p>
-        <p class="services-p">From FCA authorisation and Consumer Duty through to CCR009 reporting, CCR007 reporting and ongoing compliance monitoring, firms are expected to maintain appropriate systems, controls and oversight.</p>
-        <p class="services-p">At 009 Compliance Ltd, we provide practical, plain-English compliance support designed specifically for motor dealers.</p>
-        <p class="services-p">We understand the motor trade because we have worked within vehicle finance and dealership environments ourselves.</p>
-        <p class="services-p">We understand how dealerships actually operate and how compliance requirements fit alongside the realities of buying stock, serving customers, arranging finance and running a successful business.</p>
-        <ul class="services-bullets ccr009-bullets">
-          <li>No call centres.</li>
-          <li>No ticketing systems.</li>
-          <li>No unnecessary jargon.</li>
-        </ul>
-        <p class="services-p">Just practical support from people who understand both FCA regulation and the motor trade.</p>
-        <p class="services-p">If you are looking for motor dealer compliance support that is practical, proportionate and built around how dealerships operate in the real world, we would be happy to help.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Contact Us</a>
-        </div>
-      </article>
+  <section class="sec" aria-labelledby="voices-title">
+    <div class="wrap">
+      <div class="sec-head"><div><h2 class="display-m" id="voices-title">Dealers who use our <span class="serif">ongoing support.</span></h2></div></div>
+      <div class="grid-2">
+        <figure class="proof oc-proof" data-oc-motion style="margin:0;padding:clamp(22px,3vw,36px)">
+          <blockquote style="margin:0;font-size:19px;line-height:1.55;font-weight:550">“009 Compliance now assists me with all of my ongoing compliance needs, and I wouldn’t have it any other way. They are <strong>knowledgeable, approachable and completely trustworthy.</strong>”</blockquote>
+          <figcaption style="margin-top:14px;font-weight:650">Clarke, Director, 4 Motion Cars Limited, Derby</figcaption>
+        </figure>
+        <figure class="proof oc-proof" data-oc-motion style="margin:0;padding:clamp(22px,3vw,36px)">
+          <blockquote style="margin:0;font-size:19px;line-height:1.55;font-weight:550">“We now use 009 Compliance every month to help us keep on top of our ongoing compliance requirements and make sure <strong>everything is kept in order.</strong>”</blockquote>
+          <figcaption style="margin-top:14px;font-weight:650">Muhammad, Director, Apex Auto Traders Ltd, Bradford</figcaption>
+        </figure>
+      </div>
+      <p class="fine" style="margin-top:12px">Extracts from full client reviews. <a href="/testimonials">Read the full reviews</a>.</p>
+    </div>
+  </section>
 
-      <article class="ccr009-section ccr009-section--accent sa-reveal">
-        <h2 class="services-h2">How We Help Motor Dealers</h2>
-        <p class="services-p">We assist motor dealers with:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>FCA Authorisation</li>
-          <li>CCR009 Reporting</li>
-          <li>CCR007 Reporting</li>
-          <li>Consumer Duty</li>
-          <li>Compliance Documentation</li>
-          <li>Website Compliance Reviews</li>
-          <li>Vulnerable Customer Procedures</li>
-          <li>Ongoing Compliance Support</li>
-        </ul>
-        <p class="services-p">Our focus is on helping dealerships remain organised, informed and prepared without creating unnecessary complexity.</p>
-        <p class="services-p">Many of our clients use our support throughout the year, helping spread compliance activities across the reporting period rather than leaving everything until an FCA deadline arrives.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/services">View Services</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/contact#send-message">Speak to the Team</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Built on Real Motor Trade Experience</h2>
-        <p class="services-p">Many compliance providers understand regulation.</p>
-        <p class="services-p">We understand regulation and the motor trade.</p>
-        <p class="services-p">Our experience has been built through working within vehicle finance and dealership environments, giving us practical insight into how motor dealers operate on a day-to-day basis.</p>
-        <p class="services-p">We understand:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Vehicle finance</li>
-          <li>Credit broking</li>
-          <li>Finance introductions</li>
-          <li>Customer journeys</li>
-          <li>Lender relationships</li>
-          <li>Commission disclosure</li>
-          <li>Consumer Duty</li>
-          <li>FCA reporting</li>
-          <li>Dealer operations</li>
-        </ul>
-        <p class="services-p">This practical experience helps us provide support that is realistic, proportionate and relevant to the businesses we work with.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Compliance Made Practical</h2>
-        <p class="services-p">Many motor dealers do not have dedicated compliance departments.</p>
-        <p class="services-p">The same person may be buying stock, dealing with customers, arranging finance, managing staff and trying to keep up with FCA requirements.</p>
-        <p class="services-p">Our role is to make motor dealer compliance more organised, more manageable and less time-consuming.</p>
-        <p class="services-p">Whether you need FCA authorisation, CCR009 reporting support, Consumer Duty guidance, compliance documentation or ongoing FCA compliance support, we help bring structure and clarity to the process.</p>
-        <p class="services-p">Whether you describe it as motor dealer compliance, motor trade compliance or FCA compliance support, the challenge is often the same: understanding what is required and maintaining a practical approach throughout the year.</p>
-        <p class="services-p">We focus on practical solutions rather than unnecessary complexity, helping firms understand what is expected and how those expectations apply within a real dealership environment.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">What Is Motor Dealer Compliance?</h2>
-        <p class="services-p">Motor dealer compliance refers to the systems, procedures and controls used to help ensure a dealership meets its regulatory obligations.</p>
-        <p class="services-p">For FCA authorised motor dealers, this may include responsibilities relating to:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Credit broking</li>
-          <li>Consumer Duty</li>
-          <li>Vulnerable customers</li>
-          <li>Complaints handling</li>
-          <li>Financial promotions</li>
-          <li>Regulatory disclosures</li>
-          <li>FCA reporting</li>
-          <li>Record keeping</li>
-          <li>Staff awareness and training</li>
-        </ul>
-        <p class="services-p">The exact requirements will depend on the permissions held by the firm and the activities carried on.</p>
-        <p class="services-p">However, all FCA authorised motor dealers are expected to understand their regulatory responsibilities and maintain appropriate procedures and controls.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">FCA Compliance for Motor Dealers</h2>
-        <p class="services-p">FCA compliance for motor dealers covers a wide range of responsibilities, from obtaining FCA authorisation through to ongoing reporting and record-keeping obligations.</p>
-        <p class="services-p">Many dealerships search for FCA compliance support because they want practical help understanding what is expected of them and how those requirements apply to their business.</p>
-        <p class="services-p">Areas commonly include:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>FCA Authorisation</li>
-          <li>Credit Broking Compliance</li>
-          <li>Consumer Duty</li>
-          <li>Vulnerable Customers</li>
-          <li>Complaints Handling</li>
-          <li>Financial Promotions</li>
-          <li>Website Compliance</li>
-          <li>CCR009 Reporting</li>
-          <li>CCR007 Reporting</li>
-          <li>Regulatory Disclosures</li>
-        </ul>
-        <p class="services-p">At 009 Compliance Ltd, we provide FCA compliance support specifically for motor dealers and vehicle finance businesses.</p>
-        <p class="services-p">Our aim is to help firms remain organised, informed and prepared throughout the year.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Ask About Compliance Support</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section ccr009-section--accent sa-reveal">
-        <h2 class="services-h2">FCA Authorisation for Motor Dealers</h2>
-        <p class="services-p">Many dealerships require FCA authorisation before introducing customers to finance providers.</p>
-        <p class="services-p">People often search for:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>FCA licence</li>
-          <li>Consumer credit licence</li>
-          <li>Credit broking licence</li>
-          <li>FCA approval</li>
-          <li>Motor dealer finance licence</li>
-        </ul>
-        <p class="services-p">Although the terminology varies, the objective is generally the same: obtaining the permissions required to introduce customers to finance providers legally.</p>
-        <p class="services-p">We assist motor dealers with FCA authorisation applications and help organise the information and documentation commonly required throughout the process.</p>
-        <p class="services-p">This includes assistance with:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Regulatory Business Plans</li>
-          <li>Compliance Procedures</li>
-          <li>Vulnerable Customer Policies</li>
-          <li>Complaints Procedures</li>
-          <li>Customer Journey Documents</li>
-          <li>Financial Crime Procedures</li>
-          <li>FCA Interview Preparation</li>
-        </ul>
-        <p class="services-p">Our fixed-fee FCA authorisation service is designed to provide a straightforward and cost-effective route to obtaining the permissions required.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/fca-authorisation-motor-dealers">View FCA Authorisation Support</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/contact#send-message">Contact Us</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">CCR009 Reporting Assistance</h2>
-        <p class="services-p">CCR009 is the FCA's annual Consumer Credit Regulatory Return.</p>
-        <p class="services-p">For many motor dealers, CCR009 is one of the most important annual reporting obligations.</p>
-        <p class="services-p">The return can require information relating to finance introductions, commission income, broker relationships, lender relationships, sales channels, debt adjusting activities, debt counselling activities and prudential resources.</p>
-        <p class="services-p">Many firms find the process difficult because the information has not been gathered consistently throughout the year.</p>
-        <p class="services-p">We assist firms with organising and preparing the information required for CCR009 reporting and encourage a more structured approach to data collection.</p>
-        <p class="services-p">By maintaining organised management information throughout the year, firms can reduce pressure, improve reporting accuracy and make CCR009 reporting significantly easier when deadlines arrive.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/ccr009-return-assistance-motor-dealers">View CCR009 Support</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/contact#send-message">Ask About Reporting</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">CCR007 Reporting Assistance</h2>
-        <p class="services-p">Certain firms may also have obligations relating to CCR007 complaints reporting.</p>
-        <p class="services-p">Maintaining organised records and understanding reporting requirements can make the process significantly easier when reporting deadlines arrive.</p>
-        <p class="services-p">We assist firms with organising information and preparing for FCA reporting requirements throughout the year.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Consumer Duty for Motor Dealers</h2>
-        <p class="services-p">Consumer Duty remains a significant area of focus for the FCA.</p>
-        <p class="services-p">Motor dealers are expected to consider customer outcomes, customer understanding and the needs of vulnerable customers throughout the sales process.</p>
-        <p class="services-p">The FCA increasingly expects firms to demonstrate how customer interests are considered within business operations and customer interactions.</p>
-        <p class="services-p">We help firms understand how Consumer Duty principles apply within the context of motor finance and dealership operations.</p>
-        <p class="services-p">Our focus is on practical implementation rather than unnecessary complexity.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Vulnerable Customer Support</h2>
-        <p class="services-p">Many motor dealers interact with customers experiencing financial difficulties, health conditions, bereavement, relationship breakdown, job loss or other circumstances that may affect their ability to engage effectively with financial products.</p>
-        <p class="services-p">The FCA expects firms to maintain awareness of vulnerability and consider customer needs throughout the customer journey.</p>
-        <p class="services-p">We assist firms with documentation, procedures and awareness designed to support consistent treatment of customers.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Compliance Documentation Support</h2>
-        <p class="services-p">Maintaining appropriate compliance documentation forms an important part of motor dealer compliance.</p>
-        <p class="services-p">We assist firms with documentation commonly used within FCA authorised dealerships, including:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Compliance Procedures Manuals</li>
-          <li>Compliance Monitoring Programmes</li>
-          <li>Vulnerable Customer Policies</li>
-          <li>Complaints Procedures</li>
-          <li>Customer Journey Documents</li>
-          <li>Financial Crime Procedures</li>
-          <li>Regulatory Status Disclosures</li>
-          <li>Suitability and Fair Treatment Policies</li>
-        </ul>
-        <p class="services-p">Documentation is structured to reflect how dealerships operate in practice and is designed to be understandable, proportionate and usable.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Ask About Documentation</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Website Compliance Reviews</h2>
-        <p class="services-p">A dealership's website is often the first interaction a customer has with the business.</p>
-        <p class="services-p">Website content should accurately reflect the firm's activities, permissions and regulatory status.</p>
-        <p class="services-p">We provide website compliance reviews designed to help identify obvious inconsistencies, missing disclosures and areas that may benefit from further consideration.</p>
-        <p class="services-p">This helps support a professional and consistent public-facing presence.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Request a Website Review</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">FCA Reporting for Motor Dealers</h2>
-        <p class="services-p">FCA reporting requirements continue to evolve.</p>
-        <p class="services-p">Many motor dealers find reporting difficult because information is often gathered only when reporting deadlines arrive.</p>
-        <p class="services-p">We encourage a more structured approach to compliance by helping firms organise key information throughout the year.</p>
-        <p class="services-p">This can help reduce pressure, improve accuracy and make reporting obligations significantly easier to manage.</p>
-        <p class="services-p">Common reporting requirements for motor dealers include CCR009 and, where applicable, CCR007.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Compliance Support for Independent Motor Dealers</h2>
-        <p class="services-p">Independent motor dealers often face the same regulatory obligations as much larger organisations but without dedicated compliance teams.</p>
-        <p class="services-p">This is where structured compliance support can help.</p>
-        <p class="services-p">By maintaining organised records, appropriate documentation and a clear understanding of FCA expectations, firms can approach regulatory obligations with greater confidence and less disruption to day-to-day operations.</p>
-        <p class="services-p">Our aim is not to overcomplicate compliance.</p>
-        <p class="services-p">Our aim is to make compliance practical, proportionate and manageable.</p>
-      </article>
-
-      <article class="ccr009-section ccr009-section--accent sa-reveal">
-        <h2 class="services-h2">Ongoing Compliance Support</h2>
-        <p class="services-p">Compliance should not be something that only receives attention when an FCA deadline appears.</p>
-        <p class="services-p">A structured approach throughout the year can help businesses remain organised, improve visibility of key compliance areas and reduce administrative pressure.</p>
-        <p class="services-p">Many firms use our ongoing support service to help maintain oversight of:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>FCA reporting</li>
-          <li>Consumer Duty</li>
-          <li>Complaints monitoring</li>
-          <li>Vulnerable customer awareness</li>
-          <li>Compliance documentation</li>
-          <li>Website compliance</li>
-          <li>Regulatory disclosures</li>
-        </ul>
-        <p class="services-p">Our aim is to help dealerships keep compliance organised throughout the year rather than only when an FCA deadline arrives.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Discuss Ongoing Support</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Why Motor Dealers Choose 009 Compliance Ltd</h2>
-        <p class="services-p">Motor dealers choose us because we understand both compliance and the realities of running a dealership.</p>
-        <p class="services-p">We understand that compliance needs to be practical.</p>
-        <p class="services-p">It needs to fit around stock purchasing, vehicle preparation, customer enquiries, finance applications and the day-to-day demands of running a business.</p>
-        <p class="services-p">We provide:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Practical, plain-English guidance</li>
-          <li>Real motor trade experience</li>
-          <li>FCA authorisation assistance</li>
-          <li>CCR009 reporting support</li>
-          <li>CCR007 reporting support</li>
-          <li>Compliance documentation support</li>
-          <li>Ongoing compliance support</li>
-          <li>Direct access to experienced professionals</li>
-        </ul>
-        <p class="services-p">Our focus is on helping firms stay organised, informed and prepared without creating unnecessary complexity.</p>
-        <p class="services-p">Most importantly, we understand how dealerships actually operate.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Frequently Asked Questions</h2>
-        <div class="ccr009-faq">
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">What is motor dealer compliance?</h3>
-            <p class="services-p">Motor dealer compliance refers to the systems, procedures and controls used to help ensure a dealership meets its FCA and regulatory obligations.</p>
+  <section class="sec sec--flush-top" id="included" aria-labelledby="included-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 class="display-l" id="included-title">A clearer list.<br><span class="serif">A helping hand.</span></h2></div>
+        <p>Know what to provide, get help with the paperwork and speak to someone when a question comes up. We agree the scope around your dealership.</p>
+      </div>
+      <div class="bento">
+        <article class="tile tile--2" data-oc-motion><div class="tile__art g-lilac" aria-hidden="true"><div class="art-chat"><span>Can you explain what the FCA expects here?</span><span>Here’s what it means for your dealership.</span></div></div><div class="tile__body"><h3>Ask us. Get clarity.</h3><p>Ongoing compliance support explained in plain English, whether the query is about processes, documentation or an FCA request.</p></div></article>
+        <article class="tile tile--2" data-oc-motion><div class="tile__art g-sun" aria-hidden="true"><div class="art-pages"><i></i><i></i><i></i></div></div><div class="tile__body"><h3>Less paperwork guesswork.</h3><p>Assistance with bespoke compliance documentation and record keeping that reflects how your business operates.</p></div></article>
+        <article class="tile tile--2 tile--wide-md" data-oc-motion><div class="tile__art g-mint" aria-hidden="true"><div class="art-form"><b>Reporting preparation</b><i></i><i></i><i></i></div></div><div class="tile__body"><h3>Prepare throughout the year.</h3><p>Preparation and organisation support, with ongoing data collection and monitoring throughout the year.</p></div></article>
+      </div>
+      <div class="panel oc-review-panel" style="margin-top:18px" data-oc-motion>
+        <div class="split">
+          <div>
+            <h3 style="font-size:21px;margin:0">Periodic reviews through the year</h3>
+            <p class="muted" style="margin:8px 0 0">Spreading information gathering and periodic reviews over time helps reduce pressure, improve accuracy and keep compliance organised rather than reactive.</p>
           </div>
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">Do motor dealers need FCA authorisation?</h3>
-            <p class="services-p">Many motor dealers introducing customers to finance providers will require FCA authorisation and appropriate permissions.</p>
-          </div>
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">What is CCR009?</h3>
-            <p class="services-p">CCR009 is the FCA's annual Consumer Credit Regulatory Return used to collect information relating to a firm's regulated consumer credit activities.</p>
-          </div>
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">What is CCR007?</h3>
-            <p class="services-p">CCR007 is an FCA regulatory reporting requirement that applies to certain firms and relates to complaints reporting obligations.</p>
-          </div>
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">What is Consumer Duty?</h3>
-            <p class="services-p">Consumer Duty is an FCA framework focused on helping firms deliver good outcomes for retail customers.</p>
-          </div>
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">Do you provide compliance documents?</h3>
-            <p class="services-p">Yes. We assist with a range of compliance documentation commonly used by FCA authorised motor dealers.</p>
-          </div>
-          <div class="ccr009-faq__item">
-            <h3 class="services-h3">Do you provide ongoing support?</h3>
-            <p class="services-p">Yes. Many clients use our ongoing compliance support service to help keep compliance organised throughout the year.</p>
-          </div>
+          <ul class="check-list" style="margin-top:0">
+            <li><span class="tick"><%- tick %></span>Quarterly complaints and customer feedback review</li>
+            <li><span class="tick"><%- tick %></span>Quarterly vulnerable-customer awareness review</li>
+            <li><span class="tick"><%- tick %></span>Annual website regulatory review</li>
+            <li><span class="tick"><%- tick %></span>Annual FCA and Companies House alignment check</li>
+          </ul>
         </div>
-      </article>
+        <p class="fine" style="margin:18px 0 0">The monthly support fee provides access to compliance support on a fair-use basis and does not guarantee delivery of every service listed. The level, frequency and focus of support may vary depending on client needs and usage. Work outside the normal scope, such as more extensive remediation, one-off projects or historic matters, is discussed and agreed in advance.</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="sec" aria-labelledby="areas-title" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="split split--center">
+        <div>
+          
+          <h2 class="display-l" id="areas-title">Built around <span class="serif">how dealerships work.</span></h2>
+          <p class="lede">Independent motor dealers often face the same regulatory obligations as much larger organisations, without dedicated compliance teams. Our aim is to make compliance practical, proportionate and manageable.</p>
+        </div>
+        <ul class="check-list check-list--cols">
+          <% ['Consumer Duty','Vulnerable customers','Complaints handling','Financial promotions','Website compliance','Regulatory disclosures','CCR009 reporting','CCR007 reporting','Record keeping','Staff awareness and training'].forEach(function (item) { %><li><span class="tick"><%- tick %></span><%= item %></li><% }) %>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="sec sec--flush-top" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <div>
+        
+        <h2 class="display-l" id="faq-title">Motor dealer compliance, <span class="serif">answered.</span></h2>
+        <div class="actions"><a class="btn btn--primary btn--sheen" href="/contact#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="faq__list">
+        <details open><summary>What is motor dealer compliance?</summary><div class="faq__a"><p>Motor dealer compliance refers to the systems, procedures and controls used to help ensure a dealership meets its FCA and regulatory obligations.</p></div></details>
+        <details><summary>How is ongoing support priced?</summary><div class="faq__a"><p>Our ongoing services are provided on a fixed monthly support basis. Final pricing is confirmed before engagement and may vary depending on how support is used over time. Additional work is discussed and agreed before it is undertaken.</p><a href="/pricing">View pricing →</a></div></details>
+        <details><summary>Is this included in FCA authorisation assistance?</summary><div class="faq__a"><p>Ongoing Motor Dealer Compliance Support is a separate service with its own scope and pricing. If you use our FCA authorisation assistance, that subscription continues after approval with reporting and compliance support within its agreed scope. We’ll explain the difference in your call.</p></div></details>
+        <details><summary>Do motor dealers need FCA authorisation?</summary><div class="faq__a"><p>Many motor dealers introducing customers to finance providers will require FCA authorisation and appropriate permissions.</p><a href="/fca-authorisation-motor-dealers">FCA authorisation assistance →</a></div></details>
+        <details><summary>What is CCR009?</summary><div class="faq__a"><p>CCR009 is the FCA's annual Consumer Credit Regulatory Return used to collect information relating to a firm's regulated consumer credit activities.</p></div></details>
+        <details><summary>What is CCR007?</summary><div class="faq__a"><p>CCR007 is an FCA regulatory reporting requirement that applies to certain firms and relates to complaints reporting obligations.</p></div></details>
+        <details><summary>What is Consumer Duty?</summary><div class="faq__a"><p>Consumer Duty is an FCA framework focused on helping firms deliver good outcomes for retail customers.</p></div></details>
+        <details><summary>Do you provide compliance documents?</summary><div class="faq__a"><p>Yes. We assist with a range of compliance documentation commonly used by FCA authorised motor dealers.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--flush-top" aria-labelledby="detail-title">
+    <div class="wrap wrap--narrow">
       
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Motor Dealer Compliance Guides and Resources</h2>
-        <div class="services-link-grid ccr009-guide-cta-grid">
-          <a class="services-link-card" href="/after-fca-approval-motor-dealers">
-            <span class="services-link-card__label">After FCA Approval for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/consumer-duty-motor-dealers">
-            <span class="services-link-card__label">Consumer Duty for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/website-compliance-motor-dealers">
-            <span class="services-link-card__label">Website Compliance for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/fca-compliance-motor-dealers-guide">
-            <span class="services-link-card__label">FCA Compliance for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="ccr009-final-cta sa-reveal">
-        <p class="ccr009-eyebrow">Speak to 009 Compliance Ltd</p>
-        <h2 class="services-h2">Practical compliance support for motor dealers</h2>
-        <p class="services-p">Whether you require FCA authorisation, CCR009 assistance, CCR007 reporting support, compliance documentation, Consumer Duty support, website compliance reviews or ongoing compliance assistance, we would be happy to help.</p>
-        <p class="services-p">Our approach is built around practical support, plain-English guidance, real motor trade experience and helping dealerships keep compliance organised throughout the year. Whether you need assistance with FCA authorisation, CCR009 reporting, CCR007 reporting or ongoing compliance support, we would be happy to discuss how we can help.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Contact Us</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/services">View Services</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section authorisation-note sa-reveal">
-        <h2 class="services-h2">Important Note</h2>
-        <p class="services-p">009 Compliance Ltd provides clerical, administrative and compliance support services.</p>
-        <p class="services-p">Responsibility for regulatory decisions, business operations, information supplied to regulators and compliance with regulatory requirements remains with the authorised firm.</p>
-        <p class="services-p">We do not provide legal advice and do not guarantee regulatory outcomes, FCA decisions or reporting outcomes.</p>
-      </article>
-    </div>
-
-    <aside class="ccr009-aside sa-reveal">
-      <div class="ccr009-aside__card">
-        <span>Motor dealer support includes</span>
-        <ul>
-          <li>FCA authorisation</li>
-          <li>CCR009 and CCR007 reporting</li>
-          <li>Consumer Duty support</li>
-          <li>Compliance documentation</li>
-          <li>Website compliance reviews</li>
-          <li>Ongoing compliance support</li>
-        </ul>
-        <a class="ccr009-btn ccr009-btn--primary ccr009-btn--full" href="/contact#send-message">Start an Enquiry</a>
+      <h2 class="display-m" id="detail-title">More about motor dealer compliance</h2>
+      <div class="more">
+        <details><summary>What is motor dealer compliance?</summary><div class="more__body">
+          <p>Motor dealer compliance refers to the systems, procedures and controls used to help ensure a dealership meets its regulatory obligations. For FCA authorised motor dealers, this may include responsibilities relating to credit broking, Consumer Duty, vulnerable customers, complaints handling, financial promotions, regulatory disclosures, FCA reporting, record keeping and staff awareness and training.</p>
+          <p>The exact requirements will depend on the permissions held by the firm and the activities carried on. However, all FCA authorised motor dealers are expected to understand their regulatory responsibilities and maintain appropriate procedures and controls.</p>
+        </div></details>
+        <details><summary>Consumer Duty for motor dealers</summary><div class="more__body">
+          <p>Consumer Duty remains a significant area of focus for the FCA. Motor dealers are expected to consider customer outcomes, customer understanding and the needs of vulnerable customers throughout the sales process. We help firms understand how Consumer Duty principles apply within the context of motor finance and dealership operations, with a focus on practical implementation rather than unnecessary complexity.</p>
+        </div></details>
+        <details><summary>Vulnerable customer support</summary><div class="more__body">
+          <p>Many motor dealers interact with customers experiencing financial difficulties, health conditions, bereavement, relationship breakdown, job loss or other circumstances that may affect their ability to engage effectively with financial products. The FCA expects firms to maintain awareness of vulnerability and consider customer needs throughout the customer journey. We assist firms with documentation, procedures and awareness designed to support consistent treatment of customers.</p>
+        </div></details>
+        <details><summary>Compliance documentation support</summary><div class="more__body">
+          <p>We assist firms with documentation commonly used within FCA authorised dealerships, including compliance procedures manuals, compliance monitoring programmes, vulnerable customer policies, complaints procedures, customer journey documents, financial crime procedures, regulatory status disclosures and suitability and fair treatment policies. Documentation is structured to reflect how dealerships operate in practice and is designed to be understandable, proportionate and usable.</p>
+        </div></details>
+        <details><summary>Website compliance reviews</summary><div class="more__body">
+          <p>A dealership’s website is often the first interaction a customer has with the business. Website content should accurately reflect the firm’s activities, permissions and regulatory status. We provide website compliance reviews designed to help identify obvious inconsistencies, missing disclosures and areas that may benefit from further consideration.</p>
+        </div></details>
+        <details><summary>CCR009 and CCR007 reporting</summary><div class="more__body">
+          <p>CCR009 is the FCA’s annual Consumer Credit Regulatory Return. It can require information relating to finance introductions, commission income, broker relationships, lender relationships, sales channels, debt adjusting activities, debt counselling activities and prudential resources. Certain firms may also have obligations relating to CCR007 complaints reporting.</p>
+          <p>By maintaining organised management information throughout the year, firms can reduce pressure, improve reporting accuracy and make reporting significantly easier when deadlines arrive. <a href="/ccr009-return-assistance-motor-dealers">Read about CCR009 return assistance</a>.</p>
+        </div></details>
       </div>
-    </aside>
+      <h3 style="font-size:20px;margin:40px 0 14px">Motor dealer compliance guides and resources</h3>
+      <div class="guide-links">
+        <a class="guide-link" href="/after-fca-approval-motor-dealers">After FCA Approval for Motor Dealers <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/consumer-duty-motor-dealers">Consumer Duty for Motor Dealers <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/website-compliance-motor-dealers">Website Compliance for Motor Dealers <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/fca-compliance-motor-dealers-guide">FCA Compliance for Motor Dealers <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
   </section>
-</main>
+
+  <%- include('partials/meeting_invite', { meetingContext: 'general' }) %>
+
+  <%- include('partials/closer', { closerTitle: 'Keep your compliance', closerSerif: 'organised all year.', closerText: 'Book a 15-minute call to talk through your dealership, the support you need and how our ongoing service works.', closerShowOffer: false, closerSecondary: { href: '/pricing', label: 'See pricing' } }) %>
+
+  <section class="sec sec--tight sec--flush-top">
+    <div class="wrap wrap--narrow">
+      <div class="panel panel--soft">
+        <h2 class="display-m" style="font-size:22px">Important note</h2>
+        <p class="muted" style="margin:12px 0 0">009 Compliance Ltd provides clerical, administrative and compliance support services.</p>
+        <p class="muted" style="margin:10px 0 0">Responsibility for regulatory decisions, business operations, information supplied to regulators and compliance with regulatory requirements remains with the authorised firm.</p>
+        <p class="muted" style="margin:10px 0 0">We do not provide legal advice and do not guarantee regulatory outcomes, FCA decisions or reporting outcomes.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script defer src="<%= assetPath('/js/ongoing-refresh.js?v=66') %>"></script>

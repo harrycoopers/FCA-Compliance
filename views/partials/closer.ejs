@@ -1,0 +1,23 @@
+<%
+  /* Closing invitation. Params: title (HTML-safe string with optional serif span via titleSerif), text. */
+  const _title = (typeof closerTitle !== 'undefined' && closerTitle) ? closerTitle : 'Start your FCA authorisation journey';
+  const _serif = (typeof closerSerif !== 'undefined' && closerSerif) ? closerSerif : (campaign.showPrice ? 'for £' + offer.startPayment + '.' : 'with a 15-minute call.');
+  const _text = (typeof closerText !== 'undefined' && closerText) ? closerText : 'Book a 15-minute call to talk through your dealership, the support available, and what getting started involves.';
+  const _showOffer = (typeof closerShowOffer === 'undefined') ? true : closerShowOffer;
+  const _secondary = (typeof closerSecondary !== 'undefined' && closerSecondary) ? closerSecondary : { href: '/pricing', label: 'See pricing and what’s included' };
+%>
+<section class="sec sec--tight" aria-labelledby="closer-title">
+  <div class="wrap">
+    <div class="closer" data-reveal data-motion>
+      <span class="blob blob--1" aria-hidden="true"></span><span class="blob blob--2" aria-hidden="true"></span><span class="blob blob--3" aria-hidden="true"></span>
+      
+      <h2 class="display-l" id="closer-title"><%= _title %> <span class="serif"><%= _serif %></span></h2>
+      <p><%= _text %></p>
+      <div class="actions">
+        <a class="btn btn--primary btn--sheen" href="<%= inPageMeeting ? '#book-meeting' : '/contact#book-meeting' %>">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="text-link text-link--light" href="<%= _secondary.href %>"><%= _secondary.label %></a>
+      </div>
+      <% if (_showOffer && campaign.showPrice) { %><p class="fine">FCA authorisation assistance: <%= offer.summary %> <%= offer.qualifier %></p><% } %>
+    </div>
+  </div>
+</section>

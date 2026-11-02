@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto'),ejs=require('ejs');
+const root=path.resolve(__dirname,'..');
+function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(x=>x.isDirectory()&&!['node_modules','.git'].includes(x.name)?files(path.join(dir,x.name)):x.isFile()?[path.join(dir,x.name)]:[]);}
+test('all application and browser JavaScript parses',()=>{for(const file of files(root).filter(x=>/\.(?:js|cjs)$/.test(x)))assert.doesNotThrow(()=>new vm.Script(fs.readFileSync(file,'utf8'),{filename:file}),file);});
+test('all current and legacy EJS templates compile with the patched engine',()=>{for(const file of files(root+'/views').filter(x=>x.endsWith('.ejs')))assert.doesNotThrow(()=>ejs.compile(fs.readFileSync(file,'utf8'),{filename:file}),file);});
+test('every fingerprinted asset exists and matches its advertised hash',()=>{const manifest=require('../config/asset-manifest.json');assert.equal(Object.keys(manifest).length,58);for(const [source,target] of Object.entries(manifest)){const file=root+'/public'+target;assert(fs.existsSync(file),source);assert(target.includes(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex').slice(0,16)),source);}});
+test('public POST forms include a synchronizer token, and booking AJAX sends it',()=>{for(const file of files(root+'/views').filter(x=>x.endsWith('.ejs'))){const text=fs.readFileSync(file,'utf8');if(/method=["']post["']/i.test(text))assert(text.includes('name="_csrf"'),file);}assert(fs.readFileSync(root+'/public/js/booking-studio-uk-v41.js','utf8').includes('X-CSRF-Token'));});

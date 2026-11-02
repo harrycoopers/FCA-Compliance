@@ -1,0 +1,8 @@
+<section class="guide-offer offer-wrap" data-motion aria-labelledby="guide-offer-title"><div class="offer-card" data-offer-card><span class="offer-card__orbit" aria-hidden="true"></span><span class="offer-card__sheen" aria-hidden="true"></span><div class="offer-card__body">
+<p class="guide-offer-label"><%= compact ? 'Planning an FCA application?' : 'FCA authorisation assistance' %></p>
+<h2 id="guide-offer-title"><% if(campaign.showPrice) { %>Get started for <span class="gradient-text">£<%= offer.startPayment %></span><% } else { %>Talk through your FCA application<% } %></h2>
+<p>We help car, motorcycle, van and commercial vehicle dealers prepare applications, organise supporting documents and respond to FCA information requests.</p>
+<% if(campaign.showPrice) { %><p class="guide-offer-price">Then £<%= offer.monthlyPayment %> per month. Your first payment counts as month one.</p><p class="guide-offer-terms"><%= offer.qualifier %> <%= offer.decisionTimingTerms %> <%= offer.vatStatement || '' %></p><% } %>
+<div class="actions"><a class="btn btn--primary btn--sheen" href="/contact#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a><a class="text-link" href="/fca-authorisation-motor-dealers">Explore FCA authorisation assistance</a></div>
+<p class="guide-offer-terms">Administrative assistance; FCA approval and timing are not guaranteed. <a href="/pricing">See pricing and scope</a> · <a href="/referral">Explore the referral programme</a></p>
+</div></div></section>

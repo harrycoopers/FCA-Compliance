@@ -1,0 +1,138 @@
+{
+  "/": {
+    "title": "Motor Dealer Compliance Support | 009 Compliance",
+    "description": "FCA authorisation assistance, CCR009 returns, ongoing compliance and motor-finance broker support for motor dealers. Explore services and book a meeting."
+  },
+  "/referral": {
+    "title": "Motor Dealer Referral Programme | 009 Compliance",
+    "description": "Refer a motor dealer for 25% off eligible monthly subscription fees per qualifying referral, up to 100%. Initial payment and FCA fees excluded. Terms apply."
+  },
+  "/terms": {
+    "title": "Terms of Service | 009 Compliance",
+    "description": "Read the terms for 009 Compliance services, including engagement, payments, responsibilities, cancellation and FCA authorisation assistance."
+  },
+  "/about": {
+    "title": "About 009 Compliance | 30+ Years of Motor Trade Experience",
+    "description": "30+ years of motor-trade experience. Meet 009 Compliance and hear from clients about our FCA authorisation assistance, CCR009 returns and ongoing compliance support."
+  },
+  "/testimonials": {
+    "title": "Motor Dealer Testimonials | 009 Compliance",
+    "description": "Read motor dealers’ experiences of working with 009 Compliance on FCA authorisation, reporting and ongoing compliance support."
+  },
+  "/contact": {
+    "title": "Contact 009 Compliance | Book a 15-Minute Meeting",
+    "description": "Discuss FCA authorisation, CCR009 returns or ongoing compliance for your dealership. Book a 15-minute meeting, call, email or send an enquiry."
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy | 009 Compliance",
+    "description": "Learn how 009 Compliance collects, uses and protects personal information, your data protection rights and how to contact us about privacy."
+  },
+  "/complaints-policy": {
+    "title": "Complaints Policy | 009 Compliance",
+    "description": "How to raise a complaint with 009 Compliance, what information to provide and how we handle and respond to complaints about our services."
+  },
+  "/cookie-policy": {
+    "title": "Cookie Policy | 009 Compliance",
+    "description": "Read how the 009 Compliance website uses cookies, including essential functions and analytics, and how to manage your cookie preferences."
+  },
+  "/services": {
+    "title": "Motor Dealer Compliance & Finance Services | 009 Compliance",
+    "description": "Explore FCA authorisation assistance, CCR009 return preparation, ongoing compliance support and motor-finance broker support for motor dealers."
+  },
+  "/ccr009-return-assistance-motor-dealers": {
+    "title": "CCR009 Return Assistance for Motor Dealers | 009 Compliance",
+    "description": "CCR009 return assistance for motor dealers. Organise finance introductions, commission and lender records for FCA RegData reporting with practical support.",
+    "service": "CCR009 Return Assistance"
+  },
+  "/what-is-ccr009": {
+    "title": "What Is CCR009? FCA Return Guide for Motor Dealers | 009 Compliance",
+    "description": "Learn what CCR009 is, who needs to complete it, what information it collects and how motor dealers can prepare for FCA RegData reporting."
+  },
+  "/who-needs-to-submit-ccr009": {
+    "title": "Who Needs to Submit CCR009? FCA Guide for Motor Dealers | 009 Compliance",
+    "description": "Find out who may need to submit a CCR009 return, how motor dealers can check their FCA reporting schedule, and what signs may indicate CCR009 applies."
+  },
+  "/what-information-is-needed-for-ccr009": {
+    "title": "Information Needed for CCR009 | Motor Dealer Guide",
+    "description": "Prepare information for CCR009: finance introductions, regulated income, marketing, staff details and supporting records for FCA RegData reporting."
+  },
+  "/ccr009-reporting-checklist-motor-dealers": {
+    "title": "CCR009 Reporting Checklist for Motor Dealers | 009 Compliance",
+    "description": "Use this CCR009 reporting checklist to help motor dealers prepare records, revenue information, marketing activity and staff details for FCA RegData reporting."
+  },
+  "/ccr009-vs-ccr007": {
+    "title": "CCR009 vs CCR007: What's the Difference? | 009 Compliance",
+    "description": "Understand the difference between CCR009 and CCR007, whether motor dealers may need to complete both FCA returns, and how to check your RegData reporting schedule."
+  },
+  "/common-ccr009-reporting-mistakes": {
+    "title": "CCR009 Reporting Mistakes to Avoid | 009 Compliance",
+    "description": "Avoid common CCR009 reporting mistakes, from incomplete records and late preparation to RegData access, revenue information and final review errors."
+  },
+  "/how-to-prepare-for-ccr009-return": {
+    "title": "How to Prepare for a CCR009 Return | 009 Compliance",
+    "description": "Prepare for a CCR009 return: check RegData and organise finance, revenue, marketing and staff records to help avoid reporting delays."
+  },
+  "/do-motor-dealers-need-fca-authorisation": {
+    "title": "Do Motor Dealers Need FCA Authorisation? | 009 Compliance",
+    "description": "When do motor dealers need FCA authorisation? Explore finance introductions, credit broking and the difference between Limited and Full Permission."
+  },
+  "/fca-licence-car-dealers": {
+    "title": "FCA Licence for Car Dealers | Authorisation Guide",
+    "description": "Find out when car dealers may need FCA authorisation for finance introductions and credit broking, including Limited Permission and Full Permission."
+  },
+  "/limited-permission-fca-authorisation-motor-dealers": {
+    "title": "Limited Permission FCA Authorisation | Motor Dealer Guide",
+    "description": "Understand Limited Permission FCA authorisation for motor dealers, when it may apply, how it differs from Full Permission and how to prepare."
+  },
+  "/credit-broking-permission-motor-dealers": {
+    "title": "Credit Broking Permission for Motor Dealers | 009 Compliance",
+    "description": "Understand credit broking permission for motor dealers, when finance introductions may require FCA authorisation and how this relates to compliance."
+  },
+  "/fca-application-documents-motor-dealers": {
+    "title": "FCA Application Documents for Motor Dealers | 009 Compliance",
+    "description": "Prepare documents for a motor dealer FCA application: business details, regulated activities, policies, website wording and customer processes."
+  },
+  "/why-fca-applications-get-delayed": {
+    "title": "Why FCA Applications Get Delayed | 009 Compliance",
+    "description": "Understand common FCA application delays, including incomplete information, incorrect permissions, website issues and unclear customer journeys."
+  },
+  "/after-fca-approval-motor-dealers": {
+    "title": "After FCA Approval: Motor Dealer Next Steps | 009 Compliance",
+    "description": "What happens after FCA approval? Check your FCA Register details, website, records, reporting obligations and staff training for your dealership."
+  },
+  "/when-is-ccr009-due": {
+    "title": "When Is CCR009 Due? | Motor Dealer Reporting Guide",
+    "description": "Understand CCR009 reporting timing, check your firm’s RegData schedule and prepare records throughout the year instead of leaving them to the deadline."
+  },
+  "/consumer-duty-motor-dealers": {
+    "title": "Consumer Duty for Motor Dealers | 009 Compliance",
+    "description": "Explore Consumer Duty for motor dealers: customer outcomes, vulnerable customers, finance, commission disclosure, monitoring and compliance."
+  },
+  "/website-compliance-motor-dealers": {
+    "title": "Website Compliance for Motor Dealers | FCA Guide",
+    "description": "Review motor dealer website compliance: FCA status wording, finance and commission disclosures, complaints information and Consumer Duty."
+  },
+  "/fca-compliance-motor-dealers-guide": {
+    "title": "FCA Compliance for Motor Dealers | Complete Guide",
+    "description": "A practical guide to FCA compliance for motor dealers, including authorisation, Consumer Duty, complaints, CCR009 reporting and records."
+  },
+  "/fca-authorisation-motor-dealers": {
+    "title": "FCA Authorisation for Motor Dealers | £100 to Get Started | 009 Compliance",
+    "description": "FCA authorisation assistance for motor dealers. £100 to get started, then £100/month. Six-month minimum. FCA fee separate. Book a 15-minute call.",
+    "service": "FCA Authorisation Assistance"
+  },
+  "/motor-finance-for-dealerships": {
+    "title": "Motor Finance for Dealerships | 009 Compliance",
+    "description": "Explore motor-finance broker support for your dealership, backed by 30+ years of motor-finance experience. Start with a conversation about your next steps.",
+    "service": "Motor Finance for Dealerships"
+  },
+  "/motor-dealer-compliance": {
+    "title": "Ongoing FCA Compliance for Motor Dealers | 009 Compliance",
+    "description": "Ongoing FCA compliance support for motor dealers: documentation, reporting preparation, Consumer Duty, website and periodic reviews. Scope and fees agreed.",
+    "service": "Ongoing Motor Dealer Compliance Support"
+  },
+  "/pricing": {
+    "title": "FCA Authorisation & Compliance Pricing | 009 Compliance",
+    "description": "Explore FCA authorisation assistance pricing and service terms. CCR009 return assistance and ongoing compliance support are scoped and priced separately."
+  }
+}

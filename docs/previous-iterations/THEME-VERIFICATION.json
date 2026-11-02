@@ -1,0 +1,11 @@
+{
+  "rendered_page_states": 68,
+  "markup_identical_except_theme_loading": true,
+  "only_change_since_previous_theme": "public/css/theme-vibrant.css",
+  "colour_background_shadow_properties_only": true,
+  "buttons": "#2563EB; hover #1D4ED8",
+  "all_content_scripts_layout_and_assets_unchanged": true,
+  "screenshots_supplied_by_user_inspected": 5,
+  "real_browser_visual_checks": false,
+  "note": "Prior blanket contrast result does not apply to new gradients; a computed gradient-state contrast audit remains unverified."
+}

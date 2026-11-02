@@ -1,22 +1,25 @@
-<div class="max-w-md mx-auto">
-  <h1 class="text-2xl font-semibold mb-2 text-slate-50">
+<div class="auth-page register-page">
+<div class="auth-layout">
+<div class="auth-intro">
+<h1 class="text-2xl font-semibold mb-2 text-slate-50">
     Create your FCA compliance workspace
   </h1>
-
-  <p class="text-sm text-slate-400 mb-6">
+<p class="text-sm text-slate-400 mb-6">
     One secure account for your firm. Additional users can be added later under your own governance.
   </p>
-
-  <form
+</div>
+<div class="auth-workspace">
+<form
     action="/register/precheck"
     method="POST"
     class="space-y-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6"
   >
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
     <div>
-      <label class="block text-xs font-medium text-slate-300 mb-1">Firm Name</label>
-      <input
+      <label class="block text-xs font-medium text-slate-300 mb-1" for="field-firm_name">Firm Name</label>
+      <input id="field-firm_name"
         type="text"
-        name="firm_name"
+        name="firm_name" autocomplete="organization"
         required
         value="<%= formData?.firm_name || '' %>"
         class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
@@ -24,12 +27,12 @@
     </div>
 
     <div>
-      <label class="block text-xs font-medium text-slate-300 mb-1">
+      <label class="block text-xs font-medium text-slate-300 mb-1" for="field-fca_firm_ref">
         FCA Firm Reference Number
       </label>
-      <input
+      <input id="field-fca_firm_ref"
         type="text"
-        name="fca_firm_ref"
+        name="fca_firm_ref" inputmode="numeric"
         required
         value="<%= formData?.fca_firm_ref || '' %>"
         class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
@@ -37,10 +40,10 @@
     </div>
 
     <div>
-      <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
-      <input
+      <label class="block text-xs font-medium text-slate-300 mb-1" for="field-name">Full Name</label>
+      <input id="field-name"
         type="text"
-        name="name"
+        name="name" autocomplete="name"
         required
         value="<%= formData?.name || '' %>"
         class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
@@ -48,12 +51,12 @@
     </div>
 
     <div>
-      <label class="block text-xs font-medium text-slate-300 mb-1">
+      <label class="block text-xs font-medium text-slate-300 mb-1" for="field-mobile_number">
         Mobile Number
       </label>
-      <input
+      <input id="field-mobile_number"
         type="tel"
-        name="mobile_number"
+        name="mobile_number" autocomplete="tel"
         required
         placeholder="e.g. 07123456789"
         value="<%= formData?.mobile_number || '' %>"
@@ -62,12 +65,12 @@
     </div>
 
     <div>
-      <label class="block text-xs font-medium text-slate-300 mb-1">
+      <label class="block text-xs font-medium text-slate-300 mb-1" for="field-email">
         Work Email
       </label>
-      <input
+      <input id="field-email"
         type="email"
-        name="email"
+        name="email" autocapitalize="none" spellcheck="false" autocomplete="email"
         required
         value="<%= formData?.email || '' %>"
         class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
@@ -79,27 +82,27 @@
 
     <div class="grid grid-cols-2 gap-3">
       <div>
-        <label class="block text-xs font-medium text-slate-300 mb-1">
+        <label class="block text-xs font-medium text-slate-300 mb-1" for="field-password">
           Password
         </label>
-        <input
+        <input id="field-password"
           type="password"
-          name="password"
+          name="password" autocomplete="new-password"
           required
-          minlength="8"
+          minlength="12" maxlength="72"
           class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
         />
       </div>
 
       <div>
-        <label class="block text-xs font-medium text-slate-300 mb-1">
+        <label class="block text-xs font-medium text-slate-300 mb-1" for="field-confirmPassword">
           Confirm Password
         </label>
-        <input
+        <input id="field-confirmPassword"
           type="password"
-          name="confirmPassword"
+          name="confirmPassword" autocomplete="new-password"
           required
-          minlength="8"
+          minlength="12" maxlength="72"
           class="w-full h-[52px] rounded-lg bg-slate-950 border border-slate-700 px-4 text-base text-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/70"
         />
       </div>
@@ -118,9 +121,11 @@
       regulatory advice.
     </p>
   </form>
-
-  <p class="text-sm text-slate-400 mt-4 text-center">
+<p class="text-sm text-slate-400 mt-4 text-center">
     Already have an account?
     <a href="/login" class="text-emerald-300 hover:underline">Log in</a>
   </p>
+</div>
+</div>
+
 </div>

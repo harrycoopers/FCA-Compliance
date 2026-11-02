@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="<%= assetPath('/css/booking-studio.css') %>">
+<script defer src="<%= assetPath('/js/booking-availability.js?v=meet1') %>"></script>
+<script defer src="<%= assetPath('/js/booking-studio-uk-v41.js?v=meet1') %>"></script>
+<div class="booking-studio" data-booking-studio>
+  <div class="bs-header"><div class="bs-calendar" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect x="5" y="8" width="30" height="28" rx="7" stroke="currentColor" stroke-width="2"/><path d="M5 17h30M13 4v9M27 4v9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path class="bs-calendar-tick" d="m13 26 5 5 10-11" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Let’s find your fit.</h3><p>A 15-minute call about your dealership</p></div><span class="bs-duration">15 min</span></div>
+  <% if (bookingUrl) { %>
+    <iframe class="booking__scheduler" src="<%= bookingUrl %>" title="Book a 15-minute call" loading="lazy"></iframe>
+    <p class="bs-footer"><a href="<%= bookingUrl %>" target="_blank" rel="noopener">Open booking calendar ↗</a></p>
+  <% } else { %>
+    <noscript><p class="bs-footer">Enable JavaScript to choose a call time, or call <a href="tel:03300432377">03300432377</a>.</p></noscript>
+    <div class="bs-app" hidden>
+      <div class="bs-progress" aria-label="Booking steps"><span class="is-current" data-bs-progress="1"><b>1</b> Your time</span><i></i><span data-bs-progress="2"><b>2</b> Your details</span></div>
+      <section class="bs-step" data-bs-step="1" aria-label="Choose a time">
+        <div class="bs-section-heading"><h4>Pick your day</h4><span>UK time</span></div>
+        <div class="bs-week-nav"><button type="button" data-bs-prev aria-label="Previous week">←</button><strong data-bs-month></strong><button type="button" data-bs-next aria-label="Next week">→</button></div>
+        <fieldset class="bs-dates"><legend class="sr-only">Call date</legend><div data-bs-dates></div></fieldset>
+        <h4 class="bs-time-heading">And a time that suits you</h4>
+        <fieldset class="bs-times"><legend class="sr-only">Call time</legend><div data-bs-times></div></fieldset>
+        <p class="bs-selection" data-bs-selection>Choose a date and time to continue.</p>
+        <button class="bs-primary" type="button" data-bs-continue disabled>Continue <span aria-hidden="true">→</span></button>
+      </section>
+      <section class="bs-step" data-bs-step="2" aria-label="Your details" hidden>
+        <button class="bs-back" type="button" data-bs-back>← Change time</button>
+        <p class="bs-selected-time" data-bs-chosen></p>
+        <form data-bs-form>
+          <div class="bs-field"><label>Name<input name="name" autocomplete="name" type="text" required maxlength="120" placeholder="Your full name"></label></div>
+          <div class="bs-field"><label>Email Address<input name="email" autocomplete="email" type="email" required maxlength="254" placeholder="you@company.co.uk"></label></div>
+          <div class="bs-field"><label>Phone number<input name="phone" autocomplete="tel" inputmode="tel" type="tel" required maxlength="40" aria-describedby="booking-phone-help" placeholder="e.g. 07700 900123"></label><p id="booking-phone-help" class="bs-slot-note">We’ll call this number at your booked time. Include the country code if outside the UK.</p></div>
+          <div class="bs-field"><label>Company<input name="company" autocomplete="organization" type="text" required maxlength="160" placeholder="Your company name"></label></div>
+          <div class="bs-field"><label>What would you like to discuss?
+            <select name="topic" data-bs-topic>
+              <% const bookingTopics = {authorisation:'FCA authorisation assistance',ccr009:'CCR009 return assistance',ongoing:'Ongoing compliance support',finance:'Finance',referral:'Referral programme',unsure:'Not sure yet'}; const bookingDefault = typeof defaultTopic !== 'undefined' && bookingTopics[defaultTopic] ? defaultTopic : 'unsure'; Object.entries(bookingTopics).forEach(([key,label]) => { %><option value="<%= key %>"<%= key === bookingDefault ? ' selected' : '' %>><%= label %></option><% }); %>
+            </select>
+          </label></div>
+          <button class="bs-primary" type="submit">Book a 15-minute call <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+      <section class="bs-success" data-bs-done hidden aria-label="Selected call details">
+        <div class="bs-success-icon" aria-hidden="true"><svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="27" stroke="currentColor" stroke-width="2"/><path d="m17 30 9 9 18-20" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4 tabindex="-1">Your phone call details.</h4><p data-bs-confirmed></p><p class="bs-confirmation-note">If you need help with your appointment, call <a href="tel:03300432377">03300432377</a>.</p>
+        <button type="button" class="bs-back" data-bs-reset>Choose another time →</button>
+      </section>
+    </div>
+  <% } %>
+  <p class="bs-footer">Prefer a conversation now? <a href="tel:03300432377">03300432377</a></p>
+</div>

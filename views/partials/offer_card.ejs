@@ -1,0 +1,100 @@
+<%
+  /* FCA Authorisation Assistance — featured subscription card.
+     Params (optional): cardId, headingTag ('h2' | 'h3'), showTerms (default true), santa (default false).
+     Motion (original, inspired by the observed Produce.so featured card):
+       - a gold-to-sky highlight that travels around the card's border (conic gradient, 9s/lap)
+       - a soft skewed sheen that sweeps behind the content every 7s, then rests
+     Both sit BEHIND the content, pause offscreen and switch off for reduced motion. */
+  const _referral = typeof referralAnimation !== 'undefined' && referralAnimation;
+  const _id = (typeof cardId !== 'undefined' && cardId) ? cardId : 'offer-card';
+  const _h = (typeof headingTag !== 'undefined' && headingTag) ? headingTag : 'h3';
+  const _terms = (typeof showTerms === 'undefined') ? true : showTerms;
+  const _santa = (typeof santa !== 'undefined') && santa && campaign.active;
+  const _o = offer;
+  const _c = campaign;
+  const _tick = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+%>
+<% if (_c.showPrice) { %>
+<div class="offer-wrap<%= _referral ? ' auth-referral-offer' : '' %><%= _c.active ? ' is-festive' : '' %><%= _santa ? ' has-christmas-arrival' : '' %>" data-motion<% if (_santa) { %> data-christmas-arrival<% } %>>
+  <% if (_santa) { %><%- include('santa', { santaClass: 'santa--perch' }) %><% } %>
+  <article class="offer-card" id="<%= _id %>" aria-labelledby="<%= _id %>-name" data-offer-card>
+    <span class="offer-card__orbit" aria-hidden="true"></span>
+    <span class="offer-card__sheen" aria-hidden="true"></span>
+    <% if (_c.active) { %>
+      <span class="ribbon-corner" aria-hidden="true"><span></span></span>
+      <span class="offer-card__stars" aria-hidden="true"></span>
+      <% if (_id === 'auth-offer') { %><div class="auth-card-snow" aria-hidden="true"><% for(let flake=0;flake<22;flake++){ %><i style="--x:<%= (flake*37)%100 %>%;--drift:<%= (flake%2 ? 22 : -22) %>px;--speed:<%= 7+flake%6 %>s;--delay:<%= -(flake%11) %>s;--size:<%= 2+flake%3 %>px"></i><% } %></div><% } %>
+    <% } %>
+    <div class="offer-card__body">
+      <% if (_c.active && _id === 'auth-offer') { %>
+      <div class="auth-limited-offer" data-limited-offer><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7l9 9-7 7-9-9V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/></svg><span>Limited Offer</span><span class="auth-limited-offer__shine" aria-hidden="true"></span></div>
+      <% } %>
+      <div class="offer-card__top">
+        <% if (_c.active) { %>
+          <p class="offer-card__tag"><span class="tag-dot" aria-hidden="true"></span>Christmas offer</p>
+          <p class="offer-card__closes">Closes <time datetime="<%= _c.closingDateIso %>"><%= _c.closingLabel %></time></p>
+        <% } else { %>
+          <p class="offer-card__tag offer-card__tag--plain">Monthly subscription</p>
+        <% } %>
+      </div>
+
+      <<%= _h %> class="offer-card__name" id="<%= _id %>-name"><%= _o.name %></<%= _h %>>
+      <p class="offer-card__for">For motor dealers applying for FCA authorisation</p>
+
+
+      <% if (_c.active) { %>
+      <div class="offer-card__countdown" data-offer-countdown data-deadline="<%= _c.deadlineIso %>" role="timer" aria-label="Time remaining until the Christmas offer ends" aria-live="off">
+        <span class="offer-card__countdown-label">Christmas offer ends in</span>
+        <div class="offer-card__clock" data-clock><% ['Days', 'Hours', 'Minutes', 'Seconds'].forEach(function(unit) { %><span><b data-unit="<%= unit.toLowerCase() %>">--</b><small><%= unit %></small></span><% }) %></div>
+      </div>
+      <% } %>
+
+      <% if (_referral) { %><div class="preview-price-row"><% } %>
+      <div class="offer-card__price">
+        <p class="offer-card__lead">Get started for</p>
+        <p class="offer-card__amount"><span class="gradient-text">£<%= _o.startPayment %></span></p>
+        <p class="offer-card__then">Then <strong>£<%= _o.monthlyPayment %> per month</strong></p>
+      </div>
+
+      <% if (_referral) { %><%- include('referral_animation') %></div><% } %>
+      <p class="offer-card__application-time"><strong>FCA applications can take 6–12 months.</strong><span>Timing depends on the application’s completeness and complexity. Approval is not guaranteed.</span></p>
+
+      <p class="offer-card__value">Spread the cost of your FCA authorisation assistance, with reporting and compliance support continuing after approval.</p>
+
+      <p class="offer-card__qualifier" id="<%= _id %>-terms"><%= _o.qualifier %></p>
+
+      <ul class="offer-card__facts" aria-label="Payment terms at a glance">
+        <li><b>£<%= _o.startPayment %></b><span>first month, included</span></li>
+        <li><b><%= _o.minimumTermMonths %> months</b><span>minimum term</span></li>
+        <li><b>£<%= _o.minimumTotal.amount %></b><span>minimum commitment</span></li>
+      </ul>
+
+
+      <a class="btn btn--primary btn--block btn--sheen" href="<%= inPageMeeting ? '#book-meeting' : '/contact#book-meeting' %>" aria-describedby="<%= _id %>-terms">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+      <p class="offer-card__cta-note">Talk through your dealership, the support available and the next steps. Choose an available time and we’ll call the number you provide.</p>
+
+      <% if (_terms && !_referral) { %>
+        <ul class="offer-card__terms" aria-label="Fees and conditions">
+          <li><%= _o.minimumTotal.explanation %></li>
+          <li><%= _o.afterMinimumTerm %></li>
+          <li><%= _o.decisionTimingTerms %> Continuing reporting support is £<%= _o.reportingMonthly %> per month before any active referral discounts, which continue after authorisation.</li>
+          <% if (_o.vatStatement) { %><li><%= _o.vatStatement %></li><% } %>
+          <li>The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.</li>
+        </ul>
+      <% } %>
+    </div>
+  </article>
+</div>
+<% } else { %>
+<div class="offer-wrap">
+  <article class="offer-card offer-card--post" id="<%= _id %>" aria-labelledby="<%= _id %>-name">
+    <div class="offer-card__body">
+      <p class="offer-card__tag offer-card__tag--plain">FCA authorisation assistance</p>
+      <<%= _h %> class="offer-card__name" id="<%= _id %>-name"><%= (_c.post.mode === 'custom' && _c.post.headline) ? _c.post.headline : 'Talk to us about current pricing' %></<%= _h %>>
+      <p class="offer-card__value"><%= (_c.post.mode === 'custom' && _c.post.text) ? _c.post.text : 'Book a 15-minute call and we’ll explain the current terms for new applications before you commit to anything.' %></p>
+      <p class="offer-card__qualifier">The FCA application fee is always payable separately. Existing customers’ agreements are unaffected.</p>
+      <a class="btn btn--primary btn--block btn--sheen" href="<%= inPageMeeting ? '#book-meeting' : '/contact#book-meeting' %>">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </article>
+</div>
+<% } %>

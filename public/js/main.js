@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isLongServicePage = Boolean(
-    document.querySelector(".ccr009-page, .services-clean")
-  );
 
   // Animate user count metric
   const counterEl = document.getElementById("user-count");
@@ -11,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => res.json())
       .then((data) => {
         const target = Number(data.count || 0);
+        if (prefersReducedMotion) { counterEl.textContent = target.toString(); return; }
         const duration = 900;
         const start = performance.now();
 
@@ -26,72 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(() => {});
   }
 
-  // GSAP intro animation for hero section if available
-  if (window.gsap && !prefersReducedMotion) {
-    const tl = gsap.timeline();
-    tl.from("header", { y: -20, opacity: 0, duration: 0.4 });
-    tl.from("h1", { y: 20, opacity: 0, duration: 0.5 }, "-=0.1");
-    tl.from(
-      ".hero-card, .hero-text, .hero-metric",
-      { y: 12, opacity: 0, duration: 0.4, stagger: 0.07 },
-      "-=0.2"
-    );
-  }
-
-  // ===============================
-  // Scroll Animations (IntersectionObserver)
-  // ===============================
-  const revealElements = Array.from(
-    document.querySelectorAll(
-      ".sa-reveal, .services-clean-hero, .services-clean-hero__img, .services-clean-section, .services-clean-aside, .services-important-note"
-    )
-  );
-
-  if (isLongServicePage) {
-    revealElements.forEach((el) => {
-      el.classList.add("sa-reveal", "sa-visible");
-      el.classList.remove("sa-delay-1", "sa-delay-2", "sa-delay-3");
-    });
-    return;
-  }
-
-  if (!prefersReducedMotion && revealElements.length) {
-    document.body.classList.add("sa-animations");
-  }
-
-  revealElements.forEach((el, index) => {
-    el.classList.add("sa-reveal");
-
-    // Gentle, limited stagger for repeated cards/sections only.
-    const delay = index % 4;
-    if (delay === 1) el.classList.add("sa-delay-1");
-    if (delay === 2) el.classList.add("sa-delay-2");
-  });
-
-  if (prefersReducedMotion) {
-    revealElements.forEach((el) => el.classList.add("sa-visible"));
-    return;
-  }
-
-  // Fallback: if IntersectionObserver isn't supported, just show everything
-  if (!("IntersectionObserver" in window)) {
-    revealElements.forEach((el) => el.classList.add("sa-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("sa-visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-  );
-
-  revealElements.forEach((el) => observer.observe(el));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -177,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (firstInvalidField) {
       setStatus("Please complete the highlighted fields before submitting your enquiry.", "is-error");
       firstInvalidField.focus({ preventScroll: true });
-      firstInvalidField.scrollIntoView({ behavior: "smooth", block: "center" });
+      firstInvalidField.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
       return;
     }
 

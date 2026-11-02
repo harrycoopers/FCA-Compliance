@@ -1,352 +1,335 @@
-<div class="ccr009-page authorisation-page">
-  <nav class="seo-breadcrumbs sa-reveal" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="/">Home</a></li>
-      <li><a href="/services">Services</a></li>
-      <li aria-current="page">FCA Authorisation for Motor Dealers</li>
-    </ol>
-  </nav>
+<link rel="stylesheet" href="<%= assetPath('/css/motor-finance.css?v=69') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-final-cta.css?v=62') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-christmas-card.css') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-support-refresh.css?v=70') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-easy-process.css?v=59') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-referral-clean.css?v=61') %>">
+<link rel="stylesheet" href="<%= assetPath('/css/auth-referral-animation.css?v=75') %>">
+<script defer src="<%= assetPath('/js/auth-referral-animation.js?v=75') %>"></script>
+<%
+  const tick = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const c = campaign;
+  /* Application-support reviews only. Wording comes unchanged from data/testimonials.js. */
+  const reviews = testimonials.applicationReviewIndexes.map(i => testimonials.reviews[i]);
+  const excerptSegments = (text, phrases) => {
+    const ranges = phrases.map(phrase => ({ start: text.indexOf(phrase), text: phrase }))
+      .filter(range => range.start >= 0).sort((a, b) => a.start - b.start);
+    const segments = []; let position = 0;
+    ranges.forEach(range => {
+      if (range.start < position) return;
+      segments.push({ text: text.slice(position, range.start), highlighted: false });
+      segments.push({ text: range.text, highlighted: true });
+      position = range.start + range.text.length;
+    });
+    segments.push({ text: text.slice(position), highlighted: false });
+    return segments;
+  };
+  const attributionLines = (attribution) => {
+    const nameEnd = attribution.indexOf(',');
+    const paren = attribution.indexOf(' (');
+    const special = paren > -1;
+    const roleEnd = special ? paren : attribution.indexOf(',', nameEnd + 1);
+    const locationStart = attribution.lastIndexOf(',') + 1;
+    const roleStop = roleEnd + (special ? 0 : 1);
+    return { name: attribution.slice(0, nameEnd + 1), role: attribution.slice(nameEnd + 1, roleStop), business: attribution.slice(roleStop, locationStart), location: attribution.slice(locationStart) };
+  };
+%>
+<div class="auth-landing v9">
 
-  <section class="ccr009-hero authorisation-hero sa-reveal">
-    <div class="ccr009-hero__inner">
-      <div class="ccr009-hero__copy">
-        <p class="ccr009-eyebrow">FCA authorisation for motor dealers</p>
-        <h1>FCA Authorisation for Motor Dealers</h1>
-        <p class="ccr009-hero__lead">
-          FCA authorisation, FCA licence and credit broking applications made simple for a fixed fee of <span class="authorisation-price-highlight">&pound;1,000</span> plus the FCA application fee.
-        </p>
-        <div class="ccr009-actions">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Speak to 009 Compliance</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/services">View Services</a>
+  <!-- 1. Motor-dealer-specific hero -->
+  <section class="hero9 hero9--auth<%= c.active ? ' is-festive' : '' %>" aria-labelledby="auth-title">
+    <div class="hero9__bg" aria-hidden="true"><span class="hero9__grid"></span></div>
+    <div class="wrap">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <ol><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li aria-current="page">FCA Authorisation for Motor Dealers</li></ol>
+      </nav>
+      <div class="hero9__grid-wrap hero9__grid-wrap--offer">
+        <div class="hero9__copy">
+          
+          <h1 class="display-xl" id="auth-title">FCA authorisation assistance <span class="serif">for motor dealers.</span></h1>
+          <p class="lede">Car, motorcycle, van or commercial vehicle dealer? We help you organise your FCA application, explain what’s required in plain English, prepare your supporting documents and respond when the FCA asks for more.</p>
+          <ul class="check-list check-list--hero">
+            <li><span class="tick"><%- tick %></span>Built around how dealerships actually operate</li>
+            <li><span class="tick"><%- tick %></span>Direct contact with people who know the motor trade</li>
+            <li><span class="tick"><%- tick %></span>Reporting and compliance support continues after approval</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn--primary btn--sheen btn--lg" href="#book-meeting">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="text-link" href="#payments">How the payments work</a>
+          </div>
+          <p class="hero9__note">We provide authorisation assistance. The FCA decides applications and timescales, and approval isn’t guaranteed.</p>
         </div>
-      </div>
-
-      <div class="ccr009-hero__panel authorisation-fee-panel" aria-label="FCA authorisation fixed fee overview">
-        <div class="ccr009-hero__panel-top">
-          <span>Standard motor dealer package</span>
-          <strong>Fixed Fee <span class="authorisation-price-highlight">&pound;1,000</span></strong>
-          <p>Plus the FCA application fee payable directly to the Financial Conduct Authority.</p>
-        </div>
-        <div class="ccr009-stat-grid">
-          <div><span>Support</span><strong>Start to finish</strong></div>
-          <div><span>Documents</span><strong>Bespoke</strong></div>
-          <div><span>Focus</span><strong>Motor dealers</strong></div>
-          <div><span>Access</span><strong>Direct support</strong></div>
+        <div class="hero9__offer" id="offer">
+          <%- include('partials/offer_card', { cardId: 'auth-offer', headingTag: 'h2', showTerms: false, santa: true, referralAnimation: true }) %>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ccr009-content">
-    <div class="ccr009-content__main">
-      <article class="ccr009-section ccr009-section--feature sa-reveal">
-        <h2 class="services-h2">FCA Licence Application Support at a Sensible Fixed Price</h2>
-        <p class="services-p">Looking to apply for FCA authorisation as a motor dealer?</p>
-        <p class="services-p">Need the permissions required to introduce customers to finance providers and offer vehicle finance legally?</p>
-        <p class="services-p">Want professional support without paying the &pound;1,500 to &pound;3,000 fees commonly charged by many compliance firms?</p>
-        <p class="services-p">At 009 Compliance Ltd, our fixed fee for a standard motor dealer FCA authorisation application is <span class="authorisation-price-highlight">&pound;1,000</span> plus the FCA application fee payable directly to the Financial Conduct Authority.</p>
-        <p class="services-p">Our aim is simple: to provide a professional, well-organised FCA application service at a sensible fixed price.</p>
-        <ul class="services-bullets ccr009-bullets">
-          <li>No call centres.</li>
-          <li>No ticketing systems.</li>
-          <li>No unnecessary jargon.</li>
-        </ul>
-        <p class="services-p">Just practical support from people who understand both FCA regulation and the motor trade.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Enquire Today</a>
+  <!-- 5. Relevant testimonials -->
+  <section class="sec sec--flush-top" aria-labelledby="testimonials-heading">
+    <div class="wrap">
+      <div class="proof" data-testimonials aria-roledescription="carousel" aria-labelledby="testimonials-heading">
+        <div class="proof__head">
+          <div>
+            <h2 class="display-m" id="testimonials-heading">Hear from dealers who’ve been <span class="serif">through the application.</span></h2>
+          </div>
+          <div class="testimonial-controls" data-carousel-controls hidden>
+            <div class="testimonial-control-buttons">
+              <button type="button" class="carousel-control" data-carousel-prev aria-label="Previous testimonial" aria-controls="testimonial-stage"><span aria-hidden="true">←</span></button>
+              <button type="button" class="carousel-control" data-carousel-next aria-label="Next testimonial" aria-controls="testimonial-stage"><span aria-hidden="true">→</span></button>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="ccr009-section ccr009-section--accent sa-reveal">
-        <h2 class="services-h2">FCA Authorisation Package</h2>
-        <p class="services-p"><strong>Fixed Fee <span class="authorisation-price-highlight">&pound;1,000</span> Plus FCA Application Fee</strong></p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>FCA application support from start to finish</li>
-          <li>Bespoke Regulatory Business Plan</li>
-          <li>Bespoke Compliance Monitoring Programme</li>
-          <li>Bespoke Compliance Procedures Manual</li>
-          <li>Bespoke Vulnerable Customer Policy</li>
-          <li>Bespoke Complaints Procedure</li>
-          <li>Bespoke Customer Journey Document</li>
-          <li>Bespoke Initial Disclosure Document</li>
-          <li>Bespoke Regulatory Status Disclosure</li>
-          <li>Bespoke Financial Crime Procedures</li>
-          <li>Bespoke Suitability and Fair Treatment Policy</li>
-          <li>Bespoke Organisational Structure Chart</li>
-          <li>FCA interview preparation</li>
-          <li>Support responding to FCA information requests</li>
-          <li>Ongoing support throughout the application process</li>
-        </ul>
-        <p class="services-p">In most cases, we can begin work on your documentation shortly after receiving the information required from you. FCA application fees are payable separately and directly to the FCA.</p>
-        <p class="services-p">There are no hidden consultancy fees or surprise charges.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">We Do the Heavy Lifting</h2>
-        <p class="services-p">Most applicants have never applied for FCA authorisation before.</p>
-        <p class="services-p">They are often unsure what permissions they need, what documents are required or what information the FCA expects to see. That is completely normal.</p>
-        <p class="services-p">Our role is to guide you through the process, gather the information we need from you and prepare the supporting documentation required for the application.</p>
-        <p class="services-p">Following a discussion about your business, objectives and how you intend to operate, we prepare the Regulatory Business Plan and supporting compliance documentation required for the application.</p>
-        <p class="services-p">You focus on running your business. We help organise the application.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Why Choose 009 Compliance Ltd?</h2>
-        <p class="services-p">Many firms charge between &pound;1,500 and &pound;3,000 for FCA authorisation support. Our fixed fee is <span class="authorisation-price-highlight">&pound;1,000</span> plus the FCA application fee.</p>
-        <p class="services-p">We provide:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Fixed-fee pricing</li>
-          <li>Fast turnaround times</li>
-          <li>Bespoke documentation</li>
-          <li>Direct access to experienced professionals</li>
-          <li>FCA interview preparation</li>
-          <li>Full support throughout the application process</li>
-          <li>Practical, plain-English guidance</li>
-        </ul>
-        <p class="services-p">Most importantly, we understand the motor trade: dealerships, finance introductions, customer journeys, lender relationships, vehicle finance, credit broking, Limited Permission FCA Authorisation and how FCA requirements fit into day-to-day business operations.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Built on Real Motor Trade Experience</h2>
-        <p class="services-p">Many FCA consultants understand regulation.</p>
-        <p class="services-p">We understand regulation and the motor trade.</p>
-        <p class="services-p">We have worked within vehicle finance and dealership environments ourselves and understand how dealerships actually operate.</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Vehicle finance</li>
-          <li>Credit broking</li>
-          <li>Finance introductions</li>
-          <li>Customer journeys</li>
-          <li>Lender relationships</li>
-          <li>Commission disclosure</li>
-          <li>Consumer credit regulation</li>
-          <li>Limited Permission FCA Authorisation</li>
-          <li>Motor dealer operations</li>
-          <li>FCA reporting requirements</li>
-        </ul>
-        <p class="services-p">This practical experience allows us to prepare applications that reflect how dealerships genuinely operate rather than relying on generic compliance theory.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">What Is FCA Authorisation?</h2>
-        <p class="services-p">If your dealership introduces customers to lenders, brokers or finance providers in connection with the purchase of a vehicle, FCA authorisation will often be required.</p>
-        <p class="services-p">People search for this in many different ways:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>FCA licence</li>
-          <li>FCA approval</li>
-          <li>Consumer credit licence</li>
-          <li>Credit broking licence</li>
-          <li>Motor dealer finance licence</li>
-          <li>Vehicle finance licence</li>
-          <li>FCA finance licence</li>
-          <li>FCA authorisation</li>
-        </ul>
-        <p class="services-p">Although many people still refer to FCA authorisation as a consumer credit licence or FCA licence, the FCA now uses the terms authorisation and permissions.</p>
-        <p class="services-p">For motor dealers, this typically involves obtaining credit broking permission to introduce customers to finance providers.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">FCA Authorisation for Motor Dealers</h2>
-        <p class="services-p">Most FCA authorised motor dealers require permissions because they introduce customers to finance providers offering products such as:</p>
-        <ul class="services-bullets ccr009-bullets">
-          <li>Hire Purchase (HP)</li>
-          <li>Personal Contract Purchase (PCP)</li>
-          <li>Conditional Sale</li>
-          <li>Lease Purchase</li>
-        </ul>
-        <p class="services-p">The FCA expects firms to demonstrate that they understand their regulatory responsibilities and have appropriate procedures, controls and documentation in place.</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Customer journeys</li>
-          <li>Complaints handling</li>
-          <li>Vulnerable customer procedures</li>
-          <li>Financial crime controls</li>
-          <li>Compliance monitoring</li>
-          <li>Regulatory status disclosure</li>
-          <li>Financial promotions</li>
-          <li>Commission disclosure</li>
-        </ul>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Limited Permission FCA Authorisation</h2>
-        <p class="services-p">Many dealerships apply for Limited Permission FCA Authorisation. Limited Permission firms are generally businesses where consumer credit activity is secondary to the firm's main business activity.</p>
-        <p class="services-p">This often applies to vehicle dealerships where the primary activity is vehicle sales and finance introductions are offered alongside the purchase process.</p>
-        <p class="services-p">Although the permissions are described as limited, the FCA still expects firms to demonstrate appropriate controls, customer protections and compliance arrangements.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">What Does the FCA Look At?</h2>
-        <p class="services-p">The FCA authorisation process involves considerably more than simply completing an online application form.</p>
-        <p class="services-p">The regulator may review:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Business plans</li>
-          <li>Company structure</li>
-          <li>Directors and shareholders</li>
-          <li>Controllers</li>
-          <li>Customer journeys</li>
-          <li>Compliance arrangements</li>
-          <li>Complaints procedures</li>
-          <li>Vulnerable customer policies</li>
-          <li>Financial crime controls</li>
-          <li>Financial promotions</li>
-          <li>Website content</li>
-          <li>Regulatory disclosures</li>
-        </ul>
-        <p class="services-p">Preparing comprehensive documentation from the outset can help reduce delays and unnecessary follow-up questions.</p>
-      </article>
-
-      <article class="ccr009-section ccr009-section--accent sa-reveal">
-        <h2 class="services-h2">FCA Connect Application Support</h2>
-        <p class="services-p">Applications are submitted through the FCA Connect system. Many applicants underestimate the amount of information required during the process.</p>
-        <p class="services-p">We help organise and prepare the information required for submission, helping make the process smoother and more manageable.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Ask About Application Support</a>
+        <div id="testimonial-stage" class="testimonial-stage" data-carousel-stage aria-live="off">
+          <% reviews.forEach((review, index) => { const lines = attributionLines(review.attribution); %>
+            <article class="testimonial-card" data-review-index="<%= index %>" role="group" aria-roledescription="slide" aria-label="Testimonial <%= index + 1 %> of <%= reviews.length %>">
+              <header class="testimonial-person">
+                <p class="testimonial-person-lines"><strong class="testimonial-name"><%= lines.name %></strong><span class="testimonial-role"><%= lines.role %></span><span class="testimonial-business"><%= lines.business %></span><span class="testimonial-location"><%= lines.location %></span></p>
+                <p class="sales-sr-only" data-attribution aria-hidden="true"><%= review.attribution %></p>
+              </header>
+              <blockquote class="testimonial-excerpt"><p><% excerptSegments(review.excerpt, review.highlights).forEach(segment => { %><% if (segment.highlighted) { %><strong class="testimonial-highlight"><%= segment.text %></strong><% } else { %><%= segment.text %><% } %><% }); %></p></blockquote>
+              <details class="testimonial-details" data-full-review>
+                <summary>Read full review</summary>
+                <div class="testimonial-full" data-full-text>
+                  <% review.paragraphs.forEach(paragraph => { %><p><%= paragraph %></p><% }) %>
+                </div>
+              </details>
+            </article>
+          <% }) %>
         </div>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">FCA Interview Preparation</h2>
-        <p class="services-p">Some applicants worry about speaking to the FCA. In reality, the FCA is generally seeking to understand how the business operates and whether the applicant understands its regulatory responsibilities.</p>
-        <p class="services-p">We help clients prepare by discussing common areas of focus, reviewing documentation and ensuring they understand the information submitted as part of the application.</p>
-        <p class="services-p">The aim is not to provide scripted answers. The aim is to help applicants understand their business, their application and their regulatory responsibilities.</p>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">Why FCA Applications Get Delayed</h2>
-        <p class="services-p">Many FCA applications are delayed because information is incomplete, inconsistent or poorly organised.</p>
-        <p class="services-p">Common causes of delay include:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>Weak business plans</li>
-          <li>Missing information</li>
-          <li>Poorly explained business models</li>
-          <li>Incomplete customer journeys</li>
-          <li>Missing compliance procedures</li>
-          <li>Inadequate vulnerable customer arrangements</li>
-          <li>Incomplete responses to FCA questions</li>
-        </ul>
-      </article>
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">What Happens After FCA Approval?</h2>
-        <p class="services-p">Obtaining FCA authorisation is only the beginning. Once authorised, firms often have ongoing responsibilities including:</p>
-        <ul class="services-bullets ccr009-bullets ccr009-bullets--grid">
-          <li>CCR009 reporting</li>
-          <li>CCR007 reporting</li>
-          <li>Consumer Duty awareness</li>
-          <li>Website compliance reviews</li>
-          <li>Complaints monitoring</li>
-          <li>Vulnerable customer procedures</li>
-          <li>FCA reporting obligations</li>
-          <li>Regulatory disclosures</li>
-        </ul>
-        <p class="services-p">Many of our clients continue to work with us after authorisation so compliance remains organised throughout the year.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--secondary" href="/ccr009-return-assistance-motor-dealers">Read About CCR009 Support</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section ccr009-faq sa-reveal">
-        <h2 class="services-h2">Frequently Asked Questions</h2>
-        <div class="ccr009-faq__item">
-          <h3 class="services-h3">How much does FCA authorisation cost?</h3>
-          <p class="services-p">Our fixed fee is <span class="authorisation-price-highlight">&pound;1,000</span> plus the FCA application fee payable directly to the FCA.</p>
-        </div>
-        <div class="ccr009-faq__item">
-          <h3 class="services-h3">Do I need a business plan?</h3>
-          <p class="services-p">Yes. The FCA expects firms to explain how the business operates, how customers are treated and how regulatory responsibilities will be managed. We prepare the business plan following a discussion about your business and objectives.</p>
-        </div>
-        <div class="ccr009-faq__item">
-          <h3 class="services-h3">Do you provide the compliance documents?</h3>
-          <p class="services-p">Yes. Our service includes a comprehensive package of bespoke documentation commonly required for a motor dealer FCA application.</p>
-        </div>
-        <div class="ccr009-faq__item">
-          <h3 class="services-h3">How long does FCA authorisation take?</h3>
-          <p class="services-p">Timescales vary depending on the application and FCA workload. The FCA controls the approval process and timescales cannot be guaranteed.</p>
-        </div>
-        <div class="ccr009-faq__item">
-          <h3 class="services-h3">Do you guarantee FCA approval?</h3>
-          <p class="services-p">No. Only the FCA can decide whether authorisation will be granted.</p>
-        </div>
-        <div class="ccr009-faq__item">
-          <h3 class="services-h3">What permissions do motor dealers normally apply for?</h3>
-          <p class="services-p">Many motor dealers apply for permissions relating to credit broking and associated consumer credit activities. The precise permissions required depend on the activities carried on by the business.</p>
-        </div>
-      </article>
-
-      <article class="ccr009-section ccr009-section--accent sa-reveal">
-        <h2 class="services-h2">Why Pay More?</h2>
-        <p class="services-p">Many motor dealers simply want a professional FCA application completed properly without paying thousands of pounds in consultancy fees.</p>
-        <p class="services-p">Our fixed-fee FCA authorisation service provides the documentation, support and guidance required to submit a professional application at a price designed specifically for independent motor dealers.</p>
-        <p class="services-p"><strong>Fixed Fee &pound;1,000 Plus FCA Application Fee.</strong></p>
-        <p class="services-p">No hidden extras. No unnecessary complexity.</p>
-      </article>
-
-      
-
-      <article class="ccr009-section sa-reveal">
-        <h2 class="services-h2">FCA Authorisation Guides and Resources</h2>
-        <div class="services-link-grid ccr009-guide-cta-grid">
-          <a class="services-link-card" href="/do-motor-dealers-need-fca-authorisation">
-            <span class="services-link-card__label">Do Motor Dealers Need FCA Authorisation?</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/fca-licence-car-dealers">
-            <span class="services-link-card__label">FCA Licence for Car Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/limited-permission-fca-authorisation-motor-dealers">
-            <span class="services-link-card__label">Limited Permission FCA Authorisation</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/credit-broking-permission-motor-dealers">
-            <span class="services-link-card__label">Credit Broking Permission for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/fca-application-documents-motor-dealers">
-            <span class="services-link-card__label">FCA Application Documents for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/why-fca-applications-get-delayed">
-            <span class="services-link-card__label">Why FCA Applications Get Delayed</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-          <a class="services-link-card" href="/after-fca-approval-motor-dealers">
-            <span class="services-link-card__label">After FCA Approval for Motor Dealers</span>
-            <span class="services-link-card__cta">Read Guide</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="ccr009-final-cta sa-reveal">
-        <p class="ccr009-eyebrow">Speak to 009 Compliance Ltd</p>
-        <h2 class="services-h2">Apply for FCA authorisation with practical fixed-fee support</h2>
-        <p class="services-p">If you are looking for FCA authorisation, an FCA licence, a consumer credit licence, a credit broking licence or help applying for FCA approval as a motor dealer, we would be happy to help.</p>
-        <p class="services-p">For &pound;1,000 plus the FCA application fee, we will help organise the application, prepare the documentation and guide you through the process from start to finish.</p>
-        <div class="ccr009-actions ccr009-actions--section">
-          <a class="ccr009-btn ccr009-btn--primary" href="/contact#send-message">Contact Us</a>
-          <a class="ccr009-btn ccr009-btn--secondary" href="/contact#send-message">Email Us</a>
-        </div>
-      </article>
-
-      <article class="ccr009-section authorisation-note sa-reveal">
-        <h2 class="services-h2">Important Note</h2>
-        <p class="services-p">009 Compliance Ltd provides clerical, administrative and compliance support services.</p>
-        <p class="services-p">Responsibility for the accuracy of information supplied, business operations, regulatory decisions and compliance with FCA requirements remains with the applicant firm.</p>
-        <p class="services-p">We do not provide legal advice and do not guarantee FCA approval, authorisation or application timescales. All authorisation decisions remain solely with the Financial Conduct Authority.</p>
-      </article>
-    </div>
-
-    <aside class="ccr009-aside sa-reveal">
-      <div class="ccr009-aside__card">
-        <span>Authorisation support includes</span>
-        <ul>
-          <li>FCA Connect application support</li>
-          <li>Bespoke business plan</li>
-          <li>Compliance documents</li>
-          <li>FCA interview preparation</li>
-          <li>Support with FCA information requests</li>
-        </ul>
-        <a class="ccr009-btn ccr009-btn--primary ccr009-btn--full" href="/contact#send-message">Start an Enquiry</a>
+        <p class="sales-sr-only" data-carousel-announcement aria-live="polite" aria-atomic="true"></p>
+        <dialog class="testimonial-dialog" data-review-dialog aria-labelledby="review-dialog-title">
+          <div class="testimonial-dialog-top"><button type="button" class="carousel-control" data-review-close aria-label="Close full review">✕</button></div>
+          <h3 id="review-dialog-title">Full review</h3>
+          <blockquote data-dialog-quote></blockquote>
+          <p class="testimonial-attribution" data-dialog-attribution></p>
+        </dialog>
       </div>
-    </aside>
+    </div>
+  </section>
+
+  <!-- 2. Christmas offer and clear payment terms -->
+  <section class="sec sec--tight terms9" id="payments" aria-labelledby="payments-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 class="display-l" id="payments-title">Exactly what you pay, <span class="serif">month by month.</span></h2></div>
+        <p><% if (c.showPrice) { %>Spread the cost of your FCA authorisation assistance, with reporting and compliance support continuing after approval.<% } else { %>We’ll confirm current pricing and the payment schedule with you before you start.<% } %></p>
+      </div>
+      <% if (c.showPrice) { %>
+        <%- include('partials/payment_timeline') %>
+      <% } %>
+    </div>
+  </section>
+
+  <!-- 3. Supported benefits and inclusions -->
+  <section class="sec auth-support-refresh" id="included" aria-labelledby="included-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 class="display-l" id="included-title">Less guesswork. <span class="serif">More help getting it done.</span></h2></div>
+        <p>You don’t need to start with all the answers. Tell us about your dealership; we’ll explain what we need and help you work through the application, step by step.</p>
+      </div>
+      <div class="incl9">
+        <article class="incl9__a">
+          <div class="as-scene" aria-hidden="true"><svg viewBox="0 0 320 170" fill="none"><g class="as-pop"><rect x="80" y="18" width="146" height="130" rx="15" fill="white" stroke="#bfd5f6"/><rect x="118" y="12" width="70" height="18" rx="8" fill="#2563eb"/></g><g class="as-row" style="--delay:0.5s"><rect x="99" y="45" width="18" height="18" rx="6" fill="#2563eb"/><path d="M103 54l4 4 7-8" stroke="white" stroke-width="2" fill="none"/><path d="M130 54h65" stroke="#bed3ef" stroke-width="6" stroke-linecap="round"/></g><g class="as-row" style="--delay:0.85s"><rect x="99" y="75" width="18" height="18" rx="6" fill="#2563eb"/><path d="M103 84l4 4 7-8" stroke="white" stroke-width="2" fill="none"/><path d="M130 84h65" stroke="#bed3ef" stroke-width="6" stroke-linecap="round"/></g><g class="as-row" style="--delay:1.2s"><rect x="99" y="105" width="18" height="18" rx="6" fill="#2563eb"/><path d="M103 114l4 4 7-8" stroke="white" stroke-width="2" fill="none"/><path d="M130 114h65" stroke="#bed3ef" stroke-width="6" stroke-linecap="round"/></g></svg></div>
+          <h3>Know exactly what to provide</h3>
+          <p>Clear guidance on the information we need, with practical help organising your application. Less time wondering where to start.</p>
+          <ul class="check-list"><li><span class="tick"><%- tick %></span>FCA Connect application support</li><li><span class="tick"><%- tick %></span>Bespoke Regulatory Business Plan</li><li><span class="tick"><%- tick %></span>Bespoke Organisational Structure Chart</li></ul>
+        </article>
+        <article class="incl9__b">
+          <div class="as-scene" aria-hidden="true"><svg viewBox="0 0 320 170" fill="none"><g class="as-sheet as-sheet-left"><rect x="61" y="35" width="94" height="112" rx="12" fill="#dce9ff" stroke="#adc7ed"/></g><g class="as-sheet as-sheet-right"><rect x="160" y="35" width="94" height="112" rx="12" fill="#dce9ff" stroke="#adc7ed"/></g><g class="as-pop"><rect x="105" y="16" width="110" height="135" rx="13" fill="white" stroke="#bfd5f6"/><path d="M125 46h48M125 65h70M125 84h59M125 103h46" stroke="#aec9f3" stroke-width="6" stroke-linecap="round"/></g><g class="as-stamp"><circle cx="215" cy="125" r="24" fill="#2563eb"/><path d="m204 125 8 8 15-17" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/></g></svg></div>
+          <h3>Get help with the paperwork</h3>
+          <p>We help prepare documents around your dealership, using the information you provide and approve.</p>
+          <details class="auth-document-details"><summary>See the documents we help prepare <span aria-hidden="true">+</span></summary><ul class="doc-cloud">
+            <% ['Compliance Procedures Manual','Compliance Monitoring Programme','Vulnerable Customer Policy','Complaints Procedure','Customer Journey Document','Initial Disclosure Document','Regulatory Status Disclosure','Financial Crime Procedures','Suitability and Fair Treatment Policy'].forEach(function (d) { %><li><%= d %></li><% }) %>
+          </ul></details>
+        </article>
+        <article class="incl9__c">
+          <div class="as-scene" aria-hidden="true"><svg viewBox="0 0 320 170" fill="none"><g class="as-bubble as-bubble-one"><path d="M57 26h145a13 13 0 0 1 13 13v44a13 13 0 0 1-13 13H91l-23 16V96H57a13 13 0 0 1-13-13V39a13 13 0 0 1 13-13" fill="white" stroke="#addad4"/><path d="M66 49h112M66 69h78" stroke="#aacfc9" stroke-width="6" stroke-linecap="round"/></g><g class="as-bubble as-bubble-two"><path d="M151 84h100a12 12 0 0 1 12 12v35a12 12 0 0 1-12 12h-10v13l-20-13h-70a12 12 0 0 1-12-12V96a12 12 0 0 1 12-12" fill="#147d78"/><circle cx="177" cy="114" r="4" fill="white"/><circle cx="201" cy="114" r="4" fill="white"/><circle cx="225" cy="114" r="4" fill="white"/></g></svg></div>
+          <h3>Have someone to turn to</h3><p>If the FCA asks for more information, we help you understand the request and prepare your response.</p>
+          <ul class="check-list"><li><span class="tick"><%- tick %></span>Help responding to FCA information requests</li><li><span class="tick"><%- tick %></span>FCA interview preparation</li><li><span class="tick"><%- tick %></span>Support throughout the application</li></ul>
+        </article>
+        <article class="incl9__d">
+          <div class="as-scene" aria-hidden="true"><svg viewBox="0 0 320 170" fill="none"><circle class="as-ring" cx="160" cy="85" r="65" fill="none" stroke="#719bc3" stroke-width="1" stroke-dasharray="4 8"/><g class="as-pop"><path d="m160 22 48 20v39c0 33-23 53-48 65-25-12-48-32-48-65V42z" fill="#254d72" stroke="#8ed8d2" stroke-width="2"/><path class="as-draw" d="m138 81 16 17 30-35" fill="none" stroke="#91efce" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="as-stamp"><circle cx="224" cy="119" r="19" fill="#91efce"/><path d="M215 119h18m-9-9v18" stroke="#14243a" stroke-width="3" stroke-linecap="round"/></g></svg></div>
+          <h3>Support beyond the application</h3>
+          <p>The service continues with reporting and compliance support within the agreed scope. Continuing reporting support is £<%= offer.reportingMonthly %> per month before any active referral discounts, which continue after authorisation.</p>
+          <div class="as-finance-invite">
+            <h4>Ready to offer your customers finance?</h4>
+            <p>Explore optional motor-finance broker support, backed by 30+ years of motor-finance experience. A clear next step for your dealership after authorisation.</p>
+            <a href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a>
+            <small>Optional, separate service with its own terms and onboarding. Not included in your compliance subscription.</small>
+          </div>
+        </article>
+      </div>
+      <p class="fine" style="margin-top:18px">Not included: the FCA application fee (paid separately) and legal advice. CCR009 Return Assistance and Ongoing Motor Dealer Compliance Support are separate services.</p>
+    </div>
+  </section>
+
+  <!-- Guided application process -->
+  <section class="sec auth-easy" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 class="display-l" id="process-title">Less to figure out.<br><span class="serif">More help getting it done.</span></h2></div>
+        <p>A clear list. Practical help with the paperwork. Someone to ask when you’re unsure. We guide you through the application, one step at a time.</p>
+      </div>
+      <ol class="auth-easy-grid">
+        <li class="auth-easy-step">
+          <div class="ae-visual" aria-hidden="true"><span class="ae-number">01</span><span class="ae-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M8 8h24v16H18l-8 6v-6H8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-check"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 5 5 9-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-track"><i></i></span></div>
+          <h3>A quick chat</h3><p>Start with 15 minutes. Tell us about your dealership and we’ll explain the support, fees and next steps.</p><div class="ae-label">You tell us about your business</div>
+        </li>
+        <li class="auth-easy-step">
+          <div class="ae-visual" aria-hidden="true"><span class="ae-number">02</span><span class="ae-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M20 29V9m-7 7 7-7 7 7M8 26v7h24v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-check"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 5 5 9-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-track"><i></i></span></div>
+          <h3>Share what’s needed</h3><p>We give you a clear list of information to provide, so you know what to send and where to start.</p><div class="ae-label">We guide you through the list</div>
+        </li>
+        <li class="auth-easy-step">
+          <div class="ae-visual" aria-hidden="true"><span class="ae-number">03</span><span class="ae-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M11 5h13l7 7v23H11zM24 5v8h7M16 21h10M16 27h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-check"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 5 5 9-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-track"><i></i></span></div>
+          <h3>We help with the paperwork</h3><p>We help prepare your business plan and supporting documents. You check the details and approve them.</p><div class="ae-label">Prepared with you. Checked by you.</div>
+        </li>
+        <li class="auth-easy-step">
+          <div class="ae-visual" aria-hidden="true"><span class="ae-number">04</span><span class="ae-icon"><svg viewBox="0 0 40 40" fill="none"><path d="m20 5 12 5v10c0 8-6 13-12 16-6-3-12-8-12-16V10zM14 20l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-check"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 5 5 9-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ae-track"><i></i></span></div>
+          <h3>Help with the next steps</h3><p>If the FCA asks questions, we help you understand them and prepare your response. You have someone to turn to.</p><div class="ae-label">Support throughout your application</div>
+        </li>
+      </ol>
+      <div class="ae-footer"><a class="btn btn--primary btn--sheen" href="#book-meeting">Start with a 15-minute call <span aria-hidden="true">→</span></a><p>You provide accurate information and approve your documents.<br>The FCA alone decides the outcome and timescale.</p></div>
+    </div>
+  </section>
+
+  <section class="sec sec--flush-top mf-promo-section" aria-labelledby="mf-promo-title"><div class="wrap"><div class="mf-promo"><div><h2 id="mf-promo-title">Authorised and ready<br><span class="serif">for what’s next?</span></h2><p>Help your customers explore motor finance with experienced broker support. Talk through the next step for your dealership, backed by <strong>30+ years of motor-finance experience.</strong></p><div class="actions"><a class="btn btn--primary" href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a><a class="text-link" href="/contact?topic=finance#book-meeting">Discuss your dealership</a></div><p class="mf-qualification">Separate from your authorisation assistance subscription. Required permissions and broker onboarding must be in place. Customer finance is subject to lender assessment and terms; approval is not guaranteed.</p></div><%- include('partials/motor_finance_art') %></div></div></section>
+
+  <!-- 7. Referral promotion -->
+  <section class="sec sec--flush-top" aria-labelledby="ref-title">
+    <div class="wrap">
+      <div class="ref-promo ref-clean<%= c.active ? ' is-festive' : '' %>" data-motion>
+        <span class="ribbon-corner<%= c.active ? '' : ' is-hidden' %>" aria-hidden="true"><span></span></span>
+        <div class="ref-promo__copy">
+          
+          <h2 class="display-m" id="ref-title">Share the support.<br><span class="serif">Lower your monthly fee.</span></h2>
+          <p>Pay £100 to get started. Each successful referral reduces subsequent eligible monthly authorisation and continuing reporting subscription payments by 25%: one active qualifying referral means £75/month, and four means £0/month. These savings continue into reporting after authorisation. If a referral cancels or stops qualifying, only their 25% discount ends from your next invoice.</p>
+          <div class="rc-savings" aria-label="Eligible monthly subscription payments, including continuing reporting, after the initial £100 payment">
+            <% for (let i = 1; i <= 4; i++) { %><div style="--rc-i:<%= i %>"><small><%= i %> referral<%= i === 1 ? '' : 's' %></small><strong>£<%= offer.monthlyPayment * (1 - i * .25) %><span>/mo</span></strong><span class="rc-saving"><%= i * 25 %>% off</span></div><% } %>
+          </div>
+          <p class="rc-initial">Your initial £100 payment stays the same. Savings apply to subsequent eligible authorisation assistance payments.</p>
+          <details class="rc-terms"><summary>What the referral discount covers <span aria-hidden="true">+</span></summary><%- include('partials/referral_exclusions') %></details>
+          <div class="actions"><a class="btn btn--primary" href="/referral">Referral programme details <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="ref-promo__ladder">
+          <%- include('partials/referral_calculator', { c, n: 0, pct: 0, calculatorSubmitted: false, resultNote: () => 'Refer a dealer to start building your discount.' }) %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supporting detail moved out of the main journey -->
+  <section class="sec sec--flush-top" aria-labelledby="detail-title">
+    <div class="wrap wrap--narrow">
+      
+      <h2 class="display-m" id="detail-title">More about FCA authorisation for motor dealers</h2>
+      <div class="more">
+        <details>
+          <summary>What is FCA authorisation?</summary>
+          <div class="more__body">
+            <p>If your dealership introduces customers to lenders, brokers or finance providers in connection with the purchase of a vehicle, FCA authorisation will often be required.</p>
+            <p>People search for this in many different ways: FCA licence, FCA approval, consumer credit licence, credit broking licence, motor dealer finance licence, vehicle finance licence, FCA finance licence and FCA authorisation.</p>
+            <p>Although many people still refer to FCA authorisation as a consumer credit licence or FCA licence, the FCA now uses the terms authorisation and permissions. For motor dealers, this typically involves obtaining credit broking permission to introduce customers to finance providers.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Why motor dealers need permissions</summary>
+          <div class="more__body">
+            <p>Most FCA authorised motor dealers require permissions because they introduce customers to finance providers offering products such as Hire Purchase (HP), Personal Contract Purchase (PCP), Conditional Sale and Lease Purchase.</p>
+            <p>The FCA expects firms to demonstrate that they understand their regulatory responsibilities and have appropriate procedures, controls and documentation in place, covering customer journeys, complaints handling, vulnerable customer procedures, financial crime controls, compliance monitoring, regulatory status disclosure, financial promotions and commission disclosure.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Limited Permission FCA authorisation</summary>
+          <div class="more__body">
+            <p>Many dealerships apply for Limited Permission FCA Authorisation. Limited Permission firms are generally businesses where consumer credit activity is secondary to the firm’s main business activity.</p>
+            <p>This often applies to vehicle dealerships where the primary activity is vehicle sales and finance introductions are offered alongside the purchase process. Although the permissions are described as limited, the FCA still expects firms to demonstrate appropriate controls, customer protections and compliance arrangements.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What does the FCA look at?</summary>
+          <div class="more__body">
+            <p>The FCA authorisation process involves considerably more than simply completing an online application form. The regulator may review business plans, company structure, directors and shareholders, controllers, customer journeys, compliance arrangements, complaints procedures, vulnerable customer policies, financial crime controls, financial promotions, website content and regulatory disclosures.</p>
+            <p>Preparing comprehensive documentation from the outset can help reduce delays and unnecessary follow-up questions.</p>
+          </div>
+        </details>
+        <details>
+          <summary>FCA Connect and interview preparation</summary>
+          <div class="more__body">
+            <p>Applications are submitted through the FCA Connect system. Many applicants underestimate the amount of information required during the process. We help organise and prepare the information required for submission, helping make the process smoother and more manageable.</p>
+            <p>Some applicants worry about speaking to the FCA. In reality, the FCA is generally seeking to understand how the business operates and whether the applicant understands its regulatory responsibilities. We help clients prepare by discussing common areas of focus, reviewing documentation and ensuring they understand the information submitted as part of the application. The aim is not to provide scripted answers.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Why FCA applications get delayed</summary>
+          <div class="more__body">
+            <p>Many FCA applications are delayed because information is incomplete, inconsistent or poorly organised. Common causes include weak business plans, missing information, poorly explained business models, incomplete customer journeys, missing compliance procedures, inadequate vulnerable customer arrangements and incomplete responses to FCA questions.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What happens after FCA approval?</summary>
+          <div class="more__body">
+            <p>Obtaining FCA authorisation is only the beginning. Once authorised, firms often have ongoing responsibilities including CCR009 reporting, CCR007 reporting, Consumer Duty awareness, website compliance reviews, complaints monitoring, vulnerable customer procedures, FCA reporting obligations and regulatory disclosures.</p>
+            <p>Many of our clients continue to work with us after authorisation through our separate <a href="/motor-dealer-compliance">ongoing compliance support</a> and <a href="/ccr009-return-assistance-motor-dealers">CCR009 return assistance</a> services.</p>
+          </div>
+        </details>
+      </div>
+
+      <h3 style="font-size:20px;margin:40px 0 14px">FCA authorisation guides and resources</h3>
+      <div class="guide-links">
+        <a class="guide-link" href="/do-motor-dealers-need-fca-authorisation">Do Motor Dealers Need FCA Authorisation? <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/fca-licence-car-dealers">FCA Licence for Car Dealers <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/limited-permission-fca-authorisation-motor-dealers">Limited Permission FCA Authorisation <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/credit-broking-permission-motor-dealers">Credit Broking Permission for Motor Dealers <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/fca-application-documents-motor-dealers">FCA Application Documents for Motor Dealers <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/why-fca-applications-get-delayed">Why FCA Applications Get Delayed <span aria-hidden="true">→</span></a>
+        <a class="guide-link" href="/after-fca-approval-motor-dealers">After FCA Approval for Motor Dealers <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec auth-final-cta" aria-labelledby="auth-final-title">
+    <div class="wrap">
+      <div class="afc-panel">
+        <div class="afc-copy">
+          <h2 id="auth-final-title">What are you<br><span>waiting for?</span></h2>
+          <p>Let’s make your next step clearer. Talk through your dealership, ask your questions and find out how we can help.</p>
+          <a class="afc-button" href="#book-meeting">Book a 15-minute call <span aria-hidden="true">↗</span></a>
+          <span class="afc-note">A quick conversation. Clear next steps.</span>
+        </div>
+        <div class="afc-art" aria-hidden="true">
+          <div class="afc-orbit"></div>
+          <div class="afc-calendar"><div class="afc-binding"><i></i><i></i></div><div class="afc-calendar-top">LET’S TALK</div><strong>15<span>minutes</span></strong><div class="afc-calendar-bottom"><span></span><span></span><span></span><span></span></div></div>
+          <div class="afc-check"><svg viewBox="0 0 32 32" fill="none"><path d="m8 16 6 6 11-13" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Closing call request -->
+  <%- include('partials/meeting_section', { defaultTopic: 'authorisation' }) %>
+
+  <!-- Existing qualification retained -->
+  <section class="sec sec--tight auth-important-section" aria-labelledby="note-title">
+    <div class="wrap wrap--narrow">
+      <div class="panel auth-important-note">
+        <h2 class="display-m" id="note-title" style="font-size:22px">Important note</h2>
+        <p class="muted" style="margin:12px 0 0">009 Compliance Ltd provides clerical, administrative and compliance support services.</p>
+        <p class="muted" style="margin:10px 0 0">Responsibility for the accuracy of information supplied, business operations, regulatory decisions and compliance with FCA requirements remains with the applicant firm.</p>
+        <p class="muted" style="margin:10px 0 0">We do not provide legal advice and do not guarantee FCA approval, authorisation or application timescales. All authorisation decisions remain solely with the Financial Conduct Authority.</p>
+      </div>
+    </div>
   </section>
 </div>
+<script defer src="<%= assetPath('/js/testimonials.js') %>"></script>
+
+<script defer src="<%= assetPath('/js/auth-support-motion.js?v=58') %>"></script>
+
+<script defer src="<%= assetPath('/js/auth-easy-process.js?v=59') %>"></script>
+
+<script defer src="<%= assetPath('/js/auth-referral-clean.js?v=61') %>"></script>
+
+<script defer src="<%= assetPath('/js/auth-final-cta.js?v=62') %>"></script>
+
+<script defer src="<%= assetPath('/js/motor-finance.js?v=68') %>"></script>

@@ -1,0 +1,95 @@
+<%
+  const c = campaign;
+  const n = selectedReferrals;
+  const pct = selectedPercent;
+  const resultNote = (k) => k === 0 ? 'Refer a dealer to start building your discount.'
+    : k >= referral.MAX_REFERRALS ? '100% off eligible authorisation and continuing reporting subscription fees.'
+    : (k * referral.STEP) + '% off eligible authorisation and continuing reporting subscription fees.';
+%>
+<link rel="stylesheet" href="<%= assetPath('/css/referral-refresh.css?v=66') %>">
+<div class="referral v9 referral-refresh">
+
+  <!-- Programme introduction -->
+  <section class="ref-hero<%= c.active ? ' is-festive' : '' %>" aria-labelledby="ref-title">
+    <div class="hero9__bg" aria-hidden="true"><span class="hero9__grid"></span></div>
+    <div class="wrap">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Referral programme</li></ol></nav>
+      <div class="ref-hero__grid">
+        <div>
+          
+          <h1 class="display-xl" id="ref-title">Know a dealer?<br><span class="serif">Your next referral could cut your monthly fee by 25%.</span></h1>
+        </div>
+        <div class="ref-hero__aside">
+          <p class="lede">Know another motor dealer who needs help with FCA authorisation? Each active qualifying referral adds <strong>25% off</strong> eligible monthly authorisation and continuing reporting subscription fees, up to <strong>100%</strong> with four.</p>
+          <p class="rr-first">£100 to get started. Discounts apply to subsequent eligible monthly authorisation and continuing reporting subscription payments. Discounts continue into reporting after authorisation while each referred dealer remains subscribed and paid up. If one cancels, its 25% ends from your next invoice.</p>
+          <div class="actions"><a class="btn btn--primary" href="#book-meeting">Talk to us about a referral <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+      <div class="rr-milestones" data-rr-intro aria-label="Eligible monthly payments after your initial £100 payment">
+        <% referral.tiers.filter(t => t.referrals > 0).forEach(t => { %><div style="--rr-step:<%= t.referrals %>"><span><%= t.referrals %> active qualifying referral<%= t.referrals === 1 ? '' : 's' %></span><strong>£<%= offer.monthlyPayment * (1 - t.percent / 100) %><small>/month</small></strong><b><%= t.percent %>% off</b><div class="rr-tier-progress" aria-hidden="true"><% for(let k=1;k<=4;k++){ %><i class="<%= k <= t.referrals ? 'rr-lit' : '' %>"></i><% } %></div></div><% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive discount calculator -->
+  <section class="sec sec--tight" id="calculator" aria-labelledby="calc-title">
+    <div class="wrap calc-layout">
+      <%- include('partials/referral_calculator_page', { c, n, pct, resultNote }) %>
+
+      <aside class="calc-aside" aria-labelledby="covers-title">
+        <h2 class="calc-aside__title" id="covers-title">What the discount covers</h2>
+        <%- include('partials/referral_exclusions') %>
+        <div class="calc-aside__tiers">
+          <h3>Every tier</h3>
+          <table class="tier-table">
+            <caption class="sr-only">Referral discount tiers</caption>
+            <thead><tr><th scope="col">Active qualifying referrals</th><th scope="col">Discount</th><th scope="col">Monthly subscription after the initial £100</th></tr></thead>
+            <tbody>
+              <% referral.tiers.forEach(function (t) { %><tr data-tier-row="<%= t.referrals %>"<%= t.referrals === n ? ' class="is-current"' : '' %>><th scope="row"><%= t.referrals %></th><td><%= t.percent %>%</td><td>£<%= offer.monthlyPayment * (1 - t.percent / 100) %>/month</td></tr><% }) %>
+            </tbody>
+          </table>
+          <p class="fine">Each active qualifying referral adds 25 percentage points, capped at 100%.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- How the programme works -->
+  <section class="sec" aria-labelledby="how-ref-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 class="display-l" id="how-ref-title">What makes a <span class="serif">successful referral?</span></h2></div>
+        <p>A recommendation is the first step. The referred dealer must complete onboarding and their first subscription payment must be received. They must remain subscribed and up to date with payments to keep your discount.</p>
+      </div>
+      <ol class="referral-journey" data-referral-steps>
+        <li style="--step:0"><span class="journey-number">01</span><div class="journey-art" aria-hidden="true">↗</div><h3>Introduce a dealer</h3><p>Recommend 009 Compliance to a motor dealer who needs FCA authorisation assistance.</p></li>
+        <li style="--step:1"><span class="journey-number">02</span><div class="journey-art" aria-hidden="true">↔</div><h3>They speak with us</h3><p>They get in touch, tell us who referred them and discuss the support their dealership needs.</p></li>
+        <li style="--step:2"><span class="journey-number">03</span><div class="journey-art" aria-hidden="true">✓</div><h3>They join 009 Compliance</h3><p><strong>They must complete onboarding and we must receive their first subscription payment.</strong> An enquiry or call alone does not count as an active qualifying referral.</p></li>
+        <li style="--step:3"><span class="journey-number">04</span><div class="growing-reward" data-growing-reward aria-hidden="true"><div class="growing-reward__equation"><span data-reward-count>1</span><span class="growing-reward__arrow">→</span><strong><span data-reward-percent>25</span><small>%</small></strong></div><div class="growing-reward__labels"><span data-reward-noun>active qualifying referral</span><span>off</span></div><div class="growing-reward__bars"><i data-reward-bar class="is-lit"></i><i data-reward-bar></i><i data-reward-bar></i><i data-reward-bar></i></div></div><h3>Your discount grows</h3><p>Once onboarded and paid, they count while their subscription remains active and paid up: 25% off eligible monthly authorisation and continuing reporting subscription payments, up to 100% with four.</p></li>
+      </ol>
+      <div class="terms-pending" data-reveal>
+        <h3>Programme terms</h3>
+        <% if (referral.eligibilityTerms) { %>
+          <div class="terms-pending__body"><%- referral.eligibilityTerms %></div>
+        <% } else { %>
+          <p>A referral must complete onboarding and their first subscription payment must be received. Discounts continue into reporting while referrals remain subscribed and paid up, and end from the next invoice if they cancel or stop qualifying. The initial £100 payment remains payable. See section 8 of our Terms of Business.</p>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--flush-top" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <div>
+        
+        <h2 class="display-l" id="faq-title">Referral <span class="serif">questions.</span></h2>
+      </div>
+      <%- include('partials/faq_list', { faqs: faqs, openFirst: true }) %>
+    </div>
+  </section>
+
+<section class="sec sec--tight"><div class="wrap"><div class="calc-aside"><h2>Your payments, clearly explained</h2><ul class="referral-payment-terms"><li><%= offer.minimumTotal.explanation %></li><li><%= offer.afterMinimumTerm %></li><li><%= offer.decisionTimingTerms %> Continuing reporting support is £<%= offer.reportingMonthly %> per month before any active referral discounts, which continue after authorisation.</li><li>The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.</li></ul></div></div></section>
+  <%- include('partials/meeting_section', { defaultTopic: 'referral' }) %>
+</div>
+
+<script defer src="<%= assetPath('/js/referral-refresh.js?v=66') %>"></script>

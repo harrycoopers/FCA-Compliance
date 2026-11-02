@@ -6,24 +6,34 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "node --watch server.js",
+    "build": "node scripts/build-assets.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "test:security": "node --test tests/security.test.cjs tests/booking.test.cjs",
+    "test:seo": "node --test tests/seo.test.cjs tests/site.test.cjs"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcrypt": "6.0.0",
     "body-parser": "^1.20.3",
+    "clean-css": "5.3.3",
+    "compression": "1.8.2",
     "connect-flash": "^0.1.1",
     "dotenv": "^16.6.1",
-    "ejs": "^3.1.10",
+    "ejs": "7.0.2",
     "express": "^4.21.2",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.18.1",
-    "googleapis": "^144.0.0",
-    "nodemailer": "^6.10.1",
-    "npm": "^11.7.0",
-    "sqlite3": "^5.1.7",
-    "start": "^5.1.0"
+    "googleapis": "^188.0.0",
+    "nodemailer": "^10.3.1",
+    "sqlite3": "^6.0.1",
+    "tailwindcss": "3.4.17",
+    "terser": "5.44.1"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
+  "allowScripts": {
+    "bcrypt@6.0.0": true,
+    "sqlite3@6.0.1": true
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

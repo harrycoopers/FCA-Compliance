@@ -1,0 +1,249 @@
+{
+  "date": "2026-11-01",
+  "source": "009-Compliance-Security-Patched(1).zip",
+  "deployed": false,
+  "browser": "Desktop Chrome, controlled iframe viewports; no physical devices",
+  "viewports": [
+    "320x740",
+    "360x800",
+    "375x812",
+    "390x844",
+    "414x896",
+    "430x932",
+    "768x1024",
+    "1024x768",
+    "1280x800",
+    "1440x900",
+    "844x390",
+    "667x375"
+  ],
+  "routes_and_rendered_states": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/referral",
+      "status": 200
+    },
+    {
+      "path": "/terms",
+      "status": 200
+    },
+    {
+      "path": "/about",
+      "status": 200
+    },
+    {
+      "path": "/testimonials",
+      "status": 200
+    },
+    {
+      "path": "/contact",
+      "status": 200
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200
+    },
+    {
+      "path": "/complaints-policy",
+      "status": 200
+    },
+    {
+      "path": "/cookie-policy",
+      "status": 200
+    },
+    {
+      "path": "/services",
+      "status": 200
+    },
+    {
+      "path": "/ccr009-return-assistance-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/what-is-ccr009",
+      "status": 200
+    },
+    {
+      "path": "/who-needs-to-submit-ccr009",
+      "status": 200
+    },
+    {
+      "path": "/what-information-is-needed-for-ccr009",
+      "status": 200
+    },
+    {
+      "path": "/ccr009-reporting-checklist-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/ccr009-vs-ccr007",
+      "status": 200
+    },
+    {
+      "path": "/common-ccr009-reporting-mistakes",
+      "status": 200
+    },
+    {
+      "path": "/how-to-prepare-for-ccr009-return",
+      "status": 200
+    },
+    {
+      "path": "/do-motor-dealers-need-fca-authorisation",
+      "status": 200
+    },
+    {
+      "path": "/fca-licence-car-dealers",
+      "status": 200
+    },
+    {
+      "path": "/limited-permission-fca-authorisation-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/credit-broking-permission-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/fca-application-documents-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/why-fca-applications-get-delayed",
+      "status": 200
+    },
+    {
+      "path": "/after-fca-approval-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/when-is-ccr009-due",
+      "status": 200
+    },
+    {
+      "path": "/consumer-duty-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/website-compliance-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/fca-compliance-motor-dealers-guide",
+      "status": 200
+    },
+    {
+      "path": "/fca-authorisation-motor-dealers",
+      "status": 200
+    },
+    {
+      "path": "/motor-finance-for-dealerships",
+      "status": 200
+    },
+    {
+      "path": "/motor-dealer-compliance",
+      "status": 200
+    },
+    {
+      "path": "/pricing",
+      "status": 200
+    },
+    {
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "path": "/register",
+      "status": 200
+    },
+    {
+      "path": "/forgot-password",
+      "status": 200
+    },
+    {
+      "path": "/verify-email-notice",
+      "status": 200
+    },
+    {
+      "path": "/logout",
+      "status": 200
+    },
+    {
+      "path": "/audit-not-found",
+      "status": 404
+    },
+    {
+      "path": "/dashboard",
+      "status": 200
+    },
+    {
+      "path": "/reports",
+      "status": 200
+    },
+    {
+      "path": "/reports/new",
+      "status": 200
+    },
+    {
+      "path": "/reports/3/edit",
+      "status": 200
+    },
+    {
+      "path": "/qa-states/registration-error",
+      "status": 400
+    },
+    {
+      "path": "/qa-states/registration-terms",
+      "status": 200
+    },
+    {
+      "path": "/qa-states/verification-resend",
+      "status": 200
+    },
+    {
+      "path": "/qa-states/reset-password",
+      "status": 200
+    },
+    {
+      "path": "/qa-states/reset-validation",
+      "status": 400
+    },
+    {
+      "path": "/qa-states/unsubscribe-confirmation",
+      "status": 200
+    },
+    {
+      "path": "/qa-states/report-validation",
+      "status": 400
+    },
+    {
+      "path": "/qa-states/stale-report",
+      "status": 409
+    },
+    {
+      "path": "/qa-states/empty-dashboard",
+      "status": 200
+    },
+    {
+      "path": "/qa-states/empty-reports",
+      "status": 200
+    }
+  ],
+  "full_layout_checks": 636,
+  "final_focused_layout_checks": 84,
+  "final_focused_paths": [
+    "/",
+    "/fca-authorisation-motor-dealers",
+    "/referral",
+    "/contact",
+    "/dashboard",
+    "/reports/new",
+    "/fca-application-documents-motor-dealers"
+  ],
+  "automated_tests": 47,
+  "core_browser_interaction_assertions": 22,
+  "extended_browser_interaction_assertions": 30,
+  "limitations": "See README-MOBILE-UPDATE.md. Mocked integrations; no real customer activity."
+}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
-  <title><%= (typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle : '009 Compliance | FCA Compliance Authorisation Assistance' %></title>
+  <title><%= (typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle : '009 Compliance | FCA Authorisation Assistance for Motor Dealers' %></title>
 
 <meta name="description" content="<%= (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : 'Monthly FCA compliance reporting portal for motor dealers. Submit MI, track submissions, and maintain evidence-ready records with 009 Compliance.' %>">
 
-<link rel="canonical" href="<%= (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : '' %>">
+<% if (typeof canonicalUrl !== 'undefined' && canonicalUrl) { %><link rel="canonical" href="<%= canonicalUrl %>"><% } %>
 
 <meta name="robots" content="<%= (typeof robots !== 'undefined' && robots) ? robots : 'index,follow' %>">
 <meta property="og:title" content="<%= (typeof ogTitle !== 'undefined' && ogTitle) ? ogTitle : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle : '009 Compliance | FCA Compliance Reporting Portal') %>">
@@ -14,15 +14,16 @@
 <meta property="og:type" content="<%= (typeof ogType !== 'undefined' && ogType) ? ogType : 'website' %>">
 <meta property="og:url" content="<%= (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : '' %>">
 <meta property="og:site_name" content="009 Compliance">
+<meta property="og:locale" content="en_GB">
 <meta property="og:image" content="<%= (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://009compliance.com/images/logo1resized.png' %>">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta property="og:image:alt" content="009 Compliance logo">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<%= (typeof ogTitle !== 'undefined' && ogTitle) ? ogTitle : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle : '009 Compliance | FCA Compliance Reporting Portal') %>">
 <meta name="twitter:description" content="<%= (typeof ogDescription !== 'undefined' && ogDescription) ? ogDescription : ((typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : 'Monthly FCA compliance reporting portal for motor dealers. Submit MI, track submissions, and maintain evidence-ready records with 009 Compliance.') %>">
 <meta name="twitter:image" content="<%= (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://009compliance.com/images/logo1resized.png' %>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
 <!-- Schema.org Organization -->
 <script type="application/ld+json">
@@ -31,6 +32,7 @@
   "@type": "Organization",
   "@id": "https://009compliance.com/#organization",
   "name": "009 Compliance",
+  "legalName": "009 Compliance Ltd",
   "url": "https://009compliance.com",
   "logo": "https://009compliance.com/images/logo1resized.png",
   "email": "info@009compliance.com",
@@ -48,11 +50,13 @@
 <% if (typeof pageSchema !== 'undefined' && pageSchema) { %>
   <% (Array.isArray(pageSchema) ? pageSchema : [pageSchema]).forEach((schemaItem) => { %>
 <script type="application/ld+json">
-<%- JSON.stringify(schemaItem, null, 2) %>
+<%- jsonLd(schemaItem) %>
 </script>
   <% }) %>
 <% } %>
 
+  <meta name="csrf-token" content="<%= csrfToken %>">
+  <% if (!sensitivePage) { %>
   <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMQFTHWWKP"></script>
 <script>
@@ -62,171 +66,186 @@
 
   gtag('config', 'G-BMQFTHWWKP');
 </script>
+  <% } %>
 
   <!-- FAVICONS: light & dark mode -->
    <link rel="icon" type="image/png" href="/logo-dark.png" media="(prefers-color-scheme: light)">
    <link rel="icon" type="image/png" href="/logo-light.png" media="(prefers-color-scheme: dark)">
    <link rel="apple-touch-icon" href="/logo-dark.png">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-iqXNtL4GKJ8VimG/rI3iZ4prJ7pXSq6X7P0QakHEzKirMld7ObZfM/C1Jr+6r7aqtmLbXR4Yg8lJWS1d76Z0TQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <!-- Tailwind utilities are still used by the client portal and legal pages. -->
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="<%= assetPath('/css/styles.css') %>" />
+  <link rel="stylesheet" href="<%= assetPath('/css/redesign.css') %>" />
+  <link rel="stylesheet" href="<%= assetPath('/css/site.css') %>" />
+  <link rel="stylesheet" href="<%= assetPath('/css/campaign.css') %>" />
+  <!-- Match the original CDN insertion order, using compiled local CSS. -->
+  <link rel="stylesheet" href="<%= assetPath('/css/tailwind.css') %>" />
 </head>
 
-<body class="bg-slate-950 text-slate-50 min-h-screen flex flex-col">
-
-<header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center gap-6">
-    <!-- LEFT: logo -->
-    <a href="/" class="flex items-center gap-3 shrink-0">
-      <img src="/images/logo1resized.png" alt="009 Compliance" width="512" height="512" fetchpriority="high" class="h-16 md:h-20 w-auto object-contain" />
-      <!-- Hide the long subtitle on smaller screens so it never collides -->
-      <div class="hidden xl:flex flex-col leading-tight">
-        <span class="font-semibold tracking-tight text-slate-50">009 Compliance</span>
-        <span class="text-xs text-slate-400">FCA Compliance and Reporting Support for Motor Dealers</span>
-      </div>
+<% const isSales = typeof salesPage !== 'undefined' && salesPage;
+   const path = typeof currentPath !== 'undefined' ? currentPath : '';
+   const meetingHref = (typeof inPageMeeting !== 'undefined' && inPageMeeting) ? '#book-meeting' : '/contact#book-meeting';
+   const festive = isSales && campaign.active;
+   const navActive = (href) => (path === href || (href !== '/' && path.indexOf(href) === 0)) ? ' aria-current="page"' : ''; %>
+<body class="nine-site site-v8 site-v9 <%= isSales ? 'is-sales-page' : 'is-app-page' %><%= festive ? ' is-festive' : '' %> min-h-screen flex flex-col">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="gh" data-site-header>
+  <div class="gh__bar">
+    <a href="/" class="brand" aria-label="009 Compliance home">
+      <img src="/images/logo1resized.png" alt="009 Compliance" width="512" height="512" fetchpriority="high" />
+      <span class="brand__text">
+        <span class="brand__name">009 Compliance</span>
+        <span class="brand__tag">FCA support for motor dealers</span>
+      </span>
     </a>
 
-    <!-- DESKTOP NAV -->
-    <nav class="hidden lg:flex items-center gap-8 text-sm mx-auto">
-      <a href="/" class="hover:text-emerald-400 transition">Home</a>
-      <a href="/about" class="hover:text-emerald-400 transition">About</a>
-      <div class="relative group">
-        <a
-          href="/services"
-          class="inline-flex items-center gap-1 hover:text-emerald-400 transition"
-          aria-haspopup="true"
-        >
-          Services
-          <span class="text-xs" aria-hidden="true">▾</span>
-        </a>
-        <div class="pointer-events-none absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
-          <div class="rounded-xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-950/20">
-            <a href="/fca-authorisation-motor-dealers" class="block rounded-lg px-3 py-2 text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
-              FCA Authorisation for Motor Dealers
-            </a>
-            <a href="/motor-dealer-compliance" class="block rounded-lg px-3 py-2 text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
-              Motor Dealer Compliance Support
-            </a>
-            <a href="/ccr009-return-assistance-motor-dealers" class="block rounded-lg px-3 py-2 text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
-              CCR009 Return Assistance
-            </a>
+    <nav class="gh__nav" aria-label="Main">
+      <div class="gh__menu">
+        <a href="/services" aria-haspopup="true"<%- (['/services','/fca-authorisation-motor-dealers','/ccr009-return-assistance-motor-dealers','/motor-dealer-compliance','/motor-finance-for-dealerships'].includes(path) ? ' aria-current="page"' : '') %>>Services <span aria-hidden="true" class="gh__caret">▾</span></a>
+        <div class="gh__dropdown">
+          <div>
+            <a href="/fca-authorisation-motor-dealers"><strong>FCA Authorisation Assistance</strong><span><%= campaign.showPrice ? '£' + offer.startPayment + ' to get started, then £' + offer.monthlyPayment + ' a month' : 'Application support for motor dealers' %></span></a>
+            <a href="/ccr009-return-assistance-motor-dealers"><strong>CCR009 Return Assistance</strong><span>Organised annual reporting preparation</span></a>
+            <a href="/motor-dealer-compliance"><strong>Ongoing Compliance Support</strong><span>Practical help after authorisation</span></a>
+            <a href="/motor-finance-for-dealerships"><strong>Motor Finance for Dealerships</strong><span>Explore customer finance with broker support</span></a>
+            <a href="/services" class="gh__all">All services →</a>
           </div>
         </div>
       </div>
-      <a href="/contact" class="hover:text-emerald-400 transition">Contact</a>
-      <a href="/pricing" class="hover:text-emerald-400 transition">Pricing</a>
+      <a href="/pricing"<%- navActive('/pricing') %>>Pricing</a>
+      <a href="/testimonials"<%- navActive('/testimonials') %>>Testimonials</a>
+      <a href="/about"<%- navActive('/about') %>>About</a>
+      <a href="/referral"<%- navActive('/referral') %>>Referrals</a>
+      <a href="/contact"<%- navActive('/contact') %>>Contact</a>
     </nav>
 
-    <!-- RIGHT: auth buttons (desktop) -->
-    <div class="hidden lg:flex items-center gap-4 shrink-0">
+    <div class="gh__actions">
       <% if (currentUser) { %>
-        <a href="/dashboard" class="hover:text-emerald-400 transition">Dashboard</a>
-        <span class="text-slate-500 hidden xl:inline">
-          Signed in as <span class="text-slate-100"><%= currentUser.name %></span>
-        </span>
-        <a href="/logout"
-          class="px-3 py-1 rounded-lg border border-slate-700 hover:border-emerald-500 hover:text-emerald-400 transition">
-          Log out
-        </a>
+        <a href="/dashboard" class="gh__quiet">Dashboard</a>
+        <a href="/logout" class="gh__quiet">Log out</a>
       <% } else { %>
-        <a href="/login" class="hover:text-emerald-400 transition">Log in</a>
-        <a href="/register"
-          class="px-3 py-1 rounded-lg bg-emerald-500 text-slate-900 font-semibold hover:bg-emerald-400 transition">
-          Get started
-        </a>
+        <a href="/login" class="gh__quiet">Client login</a>
       <% } %>
+      <a href="<%= meetingHref %>" class="btn btn--primary btn--sm" data-meeting-cta>Book a 15-minute call</a>
     </div>
 
-    <!-- MOBILE BUTTON -->
-    <button
-      id="mobileMenuBtn"
-      class="lg:hidden ml-auto inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-800 text-slate-200"
-      aria-label="Open menu"
-      type="button"
-    >
-      ☰
+    <button id="mobileMenuBtn" aria-controls="mobileMenu" aria-expanded="false" class="gh__burger" aria-label="Open menu" type="button">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
     </button>
   </div>
 
- <!-- MOBILE MENU PANEL -->
-<div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white text-slate-900">
-  <div class="max-w-7xl mx-auto px-6 py-4 space-y-3 text-sm">
-    <a href="/" class="block hover:text-orange-500 transition">Home</a>
-    <a href="/about" class="block hover:text-orange-500 transition">About</a>
-    <a href="/services" class="block hover:text-orange-500 transition">Services</a>
-    <div class="pl-4 space-y-2 border-l border-slate-200">
-      <a href="/fca-authorisation-motor-dealers" class="block hover:text-orange-500 transition">FCA Authorisation for Motor Dealers</a>
-      <a href="/motor-dealer-compliance" class="block hover:text-orange-500 transition">Motor Dealer Compliance Support</a>
-      <a href="/ccr009-return-assistance-motor-dealers" class="block hover:text-orange-500 transition">CCR009 Return Assistance</a>
-    </div>
-    <a href="/contact" class="block hover:text-orange-500 transition">Contact</a>
-    <a href="/pricing" class="block hover:text-orange-500 transition">Pricing</a>
+  <div id="mobileMenu" class="gh__mobile" hidden>
+    <nav aria-label="Mobile">
+      <a href="/services">All services</a>
+      <a href="/fca-authorisation-motor-dealers">FCA authorisation assistance</a>
+      <a href="/ccr009-return-assistance-motor-dealers">CCR009 return assistance</a>
+      <a href="/motor-dealer-compliance">Ongoing compliance support</a>
+      <a href="/motor-finance-for-dealerships">Motor finance for dealerships</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/testimonials">Testimonials</a>
+      <a href="/about">About</a>
+      <a href="/referral">Referral programme</a>
+      <a href="/contact">Contact</a>
+      <div class="gh__mobile-auth">
+        <% if (currentUser) { %>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/logout">Log out</a>
+        <% } else { %>
+          <a href="/login">Client login</a>
+          <a href="/register">Register for the client portal</a>
+        <% } %>
+      </div>
+      <a href="<%= meetingHref %>" class="btn btn--primary btn--block">Book a 15-minute call</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="pt-3 border-t border-slate-200 flex items-center gap-3">
+<main id="main-content" class="site-main flex-1" tabindex="-1">
+  <% if ((success && success.length) || (error && error.length)) { %>
+    <div class="site-flash-wrap">
+      <% if (success && success.length) { %>
+        <div class="site-flash site-flash--success site-success" role="status"><%= success[0] %></div>
+      <% } %>
+      <% if (error && error.length) { %>
+        <div class="site-flash site-flash--error" role="alert"><%= error[0] %></div>
+      <% } %>
+    </div>
+  <% } %>
+
+  <% if (isSales) { %>
+    <%- body %>
+  <% } else { %>
+    <div class="site-container">
+      <%- body %>
+    </div>
+  <% } %>
+</main>
+
+<footer class="gf">
+  <div class="gf__inner">
+    <div class="gf__brand">
+      <a href="/" class="brand brand--footer">
+        <img src="/images/logo1resized.png" alt="009 Compliance" width="512" height="512" loading="lazy" />
+        <span class="brand__text"><span class="brand__name">009 Compliance</span><span class="brand__tag">FCA support for motor dealers</span></span>
+      </a>
+      <p>Practical, plain-English FCA authorisation and compliance support from people who understand the motor trade.</p>
+      <a href="<%= meetingHref %>" class="btn btn--primary btn--sm">Book a 15-minute call</a>
+    </div>
+    <nav class="gf__col" aria-label="Services">
+      <h2>Services</h2>
+      <a href="/fca-authorisation-motor-dealers">FCA Authorisation for Motor Dealers</a>
+      <a href="/ccr009-return-assistance-motor-dealers">CCR009 Return Assistance</a>
+      <a href="/motor-dealer-compliance">Motor Dealer Compliance Support</a>
+      <a href="/motor-finance-for-dealerships">Motor Finance for Dealerships</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/referral">Referral programme</a>
+      <a href="/services">All services</a>
+    </nav>
+    <nav class="gf__col" aria-label="Guides">
+      <h2>Guides</h2>
+      <a href="/do-motor-dealers-need-fca-authorisation">Do motor dealers need FCA authorisation?</a>
+      <a href="/fca-application-documents-motor-dealers">FCA application documents</a>
+      <a href="/limited-permission-fca-authorisation-motor-dealers">Limited permission authorisation</a>
+      <a href="/what-is-ccr009">What is CCR009?</a>
+      <a href="/consumer-duty-motor-dealers">Consumer Duty for motor dealers</a>
+    </nav>
+    <div class="gf__col">
+      <h2>Contact</h2>
+      <a href="mailto:info@009compliance.com">info@009compliance.com</a>
+      <a href="tel:03300432377">03300432377</a>
+      <p>C/O Hilton Jones Hollinwood Business Centre, Albert Street, OL8 3QL, Oldham</p>
+      <p>Monday–Friday: 8:30AM - 6:30PM</p>
       <% if (currentUser) { %>
-        <a href="/dashboard" class="hover:text-orange-500 transition">Dashboard</a>
-        <a href="/logout"
-          class="ml-auto px-3 py-1 rounded-lg border border-slate-300 hover:border-orange-500 hover:text-orange-500 transition">
-          Log out
-        </a>
+        <a href="/dashboard">Client dashboard</a>
       <% } else { %>
-        <a href="/login" class="hover:text-orange-500 transition">Log in</a>
-        <a href="/register"
-          class="ml-auto px-3 py-1 rounded-lg bg-orange-500 text-white font-semibold hover:bg-orange-400 transition">
-          Get started
-        </a>
+        <a href="/login">Client login</a>
+        <a href="/register">Client portal registration</a>
       <% } %>
     </div>
   </div>
-</div>
-</header>
-
-<script>
-  (function () {
-    const btn = document.getElementById('mobileMenuBtn');
-    const menu = document.getElementById('mobileMenu');
-    if (!btn || !menu) return;
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  })();
-</script>
-
-  <main class="flex-1">
-    <div class="max-w-screen-2xl mx-auto px-6 py-6">
-      <% if (success && success.length) { %>
-        <div class="mb-4 rounded-xl border border-emerald-500/50 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-200">
-          <%= success[0] %>
-        </div>
-      <% } %>
-
-      <% if (error && error.length) { %>
-        <div class="mb-4 rounded-xl border border-rose-500/50 bg-rose-500/5 px-4 py-3 text-sm text-rose-200">
-          <%= error[0] %>
-        </div>
-      <% } %>
-
-      <%- body %>
-    </div>
-  </main>
-
-  <footer class="border-t border-slate-800 py-6 mt-8">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col gap-3 text-xs text-slate-500">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <p>© <%= new Date().getFullYear() %> Nothing Burger Media, 009 Compliance. All rights reserved.</p>
-        <p>009 Compliance Ltd is a company registered in England and Wales (company number 16910484). ICO Number - ZC072139</p>
-      </div>
-      <nav class="flex flex-col sm:flex-row gap-2 sm:gap-5" aria-label="Footer priority service links">
-        <a href="/fca-authorisation-motor-dealers" class="hover:text-orange-500 transition">FCA Authorisation for Motor Dealers</a>
-        <a href="/motor-dealer-compliance" class="hover:text-orange-500 transition">Motor Dealer Compliance Support</a>
-        <a href="/ccr009-return-assistance-motor-dealers" class="hover:text-orange-500 transition">CCR009 Return Assistance</a>
+  <div class="gf__legal">
+    <div class="gf__legal-inner">
+      <p>© <%= new Date().getFullYear() %> Main Mission Media, 009 Compliance. All rights reserved.</p>
+      <p>009 Compliance Ltd is a company registered in England and Wales (company number 16910484). ICO Number - ZC072139</p>
+      <nav aria-label="Legal">
+        <a href="/terms">Terms and Conditions</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/complaints-policy">Complaints Policy</a>
+        <a href="/cookie-policy">Cookies</a>
       </nav>
     </div>
-  </footer>
+  </div>
+</footer>
 
-    <div id="success-toast"
+<% if (isSales && !(typeof hideStickyCta !== 'undefined' && hideStickyCta)) { %>
+  <div class="mobile-cta-bar" data-mobile-cta aria-hidden="true" inert>
+    <a href="<%= meetingHref %>" class="btn btn--primary btn--block">Book a 15-minute call</a>
+  </div>
+<% } %>
+
+<div id="success-toast"
      class="fixed top-6 right-6 z-50 hidden max-w-sm rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-4 text-sm text-emerald-200 shadow-lg backdrop-blur">
   <div class="flex items-start gap-3">
     <div class="mt-0.5 text-emerald-400">✔</div>
@@ -244,6 +263,13 @@
     window.__TOAST_SUCCESS__ = "You have successfully completed a Monthly Submission Form!";
   <% } %>
 </script>
-  <script defer src="/js/main.js"></script>
+  <script defer src="<%= assetPath('/js/main.js') %>"></script>
+  <script defer src="<%= assetPath('/js/site.js') %>"></script>
+  <% if (isSales || /data-(campaign-bar|offer-countdown|santa|road|ladder|calc|growing-reward|referral-steps)\b/.test(body)) { %>
+  <script defer src="<%= assetPath('/js/campaign.js?v=75') %>"></script>
+  <% } %>
+  <% if (body.includes('data-christmas-arrival')) { %>
+  <script defer src="<%= assetPath('/js/christmas-arrival.js') %>"></script>
+  <% } %>
 </body>
 </html>

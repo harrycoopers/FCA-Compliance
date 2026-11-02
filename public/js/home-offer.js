@@ -1,0 +1,36 @@
+(() => {
+  const card = document.querySelector('[data-home-offer]');
+  if (!card) return;
+  const panel = card.querySelector('.offer-shell');
+  const fallback = document.querySelector('[data-home-offer-fallback]');
+  const deadline = Date.parse(card.dataset.deadline);
+  const festive = !!card.closest('.has-festive-offer');
+  if (festive) {
+    const palette = {'#82b9ff':'#efbc72','#5093f7':'#d84958','#2563eb':'#a51d37','#e5f1fc':'#ffe6b0','#d0e9ff':'#f5d395','#d6edff':'#ffe6b0'};
+    card.querySelectorAll('.present [fill], .present [stroke]').forEach(el => {
+      for (const attr of ['fill', 'stroke']) {
+        const value = el.getAttribute(attr);
+        if (palette[value]) el.setAttribute(attr, palette[value]);
+      }
+    });
+    [['box',['#eb6570','#ab1e3a']],['side',['#af1e39','#70172a']]].forEach(([id,colors]) => {
+      card.querySelectorAll('#'+id+' stop').forEach((stop,i) => stop.setAttribute('stop-color', colors[i]));
+    });
+  }
+  let visible = !('IntersectionObserver' in window);
+  const sync = () => panel.classList.toggle('paused', !visible || document.hidden);
+  sync();
+  document.addEventListener('visibilitychange', sync);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }).observe(card);
+  }
+  const expire = () => {
+    if (festive && Number.isFinite(deadline) && Date.now() >= deadline) {
+      card.hidden = true;
+      if (fallback) fallback.hidden = false;
+      visible = false; sync();
+    }
+  };
+  expire();
+  setInterval(expire, 1000);
+})();

@@ -1,0 +1,14 @@
+(() => {
+ const section = document.querySelector('.auth-easy');
+ if (!section || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ section.classList.add('ae-ready');
+ const observer = new IntersectionObserver(entries => {
+   const visible = entries.filter(entry => entry.isIntersecting && entry.intersectionRect.height >= Math.min(entry.boundingClientRect.height * .95, Math.max(100, innerHeight - 100) * .8));
+   visible.forEach((entry, index) => {
+     entry.target.style.setProperty('--ae-delay', `${matchMedia('(min-width: 601px)').matches ? index * .3 : 0}s`);
+     entry.target.classList.add('ae-play');
+     observer.unobserve(entry.target);
+   });
+ }, {threshold: [0,.1,.25,.5,.75,.95]});
+ section.querySelectorAll('.ae-visual').forEach(visual => observer.observe(visual));
+})();

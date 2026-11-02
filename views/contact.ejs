@@ -1,132 +1,120 @@
-<div class="max-w-7xl mx-auto">
-  <div class="rounded-3xl border border-slate-800 bg-slate-900/40 p-10">
-    <p class="text-sm uppercase tracking-[0.18em] text-emerald-400 mb-3">Contact</p>
-    <h1 class="text-4xl font-semibold text-slate-50">Get in touch</h1>
-    <p class="text-slate-400 mt-3 max-w-3xl">
-      Use the details below to contact 009 Compliance. We’ll respond as soon as possible.
-    </p>
+<link rel="stylesheet" href="<%= assetPath('/css/message-studio.css?v=53') %>">
+<% const tick = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+%>
+<div class="contact">
 
-    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
-      <!-- Address -->
-      <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-        <div class="h-12 w-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 text-xl">
-          🏠
-        </div>
-        <p class="mt-4 font-semibold text-slate-100">Address</p>
-        <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-          <!-- replace with your real address -->
-          C/O Hilton Jones Hollinwood Business Centre, Albert Street,<br/>
-          OL8 3QL, Oldham
+  <section class="sec" id="book-meeting" aria-labelledby="book-title" style="padding-top:clamp(32px,5vw,64px)">
+    <div class="wrap booking">
+      <div class="booking__intro">
+        
+        <h1 class="display-l" id="book-title">See if 009 Compliance is <span class="serif">the right fit for you.</span></h1>
+        <p class="lede">Schedule a quick, 15-minute call to explore how 009 Compliance can support your dealership with FCA authorisation, CCR009 returns and ongoing compliance administration.</p>
+        <ul class="check-list">
+          <li><span class="tick"><%- tick %></span>How your dealership operates and what help it needs</li>
+          <li><span class="tick"><%- tick %></span>How our support could fit<% if (campaign.showPrice) { %>, including FCA authorisation assistance from £<%= offer.startPayment %> to get started<% } %></li>
+          <li><span class="tick"><%- tick %></span>The proposed scope, payments and commitment</li>
+          <li><span class="tick"><%- tick %></span>Next steps, if the service is right for you</li>
+        </ul>
+        <p class="note" style="margin-top:26px">
+          <% if (bookingUrl) { %>
+            Choose a time in the scheduler. Your booking is confirmed by the scheduling service, which will email you the details.
+          <% } else { %>
+            Choose an available time and enter your name, email address, company and phone number. We’ll call you at that time.
+          <% } %>
         </p>
+        <p class="fine" style="margin-top:16px">The call is a conversation to help you decide. It isn’t regulatory advice and doesn’t confirm eligibility.</p>
       </div>
 
-      <!-- Email -->
-      <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-        <div class="h-12 w-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 text-xl">
-          ✉️
-        </div>
-        <p class="mt-4 font-semibold text-slate-100">Email</p>
-        <p class="text-sm text-slate-400 mt-2">
-          <a class="hover:text-emerald-300 transition" href="mailto:info@009compliance.com">
-            info@009compliance.com
-          </a>
-        </p>
-      </div>
+      <%- include('partials/meeting_form') %>
+    </div>
+  </section>
 
-      <!-- Phone -->
-      <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-        <div class="h-12 w-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 text-xl">
-          📞
-        </div>
-        <p class="mt-4 font-semibold text-slate-100">Phone</p>
-        <p class="text-sm text-slate-400 mt-2">
-          <a class="hover:text-emerald-300 transition" href="tel:03300432377">
-            03300432377
-          </a>
-        </p>
-      </div>
-
-      <!-- Hours -->
-      <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-        <div class="h-12 w-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 text-xl">
-          ⏰
-        </div>
-        <p class="mt-4 font-semibold text-slate-100">Hours</p>
-        <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-          Monday–Friday: 8:30AM - 6:30PM<br/>
-        </p>
+  <section class="sec sec--tight sec--flush-top" aria-labelledby="details-title">
+    <div class="wrap">
+      <h2 class="display-m" id="details-title" style="margin-bottom:18px">Other ways to reach us</h2>
+      <div class="contact-cards">
+        <div class="contact-card"><b>Phone</b><a href="tel:03300432377">03300432377</a></div>
+        <div class="contact-card"><b>Email</b><a href="mailto:info@009compliance.com">info@009compliance.com</a></div>
+        <div class="contact-card"><b>Hours</b><p>Monday–Friday: 8:30AM - 6:30PM</p></div>
+        <div class="contact-card"><b>Address</b><p>C/O Hilton Jones Hollinwood Business Centre, Albert Street, OL8 3QL, Oldham</p></div>
       </div>
     </div>
+  </section>
 
-    <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-      <p class="text-slate-200 font-semibold">Prefer Email?</p>
-      <p class="text-sm text-slate-400 mt-2">
-        Send your firm name and what you need help with monthly reporting, CCR support or portal setup.
-      </p>
-    </div>
-
-    <section id="send-message" class="contact-enquiry-card" aria-labelledby="contact-enquiry-title">
-      <div class="contact-enquiry-toast" data-contact-enquiry-toast role="status" aria-live="polite">
-        <div class="contact-enquiry-toast__icon">✓</div>
+  <section class="sec sec--flush-top" aria-labelledby="contact-enquiry-title">
+    <div class="wrap">
+      <div class="split">
         <div>
-          <p class="contact-enquiry-toast__title">Enquiry Sent</p>
-          <p class="contact-enquiry-toast__text">Thank you. We'll get back to you as soon as possible.</p>
+          
+          <h2 class="display-m">Send us a message</h2>
+          <p class="lede">Send your firm name and what you need help with, whether that’s FCA authorisation, CCR009 support, ongoing compliance or portal setup. We’ll get back to you as soon as possible.</p>
+          <div class="portal-strip" style="margin-top:26px"><span><strong>Existing client?</strong> Use the client portal for monthly submissions.</span><a class="text-link" href="/login">Client login</a></div>
         </div>
+        <section id="send-message" class="contact-enquiry-card message-studio" aria-labelledby="contact-enquiry-title">
+          <div class="contact-enquiry-toast" data-contact-enquiry-toast role="status" aria-live="polite">
+            <div class="contact-enquiry-toast__icon">✓</div>
+            <div>
+              <p class="contact-enquiry-toast__title">Enquiry Sent</p>
+              <p class="contact-enquiry-toast__text">Thank you. We'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+
+          <div class="contact-enquiry-panel">
+            <div class="contact-enquiry-accent">
+              <div class="message-studio__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 10h32v24H22l-10 7v-7H8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path class="message-studio__line" d="M16 19h16m-16 7h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+              <h2 id="contact-enquiry-title">Let’s talk about your dealership.</h2>
+              <p>Tell us what you need help with. We’ll get back to you as soon as possible.</p>
+            </div>
+
+            <form class="contact-enquiry-form" action="/contact" method="POST" data-contact-enquiry-form novalidate>
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <div class="contact-form-status" data-contact-form-status aria-live="polite"></div>
+
+              <div class="contact-field-grid">
+                <div class="contact-field">
+                  <label for="contactFirstName">First Name</label>
+                  <input id="contactFirstName" name="first_name" type="text" autocomplete="given-name" required />
+                  <p class="contact-field-error" data-error-for="contactFirstName"></p>
+                </div>
+
+                <div class="contact-field">
+                  <label for="contactLastName">Last Name</label>
+                  <input id="contactLastName" name="last_name" type="text" autocomplete="family-name" required />
+                  <p class="contact-field-error" data-error-for="contactLastName"></p>
+                </div>
+
+                <div class="contact-field">
+                  <label for="contactPhone">Phone Number</label>
+                  <input id="contactPhone" name="phone_number" type="tel" autocomplete="tel" required />
+                  <p class="contact-field-error" data-error-for="contactPhone"></p>
+                </div>
+
+                <div class="contact-field">
+                  <label for="contactCompany">Company Name</label>
+                  <input id="contactCompany" name="company_name" type="text" autocomplete="organization" required />
+                  <p class="contact-field-error" data-error-for="contactCompany"></p>
+                </div>
+              </div>
+
+              <div class="contact-field">
+                <label for="contactEmail">Email</label>
+                <input id="contactEmail" name="email" type="email" autocomplete="email" required />
+                <p class="contact-field-error" data-error-for="contactEmail"></p>
+              </div>
+
+              <div class="contact-field">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us a little about your dealership and what you’d like help with…" required></textarea>
+                <p class="contact-field-error" data-error-for="contactMessage"></p>
+              </div>
+
+              <div class="contact-form-actions">
+                <button type="submit" class="contact-submit-button">Send message</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
-
-      <div class="contact-enquiry-panel">
-        <div class="contact-enquiry-accent">
-          <p class="contact-enquiry-kicker">FCA Compliance Enquiry</p>
-          <h2 id="contact-enquiry-title">Send Us a Message</h2>
-          <p>Complete the form below and we'll get back to you as soon as possible.</p>
-        </div>
-
-        <form class="contact-enquiry-form" action="/contact" method="POST" data-contact-enquiry-form novalidate>
-          <div class="contact-form-status" data-contact-form-status aria-live="polite"></div>
-
-          <div class="contact-field-grid">
-            <div class="contact-field">
-              <label for="contactFirstName">First Name</label>
-              <input id="contactFirstName" name="first_name" type="text" autocomplete="given-name" required />
-              <p class="contact-field-error" data-error-for="contactFirstName"></p>
-            </div>
-
-            <div class="contact-field">
-              <label for="contactLastName">Last Name</label>
-              <input id="contactLastName" name="last_name" type="text" autocomplete="family-name" required />
-              <p class="contact-field-error" data-error-for="contactLastName"></p>
-            </div>
-
-            <div class="contact-field">
-              <label for="contactPhone">Phone Number</label>
-              <input id="contactPhone" name="phone_number" type="tel" autocomplete="tel" required />
-              <p class="contact-field-error" data-error-for="contactPhone"></p>
-            </div>
-
-            <div class="contact-field">
-              <label for="contactCompany">Company Name</label>
-              <input id="contactCompany" name="company_name" type="text" autocomplete="organization" required />
-              <p class="contact-field-error" data-error-for="contactCompany"></p>
-            </div>
-          </div>
-
-          <div class="contact-field">
-            <label for="contactEmail">Email</label>
-            <input id="contactEmail" name="email" type="email" autocomplete="email" required />
-            <p class="contact-field-error" data-error-for="contactEmail"></p>
-          </div>
-
-          <div class="contact-field">
-            <label for="contactMessage">Message</label>
-            <textarea id="contactMessage" name="message" rows="7" required></textarea>
-            <p class="contact-field-error" data-error-for="contactMessage"></p>
-          </div>
-
-          <div class="contact-form-actions">
-            <button type="submit" class="contact-submit-button">Submit enquiry</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </div>

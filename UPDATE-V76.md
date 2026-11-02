@@ -1,0 +1,11 @@
+# Client login and meeting availability — 29 October 2026
+
+- Login normalises surrounding email whitespace and case, including legacy database records. Passwords are never trimmed or weakened. Duplicate normalised email records fail safely rather than selecting an arbitrary account.
+- Login rotates and saves the session before redirecting; database, password verification and session failures produce a recoverable error. Existing terms acceptance remains required. Missing reminder tokens no longer block login.
+- New registration emails and password-reset lookups use the same normalisation. The login form has associated labels and password-manager autocomplete.
+- The homepage FAQ asking whether customers need all three services is removed from its shared data source, so it is also absent from generated FAQ structured data. Service pages and the four-service offering remain.
+- The existing non-bookable 12:00 and 12:30 midday gap is displayed as unavailable (dash) slots. Bookable times are unchanged. Edit public/js/booking-availability.js to add real dated or weekly blocks, using UK time. No fictitious customer bookings are created.
+
+Verification: 10 login-handler tests with a temporary SQLite database and real bcrypt hashes passed, covering valid legacy credentials, wrong/missing passwords, unknown accounts, malformed input/hash, duplicate emails, database errors and session failures. Booking tests cover existing midday blocks, configured date blocks, available times, selection invalidation and unblocking. All 37 JavaScript files parsed and 63 EJS templates compiled; affected marketing pages rendered successfully. No real customer credentials or external messages used.
+
+This is a source update, not a live deployment. Existing customers require their original users database and valid passwords. Ensure DB_PATH points to the existing SQLite database on persistent storage and SESSION_SECRET remains stable. No accounts are recreated, passwords bypassed or existing terms accepted automatically. The live customer database, hosting configuration, reset-email delivery and payment integrations were not available for end-to-end verification. Meeting booking remains unconnected as before.

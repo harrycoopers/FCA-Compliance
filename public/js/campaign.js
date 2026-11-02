@@ -1,0 +1,185 @@
+/* 009 Compliance — v9 campaign behaviour.
+   Countdown (from the one fixed deadline), Santa's one-off dance, the road-trip
+   car, referral ladder reveals and the referral discount calculator.
+   Everything here is progressive: pages read correctly without it. */
+(() => {
+  'use strict';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const DAY = 86400000;
+
+  const once = (elements, onEnter, threshold = 0.35) => {
+    if (!elements.length) return;
+    if (!('IntersectionObserver' in window)) { elements.forEach(onEnter); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        onEnter(entry.target);
+      });
+    }, { threshold });
+    elements.forEach((el) => io.observe(el));
+  };
+
+  function initCountdown() {
+    const bar = document.querySelector('[data-campaign-bar]');
+    if (!bar) return;
+    const deadline = new Date(bar.dataset.deadline).getTime();
+    if (Number.isNaN(deadline)) return;
+    const slot = bar.querySelector('[data-countdown]');
+    const update = () => {
+      const left = deadline - Date.now();
+      if (left <= 0) { bar.hidden = true; return; }       // a cached page never shows an expired offer bar
+      const days = Math.ceil(left / DAY);
+      if (slot) slot.textContent = days > 1 ? ` · ${days} days to go` : ' · last day';
+    };
+    update();
+    // Re-check hourly; the figure is derived from the fixed deadline, so it never resets.
+    setInterval(update, 3600000);
+  }
+
+  function initOfferCountdowns() {
+    document.querySelectorAll('[data-offer-countdown]').forEach(el => {
+      const end = Date.parse(el.dataset.deadline);
+      if (!Number.isFinite(end)) return;
+      let timer;
+      const update = () => {
+        const seconds = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+        const values = { days: Math.floor(seconds / 86400), hours: Math.floor(seconds / 3600) % 24, minutes: Math.floor(seconds / 60) % 60, seconds: seconds % 60 };
+        Object.entries(values).forEach(([unit, value]) => { const node = el.querySelector('[data-unit="' + unit + '"]'); if (node) node.textContent = String(value).padStart(2, '0'); });
+        if (!seconds) { const badge = el.closest('[data-offer-card]')?.querySelector('[data-limited-offer]'); if (badge) badge.hidden = true; el.querySelector('.offer-card__countdown-label').textContent = 'Christmas offer has ended'; clearInterval(timer); }
+      };
+      timer = setInterval(update, 1000); update();
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) update(); });
+    });
+  }
+
+  function initSanta() {
+    const santas = Array.from(document.querySelectorAll('[data-santa]'));
+    if (reduced.matches) return;
+    once(santas.filter(santa => !santa.closest('[data-christmas-arrival]')), (santa) => {
+      santa.classList.add('is-dancing');
+      const body = santa.querySelector('.santa__all');
+      const settle = () => santa.classList.remove('is-dancing');
+      body?.addEventListener('animationend', (e) => { if (e.target === body) settle(); });
+      setTimeout(settle, 4200);                               // safety: always settle into the still pose
+    }, 0.6);
+  }
+
+  function initReveals() {
+    once(Array.from(document.querySelectorAll('[data-road]')), (el) => el.classList.add('is-driven'), 0.4);
+    once(Array.from(document.querySelectorAll('[data-ladder]')), (el) => el.classList.add('is-revealed'), 0.3);
+  }
+
+  function initCalculator() {
+    const root = document.querySelector('[data-calc]');
+    if (!root) return;
+    const range = root.querySelector('[data-calc-range]');
+    const count = root.querySelector('[data-calc-count]');
+    const pctEl = root.querySelector('[data-calc-pct]');
+    const monthlyEl = root.querySelector('[data-calc-monthly]');
+    const baseMonthly = Number(root.dataset.monthly) || 100;
+    const note = root.querySelector('[data-calc-note]');
+    const announce = root.querySelector('[data-calc-announce]');
+    const gifts = Array.from(root.querySelectorAll('[data-gift]'));
+    const segs = Array.from(root.querySelectorAll('[data-seg]'));
+    const rows = Array.from(document.querySelectorAll('[data-tier-row]'));
+    const form = root.querySelector('[data-calc-form]');
+    const step = Number(root.dataset.step) || 25;
+    const max = Number(range.max) || 4;
+    range.value = range.defaultValue;
+    let previous = -1;
+    let announceTimer = 0;
+    let numberFrame = 0;
+    let displayedPercent = Number(range.value) * step;
+    const paintNumbers = value => {
+      displayedPercent = value;
+      const rounded = Math.round(value);
+      pctEl.textContent = String(rounded);
+      if (monthlyEl) monthlyEl.textContent = String(Math.round(baseMonthly * (1 - rounded / 100)));
+    };
+    const transitionNumbers = (target, animate) => {
+      cancelAnimationFrame(numberFrame);
+      if (!animate || reduced.matches) { paintNumbers(target); return; }
+      const from = displayedPercent;
+      const started = performance.now();
+      const update = now => {
+        const progress = Math.min(1, (now - started) / 220);
+        paintNumbers(from + (target - from) * (1 - Math.pow(1 - progress, 3)));
+        if (progress < 1) numberFrame = requestAnimationFrame(update);
+        else paintNumbers(target);
+      };
+      numberFrame = requestAnimationFrame(update);
+    };
+
+
+    const percentFor = (n) => Math.min(n * step, 100);
+    const label = (n) => `${n} active qualifying referral${n === 1 ? '' : 's'}`;
+    const noteFor = (n) => n === 0 ? 'Refer a dealer to start building your discount.'
+      : n >= max ? '100% off eligible authorisation and continuing reporting subscription fees.'
+      : `${percentFor(n)}% off eligible authorisation and continuing reporting subscription fees.`;
+
+    const render = (fromUser) => {
+      const n = Math.max(0, Math.min(max, Math.round(Number(range.value))));
+      if (n === previous) return;
+      previous = n;
+      const pct = percentFor(n);
+      const monthly = baseMonthly * (1 - pct / 100);
+
+      range.style.setProperty('--fill', `${(n / max) * 100}%`);
+      range.setAttribute('aria-valuetext', `${label(n)}, ${pct}% off, £${monthly} per month after the initial £100 payment`);
+      count.textContent = String(n);
+      gifts.forEach((g) => g.classList.toggle('is-on', Number(g.dataset.gift) <= n));
+      segs.forEach((s) => s.classList.toggle('is-on', Number(s.dataset.seg) <= n));
+      rows.forEach((r) => r.classList.toggle('is-current', Number(r.dataset.tierRow) === n));
+      note.textContent = noteFor(n);
+      transitionNumbers(pct, fromUser);
+      // The slider's own value text is read as it moves; this polite summary is
+      // announced once the visitor pauses, so updates aren't excessive.
+      if (fromUser) {
+        clearTimeout(announceTimer);
+        announceTimer = setTimeout(() => { announce.textContent = `${label(n)}: ${pct}% off, £${monthly} per month after the initial £100 payment.`; }, 700);
+      }
+    };
+
+    range.addEventListener('input', () => render(true));
+    window.addEventListener('pageshow', () => { range.value = range.defaultValue; previous = -1; render(false); });
+    form?.addEventListener('submit', (event) => { event.preventDefault(); render(true); });
+    render(false);
+  }
+
+  function initGrowingReward() {
+    const el = document.querySelector('[data-growing-reward]');
+    if (!el) return;
+    const count = el.querySelector('[data-reward-count]');
+    const percent = el.querySelector('[data-reward-percent]');
+    const noun = el.querySelector('[data-reward-noun]');
+    const bars = [...el.querySelectorAll('[data-reward-bar]')];
+    let visible = false, frame = 0, elapsed = 0, lastTime = 0, lastStage = -1;
+    function show(n) {
+      if (n === lastStage) return;
+      lastStage = n; count.textContent = n; percent.textContent = n * 25;
+      noun.textContent = n === 1 ? 'active qualifying referral' : 'active qualifying referrals';
+      bars.forEach((bar, i) => bar.classList.toggle('is-lit', i < n));
+    }
+    function tick(now) {
+      if (!visible || document.hidden) return;
+      if (lastTime) elapsed += now - lastTime;
+      lastTime = now;
+      const phase = elapsed % 9200;
+      show(phase < 1800 ? 1 : phase < 3600 ? 2 : phase < 5400 ? 3 : 4);
+      frame = requestAnimationFrame(tick);
+    }
+    function sync() {
+      cancelAnimationFrame(frame); lastTime = 0;
+      if (reduced.matches) { show(4); return; }
+      if (visible && !document.hidden) frame = requestAnimationFrame(tick);
+    }
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, {threshold:.2}).observe(el);
+    document.addEventListener('visibilitychange', sync);
+    reduced.addEventListener('change', sync);
+    show(reduced.matches ? 4 : 1);
+  }
+  const ready = () => { initCountdown(); initOfferCountdowns(); initSanta(); initReveals(); initCalculator(); initGrowingReward(); once(Array.from(document.querySelectorAll('[data-referral-steps]')), el => el.classList.add('is-visible'), 0.2); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true });
+  else ready();
+})();

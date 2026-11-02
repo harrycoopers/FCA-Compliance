@@ -1,0 +1,51 @@
+(() => {
+  document.querySelectorAll('[data-booking-studio]').forEach(root => {
+    const app = root.querySelector('.bs-app');
+    if (!app || root.dataset.ready) return;
+    root.dataset.ready = 'true'; app.hidden = false;
+    const $ = s => root.querySelector(s);
+    const dayFormat = new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'UTC'});
+    const longFormat = new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+    const ukClock = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+    function ukNow(){const parts=Object.fromEntries(ukClock.formatToParts(new Date()).map(p=>[p.type,p.value]));return {date:parts.year+'-'+parts.month+'-'+parts.day,time:parts.hour+':'+parts.minute};}
+    let londonToday = ukNow().date;
+    const days = [];
+    function buildDays(){days.length=0;const cursor=new Date(londonToday+'T12:00:00Z');while(days.length<30){if(cursor.getUTCDay()!==0 && cursor.getUTCDay()!==6)days.push(new Date(cursor));cursor.setUTCDate(cursor.getUTCDate()+1);}}
+    buildDays();
+    const slots=['09:00','09:30','10:00','10:30','11:00','11:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00'];
+    let page=0, date='', time='';
+    const dateLabel=()=>longFormat.format(new Date(date+'T12:00:00Z'));
+    const selection=()=>dateLabel()+' at '+time+' (UK time)';
+    function updateSelection(){
+      const now=ukNow();
+      root.querySelectorAll('[name=demo_time]').forEach(input=>{input.disabled=!date || date<now.date || (date===now.date && input.value<=now.time);if(input.disabled && input.value===time){time='';input.checked=false;}});
+      $('[data-bs-continue]').disabled=!(date&&time); $('[data-bs-selection]').textContent=date&&time?selection():'Choose a date and time to continue.'; }
+    function renderDays(){
+      const group=days.slice(page*5,page*5+5); $('[data-bs-prev]').disabled=page===0; $('[data-bs-next]').disabled=page===5;
+      $('[data-bs-month]').textContent=group[0].toLocaleDateString('en-GB',{month:'long',year:'numeric',timeZone:'UTC'});
+      const host=$('[data-bs-dates]'); host.replaceChildren();
+      group.forEach(d=>{const value=d.toISOString().slice(0,10);const label=document.createElement('label');const input=document.createElement('input');input.type='radio';input.name='demo_date';input.value=value;input.checked=value===date;input.setAttribute('aria-label',longFormat.format(d));const tile=document.createElement('span');const weekday=document.createElement('small');weekday.textContent=value===londonToday?'Today':dayFormat.format(d);const number=document.createElement('b');number.textContent=d.getUTCDate();tile.append(weekday,number);label.append(input,tile);host.append(label);input.addEventListener('change',()=>{date=value;updateSelection();});});
+    }
+    slots.forEach(value=>{const label=document.createElement('label');const input=document.createElement('input');input.type='radio';input.name='demo_time';input.value=value;const tile=document.createElement('span');tile.textContent=value;label.append(input,tile);$('[data-bs-times]').append(label);input.addEventListener('change',()=>{time=value;updateSelection();});});
+    function showStep(n){root.querySelectorAll('[data-bs-step]').forEach(el=>el.hidden=el.dataset.bsStep!==String(n));root.querySelectorAll('[data-bs-progress]').forEach(el=>el.classList.toggle('is-current',Number(el.dataset.bsProgress)<=n));}
+    $('[data-bs-prev]').onclick=()=>{if(page>0){page--;renderDays();}};
+    $('[data-bs-next]').onclick=()=>{if(page<5){page++;renderDays();}};
+    $('[data-bs-continue]').onclick=()=>{updateSelection();if(!date||!time)return;$('[data-bs-chosen]').textContent=selection();showStep(2);$('[name=name]').focus();};
+    $('[data-bs-back]').onclick=()=>{showStep(1);$('[data-bs-continue]').focus();};
+    const form=$('[data-bs-form]');
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      for(const input of form.querySelectorAll('input')){input.value=input.value.trim();input.setCustomValidity(input.value?'':'Please complete this field.');}
+      updateSelection();
+      if(!date||!time){showStep(1);$('[data-bs-selection]').textContent='Please choose a future time.';return;}
+      if(!form.reportValidity())return;
+      showStep(0);$('.bs-progress').hidden=true;$('[data-bs-confirmed]').textContent='15-minute call · '+selection();$('[data-bs-done]').hidden=false;$('[data-bs-done] h4').focus();
+    });
+    form.addEventListener('input',e=>{if(e.target.setCustomValidity)e.target.setCustomValidity('');});
+    $('[data-bs-reset]').onclick=()=>{form.reset();page=0;date='';time='';root.querySelectorAll('[name=demo_time]').forEach(el=>el.checked=false);renderDays();updateSelection();$('[data-bs-done]').hidden=true;$('.bs-progress').hidden=false;showStep(1);$('[data-bs-dates] input').focus();};
+    function refreshClock(){const today=ukNow().date;if(today!==londonToday){londonToday=today;buildDays();page=0;if(date<today){date='';time='';}renderDays();}updateSelection();}
+    renderDays(); updateSelection();
+    setInterval(refreshClock,30000);
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshClock();});
+  });
+})();
