@@ -1,7 +1,7 @@
 'use strict';
 const normalizeEmail = value => typeof value === 'string' ? value.trim().toLowerCase() : '';
 
-function createClientLogin({ db, bcrypt, onUnverified, crypto = require('crypto'), logger = console }) {
+function createClientLogin({ db, bcrypt, crypto = require('crypto'), logger = console }) {
   return async function clientLogin(req, res) {
     const email = normalizeEmail(req.body.email);
     const password = req.body.password;
@@ -18,10 +18,7 @@ function createClientLogin({ db, bcrypt, onUnverified, crypto = require('crypto'
       if (typeof user.password_hash !== 'string' || !(await bcrypt.compare(password, user.password_hash))) {
         return fail('Invalid email or password. Use Forgot password if you need help.');
       }
-      if (user.is_verified !== 1) {
-        if (onUnverified) return await onUnverified(user, req, res);
-        return fail('Please verify your email before logging in.');
-      }
+      // Email confirmation is optional; a unique account and valid password remain mandatory.
       await new Promise((resolve, reject) => req.session.regenerate(err => err ? reject(err) : resolve()));
       const unsubscribeToken = user.unsubscribe_token || crypto.randomBytes(24).toString('hex');
       if (!user.unsubscribe_token) {

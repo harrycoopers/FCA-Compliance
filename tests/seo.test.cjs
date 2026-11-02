@@ -90,9 +90,10 @@ test('robots, sitemap, private pages, 404 and removed diagnostics', async () => 
   assert.equal((sitemap.match(/<loc>/g) || []).length, Object.keys(pages).length);
   assert(!sitemap.includes('<lastmod>')); assert(!sitemap.includes('/login'));
   for (const url of Object.keys(pages)) assert(sitemap.includes('<loc>https://009compliance.com' + url + '</loc>'));
-  for (const url of ['/login', '/register', '/forgot-password', '/verify-email-notice']) {
+  for (const url of ['/login', '/register', '/forgot-password']) {
     const r = await get(url), html = await r.text(); assert.equal(r.status, 200); assert.match(r.headers.get('x-robots-tag'), /noindex/); assert(html.includes('content="noindex,follow"')); assert(!html.includes('rel="canonical"'));
   }
+  const retiredVerification = await get('/verify-email-notice'); assert.equal(retiredVerification.status, 302); assert.equal(retiredVerification.headers.get('location'), '/login');
   for (const url of ['/test-email', '/test-sheets', '/debug-env', '/nonexistent-seo-test']) {
     const r = await get(url); assert.equal(r.status, 404); assert.match(r.headers.get('x-robots-tag'), /noindex/);
   }

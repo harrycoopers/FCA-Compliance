@@ -33,8 +33,8 @@ test('drop-in launcher preserves website routes and connects real local HTTP boo
    const form=await request('/register');assert.equal(form.headers.get('referrer-policy'),'same-origin');assert(token);const firstCookie=customerCookie;
    const precheck=await request('/register/precheck',{firm_name:'Isolated Registration',fca_firm_ref:'123456',name:'QA Customer',email:'registration@example.invalid',mobile_number:'07000000000',password:'Isolated-registration-password-123',confirmPassword:'Isolated-registration-password-123'});
    assert.equal(precheck.headers.get('location'),'/terms');assert.notEqual(customerCookie,firstCookie);
-   await request('/terms');const registered=await request('/register',{agree_terms:'yes'});assert.equal(registered.headers.get('location'),'/verify-email-notice');
-   assert.equal((await request('/dashboard')).headers.get('location'),'/login');
+   await request('/terms');const registered=await request('/register',{agree_terms:'yes'});assert.equal(registered.headers.get('location'),'/dashboard');
+   assert.equal((await request('/dashboard')).status,200);
    assert.equal((await fetch(portal+'/api/data',{headers:{cookie:staffCookie}})).status,200);
   });
   await t.test('valid website CSRF booking appears with phone details in the signed-in staff account',async()=>{

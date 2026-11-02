@@ -45,7 +45,7 @@ test('security and backend regression suite (isolated SQLite, no external servic
   await caseTest('existing ID 31 is preserved and concurrent registrations allocate 32 onward',async()=>{
    await q.run('INSERT INTO users(id,email,password_hash,name,is_verified) VALUES(31,?,?,?,1)',['existing31@example.invalid',legacyHash,'Existing customer']);
    const original=await q.get('SELECT * FROM users WHERE id=31');
-   async function register(suffix){const visitor=jar();await get(visitor,'/register');const data={firm_name:'ID fixture',fca_firm_ref:'123456',name:'Isolated customer',email:`allocation${suffix}@example.invalid`,mobile_number:'07000000000',password:'Isolated-registration-password-123',confirmPassword:'Isolated-registration-password-123'};assert.equal((await post(visitor,'/register/precheck',data)).location,'/terms');await get(visitor,'/terms');assert.equal((await post(visitor,'/register',{agree_terms:'yes'})).location,'/verify-email-notice');return (await q.get('SELECT id FROM users WHERE email=?',[data.email])).id;}
+   async function register(suffix){const visitor=jar();await get(visitor,'/register');const data={firm_name:'ID fixture',fca_firm_ref:'123456',name:'Isolated customer',email:`allocation${suffix}@example.invalid`,mobile_number:'07000000000',password:'Isolated-registration-password-123',confirmPassword:'Isolated-registration-password-123'};assert.equal((await post(visitor,'/register/precheck',data)).location,'/terms');await get(visitor,'/terms');assert.equal((await post(visitor,'/register',{agree_terms:'yes'})).location,'/dashboard');return (await q.get('SELECT id FROM users WHERE email=?',[data.email])).id;}
    assert.equal(await register('first'),32);
    const ids=await Promise.all([register('parallel-a'),register('parallel-b')]);assert.deepEqual(ids.sort((a,b)=>a-b),[33,34]);
    assert.deepEqual(await q.get('SELECT * FROM users WHERE id=31'),original);
@@ -141,16 +141,35 @@ test('security and backend regression suite (isolated SQLite, no external servic
    assert.equal((await q.get('SELECT count(*) n FROM users')).n,before.n);
    assert.equal((await post(visitor,'/register/precheck')).status,400); // Fresh token reaches field validation.
   });
-  await caseTest('registration hashes pending passwords, verifies email, and prevents unverified access',async()=>{
+  await caseTest('registration requires terms, hashes passwords and signs in without sending verification email',async()=>{
    const visitor=jar();await get(visitor,'/register');const data={firm_name:'New Dealer',fca_firm_ref:'123456',name:'<b>New Client</b>',email:'new@example.invalid',mobile_number:'07000000000',password:'New-secure-password-123',confirmPassword:'New-secure-password-123'};
+   const mailCount=mail.length;
    assert.equal((await post(visitor,'/register/precheck',{...data,password:'x',confirmPassword:'x'})).status,400);
    assert.equal((await post(visitor,'/register/precheck',data)).location,'/terms');const page=await get(visitor,'/terms');assert(!page.text.includes(data.password));const pending=await q.all('SELECT data FROM portal_sessions');assert(!pending.some(x=>x.data.includes(data.password)));assert(pending.some(x=>JSON.parse(x.data).pendingPasswordHash));
-   assert.equal((await post(visitor,'/register',{agree_terms:'yes'})).location,'/verify-email-notice');const user=await q.get('SELECT * FROM users WHERE email=?',[data.email]);assert.equal(user.is_verified,0);assert.equal(bcrypt.getRounds(user.password_hash),12);assert.equal((await get(visitor,'/dashboard')).location,'/login');
-   const token=mail.findLast(x=>x.to===data.email).html.match(/verify-email\?token=([a-f0-9]+)/)[1];assert.notEqual(user.verification_token,token);assert(mail.at(-1).html.includes('&lt;b&gt;New Client&lt;/b&gt;'));
-   await get(visitor,'/verify-email?token='+token);assert.equal((await q.get('SELECT is_verified FROM users WHERE id=?',[user.id])).is_verified,1);const verified=await login(data.email,data.password);assert.equal((await get(verified,'/dashboard')).status,200);
+   assert.equal((await post(visitor,'/register',{})).location,'/terms');assert.equal(await q.get('SELECT id FROM users WHERE email=?',[data.email]),undefined);
+   const beforeCookie=visitor.cookie;
+   assert.equal((await post(visitor,'/register',{agree_terms:'yes'})).location,'/dashboard');assert.notEqual(visitor.cookie,beforeCookie);
+   const user=await q.get('SELECT * FROM users WHERE email=?',[data.email]);assert.equal(user.is_verified,0);assert.equal(user.verification_token,null);assert.equal(bcrypt.getRounds(user.password_hash),12);assert.equal(user.terms_version,terms);assert(user.terms_accepted_at);
+   assert.equal((await get(visitor,'/dashboard')).status,200);assert.equal((await get(visitor,'/reports')).status,200);assert.equal(mail.length,mailCount);
+   const sid=decodeURIComponent(visitor.cookie.split('=').slice(1).join('=')).slice(2).split('.')[0];const stored=JSON.parse((await q.get('SELECT data FROM portal_sessions WHERE sid=?',[sid])).data);assert.equal(stored.user.id,user.id);assert.equal(stored.user.is_verified,false);assert(!stored.pendingPasswordHash);assert(!stored.pendingRegister);assert(!stored.pendingVerificationUserId);
+   const signedIn=await login(data.email,data.password);assert.equal((await get(signedIn,'/dashboard')).status,200);assert.equal(mail.length,mailCount);
   });
-  await caseTest('legacy unverified login cannot bypass verification',async()=>{
-   await q.run('INSERT INTO users(email,password_hash,name,is_verified,terms_version) VALUES(?,?,?,0,?)',['unverified@example.invalid',hash,'Unverified',terms]);const visitor=jar();await get(visitor,'/login');const r=await post(visitor,'/login',{email:'unverified@example.invalid',password:'Existing-password-123'});assert.equal(r.location,'/verify-email-notice');assert.equal((await get(visitor,'/reports')).location,'/login');
+  await caseTest('existing unverified accounts require the correct password and retain data isolation',async()=>{
+   await q.run('INSERT INTO users(email,password_hash,name,is_verified,terms_version) VALUES(?,?,?,0,?)',['unverified@example.invalid',hash,'Unverified',terms]);
+   const before=await q.get('SELECT * FROM users WHERE email=?',['unverified@example.invalid']),mailCount=mail.length;
+   const visitor=jar();await get(visitor,'/login');assert.equal((await post(visitor,'/login',{email:before.email,password:'Wrong-password-123'})).location,'/login');assert.equal((await get(visitor,'/reports')).location,'/login');
+   const oldCookie=visitor.cookie;assert.equal((await post(visitor,'/login',{email:before.email,password:'Existing-password-123'})).location,'/dashboard');assert.notEqual(visitor.cookie,oldCookie);assert.equal((await get(visitor,'/reports')).status,200);
+   const after=await q.get('SELECT * FROM users WHERE id=?',[before.id]);assert.equal(after.is_verified,0);assert.equal(after.password_hash,before.password_hash);assert.equal(mail.length,mailCount);
+   assert.equal((await get(visitor,`/reports/${owned.id}/edit`)).status,404);
+   assert.equal((await post(visitor,`/reports/${owned.id}/edit`,body(months[0],{revision:owned.revision}))).status,404);
+   await get(visitor,'/dashboard');await post(visitor,'/reports/new',body(months[7]));const ownReport=await q.get('SELECT * FROM reports WHERE user_id=?',[before.id]);assert(ownReport);assert.equal((await get(a,`/reports/${ownReport.id}/edit`)).status,404);
+   await q.run('UPDATE users SET session_version=session_version+1 WHERE id=?',[before.id]);assert.equal((await get(visitor,'/dashboard')).location,'/login');
+  });
+  await caseTest('retired verification notices and resend forms lead to login without email or authentication',async()=>{
+   const visitor=jar(),mailCount=mail.length;await get(visitor,'/login');
+   assert.equal((await get(visitor,'/verify-email-notice')).location,'/login');
+   const resend=await post(visitor,'/verify-email/resend');assert.equal(resend.status,303);assert.equal(resend.location,'/login');assert.equal(mail.length,mailCount);assert.equal((await get(visitor,'/dashboard')).location,'/login');
+   assert.equal((await post(visitor,'/verify-email/resend',{_csrf:'invalid'})).status,403);
   });
   await caseTest('reset pages exclude analytics; reset is single-use and revokes old sessions',async()=>{
    const visitor=jar();await get(visitor,'/forgot-password');await post(visitor,'/forgot-password',{email:'a@example.invalid'});const token=mail.findLast(x=>x.to==='a@example.invalid').html.match(/reset-password\/([a-f0-9]+)/)[1];const resetPage=await get(visitor,'/reset-password/'+token);assert.equal(resetPage.status,200);assert(!resetPage.text.includes('googletagmanager'));assert.match(resetPage.headers.get('cache-control'),/no-store/);assert.equal(resetPage.headers.get('referrer-policy'),'same-origin');

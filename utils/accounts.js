@@ -15,21 +15,9 @@ function createAccounts({ db, bcrypt, sendEmail, baseUrl, termsVersion, sync }) 
     if (!user || user.session_version !== req.session.user.session_version) {
       await regenerate(req); req.flash('error','Please log in again.'); return res.redirect('/login');
     }
-    if (user.is_verified !== 1) { delete req.session.user; req.session.pendingVerificationUserId = user.id; return res.redirect('/verify-email-notice'); }
     // Refresh permissions/preferences from the DB instead of trusting stale session fields.
     req.session.user = sessionUser(user); res.locals.currentUser = req.session.user; next();
   });
-  async function sendVerification(user) {
-    const token = crypto.randomBytes(32).toString('hex'), hash = tokenHash(token);
-    await q.run('UPDATE users SET verification_token=?,verification_expires=? WHERE id=? AND is_verified=0', [hash,new Date(Date.now()+86400000).toISOString(),user.id]);
-    await sendEmail({to:user.email,subject:'Verify your 009 Compliance email',html:`<p>Hi ${escape(user.name)},</p><p>Confirm your email to access your account:</p><p><a href="${escape(baseUrl)}/verify-email?token=${token}">Verify email</a></p><p>This link expires in 24 hours. If you did not request this account, ignore this email.</p>`});
-  }
-  async function beginVerification(user,req,res) {
-    await regenerate(req); req.session.pendingVerificationUserId=user.id;
-    try { await sendVerification(user); req.flash('success','A verification link has been sent. Please check your inbox.'); }
-    catch { req.flash('error','We could not send the verification email. Try resending it or contact support.'); }
-    await save(req); return res.redirect('/verify-email-notice');
-  }
   function mount(app) {
     const authLimit = rateLimit(db,'authentication',20,15*60000);
     const emailLimit = rateLimit(db,'email-actions',5,15*60000);
@@ -63,7 +51,9 @@ function createAccounts({ db, bcrypt, sendEmail, baseUrl, termsVersion, sync }) 
       catch(e){ if(e.code!=='SQLITE_CONSTRAINT')throw e;req.flash('error','An account with that email already exists. Please log in or reset your password.');return res.redirect('/register'); }
       const user=await q.get('SELECT * FROM users WHERE id=?',[inserted.id]);
       // Rotation removes all pending registration fields and the password hash.
-      return beginVerification(user,req,res);
+      // Do not mark an email address as verified when no ownership check occurred.
+      await regenerate(req);req.session.user=sessionUser(user);
+      await save(req);return res.redirect('/dashboard');
     }));
     app.post('/terms/accept',ensureAuth,wrap(async(req,res)=>{
       if(req.body.agree_terms!=='yes'){req.flash('error','You must agree to the Client Service Agreement to continue.');return res.redirect('/terms');}
@@ -72,23 +62,23 @@ function createAccounts({ db, bcrypt, sendEmail, baseUrl, termsVersion, sync }) 
       // Updating terms must never reactivate reminder preferences or replace creation dates.
       await save(req);res.redirect('/dashboard');
     }));
-    app.get('/verify-email-notice',(req,res)=>res.render('verify_email_notice',{canResend:Boolean(req.session.pendingVerificationUserId)}));
-    app.post('/verify-email/resend',emailLimit,wrap(async(req,res)=>{
-      const user=await q.get('SELECT * FROM users WHERE id=? AND is_verified=0',[req.session.pendingVerificationUserId||0]);
-      if(!user)return res.redirect('/login');
-      try{await sendVerification(user);req.flash('success','A verification link has been sent. Please check your inbox.');}catch{req.flash('error','We could not send the email. Please try again later or contact support.');}
-      res.redirect('/verify-email-notice');
-    }));
+    // Old bookmarks and forms must not strand customers in the retired verification flow.
+    app.get('/verify-email-notice',(req,res)=>res.redirect('/login'));
+    app.post('/verify-email/resend',emailLimit,(req,res)=>{
+      delete req.session.pendingVerificationUserId;
+      req.flash('success','You can log in with your email and password.');
+      res.redirect(303,'/login');
+    });
     app.get('/verify-email',wrap(async(req,res)=>{
-      if(!tokenValid(req.query.token)){req.flash('error','Invalid or expired verification link. Log in to request another.');return res.redirect('/login');}
+      if(!tokenValid(req.query.token)){req.flash('error','This verification link is no longer valid. You can log in with your email and password.');return res.redirect('/login');}
       const result=await q.run('UPDATE users SET is_verified=1,verification_token=NULL,verification_expires=NULL WHERE verification_token=? AND verification_expires>?',[tokenHash(req.query.token),new Date().toISOString()]);
-      req.flash(result.changes?'success':'error',result.changes?'Email verified. You can now log in.':'Invalid or expired verification link. Log in to request another.');
+      req.flash(result.changes?'success':'error',result.changes?'Email verified. You can now log in.':'This verification link is no longer valid. You can log in with your email and password.');
       res.redirect('/login');
     }));
     app.get('/login',(req,res)=>res.render('login'));
     app.post('/login',(req,res,next)=>res.locals.loginSecurityError
       ? res.status(403).render('login', { error: [res.locals.loginSecurityError] })
-      : next(),authLimit,createClientLogin({db,bcrypt,onUnverified:beginVerification}));
+      : next(),authLimit,createClientLogin({db,bcrypt}));
     app.get('/logout',(req,res)=>res.render('account_action',{title:'Log out',message:'Confirm you want to log out.',action:'/logout',button:'Log out',token:''}));
     app.post('/logout',(req,res,next)=>req.session.destroy(e=>{if(e)return next(e);res.clearCookie('009.sid',{path:'/'});res.redirect('/');}));
     app.get('/unsubscribe',wrap(async(req,res)=>{
