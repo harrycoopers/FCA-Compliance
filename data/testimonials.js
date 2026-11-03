@@ -204,9 +204,21 @@ const reviews = [
       "straightforward with very little hassle",
       "efficient, professional"
     ]
-  }
+  },
+  {
+  "paragraphs": [
+    "Jon helped us get our FCA licence sorted and made the whole process much easier than we expected. He was always easy to speak to, kept us updated and made sure we knew what was happening at each stage.",
+    "Everything was dealt with quickly and without any unnecessary hassle. I’d definitely recommend Jon and 009 Compliance to any motor dealer needing help with their FCA application."
+  ],
+  "attribution": "Sherkhan, Director, SK Motors N.E Limited",
+  "excerpt": "Jon helped us get our FCA licence sorted and made the whole process much easier than we expected. He was always easy to speak to, kept us updated and made sure we knew what was happening at each stage. …",
+  "highlights": [
+    "much easier than we expected",
+    "kept us updated"
+  ]
+}
 ];
 
-const applicationReviewIndexes = [1,2,4,5,6,7,8,11,15];
+const applicationReviewIndexes = [1,2,4,5,6,7,8,11,15,16];
 
 module.exports = { reviews, applicationReviewIndexes };

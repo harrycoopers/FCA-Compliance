@@ -18,7 +18,8 @@
     const paren = attribution.indexOf(' (');
     const special = paren > -1;
     const roleEnd = special ? paren : attribution.indexOf(',', nameEnd + 1);
-    const locationStart = attribution.lastIndexOf(',') + 1;
+    const lastComma = attribution.lastIndexOf(',');
+    const locationStart = lastComma > roleEnd ? lastComma + 1 : attribution.length;
     const roleStop = roleEnd + (special ? 0 : 1);
     return {
       name: attribution.slice(0, nameEnd + 1),
