@@ -186,6 +186,7 @@ const sheetsSync = require('./utils/sheets-sync').createSheetsSync({ db, google,
 sheetsSync.start();
 app.locals.databaseReady = databaseReady;
 app.locals.db = db;
+app.locals.bookings = bookings;
 app.locals.sheetsSync = sheetsSync;
 app.locals.stopBackgroundTasks = async () => { await bookings.stop(); sessionStore.close(); await sheetsSync.stop(); };
 

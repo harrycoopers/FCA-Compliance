@@ -1,7 +1,8 @@
 export type Company={tradingName?:string;addressLine1?:string;addressLine2?:string;city?:string;postcode?:string;vat?:string;jobTitle?:string;id:string;name:string;contact:string;email:string;phone:string;registration:string;fca:string;notes:string;archived:boolean};
 export type ReturnItem={id:string;companyId:string;contact:string;title:string;type:string;due:string;time:string;status:string;notes:string;offsets:number[];recurrence:number;completedAt:string;reference:string;version:string;scheduled:{offset:number;at:string}[];series?:string};
 export type Settings={brand:string;name:string;timezone:string;reminderTime:string;offsets:number[];privacy:boolean};
-export type Data={companies:Company[];returns:ReturnItem[];activity:{id:string;text:string;at:string}[];settings:Settings};
+export type PendingDeadline={id:string;companyId:string;title:string;type:string;notes:string};
+export type Data={pendingDeadlines?:PendingDeadline[];calendarImportIds?:string[];companies:Company[];returns:ReturnItem[];activity:{id:string;text:string;at:string}[];settings:Settings};
 export const defaults:Settings={brand:'009 Compliance',name:'Administrator',timezone:'Europe/London',reminderTime:'09:00',offsets:[30,14,7,3,1],privacy:false};
 export const empty=():Data=>({companies:[],returns:[],activity:[],settings:{...defaults}});
 export function dayInZone(zone='Europe/London',now=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit'}).format(now)}

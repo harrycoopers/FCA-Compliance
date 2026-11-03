@@ -10,6 +10,7 @@ export interface Runtime {
   config:Record<string,string>;
   bucket:{put(key:string,value:Uint8Array,options?:any):Promise<void>;get(key:string):Promise<{body:Uint8Array<ArrayBuffer>;arrayBuffer():Promise<ArrayBuffer>}|null>;delete(key:string):Promise<void>};
   bookings:()=>Promise<any>;
+  unavailability?:{listBlocks:()=>Promise<any[]>;saveBlock:(input:any,owner:string)=>Promise<any>;removeBlock:(input:any)=>Promise<void>};
   requestHeaders?:Headers;
 }
 export const context=new AsyncLocalStorage<Runtime>();

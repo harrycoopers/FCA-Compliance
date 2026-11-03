@@ -28,7 +28,7 @@ test('Node dashboard preserves login, owner isolation, revisions, calls, documen
  const vapid=crypto.createECDH('prime256v1');vapid.generateKeys();env.VAPID_PUBLIC_KEY=vapid.getPublicKey().toString('base64url');env.VAPID_PRIVATE_KEY=vapid.getPrivateKey().toString('base64url');
  const nativeFetch=global.fetch;let pushes=0;global.fetch=async(input,init)=>{const u=new URL(typeof input==='string'?input:input.url||String(input));if(u.hostname==='fcm.googleapis.com'){pushes++;return new Response('',{status:201});}if(!['localhost','127.0.0.1'].includes(u.hostname))throw Error('External requests disabled in tests');return nativeFetch(input,init);};
  const service=require(path.join(websiteRoot,'booking/service')).createService({db:customerDb,env,now:()=>new Date('2026-11-02T08:00Z')});await service.ready;
- const website={locals:{db:customerDb,databaseReady:service.ready}};
+ const website={locals:{db:customerDb,databaseReady:service.ready,bookings:service}};
  let dash=await createDashboard({root,website,env}),server,base,cookie='',other='',saved,template,output;
  async function listen(){server=dash.app.listen(0,'127.0.0.1');await new Promise(r=>server.once('listening',r));base='http://127.0.0.1:'+server.address().port;}
  async function stop(){await new Promise(r=>server.close(r));await dash.close();}
@@ -66,6 +66,32 @@ test('Node dashboard preserves login, owner isolation, revisions, calls, documen
    await req('/api/meetings');assert.equal((await dash.db.prepare("SELECT count(*) AS n FROM deliveries WHERE owner='owner'").first()).n,1);
    assert.equal((await(await req('/api/meetings','GET',undefined,other)).json()).meetings.length,0);
    assert.equal((await req('/api/tick','POST',{})).status,401);
+  });
+  await t.test('availability is owner-only, origin-protected, durable and enforces public booking exclusions',async()=>{
+   const before=await service.freeTimes('2026-11-04');
+   const payload={startDate:'2026-11-04',startTime:'09:10',endDate:'2026-11-04',endTime:'11:00',note:'Private QA time'};
+   assert.equal((await req('/api/unavailability','GET',undefined,'')).status,401);
+   assert.equal((await req('/api/unavailability','GET',undefined,other)).status,403);
+   assert.equal((await req('/api/unavailability','POST',payload,other)).status,403);
+   assert.equal((await req('/api/unavailability','POST',payload,cookie,'https://evil.invalid')).status,403);
+   let r=await req('/api/unavailability','POST',payload);assert.equal(r.status,200,await r.clone().text());let b=(await r.json()).block;
+   assert.equal((await(await req('/api/unavailability')).json()).blocks.length,1);
+   assert(!(await service.freeTimes('2026-11-04')).includes('09:00'));
+   assert.equal((await req('/api/unavailability','POST',{...b,startTime:'11:00',endTime:'12:00'})).status,200);
+   assert.equal((await req('/api/unavailability','DELETE',b)).status,409);
+   b=(await(await req('/api/unavailability')).json()).blocks[0];
+   await stop();dash=await createDashboard({root,website,env});await listen();
+   assert.equal((await(await req('/api/unavailability')).json()).blocks[0].id,b.id);
+   assert.equal((await req('/api/unavailability','DELETE',b,other)).status,403);
+   assert.equal((await req('/api/unavailability','DELETE',b)).status,200);
+   assert.deepEqual(await service.freeTimes('2026-11-04'),before);
+   saved=await(await req('/api/data')).json();
+   saved.data.pendingDeadlines=[{id:'missing-date',companyId:'company',title:'SAF test',type:'SAF test',notes:'Date not supplied'}];saved.data.calendarImportIds=['missing-date'];
+   assert.equal((await req('/api/data','POST',saved)).status,200);
+   saved=await(await req('/api/data')).json();assert.equal(saved.data.pendingDeadlines[0].id,'missing-date');
+   assert.equal((await(await req('/api/data','GET',undefined,other)).json()).data.pendingDeadlines?.length||0,0);
+   const stale=structuredClone(saved);delete stale.data.pendingDeadlines;delete stale.data.calendarImportIds;
+   assert.equal((await req('/api/data','POST',stale)).status,200);saved=await(await req('/api/data')).json();assert.equal(saved.data.pendingDeadlines.length,1);
   });
   await t.test('push registration enforces provider and owner checks; delivery uses a mocked provider',async()=>{
    const device=crypto.createECDH('prime256v1');device.generateKeys();const subscription={endpoint:'https://fcm.googleapis.com/qa-only',keys:{p256dh:device.getPublicKey().toString('base64url'),auth:crypto.randomBytes(16).toString('base64url')}};

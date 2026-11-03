@@ -3,6 +3,7 @@ const crypto = require('node:crypto');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const path = require('node:path');
+const {initializeBlocks,blockManager}=require('./blocks');
 const slots = Array.from({length:17},(_,i)=>`${String(9+Math.floor(i/2)).padStart(2,'0')}:${i%2?'30':'00'}`);
 const topics = {authorisation:'FCA authorisation assistance',ccr009:'CCR009 return assistance',ongoing:'Ongoing compliance support',finance:'Finance',referral:'Referral programme',unsure:'Not sure yet'};
 function ukDate(now=new Date()){const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now).map(p=>[p.type,p.value]));return `${p.year}-${p.month}-${p.day}`;}
@@ -25,6 +26,7 @@ function createService({db,env=process.env,sendEmail,now=()=>new Date(),ready:da
    if(!columns.has(name))try{await run(`ALTER TABLE meeting_bookings ADD COLUMN ${name} ${definition}`);}catch(e){if(!/duplicate column name/i.test(e.message))throw e;}
   }
   await run("CREATE UNIQUE INDEX IF NOT EXISTS meeting_slot_unique ON meeting_bookings(date,time) WHERE status IN ('pending','confirmed','needs_attention')");
+  await initializeBlocks(run);
   await run('CREATE TABLE IF NOT EXISTS meeting_limits(id TEXT PRIMARY KEY,count INTEGER NOT NULL,expires INTEGER NOT NULL)');
   await run('CREATE INDEX IF NOT EXISTS meeting_limits_expiry ON meeting_limits(expires)');
   await run('CREATE TABLE IF NOT EXISTS meeting_processing(id TEXT PRIMARY KEY,owner TEXT NOT NULL,expires INTEGER NOT NULL)');
@@ -36,7 +38,7 @@ function createService({db,env=process.env,sendEmail,now=()=>new Date(),ready:da
  async function status(){await ready;return {configured:!!configured(),connected:!!configured(),mode:'phone',confirmationEmailEnabled:emailEnabled()};}
  function checkDate(date){if(!validDate(date))return false;const today=ukDate(now()),end=new Date(today.slice(0,7)+'-01T12:00Z');end.setUTCMonth(end.getUTCMonth()+6);return ![0,6].includes(new Date(date+'T12:00Z').getUTCDay())&&date>=today&&date<end.toISOString().slice(0,10);}
  function reserved(date){const day=String(new Date(date+'T12:00Z').getUTCDay());return [...(availability.dates?.[date]||[]),...(availability.weekly?.[day]||[]),...(availability.reservedSlots?.(date,ukDate(now()),slots)||[])];}
- async function freeTimes(date){await ready;if(!configured())throw Error('Phone booking is not configured');if(!checkDate(date)){const e=Error('Choose an upcoming weekday');e.status=400;throw e;}const rows=await all("SELECT time FROM meeting_bookings WHERE date=? AND status IN ('pending','confirmed','needs_attention')",[date]);const blocked=new Set([...reserved(date),...rows.map(r=>r.time)]);return slots.filter(time=>Date.parse(instant(date,time))>now().getTime()&&!blocked.has(time));}
+ async function freeTimes(date){await ready;if(!configured())throw Error('Phone booking is not configured');if(!checkDate(date)){const e=Error('Choose an upcoming weekday');e.status=400;throw e;}const rows=await all("SELECT time FROM meeting_bookings WHERE date=? AND status IN ('pending','confirmed','needs_attention')",[date]);const blocked=new Set([...reserved(date),...rows.map(r=>r.time)]);const windows=await all('SELECT start,end FROM booking_blocks WHERE start<? AND end>?',[instant(date,'23:59'),instant(date,'00:00')]);return slots.filter(time=>{const start=Date.parse(instant(date,time));return start>now().getTime()&&!blocked.has(time)&&!windows.some(b=>start<Date.parse(b.end)&&start+15*60000>Date.parse(b.start));});}
  function validate(body){if(!body||typeof body!=='object')throw Error('Please check your details');const fields={};for(const [key,max]of [['name',120],['company',160],['email',254]]){if(typeof body[key]!=='string'||!body[key].trim()||body[key].trim().length>max||/[\r\n\x00-\x1f]/.test(body[key]))throw Error('Please check your details');fields[key]=body[key].trim();}fields.email=fields.email.toLowerCase();fields.phone=normalizePhone(body.phone);if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)||!Object.hasOwn(topics,body.topic)||!checkDate(body.date)||!slots.includes(body.time))throw Error('Please check your details and time');return {...fields,date:body.date,time:body.time,topic:body.topic};}
  async function reserve(body,key){await ready;if(!configured())throw Error('Phone booking is not configured');if(typeof key!=='string'||!/^[a-f0-9-]{32,64}$/i.test(key))throw Error('Invalid booking request');const fields=validate(body),fingerprint=crypto.createHash('sha256').update(JSON.stringify(fields)).digest('hex');let row=await get('SELECT * FROM meeting_bookings WHERE request_key=?',[key]);if(row){if(row.fingerprint!==fingerprint)throw Error('This request has different details. Start a new booking.');return row;}
   if(!(await freeTimes(fields.date)).includes(fields.time)){const e=Error('That time is no longer available. Please select another.');e.status=409;throw e;}
@@ -56,6 +58,6 @@ function createService({db,env=process.env,sendEmail,now=()=>new Date(),ready:da
  }finally{clearInterval(heartbeat);if(claimed)await run('DELETE FROM meeting_processing WHERE id=? AND owner=?',[id,worker]);active.delete(id);}}
  async function processPending(){await ready;if(!emailEnabled())return;for(const row of await all("SELECT id FROM meeting_bookings WHERE kind='phone' AND status='confirmed' AND email_status IN ('pending','retry') AND email_next_attempt<=? ORDER BY created LIMIT 10",[now().getTime()]))await processBooking(row.id);}
  async function limit(ip){await ready;const window=Math.floor(now().getTime()/600000),id=crypto.createHash('sha256').update(ip+':'+window).digest('hex');await run('DELETE FROM meeting_limits WHERE expires<?',[now().getTime()]);await run('INSERT INTO meeting_limits(id,count,expires) VALUES (?,1,?) ON CONFLICT(id) DO UPDATE SET count=count+1',[id,(window+1)*600000]);return (await get('SELECT count FROM meeting_limits WHERE id=?',[id])).count<=10;}
- return {ready,run,get,all,status,freeTimes,reserve,processBooking,processPending,limit,topics};
+ return {ready,run,get,all,status,freeTimes,reserve,processBooking,processPending,limit,topics,...blockManager({run,get,all,ready,instant,validDate})};
 }
 module.exports={createService,ukDate,instant,validDate,safeEqual,normalizePhone,slots,topics};

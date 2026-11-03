@@ -17,7 +17,7 @@ const {settings}=require('../runtime/settings.cjs');
 export async function createDashboard({root,website,env=process.env}:{root:string;website:any;env?:NodeJS.ProcessEnv}){
  const opts=settings(root,env),db=await openDatabase(opts.dbFile);
  try{await initialize(db,root);}catch(e){await db.close();throw e;}
- const runtime:Runtime={db,config:opts.config,bucket:fileBucket(path.join(opts.dataDir,'documents')),bookings:async()=>{
+ const runtime:Runtime={db,config:opts.config,bucket:fileBucket(path.join(opts.dataDir,'documents')),unavailability:website.locals.bookings,bookings:async()=>{
   await website.locals.databaseReady;
   const bookings=await new Promise<any[]>((resolve,reject)=>website.locals.db.all('SELECT id,name,email,company,phone,kind,date,time,topic,status,start,created,updated,error,email_status AS confirmationEmail FROM meeting_bookings ORDER BY start DESC LIMIT 2000',(e:any,rows:any)=>e?reject(e):resolve(rows)));
   let configured=false;try{const u=new URL(env.BOOKING_PUBLIC_URL||'');configured=env.BOOKING_ENABLED==='true'&&(env.BOOKING_API_KEY||'').length>=32&&!u.username&&!u.password&&(u.protocol==='https:'||(!opts.production&&u.protocol==='http:'&&['localhost','127.0.0.1'].includes(u.hostname)));}catch{}

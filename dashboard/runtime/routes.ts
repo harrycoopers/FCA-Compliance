@@ -9,11 +9,13 @@ import * as route7 from '../source/app/api/documents/route';
 import * as route8 from '../source/app/api/meetings/route';
 import * as route9 from '../source/app/api/notifications/route';
 import * as route10 from '../source/app/api/tick/route';
+import * as availability from '../source/app/api/unavailability/route';
 export const routes:Record<string,Record<string,any>>={
   '/api/auth/login':route0,
   '/api/auth/logout':route1,
   '/api/auth/password':route2,
   '/api/data':route3,
+  '/api/unavailability':availability,
   '/api/devices':route4,
   '/api/documents/download':route5,
   '/api/documents/generate':route6,

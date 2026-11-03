@@ -5,9 +5,6 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __esm = (fn, res) => function __init() {
-  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
-};
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
@@ -33,9 +30,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/bn.js@4.12.5/node_modules/bn.js/lib/bn.js
+// node_modules/bn.js/lib/bn.js
 var require_bn = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/bn.js@4.12.5/node_modules/bn.js/lib/bn.js"(exports2, module2) {
+  "node_modules/bn.js/lib/bn.js"(exports2, module2) {
     (function(module3, exports3) {
       "use strict";
       function assert(val, msg) {
@@ -2853,9 +2850,9 @@ var require_bn = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits_browser.js
+// node_modules/inherits/inherits_browser.js
 var require_inherits_browser = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits_browser.js"(exports2, module2) {
+  "node_modules/inherits/inherits_browser.js"(exports2, module2) {
     if (typeof Object.create === "function") {
       module2.exports = function inherits(ctor, superCtor) {
         if (superCtor) {
@@ -2885,9 +2882,9 @@ var require_inherits_browser = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits.js
+// node_modules/inherits/inherits.js
 var require_inherits = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits.js"(exports2, module2) {
+  "node_modules/inherits/inherits.js"(exports2, module2) {
     try {
       util2 = require("util");
       if (typeof util2.inherits !== "function") throw "";
@@ -2899,9 +2896,9 @@ var require_inherits = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/safer-buffer@2.1.2/node_modules/safer-buffer/safer.js
+// node_modules/safer-buffer/safer.js
 var require_safer = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/safer-buffer@2.1.2/node_modules/safer-buffer/safer.js"(exports2, module2) {
+  "node_modules/safer-buffer/safer.js"(exports2, module2) {
     "use strict";
     var buffer = require("buffer");
     var Buffer2 = buffer.Buffer;
@@ -2967,9 +2964,9 @@ var require_safer = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/reporter.js
+// node_modules/asn1.js/lib/asn1/base/reporter.js
 var require_reporter = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/reporter.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/base/reporter.js"(exports2) {
     "use strict";
     var inherits = require_inherits();
     function Reporter(options) {
@@ -3068,9 +3065,9 @@ var require_reporter = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/buffer.js
+// node_modules/asn1.js/lib/asn1/base/buffer.js
 var require_buffer = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/buffer.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/base/buffer.js"(exports2) {
     "use strict";
     var inherits = require_inherits();
     var Reporter = require_reporter().Reporter;
@@ -3185,9 +3182,9 @@ var require_buffer = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/minimalistic-assert@1.0.1/node_modules/minimalistic-assert/index.js
+// node_modules/minimalistic-assert/index.js
 var require_minimalistic_assert = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/minimalistic-assert@1.0.1/node_modules/minimalistic-assert/index.js"(exports2, module2) {
+  "node_modules/minimalistic-assert/index.js"(exports2, module2) {
     module2.exports = assert;
     function assert(val, msg) {
       if (!val)
@@ -3200,9 +3197,9 @@ var require_minimalistic_assert = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/node.js
+// node_modules/asn1.js/lib/asn1/base/node.js
 var require_node = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/node.js"(exports2, module2) {
+  "node_modules/asn1.js/lib/asn1/base/node.js"(exports2, module2) {
     "use strict";
     var Reporter = require_reporter().Reporter;
     var EncoderBuffer = require_buffer().EncoderBuffer;
@@ -3735,9 +3732,9 @@ var require_node = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/constants/der.js
+// node_modules/asn1.js/lib/asn1/constants/der.js
 var require_der = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/constants/der.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/constants/der.js"(exports2) {
     "use strict";
     function reverse(map) {
       const res = {};
@@ -3791,9 +3788,9 @@ var require_der = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/encoders/der.js
+// node_modules/asn1.js/lib/asn1/encoders/der.js
 var require_der2 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/encoders/der.js"(exports2, module2) {
+  "node_modules/asn1.js/lib/asn1/encoders/der.js"(exports2, module2) {
     "use strict";
     var inherits = require_inherits();
     var Buffer2 = require_safer().Buffer;
@@ -4022,9 +4019,9 @@ var require_der2 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/encoders/pem.js
+// node_modules/asn1.js/lib/asn1/encoders/pem.js
 var require_pem = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/encoders/pem.js"(exports2, module2) {
+  "node_modules/asn1.js/lib/asn1/encoders/pem.js"(exports2, module2) {
     "use strict";
     var inherits = require_inherits();
     var DEREncoder = require_der2();
@@ -4046,9 +4043,9 @@ var require_pem = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/encoders/index.js
+// node_modules/asn1.js/lib/asn1/encoders/index.js
 var require_encoders = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/encoders/index.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/encoders/index.js"(exports2) {
     "use strict";
     var encoders = exports2;
     encoders.der = require_der2();
@@ -4056,9 +4053,9 @@ var require_encoders = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/decoders/der.js
+// node_modules/asn1.js/lib/asn1/decoders/der.js
 var require_der3 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/decoders/der.js"(exports2, module2) {
+  "node_modules/asn1.js/lib/asn1/decoders/der.js"(exports2, module2) {
     "use strict";
     var inherits = require_inherits();
     var bignum = require_bn();
@@ -4328,9 +4325,9 @@ var require_der3 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/decoders/pem.js
+// node_modules/asn1.js/lib/asn1/decoders/pem.js
 var require_pem2 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/decoders/pem.js"(exports2, module2) {
+  "node_modules/asn1.js/lib/asn1/decoders/pem.js"(exports2, module2) {
     "use strict";
     var inherits = require_inherits();
     var Buffer2 = require_safer().Buffer;
@@ -4374,9 +4371,9 @@ var require_pem2 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/decoders/index.js
+// node_modules/asn1.js/lib/asn1/decoders/index.js
 var require_decoders = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/decoders/index.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/decoders/index.js"(exports2) {
     "use strict";
     var decoders = exports2;
     decoders.der = require_der3();
@@ -4384,9 +4381,9 @@ var require_decoders = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/api.js
+// node_modules/asn1.js/lib/asn1/api.js
 var require_api = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/api.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/api.js"(exports2) {
     "use strict";
     var encoders = require_encoders();
     var decoders = require_decoders();
@@ -4433,9 +4430,9 @@ var require_api = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/index.js
+// node_modules/asn1.js/lib/asn1/base/index.js
 var require_base = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/base/index.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/base/index.js"(exports2) {
     "use strict";
     var base = exports2;
     base.Reporter = require_reporter().Reporter;
@@ -4445,9 +4442,9 @@ var require_base = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/constants/index.js
+// node_modules/asn1.js/lib/asn1/constants/index.js
 var require_constants = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1/constants/index.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1/constants/index.js"(exports2) {
     "use strict";
     var constants = exports2;
     constants._reverse = function reverse(map) {
@@ -4464,9 +4461,9 @@ var require_constants = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1.js
+// node_modules/asn1.js/lib/asn1.js
 var require_asn1 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/asn1.js@5.4.1/node_modules/asn1.js/lib/asn1.js"(exports2) {
+  "node_modules/asn1.js/lib/asn1.js"(exports2) {
     "use strict";
     var asn1 = exports2;
     asn1.bignum = require_bn();
@@ -4478,9 +4475,9 @@ var require_asn1 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer/index.js
+// node_modules/safe-buffer/index.js
 var require_safe_buffer = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer/index.js"(exports2, module2) {
+  "node_modules/safe-buffer/index.js"(exports2, module2) {
     var buffer = require("buffer");
     var Buffer2 = buffer.Buffer;
     function copyProps(src, dst) {
@@ -4536,9 +4533,9 @@ var require_safe_buffer = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/data-stream.js
+// node_modules/jws/lib/data-stream.js
 var require_data_stream = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/data-stream.js"(exports2, module2) {
+  "node_modules/jws/lib/data-stream.js"(exports2, module2) {
     var Buffer2 = require_safe_buffer().Buffer;
     var Stream = require("stream");
     var util2 = require("util");
@@ -4584,9 +4581,9 @@ var require_data_stream = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/ecdsa-sig-formatter@1.0.11/node_modules/ecdsa-sig-formatter/src/param-bytes-for-alg.js
+// node_modules/ecdsa-sig-formatter/src/param-bytes-for-alg.js
 var require_param_bytes_for_alg = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/ecdsa-sig-formatter@1.0.11/node_modules/ecdsa-sig-formatter/src/param-bytes-for-alg.js"(exports2, module2) {
+  "node_modules/ecdsa-sig-formatter/src/param-bytes-for-alg.js"(exports2, module2) {
     "use strict";
     function getParamSize(keySize) {
       var result = (keySize / 8 | 0) + (keySize % 8 === 0 ? 0 : 1);
@@ -4608,9 +4605,9 @@ var require_param_bytes_for_alg = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/ecdsa-sig-formatter@1.0.11/node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js
+// node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js
 var require_ecdsa_sig_formatter = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/ecdsa-sig-formatter@1.0.11/node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js"(exports2, module2) {
+  "node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js"(exports2, module2) {
     "use strict";
     var Buffer2 = require_safe_buffer().Buffer;
     var getParamBytesForAlg = require_param_bytes_for_alg();
@@ -4748,9 +4745,9 @@ var require_ecdsa_sig_formatter = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/buffer-equal-constant-time@1.0.1/node_modules/buffer-equal-constant-time/index.js
+// node_modules/buffer-equal-constant-time/index.js
 var require_buffer_equal_constant_time = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/buffer-equal-constant-time@1.0.1/node_modules/buffer-equal-constant-time/index.js"(exports2, module2) {
+  "node_modules/buffer-equal-constant-time/index.js"(exports2, module2) {
     "use strict";
     var Buffer2 = require("buffer").Buffer;
     var SlowBuffer = require("buffer").SlowBuffer;
@@ -4782,9 +4779,9 @@ var require_buffer_equal_constant_time = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jwa@2.0.1/node_modules/jwa/index.js
+// node_modules/jwa/index.js
 var require_jwa = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jwa@2.0.1/node_modules/jwa/index.js"(exports2, module2) {
+  "node_modules/jwa/index.js"(exports2, module2) {
     var Buffer2 = require_safe_buffer().Buffer;
     var crypto2 = require("crypto");
     var formatEcdsa = require_ecdsa_sig_formatter();
@@ -5006,9 +5003,9 @@ var require_jwa = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/tostring.js
+// node_modules/jws/lib/tostring.js
 var require_tostring = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/tostring.js"(exports2, module2) {
+  "node_modules/jws/lib/tostring.js"(exports2, module2) {
     var Buffer2 = require("buffer").Buffer;
     module2.exports = function toString(obj) {
       if (typeof obj === "string")
@@ -5020,9 +5017,9 @@ var require_tostring = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/sign-stream.js
+// node_modules/jws/lib/sign-stream.js
 var require_sign_stream = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/sign-stream.js"(exports2, module2) {
+  "node_modules/jws/lib/sign-stream.js"(exports2, module2) {
     var Buffer2 = require_safe_buffer().Buffer;
     var DataStream = require_data_stream();
     var jwa = require_jwa();
@@ -5095,9 +5092,9 @@ var require_sign_stream = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/verify-stream.js
+// node_modules/jws/lib/verify-stream.js
 var require_verify_stream = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/lib/verify-stream.js"(exports2, module2) {
+  "node_modules/jws/lib/verify-stream.js"(exports2, module2) {
     var Buffer2 = require_safe_buffer().Buffer;
     var DataStream = require_data_stream();
     var jwa = require_jwa();
@@ -5210,9 +5207,9 @@ var require_verify_stream = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/index.js
+// node_modules/jws/index.js
 var require_jws = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/jws@4.0.1/node_modules/jws/index.js"(exports2) {
+  "node_modules/jws/index.js"(exports2) {
     var SignStream = require_sign_stream();
     var VerifyStream = require_verify_stream();
     var ALGORITHMS = [
@@ -5243,9 +5240,9 @@ var require_jws = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/web-push-constants.js
+// node_modules/web-push/src/web-push-constants.js
 var require_web_push_constants = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/web-push-constants.js"(exports2, module2) {
+  "node_modules/web-push/src/web-push-constants.js"(exports2, module2) {
     "use strict";
     var WebPushConstants = {};
     WebPushConstants.supportedContentEncodings = {
@@ -5262,9 +5259,9 @@ var require_web_push_constants = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/urlsafe-base64-helper.js
+// node_modules/web-push/src/urlsafe-base64-helper.js
 var require_urlsafe_base64_helper = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/urlsafe-base64-helper.js"(exports2, module2) {
+  "node_modules/web-push/src/urlsafe-base64-helper.js"(exports2, module2) {
     "use strict";
     function validate(base64) {
       return /^[A-Za-z0-9\-_]+$/.test(base64);
@@ -5275,9 +5272,9 @@ var require_urlsafe_base64_helper = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/vapid-helper.js
+// node_modules/web-push/src/vapid-helper.js
 var require_vapid_helper = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/vapid-helper.js"(exports2, module2) {
+  "node_modules/web-push/src/vapid-helper.js"(exports2, module2) {
     "use strict";
     var crypto2 = require("crypto");
     var asn1 = require_asn1();
@@ -5452,9 +5449,9 @@ var require_vapid_helper = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/http_ece@1.2.0/node_modules/http_ece/ece.js
+// node_modules/http_ece/ece.js
 var require_ece = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/http_ece@1.2.0/node_modules/http_ece/ece.js"(exports2, module2) {
+  "node_modules/http_ece/ece.js"(exports2, module2) {
     "use strict";
     var crypto2 = require("crypto");
     var AES_GCM = "aes-128-gcm";
@@ -5903,9 +5900,9 @@ var require_ece = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/encryption-helper.js
+// node_modules/web-push/src/encryption-helper.js
 var require_encryption_helper = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/encryption-helper.js"(exports2, module2) {
+  "node_modules/web-push/src/encryption-helper.js"(exports2, module2) {
     "use strict";
     var crypto2 = require("crypto");
     var ece = require_ece();
@@ -5956,9 +5953,9 @@ var require_encryption_helper = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/web-push-error.js
+// node_modules/web-push/src/web-push-error.js
 var require_web_push_error = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/web-push-error.js"(exports2, module2) {
+  "node_modules/web-push/src/web-push-error.js"(exports2, module2) {
     "use strict";
     function WebPushError(message, statusCode, headers2, body2, endpoint) {
       Error.captureStackTrace(this, this.constructor);
@@ -5974,9 +5971,9 @@ var require_web_push_error = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/ms@2.1.3/node_modules/ms/index.js
+// node_modules/ms/index.js
 var require_ms = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/ms@2.1.3/node_modules/ms/index.js"(exports2, module2) {
+  "node_modules/ms/index.js"(exports2, module2) {
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -6090,10 +6087,10 @@ var require_ms = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/common.js
+// node_modules/debug/src/common.js
 var require_common = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/common.js"(exports2, module2) {
-    function setup(env2) {
+  "node_modules/debug/src/common.js"(exports2, module2) {
+    function setup(env) {
       createDebug.debug = createDebug;
       createDebug.default = createDebug;
       createDebug.coerce = coerce2;
@@ -6102,8 +6099,8 @@ var require_common = __commonJS({
       createDebug.enabled = enabled;
       createDebug.humanize = require_ms();
       createDebug.destroy = destroy;
-      Object.keys(env2).forEach((key) => {
-        createDebug[key] = env2[key];
+      Object.keys(env).forEach((key) => {
+        createDebug[key] = env[key];
       });
       createDebug.names = [];
       createDebug.skips = [];
@@ -6267,9 +6264,9 @@ var require_common = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/browser.js
+// node_modules/debug/src/browser.js
 var require_browser = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/browser.js"(exports2, module2) {
+  "node_modules/debug/src/browser.js"(exports2, module2) {
     exports2.formatArgs = formatArgs;
     exports2.save = save;
     exports2.load = load;
@@ -6437,159 +6434,10 @@ var require_browser = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/supports-color@10.2.2/node_modules/supports-color/index.js
-var supports_color_exports = {};
-__export(supports_color_exports, {
-  createSupportsColor: () => createSupportsColor,
-  default: () => supports_color_default
-});
-function hasFlag(flag, argv = globalThis.Deno ? globalThis.Deno.args : import_node_process.default.argv) {
-  const prefix = flag.startsWith("-") ? "" : flag.length === 1 ? "-" : "--";
-  const position = argv.indexOf(prefix + flag);
-  const terminatorPosition = argv.indexOf("--");
-  return position !== -1 && (terminatorPosition === -1 || position < terminatorPosition);
-}
-function envForceColor() {
-  if (!("FORCE_COLOR" in env)) {
-    return;
-  }
-  if (env.FORCE_COLOR === "true") {
-    return 1;
-  }
-  if (env.FORCE_COLOR === "false") {
-    return 0;
-  }
-  if (env.FORCE_COLOR.length === 0) {
-    return 1;
-  }
-  const level = Math.min(Number.parseInt(env.FORCE_COLOR, 10), 3);
-  if (![0, 1, 2, 3].includes(level)) {
-    return;
-  }
-  return level;
-}
-function translateLevel(level) {
-  if (level === 0) {
-    return false;
-  }
-  return {
-    level,
-    hasBasic: true,
-    has256: level >= 2,
-    has16m: level >= 3
-  };
-}
-function _supportsColor(haveStream, { streamIsTTY, sniffFlags = true } = {}) {
-  const noFlagForceColor = envForceColor();
-  if (noFlagForceColor !== void 0) {
-    flagForceColor = noFlagForceColor;
-  }
-  const forceColor = sniffFlags ? flagForceColor : noFlagForceColor;
-  if (forceColor === 0) {
-    return 0;
-  }
-  if (sniffFlags) {
-    if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) {
-      return 3;
-    }
-    if (hasFlag("color=256")) {
-      return 2;
-    }
-  }
-  if ("TF_BUILD" in env && "AGENT_NAME" in env) {
-    return 1;
-  }
-  if (haveStream && !streamIsTTY && forceColor === void 0) {
-    return 0;
-  }
-  const min = forceColor || 0;
-  if (env.TERM === "dumb") {
-    return min;
-  }
-  if (import_node_process.default.platform === "win32") {
-    const osRelease = import_node_os.default.release().split(".");
-    if (Number(osRelease[0]) >= 10 && Number(osRelease[2]) >= 10586) {
-      return Number(osRelease[2]) >= 14931 ? 3 : 2;
-    }
-    return 1;
-  }
-  if ("CI" in env) {
-    if (["GITHUB_ACTIONS", "GITEA_ACTIONS", "CIRCLECI"].some((key) => key in env)) {
-      return 3;
-    }
-    if (["TRAVIS", "APPVEYOR", "GITLAB_CI", "BUILDKITE", "DRONE"].some((sign) => sign in env) || env.CI_NAME === "codeship") {
-      return 1;
-    }
-    return min;
-  }
-  if ("TEAMCITY_VERSION" in env) {
-    return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;
-  }
-  if (env.COLORTERM === "truecolor") {
-    return 3;
-  }
-  if (env.TERM === "xterm-kitty") {
-    return 3;
-  }
-  if (env.TERM === "xterm-ghostty") {
-    return 3;
-  }
-  if (env.TERM === "wezterm") {
-    return 3;
-  }
-  if ("TERM_PROGRAM" in env) {
-    const version = Number.parseInt((env.TERM_PROGRAM_VERSION || "").split(".")[0], 10);
-    switch (env.TERM_PROGRAM) {
-      case "iTerm.app": {
-        return version >= 3 ? 3 : 2;
-      }
-      case "Apple_Terminal": {
-        return 2;
-      }
-    }
-  }
-  if (/-256(color)?$/i.test(env.TERM)) {
-    return 2;
-  }
-  if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(env.TERM)) {
-    return 1;
-  }
-  if ("COLORTERM" in env) {
-    return 1;
-  }
-  return min;
-}
-function createSupportsColor(stream, options = {}) {
-  const level = _supportsColor(stream, {
-    streamIsTTY: stream && stream.isTTY,
-    ...options
-  });
-  return translateLevel(level);
-}
-var import_node_process, import_node_os, import_node_tty, env, flagForceColor, supportsColor, supports_color_default;
-var init_supports_color = __esm({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/supports-color@10.2.2/node_modules/supports-color/index.js"() {
-    import_node_process = __toESM(require("node:process"), 1);
-    import_node_os = __toESM(require("node:os"), 1);
-    import_node_tty = __toESM(require("node:tty"), 1);
-    ({ env } = import_node_process.default);
-    if (hasFlag("no-color") || hasFlag("no-colors") || hasFlag("color=false") || hasFlag("color=never")) {
-      flagForceColor = 0;
-    } else if (hasFlag("color") || hasFlag("colors") || hasFlag("color=true") || hasFlag("color=always")) {
-      flagForceColor = 1;
-    }
-    supportsColor = {
-      stdout: createSupportsColor({ isTTY: import_node_tty.default.isatty(1) }),
-      stderr: createSupportsColor({ isTTY: import_node_tty.default.isatty(2) })
-    };
-    supports_color_default = supportsColor;
-  }
-});
-
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/node.js
+// node_modules/debug/src/node.js
 var require_node2 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/node.js"(exports2, module2) {
-    var tty2 = require("tty");
+  "node_modules/debug/src/node.js"(exports2, module2) {
+    var tty = require("tty");
     var util2 = require("util");
     exports2.init = init;
     exports2.log = log;
@@ -6604,8 +6452,8 @@ var require_node2 = __commonJS({
     );
     exports2.colors = [6, 2, 3, 4, 5, 1];
     try {
-      const supportsColor2 = (init_supports_color(), __toCommonJS(supports_color_exports));
-      if (supportsColor2 && (supportsColor2.stderr || supportsColor2).level >= 2) {
+      const supportsColor = require("supports-color");
+      if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
         exports2.colors = [
           20,
           21,
@@ -6707,7 +6555,7 @@ var require_node2 = __commonJS({
       return obj;
     }, {});
     function useColors() {
-      return "colors" in exports2.inspectOpts ? Boolean(exports2.inspectOpts.colors) : tty2.isatty(process.stderr.fd);
+      return "colors" in exports2.inspectOpts ? Boolean(exports2.inspectOpts.colors) : tty.isatty(process.stderr.fd);
     }
     function formatArgs(args) {
       const { namespace: name, useColors: useColors2 } = this;
@@ -6760,9 +6608,9 @@ var require_node2 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/index.js
+// node_modules/debug/src/index.js
 var require_src = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/debug@4.4.3_supports-color@10.2.2/node_modules/debug/src/index.js"(exports2, module2) {
+  "node_modules/debug/src/index.js"(exports2, module2) {
     if (typeof process === "undefined" || process.type === "renderer" || process.browser === true || process.__nwjs) {
       module2.exports = require_browser();
     } else {
@@ -6771,9 +6619,9 @@ var require_src = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/agent-base@7.1.4/node_modules/agent-base/dist/helpers.js
+// node_modules/agent-base/dist/helpers.js
 var require_helpers = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/agent-base@7.1.4/node_modules/agent-base/dist/helpers.js"(exports2) {
+  "node_modules/agent-base/dist/helpers.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
@@ -6841,9 +6689,9 @@ var require_helpers = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/agent-base@7.1.4/node_modules/agent-base/dist/index.js
+// node_modules/agent-base/dist/index.js
 var require_dist = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/agent-base@7.1.4/node_modules/agent-base/dist/index.js"(exports2) {
+  "node_modules/agent-base/dist/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
@@ -6997,9 +6845,9 @@ var require_dist = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/https-proxy-agent@7.0.6_supports-color@10.2.2/node_modules/https-proxy-agent/dist/parse-proxy-response.js
+// node_modules/https-proxy-agent/dist/parse-proxy-response.js
 var require_parse_proxy_response = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/https-proxy-agent@7.0.6_supports-color@10.2.2/node_modules/https-proxy-agent/dist/parse-proxy-response.js"(exports2) {
+  "node_modules/https-proxy-agent/dist/parse-proxy-response.js"(exports2) {
     "use strict";
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -7093,9 +6941,9 @@ var require_parse_proxy_response = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/https-proxy-agent@7.0.6_supports-color@10.2.2/node_modules/https-proxy-agent/dist/index.js
+// node_modules/https-proxy-agent/dist/index.js
 var require_dist2 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/https-proxy-agent@7.0.6_supports-color@10.2.2/node_modules/https-proxy-agent/dist/index.js"(exports2) {
+  "node_modules/https-proxy-agent/dist/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
@@ -7243,9 +7091,9 @@ var require_dist2 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/web-push-lib.js
+// node_modules/web-push/src/web-push-lib.js
 var require_web_push_lib = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/web-push-lib.js"(exports2, module2) {
+  "node_modules/web-push/src/web-push-lib.js"(exports2, module2) {
     "use strict";
     var url = require("url");
     var https = require("https");
@@ -7530,9 +7378,9 @@ var require_web_push_lib = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/index.js
+// node_modules/web-push/src/index.js
 var require_src2 = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/web-push@3.6.7_supports-color@10.2.2/node_modules/web-push/src/index.js"(exports2, module2) {
+  "node_modules/web-push/src/index.js"(exports2, module2) {
     "use strict";
     var vapidHelper = require_vapid_helper();
     var encryptionHelper = require_encryption_helper();
@@ -7554,9 +7402,9 @@ var require_src2 = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/conventions.js
+// node_modules/@xmldom/xmldom/lib/conventions.js
 var require_conventions = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/conventions.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/conventions.js"(exports2) {
     "use strict";
     function find(list, predicate, ac) {
       if (ac === void 0) {
@@ -7763,9 +7611,9 @@ var require_conventions = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/errors.js
+// node_modules/@xmldom/xmldom/lib/errors.js
 var require_errors = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/errors.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/errors.js"(exports2) {
     "use strict";
     var conventions = require_conventions();
     function extendError(constructor, writableName) {
@@ -7922,9 +7770,9 @@ var require_errors = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/grammar.js
+// node_modules/@xmldom/xmldom/lib/grammar.js
 var require_grammar = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/grammar.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/grammar.js"(exports2) {
     "use strict";
     function detectUnicodeSupport(RegExpImpl) {
       try {
@@ -8129,9 +7977,9 @@ var require_grammar = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/dom.js
+// node_modules/@xmldom/xmldom/lib/dom.js
 var require_dom = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/dom.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/dom.js"(exports2) {
     "use strict";
     var conventions = require_conventions();
     var find = conventions.find;
@@ -10796,9 +10644,9 @@ var require_dom = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/entities.js
+// node_modules/@xmldom/xmldom/lib/entities.js
 var require_entities = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/entities.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/entities.js"(exports2) {
     "use strict";
     var freeze = require_conventions().freeze;
     exports2.XML_ENTITIES = freeze({
@@ -12939,9 +12787,9 @@ var require_entities = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/sax.js
+// node_modules/@xmldom/xmldom/lib/sax.js
 var require_sax = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/sax.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/sax.js"(exports2) {
     "use strict";
     var conventions = require_conventions();
     var g = require_grammar();
@@ -13721,9 +13569,9 @@ var require_sax = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/dom-parser.js
+// node_modules/@xmldom/xmldom/lib/dom-parser.js
 var require_dom_parser = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/dom-parser.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/dom-parser.js"(exports2) {
     "use strict";
     var conventions = require_conventions();
     var dom = require_dom();
@@ -13989,9 +13837,9 @@ var require_dom_parser = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/index.js
+// node_modules/@xmldom/xmldom/lib/index.js
 var require_lib = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/@xmldom+xmldom@0.9.12/node_modules/@xmldom/xmldom/lib/index.js"(exports2) {
+  "node_modules/@xmldom/xmldom/lib/index.js"(exports2) {
     "use strict";
     var conventions = require_conventions();
     exports2.assign = conventions.assign;
@@ -14033,9 +13881,9 @@ var require_lib = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/cjs/react.production.js
+// node_modules/react/cjs/react.production.js
 var require_react_production = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/cjs/react.production.js"(exports2) {
+  "node_modules/react/cjs/react.production.js"(exports2) {
     "use strict";
     var REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element");
     var REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal");
@@ -14474,9 +14322,9 @@ var require_react_production = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/index.js
+// node_modules/react/index.js
 var require_react = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/index.js"(exports2, module2) {
+  "node_modules/react/index.js"(exports2, module2) {
     "use strict";
     if (true) {
       module2.exports = require_react_production();
@@ -14486,9 +14334,9 @@ var require_react = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom.production.js
+// node_modules/react-dom/cjs/react-dom.production.js
 var require_react_dom_production = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom.production.js"(exports2) {
+  "node_modules/react-dom/cjs/react-dom.production.js"(exports2) {
     "use strict";
     var React = require_react();
     function formatProdErrorMessage(code) {
@@ -14635,9 +14483,9 @@ var require_react_dom_production = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/index.js
+// node_modules/react-dom/index.js
 var require_react_dom = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/index.js"(exports2, module2) {
+  "node_modules/react-dom/index.js"(exports2, module2) {
     "use strict";
     function checkDCE() {
       if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
@@ -14661,9 +14509,9 @@ var require_react_dom = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-server-legacy.node.production.js
+// node_modules/react-dom/cjs/react-dom-server-legacy.node.production.js
 var require_react_dom_server_legacy_node_production = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-server-legacy.node.production.js"(exports2) {
+  "node_modules/react-dom/cjs/react-dom-server-legacy.node.production.js"(exports2) {
     "use strict";
     var React = require_react();
     var ReactDOM = require_react_dom();
@@ -19599,9 +19447,9 @@ var require_react_dom_server_legacy_node_production = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-server.node.production.js
+// node_modules/react-dom/cjs/react-dom-server.node.production.js
 var require_react_dom_server_node_production = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-server.node.production.js"(exports2) {
+  "node_modules/react-dom/cjs/react-dom-server.node.production.js"(exports2) {
     "use strict";
     var util2 = require("util");
     var crypto2 = require("crypto");
@@ -25443,9 +25291,9 @@ var require_react_dom_server_node_production = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/server.node.js
+// node_modules/react-dom/server.node.js
 var require_server_node = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/server.node.js"(exports2) {
+  "node_modules/react-dom/server.node.js"(exports2) {
     "use strict";
     var l;
     var s;
@@ -25466,9 +25314,9 @@ var require_server_node = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/cjs/react-jsx-runtime.production.js
+// node_modules/react/cjs/react-jsx-runtime.production.js
 var require_react_jsx_runtime_production = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/cjs/react-jsx-runtime.production.js"(exports2) {
+  "node_modules/react/cjs/react-jsx-runtime.production.js"(exports2) {
     "use strict";
     var REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element");
     var REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment");
@@ -25496,9 +25344,9 @@ var require_react_jsx_runtime_production = __commonJS({
   }
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/jsx-runtime.js
+// node_modules/react/jsx-runtime.js
 var require_jsx_runtime = __commonJS({
-  "../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/react@19.2.6/node_modules/react/jsx-runtime.js"(exports2, module2) {
+  "node_modules/react/jsx-runtime.js"(exports2, module2) {
     "use strict";
     if (true) {
       module2.exports = require_react_jsx_runtime_production();
@@ -25813,7 +25661,7 @@ __export(route_exports4, {
   POST: () => POST4
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/external.js
+// node_modules/zod/v3/external.js
 var external_exports = {};
 __export(external_exports, {
   BRAND: () => BRAND,
@@ -25925,7 +25773,7 @@ __export(external_exports, {
   void: () => voidType
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/util.js
+// node_modules/zod/v3/helpers/util.js
 var util;
 (function(util2) {
   util2.assertEqual = (_) => {
@@ -26059,7 +25907,7 @@ var getParsedType = (data) => {
   }
 };
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/ZodError.js
+// node_modules/zod/v3/ZodError.js
 var ZodIssueCode = util.arrayToEnum([
   "invalid_type",
   "invalid_literal",
@@ -26177,7 +26025,7 @@ ZodError.create = (issues) => {
   return error;
 };
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/locales/en.js
+// node_modules/zod/v3/locales/en.js
 var errorMap = (issue, _ctx) => {
   let message;
   switch (issue.code) {
@@ -26280,7 +26128,7 @@ var errorMap = (issue, _ctx) => {
 };
 var en_default = errorMap;
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/errors.js
+// node_modules/zod/v3/errors.js
 var overrideErrorMap = en_default;
 function setErrorMap(map) {
   overrideErrorMap = map;
@@ -26289,7 +26137,7 @@ function getErrorMap() {
   return overrideErrorMap;
 }
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/parseUtil.js
+// node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params2) => {
   const { data, path: path2, errorMaps, issueData } = params2;
   const fullPath = [...path2, ...issueData.path || []];
@@ -26399,14 +26247,14 @@ var isDirty = (x) => x.status === "dirty";
 var isValid = (x) => x.status === "valid";
 var isAsync = (x) => typeof Promise !== "undefined" && x instanceof Promise;
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/errorUtil.js
+// node_modules/zod/v3/helpers/errorUtil.js
 var errorUtil;
 (function(errorUtil2) {
   errorUtil2.errToObj = (message) => typeof message === "string" ? { message } : message || {};
   errorUtil2.toString = (message) => typeof message === "string" ? message : message?.message;
 })(errorUtil || (errorUtil = {}));
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/types.js
+// node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
   constructor(parent, value, path2, key) {
     this._cachedPath = [];
@@ -29859,7 +29707,7 @@ var str = external_exports.string().max(4e3);
 var date = external_exports.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine((s) => !isNaN(Date.parse(s)) && new Date(s).toISOString().slice(0, 10) === s);
 var time = external_exports.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/);
 var offsets = external_exports.array(external_exports.union([external_exports.literal(30), external_exports.literal(14), external_exports.literal(7), external_exports.literal(3), external_exports.literal(1)])).max(5);
-var schema = external_exports.object({ revision: external_exports.number().int().nonnegative(), data: external_exports.object({ companies: external_exports.array(external_exports.object({ id: str, tradingName: str.optional(), addressLine1: str.optional(), addressLine2: str.optional(), city: str.optional(), postcode: str.optional(), vat: str.optional(), jobTitle: str.optional(), name: str.min(1), contact: str, email: external_exports.union([external_exports.literal(""), external_exports.string().email()]), phone: str, registration: str, fca: str, notes: str, archived: external_exports.boolean() })).max(5e3), returns: external_exports.array(external_exports.object({ id: str, companyId: str, contact: str, title: str.min(1), type: str.min(1), due: date, time: external_exports.union([external_exports.literal(""), time]), status: external_exports.enum(["Not started", "In progress", "Awaiting information", "Completed"]), notes: str, offsets, recurrence: external_exports.number().int().min(0).max(120), completedAt: external_exports.union([external_exports.literal(""), date]), reference: str, version: str, scheduled: external_exports.array(external_exports.object({ offset: external_exports.number(), at: external_exports.string() })), series: str.optional() })).max(1e4), activity: external_exports.array(external_exports.object({ id: str, text: str, at: str })).max(200), settings: external_exports.object({ brand: str.min(1), name: str.min(1), timezone: external_exports.string().refine((s) => {
+var schema = external_exports.object({ revision: external_exports.number().int().nonnegative(), data: external_exports.object({ pendingDeadlines: external_exports.array(external_exports.object({ id: str, companyId: str, title: str.min(1), type: str.min(1), notes: str })).max(1e4).optional(), calendarImportIds: external_exports.array(str).max(2e4).optional(), companies: external_exports.array(external_exports.object({ id: str, tradingName: str.optional(), addressLine1: str.optional(), addressLine2: str.optional(), city: str.optional(), postcode: str.optional(), vat: str.optional(), jobTitle: str.optional(), name: str.min(1), contact: str, email: external_exports.union([external_exports.literal(""), external_exports.string().email()]), phone: str, registration: str, fca: str, notes: str, archived: external_exports.boolean() })).max(5e3), returns: external_exports.array(external_exports.object({ id: str, companyId: str, contact: str, title: str.min(1), type: str.min(1), due: date, time: external_exports.union([external_exports.literal(""), time]), status: external_exports.enum(["Not started", "In progress", "Awaiting information", "Completed"]), notes: str, offsets, recurrence: external_exports.number().int().min(0).max(120), completedAt: external_exports.union([external_exports.literal(""), date]), reference: str, version: str, scheduled: external_exports.array(external_exports.object({ offset: external_exports.number(), at: external_exports.string() })), series: str.optional() })).max(1e4), activity: external_exports.array(external_exports.object({ id: str, text: str, at: str })).max(200), settings: external_exports.object({ brand: str.min(1), name: str.min(1), timezone: external_exports.string().refine((s) => {
   try {
     new Intl.DateTimeFormat("en", { timeZone: s });
     return true;
@@ -29883,6 +29731,9 @@ async function handlePOST(request) {
     const parsed = schema.parse(await request.json());
     const { data: old } = await read(user.userId);
     const data = parsed.data;
+    data.pendingDeadlines ??= old.pendingDeadlines || [];
+    data.calendarImportIds ??= old.calendarImportIds || [];
+    if (new Set(data.pendingDeadlines.map((r) => r.id)).size !== data.pendingDeadlines.length || data.pendingDeadlines.some((r) => !data.companies.some((c) => c.id === r.companyId))) throw Error("Invalid pending deadline");
     if (new Set(data.companies.map((c) => c.id)).size !== data.companies.length || new Set(data.returns.map((r) => r.id)).size !== data.returns.length) throw new Error("Duplicate identifiers");
     for (const r of data.returns) {
       if (!data.companies.some((c) => c.id === r.companyId)) throw new Error("Select an existing company");
@@ -29992,7 +29843,7 @@ __export(route_exports7, {
   POST: () => POST6
 });
 
-// ../../portal-login-2026-11-01/dashboard/node_modules/.pnpm/fflate@0.8.3/node_modules/fflate/esm/index.mjs
+// node_modules/fflate/esm/index.mjs
 var import_module = require("module");
 var require2 = (0, import_module.createRequire)("/");
 var _a;
@@ -31478,12 +31329,49 @@ var GET6 = withApiErrors(async (r) => {
   return json({ notificationCount: row?.count || 0 });
 });
 
+// source/app/api/unavailability/route.ts
+var route_exports12 = {};
+__export(route_exports12, {
+  DELETE: () => DELETE,
+  GET: () => GET7,
+  POST: () => POST11
+});
+async function handle(request) {
+  const user = await getPortalUser();
+  if (!user) return json({ error: "Sign in required." }, 401);
+  if (user.userId !== await bookingOwnerId()) return json({ error: "Only the account receiving website calls can change availability." }, 403);
+  if (request.method !== "GET" && !sameOrigin(request)) return json({ error: "Invalid request origin." }, 403);
+  const service = runtime().unavailability;
+  if (!service) return json({ error: "The website booking service is unavailable. Restart using dashboard/start.cjs." }, 503);
+  try {
+    if (request.method === "GET") return json({ blocks: await service.listBlocks() });
+    let body2;
+    try {
+      body2 = await request.json();
+    } catch {
+      return json({ error: "Enter a valid time window." }, 400);
+    }
+    if (request.method === "DELETE") {
+      await service.removeBlock(body2);
+      return json({ ok: true });
+    }
+    return json({ block: await service.saveBlock(body2, user.userId) });
+  } catch (e) {
+    if (e.status === 400 || e.status === 409) return json({ error: e.message }, e.status);
+    throw e;
+  }
+}
+var GET7 = withApiErrors(handle);
+var POST11 = withApiErrors(handle);
+var DELETE = withApiErrors(handle);
+
 // runtime/routes.ts
 var routes = {
   "/api/auth/login": route_exports,
   "/api/auth/logout": route_exports2,
   "/api/auth/password": route_exports3,
   "/api/data": route_exports4,
+  "/api/unavailability": route_exports12,
   "/api/devices": route_exports5,
   "/api/documents/download": route_exports6,
   "/api/documents/generate": route_exports7,
@@ -31583,21 +31471,21 @@ function LoginForm() {
 // runtime/server.ts
 var { openDatabase, initialize, fileBucket } = require("../runtime/storage.cjs");
 var { settings } = require("../runtime/settings.cjs");
-async function createDashboard({ root, website, env: env2 = process.env }) {
-  const opts = settings(root, env2), db2 = await openDatabase(opts.dbFile);
+async function createDashboard({ root, website, env = process.env }) {
+  const opts = settings(root, env), db2 = await openDatabase(opts.dbFile);
   try {
     await initialize(db2, root);
   } catch (e) {
     await db2.close();
     throw e;
   }
-  const runtime2 = { db: db2, config: opts.config, bucket: fileBucket(import_node_path.default.join(opts.dataDir, "documents")), bookings: async () => {
+  const runtime2 = { db: db2, config: opts.config, bucket: fileBucket(import_node_path.default.join(opts.dataDir, "documents")), unavailability: website.locals.bookings, bookings: async () => {
     await website.locals.databaseReady;
     const bookings = await new Promise((resolve, reject) => website.locals.db.all("SELECT id,name,email,company,phone,kind,date,time,topic,status,start,created,updated,error,email_status AS confirmationEmail FROM meeting_bookings ORDER BY start DESC LIMIT 2000", (e, rows) => e ? reject(e) : resolve(rows)));
     let configured = false;
     try {
-      const u = new URL(env2.BOOKING_PUBLIC_URL || "");
-      configured = env2.BOOKING_ENABLED === "true" && (env2.BOOKING_API_KEY || "").length >= 32 && !u.username && !u.password && (u.protocol === "https:" || !opts.production && u.protocol === "http:" && ["localhost", "127.0.0.1"].includes(u.hostname));
+      const u = new URL(env.BOOKING_PUBLIC_URL || "");
+      configured = env.BOOKING_ENABLED === "true" && (env.BOOKING_API_KEY || "").length >= 32 && !u.username && !u.password && (u.protocol === "https:" || !opts.production && u.protocol === "http:" && ["localhost", "127.0.0.1"].includes(u.hostname));
     } catch {
     }
     return { configured, connected: configured, mode: "phone", bookings };
@@ -31613,8 +31501,8 @@ async function createDashboard({ root, website, env: env2 = process.env }) {
   app.get("/robots.txt", (_req, res) => res.type("text").send("User-agent: *\nDisallow: /\n"));
   app.use("/assets", import_express.default.static(import_node_path.default.join(root, "dist/client/assets"), { dotfiles: "deny", index: false, fallthrough: false, redirect: false }));
   for (const file of ["009-logo-transparent.png", "favicon.svg", "manifest.json", "sw.js"]) app.get("/" + file, (_req, res) => res.sendFile(import_node_path.default.join(root, "dist/client", file)));
-  app.use((req, res, next) => context.run({ ...runtime2, requestHeaders: new Headers(Object.entries(req.headers).filter(([, v]) => typeof v === "string")) }, () => void handle(req, res).catch(next)));
-  async function handle(req, res) {
+  app.use((req, res, next) => context.run({ ...runtime2, requestHeaders: new Headers(Object.entries(req.headers).filter(([, v]) => typeof v === "string")) }, () => void handle2(req, res).catch(next)));
+  async function handle2(req, res) {
     const pathname = new URL(req.originalUrl, opts.origin).pathname;
     const method = req.method === "HEAD" ? "GET" : req.method;
     const route = routes[pathname];
