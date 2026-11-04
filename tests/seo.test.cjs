@@ -57,12 +57,12 @@ test('all public pages have unique metadata, canonical URLs, valid schema, conte
 });
 test('FCA title, qualified price description and campaign expiry', async () => {
   let html = await (await get('/fca-authorisation-motor-dealers')).text();
-  assert(html.includes('<title>FCA Authorisation for Motor Dealers | £100 to Get Started | 009 Compliance</title>'));
-  assert(html.includes('Six-month minimum. FCA fee separate.'));
+  assert(html.includes('<title>FCA Authorisation for Motor Dealers | Get Started for £100</title>'));
+  assert(html.includes('<meta name="description" content="Get help with your motor dealership’s FCA authorisation application. Start for £100, then £100/month. Six-month minimum. FCA application fee paid separately.">'));
   process.env.CAMPAIGN_NOW = '2026-12-26T00:00:01Z';
   html = await (await get('/fca-authorisation-motor-dealers')).text();
   assert(!html.includes('Christmas offer ends in'));
-  assert(html.includes('£100 to Get Started'));
+  assert(html.includes('<title>FCA Authorisation for Motor Dealers | Get Started for £100</title>'));
   process.env.CAMPAIGN_NOW = '2026-11-01T12:00:00Z';
 });
 test('one-hop production redirects retain tracking and referral parameters; preview stays local', async () => {

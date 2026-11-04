@@ -50,9 +50,12 @@ function templateSeo(req, res, next) {
       data.pageTitle = page.title;
       data.pageDescription = page.description;
       if (req.path === '/fca-authorisation-motor-dealers') {
-        data.pageTitle = `FCA Authorisation for Motor Dealers | ${campaign.state().showPrice ? `£${offer.startPayment} to Get Started | ` : ''}009 Compliance`;
-        data.pageDescription = campaign.state().showPrice
-          ? `FCA authorisation assistance for car, motorcycle, van and commercial vehicle dealers. £${offer.startPayment} to start, then £${offer.monthlyPayment}/month. ${offer.minimumTermTitle}-month minimum. FCA fee separate.`
+        const { showPrice } = campaign.state();
+        data.pageTitle = showPrice
+          ? `FCA Authorisation for Motor Dealers | Get Started for £${offer.startPayment}`
+          : 'FCA Authorisation for Motor Dealers | 009 Compliance';
+        data.pageDescription = showPrice
+          ? `Get help with your motor dealership’s FCA authorisation application. Start for £${offer.startPayment}, then £${offer.monthlyPayment}/month. ${offer.minimumTermTitle}-month minimum. FCA application fee paid separately.`
           : 'FCA authorisation assistance for car, motorcycle, van and commercial vehicle dealers. Help with applications, documents and FCA information requests.';
       }
       if (guide) {
