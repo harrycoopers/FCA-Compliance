@@ -1,5 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),sqlite=require('sqlite3');
+const {randomUUID}=require('node:crypto');
 const {createService,instant,validDate,normalizePhone}=require('../booking/service');
 const envBase={BOOKING_ENABLED:'true',BOOKING_API_KEY:'a'.repeat(40),BOOKING_PUBLIC_URL:'https://example.invalid'};
 const input=(date,time,extra={})=>({date,time,email:'test@example.invalid',name:'Dummy visitor',company:'Dummy Dealer',phone:'07700 900123',topic:'authorisation',...extra});
@@ -12,7 +13,7 @@ test('phone booking validation, persistence, concurrency and optional email',asy
   await t.test('works without Google credentials, token key or OAuth',async()=>{assert.deepEqual(await service.status(),{configured:true,connected:true,mode:'phone',confirmationEmailEnabled:true});assert((await service.freeTimes('2026-11-02')).length)});
   await t.test('UK summer/winter conversion and real calendar dates',()=>{assert.equal(instant('2026-06-01','09:00'),'2026-06-01T08:00:00.000Z');assert.equal(instant('2026-11-02','09:00'),'2026-11-02T09:00:00.000Z');assert(!validDate('2026-02-30'));});
   await t.test('phone numbers are required, normalised and safe',()=>{assert.equal(normalizePhone('+44 (7700) 900-123'),'+447700900123');assert.equal(normalizePhone('07700 900123'),'07700900123');for(const v of ['',null,[],{},'123','1234567890123456','+44<script>123456789','07700900123\r\n','0'.repeat(11)])assert.throws(()=>normalizePhone(v),String(v));});
-  await t.test('invalid dates, contacts, topics and past slots fail',async()=>{await assert.rejects(service.freeTimes('2026-11-07'));await assert.rejects(service.freeTimes('2026-02-30'));for(const extra of [{email:'bad\r\nBcc:other@invalid'},{name:['array']},{phone:''},{topic:'constructor'}])await assert.rejects(service.reserve(input('2026-11-02','09:00',extra),'1'.repeat(32)));await assert.rejects(service.reserve(input('2026-11-01','09:00'),'2'.repeat(32)));});
+  await t.test('invalid dates, contacts, topics and past slots fail',async()=>{await assert.rejects(service.freeTimes('2027-05-01'));await assert.rejects(service.freeTimes('2026-02-30'));for(const extra of [{email:'bad\r\nBcc:other@invalid'},{name:['array']},{phone:''},{topic:'constructor'}])await assert.rejects(service.reserve(input('2026-11-02','09:00',extra),'1'.repeat(32)));await assert.rejects(service.reserve(input('2026-11-01','09:00'),'2'.repeat(32)));});
   let saved;
   await t.test('concurrent visitors create one confirmed call',async()=>{const [time]=await service.freeTimes('2026-11-02');const results=await Promise.allSettled([service.reserve(input('2026-11-02',time),'3'.repeat(32)),service.reserve(input('2026-11-02',time,{email:'other@example.invalid'}),'4'.repeat(32))]);assert.equal(results.filter(x=>x.status==='fulfilled').length,1);saved=results.find(x=>x.status==='fulfilled').value;assert.equal(saved.status,'confirmed');assert.equal(saved.kind,'phone');assert.equal(saved.phone,'07700900123');assert.equal(saved.meet_url,'');assert(!(await service.freeTimes(saved.date)).includes(time));});
   await t.test('retries reuse the booking and changed phone is rejected',async()=>{assert.equal((await service.reserve(input(saved.date,saved.time,{email:saved.email}),saved.request_key)).id,saved.id);await assert.rejects(service.reserve(input(saved.date,saved.time,{phone:'07700 900456'}),saved.request_key),/different details/);});
@@ -41,4 +42,22 @@ test('HTTP bookings retain CSRF, origin checks, private bridge and public-data b
   assert.equal((await fetch(base+'/internal/bookings')).status,401);r=await fetch(base+'/internal/bookings',{headers:{Authorization:'Bearer '+env.BOOKING_API_KEY}});const data=await r.json();assert.equal(data.bookings[0].phone,'07700900123');assert(!('meetUrl' in data.bookings[0]));assert(!('request_key' in data.bookings[0]));
   assert.equal((await(await fetch(base+'/api/bookings/status/'+key)).json()).status,'confirmed');assert.equal((await fetch(base+'/api/bookings/google/callback?code=ignored')).status,410);
  }finally{await s.stop();await new Promise(r=>server.close(r));await close(db)}
+});
+
+test('weekend calls respect staff blocks and existing bookings', async () => {
+  const db = new sqlite.Database(':memory:');
+  const service = createService({db, env: envBase, now: () => new Date('2026-11-02T08:00Z')});
+  try {
+    for (const date of ['2026-11-07', '2026-11-08']) {
+      assert((await service.freeTimes(date)).includes('09:00'));
+      await service.saveBlock({startDate: date, startTime: '09:00', endDate: date, endTime: '09:30', note: ''}, 'staff');
+      assert(!(await service.freeTimes(date)).includes('09:00'));
+      await assert.rejects(service.reserve(input(date, '09:00'), randomUUID()), {status: 409});
+      const booking = await service.reserve(input(date, '09:30'), randomUUID());
+      assert.equal(booking.status, 'confirmed');
+      assert(!(await service.freeTimes(date)).includes('09:30'));
+    }
+  } finally {
+    await close(db);
+  }
 });
