@@ -3300,11 +3300,18 @@ app.get('/motor-dealer-compliance', (req, res) => {
 
 app.get('/pricing', (req, res) => {
   const faqs = [
-    {question:'Does the authorisation offer cover every service?',answer:'No. FCA Authorisation Assistance, CCR009 Return Assistance and Ongoing Compliance Support are separate services with their own scope and pricing.'},
-    {question:'How do you price CCR009 assistance?',answer:'We discuss your reporting needs and agree the scope and fee before engagement. Your firm remains responsible for its submission.'},
-    {question:'How does ongoing support work?',answer:'Ongoing support is provided on a fixed monthly, fair-use basis. We agree the scope and fees before work begins. Additional work is discussed and agreed separately.'},
+    {question:'Does the authorisation offer cover every service?',answer:`No. After authorisation, routine FCA reporting assistance, including CCR007 and CCR009, is included in your continuing £${offer.reportingMonthly} monthly subscription. No additional subscription is required. Separate charges apply only to standalone services or additional work outside the subscription’s agreed scope.`},
+    {question:'How do you price CCR009 assistance?',answer:`Routine CCR007 and CCR009 reporting assistance is included in your continuing £${offer.reportingMonthly} monthly subscription after authorisation. Standalone services or additional work outside the subscription’s agreed scope are priced separately, with fees agreed before engagement. Your firm remains responsible for its submission.`},
+    {question:'How does ongoing support work?',answer:`After authorisation, your existing £${offer.reportingMonthly} monthly subscription continues and includes routine CCR007 and CCR009 reporting assistance within the agreed scope, on a fair-use basis. No additional subscription is required. Separate charges for standalone services or work outside the subscription’s agreed scope are discussed and agreed before work begins.`},
     {question:'Can I speak to you before choosing?',answer:'Yes. Book a 15-minute call to talk through your dealership and find out which support could fit.'},
-    ...faqData.pricing()
+    ...faqData.pricing().map(faq => {
+      // Keep these email-requested corrections on Pricing; other pages share the FAQ source.
+      if (faq.question === 'What happens after I’m authorised?') return { ...faq,
+        answer: `Following FCA authorisation, your existing £${offer.reportingMonthly} monthly subscription continues and includes routine FCA reporting assistance, including CCR007 and CCR009. No additional subscription is required. Applicable referral discounts continue. Payments continue until you cancel under the agreed cancellation terms. Separate charges apply only to standalone services or additional work outside the subscription’s agreed scope.` };
+      if (faq.question === 'Are CCR009 and wider compliance support included?') return { ...faq,
+        answer: `Routine FCA reporting assistance, including CCR007 and CCR009, is included in your continuing £${offer.reportingMonthly} monthly subscription after authorisation. No additional subscription is required. Separate charges apply only to standalone services or additional work outside the subscription’s agreed scope.` };
+      return faq;
+    })
   ];
   res.render('pricing', {
     salesPage: true,
