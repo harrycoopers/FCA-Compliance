@@ -24,7 +24,15 @@ async function build() {
   for (const kind of ['css', 'js']) {
     for (const file of fs.readdirSync(path.join(root, 'public', kind)).sort()) {
       if (!file.endsWith('.' + kind)) continue;
-      const source = fs.readFileSync(path.join(root, 'public', kind, file), 'utf8');
+      let source = fs.readFileSync(path.join(root, 'public', kind, file), 'utf8');
+      if(kind==='css' && file==='guide-content.css')source+='\n'+fs.readFileSync(path.join(root,'public/css/guide-design.css'),'utf8');
+      if(kind==='js' && file==='guide-enhancements.js')source+='\n;\n'+fs.readFileSync(path.join(root,'public/js/guide-reading.js'),'utf8');
+      // Reuse the authored offer styles in one guide-only request. Homepage
+      // assets retain their own original files and ordering.
+      if (kind === 'css' && file === 'guide-original-offers.css') {
+        source = ['guide-content.css','auth-final-cta.css','home-offer.css','home-christmas-van.css','auth-christmas-card.css','auth-referral-animation.css']
+          .map(name => fs.readFileSync(path.join(root,'public/css',name),'utf8')).join('\n') + '\n' + source + '\n' + fs.readFileSync(path.join(root,'public/css/guide-design.css'),'utf8');
+      }
       let body;
       if (kind === 'css') {
         // Level 0 removes whitespace/comments without restructuring rules/keyframes.
@@ -38,6 +46,9 @@ async function build() {
       save('/' + kind + '/' + file, body);
     }
   }
+  const guideMotion=['home-offer.js','auth-referral-animation.js','christmas-arrival.js']
+    .map(name=>fs.readFileSync(path.join(root,'public/js',name),'utf8')).join('\n;\n');
+  save('/js/guide-original-offers.js',(await terser.minify(guideMotion,{compress:false,mangle:false,format:{comments:false}})).code);
   fs.writeFileSync(path.join(root, 'config/asset-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   console.log(`Built ${Object.keys(manifest).length} local, versioned assets.`);
 }

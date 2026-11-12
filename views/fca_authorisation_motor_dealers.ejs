@@ -153,7 +153,7 @@
         <article class="incl9__d">
           <div class="as-scene" aria-hidden="true"><svg viewBox="0 0 320 170" fill="none"><circle class="as-ring" cx="160" cy="85" r="65" fill="none" stroke="#719bc3" stroke-width="1" stroke-dasharray="4 8"/><g class="as-pop"><path d="m160 22 48 20v39c0 33-23 53-48 65-25-12-48-32-48-65V42z" fill="#254d72" stroke="#8ed8d2" stroke-width="2"/><path class="as-draw" d="m138 81 16 17 30-35" fill="none" stroke="#91efce" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="as-stamp"><circle cx="224" cy="119" r="19" fill="#91efce"/><path d="M215 119h18m-9-9v18" stroke="#14243a" stroke-width="3" stroke-linecap="round"/></g></svg></div>
           <h3>Support beyond the application</h3>
-          <p>Once authorised, your existing £<%= offer.reportingMonthly %> monthly subscription continues and includes routine FCA reporting assistance, including CCR007 and CCR009. There is no additional subscription charge. Standalone services remain available separately.</p>
+          <% if (c.showPrice) { %><p>Once authorised, your existing £<%= offer.reportingMonthly %> monthly subscription continues and includes routine FCA reporting assistance, including CCR007 and CCR009. There is no additional subscription charge. Standalone services remain available separately.</p><% } else { %><p>We’ll confirm current pricing and the payment schedule with you before you start.</p><% } %>
           <div class="as-finance-invite">
             <h4>Ready to offer your customers finance?</h4>
             <p>Explore optional motor-finance broker support, backed by 30+ years of motor-finance experience. A clear next step for your dealership after authorisation.</p>
@@ -198,6 +198,7 @@
   <section class="sec sec--flush-top mf-promo-section" aria-labelledby="mf-promo-title"><div class="wrap"><div class="mf-promo"><div><h2 id="mf-promo-title">Authorised and ready<br><span class="serif">for what’s next?</span></h2><p>Help your customers explore motor finance with experienced broker support. Talk through the next step for your dealership, backed by <strong>30+ years of motor-finance experience.</strong></p><div class="actions"><a class="btn btn--primary" href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a><a class="text-link" href="/contact?topic=finance#book-meeting">Discuss your dealership</a></div><p class="mf-qualification">Separate from your authorisation assistance subscription. Required permissions and broker onboarding must be in place. Customer finance is subject to lender assessment and terms; approval is not guaranteed.</p></div><%- include('partials/motor_finance_art') %></div></div></section>
 
   <!-- 7. Referral promotion -->
+  <% if (c.showPrice) { %>
   <section class="sec sec--flush-top" aria-labelledby="ref-title">
     <div class="wrap">
       <div class="ref-promo ref-clean<%= c.active ? ' is-festive' : '' %>" data-motion>
@@ -220,6 +221,7 @@
     </div>
   </section>
 
+  <% } %>
   <!-- Supporting detail moved out of the main journey -->
   <section class="sec sec--flush-top" aria-labelledby="detail-title">
     <div class="wrap wrap--narrow">
@@ -272,7 +274,7 @@
           <summary>What happens after FCA approval?</summary>
           <div class="more__body">
             <p>Obtaining FCA authorisation is only the beginning. Once authorised, firms often have ongoing responsibilities including CCR009 reporting, CCR007 reporting, Consumer Duty awareness, website compliance reviews, complaints monitoring, vulnerable customer procedures, FCA reporting obligations and regulatory disclosures.</p>
-            <p>Once authorised, your existing £<%= offer.reportingMonthly %> monthly subscription continues and includes routine FCA reporting assistance, including CCR007 and CCR009. There is no additional subscription charge. Separate charges apply only to standalone <a href="/motor-dealer-compliance">ongoing compliance support</a> and <a href="/ccr009-return-assistance-motor-dealers">CCR009 return assistance</a> services or additional work outside the subscription’s agreed scope.</p>
+            <% if (c.showPrice) { %><p>Once authorised, your existing £<%= offer.reportingMonthly %> monthly subscription continues and includes routine FCA reporting assistance, including CCR007 and CCR009. There is no additional subscription charge. Separate charges apply only to standalone <a href="/motor-dealer-compliance">ongoing compliance support</a> and <a href="/ccr009-return-assistance-motor-dealers">CCR009 return assistance</a> services or additional work outside the subscription’s agreed scope.</p><% } else { %><p>We’ll confirm current pricing and the payment schedule with you before you start.</p><% } %>
           </div>
         </details>
       </div>
@@ -290,23 +292,7 @@
     </div>
   </section>
 
-  <section class="sec auth-final-cta" aria-labelledby="auth-final-title">
-    <div class="wrap">
-      <div class="afc-panel">
-        <div class="afc-copy">
-          <h2 id="auth-final-title">What are you<br><span>waiting for?</span></h2>
-          <p>Let’s make your next step clearer. Talk through your dealership, ask your questions and find out how we can help.</p>
-          <a class="afc-button" href="#book-meeting">Book a 15-minute call <span aria-hidden="true">↗</span></a>
-          <span class="afc-note">A quick conversation. Clear next steps.</span>
-        </div>
-        <div class="afc-art" aria-hidden="true">
-          <div class="afc-orbit"></div>
-          <div class="afc-calendar"><div class="afc-binding"><i></i><i></i></div><div class="afc-calendar-top">LET’S TALK</div><strong>15<span>minutes</span></strong><div class="afc-calendar-bottom"><span></span><span></span><span></span><span></span></div></div>
-          <div class="afc-check"><svg viewBox="0 0 32 32" fill="none"><path d="m8 16 6 6 11-13" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <%- include('partials/guide_booking') %>
 
   <!-- 9. Closing call request -->
   <%- include('partials/meeting_section', { defaultTopic: 'authorisation' }) %>

@@ -1,6 +1,9 @@
 (() => {
-  const card = document.querySelector('[data-home-offer]');
-  if (!card) return;
+ const init = () => document.querySelectorAll('[data-home-offer]').forEach(card => {
+  if(card.dataset.homeOfferReady) return;
+  card.dataset.homeOfferReady='true';
+  const guide=card.hasAttribute('data-guide-gift');
+  if(guide)card.closest('.guide-home-offer').classList.add('gift-motion-ready');
   const panel = card.querySelector('.offer-shell');
   const fallback = document.querySelector('[data-home-offer-fallback]');
   const deadline = Date.parse(card.dataset.deadline);
@@ -14,7 +17,7 @@
       }
     });
     [['box',['#eb6570','#ab1e3a']],['side',['#af1e39','#70172a']]].forEach(([id,colors]) => {
-      card.querySelectorAll('#'+id+' stop').forEach((stop,i) => stop.setAttribute('stop-color', colors[i]));
+      card.querySelectorAll('#'+(card.dataset.svgPrefix||'')+id+' stop').forEach((stop,i) => stop.setAttribute('stop-color', colors[i]));
     });
   }
   let visible = !('IntersectionObserver' in window);
@@ -31,6 +34,7 @@
       visible = false; sync();
     }
   };
-  expire();
-  setInterval(expire, 1000);
+  if(!guide){expire();setInterval(expire,1000);}
+ });
+ init();document.addEventListener('guideoffersupdated',init);
 })();

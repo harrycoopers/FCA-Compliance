@@ -15,6 +15,9 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendEmail({ to, subject, html, replyTo }) {
+  if (process.env.LOCAL_PREVIEW === 'true' && process.env.NODE_ENV === 'development') {
+    throw new Error('Email delivery is disabled in the local preview. No message was sent.');
+  }
   const sendPromise = transporter.sendMail({
     from: `"009 Compliance" <${process.env.EMAIL_USER}>`,
     to,

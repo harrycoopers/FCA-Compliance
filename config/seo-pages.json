@@ -45,20 +45,20 @@
     "service": "CCR009 Return Assistance"
   },
   "/what-is-ccr009": {
-    "title": "What Is CCR009? A Motor Dealer Guide | 009 Compliance",
-    "description": "Understand the FCA CCR009 return, what it covers, which reporting it replaces and how a motor dealer can prepare, with official source links."
+    "title": "What Is CCR009? FCA Motor Dealer Reporting | 009 Compliance",
+    "description": "Learn what the FCA’s CCR009 return covers, which reporting it replaced and how motor dealers can prepare. Distinguish FCA filing from internal record collection."
   },
   "/who-needs-to-submit-ccr009": {
     "title": "Who Needs to Submit CCR009? | 009 Compliance",
-    "description": "Check CCR009 scope for motor dealers, relevant permissions, inactive firms and principal or appointed-representative arrangements."
+    "description": "Check CCR009 reporting scope for motor dealers, inactive firms, principals and appointed representatives using permissions and the firm’s actual schedule."
   },
   "/what-information-is-needed-for-ccr009": {
     "title": "What Information Is Needed for CCR009? | 009 Compliance",
-    "description": "Map CCR009 questions to dealership records. Check definitions, reporting periods, revenue measures and evidence before preparing your return."
+    "description": "Map CCR009 questions to dealership source records. Check field definitions, reporting periods and financial measures, with a fictional reconciliation example."
   },
   "/ccr009-reporting-checklist-motor-dealers": {
     "title": "CCR009 Reporting Checklist for Motor Dealers | 009 Compliance",
-    "description": "Use a practical CCR009 checklist covering access, reporting periods, evidence, reconciliation, review and submission confirmation."
+    "description": "Check CCR009 readiness before submission: access, period, evidence, reconciliation, unresolved questions and confirmation that the return has been submitted."
   },
   "/ccr009-vs-ccr007": {
     "title": "CCR009 vs CCR007: Motor Dealer Reporting | 009 Compliance",
@@ -66,31 +66,31 @@
   },
   "/common-ccr009-reporting-mistakes": {
     "title": "CCR009 Reporting Mistakes to Check For | 009 Compliance",
-    "description": "Check CCR009 reporting periods, financial measures, duplicate records, zero answers and submission status with practical motor-dealer examples."
+    "description": "Check for wrong CCR009 periods, mixed financial measures, duplicate records and unsupported zero answers. Review examples, prevention steps and submission errors."
   },
   "/how-to-prepare-for-ccr009-return": {
     "title": "How to Prepare for a CCR009 Return | 009 Compliance",
-    "description": "Organise CCR009 preparation: access, responsibilities, source records, reconciliation, review and submission. Separate internal collection from FCA filing."
+    "description": "Plan CCR009 preparation in stages: responsibilities, system access, source records, reconciliation, review and submission. Build an internal workflow for your firm."
   },
   "/do-motor-dealers-need-fca-authorisation": {
     "title": "Do Motor Dealers Need FCA Authorisation? | 009 Compliance",
-    "description": "Check when vehicle finance introductions need FCA permissions, how appointed representatives differ and which dealership activities to assess."
+    "description": "Do you need FCA authorisation to offer car finance? Check vehicle sales, finance introductions and appointed-representative arrangements before starting."
   },
   "/fca-licence-car-dealers": {
-    "title": "FCA Licence for Car Dealers: FRNs and Permissions | 009 Compliance",
-    "description": "Understand FCA authorisation, Firm Reference Numbers and permissions. Learn what to check on the Register before describing your dealership’s status."
+    "title": "FCA Licence for Car Dealers: Check Permissions | 009 Compliance",
+    "description": "What an FCA licence means for car dealers, how to check a Firm Reference Number and permissions, and what to do when a Register entry does not match."
   },
   "/limited-permission-fca-authorisation-motor-dealers": {
-    "title": "Limited Permission FCA Authorisation for Motor Dealers | 009 Compliance",
-    "description": "Compare FCA permission scenarios for owned stock, non-owned vehicles and part-exchanges. Understand why your dealership’s activities determine the route."
+    "title": "Limited vs Full FCA Permission: Motor Dealers | 009 Compliance",
+    "description": "Compare limited and full FCA permission scenarios for motor dealers, including owned stock, vehicle sourcing and part-exchanges with outstanding finance."
   },
   "/credit-broking-permission-motor-dealers": {
     "title": "Credit Broking Permission for Motor Dealers | 009 Compliance",
-    "description": "Understand motor-dealer credit broking, lender and broker introductions, permission limits and the customer journey, with official FCA sources."
+    "description": "Understand credit broking roles in motor finance, introductions to lenders and brokers, permission limits and the steps in a dealership customer journey."
   },
   "/fca-application-documents-motor-dealers": {
-    "title": "FCA Application Documents for Motor Dealers | 009 Compliance",
-    "description": "Prepare your motor-dealer FCA application: business plan, ownership information, applicable forms, financial information and practical document checks."
+    "title": "FCA Application Documents: Motor Dealer Checklist | 009 Compliance",
+    "description": "Prepare motor-dealer FCA application documents: business plans, ownership and financial information, customer journeys, policies and pre-submission checks."
   },
   "/why-fca-applications-get-delayed": {
     "title": "Why FCA Applications Get Delayed | 009 Compliance",
@@ -98,23 +98,23 @@
   },
   "/after-fca-approval-motor-dealers": {
     "title": "After FCA Approval: Motor Dealer Checklist | 009 Compliance",
-    "description": "Plan your next steps after FCA authorisation: permission conditions, staff, website disclosures, systems access, reporting and ongoing responsibilities."
+    "description": "Use a practical post-authorisation checklist for permission conditions, staff, website disclosures, systems access, CCR009 reporting and business changes."
   },
   "/when-is-ccr009-due": {
     "title": "When Is CCR009 Due? Periods and Deadlines | 009 Compliance",
-    "description": "Understand annual and six-monthly CCR009 reporting, the 40-business-day submission window and where to find your firm’s exact deadline."
+    "description": "Check CCR009 reporting periods, the 40-business-day submission window, first-period rules and the £5 million boundary before confirming your firm’s deadline."
   },
   "/consumer-duty-motor-dealers": {
     "title": "Consumer Duty for Motor Dealers | 009 Compliance",
-    "description": "Understand the four Consumer Duty outcomes, dealership responsibilities, practical evidence and monitoring actions, with FCA Handbook sources."
+    "description": "Explore the four Consumer Duty outcomes for motor dealers, responsibilities by role, practical monitoring evidence, vulnerable-customer support and follow-up actions."
   },
   "/website-compliance-motor-dealers": {
-    "title": "Website Compliance for Motor Dealers | 009 Compliance",
+    "title": "Motor Dealer Website Compliance Checklist | 009 Compliance",
     "description": "Review dealership status wording, finance promotions, commission disclosures, customer support and mobile readability using a practical checklist."
   },
   "/fca-compliance-motor-dealers-guide": {
     "title": "FCA Compliance for Motor Dealers: Guides | 009 Compliance",
-    "description": "Find motor-dealer guides for FCA authorisation, permissions, Consumer Duty, website compliance and CCR009 preparation, reporting and deadlines."
+    "description": "Find the right motor-dealer guide for authorisation, permissions, post-approval tasks, Consumer Duty, website checks and CCR009 reporting preparation and deadlines."
   },
   "/fca-authorisation-motor-dealers": {
     "title": "FCA Authorisation for Motor Dealers | Get Started for £100",

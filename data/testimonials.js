@@ -5,6 +5,11 @@
  * Ian’s attribution). "highlights" lists verbatim phrases emphasised in excerpts.
  * Kept as data (not an EJS partial) so pages never depend on a partial file.
  */
+const gurpreetParagraphs = [
+  "Jon and 009 Compliance helped us get our FCA licence sorted quickly and made the whole process straightforward. We were really happy with the service and now continue to use 009 Compliance for our ongoing FCA reporting assistance.",
+  "Everything is handled efficiently and we know we can rely on Jon whenever we need help."
+];
+
 const reviews = [
   {
     "paragraphs": [
@@ -216,9 +221,19 @@ const reviews = [
     "much easier than we expected",
     "kept us updated"
   ]
-}
+},
+  {
+    "paragraphs": gurpreetParagraphs,
+    "attribution": "Gurpreet, Director, GSGCARS LTD",
+    "excerpt": gurpreetParagraphs[0] + " …",
+    "highlights": [
+      "made the whole process straightforward",
+      "ongoing FCA reporting assistance",
+      "we can rely on Jon"
+    ]
+  }
 ];
 
-const applicationReviewIndexes = [1,2,4,5,6,7,8,11,15,16];
+const applicationReviewIndexes = [1,2,4,5,6,7,8,11,15,16,17];
 
 module.exports = { reviews, applicationReviewIndexes };

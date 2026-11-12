@@ -3,6 +3,8 @@ const {createService,safeEqual}=require('./service');
 const {rateLimit}=require('../utils/security');
 module.exports=function mountBookings(app,options){
  const env=options.env||process.env,service=createService(options);
+ const localPreview=env.LOCAL_PREVIEW==='true'&&env.NODE_ENV==='development';
+ if(localPreview)app.use(['/api/bookings','/internal/bookings'],(req,res)=>res.status(503).json({error:'Real bookings and booking notifications are disabled in this local preview.'}));
  const wrap=fn=>(req,res,next)=>Promise.resolve(fn(req,res)).catch(e=>{res.status(e.status||503).json({error:e.status===409?e.message:'Booking could not be completed. Please retry shortly or contact us.'});});
  const internal=(req,res,next)=>{const token=req.headers.authorization?.replace(/^Bearer /,'');if(!env.BOOKING_API_KEY||env.BOOKING_API_KEY.length<32||!safeEqual(token,env.BOOKING_API_KEY))return res.status(401).json({error:'Unauthorized'});next();};
  const origin=(req,res,next)=>{if(req.headers.origin!==(env.BOOKING_PUBLIC_URL ? new URL(env.BOOKING_PUBLIC_URL).origin : `${req.protocol}://${req.get('host')}`))return res.status(403).json({error:'Invalid origin'});next();};
@@ -17,7 +19,7 @@ module.exports=function mountBookings(app,options){
  app.post('/internal/bookings/process',internal,wrap(async(req,res)=>{await service.processPending();res.json({ok:true});}));
  let stopped=false,running=null;
  const processQueue=()=>{if(stopped)return Promise.resolve();if(!running)running=service.processPending().finally(()=>{running=null;});return running;};
- const timer=setInterval(()=>processQueue().catch(()=>{}),60000);timer.unref();
- service.ready.then(processQueue).catch(()=>console.error('[009 Booking] Booking database could not be initialized.'));
+ const timer=localPreview?null:setInterval(()=>processQueue().catch(()=>{}),60000);timer?.unref();
+ service.ready.then(()=>localPreview?undefined:processQueue()).catch(()=>console.error('[009 Booking] Booking database could not be initialized.'));
  return {...service,stop:async()=>{stopped=true;clearInterval(timer);await service.ready.catch(()=>{});if(running)await running.catch(()=>{});}};
 };

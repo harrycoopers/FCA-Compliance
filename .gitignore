@@ -26,6 +26,8 @@ logs/
 coverage/
 .nyc_output/
 .cache/
+.qa/
+.local/
 
 # Old Cloudflare local development data
 .wrangler/

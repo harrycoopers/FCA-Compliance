@@ -23,11 +23,41 @@ Module._load = function(id, parent) {
 const app = require('../server');
 Module._load = load;
 const pages = require('../config/seo-pages.json');
+const { guideText } = require('../utils/guide-editorial');
 const manifest = require('../config/asset-manifest.json');
 let server, base;
 const get = (url, options = {}) => fetch(base + url, { redirect: 'manual', ...options });
 const post = (url, body, cookie = '') => get(url, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', cookie }, body: new URLSearchParams(body) });
 const cookieFrom = response => response.headers.get('set-cookie')?.split(';')[0] || '';
+
+test('analytics stays disabled with no consent interface or tracking hooks', async () => {
+  for (const route of ['/', '/pricing', '/what-is-ccr009', '/contact', '/login']) {
+    const html = await (await get(route)).text();
+    assert(!/<script[^>]+src="https:\/\/(?:www\.)?(?:googletagmanager|google-analytics)\.com/.test(html), route);
+    assert.equal((html.match(/analytics-disabled\.[a-f0-9]+\.js/g) || []).length, 1);
+    assert(!/data-analytics-(?:choice|preferences|panel|enabled)|data-guide-event=|data-guide-placement=/.test(html));
+  }
+});
+
+test('Pricing paragraph and FAQ/schema prices follow confirmed campaign states', async () => {
+  const campaign = require('../config/campaign'), mode = campaign.postCampaign.mode, now = process.env.CAMPAIGN_NOW;
+  try {
+    for (const scenario of [
+      {now:'2026-11-12T12:00:00Z', mode:'continue', show:true},
+      {now:'2026-12-26T00:00:01Z', mode:'continue', show:true},
+      {now:'2026-12-26T00:00:01Z', mode:'unconfirmed', show:false},
+      {now:'2026-12-26T00:00:01Z', mode:'custom', show:false}
+    ]) {
+      campaign.postCampaign.mode = scenario.mode; process.env.CAMPAIGN_NOW = scenario.now;
+      const html = await (await get('/pricing')).text();
+      assert.equal(html.includes('Following FCA authorisation, the existing £100 monthly subscription continues'), scenario.show);
+      assert.equal(/£\s*\d/.test(html), scenario.show, scenario.mode + ' no price leakage in HTML/schema');
+      assert(html.includes('The FCA application fee, which is paid separately.'));
+      assert(html.includes('Current pricing confirmed before you start.'));
+      assert(html.includes('href="#book-meeting"'));
+    }
+  } finally { campaign.postCampaign.mode = mode; process.env.CAMPAIGN_NOW = now; }
+});
 before(async () => { server = app.listen(0, '127.0.0.1'); await new Promise(r => server.once('listening', r)); base = 'http://127.0.0.1:' + server.address().port; });
 after(async () => { await new Promise(r => server.close(r)); await app.locals.stopBackgroundTasks(); await new Promise((resolve,reject)=>app.locals.db.close(e=>e?reject(e):resolve())); fs.rmSync(temp,{recursive:true,force:true}); });
 
@@ -125,7 +155,7 @@ test('contact and account POST routes require CSRF even through SEO middleware',
   assert.equal(delivered.length,0);
 });
 
-test('all 18 reviewed guides render matching FAQs, sourced content and qualified animated CTAs', async () => {
+test('all 18 guides preserve visible FAQs and render appropriate schema and relevant animated CTAs', async () => {
   const guides = require('../config/guide-content.json');
   const escape = require('ejs').escapeXML;
   assert.equal(Object.keys(guides).length, 18);
@@ -134,26 +164,114 @@ test('all 18 reviewed guides render matching FAQs, sourced content and qualified
     const html = await response.text();
     const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
     const faq = schemas.filter(s => s['@type'] === 'FAQPage');
-    assert.equal(faq.length, 1, 'one FAQ schema: ' + url);
-    assert.deepEqual(faq[0].mainEntity.map(q => [q.name, q.acceptedAnswer.text]), guide.faqs.map(f => [f.question, f.answer]));
+    assert.equal(faq.length, 0, 'retired FAQ rich-result markup omitted: ' + url);
+    const article = schemas.find(s => s['@type'] === 'Article');
+    assert.equal(article.headline, guide.title);
+    assert.equal(article.dateModified, guide.modified, 'only actual guide revisions have modification dates');
+    assert.equal(article.datePublished, undefined);
+    const breadcrumb = schemas.find(s => s['@type'] === 'BreadcrumbList');
+    assert.equal(breadcrumb.itemListElement.length, url === '/fca-compliance-motor-dealers-guide' ? 2 : 3);
+    assert.equal(breadcrumb.itemListElement.at(-1).name, guide.title);
+    assert(html.includes('aria-current="page"'));
+    assert(html.includes('property="og:type" content="article"'));
     for (const item of guide.faqs) {
-      assert(html.includes('<summary>' + escape(item.question) + '</summary>'), url);
-      assert(html.includes(escape(item.answer)), url);
+      assert(html.includes('<summary>' + escape(guideText(item.question)) + '</summary>'), url);
+      assert(html.includes(escape(guideText(item.answer))), url);
     }
     for (const source of guide.sources) assert(html.includes('href="' + source.href + '"'), url);
     assert(html.includes('class="afc-art"'), url);
-    assert(html.includes('class="offer-card__orbit"'), url);
-    assert(html.includes('£600 minimum service commitment'), url);
-    assert(html.includes('FCA application fee payable separately'), url);
-    assert(html.includes('href="/contact#book-meeting"'), url);
-    assert.equal(html.includes('id="guide-finance-title"'), guide.finance, url);
-    const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+    const offerBlock = html.match(/<section class="guide-(?:offer|original-offer)[\s\S]*?<\/section>/)?.[0] || '';
+    if (guide.group === 'fca') {
+      assert(offerBlock.includes('class="offer-card__orbit"'), url);
+      assert(offerBlock.includes('£600 minimum service commitment'), url);
+      assert(offerBlock.includes('FCA application fee payable separately'), url);
+      assert(offerBlock.includes('Your first payment counts as month one.'), url);
+      assert(offerBlock.includes('Direct Debit'), url);
+    } else if (guide.group === 'ccr') {
+      assert(offerBlock.includes('Priced to scope'), url);
+      assert(offerBlock.includes('/ccr009-return-assistance-motor-dealers'), url);
+      assert(!offerBlock.includes('£100'), url);
+    } else {
+      assert(offerBlock.includes('Ongoing compliance support'), url);
+      assert(!offerBlock.includes('£100'), url);
+    }
+    const topic = guide.group === 'fca' ? 'authorisation' : guide.group === 'ccr' ? 'ccr009' : 'ongoing';
+    assert(html.includes('href="/contact?topic=' + topic + '#book-meeting"'), url);
+    assert(html.includes('id="guide-navigation"'), url);
+    assert(!html.includes('id="guide-finance-title"'), 'no competing motor-finance promotion in guides: ' + url);
+    assert.equal((html.match(/data-guide-offer\b/g) || []).length, 1, url);
+    assert(html.includes('class="afc-button"'), url);
+    assert(!html.includes('data-guide-event=') && !html.includes('data-guide-placement='), url);
+    // Inert template content has its own document fragment, not live-page IDs.
+    const liveHtml=html.replace(/<template\b[^>]*>[\s\S]*?<\/template>/g,'');
+    const ids = [...liveHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
     assert.equal(new Set(ids).size, ids.length, 'duplicate IDs: ' + url);
     for (const link of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(link[1]), 'missing anchor ' + url + '#' + link[1]);
   }
 });
 
-test('guides preserve the offer expiry fallback and distinguish assistance from finance', async () => {
+test('guide revisions match the source evidence and preserve all unlisted educational fields', () => {
+  const before = require('../docs/guide-improvements-2026-11/content-before.json');
+  const after = require('../config/guide-content.json');
+  const changes = require('../docs/guide-improvements-2026-11/content-evidence.json').changes;
+  assert.deepEqual(Object.keys(after), Object.keys(before), 'established guide routes preserved');
+  for (const url of Object.keys(before)) {
+    const records = changes.filter(c => c.guide === url);
+    function compare(oldValue, current, path = '') {
+      const change = records.find(c => c.section === path);
+      if (change) {
+        assert.deepEqual(oldValue, change.before, url + ' evidence before ' + path);
+        assert.deepEqual(current, change.after, url + ' evidence after ' + path);
+        assert.equal(change.checked, '2026-11-12');
+        for(const source of change.sources) assert(new URL(source.url).hostname.endsWith('fca.org.uk'));
+        return;
+      }
+      if (path === 'sources' || path.endsWith('.sources')) {
+        for(const source of oldValue) assert(current.some(s => JSON.stringify(s) === JSON.stringify(source)), 'original source removed');
+        for(const source of current) assert(oldValue.some(s => s.href === source.href) || records.some(c => c.sources.some(s => s.url === source.href)), 'new source absent from evidence');
+        return;
+      }
+      if (oldValue && typeof oldValue === 'object') {
+        assert.equal(Array.isArray(oldValue), Array.isArray(current));
+        if(Array.isArray(oldValue)) assert.equal(current.length, oldValue.length, url + path);
+        else assert.deepEqual(Object.keys(current).filter(k => path || !['modified','updateSummary'].includes(k)), Object.keys(oldValue), url + path);
+        for(const key of Object.keys(oldValue)) compare(oldValue[key],current[key],path ? path+'.'+key : key);
+      } else assert.deepEqual(current, oldValue, url+' unlisted change '+path);
+    }
+    compare(before[url], after[url]);
+    assert.equal(after[url].reviewed, before[url].reviewed, 'original source-check date retained');
+    const revised = records.some(c => !['seoTitle','description'].includes(c.section));
+    assert.equal(after[url].modified, revised ? '2026-11-12' : undefined);
+    assert.equal(pages[url].title, after[url].seoTitle, 'registry title drift: ' + url);
+    assert.equal(pages[url].description, after[url].description, 'registry description drift: ' + url);
+  }
+});
+
+test('contextual links preserve every paragraph and render escaped, crawlable anchors', async () => {
+  const guides = require('../config/guide-content.json');
+  const links = require('../config/guide-links.json');
+  const {paragraphParts} = require('../utils/guide-links');
+  const escape = require('ejs').escapeXML;
+  assert.deepEqual(Object.keys(links), Object.keys(guides));
+  for (const [route,guide] of Object.entries(guides)) {
+    const html = await (await get(route)).text();
+    for (const link of links[route]) {
+      const section=guide.sections.find(s=>s.id===link.sectionId);
+      const text=section?.paragraphs[link.paragraph];
+      assert(text && text.split(link.text).length === 2, 'anchor occurs exactly once: '+route+' '+link.text);
+      assert(pages[link.href] && link.href !== route, 'known internal target: '+route);
+      assert(html.includes('<a class="guide-context-link" href="'+escape(link.href)+'">'+escape(guideText(link.text))+'</a>'), route);
+    }
+    for (const section of guide.sections) section.paragraphs.forEach((text,index)=>{
+      const parts=paragraphParts(route,section.id,index,text);
+      assert.equal(parts.map(p=>p.text).join(''),text,'paragraph unchanged: '+route);
+      assert.equal(parts.filter(p=>p.href).length,links[route].filter(l=>l.sectionId===section.id && l.paragraph===index).length,'no overlapping links');
+    });
+  }
+  assert.deepEqual(paragraphParts('/unknown','none',0,'<script> & "text"'),[{text:'<script> & "text"'}]);
+});
+
+test('guides preserve the offer expiry fallback and omit competing finance promotions', async () => {
   const campaign = require('../config/campaign');
   const previous = campaign.postCampaign.mode;
   process.env.CAMPAIGN_NOW = '2026-12-26T00:00:01Z';
@@ -162,9 +280,86 @@ test('guides preserve the offer expiry fallback and distinguish assistance from 
     const html = await (await get('/credit-broking-permission-motor-dealers')).text();
     assert(html.includes('Talk through your FCA application'));
     assert(!html.includes('Get started for <span class="gradient-text">£100'));
-    assert(html.includes('Separate from FCA authorisation assistance. Required permissions and broker onboarding must be in place.'));
+    assert(!html.includes('id="guide-finance-title"'));
+    assert(html.includes('Administrative assistance; FCA approval and timing are not guaranteed.'));
   } finally {
     campaign.postCampaign.mode = previous;
     process.env.CAMPAIGN_NOW = '2026-11-01T12:00:00Z';
+  }
+});
+
+test('desktop and mobile Guides navigation contain every existing route exactly once',async()=>{
+  const guides=require('../config/guide-content.json'),navigation=require('../utils/guide-navigation');
+  assert.equal(navigation.groups.length,4);
+  assert.deepEqual([navigation.hub,...navigation.groups.flatMap(group=>group.links.map(link=>link.href))].sort(),Object.keys(guides).sort());
+  for(const route of Object.keys(pages)){
+    const html=await(await get(route)).text();
+    for(const mode of ['desktop','mobile']){
+      const menu=html.match(new RegExp('<details class="guide-nav guide-nav--'+mode+'"[\\s\\S]*?</details>'))?.[0];
+      assert(menu,route+' '+mode);
+      assert(menu.includes('<summary aria-controls="'+mode+'-guides-panel">'));
+      const urls=[...menu.matchAll(/href="([^"]+)"/g)].map(m=>m[1]);
+      assert.deepEqual(urls.sort(),Object.keys(guides).sort(),route+' '+mode);
+    }
+  }
+});
+
+test('FCA guides reuse original artwork with a same-page offer target and no obsolete timing claim',async()=>{
+  for(const [route,guide]of Object.entries(require('../config/guide-content.json'))){
+    const html=await(await get(route)).text();
+    assert(!html.includes('guide-offer-cue'),route);
+    if(guide.group==='fca'){
+      assert(html.includes('data-guide-gift')&&html.includes('class="gift-lid"')&&html.includes('class="santa-throw-arm"'),route);
+      assert(html.includes('href="#guide-application-offer"')&&html.includes('id="guide-application-offer"'),route);
+      assert(html.includes('data-guide-arrival')&&html.includes('data-offer-countdown')&&html.includes('data-referral-base="100"'),route);
+      const block=html.match(/<section class="guide-original-offer[\s\S]*?<\/section>/)[0];
+      assert(!block.includes('FCA applications can take 6–12 months.'),route);
+    }else assert(!html.includes('data-guide-gift')&&!html.includes('data-guide-arrival'),route);
+  }
+});
+
+test('every FCA guide gates the complete offer on confirmed pricing in every campaign state', async () => {
+  const campaign = require('../config/campaign');
+  const previousMode = campaign.postCampaign.mode, previousNow = process.env.CAMPAIGN_NOW;
+  const routes = Object.entries(require('../config/guide-content.json')).filter(([,g]) => g.group === 'fca').map(([url]) => url);
+  try {
+    for (const scenario of [
+      { now: '2026-11-12T12:00:00Z', mode: 'continue', show: true },
+      { now: '2026-12-26T00:00:01Z', mode: 'continue', show: true },
+      { now: '2026-12-26T00:00:01Z', mode: 'unconfirmed', show: false },
+      { now: '2026-12-26T00:00:01Z', mode: 'custom', show: false }
+    ]) {
+      process.env.CAMPAIGN_NOW = scenario.now; campaign.postCampaign.mode = scenario.mode;
+      for (const url of routes) {
+        const html = await (await get(url)).text();
+        const block = html.match(/<section class="guide-original-offer[\s\S]*?<\/section>/)[0];
+        const faqBlock = html.match(/<section class="ccr009-section ccr009-faq[\s\S]*?<\/section>/)[0];
+        if (url === '/fca-application-documents-motor-dealers') {
+          assert.equal(faqBlock.includes('£100 starting payment'), scenario.show, 'price-specific FAQ follows the same confirmation gate');
+          assert.equal(faqBlock.includes('data-guide-price-only'), scenario.show);
+          assert(faqBlock.includes('Does every motor dealer need the same documents?'), 'non-price educational FAQ remains');
+        }
+        if (scenario.show) {
+          for (const text of ['£100', '£600', 'month one', 'Direct Debit', 'six monthly payments', 'FCA application fee payable separately']) assert(block.includes(text), url + ': ' + text);
+        } else {
+          assert(!/£|&#(?:163|xA3);|six monthly payments|Payments are by/i.test(block), url + ': all price-bearing copy hidden');
+          assert(block.includes('Talk through your FCA application'));
+          assert(block.includes('/contact?topic=authorisation#book-meeting'));
+          assert(block.includes('Administrative assistance; FCA approval and timing are not guaranteed.'));
+        }
+      }
+      const service = await (await get('/fca-authorisation-motor-dealers')).text();
+      if (scenario.show) {
+        assert(service.includes('£100') && service.includes('£600'));
+        assert(service.includes('data-calc-monthly'));
+      } else {
+        assert(!/£|&#(?:163|xA3);|data-monthly=|data-calc-monthly/i.test(service), 'service page must not leak hidden prices, including referral and continuing subscription copy');
+        assert(service.includes('We’ll confirm current pricing and the payment schedule with you before you start.'));
+        assert(service.includes('href="#book-meeting"'));
+      }
+    }
+  } finally {
+    campaign.postCampaign.mode = previousMode;
+    if (previousNow === undefined) delete process.env.CAMPAIGN_NOW; else process.env.CAMPAIGN_NOW = previousNow;
   }
 });

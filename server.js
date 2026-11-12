@@ -1,4 +1,7 @@
-require('dotenv').config({ path: './.env' });
+// The explicit development launcher supplies a safe local environment. All
+// other starts retain the existing deployment .env behaviour.
+const localPreview = process.env.LOCAL_PREVIEW === 'true' && process.env.NODE_ENV === 'development';
+if (!localPreview) require('dotenv').config({ path: './.env' });
 
 const express = require('express');
 const path = require('path');
@@ -72,17 +75,15 @@ function normalizeUKMobile(input) {
 }
 
 // Database setup (SQLite)
-const dbPath = process.env.DB_PATH || path.join(__dirname, 'db.sqlite');
-if (production && (!process.env.DB_PATH || !path.isAbsolute(process.env.DB_PATH) || !require('node:fs').existsSync(dbPath))) throw Error('Production DB_PATH must name the existing customer database on persistent storage.');
-const db = new sqlite3.Database(dbPath, production ? sqlite3.OPEN_READWRITE : sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE);
-const customerDatabaseReady = production
-  ? require('./utils/customer-database').checkProductionDatabase(dbPath, sqlite3, process.env.CUSTOMER_ID_FLOOR)
-  : Promise.resolve();
+if (production && !process.env.DB_PATH) throw Error('Production DB_PATH must name the existing customer database on persistent storage.');
+const database = require('./utils/database').openDatabase({ file: process.env.DB_PATH || path.join(__dirname, 'db.sqlite'), production, sqlite: sqlite3, customerIdFloor: process.env.CUSTOMER_ID_FLOOR });
+const dbPath = database.path, db = database.db;
 
 
 // Create tables if they don't exist
-const schemaReady = customerDatabaseReady.then(() => { db.serialize(() => {
-  db.run(`
+const schemaReady = database.ready.then(async () => {
+  const q = query(db);
+  await q.run(`
     CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   email TEXT UNIQUE NOT NULL,
@@ -97,15 +98,13 @@ const schemaReady = customerDatabaseReady.then(() => { db.serialize(() => {
 )
   `);
 
-  // Add missing columns safely (ignore "duplicate column" errors)
-db.run(`ALTER TABLE users ADD COLUMN terms_accepted_at TEXT`, (e) => {});
-db.run(`ALTER TABLE users ADD COLUMN terms_version TEXT`, (e) => {});
-db.run(`ALTER TABLE users ADD COLUMN is_active INTEGER DEFAULT 1`, (e) => {});
-db.run(`ALTER TABLE users ADD COLUMN unsubscribe_token TEXT`, (e) => {});
-db.run(`ALTER TABLE users ADD COLUMN firm_name TEXT`, (e) => {});
-db.run(`ALTER TABLE users ADD COLUMN fca_firm_ref TEXT`, (e) => {});
+  // Preserve existing data and ignore only the expected duplicate-column case.
+  for (const definition of ['terms_accepted_at TEXT', 'terms_version TEXT', 'is_active INTEGER DEFAULT 1', 'unsubscribe_token TEXT', 'firm_name TEXT', 'fca_firm_ref TEXT']) {
+    try { await q.run(`ALTER TABLE users ADD COLUMN ${definition}`); }
+    catch (error) { if (!/duplicate column name/i.test(error.message)) throw error; }
+  }
 
-  db.run(`
+  await q.run(`
     CREATE TABLE IF NOT EXISTS reports (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER NOT NULL,
@@ -116,8 +115,6 @@ db.run(`ALTER TABLE users ADD COLUMN fca_firm_ref TEXT`, (e) => {});
       FOREIGN KEY (user_id) REFERENCES users(id)
     )
   `);
-});
-
 });
 
 // View engine
@@ -160,7 +157,7 @@ app.use(express.static(path.join(__dirname, 'public'), { setHeaders(res, file) {
 app.use(bodyParser.urlencoded({ extended: false, limit: '64kb', parameterLimit: 100 }));
 app.use(bodyParser.json({ limit: '64kb' }));
 const databaseReady = schemaReady.then(() => security.initialize(db));
-databaseReady.catch(() => console.error('Database security migration failed; requests are blocked.'));
+databaseReady.catch(error => console.error(`[009 Database] Startup failed (${error.code || 'migration'}) at ${dbPath}: ${error.message}. Requests are blocked.`));
 app.use(wrap(async (req,res,next) => { await databaseReady; next(); }));
 
 // Session & flash
@@ -183,9 +180,10 @@ app.use(seo.templateSeo);
 // Durable phone calls and the private dashboard bridge.
 const bookings = require('./booking/routes')(app, { db, sendEmail, ready: databaseReady });
 const sheetsSync = require('./utils/sheets-sync').createSheetsSync({ db, google, ready: databaseReady });
-sheetsSync.start();
+if (!localPreview) sheetsSync.start();
 app.locals.databaseReady = databaseReady;
 app.locals.db = db;
+app.locals.dbPath = dbPath;
 app.locals.bookings = bookings;
 app.locals.sheetsSync = sheetsSync;
 app.locals.stopBackgroundTasks = async () => { await bookings.stop(); sessionStore.close(); await sheetsSync.stop(); };
@@ -3312,7 +3310,7 @@ app.get('/pricing', (req, res) => {
         answer: `Routine FCA reporting assistance, including CCR007 and CCR009, is included in your continuing £${offer.reportingMonthly} monthly subscription after authorisation. No additional subscription is required. Separate charges apply only to standalone services or additional work outside the subscription’s agreed scope.` };
       return faq;
     })
-  ];
+  ].filter(faq => res.locals.campaign.showPrice || !/£\s*\d/.test(faq.question + faq.answer));
   res.render('pricing', {
     salesPage: true,
     inPageMeeting: true,
@@ -3335,11 +3333,29 @@ app.use((err,req,res,next) => {
   const status=err.type==='entity.too.large'?413:(err.type==='entity.parse.failed'?400:500);
   res.status(status).format({ json:()=>res.json({ok:false,error:'The request could not be completed. Please try again.',message:'The request could not be completed. Please try again.'}), default:()=>res.type('text').send('The request could not be completed. Please try again.') });
 });
-if (require.main === module) {
-  databaseReady.then(() => {
-    const server=app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
-    const shutdown=()=>server.close(async()=>{await app.locals.stopBackgroundTasks();db.close();});
-    process.once('SIGTERM',shutdown);process.once('SIGINT',shutdown);
-  }).catch(async()=>{await app.locals.stopBackgroundTasks();process.exitCode=1;db.close();});
-}
+let httpServer, closing;
+app.locals.close = () => {
+  if (!closing) closing = (async () => {
+    if (httpServer?.listening) await new Promise(resolve => httpServer.close(resolve));
+    await app.locals.stopBackgroundTasks().catch(() => {});
+    if (db.open) await new Promise((resolve,reject) => db.close(error => error ? reject(error) : resolve()));
+  })();
+  return closing;
+};
+app.locals.start = async () => {
+  await databaseReady;
+  await bookings.ready;
+  await new Promise((resolve,reject) => {
+    httpServer = app.listen(PORT, localPreview ? '127.0.0.1' : undefined, resolve);
+    httpServer.once('error', reject);
+  });
+  console.log(localPreview ? `[009 Local] Ready: http://127.0.0.1:${httpServer.address().port}` : `Server listening on port ${PORT}`);
+  const shutdown = () => app.locals.close().catch(error => { console.error(`[009 Shutdown] ${error.code || error.message}`); process.exitCode = 1; });
+  process.once('SIGTERM', shutdown); process.once('SIGINT', shutdown);
+  return httpServer;
+};
+if (require.main === module) app.locals.start().catch(async error => {
+  console.error(`[009 Startup] Failed (${error.code || 'migration'}) at database ${dbPath}: ${error.message}`);
+  await app.locals.close().catch(() => {}); process.exitCode = 1;
+});
 module.exports = app;

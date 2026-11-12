@@ -6,6 +6,9 @@
        - a soft skewed sheen that sweeps behind the content every 7s, then rests
      Both sit BEHIND the content, pause offscreen and switch off for reduced motion. */
   const _referral = typeof referralAnimation !== 'undefined' && referralAnimation;
+  const _guide = typeof guideOffer !== 'undefined' && guideOffer;
+  const _bookingHref = _guide ? guideBookingHref : inPageMeeting ? '#book-meeting' : '/contact#book-meeting';
+  const _bookingLabel = _guide ? guideBookingLabel : 'Book a 15-minute call';
   const _id = (typeof cardId !== 'undefined' && cardId) ? cardId : 'offer-card';
   const _h = (typeof headingTag !== 'undefined' && headingTag) ? headingTag : 'h3';
   const _terms = (typeof showTerms === 'undefined') ? true : showTerms;
@@ -15,7 +18,7 @@
   const _tick = '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 %>
 <% if (_c.showPrice) { %>
-<div class="offer-wrap<%= _referral ? ' auth-referral-offer' : '' %><%= _c.active ? ' is-festive' : '' %><%= _santa ? ' has-christmas-arrival' : '' %>" data-motion<% if (_santa) { %> data-christmas-arrival<% } %>>
+<div class="offer-wrap<%= _referral ? ' auth-referral-offer' : '' %><%= _c.active ? ' is-festive' : '' %><%= _santa ? ' has-christmas-arrival' : '' %>" data-motion<% if (_santa) { %> data-christmas-arrival<% if(_guide) { %> data-guide-arrival<% } %><% } %>>
   <% if (_santa) { %><%- include('santa', { santaClass: 'santa--perch' }) %><% } %>
   <article class="offer-card" id="<%= _id %>" aria-labelledby="<%= _id %>-name" data-offer-card>
     <span class="offer-card__orbit" aria-hidden="true"></span>
@@ -54,14 +57,15 @@
         <p class="offer-card__lead">Get started for</p>
         <p class="offer-card__amount"><span class="gradient-text">£<%= _o.startPayment %></span></p>
         <p class="offer-card__then">Then <strong>£<%= _o.monthlyPayment %> per month</strong></p>
+        <% if(_guide && _o.startIsFirstMonth) { %><p class="offer-card__then">Your first payment counts as month one.</p><% } %>
       </div>
 
-      <% if (_referral) { %><%- include('referral_animation') %></div><% } %>
-      <p class="offer-card__application-time"><strong>FCA applications can take 6–12 months.</strong><span>Timing depends on the application’s completeness and complexity. Approval is not guaranteed.</span></p>
+      <% if (_referral) { %><%- include('referral_animation', {guideReferral:_guide}) %></div><% } %>
+      <% if(!_guide) { %><p class="offer-card__application-time"><strong>FCA applications can take 6–12 months.</strong><span>Timing depends on the application’s completeness and complexity. Approval is not guaranteed.</span></p><% } %>
 
-      <p class="offer-card__value">Spread the cost of your FCA authorisation assistance, with reporting and compliance support continuing after approval.</p>
+      <p class="offer-card__value"><%= _guide ? 'Get administrative help preparing your application, organising supporting documents and responding to FCA information requests. The FCA decides applications; approval and timing are not guaranteed.' : 'Spread the cost of your FCA authorisation assistance, with reporting and compliance support continuing after approval.' %></p>
 
-      <p class="offer-card__qualifier" id="<%= _id %>-terms"><%= _o.qualifier %></p>
+      <p class="offer-card__qualifier" id="<%= _id %>-terms"><%= _guide ? guideText(_o.qualifier) : _o.qualifier %></p>
 
       <ul class="offer-card__facts" aria-label="Payment terms at a glance">
         <li><b>£<%= _o.startPayment %></b><span>first month, included</span></li>
@@ -70,18 +74,20 @@
       </ul>
 
 
-      <a class="btn btn--primary btn--block btn--sheen" href="<%= inPageMeeting ? '#book-meeting' : '/contact#book-meeting' %>" aria-describedby="<%= _id %>-terms">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
-      <p class="offer-card__cta-note">Talk through your dealership, the support available and the next steps. Choose an available time and we’ll call the number you provide.</p>
+      <a class="btn btn--primary btn--block btn--sheen" href="<%= _bookingHref %>" aria-describedby="<%= _id %>-terms"><%= _bookingLabel %> <span class="arrow" aria-hidden="true">→</span></a>
+      <p class="offer-card__cta-note"><%= _guide ? 'Discuss the administrative support available. A meeting does not provide legal advice or conclusively determine your permissions.' : 'Talk through your dealership, the support available and the next steps. Choose an available time and we’ll call the number you provide.' %></p>
 
-      <% if (_terms && !_referral) { %>
+      <% if (_terms && (!_referral || _guide)) { %>
         <ul class="offer-card__terms" aria-label="Fees and conditions">
+          <% if(_guide) { %><li>Payments are by <%= _o.paymentMethod %>.</li><% } %>
           <li><%= _o.minimumTotal.explanation %></li>
           <li><%= _o.afterMinimumTerm %></li>
           <li><%= _o.decisionTimingTerms %> Continuing reporting support is £<%= _o.reportingMonthly %> per month before any active referral discounts, which continue after authorisation.</li>
           <% if (_o.vatStatement) { %><li><%= _o.vatStatement %></li><% } %>
-          <li>The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.</li>
+          <li>The FCA decides applications and timescales. We can’t guarantee approval, and the <%= _guide ? guideText(_o.minimumTermWords + '-month') : 'six-month' %> term isn’t a promised decision date.</li>
         </ul>
       <% } %>
+      <% if(_guide) { %><p class="offer-card__cta-note">Referral illustration: each active qualifying referral reduces eligible subsequent monthly fees by <%= referral.STEP %>%, up to <%= Math.min(100,referral.STEP*referral.MAX_REFERRALS) %>%. The initial £<%= _o.startPayment %> payment remains payable. FCA fees and separately purchased services are excluded. <a href="/referral">Check referral eligibility and terms</a>.</p><p class="guide-original-links"><a href="/pricing">See current pricing and scope</a> · <a href="/fca-authorisation-motor-dealers">Explore FCA authorisation assistance</a></p><% } %>
     </div>
   </article>
 </div>
@@ -90,10 +96,11 @@
   <article class="offer-card offer-card--post" id="<%= _id %>" aria-labelledby="<%= _id %>-name">
     <div class="offer-card__body">
       <p class="offer-card__tag offer-card__tag--plain">FCA authorisation assistance</p>
-      <<%= _h %> class="offer-card__name" id="<%= _id %>-name"><%= (_c.post.mode === 'custom' && _c.post.headline) ? _c.post.headline : 'Talk to us about current pricing' %></<%= _h %>>
-      <p class="offer-card__value"><%= (_c.post.mode === 'custom' && _c.post.text) ? _c.post.text : 'Book a 15-minute call and we’ll explain the current terms for new applications before you commit to anything.' %></p>
+      <<%= _h %> class="offer-card__name" id="<%= _id %>-name"><%= (_c.post.mode === 'custom' && _c.post.headline) ? _c.post.headline : _guide ? 'Talk through your FCA application' : 'Talk to us about current pricing' %></<%= _h %>>
+      <p class="offer-card__value"><%= _guide ? guideText((_c.post.mode === 'custom' && _c.post.text) ? _c.post.text : 'Book a 15-minute call and we’ll explain the current terms for new applications before you commit to anything.') : ((_c.post.mode === 'custom' && _c.post.text) ? _c.post.text : 'Book a 15-minute call and we’ll explain the current terms for new applications before you commit to anything.') %></p>
       <p class="offer-card__qualifier">The FCA application fee is always payable separately. Existing customers’ agreements are unaffected.</p>
-      <a class="btn btn--primary btn--block btn--sheen" href="<%= inPageMeeting ? '#book-meeting' : '/contact#book-meeting' %>">Book a 15-minute call <span class="arrow" aria-hidden="true">→</span></a>
+      <% if(_guide) { %><p class="offer-card__cta-note">Administrative assistance; FCA approval and timing are not guaranteed.</p><% } %>
+      <a class="btn btn--primary btn--block btn--sheen" href="<%= _bookingHref %>"><%= _bookingLabel %> <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </article>
 </div>

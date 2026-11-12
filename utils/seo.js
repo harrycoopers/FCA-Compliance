@@ -1,6 +1,8 @@
 'use strict';
 const pages = require('../config/seo-pages.json');
 const guides = require('../config/guide-content.json');
+const { paragraphParts } = require('./guide-links');
+const { guideText } = require('./guide-editorial');
 const guideTitles = Object.fromEntries(Object.entries(guides).map(([url, guide]) => [url, guide.title]));
 const offer = require('../config/offer');
 const campaign = require('../config/campaign');
@@ -37,6 +39,7 @@ function publicSeo(req, res, next) {
 }
 
 function templateSeo(req, res, next) {
+  res.locals.guideNavigation = require('./guide-navigation');
   res.locals.assetPath = assetPath;
   res.locals.jsonLd = serialize;
   const render = res.render;
@@ -60,22 +63,39 @@ function templateSeo(req, res, next) {
       }
       if (guide) {
         data.guide = guide;
+        data.guideText = guideText;
         data.guidePath = req.path;
+        data.guideParagraphParts = (sectionId, index, text) => paragraphParts(req.path, sectionId, index, text);
         data.guideTitles = guideTitles;
         data.pageTitle = guide.seoTitle;
         data.pageDescription = guide.description;
-        // Generate structured data from the same content rendered to visitors.
-        // Do not retain the superseded route-level FAQ answers.
+        const dateLabel = value => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(value + 'T12:00:00Z'));
+        data.guideReviewedLabel = dateLabel(guide.reviewed);
+        data.guideModifiedLabel = guide.modified ? dateLabel(guide.modified) : '';
+        // A source-check date is not a publication/modification date. Keep visible
+        // FAQs, but omit FAQPage: Google retired FAQ rich results in May 2026.
         data.pageSchema = [
           { '@context': 'https://schema.org', '@type': 'Article', '@id': origin + req.path + '#article',
-            headline: guide.title, description: guide.description, dateModified: guide.reviewed,
+            headline: guide.title, description: guide.description,
+            ...(guide.modified ? { dateModified: guide.modified } : {}),
             mainEntityOfPage: { '@id': origin + req.path + '#webpage' }, inLanguage: 'en-GB',
             publisher: { '@id': origin + '/#organization' },
-            citation: guide.sources.map(source => source.href) },
-          { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': origin + req.path + '#faq',
-            mainEntity: guide.faqs.map(faq => ({ '@type': 'Question', name: faq.question,
-              acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) }
+            citation: guide.sources.map(source => source.href) }
         ];
+        data.guideBreadcrumbs = [
+          { name: 'Home', path: '/' },
+          ...(req.path === '/fca-compliance-motor-dealers-guide' ? [] : [{ name: 'Motor dealer guides', path: '/fca-compliance-motor-dealers-guide' }]),
+          { name: guide.title, path: req.path }
+        ];
+        data.pageSchema.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+          '@id': origin + req.path + '#breadcrumb', itemListElement: data.guideBreadcrumbs.map((item, index) => ({
+            '@type': 'ListItem', position: index + 1, name: item.name, item: origin + item.path
+          })) });
+        data.guideBookingTopic = guide.group === 'ccr' ? 'ccr009' : guide.group === 'fca' ? 'authorisation' : 'ongoing';
+        data.guideBookingHref = '/contact?topic=' + data.guideBookingTopic + '#book-meeting';
+        data.guideBookingLabel = guide.group === 'ccr' ? 'Book a 15-minute meeting about your CCR009 return' : guide.group === 'fca' ? 'Book a 15-minute meeting about your application' : 'Book a 15-minute meeting about ongoing support';
+        data.guideBookingLabel = guideText(data.guideBookingLabel);
+        data.ogType = 'article';
       }
       data.canonicalUrl = origin + req.path;
       data.robots = 'index,follow,max-image-preview:large';

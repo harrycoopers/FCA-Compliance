@@ -1,11 +1,20 @@
+<%
+  const bookingGroup = typeof guide !== 'undefined' ? guide.group : 'fca';
+  const bookingCopy = {
+    fca: ['Planning an FCA application?', 'Talk through your application, supporting documents and the administrative assistance available. We can explain the scope and payment terms before you decide.'],
+    ccr: ['Preparing your CCR009 return?', 'Talk through the records you need to organise and the administrative support available for your return. Scope and fees are agreed before engagement.'],
+    ongoing: ['Organising ongoing compliance?', 'Discuss your dealership’s documentation, record keeping and ongoing administrative support needs. Scope and fees are agreed before work begins.']
+  }[bookingGroup];
+  const bookingTarget = typeof guideBookingHref !== 'undefined' ? guideBookingHref : '#book-meeting';
+%>
   <section class="sec auth-final-cta" aria-labelledby="auth-final-title">
     <div class="wrap">
       <div class="afc-panel">
         <div class="afc-copy">
-          <h2 id="auth-final-title">What are you<br><span>waiting for?</span></h2>
-          <p>Let’s make your next step clearer. Talk through your dealership, ask your questions and find out how we can help.</p>
-          <a class="afc-button" href="/contact#book-meeting">Book a 15-minute call <span aria-hidden="true">↗</span></a>
-          <span class="afc-note">A quick conversation. Clear next steps.</span>
+          <h2 id="auth-final-title"><%= bookingCopy[0] %></h2>
+          <p><%= bookingCopy[1] %></p>
+          <a class="afc-button" href="<%= bookingTarget %>"><%= typeof guideBookingLabel !== 'undefined' ? guideBookingLabel : 'Book a 15-minute call' %> <span aria-hidden="true">↗</span></a>
+          <span class="afc-note">An introductory conversation, not legal or regulatory advice.</span>
         </div>
         <div class="afc-art" aria-hidden="true">
           <div class="afc-orbit"></div>

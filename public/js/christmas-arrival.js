@@ -5,21 +5,24 @@ const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('[data-christmas-arrival]').forEach(root => {
  const card=root.querySelector('[data-offer-card]'), fallback=root.querySelector('[data-santa]');
  if(!card || !fallback || root.dataset.arrivalReady) return;
+ const guide=root.hasAttribute('data-guide-arrival');
+ if(guide&&motion.matches)return;
  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
  if(!ctx) return;
  root.dataset.arrivalReady='true';
  canvas.className='christmas-arrival-canvas';canvas.setAttribute('aria-hidden','true');
- document.body.appendChild(canvas);fallback.hidden=true;
+ (guide?root:document.body).appendChild(canvas);fallback.hidden=true;
+ if(guide)canvas.classList.add('guide-arrival-canvas');
  let W=0,H=0,cx=0,cy=0,scale=1,time=0,last=0,raf=0,visible=false,reduced=motion.matches;
  function resize(){
-  W=document.documentElement.clientWidth;H=window.innerHeight;
+  W=guide?root.clientWidth:document.documentElement.clientWidth;H=guide?148:window.innerHeight;
   const d=Math.min(window.devicePixelRatio||1,2);
   if(canvas.width!==Math.round(W*d)||canvas.height!==Math.round(H*d)){
    canvas.width=Math.round(W*d);canvas.height=Math.round(H*d);
    canvas.style.width=W+'px';canvas.style.height=H+'px';
   }
   ctx.setTransform(d,0,0,d,0,0);
-  const b=card.getBoundingClientRect();cx=b.left+b.width*.68;cy=b.top;
+  const b=card.getBoundingClientRect();cx=guide?W*.68:b.left+b.width*.68;cy=guide?H-8:b.top;
   scale=W<480?.78:.96;
  }
 const clamp=(x)=>Math.max(0,Math.min(1,x)),ease=x=>1-Math.pow(1-clamp(x),3),mix=(a,b,t)=>a+(b-a)*t;
@@ -105,21 +108,22 @@ function draw(t){
    presentSack(x,y,size,step);santa(x,y,size,'walk',step*2.8);
   }else{
    const dt=t-6.8;ellipse(landX,landY,23*s,2.3*s,'#00000030');
-   const pose=dt<.45?'land':dt<1.2?'wave':'dance',danceTime=dt<1.2?dt:dt-1.2;
+   const pose=guide&&t>=12?'stand':dt<.45?'land':dt<1.2?'wave':'dance',danceTime=dt<1.2?dt:dt-1.2;
    presentSack(landX,landY,s,pose==='dance'?danceTime:0);santa(landX,landY,s,pose,danceTime);
    if(dt<.6)for(let i=0;i<7;i++){const a=i/7*Math.PI;star(landX+Math.cos(a)*dt*48,landY-Math.sin(a)*dt*30,2.5*(1-dt/.6),1-dt/.6);}
   }
  }
 }
 
- function render(){resize();ctx.clearRect(0,0,W,H);if(!visible||document.hidden)return;
+ function render(){resize();ctx.clearRect(0,0,W,H);if(guide){canvas.hidden=reduced;fallback.hidden=!reduced;}if(!visible||document.hidden||!root.isConnected)return;
   // The arrival must remain visible below the card edge while climbing.
   ctx.save();draw(time);ctx.restore();
  }
  function tick(now){raf=0;if(!visible||document.hidden||reduced){last=0;render();return;}
-  if(last)time+=Math.min((now-last)/1000,.05);last=now;render();raf=requestAnimationFrame(tick);
+  if(!root.isConnected)return;
+  if(last)time+=Math.min((now-last)/1000,.05);last=now;render();if(guide&&time>=12){root.dataset.arrivalComplete='true';return;}raf=requestAnimationFrame(tick);
  }
- function wake(){cancelAnimationFrame(raf);raf=0;last=0;render();if(visible&&!document.hidden&&!reduced)raf=requestAnimationFrame(tick);}
+ function wake(){cancelAnimationFrame(raf);raf=0;last=0;render();if(visible&&!document.hidden&&!reduced&&!(guide&&time>=12))raf=requestAnimationFrame(tick);}
  function check(){const b=card.getBoundingClientRect();const next=b.top<innerHeight && b.bottom>0;
   if(next!==visible){visible=next;wake();}else if(reduced)render();}
  window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',()=>{resize();check();if(reduced)render();},{passive:true});
