@@ -125,6 +125,10 @@ function templateSeo(req, res, next) {
     }
     data.ogTitle = data.pageTitle;
     data.ogDescription = data.pageDescription;
+    // HTML description only: retain this page's existing schema and social copy.
+    if (valid && req.path === '/ccr009-return-assistance-motor-dealers') {
+      data.pageDescription = 'Get help preparing your dealership’s CCR009 return. Organise records and understand the information needed for FCA reporting. Book a 15-minute call.';
+    }
     if (!data.ogType || page?.service) data.ogType = 'website';
     return render.call(this, guide ? 'seo_guide' : view, data, callback);
   };
