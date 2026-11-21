@@ -43,3 +43,6 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# SEO/GEO audit evidence (screenshots and raw crawl data exceed the 5 MB versioning limit; regenerate with the audit tools)
+audits/2026-11-21-seo-geo/data/

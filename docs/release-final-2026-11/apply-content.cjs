@@ -126,7 +126,7 @@ function page(route, fields) { Object.assign(pages[route], fields); }
 record(P.info, 'siblings', [{ need: 'a final check before you submit', href: P.checklist }, { need: 'a plan for the whole CCR009 process', href: P.prepare }], [], 'This page answers: which records answer each CCR009 question');
 record(P.checklist, 'siblings', [{ need: 'to work out which records answer each question', href: P.info }, { need: 'a plan for the whole CCR009 process', href: P.prepare }], [], 'This page answers: is the draft return ready to submit');
 record(P.prepare, 'siblings', [{ need: 'the records behind each question', href: P.info }, { need: 'a final check before you submit', href: P.checklist }], [], 'This page answers: how to plan and run the CCR009 process');
-record(P.overview, 'siblings', [{ need: 'ongoing compliance support for your dealership', href: '/motor-dealer-compliance', title: 'Ongoing compliance support for motor dealers' }, { need: 'to compare our services', href: '/services', title: 'Motor dealer compliance services' }], [], 'This page answers: which free guide answers your question');
+record(P.overview, 'siblings', [{ need: 'ongoing compliance support for your dealership', href: '/motor-dealer-compliance', title: 'Ongoing compliance support for motor dealers' }, { need: 'to compare our services', href: '/services', title: 'Motor dealer compliance services' }, { need: 'every guide listed by topic', href: '/guides', title: 'all motor dealer guides by topic' }], [], 'This page answers: which free guide answers your question');
 record(P.vs, 'siblings', [{ need: 'an explanation of CCR007 on its own', href: P.ccr007 }], [], 'Link to new CCR007 guide');
 record(P.delayed, 'siblings', [{ need: 'to know what happens if the FCA refuses an application', href: P.refused }], [], 'Link to new refusal guide');
 record(P.documents, 'siblings', [{ need: 'the application process step by step', href: P.apply }], [], 'Documents page vs process page, cross-linked both ways');
@@ -158,6 +158,17 @@ for (const route of Object.keys(links)) links[route] = links[route].filter(l => 
   const j = sectionIndex(P.due, 'guide-section-5');
   record(P.due, `sections.${j}.links`, [...before[P.due].sections[j].links, [P.ccr007, 'what CCR007 asks for']], [S.ccr007], 'Audit P1 internal link to the CCR007 guide');
   revise(P.whatCcr009); revise(P.due);
+}
+
+// Audit P2/P3 internal links (audits/2026-11-21-seo-geo/INTERNAL-LINKS.csv). Paragraph placements in guides
+// use the same section's link list, because guide paragraphs are plain text.
+{
+  const add = (guide, id, extra, sources, why) => { const i = sectionIndex(guide, id); record(guide, `sections.${i}.links`, [...before[guide].sections[i].links, ...extra], sources, why); revise(guide); };
+  add(P.doNeed, 'guide-section-1', [[P.vans, 'van and commercial vehicle dealers selling to businesses']], [S.motor], 'Audit P2 link to the van guide');
+  add(P.doNeed, 'guide-section-4', [[P.offerFinance, 'how to start offering PCP and HP finance'], [P.cost, 'what FCA authorisation costs']], [S.motor, S.fees], 'Audit P2 links to the PCP/HP and cost guides');
+  add('/after-fca-approval-motor-dealers', 'guide-section-3', [[P.ccr007, 'CCR007 key data return']], [S.reporting], 'Audit P2 link to the CCR007 guide');
+  add(P.website, 'guide-section-3', [[P.offerFinance, 'the CONC rules that apply when you offer finance']], [S.conc45], 'Audit P3 link to the PCP/HP guide');
+  add(P.delayed, 'guide-section-1', [[P.apply, 'the application steps']], [S.apply], 'Audit P3 link to the how-to-apply guide');
 }
 
 // Trim pre-existing descriptions to ≤155 characters (wording otherwise unchanged).
@@ -423,7 +434,7 @@ for (const [route, guide] of Object.entries(guides)) { pages[route].title = guid
 page('/referral', { description: 'Refer a motor dealer: 25% off eligible monthly subscription fees per qualifying referral, up to 100%. Initial payment and FCA fees excluded. Terms apply.', lastmod: R });
 page('/motor-dealer-compliance', { title: 'Car Dealer Compliance Support | 009 Compliance', description: 'Dealership compliance support after FCA approval: documents, reporting preparation, Consumer Duty, website checks and periodic reviews. Scope agreed first.', lastmod: R });
 page('/about', { title: 'About 009 Compliance | Our Team: 30+ Years in the Motor Trade', description: '009 Compliance helps motor dealers with FCA authorisation, CCR009 returns and ongoing compliance. Our team brings 30+ years in the motor trade.', lastmod: R });
-for (const route of ['/', '/services', '/fca-authorisation-motor-dealers', '/guides', '/pricing', '/ccr009-return-assistance-motor-dealers']) page(route, { lastmod: R });
+for (const route of ['/', '/services', '/fca-authorisation-motor-dealers', '/guides', '/pricing', '/ccr009-return-assistance-motor-dealers', '/testimonials']) page(route, { lastmod: R });
 // One experience statement across the site (audit N-3).
 page('/motor-finance-for-dealerships', { description: 'Explore motor-finance broker support for your dealership. Our team brings 30+ years in the motor trade. Start with a conversation about your next steps.', lastmod: R });
 

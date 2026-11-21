@@ -628,6 +628,11 @@
           "need": "to compare our services",
           "href": "/services",
           "title": "Motor dealer compliance services"
+        },
+        {
+          "need": "every guide listed by topic",
+          "href": "/guides",
+          "title": "all motor dealer guides by topic"
         }
       ],
       "sources": [],
@@ -806,6 +811,143 @@
       ],
       "checked": "2026-11-21",
       "reason": "Audit P1 internal link to the CCR007 guide"
+    },
+    {
+      "guide": "/do-motor-dealers-need-fca-authorisation",
+      "section": "sections.0.links",
+      "before": [],
+      "after": [
+        [
+          "/van-commercial-vehicle-dealers-fca-permissions",
+          "van and commercial vehicle dealers selling to businesses"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers",
+          "label": "FCA: permissions and applications for motor dealers"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P2 link to the van guide"
+    },
+    {
+      "guide": "/do-motor-dealers-need-fca-authorisation",
+      "section": "sections.3.links",
+      "before": [
+        [
+          "/fca-application-documents-motor-dealers",
+          "Prepare the application documents"
+        ],
+        [
+          "/credit-broking-permission-motor-dealers",
+          "Read the credit broking activity guide"
+        ]
+      ],
+      "after": [
+        [
+          "/fca-application-documents-motor-dealers",
+          "Prepare the application documents"
+        ],
+        [
+          "/credit-broking-permission-motor-dealers",
+          "Read the credit broking activity guide"
+        ],
+        [
+          "/how-to-offer-car-finance-dealers",
+          "how to start offering PCP and HP finance"
+        ],
+        [
+          "/fca-authorisation-cost-car-dealers",
+          "what FCA authorisation costs"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers",
+          "label": "FCA: permissions and applications for motor dealers"
+        },
+        {
+          "url": "https://www.fca.org.uk/firms/authorisation/apply/fees",
+          "label": "FCA: authorisation application fees"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P2 links to the PCP/HP and cost guides"
+    },
+    {
+      "guide": "/after-fca-approval-motor-dealers",
+      "section": "sections.2.links",
+      "before": [
+        [
+          "/who-needs-to-submit-ccr009",
+          "Who needs CCR009?"
+        ],
+        [
+          "/when-is-ccr009-due",
+          "Reporting periods and deadlines"
+        ]
+      ],
+      "after": [
+        [
+          "/who-needs-to-submit-ccr009",
+          "Who needs CCR009?"
+        ],
+        [
+          "/when-is-ccr009-due",
+          "Reporting periods and deadlines"
+        ],
+        [
+          "/what-is-ccr007",
+          "CCR007 key data return"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting",
+          "label": "FCA: consumer credit reporting"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P2 link to the CCR007 guide"
+    },
+    {
+      "guide": "/website-compliance-motor-dealers",
+      "section": "sections.2.links",
+      "before": [],
+      "after": [
+        [
+          "/how-to-offer-car-finance-dealers",
+          "the CONC rules that apply when you offer finance"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://handbook.fca.org.uk/handbook/conc4/conc4s5",
+          "label": "FCA Handbook: CONC 4.5 — commissions"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P3 link to the PCP/HP guide"
+    },
+    {
+      "guide": "/why-fca-applications-get-delayed",
+      "section": "sections.0.links",
+      "before": [],
+      "after": [
+        [
+          "/how-to-apply-fca-limited-permission-car-dealers",
+          "the application steps"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/firms/authorisation/apply",
+          "label": "FCA: how to apply for authorisation"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P3 link to the how-to-apply guide"
     },
     {
       "guide": "/what-information-is-needed-for-ccr009",

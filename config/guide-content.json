@@ -47,7 +47,12 @@
             "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
           }
         ],
-        "links": [],
+        "links": [
+          [
+            "/van-commercial-vehicle-dealers-fca-permissions",
+            "van and commercial vehicle dealers selling to businesses"
+          ]
+        ],
         "id": "guide-section-1"
       },
       {
@@ -144,6 +149,14 @@
           [
             "/credit-broking-permission-motor-dealers",
             "Read the credit broking activity guide"
+          ],
+          [
+            "/how-to-offer-car-finance-dealers",
+            "how to start offering PCP and HP finance"
+          ],
+          [
+            "/fca-authorisation-cost-car-dealers",
+            "what FCA authorisation costs"
           ]
         ],
         "id": "guide-section-4"
@@ -1079,7 +1092,12 @@
             "href": "https://www.fca.org.uk/publication/data/authorisations-operating-service-metrics-2026-27-q1.pdf"
           }
         ],
-        "links": [],
+        "links": [
+          [
+            "/how-to-apply-fca-limited-permission-car-dealers",
+            "the application steps"
+          ]
+        ],
         "id": "guide-section-1"
       },
       {
@@ -1327,6 +1345,10 @@
           [
             "/when-is-ccr009-due",
             "Reporting periods and deadlines"
+          ],
+          [
+            "/what-is-ccr007",
+            "CCR007 key data return"
           ]
         ],
         "id": "guide-section-3"
@@ -1401,7 +1423,7 @@
     "reviewed": "2026-11-01",
     "description": "Use a practical post-authorisation checklist for permission conditions, staff, website disclosures, systems access, CCR009 reporting and business changes.",
     "seoTitle": "After FCA Approval: Motor Dealer Checklist | 009 Compliance",
-    "modified": "2026-11-02",
+    "modified": "RELEASE_DATE",
     "published": null
   },
   "/what-is-ccr009": {
@@ -3163,7 +3185,12 @@
             "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
           }
         ],
-        "links": [],
+        "links": [
+          [
+            "/how-to-offer-car-finance-dealers",
+            "the CONC rules that apply when you offer finance"
+          ]
+        ],
         "id": "guide-section-3"
       },
       {
@@ -3235,7 +3262,7 @@
     "reviewed": "2026-11-01",
     "description": "Review dealership status wording, finance promotions, commission disclosures, customer support and mobile readability using a practical checklist.",
     "seoTitle": "Motor Dealer Website Compliance Checklist | 009 Compliance",
-    "modified": "2026-11-02",
+    "modified": "RELEASE_DATE",
     "published": null
   },
   "/fca-compliance-motor-dealers-guide": {
@@ -3481,6 +3508,11 @@
         "need": "to compare our services",
         "href": "/services",
         "title": "Motor dealer compliance services"
+      },
+      {
+        "need": "every guide listed by topic",
+        "href": "/guides",
+        "title": "all motor dealer guides by topic"
       }
     ]
   },
