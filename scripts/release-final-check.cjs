@@ -41,7 +41,7 @@ const check = (name, pass, detail = '') => { results.push({ name, pass: Boolean(
 const decode = s => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
 const schemasFrom = html => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
 // 009 Compliance's own prices (config/offer.js). FCA fees and regulatory thresholds are allowed.
-const ownPrices = [...new Set([offer.startPayment, offer.monthlyPayment, offer.minimumTotal.amount, offer.previousPrice.amount, offer.reportingMonthly])].map(n => n.toLocaleString('en-GB'));
+const ownPrices = [...new Set([offer.startPayment, offer.monthlyPayment, offer.minimumTotal.amount, offer.reportingMonthly])].map(n => n.toLocaleString('en-GB'));
 const ownPrice = new RegExp('£\\s?(?:' + ownPrices.map(p => p.replace(',', ',')).join('|') + ')(?![\\d,])');
 const changedPages = new Set(Object.keys(pages).filter(p => !before[p] || before[p].title !== pages[p].title || before[p].description !== pages[p].description));
 const fcaGuides = Object.keys(guides).filter(p => guides[p].group === 'fca' && !offerLinks.bannerExcluded.includes(p));
@@ -141,6 +141,8 @@ const fcaGuides = Object.keys(guides).filter(p => guides[p].group === 'fca' && !
     check('CCR009 guides keep the CCR009 CTA primary with one small text link to the FCA offer page', !placement.some(p => p.includes('CCR009')));
     check('Every guide link to /fca-authorisation-motor-dealers uses a rotated descriptive anchor', anchorIssues.length === 0 && used.size === offerLinks.anchors.length, anchorIssues.join('; ') || 'anchors used: ' + [...used].join(' | '));
     check('No "click here" anchors on public pages', !Object.values(html).some(t => /click here/i.test(t)));
+    const thousand = Object.keys(html).filter(url => /£1,?000(?![\d,])/.test(html[url]));
+    check('No public page HTML contains "£1,000" or "£1000"', thousand.length === 0, thousand.join(', ') || 'none');
     // Vague anchors in the page content (main, including asides; site menus inside <nav> are excluded).
     const vague = [];
     for (const [url, t] of Object.entries(html)) {

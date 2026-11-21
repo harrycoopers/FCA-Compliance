@@ -22,12 +22,6 @@ const offer = {
   continuesUntilCancelled: true,
   reportingMonthly: 100,      // continuing reporting support base fee; active referral discounts apply
 
-  // Genuine former price, shown only as clearly labelled historical context.
-  previousPrice: {
-    amount: 1000,
-    label: 'Previous one-off application assistance fee'
-  },
-
   minimumTotal: {
     amount: 600,
     explanation: 'Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments.'

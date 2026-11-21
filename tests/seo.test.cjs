@@ -54,7 +54,8 @@ test('Pricing paragraph and FAQ/schema prices follow confirmed campaign states',
       const html = await (await get('/pricing')).text();
       assert.equal(html.includes('Following FCA authorisation, the existing £100 monthly subscription continues'), scenario.show);
       assert.equal(/£\s*\d/.test(html), scenario.show, scenario.mode + ' no price leakage in HTML/schema');
-      assert(!JSON.stringify(schemasFrom(html).find(node => node['@type'] === 'FAQPage')).includes('£1,000'));
+      assert(!html.includes('How does this compare with your previous'), 'previous-price FAQ removed');
+      assert(!/£1,?000\b/.test(html), 'no £1,000 figure in /pricing HTML or schema');
       assert(html.includes('The FCA application fee, which is paid separately.'));
       assert(html.includes('Current pricing confirmed before you start.'));
       assert(html.includes('href="#book-meeting"'));

@@ -34,11 +34,6 @@ const q = {
     question: `Is £${offer.minimumTotal.amount} the total cost?`,
     answer: `No. £${offer.minimumTotal.amount} is the minimum service commitment across the ${offer.minimumTermWords}-month minimum term. Payments of £${offer.monthlyPayment} per month continue after that until you cancel under the agreed cancellation terms, so what you pay depends on how long you keep the service. The FCA application fee is also separate.`
   }) : null,
-  previous: (c) => c.showPrice ? ({
-    historicalPrice: true,
-    question: `How does this compare with your previous £${offer.previousPrice.amount.toLocaleString('en-GB')} price?`,
-    answer: `Our previous application assistance was a one-off fee of £${offer.previousPrice.amount.toLocaleString('en-GB')}. The new service is a monthly subscription instead: £${offer.monthlyPayment} per month with a ${offer.minimumTermWords}-month minimum, continuing with reporting and compliance support after approval until you cancel. Because the payment structures differ, the total you pay depends on how long you keep the service.`
-  }) : null,
   minimumTerm: (c) => !c.showPrice ? null : ({
     question: `Does the ${offer.minimumTermWords}-month term mean I’ll be approved within ${offer.minimumTermWords} months?`,
     answer: `No. The ${offer.minimumTermWords}-month minimum is our contract term, not an FCA timescale or a promised decision date. Only the FCA decides applications and how long they take, and we can’t guarantee approval. ${offer.decisionTimingTerms}`
@@ -105,8 +100,8 @@ module.exports = {
     { question: 'What if I’m not sure which service I need?', answer: 'Book a 15-minute call and tell us about your dealership. We will talk through the support available and agree the next steps. Choose an available time and enter the phone number you want us to call. Your booking is confirmed on screen.', link: { href: '#book-meeting', label: 'Book a call' } },
     q.portal()
   ]; },
-  authorisation: () => build(['price', 'totalCost', 'previous', 'fcaFee', 'minimumTerm', 'afterApproval', 'guarantee', 'documents', 'provide', 'separate', 'referral', 'call']),
-  pricing: () => build(['price', 'totalCost', 'previous', 'minimumTerm', 'afterApproval', 'fcaFee', 'separate', 'referral']),
+  authorisation: () => build(['price', 'totalCost', 'fcaFee', 'minimumTerm', 'afterApproval', 'guarantee', 'documents', 'provide', 'separate', 'referral', 'call']),
+  pricing: () => build(['price', 'totalCost', 'minimumTerm', 'afterApproval', 'fcaFee', 'separate', 'referral']),
   referral: () => build(['referral', 'fcaFee', 'afterApproval', 'price']),
   toSchema: (faqs) => ({
     '@context': 'https://schema.org',

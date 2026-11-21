@@ -1,5 +1,5 @@
 {
-  "ran": "2026-11-21T11:58:39.442Z",
+  "ran": "2026-11-21T12:14:20.075Z",
   "results": [
     {
       "name": "No [CONFIRM, [VERIFY or {{ in public pages, sitemap or llms.txt",
@@ -58,7 +58,7 @@
       "detail": "24 guides"
     },
     {
-      "name": "No 009 Compliance prices (£100, £600, £1,000) in guide openings, FAQs or FAQ schema",
+      "name": "No 009 Compliance prices (£100, £600) in guide openings, FAQs or FAQ schema",
       "pass": true,
       "detail": "FCA fees and regulatory thresholds allowed"
     },
@@ -86,6 +86,11 @@
       "name": "No \"click here\" anchors on public pages",
       "pass": true,
       "detail": ""
+    },
+    {
+      "name": "No public page HTML contains \"£1,000\" or \"£1000\"",
+      "pass": true,
+      "detail": "none"
     },
     {
       "name": "No vague anchors (\"learn more\", \"read more\", \"click here\", \"more\") in main or aside",

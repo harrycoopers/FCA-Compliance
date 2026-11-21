@@ -3317,7 +3317,7 @@ app.get('/pricing', (req, res) => {
     pageDescription: `Clear pricing for motor dealers. FCA authorisation assistance: ${priceSentence()} CCR009 Return Assistance and Ongoing Compliance Support are priced separately.`,
     canonicalUrl: 'https://009compliance.com/pricing',
     faqs,
-    pageSchema: [faqData.toSchema(faqs.filter(faq => !faq.historicalPrice))]
+    pageSchema: [faqData.toSchema(faqs)]
   });
 });
 
