@@ -21,7 +21,6 @@ const testimonialData = require('./data/testimonials');
 const faqData = require('./data/faqs');
 const campaign = require('./config/campaign');
 const referral = require('./config/referral');
-const competitors = require('./data/competitors');
 // The 15-minute call booking link lives in ONE setting: config/booking.js (or BOOKING_URL in .env).
 // When unset, the site uses an honestly labelled meeting-request form instead of live booking.
 const BOOKING_URL = require('./config/booking');
@@ -210,7 +209,6 @@ app.use((req, res, next) => {
   res.locals.bookingUrl = BOOKING_URL;
   res.locals.campaign = campaign.state();
   res.locals.referral = referral;
-  res.locals.competitors = competitors;
   res.locals.inPageMeeting = false;
   res.locals.currentPath = req.path;
   res.locals.salesPage = false;
@@ -347,12 +345,6 @@ app.get('/referral', (req, res) => {
 });
 
 // Metrics API (total users)
-app.get('/api/metrics', (req, res) => {
-  db.get('SELECT COUNT(*) AS count FROM users', [], (err, row) => {
-    if (err) return res.json({ count: 0 });
-    res.json({ count: row.count || 0 });
-  });
-});
 
 accounts.mount(app);
 
@@ -366,8 +358,8 @@ for (const route of ['/fca-authorisation-cost-car-dealers', '/how-to-apply-fca-l
 app.get('/about', (req, res) => {
   res.render('about', {
     salesPage: true,
-    pageTitle: 'About 009 Compliance | 30+ Years of Motor Trade Experience',
-    pageDescription: '30+ years of motor-trade experience. Meet 009 Compliance and hear from clients about our FCA authorisation assistance, CCR009 returns and ongoing compliance support.'
+    pageTitle: 'About 009 Compliance | Our Team: 30+ Years in the Motor Trade',
+    pageDescription: '009 Compliance helps motor dealers with FCA authorisation, CCR009 returns and ongoing compliance. Our team brings 30+ years in the motor trade.'
   });
 });
 
@@ -3285,7 +3277,7 @@ app.get('/motor-finance-for-dealerships', (req, res) => {
   res.render('motor_finance', {
     salesPage: true,
     pageTitle: 'Motor Finance for Dealerships | 009 Compliance',
-    pageDescription: 'Explore motor-finance broker support for your dealership, backed by 30+ years of motor-finance experience. Start with a conversation about your next steps.',
+    pageDescription: 'Explore motor-finance broker support for your dealership. Our team brings 30+ years in the motor trade. Start with a conversation about your next steps.',
     canonicalUrl: 'https://009compliance.com/motor-finance-for-dealerships'
   });
 });

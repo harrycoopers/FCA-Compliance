@@ -151,6 +151,15 @@ record(P.documents, 'siblings', [{ need: 'the application process step by step',
 }
 for (const route of Object.keys(links)) links[route] = links[route].filter(l => l.href !== '/fca-authorisation-motor-dealers');
 
+// Audit P1 internal links (audits/2026-11-21-seo-geo/INTERNAL-LINKS.csv): route CCR009 readers to the CCR007 guide.
+{
+  const i = sectionIndex(P.whatCcr009, 'guide-section-2');
+  record(P.whatCcr009, `sections.${i}.links`, [...before[P.whatCcr009].sections[i].links, [P.ccr007, 'CCR007 key data return']], [S.ccr], 'Audit P1 internal link to the CCR007 guide');
+  const j = sectionIndex(P.due, 'guide-section-5');
+  record(P.due, `sections.${j}.links`, [...before[P.due].sections[j].links, [P.ccr007, 'what CCR007 asks for']], [S.ccr007], 'Audit P1 internal link to the CCR007 guide');
+  revise(P.whatCcr009); revise(P.due);
+}
+
 // Trim pre-existing descriptions to ≤155 characters (wording otherwise unchanged).
 record(P.info, 'description', 'Map CCR009 questions to dealership source records: field definitions, reporting periods and financial measures, with a fictional reconciliation example.', [], 'Trim meta description to ≤155 characters');
 record(P.checklist, 'description', 'Check CCR009 readiness before submission: access, period, evidence, reconciliation, open questions and confirmation that the return was submitted.', [], 'Trim meta description to ≤155 characters');
@@ -414,7 +423,9 @@ for (const [route, guide] of Object.entries(guides)) { pages[route].title = guid
 page('/referral', { description: 'Refer a motor dealer: 25% off eligible monthly subscription fees per qualifying referral, up to 100%. Initial payment and FCA fees excluded. Terms apply.', lastmod: R });
 page('/motor-dealer-compliance', { title: 'Car Dealer Compliance Support | 009 Compliance', description: 'Dealership compliance support after FCA approval: documents, reporting preparation, Consumer Duty, website checks and periodic reviews. Scope agreed first.', lastmod: R });
 page('/about', { title: 'About 009 Compliance | Our Team: 30+ Years in the Motor Trade', description: '009 Compliance helps motor dealers with FCA authorisation, CCR009 returns and ongoing compliance. Our team brings 30+ years in the motor trade.', lastmod: R });
-for (const route of ['/', '/services', '/fca-authorisation-motor-dealers', '/guides']) page(route, { lastmod: R });
+for (const route of ['/', '/services', '/fca-authorisation-motor-dealers', '/guides', '/pricing', '/ccr009-return-assistance-motor-dealers']) page(route, { lastmod: R });
+// One experience statement across the site (audit N-3).
+page('/motor-finance-for-dealerships', { description: 'Explore motor-finance broker support for your dealership. Our team brings 30+ years in the motor trade. Start with a conversation about your next steps.', lastmod: R });
 
 /* ---------- Order: keep new guides next to their topic in the registry ---------- */
 const order = Object.keys(guides);

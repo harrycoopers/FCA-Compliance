@@ -1,0 +1,5 @@
+<%
+  /* "FCA fees checked" note shown next to every FCA fee figure. Values come from config/offer.js (fcaFees). */
+  const _f = offer.fcaFees;
+  const _checked = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(_f.checked + 'T12:00:00Z'));
+%><span class="fca-fees-note">FCA fees checked <time datetime="<%= _f.checked %>"><%= _checked %></time>: <a href="<%= _f.source %>">FCA application fees</a> · <a href="<%= _f.annualSource %>">FCA 2026/27 fee movements</a></span>

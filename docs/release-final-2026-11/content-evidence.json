@@ -752,6 +752,62 @@
       "reason": "Rotated descriptive anchor for the FCA offer page"
     },
     {
+      "guide": "/what-is-ccr009",
+      "section": "sections.1.links",
+      "before": [
+        [
+          "/ccr009-vs-ccr007",
+          "See how CCR009 and CCR007 differ"
+        ]
+      ],
+      "after": [
+        [
+          "/ccr009-vs-ccr007",
+          "See how CCR009 and CCR007 differ"
+        ],
+        [
+          "/what-is-ccr007",
+          "CCR007 key data return"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009",
+          "label": "FCA: CCR009 reporting, scope and submission"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P1 internal link to the CCR007 guide"
+    },
+    {
+      "guide": "/when-is-ccr009-due",
+      "section": "sections.4.links",
+      "before": [
+        [
+          "/ccr009-vs-ccr007",
+          "Compare the two returns"
+        ]
+      ],
+      "after": [
+        [
+          "/ccr009-vs-ccr007",
+          "Compare the two returns"
+        ],
+        [
+          "/what-is-ccr007",
+          "what CCR007 asks for"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data",
+          "label": "FCA: completing CCR007"
+        }
+      ],
+      "checked": "2026-11-21",
+      "reason": "Audit P1 internal link to the CCR007 guide"
+    },
+    {
       "guide": "/what-information-is-needed-for-ccr009",
       "section": "description",
       "before": "Map CCR009 questions to dealership source records. Check field definitions, reporting periods and financial measures, with a fictional reconciliation example.",

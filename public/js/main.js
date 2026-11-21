@@ -1,32 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Animate user count metric
-  const counterEl = document.getElementById("user-count");
-  if (counterEl) {
-    fetch("/api/metrics")
-      .then((res) => res.json())
-      .then((data) => {
-        const target = Number(data.count || 0);
-        if (prefersReducedMotion) { counterEl.textContent = target.toString(); return; }
-        const duration = 900;
-        const start = performance.now();
-
-        function step(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const value = Math.floor(progress * target);
-          counterEl.textContent = value.toString();
-          if (progress < 1) requestAnimationFrame(step);
-        }
-
-        requestAnimationFrame(step);
-      })
-      .catch(() => {});
-  }
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("[data-contact-enquiry-form]");
   if (!form) return;
 

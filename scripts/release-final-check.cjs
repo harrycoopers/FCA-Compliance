@@ -141,6 +141,19 @@ const fcaGuides = Object.keys(guides).filter(p => guides[p].group === 'fca' && !
     check('CCR009 guides keep the CCR009 CTA primary with one small text link to the FCA offer page', !placement.some(p => p.includes('CCR009')));
     check('Every guide link to /fca-authorisation-motor-dealers uses a rotated descriptive anchor', anchorIssues.length === 0 && used.size === offerLinks.anchors.length, anchorIssues.join('; ') || 'anchors used: ' + [...used].join(' | '));
     check('No "click here" anchors on public pages', !Object.values(html).some(t => /click here/i.test(t)));
+    // Vague anchors in the page content (main, including asides; site menus inside <nav> are excluded).
+    const vague = [];
+    for (const [url, t] of Object.entries(html)) {
+      const main = (t.match(/<main\b[\s\S]*<\/main>/) || [''])[0].replace(/<nav\b[\s\S]*?<\/nav>/g, '');
+      for (const m of main.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/g)) {
+        const text = decode(m[1]).replace(/[↗→↓←↑]/g, '').trim();
+        if (/^(learn more|read more|click here|more)$/i.test(text)) vague.push(url + ': "' + text + '"');
+      }
+    }
+    check('No vague anchors ("learn more", "read more", "click here", "more") in main or aside', vague.length === 0, vague.join('; ') || 'none');
+    // Any page showing an FCA fee figure must carry the "FCA fees checked" note.
+    const feeFigure = Object.keys(html).filter(url => /£\s?(?:560|1,100)\b/.test(decode(html[url])) && !/FCA fees checked/.test(decode(html[url])));
+    check('Pages showing "£560" or "£1,100" also show "FCA fees checked"', feeFigure.length === 0, feeFigure.join(', ') || 'offer page, /pricing, cost guide');
 
     // 6. Campaign fallback when the date is mocked to 26 December 2026.
     const fallback = [];

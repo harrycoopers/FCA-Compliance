@@ -48,7 +48,7 @@
         <div class="hero9__copy">
           
           <h1 class="display-xl" id="auth-title">FCA authorisation for motor dealers <span class="serif">and car finance.</span></h1>
-          <p class="lede">Need FCA approval to offer car finance? We give FCA application help to car, motorcycle, van and commercial vehicle dealers: organising your information, explaining what’s required in plain English, preparing your supporting documents and responding when the FCA asks for more.</p>
+          <p class="lede">Need FCA approval to offer car finance? We give FCA application help to car, motorcycle, van and commercial vehicle dealers: organising your information, explaining what’s required in plain English, preparing your supporting documents and responding when the FCA asks for more. Want to know what’s involved? <a class="text-link" href="/how-to-apply-fca-limited-permission-car-dealers">See each step of the FCA application</a>.</p>
           <ul class="check-list check-list--hero">
             <li><span class="tick"><%- tick %></span>Built around how dealerships actually operate</li>
             <li><span class="tick"><%- tick %></span>Direct contact with people who know the motor trade</li>
@@ -120,6 +120,25 @@
       <% if (c.showPrice) { %>
         <%- include('partials/payment_timeline') %>
       <% } %>
+      <% const _ff = offer.fcaFees; %>
+      <div class="fee-split" id="fees">
+        <h3 id="fees-title">Our fees and the FCA’s fees</h3>
+        <% if (c.showPrice) { %>
+        <div class="fee-split__wrap" role="region" aria-labelledby="fees-title" tabindex="0">
+          <table class="fee-split__table">
+            <thead><tr><th scope="col">Charge</th><th scope="col">Paid to</th><th scope="col">Amount</th><th scope="col">When</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">009 Compliance FCA authorisation assistance</th><td>009 Compliance</td><td>£<%= offer.startPayment %> to start, then £<%= offer.monthlyPayment %>/month; <%= offer.minimumTermWords %>-month minimum (£<%= offer.minimumTotal.amount %>)</td><td>Monthly by <%= offer.paymentMethod %></td></tr>
+              <tr><th scope="row">FCA application fee (limited permission, Category <%= _ff.applicationCategory %>)</th><td>The FCA</td><td>£<%= _ff.application.toLocaleString('en-GB') %>, non-refundable</td><td>When you submit in Connect</td></tr>
+              <tr><th scope="row">FCA annual fee (limited permission, 2026/27 minimum)</th><td>The FCA</td><td>From £<%= _ff.minimumAnnual2026_27.toLocaleString('en-GB') %> a year, plus levies</td><td>Each FCA fee year, after authorisation</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine fee-split__note"><%- include('partials/fca_fees_note') %>. <a href="/fca-authorisation-cost-car-dealers">FCA fees explained: application and annual fees</a> <span aria-hidden="true">→</span></p>
+        <% } else { %>
+        <p>The FCA’s own application fee and annual fees are separate from our charges and are paid to the FCA. <a href="/fca-authorisation-cost-car-dealers">FCA fees explained: application and annual fees</a> <span aria-hidden="true">→</span></p>
+        <% } %>
+      </div>
     </div>
   </section>
 
@@ -156,7 +175,7 @@
           <% if (c.showPrice) { %><p>Once authorised, your existing £<%= offer.reportingMonthly %> monthly subscription continues and includes routine FCA reporting assistance, including CCR007 and CCR009. There is no additional subscription charge. Standalone services remain available separately.</p><% } else { %><p>We’ll confirm current pricing and the payment schedule with you before you start.</p><% } %>
           <div class="as-finance-invite">
             <h4>Ready to offer your customers finance?</h4>
-            <p>Explore optional motor-finance broker support, backed by 30+ years of motor-finance experience. A clear next step for your dealership after authorisation.</p>
+            <p>Explore optional motor-finance broker support from a team with 30+ years in the motor trade. A clear next step for your dealership after authorisation.</p>
             <a href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a>
             <small>Optional, separate service with its own terms and onboarding. Not included in your compliance subscription.</small>
           </div>
@@ -195,7 +214,7 @@
     </div>
   </section>
 
-  <section class="sec sec--flush-top mf-promo-section" aria-labelledby="mf-promo-title"><div class="wrap"><div class="mf-promo"><div><h2 id="mf-promo-title">Authorised and ready<br><span class="serif">for what’s next?</span></h2><p>Help your customers explore motor finance with experienced broker support. Talk through the next step for your dealership, backed by <strong>30+ years of motor-finance experience.</strong></p><div class="actions"><a class="btn btn--primary" href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a><a class="text-link" href="/contact?topic=finance#book-meeting">Discuss your dealership</a></div><p class="mf-qualification">Separate from your authorisation assistance subscription. Required permissions and broker onboarding must be in place. Customer finance is subject to lender assessment and terms; approval is not guaranteed.</p></div><%- include('partials/motor_finance_art') %></div></div></section>
+  <section class="sec sec--flush-top mf-promo-section" aria-labelledby="mf-promo-title"><div class="wrap"><div class="mf-promo"><div><h2 id="mf-promo-title">Authorised and ready<br><span class="serif">for what’s next?</span></h2><p>Help your customers explore motor finance with experienced broker support. Talk through the next step for your dealership, from a team with <strong>30+ years in the motor trade.</strong></p><div class="actions"><a class="btn btn--primary" href="/motor-finance-for-dealerships">Explore motor finance <span aria-hidden="true">↗</span></a><a class="text-link" href="/contact?topic=finance#book-meeting">Discuss your dealership</a></div><p class="mf-qualification">Separate from your authorisation assistance subscription. Required permissions and broker onboarding must be in place. Customer finance is subject to lender assessment and terms; approval is not guaranteed.</p></div><%- include('partials/motor_finance_art') %></div></div></section>
 
   <!-- 7. Referral promotion -->
   <% if (c.showPrice) { %>

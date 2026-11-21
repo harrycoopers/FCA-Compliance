@@ -41,7 +41,11 @@ const offer = {
   // Short label for the comparison table once confirmed, e.g. 'Inc. VAT' / '+ VAT' / 'No VAT'.
   vatShort: null,
   // Cancellation notice period — do NOT invent. e.g. 'Cancel with 30 days’ written notice.'
-  cancellationNotice: null
+  cancellationNotice: null,
+
+  // ---- FCA's own fees (not 009 Compliance charges), verified against the FCA sources below. ----
+  // Shown beside our terms on the offer page and /pricing; every figure carries the checked date.
+  fcaFees: { application: 560, applicationCategory: 2, minimumAnnual2026_27: 1100, checked: '2026-11-21', source: 'https://www.fca.org.uk/firms/authorisation/apply/fees', annualSource: 'https://www.fca.org.uk/firms/fees-and-levies/fee-movements' }
 };
 
 const words = { 3: 'three', 6: 'six', 12: 'twelve' };

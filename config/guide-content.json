@@ -1457,6 +1457,10 @@
           [
             "/ccr009-vs-ccr007",
             "See how CCR009 and CCR007 differ"
+          ],
+          [
+            "/what-is-ccr007",
+            "CCR007 key data return"
           ]
         ],
         "id": "guide-section-2"
@@ -1575,7 +1579,7 @@
     "reviewed": "2026-11-01",
     "description": "See what CCR009 covers, which reporting it replaced and how motor dealers can prepare. Learn how FCA filing differs from internal record collection.",
     "seoTitle": "What Is CCR009? FCA Motor Dealer Reporting | 009 Compliance",
-    "modified": "2026-11-12",
+    "modified": "RELEASE_DATE",
     "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
     "published": null
   },
@@ -2837,6 +2841,10 @@
           [
             "/ccr009-vs-ccr007",
             "Compare the two returns"
+          ],
+          [
+            "/what-is-ccr007",
+            "what CCR007 asks for"
           ]
         ],
         "id": "guide-section-5"
@@ -2882,7 +2890,7 @@
     "reviewed": "2026-11-01",
     "description": "Check CCR009 reporting periods, the 40-business-day submission window, first-period rules and the £5 million boundary before confirming your deadline.",
     "seoTitle": "When Is CCR009 Due? Periods and Deadlines | 009 Compliance",
-    "modified": "2026-11-12",
+    "modified": "RELEASE_DATE",
     "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
     "published": null
   },

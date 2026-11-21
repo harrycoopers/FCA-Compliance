@@ -773,3 +773,13 @@ body.mobile-menu-open{overflow:hidden}
 .guide-menu-label--desktop{display:inline-flex;align-items:center}.guide-menu-label__link{color:inherit;font-weight:600}.guide-menu-label--mobile{position:relative}.guide-menu-label--mobile>.guide-menu-label__link{position:absolute;left:0;top:0;z-index:1;line-height:48px}.guide-menu-label--mobile .guide-nav>summary{justify-content:flex-end}.gf__label>a{font:inherit;color:inherit}
 .page-siblings{margin:12px 0 0;font-size:.95rem;color:var(--muted)}
 .page-siblings a{color:var(--blue-ink);text-decoration:underline;text-underline-offset:2px}
+.fee-split{margin-top:40px}
+.fee-split h3{font-size:clamp(20px,2vw,24px);margin:0 0 14px}
+.fee-split__wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:16px;background:#fff}
+.fee-split__table{width:100%;min-width:620px;border-collapse:collapse;font-size:15px;line-height:1.5}
+.fee-split__table th,.fee-split__table td{padding:12px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+.fee-split__table thead th{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--blue-soft)}
+.fee-split__table tbody tr:last-child th,.fee-split__table tbody tr:last-child td{border-bottom:0}
+.fee-split__note{margin-top:12px}
+.fee-split a,.ps-fca-fees a{color:var(--blue-ink);text-decoration:underline;text-underline-offset:2px}
+.ps-fca-fees{margin:10px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}

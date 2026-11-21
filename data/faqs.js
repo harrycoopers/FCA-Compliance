@@ -85,19 +85,26 @@ const q = {
   })
 };
 
+function homeCostAnswer(c) {
+  const rest = 'The FCA’s own application fee is separate and paid to the FCA. CCR009 return assistance and ongoing compliance support are priced to the scope we agree with you.';
+  if (!c.showPrice) return `Our pricing for new FCA authorisation assistance is being updated, and we’ll confirm the current terms in a 15-minute call before you commit. ${rest}`;
+  const vat = offer.vatStatement ? ` ${offer.vatStatement}` : '';
+  return `FCA authorisation assistance is £${offer.startPayment} to get started, then £${offer.monthlyPayment} a month by ${offer.paymentMethod}, with a ${offer.minimumTermWords}-month minimum (£${offer.minimumTotal.amount}).${vat} ${rest}`;
+}
+
 const build = (keys) => {
   const c = campaign.state();
   return keys.map((k) => q[k](c)).filter(Boolean);
 };
 
 module.exports = {
-  home: () => [
+  home: () => { const c = campaign.state(); return [
     { question: 'What does 009 Compliance help motor dealers with?', answer: 'We provide FCA authorisation assistance, CCR009 return assistance and ongoing motor dealer compliance support. We agree the scope and fees with you before work begins.' },
     { question: 'Can you help if my dealership is already authorised?', answer: 'Yes. Our CCR009 return assistance and ongoing compliance support are available to authorised dealerships. Speak to us about the records, reporting or administration you need help with.', link: { href: '/motor-dealer-compliance', label: 'Explore ongoing compliance support' } },
-    { question: 'How much will the support cost?', answer: 'Fees depend on the service and agreed scope. We explain the charges and any ongoing commitment before you proceed. Current FCA authorisation assistance terms are available on the authorisation page.', link: { href: '/fca-authorisation-motor-dealers', label: 'View authorisation assistance' } },
+    { question: 'How much will the support cost?', answer: homeCostAnswer(c), links: [{ href: '/fca-authorisation-motor-dealers', label: 'View authorisation assistance' }, { href: '/fca-authorisation-cost-car-dealers', label: 'FCA fees are separate – see what the FCA charges' }] },
     { question: 'What if I’m not sure which service I need?', answer: 'Book a 15-minute call and tell us about your dealership. We will talk through the support available and agree the next steps. Choose an available time and enter the phone number you want us to call. Your booking is confirmed on screen.', link: { href: '#book-meeting', label: 'Book a call' } },
     q.portal()
-  ],
+  ]; },
   authorisation: () => build(['price', 'totalCost', 'previous', 'fcaFee', 'minimumTerm', 'afterApproval', 'guarantee', 'documents', 'provide', 'separate', 'referral', 'call']),
   pricing: () => build(['price', 'totalCost', 'previous', 'minimumTerm', 'afterApproval', 'fcaFee', 'separate', 'referral']),
   referral: () => build(['referral', 'fcaFee', 'afterApproval', 'price']),

@@ -8,7 +8,7 @@
       <summary><%= faq.question %></summary>
       <div class="faq__a">
         <p><%= faq.answer %></p>
-        <% if (faq.link) { %><a href="<%= faq.link.href %>"><%= faq.link.label %> →</a><% } %>
+        <% (faq.links || (faq.link ? [faq.link] : [])).forEach(function (l) { %><a href="<%= l.href %>"><%= l.label %> →</a><% }) %>
       </div>
     </details>
   <% }) %>

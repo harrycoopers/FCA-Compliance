@@ -476,3 +476,38 @@ test('an open guide hides the expired campaign and requests the server-rendered 
   assert.equal(panel.hidden, true);
   assert.equal(reloads, 1);
 });
+
+test('audit fixes: metrics endpoint removed; FCA-fee and homepage cost copy follow config and campaign state', async () => {
+  assert.equal((await get('/api/metrics')).status, 404);
+  const campaign = require('../config/campaign'), offer = require('../config/offer');
+  const previousMode = campaign.postCampaign.mode, previousNow = process.env.CAMPAIGN_NOW;
+  try {
+    for (const scenario of [
+      { now: '2026-11-21T12:00:00Z', mode: 'continue', show: true },
+      { now: '2026-12-26T00:00:01Z', mode: 'continue', show: true },
+      { now: '2026-12-26T00:00:01Z', mode: 'unconfirmed', show: false },
+      { now: '2026-12-26T00:00:01Z', mode: 'custom', show: false }
+    ]) {
+      process.env.CAMPAIGN_NOW = scenario.now; campaign.postCampaign.mode = scenario.mode;
+      const home = await (await get('/')).text();
+      const faq = schemasFrom(home).find(s => s['@type'] === 'FAQPage');
+      const cost = faq.mainEntity.find(q => q.name === 'How much will the support cost?');
+      assert(home.includes('<summary>How much will the support cost?</summary>'));
+      assert(home.includes(require('ejs').escapeXML(cost.acceptedAnswer.text)), 'visible answer equals schema answer');
+      assert(home.includes('href="/fca-authorisation-cost-car-dealers"'));
+      assert.equal(cost.acceptedAnswer.text.includes(`£${offer.startPayment} to get started, then £${offer.monthlyPayment} a month by Direct Debit, with a six-month minimum (£${offer.minimumTotal.amount})`), scenario.show);
+      if (!scenario.show) assert(!/£/.test(cost.acceptedAnswer.text));
+      const service = await (await get('/fca-authorisation-motor-dealers')).text();
+      const fees = service.match(/<div class="fee-split"[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/)?.[0] || service.match(/<div class="fee-split"[\s\S]*?Our fees and the FCA[\s\S]*?<\/p>/)[0];
+      assert(fees.includes('Our fees and the FCA’s fees') && fees.includes('href="/fca-authorisation-cost-car-dealers"'));
+      assert.equal(/£560/.test(fees) && /£1,100/.test(fees) && /FCA fees checked/.test(fees), scenario.show);
+      if (!scenario.show) assert(!/£/.test(fees));
+      const pricing = await (await get('/pricing')).text();
+      assert(pricing.includes('href="/fca-authorisation-cost-car-dealers">FCA application and annual fees</a>'));
+      assert.equal(pricing.includes('FCA fees checked'), scenario.show);
+    }
+  } finally {
+    campaign.postCampaign.mode = previousMode;
+    if (previousNow === undefined) delete process.env.CAMPAIGN_NOW; else process.env.CAMPAIGN_NOW = previousNow;
+  }
+});
