@@ -1,0 +1,18 @@
+{
+  "changed": [
+    "public/css/analytics-consent.css",
+    "public/js/analytics-consent.js",
+    "public/js/guide-enhancements.js",
+    "views/partials/analytics_consent.ejs",
+    "views/partials/guide_ongoing_offer.ejs",
+    "views/partials/guide_reporting_offer.ejs",
+    "views/partials/home_gift_offer.ejs",
+    "config/asset-manifest.json",
+    "tests/seo.test.cjs",
+    "views/cookie_policy.ejs",
+    "views/layout.ejs",
+    "views/partials/guide_booking.ejs",
+    "views/partials/guide_offer.ejs",
+    "views/partials/offer_card.ejs"
+  ]
+}

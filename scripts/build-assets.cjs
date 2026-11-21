@@ -10,6 +10,7 @@ const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'public/build');
 async function build() {
   fs.mkdirSync(out, { recursive: true });
+  fs.writeFileSync(path.join(root, 'public/sitemap.xml'), require('../utils/seo').sitemapXml('https://009compliance.com'));
   const manifest = {};
   const save = (source, body) => {
     const ext = path.extname(source);

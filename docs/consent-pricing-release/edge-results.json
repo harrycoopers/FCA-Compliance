@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "keyboard",
+    "blocked-storage",
+    "malformed-storage",
+    "legacy-cookies",
+    "duplicate-init",
+    "essential-fetch"
+  ],
+  "errors": []
+}

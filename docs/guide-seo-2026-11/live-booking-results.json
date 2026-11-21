@@ -1,0 +1,38 @@
+{
+  "live": true,
+  "submitted": false,
+  "blockedMutations": [],
+  "errors": [],
+  "pricingStatus": 200,
+  "pricing": [
+    "✦Christmas offerLimited time · closes 25 December 2026↗£100 to get startedThen £100 per monthFirst month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+    "Priced to scopeTell us about your return.Scope and pricing confirmed before engagement. Your firm remains responsible for its submission.",
+    "Monthly supportYour fee agreed before you start.Fixed monthly support on a fair-use basis. Scope, frequency and fees depend on the support required."
+  ],
+  "contactStatus": 200,
+  "availabilityStatus": 200,
+  "availability": {
+    "date": "2026-11-16",
+    "times": [
+      "09:00",
+      "09:30",
+      "10:00",
+      "10:30",
+      "11:00",
+      "11:30",
+      "12:00",
+      "12:30",
+      "13:00",
+      "13:30",
+      "14:00",
+      "14:30",
+      "15:00",
+      "15:30",
+      "16:00",
+      "16:30",
+      "17:00"
+    ]
+  },
+  "detailsVisible": true,
+  "topic": "ccr009"
+}

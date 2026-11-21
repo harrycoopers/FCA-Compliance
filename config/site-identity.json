@@ -1,0 +1,16 @@
+{
+  "foundingDate": "2025-12-15",
+  "companyLinkedIn": null,
+  "googleBusinessProfile": null,
+  "team": {
+    "guide-author": {
+      "name": null,
+      "jobTitle": null,
+      "background": null,
+      "linkedIn": null,
+      "photo": null
+    }
+  },
+  "defaultGuideAuthor": null,
+  "guideAuthors": {}
+}

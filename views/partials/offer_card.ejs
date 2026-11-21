@@ -87,7 +87,7 @@
           <li>The FCA decides applications and timescales. We can’t guarantee approval, and the <%= _guide ? guideText(_o.minimumTermWords + '-month') : 'six-month' %> term isn’t a promised decision date.</li>
         </ul>
       <% } %>
-      <% if(_guide) { %><p class="offer-card__cta-note">Referral illustration: each active qualifying referral reduces eligible subsequent monthly fees by <%= referral.STEP %>%, up to <%= Math.min(100,referral.STEP*referral.MAX_REFERRALS) %>%. The initial £<%= _o.startPayment %> payment remains payable. FCA fees and separately purchased services are excluded. <a href="/referral">Check referral eligibility and terms</a>.</p><p class="guide-original-links"><a href="/pricing">See current pricing and scope</a> · <a href="/fca-authorisation-motor-dealers">Explore FCA authorisation assistance</a></p><% } %>
+      <% if(_guide) { %><p class="offer-card__cta-note">Referral illustration: each active qualifying referral reduces eligible subsequent monthly fees by <%= referral.STEP %>%, up to <%= Math.min(100,referral.STEP*referral.MAX_REFERRALS) %>%. The initial £<%= _o.startPayment %> payment remains payable. FCA fees and separately purchased services are excluded. <a href="/referral">Check referral eligibility and terms</a>.</p><p class="guide-original-links"><a href="/pricing">See current pricing and scope</a> · <a href="/fca-authorisation-motor-dealers"><%= guideOfferAnchor %></a></p><% } %>
     </div>
   </article>
 </div>

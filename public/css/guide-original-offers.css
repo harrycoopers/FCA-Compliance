@@ -12,12 +12,12 @@
 .guide-original-offer .btn{white-space:normal;text-align:center;line-height:1.5}
 .guide-original-offer a:not(.btn){color:#dce9f8;text-decoration:underline;text-underline-offset:3px}
 .guide-original-offer .guide-original-links{font-size:14px;line-height:1.7;margin-top:20px}
-.guide-original-offer .rewards h3{font-size:22px;line-height:1.15;font-weight:650;margin:0 0 14px;color:#fff}
-.guide-original-offer .rewards h3 em{font-family:Georgia,serif;font-weight:400;color:#a8d5f5}
+.guide-original-offer .rewards .rewards__title{font-size:22px;line-height:1.15;font-weight:650;margin:0 0 14px;color:#fff}
+.guide-original-offer .rewards .rewards__title em{font-family:Georgia,serif;font-weight:400;color:#a8d5f5}
 .guide-original-offer [data-referral-amount]{display:inline-block;min-width:3ch;text-align:right;font-variant-numeric:tabular-nums}
 .guide-original-offer [data-referral-discount]{min-width:7ch;text-align:center}
 .guide-original-offer .count-label{min-height:2.8em}
-@media(max-width:420px){.guide-original-offer .rewards h3{font-size:17px}}
+@media(max-width:420px){.guide-original-offer .rewards .rewards__title{font-size:17px}}
 .guide-original-offer .offer-card__orbit,.guide-original-offer .offer-card__sheen::before,.guide-original-offer .auth-card-snow i{animation-iteration-count:1!important}
 .guide-home-offer.has-festive-offer .compact-offer .present{animation:parcel-santa-throw 8.5s linear both}
 .guide-home-offer.has-festive-offer .compact-offer .gift-lid{animation:delivery-lid 8.5s linear both}
@@ -30,3 +30,18 @@
 .guide-home-offer:not(.gift-motion-ready) .price-ticket{opacity:1!important;scale:1!important}
 .guide-home-offer .offer-terms{font-size:13px;line-height:1.65}
 @media(prefers-reduced-motion:reduce){.guide-home-offer *,.guide-home-offer *::before,.guide-home-offer *::after,.guide-original-offer *,.guide-original-offer *::before,.guide-original-offer *::after{animation:none!important;transition:none!important}.guide-home-offer .present{opacity:1!important;transform:none!important}.guide-home-offer .gift-lid{transform:translateY(-150px) rotate(-10deg)!important}.guide-home-offer .price-ticket{opacity:1!important;scale:1!important}.guide-home-offer .delivery-van{display:none!important}}
+/* Compact FCA offer banner (guide_offer_banner.ejs). Space is reserved and contained, so the
+   transform-only sheen never shifts layout; reduced motion removes the animation entirely. */
+.guide-offer-banner{position:relative;overflow:hidden;contain:layout paint;isolation:isolate;display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:center;min-height:132px;margin:8px 0 40px;padding:20px 24px;border-radius:18px;border:1px solid #bfdcf5;background:linear-gradient(120deg,#f4f9fe 0%,#e5f1fc 55%,#fff8e6 100%);color:var(--ink,#14243a)}
+.guide-offer-banner__body{position:relative;z-index:1;min-width:0}
+.guide-offer-banner p{margin:0}
+.guide-offer-banner__tag{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1d4ed8}
+.guide-offer-banner__text{margin-top:4px!important;font-size:1.05rem;line-height:1.4}
+.guide-offer-banner__terms{margin-top:6px!important;font-size:.84rem;line-height:1.45;color:var(--muted,#4a5b71)}
+.guide-offer-banner__link{position:relative;z-index:1;justify-self:end;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:10px 18px;border-radius:999px;background:#14243a;color:#fff!important;font-weight:600;text-decoration:none;white-space:nowrap}
+.guide-offer-banner__link:hover{background:#1d4ed8}
+.guide-offer-banner__sheen{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.75) 50%,transparent 65%);transform:translateX(-110%);animation:guide-offer-banner-sheen 7s ease-in-out 1.2s infinite;will-change:transform}
+.guide-offer-banner.is-festive{border-color:#f0d58a}
+@keyframes guide-offer-banner-sheen{0%{transform:translateX(-110%)}28%,100%{transform:translateX(110%)}}
+@media(max-width:640px){.guide-offer-banner{grid-template-columns:1fr;min-height:196px;padding:18px}.guide-offer-banner__link{justify-self:start;white-space:normal}}
+@media(prefers-reduced-motion:reduce){.guide-offer-banner__sheen{animation:none!important;transform:translateX(-110%)!important}}

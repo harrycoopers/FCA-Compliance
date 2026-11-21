@@ -1,0 +1,156 @@
+﻿{
+    "dateFrom":  "2026-10-14",
+    "dateTo":  "2026-11-10",
+    "clicks":  22,
+    "impressions":  1090,
+    "pages":  [
+                  {
+                      "Top pages":  "https://009compliance.com/",
+                      "Clicks":  "17",
+                      "Impressions":  "62",
+                      "CTR":  "27.42%",
+                      "Position":  "2.56"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/fca-authorisation-motor-dealers",
+                      "Clicks":  "3",
+                      "Impressions":  "259",
+                      "CTR":  "1.16%",
+                      "Position":  "10.15"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/do-motor-dealers-need-fca-authorisation",
+                      "Clicks":  "2",
+                      "Impressions":  "234",
+                      "CTR":  "0.85%",
+                      "Position":  "7.07"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/ccr009-return-assistance-motor-dealers",
+                      "Clicks":  "1",
+                      "Impressions":  "61",
+                      "CTR":  "1.64%",
+                      "Position":  "7.95"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/contact",
+                      "Clicks":  "1",
+                      "Impressions":  "44",
+                      "CTR":  "2.27%",
+                      "Position":  "3.14"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/fca-licence-car-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "232",
+                      "CTR":  "0%",
+                      "Position":  "4.9"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/motor-dealer-compliance",
+                      "Clicks":  "0",
+                      "Impressions":  "134",
+                      "CTR":  "0%",
+                      "Position":  "19.11"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/limited-permission-fca-authorisation-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "67",
+                      "CTR":  "0%",
+                      "Position":  "8.03"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/about",
+                      "Clicks":  "0",
+                      "Impressions":  "51",
+                      "CTR":  "0%",
+                      "Position":  "8.24"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/pricing",
+                      "Clicks":  "0",
+                      "Impressions":  "40",
+                      "CTR":  "0%",
+                      "Position":  "39"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/register",
+                      "Clicks":  "0",
+                      "Impressions":  "38",
+                      "CTR":  "0%",
+                      "Position":  "5.53"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/credit-broking-permission-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "38",
+                      "CTR":  "0%",
+                      "Position":  "6.13"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/what-is-ccr009",
+                      "Clicks":  "0",
+                      "Impressions":  "9",
+                      "CTR":  "0%",
+                      "Position":  "7"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/who-needs-to-submit-ccr009",
+                      "Clicks":  "0",
+                      "Impressions":  "8",
+                      "CTR":  "0%",
+                      "Position":  "6.5"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/website-compliance-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "7",
+                      "CTR":  "0%",
+                      "Position":  "9"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/common-ccr009-reporting-mistakes",
+                      "Clicks":  "0",
+                      "Impressions":  "5",
+                      "CTR":  "0%",
+                      "Position":  "8"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/fca-application-documents-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "4",
+                      "CTR":  "0%",
+                      "Position":  "8.75"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/how-to-prepare-for-ccr009-return",
+                      "Clicks":  "0",
+                      "Impressions":  "2",
+                      "CTR":  "0%",
+                      "Position":  "4"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/why-fca-applications-get-delayed",
+                      "Clicks":  "0",
+                      "Impressions":  "2",
+                      "CTR":  "0%",
+                      "Position":  "5"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/what-information-is-needed-for-ccr009",
+                      "Clicks":  "0",
+                      "Impressions":  "1",
+                      "CTR":  "0%",
+                      "Position":  "1"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/after-fca-approval-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "1",
+                      "CTR":  "0%",
+                      "Position":  "2"
+                  }
+              ],
+    "note":  "Page and query tables are separate. Page totals are not unique searches and are not added to the chart total. Pre-publication evidence only."
+}

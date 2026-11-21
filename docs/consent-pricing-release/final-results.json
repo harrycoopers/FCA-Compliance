@@ -1,0 +1,247 @@
+{
+  "checked": "2026-11-12T17:58:39.952Z",
+  "verdict": "READY FOR PUBLICATION — pending user authorisation and normal hosting preflight; no remaining code blockers identified",
+  "previousFindings": {
+    "B1": "Closed: shared analytics is opt-in with saved choice and withdrawal",
+    "N3Pricing": "Closed: price-bearing paragraph and related FAQs/schema follow campaign state"
+  },
+  "scope": {
+    "changed": [
+      "public/js/guide-enhancements.js",
+      "config/asset-manifest.json",
+      "public/js/pricing-services.js",
+      "server.js",
+      "tests/seo.test.cjs",
+      "views/cookie_policy.ejs",
+      "views/layout.ejs",
+      "views/pricing.ejs"
+    ]
+  },
+  "tests": {
+    "regression": 77,
+    "buildAssets": 65,
+    "preserved": 18,
+    "responsive": 54,
+    "noJs": 18,
+    "pricing": 12,
+    "edge": [
+      "keyboard",
+      "blocked-storage",
+      "malformed-storage",
+      "legacy-cookies",
+      "duplicate-init",
+      "essential-fetch"
+    ],
+    "networkStates": [
+      {
+        "state": "before-choice",
+        "choice": null,
+        "allowed": false,
+        "tagCount": 0,
+        "configCount": 0,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "rejected",
+        "choice": "rejected",
+        "allowed": false,
+        "tagCount": 0,
+        "configCount": 0,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "rejected-reload",
+        "choice": "rejected",
+        "allowed": false,
+        "tagCount": 0,
+        "configCount": 0,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "accepted",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 2,
+        "cookieNames": [
+          "_ga",
+          "_ga_BMQFTHWWKP"
+        ]
+      },
+      {
+        "state": "accept-again",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 0,
+        "cookieNames": [
+          "_ga",
+          "_ga_BMQFTHWWKP"
+        ]
+      },
+      {
+        "state": "accepted-reload",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 4,
+        "cookieNames": [
+          "_ga",
+          "_ga_BMQFTHWWKP"
+        ]
+      },
+      {
+        "state": "guide-event",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 2,
+        "cookieNames": [
+          "_ga",
+          "_ga_BMQFTHWWKP"
+        ]
+      },
+      {
+        "state": "accepted-navigation",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 3,
+        "cookieNames": [
+          "_ga",
+          "_ga_BMQFTHWWKP"
+        ]
+      },
+      {
+        "state": "withdrawn",
+        "choice": "rejected",
+        "allowed": false,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "reaccept-same-document",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "reaccepted-event",
+        "choice": "accepted",
+        "allowed": true,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 2,
+        "cookieNames": [
+          "_ga_BMQFTHWWKP",
+          "_ga"
+        ]
+      },
+      {
+        "state": "withdraw-again",
+        "choice": "rejected",
+        "allowed": false,
+        "tagCount": 1,
+        "configCount": 1,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "withdrawn-navigation",
+        "choice": "rejected",
+        "allowed": false,
+        "tagCount": 0,
+        "configCount": 0,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "sensitive",
+        "choice": "accepted",
+        "allowed": false,
+        "tagCount": 0,
+        "configCount": 0,
+        "requestCount": 0,
+        "cookieNames": []
+      },
+      {
+        "state": "cross-tab-withdrawn",
+        "choice": "rejected",
+        "allowed": false,
+        "tagCount": 0,
+        "configCount": 0,
+        "requestCount": 0,
+        "cookieNames": []
+      }
+    ],
+    "motion": {
+      "at": "2026-11-12T17:54:16.195Z",
+      "checks": [
+        {
+          "width": 390,
+          "heroSequence": true,
+          "heroAndAccentsOnce": true,
+          "giftExecuted": true,
+          "santaExecutedAndSettled": true,
+          "bookingExecuted": true,
+          "progressCompletes": true
+        },
+        {
+          "width": 1440,
+          "heroSequence": true,
+          "heroAndAccentsOnce": true,
+          "giftExecuted": true,
+          "santaExecutedAndSettled": true,
+          "bookingExecuted": true,
+          "progressCompletes": true
+        },
+        {
+          "route": "/what-is-ccr009",
+          "bookingExecuted": true,
+          "noFcaOffer": true
+        },
+        {
+          "route": "/consumer-duty-motor-dealers",
+          "bookingExecuted": true,
+          "noFcaOffer": true
+        },
+        {
+          "route": "/fca-compliance-motor-dealers-guide",
+          "bookingExecuted": true,
+          "noFcaOffer": true
+        },
+        {
+          "desktopStickyRail": true,
+          "height": 768
+        }
+      ],
+      "errors": [],
+      "cls": [
+        {
+          "width": 390,
+          "value": 0
+        },
+        {
+          "width": 1440,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

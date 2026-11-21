@@ -1,0 +1,956 @@
+﻿{
+    "Search appearance":  [
+
+                          ],
+    "Devices":  [
+                    {
+                        "Device":  "Desktop",
+                        "Clicks":  "13",
+                        "Impressions":  "888",
+                        "CTR":  "1.46%",
+                        "Position":  "9.29"
+                    },
+                    {
+                        "Device":  "Mobile",
+                        "Clicks":  "9",
+                        "Impressions":  "198",
+                        "CTR":  "4.55%",
+                        "Position":  "7.83"
+                    },
+                    {
+                        "Device":  "Tablet",
+                        "Clicks":  "0",
+                        "Impressions":  "4",
+                        "CTR":  "0%",
+                        "Position":  "6.75"
+                    }
+                ],
+    "Filters":  [
+                    {
+                        "Filter":  "Search type",
+                        "Value":  "Web (text-based)"
+                    },
+                    {
+                        "Filter":  "Date",
+                        "Value":  "Last 28 days"
+                    }
+                ],
+    "Queries":  [
+                    {
+                        "Top queries":  "do car dealers need fca authorisation to offer finance?",
+                        "Clicks":  "1",
+                        "Impressions":  "153",
+                        "CTR":  "0.65%",
+                        "Position":  "4.13"
+                    },
+                    {
+                        "Top queries":  "fca authorisation for motor dealers",
+                        "Clicks":  "1",
+                        "Impressions":  "4",
+                        "CTR":  "25%",
+                        "Position":  "14.5"
+                    },
+                    {
+                        "Top queries":  "009 compliance",
+                        "Clicks":  "1",
+                        "Impressions":  "3",
+                        "CTR":  "33.33%",
+                        "Position":  "1"
+                    },
+                    {
+                        "Top queries":  "what type of fca authorisation do car finance providers require?",
+                        "Clicks":  "0",
+                        "Impressions":  "49",
+                        "CTR":  "0%",
+                        "Position":  "1.47"
+                    },
+                    {
+                        "Top queries":  "dealer compliance",
+                        "Clicks":  "0",
+                        "Impressions":  "41",
+                        "CTR":  "0%",
+                        "Position":  "11.98"
+                    },
+                    {
+                        "Top queries":  "ccr009",
+                        "Clicks":  "0",
+                        "Impressions":  "38",
+                        "CTR":  "0%",
+                        "Position":  "15.18"
+                    },
+                    {
+                        "Top queries":  "dealer standards compliance",
+                        "Clicks":  "0",
+                        "Impressions":  "22",
+                        "CTR":  "0%",
+                        "Position":  "38.91"
+                    },
+                    {
+                        "Top queries":  "motor dealers who engage in introducing customers who enter into regulated \nor exempt credit or hire agreements are classed as what by the fca?",
+                        "Clicks":  "0",
+                        "Impressions":  "17",
+                        "CTR":  "0%",
+                        "Position":  "2.65"
+                    },
+                    {
+                        "Top queries":  "what type of fca authorisation do car finance providers require",
+                        "Clicks":  "0",
+                        "Impressions":  "11",
+                        "CTR":  "0%",
+                        "Position":  "2.36"
+                    },
+                    {
+                        "Top queries":  "what type of fca authorisation are motor dealers likely to require for \nconsumer credit?",
+                        "Clicks":  "0",
+                        "Impressions":  "11",
+                        "CTR":  "0%",
+                        "Position":  "5"
+                    },
+                    {
+                        "Top queries":  "fca authorisation for car finance",
+                        "Clicks":  "0",
+                        "Impressions":  "11",
+                        "CTR":  "0%",
+                        "Position":  "20.36"
+                    },
+                    {
+                        "Top queries":  "fca credit broking permission",
+                        "Clicks":  "0",
+                        "Impressions":  "9",
+                        "CTR":  "0%",
+                        "Position":  "42.44"
+                    },
+                    {
+                        "Top queries":  "what type of fca authorisation are motor dealers likely to require for \nconsumer credit",
+                        "Clicks":  "0",
+                        "Impressions":  "8",
+                        "CTR":  "0%",
+                        "Position":  "4.25"
+                    },
+                    {
+                        "Top queries":  "fca limited permission application",
+                        "Clicks":  "0",
+                        "Impressions":  "7",
+                        "CTR":  "0%",
+                        "Position":  "20.86"
+                    },
+                    {
+                        "Top queries":  "fca compliance software for dealers",
+                        "Clicks":  "0",
+                        "Impressions":  "6",
+                        "CTR":  "0%",
+                        "Position":  "29.5"
+                    },
+                    {
+                        "Top queries":  "a motor dealer must be:",
+                        "Clicks":  "0",
+                        "Impressions":  "5",
+                        "CTR":  "0%",
+                        "Position":  "18.6"
+                    },
+                    {
+                        "Top queries":  "fca limited permission",
+                        "Clicks":  "0",
+                        "Impressions":  "4",
+                        "CTR":  "0%",
+                        "Position":  "26.75"
+                    },
+                    {
+                        "Top queries":  "credit brokering application",
+                        "Clicks":  "0",
+                        "Impressions":  "3",
+                        "CTR":  "0%",
+                        "Position":  "68.33"
+                    },
+                    {
+                        "Top queries":  "i operate a specialist vehicle dealership, under what circumstances would i \nnot need to be fca authorised? if activities are:",
+                        "Clicks":  "0",
+                        "Impressions":  "2",
+                        "CTR":  "0%",
+                        "Position":  "1.5"
+                    },
+                    {
+                        "Top queries":  "fca limited permission application form",
+                        "Clicks":  "0",
+                        "Impressions":  "2",
+                        "CTR":  "0%",
+                        "Position":  "13.5"
+                    },
+                    {
+                        "Top queries":  "fca consumer credit licence application",
+                        "Clicks":  "0",
+                        "Impressions":  "2",
+                        "CTR":  "0%",
+                        "Position":  "16"
+                    },
+                    {
+                        "Top queries":  "car dealer fca approval",
+                        "Clicks":  "0",
+                        "Impressions":  "2",
+                        "CTR":  "0%",
+                        "Position":  "25"
+                    },
+                    {
+                        "Top queries":  "consumer credit licence uk cost",
+                        "Clicks":  "0",
+                        "Impressions":  "2",
+                        "CTR":  "0%",
+                        "Position":  "25.5"
+                    },
+                    {
+                        "Top queries":  "fca consumer credit application",
+                        "Clicks":  "0",
+                        "Impressions":  "2",
+                        "CTR":  "0%",
+                        "Position":  "75.5"
+                    },
+                    {
+                        "Top queries":  "contact phone numbers please",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "1"
+                    },
+                    {
+                        "Top queries":  "compliance reporting portal",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "5"
+                    },
+                    {
+                        "Top queries":  "legal motor dealer.com",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "5"
+                    },
+                    {
+                        "Top queries":  "fca licence price",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "7"
+                    },
+                    {
+                        "Top queries":  "dealer compliance consultants",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "8"
+                    },
+                    {
+                        "Top queries":  "how many approved persons must a motor dealer, that has a limited \npermission and is not directly authorised for general insurance have?",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "9"
+                    },
+                    {
+                        "Top queries":  "motor finance compliance",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "26"
+                    },
+                    {
+                        "Top queries":  "apply for a consumer credit licence",
+                        "Clicks":  "0",
+                        "Impressions":  "1",
+                        "CTR":  "0%",
+                        "Position":  "42"
+                    }
+                ],
+    "Chart":  [
+                  {
+                      "Date":  "2026-10-14",
+                      "Clicks":  "0",
+                      "Impressions":  "49",
+                      "CTR":  "0%",
+                      "Position":  "10.8"
+                  },
+                  {
+                      "Date":  "2026-10-15",
+                      "Clicks":  "1",
+                      "Impressions":  "30",
+                      "CTR":  "3.33%",
+                      "Position":  "9.3"
+                  },
+                  {
+                      "Date":  "2026-10-16",
+                      "Clicks":  "1",
+                      "Impressions":  "36",
+                      "CTR":  "2.78%",
+                      "Position":  "8.8"
+                  },
+                  {
+                      "Date":  "2026-10-17",
+                      "Clicks":  "0",
+                      "Impressions":  "18",
+                      "CTR":  "0%",
+                      "Position":  "12.3"
+                  },
+                  {
+                      "Date":  "2026-10-18",
+                      "Clicks":  "0",
+                      "Impressions":  "19",
+                      "CTR":  "0%",
+                      "Position":  "21.7"
+                  },
+                  {
+                      "Date":  "2026-10-19",
+                      "Clicks":  "1",
+                      "Impressions":  "28",
+                      "CTR":  "3.57%",
+                      "Position":  "9.8"
+                  },
+                  {
+                      "Date":  "2026-10-20",
+                      "Clicks":  "0",
+                      "Impressions":  "40",
+                      "CTR":  "0%",
+                      "Position":  "9.7"
+                  },
+                  {
+                      "Date":  "2026-10-21",
+                      "Clicks":  "0",
+                      "Impressions":  "74",
+                      "CTR":  "0%",
+                      "Position":  "10.9"
+                  },
+                  {
+                      "Date":  "2026-10-22",
+                      "Clicks":  "2",
+                      "Impressions":  "53",
+                      "CTR":  "3.77%",
+                      "Position":  "8.2"
+                  },
+                  {
+                      "Date":  "2026-10-23",
+                      "Clicks":  "1",
+                      "Impressions":  "52",
+                      "CTR":  "1.92%",
+                      "Position":  "5.8"
+                  },
+                  {
+                      "Date":  "2026-10-24",
+                      "Clicks":  "0",
+                      "Impressions":  "13",
+                      "CTR":  "0%",
+                      "Position":  "9.5"
+                  },
+                  {
+                      "Date":  "2026-10-25",
+                      "Clicks":  "0",
+                      "Impressions":  "15",
+                      "CTR":  "0%",
+                      "Position":  "8.3"
+                  },
+                  {
+                      "Date":  "2026-10-26",
+                      "Clicks":  "0",
+                      "Impressions":  "46",
+                      "CTR":  "0%",
+                      "Position":  "8.2"
+                  },
+                  {
+                      "Date":  "2026-10-27",
+                      "Clicks":  "4",
+                      "Impressions":  "28",
+                      "CTR":  "14.29%",
+                      "Position":  "6.3"
+                  },
+                  {
+                      "Date":  "2026-10-28",
+                      "Clicks":  "0",
+                      "Impressions":  "43",
+                      "CTR":  "0%",
+                      "Position":  "10.3"
+                  },
+                  {
+                      "Date":  "2026-10-29",
+                      "Clicks":  "0",
+                      "Impressions":  "38",
+                      "CTR":  "0%",
+                      "Position":  "10.7"
+                  },
+                  {
+                      "Date":  "2026-10-30",
+                      "Clicks":  "0",
+                      "Impressions":  "49",
+                      "CTR":  "0%",
+                      "Position":  "6.2"
+                  },
+                  {
+                      "Date":  "2026-10-31",
+                      "Clicks":  "0",
+                      "Impressions":  "23",
+                      "CTR":  "0%",
+                      "Position":  "8.4"
+                  },
+                  {
+                      "Date":  "2026-11-01",
+                      "Clicks":  "0",
+                      "Impressions":  "36",
+                      "CTR":  "0%",
+                      "Position":  "10.4"
+                  },
+                  {
+                      "Date":  "2026-11-02",
+                      "Clicks":  "2",
+                      "Impressions":  "37",
+                      "CTR":  "5.41%",
+                      "Position":  "7.4"
+                  },
+                  {
+                      "Date":  "2026-11-03",
+                      "Clicks":  "3",
+                      "Impressions":  "47",
+                      "CTR":  "6.38%",
+                      "Position":  "7.3"
+                  },
+                  {
+                      "Date":  "2026-11-04",
+                      "Clicks":  "4",
+                      "Impressions":  "49",
+                      "CTR":  "8.16%",
+                      "Position":  "10.6"
+                  },
+                  {
+                      "Date":  "2026-11-05",
+                      "Clicks":  "0",
+                      "Impressions":  "36",
+                      "CTR":  "0%",
+                      "Position":  "10.8"
+                  },
+                  {
+                      "Date":  "2026-11-06",
+                      "Clicks":  "0",
+                      "Impressions":  "38",
+                      "CTR":  "0%",
+                      "Position":  "6.1"
+                  },
+                  {
+                      "Date":  "2026-11-07",
+                      "Clicks":  "1",
+                      "Impressions":  "25",
+                      "CTR":  "4%",
+                      "Position":  "9.4"
+                  },
+                  {
+                      "Date":  "2026-11-08",
+                      "Clicks":  "0",
+                      "Impressions":  "36",
+                      "CTR":  "0%",
+                      "Position":  "9.6"
+                  },
+                  {
+                      "Date":  "2026-11-09",
+                      "Clicks":  "1",
+                      "Impressions":  "63",
+                      "CTR":  "1.59%",
+                      "Position":  "8"
+                  },
+                  {
+                      "Date":  "2026-11-10",
+                      "Clicks":  "1",
+                      "Impressions":  "69",
+                      "CTR":  "1.45%",
+                      "Position":  "7.4"
+                  }
+              ],
+    "Countries":  [
+                      {
+                          "Country":  "United Kingdom",
+                          "Clicks":  "21",
+                          "Impressions":  "749",
+                          "CTR":  "2.8%",
+                          "Position":  "10.74"
+                      },
+                      {
+                          "Country":  "Bangladesh",
+                          "Clicks":  "1",
+                          "Impressions":  "2",
+                          "CTR":  "50%",
+                          "Position":  "15.5"
+                      },
+                      {
+                          "Country":  "United States",
+                          "Clicks":  "0",
+                          "Impressions":  "32",
+                          "CTR":  "0%",
+                          "Position":  "9"
+                      },
+                      {
+                          "Country":  "Denmark",
+                          "Clicks":  "0",
+                          "Impressions":  "31",
+                          "CTR":  "0%",
+                          "Position":  "4.13"
+                      },
+                      {
+                          "Country":  "Italy",
+                          "Clicks":  "0",
+                          "Impressions":  "31",
+                          "CTR":  "0%",
+                          "Position":  "5.42"
+                      },
+                      {
+                          "Country":  "Netherlands",
+                          "Clicks":  "0",
+                          "Impressions":  "19",
+                          "CTR":  "0%",
+                          "Position":  "4.32"
+                      },
+                      {
+                          "Country":  "Poland",
+                          "Clicks":  "0",
+                          "Impressions":  "17",
+                          "CTR":  "0%",
+                          "Position":  "4.18"
+                      },
+                      {
+                          "Country":  "France",
+                          "Clicks":  "0",
+                          "Impressions":  "17",
+                          "CTR":  "0%",
+                          "Position":  "5.12"
+                      },
+                      {
+                          "Country":  "Switzerland",
+                          "Clicks":  "0",
+                          "Impressions":  "15",
+                          "CTR":  "0%",
+                          "Position":  "3.93"
+                      },
+                      {
+                          "Country":  "Greece",
+                          "Clicks":  "0",
+                          "Impressions":  "15",
+                          "CTR":  "0%",
+                          "Position":  "4.2"
+                      },
+                      {
+                          "Country":  "Hungary",
+                          "Clicks":  "0",
+                          "Impressions":  "15",
+                          "CTR":  "0%",
+                          "Position":  "4.53"
+                      },
+                      {
+                          "Country":  "Germany",
+                          "Clicks":  "0",
+                          "Impressions":  "14",
+                          "CTR":  "0%",
+                          "Position":  "5.79"
+                      },
+                      {
+                          "Country":  "Sweden",
+                          "Clicks":  "0",
+                          "Impressions":  "13",
+                          "CTR":  "0%",
+                          "Position":  "4"
+                      },
+                      {
+                          "Country":  "Belgium",
+                          "Clicks":  "0",
+                          "Impressions":  "13",
+                          "CTR":  "0%",
+                          "Position":  "4.08"
+                      },
+                      {
+                          "Country":  "Norway",
+                          "Clicks":  "0",
+                          "Impressions":  "12",
+                          "CTR":  "0%",
+                          "Position":  "5.08"
+                      },
+                      {
+                          "Country":  "Turkey",
+                          "Clicks":  "0",
+                          "Impressions":  "9",
+                          "CTR":  "0%",
+                          "Position":  "5.11"
+                      },
+                      {
+                          "Country":  "Czechia",
+                          "Clicks":  "0",
+                          "Impressions":  "8",
+                          "CTR":  "0%",
+                          "Position":  "3.88"
+                      },
+                      {
+                          "Country":  "Portugal",
+                          "Clicks":  "0",
+                          "Impressions":  "8",
+                          "CTR":  "0%",
+                          "Position":  "4"
+                      },
+                      {
+                          "Country":  "Romania",
+                          "Clicks":  "0",
+                          "Impressions":  "8",
+                          "CTR":  "0%",
+                          "Position":  "4.5"
+                      },
+                      {
+                          "Country":  "Austria",
+                          "Clicks":  "0",
+                          "Impressions":  "7",
+                          "CTR":  "0%",
+                          "Position":  "3.86"
+                      },
+                      {
+                          "Country":  "Ireland",
+                          "Clicks":  "0",
+                          "Impressions":  "5",
+                          "CTR":  "0%",
+                          "Position":  "4.2"
+                      },
+                      {
+                          "Country":  "India",
+                          "Clicks":  "0",
+                          "Impressions":  "5",
+                          "CTR":  "0%",
+                          "Position":  "5.2"
+                      },
+                      {
+                          "Country":  "Spain",
+                          "Clicks":  "0",
+                          "Impressions":  "5",
+                          "CTR":  "0%",
+                          "Position":  "5.4"
+                      },
+                      {
+                          "Country":  "Australia",
+                          "Clicks":  "0",
+                          "Impressions":  "5",
+                          "CTR":  "0%",
+                          "Position":  "7.4"
+                      },
+                      {
+                          "Country":  "Finland",
+                          "Clicks":  "0",
+                          "Impressions":  "3",
+                          "CTR":  "0%",
+                          "Position":  "5.67"
+                      },
+                      {
+                          "Country":  "Canada",
+                          "Clicks":  "0",
+                          "Impressions":  "3",
+                          "CTR":  "0%",
+                          "Position":  "6.33"
+                      },
+                      {
+                          "Country":  "Russia",
+                          "Clicks":  "0",
+                          "Impressions":  "3",
+                          "CTR":  "0%",
+                          "Position":  "6.67"
+                      },
+                      {
+                          "Country":  "Syria",
+                          "Clicks":  "0",
+                          "Impressions":  "2",
+                          "CTR":  "0%",
+                          "Position":  "1"
+                      },
+                      {
+                          "Country":  "Singapore",
+                          "Clicks":  "0",
+                          "Impressions":  "2",
+                          "CTR":  "0%",
+                          "Position":  "5"
+                      },
+                      {
+                          "Country":  "Brazil",
+                          "Clicks":  "0",
+                          "Impressions":  "2",
+                          "CTR":  "0%",
+                          "Position":  "6.5"
+                      },
+                      {
+                          "Country":  "Indonesia",
+                          "Clicks":  "0",
+                          "Impressions":  "2",
+                          "CTR":  "0%",
+                          "Position":  "9.5"
+                      },
+                      {
+                          "Country":  "Ecuador",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "1"
+                      },
+                      {
+                          "Country":  "Kuwait",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "1"
+                      },
+                      {
+                          "Country":  "Uganda",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "2"
+                      },
+                      {
+                          "Country":  "United Arab Emirates",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "3"
+                      },
+                      {
+                          "Country":  "Belarus",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "3"
+                      },
+                      {
+                          "Country":  "Ethiopia",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "4"
+                      },
+                      {
+                          "Country":  "Ukraine",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "4"
+                      },
+                      {
+                          "Country":  "Cyprus",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "6"
+                      },
+                      {
+                          "Country":  "Pakistan",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "6"
+                      },
+                      {
+                          "Country":  "Myanmar (Burma)",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "7"
+                      },
+                      {
+                          "Country":  "South Africa",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "7"
+                      },
+                      {
+                          "Country":  "Mexico",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "8"
+                      },
+                      {
+                          "Country":  "Saudi Arabia",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "8"
+                      },
+                      {
+                          "Country":  "Trinidad \u0026 Tobago",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "9"
+                      },
+                      {
+                          "Country":  "Bulgaria",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "10"
+                      },
+                      {
+                          "Country":  "Iran",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "10"
+                      },
+                      {
+                          "Country":  "Thailand",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "10"
+                      },
+                      {
+                          "Country":  "Bahrain",
+                          "Clicks":  "0",
+                          "Impressions":  "1",
+                          "CTR":  "0%",
+                          "Position":  "11"
+                      }
+                  ],
+    "Pages":  [
+                  {
+                      "Top pages":  "https://009compliance.com/",
+                      "Clicks":  "17",
+                      "Impressions":  "62",
+                      "CTR":  "27.42%",
+                      "Position":  "2.56"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/fca-authorisation-motor-dealers",
+                      "Clicks":  "3",
+                      "Impressions":  "259",
+                      "CTR":  "1.16%",
+                      "Position":  "10.15"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/do-motor-dealers-need-fca-authorisation",
+                      "Clicks":  "2",
+                      "Impressions":  "234",
+                      "CTR":  "0.85%",
+                      "Position":  "7.07"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/ccr009-return-assistance-motor-dealers",
+                      "Clicks":  "1",
+                      "Impressions":  "61",
+                      "CTR":  "1.64%",
+                      "Position":  "7.95"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/contact",
+                      "Clicks":  "1",
+                      "Impressions":  "44",
+                      "CTR":  "2.27%",
+                      "Position":  "3.14"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/fca-licence-car-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "232",
+                      "CTR":  "0%",
+                      "Position":  "4.9"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/motor-dealer-compliance",
+                      "Clicks":  "0",
+                      "Impressions":  "134",
+                      "CTR":  "0%",
+                      "Position":  "19.11"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/limited-permission-fca-authorisation-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "67",
+                      "CTR":  "0%",
+                      "Position":  "8.03"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/about",
+                      "Clicks":  "0",
+                      "Impressions":  "51",
+                      "CTR":  "0%",
+                      "Position":  "8.24"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/pricing",
+                      "Clicks":  "0",
+                      "Impressions":  "40",
+                      "CTR":  "0%",
+                      "Position":  "39"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/register",
+                      "Clicks":  "0",
+                      "Impressions":  "38",
+                      "CTR":  "0%",
+                      "Position":  "5.53"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/credit-broking-permission-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "38",
+                      "CTR":  "0%",
+                      "Position":  "6.13"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/what-is-ccr009",
+                      "Clicks":  "0",
+                      "Impressions":  "9",
+                      "CTR":  "0%",
+                      "Position":  "7"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/who-needs-to-submit-ccr009",
+                      "Clicks":  "0",
+                      "Impressions":  "8",
+                      "CTR":  "0%",
+                      "Position":  "6.5"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/website-compliance-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "7",
+                      "CTR":  "0%",
+                      "Position":  "9"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/common-ccr009-reporting-mistakes",
+                      "Clicks":  "0",
+                      "Impressions":  "5",
+                      "CTR":  "0%",
+                      "Position":  "8"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/fca-application-documents-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "4",
+                      "CTR":  "0%",
+                      "Position":  "8.75"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/how-to-prepare-for-ccr009-return",
+                      "Clicks":  "0",
+                      "Impressions":  "2",
+                      "CTR":  "0%",
+                      "Position":  "4"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/why-fca-applications-get-delayed",
+                      "Clicks":  "0",
+                      "Impressions":  "2",
+                      "CTR":  "0%",
+                      "Position":  "5"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/what-information-is-needed-for-ccr009",
+                      "Clicks":  "0",
+                      "Impressions":  "1",
+                      "CTR":  "0%",
+                      "Position":  "1"
+                  },
+                  {
+                      "Top pages":  "https://009compliance.com/after-fca-approval-motor-dealers",
+                      "Clicks":  "0",
+                      "Impressions":  "1",
+                      "CTR":  "0%",
+                      "Position":  "2"
+                  }
+              ]
+}

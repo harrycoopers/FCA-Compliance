@@ -1,0 +1,116 @@
+{
+  "at": "2026-11-12T16:20:47.772Z",
+  "checks": [
+    {
+      "route": "/",
+      "width": 390,
+      "geometry": {
+        "cardHeight": 433,
+        "stageHeight": 623,
+        "clipped": false,
+        "textClipped": false
+      }
+    },
+    {
+      "route": "/testimonials",
+      "width": 390,
+      "paragraphs": 2,
+      "highlights": 3,
+      "overflow": false
+    },
+    {
+      "route": "/fca-authorisation-motor-dealers",
+      "width": 390,
+      "geometry": {
+        "cardHeight": 433,
+        "stageHeight": 623,
+        "clipped": false,
+        "textClipped": false
+      }
+    },
+    {
+      "route": "/ccr009-return-assistance-motor-dealers",
+      "width": 390,
+      "geometry": {
+        "cardHeight": 433,
+        "stageHeight": 623,
+        "clipped": false,
+        "textClipped": false
+      }
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "geometry": {
+        "cardHeight": 363,
+        "stageHeight": 499,
+        "clipped": false,
+        "textClipped": false
+      }
+    },
+    {
+      "route": "/testimonials",
+      "width": 768,
+      "paragraphs": 2,
+      "highlights": 3,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "geometry": {
+        "cardHeight": 363,
+        "stageHeight": 499,
+        "clipped": false,
+        "textClipped": false
+      }
+    },
+    {
+      "route": "/testimonials",
+      "width": 1440,
+      "paragraphs": 2,
+      "highlights": 3,
+      "overflow": false
+    },
+    {
+      "route": "/fca-authorisation-motor-dealers",
+      "width": 1440,
+      "geometry": {
+        "cardHeight": 363,
+        "stageHeight": 499,
+        "clipped": false,
+        "textClipped": false
+      }
+    },
+    {
+      "route": "/ccr009-return-assistance-motor-dealers",
+      "width": 1440,
+      "geometry": {
+        "cardHeight": 363,
+        "stageHeight": 499,
+        "clipped": false,
+        "textClipped": false
+      }
+    }
+  ],
+  "reduced": [
+    "/",
+    "/testimonials",
+    "/fca-authorisation-motor-dealers",
+    "/ccr009-return-assistance-motor-dealers"
+  ],
+  "noJs": [
+    "/",
+    "/testimonials",
+    "/fca-authorisation-motor-dealers",
+    "/ccr009-return-assistance-motor-dealers"
+  ],
+  "animation": [
+    "/",
+    "/fca-authorisation-motor-dealers",
+    "/ccr009-return-assistance-motor-dealers"
+  ],
+  "errors": [],
+  "existingTestimonialsPreserved": true,
+  "assetsAndStylingUnchanged": true
+}

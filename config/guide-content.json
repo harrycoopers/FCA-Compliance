@@ -1,7 +1,7 @@
 {
   "/do-motor-dealers-need-fca-authorisation": {
-    "title": "Do Motor Dealers Need FCA Authorisation?",
-    "answer": "Usually, yes, if you introduce customers to regulated car finance: you need the relevant Financial Conduct Authority (FCA) authorisation or a valid appointed-representative arrangement covering that activity. Selling vehicles for cash alone does not require credit-broking permission. Check the actual activities and any applicable exclusions before starting; using another finance broker does not automatically remove your own responsibilities.",
+    "title": "Do Car Dealers Need FCA Authorisation to Offer Finance?",
+    "answer": "Yes, in most cases. A UK car dealer that introduces customers to car finance needs FCA authorisation, usually limited permission for secondary credit broking, or must act as an appointed representative of an authorised firm. Selling cars for cash alone does not need it. Part-exchanges with outstanding finance, or providing your own finance, can need extra permissions, and using another finance broker does not remove your own responsibilities.",
     "sections": [
       {
         "title": "Start with what your dealership does",
@@ -193,14 +193,25 @@
     "group": "fca",
     "finance": true,
     "reviewed": "2026-11-01",
-    "description": "Do you need FCA authorisation to offer car finance? Check vehicle sales, finance introductions and appointed-representative arrangements before starting.",
-    "seoTitle": "Do Motor Dealers Need FCA Authorisation? | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "description": "Yes, if you introduce buyers to car finance. Most car dealers need FCA limited permission for credit broking, or an appointed representative arrangement.",
+    "seoTitle": "Do Car Dealers Need FCA Authorisation to Offer Finance?",
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "to start offering PCP or HP finance",
+        "href": "/how-to-offer-car-finance-dealers"
+      },
+      {
+        "need": "the application steps",
+        "href": "/how-to-apply-fca-limited-permission-car-dealers"
+      }
+    ]
   },
   "/fca-licence-car-dealers": {
-    "title": "FCA Licence for Car Dealers: Authorisation, FRNs and Permissions",
-    "answer": "“FCA licence” is a common way of referring to Financial Conduct Authority (FCA) authorisation. For a car dealer, the important checks are the firm’s regulatory status, its permitted activities and any restrictions. A Firm Reference Number (FRN) identifies a firm; the number alone does not show that it can carry out every type of finance activity.",
+    "title": "FCA Licence for Car Dealers: The Consumer Credit Licence Today",
+    "answer": "“FCA licence” and “consumer credit licence” are common names for what is now FCA authorisation: the FCA took over consumer credit regulation from the Office of Fair Trading on 1 April 2014. A car dealer that offers finance needs authorisation with the right permission, usually limited permission for credit broking. A Firm Reference Number (FRN) identifies a firm; the number alone does not show that it can carry out every type of finance activity.",
     "sections": [
       {
         "title": "What the terminology means",
@@ -340,6 +351,14 @@
         ],
         "links": [
           [
+            "/fca-authorisation-cost-car-dealers",
+            "Check what FCA authorisation costs"
+          ],
+          [
+            "/how-to-apply-fca-limited-permission-car-dealers",
+            "Follow the steps to apply for an FCA licence"
+          ],
+          [
             "/fca-application-documents-motor-dealers",
             "See the application document checklist"
           ],
@@ -363,6 +382,14 @@
       {
         "question": "Can we describe an application as FCA approval?",
         "answer": "No. Submitting an application does not mean the FCA has authorised the firm."
+      },
+      {
+        "question": "How do I apply for an FCA licence?",
+        "answer": "Apply for FCA authorisation through the FCA’s Connect system. Choose limited or full permission, complete the forms, attach your business plan and supporting material, pay the FCA application fee and submit."
+      },
+      {
+        "question": "Does the FCA charge for a consumer credit licence?",
+        "answer": "The FCA charges an application fee when you submit and annual fees and levies once you are authorised. The cost guide sets out the current FCA figures and links to the FCA’s fee pages."
       }
     ],
     "related": [
@@ -400,15 +427,36 @@
         "id": "broker",
         "label": "FCA: applying as a consumer credit broker",
         "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+      },
+      {
+        "id": "ps143",
+        "label": "FCA: PS14/3 final rules for consumer credit firms",
+        "href": "https://www.fca.org.uk/publications/policy-statements/ps14-3-final-rules-consumer-credit-firms"
+      },
+      {
+        "id": "oft",
+        "label": "GOV.UK: Office of Fair Trading (closed 1 April 2014)",
+        "href": "https://www.gov.uk/government/organisations/office-of-fair-trading"
       }
     ],
     "group": "fca",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "What an FCA licence means for car dealers, how to check a Firm Reference Number and permissions, and what to do when a Register entry does not match.",
-    "seoTitle": "FCA Licence for Car Dealers: Check Permissions | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "description": "Still called a consumer credit licence? Car dealers now need FCA authorisation. See which permission covers finance, what it costs and how to apply.",
+    "seoTitle": "FCA Licence for Car Dealers (Consumer Credit Licence)",
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "the FCA fees",
+        "href": "/fca-authorisation-cost-car-dealers"
+      },
+      {
+        "need": "the application steps",
+        "href": "/how-to-apply-fca-limited-permission-car-dealers"
+      }
+    ]
   },
   "/limited-permission-fca-authorisation-motor-dealers": {
     "title": "Limited Permission FCA Authorisation for Motor Dealers",
@@ -605,11 +653,12 @@
     "description": "Compare limited and full FCA permission scenarios for motor dealers, including owned stock, vehicle sourcing and part-exchanges with outstanding finance.",
     "seoTitle": "Limited vs Full FCA Permission: Motor Dealers | 009 Compliance",
     "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null
   },
   "/credit-broking-permission-motor-dealers": {
-    "title": "Credit Broking Permission for Motor Dealers",
-    "answer": "A motor dealer can carry on credit broking by introducing a customer to a lender, a consumer hire provider or another credit broker. The required permission depends on what the dealer does and its business model. Receiving no commission does not, by itself, mean an introduction falls outside credit broking.",
+    "title": "Credit Broking Permission for Car and Motor Dealers",
+    "answer": "Credit broking means introducing a customer who wants credit or hire to a lender, hire provider or another broker, or presenting or offering a credit agreement on a lender’s behalf. For a car dealer this needs FCA credit broking permission: usually limited permission where finance is secondary to selling vehicles you own, or full permission in other cases. Receiving no commission does not, by itself, mean an introduction falls outside credit broking.",
     "sections": [
       {
         "title": "Follow the introduction, not just the payment",
@@ -737,6 +786,10 @@
       {
         "question": "Is motor-finance broker support included in authorisation assistance?",
         "answer": "No. Motor-finance arrangements are separate. Required permissions and broker onboarding must be in place before the relevant activity starts."
+      },
+      {
+        "question": "How do we make a credit broking application?",
+        "answer": "Apply to the FCA through its Connect system: choose limited or full permission, complete the application form and the forms for the people involved, attach the business plan, forecasts and supporting material, pay the application fee and submit."
       }
     ],
     "related": [
@@ -764,13 +817,35 @@
         "id": "promotions",
         "label": "FCA: key rules for credit brokers",
         "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+      },
+      {
+        "id": "rao36A",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 36A — credit broking",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/36A"
+      },
+      {
+        "id": "apply",
+        "label": "FCA: how to apply for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
       }
     ],
     "group": "fca",
     "finance": true,
     "reviewed": "2026-11-01",
-    "description": "Understand credit broking roles in motor finance, introductions to lenders and brokers, permission limits and the steps in a dealership customer journey.",
-    "seoTitle": "Credit Broking Permission for Motor Dealers | 009 Compliance"
+    "description": "What credit broking is, which FCA credit broking permission car dealers usually need, and how a credit broking application works. Clear, sourced steps.",
+    "seoTitle": "Credit Broking Permission for Car Dealers | 009 Compliance",
+    "modified": "RELEASE_DATE",
+    "published": null,
+    "siblings": [
+      {
+        "need": "to check whether you need authorisation at all",
+        "href": "/do-motor-dealers-need-fca-authorisation"
+      },
+      {
+        "need": "the application steps",
+        "href": "/how-to-apply-fca-limited-permission-car-dealers"
+      }
+    ]
   },
   "/fca-application-documents-motor-dealers": {
     "title": "FCA Application Documents for Motor Dealers: Preparation Checklist",
@@ -917,8 +992,8 @@
         "answer": "A consultant can assist, but the applicant remains accountable and must understand and be able to explain the application material."
       },
       {
-        "question": "Is the FCA application fee included in the £100 starting payment?",
-        "answer": "No. The £100 starting payment is the first monthly payment for 009 Compliance’s assistance. The FCA application fee is payable separately."
+        "question": "Is the FCA application fee included in 009 Compliance’s fees?",
+        "answer": "No. The FCA application fee is paid separately to the FCA when the application is submitted in Connect. It is not part of 009 Compliance’s assistance fees."
       }
     ],
     "related": [
@@ -948,8 +1023,15 @@
     "reviewed": "2026-11-01",
     "description": "Prepare motor-dealer FCA application documents: business plans, ownership and financial information, customer journeys, policies and pre-submission checks.",
     "seoTitle": "FCA Application Documents: Motor Dealer Checklist | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "the application process step by step",
+        "href": "/how-to-apply-fca-limited-permission-car-dealers"
+      }
+    ]
   },
   "/why-fca-applications-get-delayed": {
     "title": "Why FCA Applications Get Delayed: A Motor Dealer Guide",
@@ -1132,8 +1214,15 @@
     "reviewed": "2026-11-01",
     "description": "Understand FCA assessment timescales, clarification requests and preparation checks for motor dealers. Learn what assistance can and cannot do.",
     "seoTitle": "Why FCA Applications Get Delayed | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "to know what happens if the FCA refuses an application",
+        "href": "/fca-application-refused-motor-dealers"
+      }
+    ]
   },
   "/after-fca-approval-motor-dealers": {
     "title": "After FCA Approval: A Motor Dealer’s Next Steps",
@@ -1311,7 +1400,9 @@
     "finance": true,
     "reviewed": "2026-11-01",
     "description": "Use a practical post-authorisation checklist for permission conditions, staff, website disclosures, systems access, CCR009 reporting and business changes.",
-    "seoTitle": "After FCA Approval: Motor Dealer Checklist | 009 Compliance"
+    "seoTitle": "After FCA Approval: Motor Dealer Checklist | 009 Compliance",
+    "modified": "2026-11-02",
+    "published": null
   },
   "/what-is-ccr009": {
     "title": "What Is CCR009? FCA Reporting for Motor Dealers",
@@ -1482,10 +1573,11 @@
     "group": "ccr",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Learn what the FCA’s CCR009 return covers, which reporting it replaced and how motor dealers can prepare. Distinguish FCA filing from internal record collection.",
+    "description": "See what CCR009 covers, which reporting it replaced and how motor dealers can prepare. Learn how FCA filing differs from internal record collection.",
     "seoTitle": "What Is CCR009? FCA Motor Dealer Reporting | 009 Compliance",
     "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null
   },
   "/who-needs-to-submit-ccr009": {
     "title": "Who Needs to Submit CCR009? A Motor Dealer Guide",
@@ -1686,7 +1778,8 @@
     "description": "Check CCR009 reporting scope for motor dealers, inactive firms, principals and appointed representatives using permissions and the firm’s actual schedule.",
     "seoTitle": "Who Needs to Submit CCR009? | 009 Compliance",
     "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null
   },
   "/what-information-is-needed-for-ccr009": {
     "title": "What Information Is Needed for CCR009?",
@@ -1883,10 +1976,21 @@
     "group": "ccr",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Map CCR009 questions to dealership source records. Check field definitions, reporting periods and financial measures, with a fictional reconciliation example.",
+    "description": "Map CCR009 questions to dealership source records: field definitions, reporting periods and financial measures, with a fictional reconciliation example.",
     "seoTitle": "What Information Is Needed for CCR009? | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "a final check before you submit",
+        "href": "/ccr009-reporting-checklist-motor-dealers"
+      },
+      {
+        "need": "a plan for the whole CCR009 process",
+        "href": "/how-to-prepare-for-ccr009-return"
+      }
+    ]
   },
   "/ccr009-reporting-checklist-motor-dealers": {
     "title": "CCR009 Reporting Checklist for Motor Dealers",
@@ -2048,10 +2152,21 @@
     "group": "ccr",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Check CCR009 readiness before submission: access, period, evidence, reconciliation, unresolved questions and confirmation that the return has been submitted.",
+    "description": "Check CCR009 readiness before submission: access, period, evidence, reconciliation, open questions and confirmation that the return was submitted.",
     "seoTitle": "CCR009 Reporting Checklist for Motor Dealers | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "to work out which records answer each question",
+        "href": "/what-information-is-needed-for-ccr009"
+      },
+      {
+        "need": "a plan for the whole CCR009 process",
+        "href": "/how-to-prepare-for-ccr009-return"
+      }
+    ]
   },
   "/ccr009-vs-ccr007": {
     "title": "CCR009 vs CCR007: What Motor Dealers Need to Know",
@@ -2225,8 +2340,15 @@
     "reviewed": "2026-11-01",
     "description": "Compare CCR009 and CCR007: purpose, applicability, reporting frequency, submission periods and the FCA’s reduced-information instructions.",
     "seoTitle": "CCR009 vs CCR007: Motor Dealer Reporting | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "an explanation of CCR007 on its own",
+        "href": "/what-is-ccr007"
+      }
+    ]
   },
   "/common-ccr009-reporting-mistakes": {
     "title": "CCR009 Reporting Mistakes Motor Dealers Should Check For",
@@ -2391,10 +2513,11 @@
     "group": "ccr",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Check for wrong CCR009 periods, mixed financial measures, duplicate records and unsupported zero answers. Review examples, prevention steps and submission errors.",
+    "description": "Check for wrong CCR009 periods, mixed financial measures, duplicate records and unsupported zeros. Review examples, prevention steps and submission errors.",
     "seoTitle": "CCR009 Reporting Mistakes to Check For | 009 Compliance",
     "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null
   },
   "/how-to-prepare-for-ccr009-return": {
     "title": "How to Prepare for a CCR009 Return",
@@ -2568,10 +2691,21 @@
     "group": "ccr",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Plan CCR009 preparation in stages: responsibilities, system access, source records, reconciliation, review and submission. Build an internal workflow for your firm.",
+    "description": "Plan your firm’s CCR009 workflow in stages, from roles and system access to gathering source records, reconciliation, review and submission.",
     "seoTitle": "How to Prepare for a CCR009 Return | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "the records behind each question",
+        "href": "/what-information-is-needed-for-ccr009"
+      },
+      {
+        "need": "a final check before you submit",
+        "href": "/ccr009-reporting-checklist-motor-dealers"
+      }
+    ]
   },
   "/when-is-ccr009-due": {
     "title": "When Is CCR009 Due? Reporting Periods and Deadlines",
@@ -2746,10 +2880,11 @@
     "group": "ccr",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Check CCR009 reporting periods, the 40-business-day submission window, first-period rules and the £5 million boundary before confirming your firm’s deadline.",
+    "description": "Check CCR009 reporting periods, the 40-business-day submission window, first-period rules and the £5 million boundary before confirming your deadline.",
     "seoTitle": "When Is CCR009 Due? Periods and Deadlines | 009 Compliance",
     "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null
   },
   "/consumer-duty-motor-dealers": {
     "title": "Consumer Duty for Motor Dealers: Outcomes and Practical Checks",
@@ -2903,8 +3038,10 @@
     "group": "ongoing",
     "finance": false,
     "reviewed": "2026-11-01",
-    "description": "Explore the four Consumer Duty outcomes for motor dealers, responsibilities by role, practical monitoring evidence, vulnerable-customer support and follow-up actions.",
-    "seoTitle": "Consumer Duty for Motor Dealers | 009 Compliance"
+    "description": "Explore four Consumer Duty outcomes for motor dealers, duties by role, monitoring evidence, support for vulnerable customers and follow-up actions.",
+    "seoTitle": "Consumer Duty for Motor Dealers | 009 Compliance",
+    "modified": "2026-11-02",
+    "published": null
   },
   "/website-compliance-motor-dealers": {
     "title": "Website Compliance for Motor Dealers: A Practical Checklist",
@@ -3089,7 +3226,9 @@
     "finance": false,
     "reviewed": "2026-11-01",
     "description": "Review dealership status wording, finance promotions, commission disclosures, customer support and mobile readability using a practical checklist.",
-    "seoTitle": "Motor Dealer Website Compliance Checklist | 009 Compliance"
+    "seoTitle": "Motor Dealer Website Compliance Checklist | 009 Compliance",
+    "modified": "2026-11-02",
+    "published": null
   },
   "/fca-compliance-motor-dealers-guide": {
     "title": "FCA Compliance for Motor Dealers: Guides and Next Steps",
@@ -3261,7 +3400,7 @@
         "links": [
           [
             "/fca-authorisation-motor-dealers",
-            "FCA authorisation assistance"
+            "Car dealer FCA approval support"
           ],
           [
             "/ccr009-return-assistance-motor-dealers",
@@ -3319,9 +3458,1578 @@
     "group": "ongoing",
     "finance": true,
     "reviewed": "2026-11-01",
-    "description": "Find the right motor-dealer guide for authorisation, permissions, post-approval tasks, Consumer Duty, website checks and CCR009 reporting preparation and deadlines.",
+    "description": "Find motor-dealer guides on FCA authorisation, permissions, post-approval tasks, Consumer Duty, website checks and CCR009 preparation and deadlines.",
     "seoTitle": "FCA Compliance for Motor Dealers: Guides | 009 Compliance",
-    "modified": "2026-11-12",
-    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material."
+    "modified": "RELEASE_DATE",
+    "updateSummary": "Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material.",
+    "published": null,
+    "siblings": [
+      {
+        "need": "ongoing compliance support for your dealership",
+        "href": "/motor-dealer-compliance",
+        "title": "Ongoing compliance support for motor dealers"
+      },
+      {
+        "need": "to compare our services",
+        "href": "/services",
+        "title": "Motor dealer compliance services"
+      }
+    ]
+  },
+  "/fca-authorisation-cost-car-dealers": {
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-21",
+    "modified": "RELEASE_DATE",
+    "published": "RELEASE_DATE",
+    "navigationGroup": "preparation",
+    "title": "How Much Does FCA Authorisation Cost for a Car Dealer?",
+    "seoTitle": "FCA Authorisation Cost for Car Dealers | 009 Compliance",
+    "description": "What a consumer credit licence costs now: the FCA application fee, annual FCA fees and levies, and other costs car dealers should plan for before applying.",
+    "answer": "For a car dealer applying for limited permission, the FCA application fee is £560 (Category 2), paid in Connect when you submit. It is not refunded if the application is withdrawn or refused. Once authorised, you pay an annual FCA fee, with a minimum fee for limited-permission firms, plus levies the FCA collects for other bodies. There is no separate consumer credit licence fee: the licence is now FCA authorisation.",
+    "feeNote": {
+      "checked": "2026-11-21",
+      "href": "https://www.fca.org.uk/firms/authorisation/apply/fees",
+      "label": "FCA: authorisation application fees"
+    },
+    "sections": [
+      {
+        "title": "What a consumer credit licence costs now",
+        "paragraphs": [
+          "The FCA took over consumer credit regulation from the Office of Fair Trading on 1 April 2014. A search for a “consumer credit licence cost” or an “FCA licence price” is now a question about the cost of FCA authorisation.",
+          "The FCA’s charges come in two parts: a one-off application fee, then annual fees and levies once the firm is authorised. The cost of preparing the application, including any outside help, is separate from FCA fees."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ps143",
+            "label": "FCA: PS14/3 final rules for consumer credit firms",
+            "href": "https://www.fca.org.uk/publications/policy-statements/ps14-3-final-rules-consumer-credit-firms"
+          },
+          {
+            "id": "oft",
+            "label": "GOV.UK: Office of Fair Trading (closed 1 April 2014)",
+            "href": "https://www.gov.uk/government/organisations/office-of-fair-trading"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "The FCA application fee",
+        "paragraphs": [
+          "The fee pays for the FCA’s assessment, not for an approval."
+        ],
+        "bullets": [],
+        "columns": [
+          "Point",
+          "What the FCA says"
+        ],
+        "rows": [
+          [
+            "Limited permission (fee-block CC1)",
+            "Category 2 application fee: £560."
+          ],
+          [
+            "Range across all applications",
+            "From £280 (Category 1) up to £225,170 (Category 10)."
+          ],
+          [
+            "When it is paid",
+            "In Connect, by credit or debit card. You have to pay the fee to submit the application."
+          ],
+          [
+            "Refunds",
+            "Not refunded if the application is withdrawn or refused. If the FCA rejects a submission without assessing it because minimum information is missing, it refunds the fee."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "fees",
+            "label": "FCA: authorisation application fees",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
+          },
+          {
+            "id": "feesIndex",
+            "label": "FCA: fees and levies",
+            "href": "https://www.fca.org.uk/firms/fees"
+          },
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2",
+        "feeNote": true
+      },
+      {
+        "title": "Annual FCA fees and levies",
+        "paragraphs": [
+          "The FCA says 2026/27 is the final year of its phased increases to consumer credit minimum fees, with future increases linked to inflation."
+        ],
+        "bullets": [],
+        "columns": [
+          "Cost",
+          "What applies to a limited-permission firm"
+        ],
+        "rows": [
+          [
+            "Annual FCA fee",
+            "Fee-block CC01 (credit-related regulated activities with limited permission), based on consumer credit annual income, subject to a minimum fee."
+          ],
+          [
+            "Minimum fee for 2026/27",
+            "£1,100, the same for every consumer credit related income band (up to £10,000, £10,000 to £100,000 and over £100,000). In earlier fee years the bands had different minimums."
+          ],
+          [
+            "Consumer credit income",
+            "For credit broking, commission and related income. Where there is no commission income, the FCA’s proxy is 5% of the value of the credit agreement."
+          ],
+          [
+            "Invoices",
+            "Issued from July each year and usually due 30 days from the invoice date."
+          ],
+          [
+            "Levies collected by the FCA",
+            "All firms pay the Financial Guidance levy, limited-permission (CC1) firms pay a flat illegal money lending levy, and the Financial Ombudsman Service levy may apply. The amounts are set each year."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "feeMovements",
+            "label": "FCA: 2026/27 fee movements and minimum fees",
+            "href": "https://www.fca.org.uk/firms/fees-and-levies/fee-movements"
+          },
+          {
+            "id": "ccIncome",
+            "label": "FCA: consumer credit income for fees",
+            "href": "https://www.fca.org.uk/firms/fees/consumer-credit-income-help"
+          },
+          {
+            "id": "rates",
+            "label": "FCA: how annual fee rates are set and invoiced",
+            "href": "https://www.fca.org.uk/firms/fees/how-we-decide-rates-annual-fees"
+          },
+          {
+            "id": "levies",
+            "label": "FCA: levies collected for other organisations",
+            "href": "https://www.fca.org.uk/firms/fees/organisations-we-collect-for"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3",
+        "feeNote": true
+      },
+      {
+        "title": "Other costs to plan for",
+        "paragraphs": [
+          "Allow time to prepare the regulatory business plan, financial forecasts, policies and the individual forms the FCA expects. Individual controllers need a criminal background check carried out no earlier than 6 months before the application.",
+          "Outside help with an application is optional and is not an FCA fee. If you are comparing support, use the current scope and terms on our pricing page rather than an estimate in this guide."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "supporting",
+            "label": "FCA: supporting material for credit and consumer finance applications",
+            "href": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+          },
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [
+          [
+            "/pricing",
+            "See 009 Compliance pricing and scope"
+          ],
+          [
+            "/how-to-apply-fca-limited-permission-car-dealers",
+            "Follow the application steps"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Fictional example: budgeting for the FCA fees",
+        "paragraphs": [
+          "Fictional example. Example Motors Ltd owns its stock and plans to introduce buyers to third-party car finance. It applies for limited permission and pays the £560 Category 2 application fee in Connect when it submits.",
+          "Before authorisation it budgets for its first annual FCA invoice and levies, checking how the FCA calculates fees for its first fee year rather than assuming a figure. This example is illustrative; fees change each fee year, so check the FCA’s pages before you apply."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "fees",
+            "label": "FCA: authorisation application fees",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
+          },
+          {
+            "id": "rates",
+            "label": "FCA: how annual fee rates are set and invoiced",
+            "href": "https://www.fca.org.uk/firms/fees/how-we-decide-rates-annual-fees"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-5",
+        "feeNote": true
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How much is the FCA application fee for limited permission?",
+        "answer": "The FCA places limited consumer credit permission (fee-block CC1) in Category 2, with an application fee of £560, paid in Connect when you submit.",
+        "feeNote": true
+      },
+      {
+        "question": "Is the FCA application fee refundable?",
+        "answer": "Not if the application is withdrawn or refused. The FCA refunds the fee if it rejects a submission without assessing it because minimum information is missing."
+      },
+      {
+        "question": "Do I still need a consumer credit licence?",
+        "answer": "No. The FCA took over consumer credit regulation from the Office of Fair Trading on 1 April 2014. Car dealers now need FCA authorisation with the right permissions."
+      },
+      {
+        "question": "Are there annual FCA fees after authorisation?",
+        "answer": "Yes. Authorised firms pay an annual FCA fee and levies. For 2026/27 the minimum annual fee for a limited-permission firm is £1,100.",
+        "feeNote": true
+      }
+    ],
+    "related": [
+      "/how-to-apply-fca-limited-permission-car-dealers",
+      "/fca-application-documents-motor-dealers",
+      "/fca-licence-car-dealers"
+    ],
+    "siblings": [
+      {
+        "need": "the application steps",
+        "href": "/how-to-apply-fca-limited-permission-car-dealers"
+      }
+    ],
+    "sources": [
+      {
+        "id": "ps143",
+        "label": "FCA: PS14/3 final rules for consumer credit firms",
+        "href": "https://www.fca.org.uk/publications/policy-statements/ps14-3-final-rules-consumer-credit-firms"
+      },
+      {
+        "id": "oft",
+        "label": "GOV.UK: Office of Fair Trading (closed 1 April 2014)",
+        "href": "https://www.gov.uk/government/organisations/office-of-fair-trading"
+      },
+      {
+        "id": "fees",
+        "label": "FCA: authorisation application fees",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
+      },
+      {
+        "id": "feesIndex",
+        "label": "FCA: fees and levies",
+        "href": "https://www.fca.org.uk/firms/fees"
+      },
+      {
+        "id": "apply",
+        "label": "FCA: how to apply for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "feeMovements",
+        "label": "FCA: 2026/27 fee movements and minimum fees",
+        "href": "https://www.fca.org.uk/firms/fees-and-levies/fee-movements"
+      },
+      {
+        "id": "ccIncome",
+        "label": "FCA: consumer credit income for fees",
+        "href": "https://www.fca.org.uk/firms/fees/consumer-credit-income-help"
+      },
+      {
+        "id": "rates",
+        "label": "FCA: how annual fee rates are set and invoiced",
+        "href": "https://www.fca.org.uk/firms/fees/how-we-decide-rates-annual-fees"
+      },
+      {
+        "id": "levies",
+        "label": "FCA: levies collected for other organisations",
+        "href": "https://www.fca.org.uk/firms/fees/organisations-we-collect-for"
+      },
+      {
+        "id": "supporting",
+        "label": "FCA: supporting material for credit and consumer finance applications",
+        "href": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+      }
+    ]
+  },
+  "/how-to-apply-fca-limited-permission-car-dealers": {
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-21",
+    "modified": "RELEASE_DATE",
+    "published": "RELEASE_DATE",
+    "navigationGroup": "preparation",
+    "title": "How to Apply for FCA Limited Permission as a Car Dealer",
+    "seoTitle": "How to Apply for FCA Limited Permission as a Car Dealer",
+    "description": "Step by step: how car dealers apply for FCA limited permission, from Connect set-up and application sections to paying the fee and answering FCA questions.",
+    "answer": "To apply for FCA limited permission, confirm the activities and the legal entity, register for the FCA’s Connect system, choose limited permission, complete the application form and the forms for the people involved, attach your business plan, forecasts and supporting material, pay the application fee and submit. Do not start regulated activity until the FCA has authorised the firm.",
+    "sections": [
+      {
+        "title": "Step 1: confirm the permission and the applicant",
+        "paragraphs": [
+          "The FCA’s motor-dealer guidance says a dealer that owns the vehicles it sells meets its definition of a supplier and can apply for limited permission. Introducing customers to finance for purposes other than buying or leasing the vehicles you sell needs full permission.",
+          "Decide which legal entity will hold the permission before you start the forms. The application, website and customer process should all describe the same business."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [
+          [
+            "/do-motor-dealers-need-fca-authorisation",
+            "Check whether you need authorisation"
+          ],
+          [
+            "/limited-permission-fca-authorisation-motor-dealers",
+            "Compare limited and full permission"
+          ]
+        ],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Step 2: register for Connect and start the application",
+        "paragraphs": [
+          "Applications are made on the FCA’s Connect system. An unauthorised firm registers for Standard Connect, which covers new authorisation applications, and selects limited or full permission when it starts the application.",
+          "The FCA asks applicants to read its credit broker guidance in full before submitting through Connect."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "connect",
+            "label": "FCA: registering for Connect",
+            "href": "https://www.fca.org.uk/firms/connect/registration"
+          },
+          {
+            "id": "broker",
+            "label": "FCA: credit broker authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Step 3: complete the forms",
+        "paragraphs": [
+          "The FCA lists these forms for motor dealers on its supporting-material page. Individual controllers also need a criminal background check carried out no earlier than 6 months before the application."
+        ],
+        "bullets": [
+          "Consumer credit authorisation form.",
+          "Form A and the core details.",
+          "An individual form for each person who will hold a senior management function.",
+          "IT self-assessment questionnaire.",
+          "Corporate and trust controller forms, where relevant.",
+          "Appendices for significant events, sole traders and owners and influencers, where relevant."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "supporting",
+            "label": "FCA: supporting material for credit and consumer finance applications",
+            "href": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+          },
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "smcr",
+            "label": "FCA: Senior Managers and Certification Regime",
+            "href": "https://www.fca.org.uk/firms/senior-managers-certification-regime"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Step 4: attach supporting material, pay and submit",
+        "paragraphs": [
+          "The application must include the application form, business plan, financial forecasts and the other forms and supporting material for your type of firm. The FCA expects final versions and says it will not review draft documents.",
+          "Pay the application fee in Connect by credit or debit card; you have to pay it to submit."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "fees",
+            "label": "FCA: authorisation application fees",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
+          }
+        ],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "See what the application documents should contain"
+          ],
+          [
+            "/fca-authorisation-cost-car-dealers",
+            "Check the FCA application fee"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Step 5: after you submit",
+        "paragraphs": [
+          "A case officer is assigned and you can track progress in Connect. The FCA usually has questions, so respond by the dates it gives. Substantive changes after submission may lead the FCA to ask you to withdraw and reapply.",
+          "By law the FCA must decide a complete application within 6 months and an incomplete one within 12 months. Your firm must not carry on regulated activities while the application is under review unless an exemption or temporary permission applies."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "s55V",
+            "label": "legislation.gov.uk: FSMA 2000 s.55V — determination of applications",
+            "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55V"
+          }
+        ],
+        "links": [
+          [
+            "/why-fca-applications-get-delayed",
+            "Understand delays and clarification requests"
+          ],
+          [
+            "/fca-application-refused-motor-dealers",
+            "See what happens if the FCA proposes to refuse"
+          ]
+        ],
+        "id": "guide-section-5"
+      },
+      {
+        "title": "Fictional example: one dealer’s application",
+        "paragraphs": [
+          "Fictional example. Example Cars Ltd owns its stock and plans to introduce buyers to third-party car finance. Its director registers the company for Connect, starts a limited-permission application, completes the consumer credit authorisation form and the individual form for the person taking the senior management function, and uploads the final business plan and forecasts.",
+          "The company pays the fee, submits and answers the case officer’s questions by the dates given. It does not introduce customers to finance until the FCA confirms authorisation."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-6"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where do I apply for FCA limited permission?",
+        "answer": "On the FCA’s Connect system. Register for Standard Connect, then choose limited permission when you start the application."
+      },
+      {
+        "question": "Can I submit draft documents and finish them later?",
+        "answer": "No. The FCA expects final versions and says it will not review draft documents."
+      },
+      {
+        "question": "How long does the FCA take to decide?",
+        "answer": "The law requires a decision within 6 months of a complete application and within 12 months for an incomplete one. FCA questions are usual, so allow time to respond."
+      },
+      {
+        "question": "Can we start offering finance once we have applied?",
+        "answer": "No. Do not carry on regulated activities while the application is under review unless an exemption or temporary permission applies."
+      }
+    ],
+    "related": [
+      "/fca-application-documents-motor-dealers",
+      "/fca-authorisation-cost-car-dealers",
+      "/why-fca-applications-get-delayed"
+    ],
+    "siblings": [
+      {
+        "need": "the documents rather than the process",
+        "href": "/fca-application-documents-motor-dealers"
+      },
+      {
+        "need": "the FCA fees",
+        "href": "/fca-authorisation-cost-car-dealers"
+      }
+    ],
+    "sources": [
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "connect",
+        "label": "FCA: registering for Connect",
+        "href": "https://www.fca.org.uk/firms/connect/registration"
+      },
+      {
+        "id": "broker",
+        "label": "FCA: credit broker authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+      },
+      {
+        "id": "supporting",
+        "label": "FCA: supporting material for credit and consumer finance applications",
+        "href": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+      },
+      {
+        "id": "apply",
+        "label": "FCA: how to apply for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "smcr",
+        "label": "FCA: Senior Managers and Certification Regime",
+        "href": "https://www.fca.org.uk/firms/senior-managers-certification-regime"
+      },
+      {
+        "id": "fees",
+        "label": "FCA: authorisation application fees",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
+      },
+      {
+        "id": "s55V",
+        "label": "legislation.gov.uk: FSMA 2000 s.55V — determination of applications",
+        "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55V"
+      }
+    ]
+  },
+  "/fca-application-refused-motor-dealers": {
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-21",
+    "modified": "RELEASE_DATE",
+    "published": "RELEASE_DATE",
+    "navigationGroup": "preparation",
+    "title": "FCA Application Refused or Rejected: What Motor Dealers Can Do",
+    "seoTitle": "FCA Application Refused? Options for Motor Dealers",
+    "description": "Why the FCA refuses or rejects applications, how this differs from withdrawal, what a warning notice means and what to change before you reapply.",
+    "answer": "An FCA refusal follows a set process: the FCA gives feedback and you can withdraw; if you continue, you receive a warning notice and can make written representations before any decision notice, which you can refer to the Upper Tribunal. A submission rejected for missing minimum information is different: the fee is refunded and you can resubmit at any time.",
+    "sections": [
+      {
+        "title": "Rejected, withdrawn or refused: the difference",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Outcome",
+          "What it means",
+          "Next step"
+        ],
+        "rows": [
+          [
+            "Rejected",
+            "The FCA rejects a submission without assessing it if minimum information is missing, explains why and refunds the fee.",
+            "Resubmit with all the relevant information at any time."
+          ],
+          [
+            "Withdrawn",
+            "The applicant can withdraw at any time before the application is determined. The fee is not refunded.",
+            "Another application can be made later."
+          ],
+          [
+            "Refused",
+            "The FCA recommends refusal where it thinks the application does not meet the standard for authorisation. The fee is not refunded.",
+            "The warning notice and decision notice process applies."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "refusal",
+            "label": "FCA: our refusal process",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/refusal-process"
+          },
+          {
+            "id": "s55V",
+            "label": "legislation.gov.uk: FSMA 2000 s.55V — determination of applications",
+            "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55V"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Why applications fall short",
+        "paragraphs": [
+          "The FCA assesses applicants against the threshold conditions, which include effective supervision and appropriate resources. Its review of applications gives examples of weaknesses, such as relying on a compliance consultant without being able to show the firm understands its own obligations, and not submitting historic financial accounts with the initial application.",
+          "The FCA also says a business model should not be generic, and that it might refuse an application if information is deliberately withheld, false or incomplete."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "cond23",
+            "label": "FCA Handbook: COND 2.3 — effective supervision",
+            "href": "https://handbook.fca.org.uk/handbook/cond2/cond2s4"
+          },
+          {
+            "id": "cond24",
+            "label": "FCA Handbook: COND 2.4 — appropriate resources",
+            "href": "https://handbook.fca.org.uk/handbook/cond2/cond2s5"
+          },
+          {
+            "id": "practice",
+            "label": "FCA: authorisation applications — good practice and areas for improvement",
+            "href": "https://www.fca.org.uk/publications/good-poor-practice/authorisation-registration-applications"
+          },
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [
+          [
+            "/why-fca-applications-get-delayed",
+            "See why FCA applications get delayed"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Warning notice, representations and decision notice",
+        "paragraphs": [
+          "The deadline for referring a decision notice to the Upper Tribunal is confirmed in the notice itself."
+        ],
+        "bullets": [
+          "Before a warning notice, the FCA gives feedback. If you withdraw at this stage, the assessment ends.",
+          "A warning notice sets out the proposed refusal and the reasons, and allows at least 14 days for representations. The FCA can extend the period.",
+          "Representations are normally made in writing to the FCA’s decision maker, who can still decide not to refuse.",
+          "A decision notice states any right to refer the matter to the Upper Tribunal and the procedure. Once it is given, the application has been determined and cannot be withdrawn.",
+          "If the decision notice is not referred, the FCA issues a final notice. The FCA may publish decision and final notices."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "refusal",
+            "label": "FCA: our refusal process",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/refusal-process"
+          },
+          {
+            "id": "s55X",
+            "label": "legislation.gov.uk: FSMA 2000 s.55X — warning and decision notices",
+            "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55X"
+          },
+          {
+            "id": "s387",
+            "label": "legislation.gov.uk: FSMA 2000 s.387 — warning notices",
+            "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/387"
+          },
+          {
+            "id": "s388",
+            "label": "legislation.gov.uk: FSMA 2000 s.388 — decision notices",
+            "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/388"
+          },
+          {
+            "id": "s55Z3",
+            "label": "legislation.gov.uk: FSMA 2000 s.55Z3 — right to refer to the Tribunal",
+            "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55Z3"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Before you apply again",
+        "paragraphs": [
+          "The FCA confirms that another application can be made after a withdrawal. Before reapplying, deal with every point raised in feedback or notices, check that the business plan describes how your dealership actually works, and make sure the people named can explain the application without relying on an adviser.",
+          "After a formal refusal, read the decision notice carefully and consider any Tribunal reference before deciding how to proceed."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: how to apply for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "practice",
+            "label": "FCA: authorisation applications — good practice and areas for improvement",
+            "href": "https://www.fca.org.uk/publications/good-poor-practice/authorisation-registration-applications"
+          }
+        ],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "Rebuild the application documents"
+          ],
+          [
+            "/how-to-apply-fca-limited-permission-car-dealers",
+            "Follow the application steps"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Fictional example: withdrawing and reapplying",
+        "paragraphs": [
+          "Fictional example. Example Autos Ltd submits a limited-permission application with a business plan copied from a template. The case officer’s questions show the plan does not explain how the dealership handles part-exchanges with outstanding finance, and the FCA gives feedback that the application does not meet its standards.",
+          "The company withdraws, rewrites the plan around its actual customer journey, adds the permission it needs for part-exchanges and reapplies. This example is illustrative and does not predict any FCA decision."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          },
+          {
+            "id": "refusal",
+            "label": "FCA: our refusal process",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/refusal-process"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the application fee refunded if the FCA refuses my application?",
+        "answer": "No. The fee is not refunded after a refusal or a withdrawal. It is refunded only if the FCA rejects a submission without assessing it because minimum information is missing."
+      },
+      {
+        "question": "Can I withdraw instead of being refused?",
+        "answer": "Yes, at any time before the application is determined, including after informal feedback. Once a decision notice is given, the application has been determined and cannot be withdrawn."
+      },
+      {
+        "question": "How long do I have to respond to a warning notice?",
+        "answer": "The warning notice sets the period, which must be at least 14 days. The FCA can extend it."
+      },
+      {
+        "question": "Can I challenge a refusal?",
+        "answer": "Yes. An applicant can refer the decision to the Upper Tribunal. The decision notice confirms the right, the procedure and the deadline."
+      }
+    ],
+    "related": [
+      "/why-fca-applications-get-delayed",
+      "/fca-application-documents-motor-dealers",
+      "/how-to-apply-fca-limited-permission-car-dealers"
+    ],
+    "siblings": [
+      {
+        "need": "to understand delays rather than refusals",
+        "href": "/why-fca-applications-get-delayed"
+      }
+    ],
+    "sources": [
+      {
+        "id": "apply",
+        "label": "FCA: how to apply for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "refusal",
+        "label": "FCA: our refusal process",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply/refusal-process"
+      },
+      {
+        "id": "s55V",
+        "label": "legislation.gov.uk: FSMA 2000 s.55V — determination of applications",
+        "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55V"
+      },
+      {
+        "id": "cond23",
+        "label": "FCA Handbook: COND 2.3 — effective supervision",
+        "href": "https://handbook.fca.org.uk/handbook/cond2/cond2s4"
+      },
+      {
+        "id": "cond24",
+        "label": "FCA Handbook: COND 2.4 — appropriate resources",
+        "href": "https://handbook.fca.org.uk/handbook/cond2/cond2s5"
+      },
+      {
+        "id": "practice",
+        "label": "FCA: authorisation applications — good practice and areas for improvement",
+        "href": "https://www.fca.org.uk/publications/good-poor-practice/authorisation-registration-applications"
+      },
+      {
+        "id": "s55X",
+        "label": "legislation.gov.uk: FSMA 2000 s.55X — warning and decision notices",
+        "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55X"
+      },
+      {
+        "id": "s387",
+        "label": "legislation.gov.uk: FSMA 2000 s.387 — warning notices",
+        "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/387"
+      },
+      {
+        "id": "s388",
+        "label": "legislation.gov.uk: FSMA 2000 s.388 — decision notices",
+        "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/388"
+      },
+      {
+        "id": "s55Z3",
+        "label": "legislation.gov.uk: FSMA 2000 s.55Z3 — right to refer to the Tribunal",
+        "href": "https://www.legislation.gov.uk/ukpga/2000/8/section/55Z3"
+      },
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      }
+    ]
+  },
+  "/how-to-offer-car-finance-dealers": {
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-21",
+    "modified": "RELEASE_DATE",
+    "published": "RELEASE_DATE",
+    "navigationGroup": "permissions",
+    "title": "How to Offer PCP and HP Car Finance to Your Customers",
+    "seoTitle": "How to Offer Car Finance (PCP and HP) as a Dealer",
+    "description": "How dealers start offering PCP and HP finance: FCA authorisation, joining lender panels, and the FCA rules on promotions, commission and customers.",
+    "answer": "To offer PCP and HP finance, a dealer first needs FCA permission for credit broking or an appointed representative arrangement, then arrangements with the lenders or brokers it will introduce customers to. Once live, FCA rules apply: promotions must say you are a credit broker, not a lender, commission must be disclosed where it could affect your impartiality or the customer’s decision, and the Consumer Duty applies.",
+    "sections": [
+      {
+        "title": "What you are offering: PCP and HP",
+        "paragraphs": [
+          "Under a hire-purchase agreement the customer hires the vehicle and ownership passes once the terms are met. The FCA’s car finance guidance treats personal contract purchase (PCP) as a type of hire-purchase agreement. When a dealer introduces a customer to a lender for either, it is carrying on credit broking.",
+          "Check each product’s actual terms; the lender is the party that provides the credit."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "cca189",
+            "label": "legislation.gov.uk: Consumer Credit Act 1974 s.189 — definitions",
+            "href": "https://www.legislation.gov.uk/ukpga/1974/39/section/189"
+          },
+          {
+            "id": "carFinance",
+            "label": "FCA: car finance complaints and PCP/HP agreements",
+            "href": "https://www.fca.org.uk/consumers/car-finance-complaints"
+          },
+          {
+            "id": "rao36A",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 36A — credit broking",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/36A"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Step 1: get the right permission",
+        "paragraphs": [
+          "A dealer that owns its stock and introduces customers to third-party finance is likely to need limited permission for secondary credit broking. Part-exchanges with outstanding finance also need debt adjusting and debt counselling permissions. The alternative is an appointed representative arrangement with an authorised principal."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [
+          [
+            "/do-motor-dealers-need-fca-authorisation",
+            "Check whether you need authorisation"
+          ],
+          [
+            "/how-to-apply-fca-limited-permission-car-dealers",
+            "Apply for limited permission"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Step 2: set up lender and broker arrangements",
+        "paragraphs": [
+          "The FCA expects your regulatory business plan to identify the lenders or brokers you intend to work with and to state any fees you charge and what commission you will earn. Agree with each one how introductions, documents and complaints will be handled, and record the commission terms you will need to disclose.",
+          "Ask each lender or broker what it requires before it accepts introductions from your dealership."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Step 3: the rules once you offer finance",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Rule",
+          "What it means for a dealer"
+        ],
+        "rows": [
+          [
+            "Broker, not lender (CONC 3.7.7R)",
+            "Financial promotions must state prominently that you are a credit broker and not a lender."
+          ],
+          [
+            "Legal name (CONC 3.7.5R)",
+            "Promotions and customer communications must show your legal name as it appears on the Financial Services Register, not only a trading name."
+          ],
+          [
+            "Extent of powers (CONC 3.7.3R)",
+            "Say whether you work exclusively with one or more lenders or independently."
+          ],
+          [
+            "Representative example (CONC 3.5)",
+            "Where CONC 3.5 requires one, a finance promotion must include a representative example with the specified information."
+          ],
+          [
+            "Commission disclosure (CONC 4.5.3R)",
+            "Disclose the existence and nature of commission prominently and in good time where it could affect your impartiality or the customer’s decision, and how it may affect what the customer pays."
+          ],
+          [
+            "No discretionary commission (CONC 4.5.6R)",
+            "Since 28 January 2021, lenders and brokers must not use discretionary commission arrangements in motor finance."
+          ],
+          [
+            "Consumer Duty",
+            "The FCA says the Consumer Duty requires your firm to put its customers’ needs first."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "conc37",
+            "label": "FCA Handbook: CONC 3.7 — credit broker promotions and status",
+            "href": "https://handbook.fca.org.uk/handbook/conc3/conc3s7"
+          },
+          {
+            "id": "conc35",
+            "label": "FCA Handbook: CONC 3.5 — representative example",
+            "href": "https://handbook.fca.org.uk/handbook/conc3/conc3s5"
+          },
+          {
+            "id": "conc45",
+            "label": "FCA Handbook: CONC 4.5 — commissions",
+            "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+          },
+          {
+            "id": "brokingRules",
+            "label": "FCA: credit broking firms — key rules",
+            "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+          },
+          {
+            "id": "broker",
+            "label": "FCA: credit broker authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/website-compliance-motor-dealers",
+            "Check your website finance wording"
+          ],
+          [
+            "/consumer-duty-motor-dealers",
+            "Read the Consumer Duty guide"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Fictional example: a first finance customer",
+        "paragraphs": [
+          "Fictional example. Example Motor Sales Ltd has limited permission and an arrangement with a lender. A customer asks about PCP on a used car. The salesperson explains that the dealership is a credit broker, not a lender, discloses the commission arrangement and how it can affect the cost, and gives the lender’s representative example.",
+          "The dealer passes the application to the lender, which makes the lending decision, and keeps a record of what the customer was told."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need FCA authorisation to offer PCP finance?",
+        "answer": "Yes, in most cases. Introducing customers to PCP or HP finance is credit broking, which needs FCA permission or an appointed representative arrangement."
+      },
+      {
+        "question": "What are the FCA rules for offering car finance as a dealer?",
+        "answer": "The main rules are in CONC: promotions must say you are a broker, not a lender, and show your legal name; commission must be disclosed where it could affect your impartiality or the customer’s decision; and discretionary commission arrangements are banned. The Consumer Duty also applies."
+      },
+      {
+        "question": "Do I have to tell customers how much commission I earn?",
+        "answer": "You must disclose the existence and nature of commission where CONC 4.5.3R applies, and the amount, or likely amount, if the customer asks."
+      },
+      {
+        "question": "Can I set the customer’s interest rate to earn more commission?",
+        "answer": "No. Discretionary commission arrangements, which let a broker adjust the rate and earn more commission, have been banned in motor finance since 28 January 2021."
+      }
+    ],
+    "related": [
+      "/do-motor-dealers-need-fca-authorisation",
+      "/credit-broking-permission-motor-dealers",
+      "/website-compliance-motor-dealers"
+    ],
+    "siblings": [
+      {
+        "need": "to check whether you need authorisation at all",
+        "href": "/do-motor-dealers-need-fca-authorisation"
+      }
+    ],
+    "sources": [
+      {
+        "id": "cca189",
+        "label": "legislation.gov.uk: Consumer Credit Act 1974 s.189 — definitions",
+        "href": "https://www.legislation.gov.uk/ukpga/1974/39/section/189"
+      },
+      {
+        "id": "carFinance",
+        "label": "FCA: car finance complaints and PCP/HP agreements",
+        "href": "https://www.fca.org.uk/consumers/car-finance-complaints"
+      },
+      {
+        "id": "rao36A",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 36A — credit broking",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/36A"
+      },
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "conc37",
+        "label": "FCA Handbook: CONC 3.7 — credit broker promotions and status",
+        "href": "https://handbook.fca.org.uk/handbook/conc3/conc3s7"
+      },
+      {
+        "id": "conc35",
+        "label": "FCA Handbook: CONC 3.5 — representative example",
+        "href": "https://handbook.fca.org.uk/handbook/conc3/conc3s5"
+      },
+      {
+        "id": "conc45",
+        "label": "FCA Handbook: CONC 4.5 — commissions",
+        "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+      },
+      {
+        "id": "brokingRules",
+        "label": "FCA: credit broking firms — key rules",
+        "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+      },
+      {
+        "id": "broker",
+        "label": "FCA: credit broker authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+      }
+    ]
+  },
+  "/what-is-ccr007": {
+    "group": "ccr",
+    "finance": true,
+    "reviewed": "2026-11-21",
+    "modified": "RELEASE_DATE",
+    "published": "RELEASE_DATE",
+    "navigationGroup": "reporting",
+    "title": "What Is CCR007?",
+    "seoTitle": "What Is CCR007? FCA Key Data Return | 009 Compliance",
+    "description": "CCR007 is the FCA Key Data return for limited-permission credit firms: who submits it, how often, what it asks and how it links to CCR009.",
+    "answer": "CCR007 is the FCA’s Key Data return for credit firms with limited permission, and all firms with limited permission must submit it. It asks for revenue, transaction and complaint figures for credit-related regulated activities, reported on a calendar-year basis from 2026. Dealers that also submit CCR009 can enter zero in some CCR007 fields.",
+    "feeNote": {
+      "checked": "2026-11-21",
+      "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data",
+      "label": "FCA: completing CCR007"
+    },
+    "sections": [
+      {
+        "title": "What CCR007 is and who submits it",
+        "paragraphs": [
+          "CCR007 is the data item “Key Data for Credit Firms with Limited Permissions”. The FCA says all firms with limited permission must submit it, so a car dealer with limited permission for secondary credit broking should expect it on its reporting schedule.",
+          "Consumer credit returns are submitted through RegData, the FCA’s online data collection platform. Check your firm’s schedule there for the returns and due dates that apply."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "reporting",
+            "label": "FCA: consumer credit reporting",
+            "href": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+          },
+          {
+            "id": "ccr007",
+            "label": "FCA: completing CCR007",
+            "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "What it asks for",
+        "paragraphs": [
+          "The last item is the income figure the FCA uses to calculate annual fees."
+        ],
+        "bullets": [
+          "Revenue from credit-related regulated activities.",
+          "Total revenue, including from other activities.",
+          "Number of transactions involving credit-related regulated activities in the period.",
+          "Number of complaints about credit-related regulated activities received in the period.",
+          "The credit-related regulated activity that generated the most turnover.",
+          "Total annual income as defined for FCA fees (FEES 4 Annex 11BR)."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr007",
+            "label": "FCA: completing CCR007",
+            "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data"
+          },
+          {
+            "id": "ccIncome",
+            "label": "FCA: consumer credit income for fees",
+            "href": "https://www.fca.org.uk/firms/fees/consumer-credit-income-help"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "When it is due",
+        "paragraphs": [
+          "From 2026, the FCA requires CCR007 and CCR009 to be reported on a calendar-year basis, 1 January to 31 December, rather than by reference to the firm’s accounting reference date. The FCA’s reporting table gives 30 business days to submit CCR007, compared with 40 for CCR009.",
+          "The FCA says firms that do not complete their reporting by the due date are subject to an administrative fee of £100."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "reporting",
+            "label": "FCA: consumer credit reporting",
+            "href": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+          },
+          {
+            "id": "sup",
+            "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+          },
+          {
+            "id": "ccr007",
+            "label": "FCA: completing CCR007",
+            "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data"
+          }
+        ],
+        "links": [
+          [
+            "/when-is-ccr009-due",
+            "Check CCR009 periods and deadlines"
+          ]
+        ],
+        "id": "guide-section-3",
+        "feeNote": true
+      },
+      {
+        "title": "How CCR009 changed CCR007",
+        "paragraphs": [
+          "CCR009 came into effect on 7 May 2025. Firms submitting CCR009 may report zero in CCR007 fields 1A and 3A where those fields relate only to credit broking or not-for-profit debt management. Accurate figures are still needed for other limited-permission activities and in all the remaining fields."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [
+          [
+            "/ccr009-vs-ccr007",
+            "Compare CCR009 and CCR007"
+          ],
+          [
+            "/what-is-ccr009",
+            "Read what CCR009 covers"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Fictional example: one dealer, two returns",
+        "paragraphs": [
+          "Fictional example. Example Motors Ltd has limited permission for secondary credit broking. Its schedule shows CCR007 and CCR009 for the 2026 calendar year. It gathers its commission income, the number of transactions and the complaints received for the year.",
+          "Because fields 1A and 3A relate only to its credit broking, it enters zero there, completes the remaining CCR007 fields accurately and answers the CCR009 questions separately."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Who has to submit CCR007?",
+        "answer": "The FCA says all firms with limited permission must submit CCR007. Check your firm’s reporting schedule in RegData."
+      },
+      {
+        "question": "Is CCR007 the same as CCR009?",
+        "answer": "No. CCR007 is the Key Data return for limited-permission firms; CCR009 covers relevant ancillary credit firms. A limited-permission dealer can need to submit both."
+      },
+      {
+        "question": "What period does CCR007 cover?",
+        "answer": "From 2026, the calendar year from 1 January to 31 December, not the firm’s accounting reference date."
+      }
+    ],
+    "related": [
+      "/ccr009-vs-ccr007",
+      "/what-is-ccr009",
+      "/when-is-ccr009-due"
+    ],
+    "siblings": [
+      {
+        "need": "a side-by-side comparison with CCR009",
+        "href": "/ccr009-vs-ccr007"
+      }
+    ],
+    "sources": [
+      {
+        "id": "reporting",
+        "label": "FCA: consumer credit reporting",
+        "href": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+      },
+      {
+        "id": "ccr007",
+        "label": "FCA: completing CCR007",
+        "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data"
+      },
+      {
+        "id": "ccIncome",
+        "label": "FCA: consumer credit income for fees",
+        "href": "https://www.fca.org.uk/firms/fees/consumer-credit-income-help"
+      },
+      {
+        "id": "sup",
+        "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+      },
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      }
+    ]
+  },
+  "/van-commercial-vehicle-dealers-fca-permissions": {
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-21",
+    "modified": "RELEASE_DATE",
+    "published": "RELEASE_DATE",
+    "navigationGroup": "permissions",
+    "title": "Do Van and Commercial Vehicle Dealers Need FCA Permission?",
+    "seoTitle": "FCA Permissions for Van and Commercial Vehicle Dealers",
+    "description": "Selling vans to sole traders or small partnerships? Some business vehicle finance is still regulated consumer credit. See which customers are covered.",
+    "answer": "Often, yes. Finance for a sole trader, a partnership of two or three partners (not all of them companies) or another unincorporated body can still be regulated consumer credit, so introducing those customers to finance needs FCA credit broking permission. Finance for a limited company is outside these rules, and some business agreements over £25,000 are exempt, although introducing them can still be credit broking.",
+    "sections": [
+      {
+        "title": "Which business customers are covered",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Customer",
+          "Can consumer credit rules apply?"
+        ],
+        "rows": [
+          [
+            "Private individual",
+            "Yes."
+          ],
+          [
+            "Sole trader",
+            "Yes. A sole trader borrows as an individual."
+          ],
+          [
+            "Partnership of two or three partners, not all of them companies",
+            "Yes. The Consumer Credit Act includes these partnerships in “individual”."
+          ],
+          [
+            "Unincorporated body, such as a club or association, not made up entirely of companies",
+            "Yes. It is also included in “individual”."
+          ],
+          [
+            "Partnership of four or more partners, or one made up entirely of companies",
+            "No. It falls outside the definition."
+          ],
+          [
+            "Limited company",
+            "No. A company is neither an individual nor a relevant recipient of credit."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "cca189",
+            "label": "legislation.gov.uk: Consumer Credit Act 1974 s.189 — definitions",
+            "href": "https://www.legislation.gov.uk/ukpga/1974/39/section/189"
+          },
+          {
+            "id": "rao60L",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 60L — relevant recipient of credit",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60L"
+          },
+          {
+            "id": "rao60B",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 60B — regulated credit agreements",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60B"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "The business-purpose exemptions",
+        "paragraphs": [
+          "Credit over £25,000 is exempt where the agreement is entered into wholly or predominantly for the borrower’s business. Below that level, the business exemption applies only to green deal plans, so most van finance of £25,000 or less to a sole trader or small partnership remains regulated.",
+          "A business-purpose declaration by the borrower that complies with CONC App 1.4 creates a presumption, but it does not apply if the lender, or anyone acting for it, knows or has reasonable cause to suspect the agreement is not for business purposes. Hire agreements have a similar exemption where the hirer must pay more than £25,000 wholly or predominantly for business purposes."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "rao60C",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 60C — exempt credit agreements",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60C"
+          },
+          {
+            "id": "perg27",
+            "label": "FCA Handbook: PERG 2.7 — exempt agreements and business purposes",
+            "href": "https://handbook.fca.org.uk/handbook/perg2/perg2s7"
+          },
+          {
+            "id": "rao60O",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 60O — exempt consumer hire",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60O"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Exempt agreements can still involve credit broking",
+        "paragraphs": [
+          "Credit broking includes introducing an individual or relevant recipient of credit to a lender for an agreement that would be regulated but for the business exemption. A dealer introducing a sole trader to exempt business finance over £25,000 is still carrying on credit broking.",
+          "Some CONC rules also apply to those introductions, including the commission disclosure rules in CONC 4.5.3R and 4.5.4R."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "rao36A",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 36A — credit broking",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/36A"
+          },
+          {
+            "id": "conc45",
+            "label": "FCA Handbook: CONC 4.5 — commissions",
+            "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+          }
+        ],
+        "links": [
+          [
+            "/credit-broking-permission-motor-dealers",
+            "Read the credit broking permission guide"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Plan around your customer mix",
+        "paragraphs": [
+          "Plan permissions around the regulated introductions you will make, not the vehicle type. A dealership selling vans to private buyers, sole traders and companies needs a process that identifies which rules apply to each customer."
+        ],
+        "bullets": [
+          "Record the customer’s legal form before discussing finance.",
+          "For a partnership, count the partners and check whether any are companies.",
+          "Do not rely on a business-purpose declaration if you know or suspect the vehicle is mainly for personal use."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "perg27",
+            "label": "FCA Handbook: PERG 2.7 — exempt agreements and business purposes",
+            "href": "https://handbook.fca.org.uk/handbook/perg2/perg2s7"
+          },
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [
+          [
+            "/do-motor-dealers-need-fca-authorisation",
+            "Check whether you need authorisation"
+          ],
+          [
+            "/limited-permission-fca-authorisation-motor-dealers",
+            "Compare limited and full permission"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Fictional example: three van customers",
+        "paragraphs": [
+          "Fictional example. Example Commercials Ltd sells used vans. A sole trader finances an £18,000 van for the business: the agreement is regulated, because below £25,000 the business exemption applies only to green deal plans.",
+          "A three-partner electrical firm finances £32,000 of vans wholly for the business and signs a compliant declaration: the agreement may be exempt, but the dealer’s introduction is still credit broking. A limited company’s finance is outside the consumer credit rules."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "rao60C",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 60C — exempt credit agreements",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60C"
+          },
+          {
+            "id": "rao36A",
+            "label": "legislation.gov.uk: Regulated Activities Order art. 36A — credit broking",
+            "href": "https://www.legislation.gov.uk/uksi/2001/544/article/36A"
+          },
+          {
+            "id": "cca189",
+            "label": "legislation.gov.uk: Consumer Credit Act 1974 s.189 — definitions",
+            "href": "https://www.legislation.gov.uk/ukpga/1974/39/section/189"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do van dealers need FCA authorisation if they only sell to businesses?",
+        "answer": "It depends on the businesses. Sole traders, partnerships of two or three partners (not all of them companies) and some unincorporated bodies are covered by consumer credit rules; limited companies are not."
+      },
+      {
+        "question": "Is van finance for business use always exempt?",
+        "answer": "No. The business exemption covers credit over £25,000 used wholly or predominantly for business. Below £25,000, the business exemption applies only to green deal plans."
+      },
+      {
+        "question": "If the finance agreement is exempt, do we still need credit broking permission?",
+        "answer": "Possibly. Introducing an individual or relevant recipient of credit to an agreement that would be regulated but for the business exemption is still credit broking."
+      }
+    ],
+    "related": [
+      "/do-motor-dealers-need-fca-authorisation",
+      "/credit-broking-permission-motor-dealers",
+      "/limited-permission-fca-authorisation-motor-dealers"
+    ],
+    "siblings": [
+      {
+        "need": "the general car dealer position",
+        "href": "/do-motor-dealers-need-fca-authorisation"
+      }
+    ],
+    "sources": [
+      {
+        "id": "cca189",
+        "label": "legislation.gov.uk: Consumer Credit Act 1974 s.189 — definitions",
+        "href": "https://www.legislation.gov.uk/ukpga/1974/39/section/189"
+      },
+      {
+        "id": "rao60L",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 60L — relevant recipient of credit",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60L"
+      },
+      {
+        "id": "rao60B",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 60B — regulated credit agreements",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60B"
+      },
+      {
+        "id": "rao60C",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 60C — exempt credit agreements",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60C"
+      },
+      {
+        "id": "perg27",
+        "label": "FCA Handbook: PERG 2.7 — exempt agreements and business purposes",
+        "href": "https://handbook.fca.org.uk/handbook/perg2/perg2s7"
+      },
+      {
+        "id": "rao60O",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 60O — exempt consumer hire",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/60O"
+      },
+      {
+        "id": "rao36A",
+        "label": "legislation.gov.uk: Regulated Activities Order art. 36A — credit broking",
+        "href": "https://www.legislation.gov.uk/uksi/2001/544/article/36A"
+      },
+      {
+        "id": "conc45",
+        "label": "FCA Handbook: CONC 4.5 — commissions",
+        "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+      },
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      }
+    ]
   }
 }

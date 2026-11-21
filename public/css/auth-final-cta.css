@@ -1,7 +1,7 @@
 .nine-site .auth-final-cta{background:#fafbfd}
 .afc-panel{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);align-items:center;gap:36px;padding:clamp(30px,5vw,64px);border-radius:32px;background:radial-gradient(ellipse at 100% 10%,#4289f5,transparent 65%),linear-gradient(125deg,#14243a,#164caa);border:1px solid #618ed866;box-shadow:0 20px 55px #14243a18}
-.nine-site .afc-copy h2{color:#fff;font-size:clamp(38px,5.2vw,68px);line-height:1.04;letter-spacing:-.045em;margin:0 0 22px;font-weight:750}
-.nine-site .afc-copy h2 span{color:#a8d5f5}
+.nine-site .afc-copy :is(h2,.guide-label){color:#fff;font-size:clamp(38px,5.2vw,68px);line-height:1.04;letter-spacing:-.045em;margin:0 0 22px;font-weight:750}
+.nine-site .afc-copy :is(h2,.guide-label) span{color:#a8d5f5}
 .nine-site .afc-copy p{color:#e1edfc;font-size:17px;line-height:1.7;max-width:480px;margin:0 0 28px}
 .afc-button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 24px;border-radius:16px;background:#fff;color:#14243a!important;font-weight:750;font-size:16px;text-decoration:none!important;box-shadow:0 10px 24px #0002;transition:transform .2s,box-shadow .2s}
 .afc-button span{display:grid;place-items:center;width:30px;height:30px;background:#e5f1fc;border-radius:50%;color:#2563eb;transition:transform .2s}

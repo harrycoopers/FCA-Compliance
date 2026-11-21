@@ -157,14 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function showSuccessToast(message) {
+document.addEventListener("DOMContentLoaded", () => {
   const toast = document.getElementById("success-toast");
-  const msgEl = document.getElementById("success-toast-message");
-  if (!toast || !msgEl) return;
+  if (!toast) return;
 
-  msgEl.textContent = message || "You have successfully completed a Monthly Submission Form!";
-
-  toast.classList.remove("hidden", "animate-slide-out");
   toast.classList.add("animate-slide-in");
 
   setTimeout(() => {
@@ -175,10 +171,4 @@ function showSuccessToast(message) {
       toast.classList.add("hidden");
     }, 350);
   }, 5000);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.__TOAST_SUCCESS__) {
-    showSuccessToast(window.__TOAST_SUCCESS__);
-  }
 });

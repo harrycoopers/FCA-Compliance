@@ -199,6 +199,9 @@ test('security and backend regression suite (isolated SQLite, no external servic
   });
   await caseTest('native report selectors work without JavaScript; malformed enquiry objects are rejected',async()=>{
    const r=await post(a,'/reports/new',{report_year:months[4].slice(0,4),report_month:months[4].slice(5),confirm_submission:'yes',total_vehicles_sold:'2'});assert.equal(r.status,302);
+   assert(!(await get(a,'/about')).text.includes('Monthly Submission Complete'));
+   assert((await get(a,'/dashboard')).text.includes('Monthly Submission Complete'));
+   assert(!(await get(a,'/dashboard')).text.includes('Monthly Submission Complete'));
    const visitor=jar();await get(visitor,'/contact');const bad=await request(visitor,'/contact',{method:'POST',headers:{'content-type':'application/json','x-csrf-token':visitor.csrf},body:JSON.stringify({first_name:{toString:null}})});assert.equal(bad.status,400);assert.equal((await get(visitor,'/')).status,200);
   });
   await caseTest('migrations are idempotent and do not remove current tokens or customer records',async()=>{

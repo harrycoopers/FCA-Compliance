@@ -1,0 +1,107 @@
+{
+  "ran": "2026-11-21T10:35:10.079Z",
+  "results": [
+    {
+      "name": "No [CONFIRM, [VERIFY or {{ in public pages, sitemap or llms.txt",
+      "pass": true,
+      "detail": "0 found"
+    },
+    {
+      "name": "RELEASE_DATE set to a real date (config/release.js)",
+      "pass": false,
+      "detail": "value: [YYYY-MM-DD]"
+    },
+    {
+      "name": "No duplicate or empty titles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No duplicate or empty descriptions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No duplicate or empty h1s",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Exactly one H1 per public page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Meta descriptions ≤155 characters on pages changed in this release",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pre-existing descriptions over 155 characters (not changed in this release; informational)",
+      "pass": true,
+      "info": true,
+      "detail": "/fca-authorisation-motor-dealers 157"
+    },
+    {
+      "name": "All internal links resolve, including new guide links and fragments",
+      "pass": true,
+      "detail": "48 unique targets; none broken"
+    },
+    {
+      "name": "New guides return 200 and are in /guides, sitemap (with lastmod) and llms.txt",
+      "pass": true,
+      "detail": "/fca-authorisation-cost-car-dealers, /how-to-apply-fca-limited-permission-car-dealers, /fca-application-refused-motor-dealers, /how-to-offer-car-finance-dealers, /what-is-ccr007, /van-commercial-vehicle-dealers-fca-permissions"
+    },
+    {
+      "name": "FAQPage JSON-LD matches the visible FAQs on every guide",
+      "pass": true,
+      "detail": "24 guides"
+    },
+    {
+      "name": "No 009 Compliance prices (£100, £600, £1,000) in guide openings, FAQs or FAQ schema",
+      "pass": true,
+      "detail": "FCA fees and regulatory thresholds allowed"
+    },
+    {
+      "name": "FCA fee figures carry an \"FCA fees checked [date]\" note with an FCA link",
+      "pass": true,
+      "detail": "cost guide, CCR007 guide"
+    },
+    {
+      "name": "FCA authorisation guides: one compact banner after the first section plus the full panel after the article; none elsewhere",
+      "pass": true,
+      "detail": "11 FCA guides"
+    },
+    {
+      "name": "CCR009 guides keep the CCR009 CTA primary with one small text link to the FCA offer page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Every guide link to /fca-authorisation-motor-dealers uses a rotated descriptive anchor",
+      "pass": true,
+      "detail": "anchors used: FCA authorisation for motor dealers | FCA application help for car dealers | car dealer FCA approval support"
+    },
+    {
+      "name": "No \"click here\" anchors on public pages",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Offer fallback renders when the date is mocked to 26 Dec 2026 (continue, unconfirmed, custom)",
+      "pass": true,
+      "detail": "33 renders"
+    },
+    {
+      "name": "Offer banner: animation runs normally and stops under prefers-reduced-motion; no headings inside",
+      "pass": true,
+      "detail": "12 browser cases"
+    },
+    {
+      "name": "Offer banner: reserved space and zero layout shift (CLS) at 1280 and 390px",
+      "pass": true,
+      "detail": "12 browser cases, banner layout-shift 0"
+    }
+  ],
+  "inventory": []
+}

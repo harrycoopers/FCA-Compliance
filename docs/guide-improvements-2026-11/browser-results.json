@@ -1,0 +1,1790 @@
+{
+  "checkedAt": "2026-11-12T14:39:03.963Z",
+  "routes": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 1280,
+      "status": 200,
+      "overflow": false,
+      "arrowRuns": 1,
+      "cls": 0,
+      "metadata": true,
+      "sourceParagraphsMatch": true
+    }
+  ],
+  "links": [
+    "/do-motor-dealers-need-fca-authorisation#main-content",
+    "/",
+    "/services",
+    "/fca-authorisation-motor-dealers",
+    "/ccr009-return-assistance-motor-dealers",
+    "/motor-dealer-compliance",
+    "/motor-finance-for-dealerships",
+    "/pricing",
+    "/testimonials",
+    "/about",
+    "/referral",
+    "/contact",
+    "/login",
+    "/contact#book-meeting",
+    "/register",
+    "/fca-compliance-motor-dealers-guide",
+    "/do-motor-dealers-need-fca-authorisation#guide-sources",
+    "/do-motor-dealers-need-fca-authorisation#guide-navigation",
+    "/do-motor-dealers-need-fca-authorisation#guide-section-1",
+    "/website-compliance-motor-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/fca-licence-car-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/contact?topic=authorisation#book-meeting",
+    "/do-motor-dealers-need-fca-authorisation#guide-section-2",
+    "/do-motor-dealers-need-fca-authorisation#guide-section-3",
+    "/do-motor-dealers-need-fca-authorisation#guide-section-4",
+    "/do-motor-dealers-need-fca-authorisation#guide-faq",
+    "/do-motor-dealers-need-fca-authorisation",
+    "/what-is-ccr009",
+    "/consumer-duty-motor-dealers",
+    "/terms",
+    "/privacy-policy",
+    "/complaints-policy",
+    "/cookie-policy",
+    "/fca-licence-car-dealers#main-content",
+    "/fca-licence-car-dealers#guide-sources",
+    "/fca-licence-car-dealers#guide-navigation",
+    "/fca-licence-car-dealers#guide-section-1",
+    "/why-fca-applications-get-delayed",
+    "/fca-licence-car-dealers#guide-section-2",
+    "/fca-licence-car-dealers#guide-section-3",
+    "/fca-licence-car-dealers#guide-section-4",
+    "/fca-licence-car-dealers#guide-faq",
+    "/limited-permission-fca-authorisation-motor-dealers#main-content",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-sources",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-navigation",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-section-1",
+    "/after-fca-approval-motor-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-section-2",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-section-3",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-section-4",
+    "/limited-permission-fca-authorisation-motor-dealers#guide-faq",
+    "/credit-broking-permission-motor-dealers#main-content",
+    "/credit-broking-permission-motor-dealers#guide-sources",
+    "/credit-broking-permission-motor-dealers#guide-navigation",
+    "/credit-broking-permission-motor-dealers#guide-section-1",
+    "/credit-broking-permission-motor-dealers#guide-section-2",
+    "/credit-broking-permission-motor-dealers#guide-section-3",
+    "/credit-broking-permission-motor-dealers#guide-section-4",
+    "/credit-broking-permission-motor-dealers#guide-faq",
+    "/fca-application-documents-motor-dealers#main-content",
+    "/fca-application-documents-motor-dealers#guide-sources",
+    "/fca-application-documents-motor-dealers#guide-navigation",
+    "/fca-application-documents-motor-dealers#guide-section-1",
+    "/fca-application-documents-motor-dealers#guide-section-2",
+    "/fca-application-documents-motor-dealers#guide-section-3",
+    "/fca-application-documents-motor-dealers#guide-section-4",
+    "/fca-application-documents-motor-dealers#guide-faq",
+    "/why-fca-applications-get-delayed#main-content",
+    "/why-fca-applications-get-delayed#guide-sources",
+    "/why-fca-applications-get-delayed#guide-navigation",
+    "/why-fca-applications-get-delayed#guide-section-1",
+    "/why-fca-applications-get-delayed#guide-section-2",
+    "/why-fca-applications-get-delayed#guide-section-3",
+    "/why-fca-applications-get-delayed#guide-section-4",
+    "/why-fca-applications-get-delayed#guide-faq",
+    "/after-fca-approval-motor-dealers#main-content",
+    "/after-fca-approval-motor-dealers#guide-sources",
+    "/after-fca-approval-motor-dealers#guide-navigation",
+    "/after-fca-approval-motor-dealers#guide-section-1",
+    "/who-needs-to-submit-ccr009",
+    "/when-is-ccr009-due",
+    "/contact?topic=ongoing#book-meeting",
+    "/pricing#payments",
+    "/after-fca-approval-motor-dealers#guide-section-2",
+    "/after-fca-approval-motor-dealers#guide-section-3",
+    "/after-fca-approval-motor-dealers#guide-section-4",
+    "/after-fca-approval-motor-dealers#guide-faq",
+    "/what-is-ccr009#main-content",
+    "/what-is-ccr009#guide-sources",
+    "/what-is-ccr009#guide-navigation",
+    "/what-is-ccr009#guide-section-1",
+    "/ccr009-vs-ccr007",
+    "/what-information-is-needed-for-ccr009",
+    "/how-to-prepare-for-ccr009-return",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/contact?topic=ccr009#book-meeting",
+    "/what-is-ccr009#guide-section-2",
+    "/what-is-ccr009#guide-section-3",
+    "/what-is-ccr009#guide-section-4",
+    "/what-is-ccr009#guide-faq",
+    "/who-needs-to-submit-ccr009#main-content",
+    "/who-needs-to-submit-ccr009#guide-sources",
+    "/who-needs-to-submit-ccr009#guide-navigation",
+    "/who-needs-to-submit-ccr009#guide-section-1",
+    "/who-needs-to-submit-ccr009#guide-section-2",
+    "/who-needs-to-submit-ccr009#guide-section-3",
+    "/who-needs-to-submit-ccr009#guide-section-4",
+    "/who-needs-to-submit-ccr009#guide-faq",
+    "/what-information-is-needed-for-ccr009#main-content",
+    "/what-information-is-needed-for-ccr009#guide-sources",
+    "/what-information-is-needed-for-ccr009#guide-navigation",
+    "/what-information-is-needed-for-ccr009#guide-section-1",
+    "/common-ccr009-reporting-mistakes",
+    "/what-information-is-needed-for-ccr009#guide-section-2",
+    "/what-information-is-needed-for-ccr009#guide-section-3",
+    "/what-information-is-needed-for-ccr009#guide-section-4",
+    "/what-information-is-needed-for-ccr009#guide-faq",
+    "/ccr009-reporting-checklist-motor-dealers#main-content",
+    "/ccr009-reporting-checklist-motor-dealers#guide-sources",
+    "/ccr009-reporting-checklist-motor-dealers#guide-navigation",
+    "/ccr009-reporting-checklist-motor-dealers#guide-section-1",
+    "/ccr009-reporting-checklist-motor-dealers#guide-section-2",
+    "/ccr009-reporting-checklist-motor-dealers#guide-section-3",
+    "/ccr009-reporting-checklist-motor-dealers#guide-section-4",
+    "/ccr009-reporting-checklist-motor-dealers#guide-faq",
+    "/ccr009-vs-ccr007#main-content",
+    "/ccr009-vs-ccr007#guide-sources",
+    "/ccr009-vs-ccr007#guide-navigation",
+    "/ccr009-vs-ccr007#guide-section-1",
+    "/ccr009-vs-ccr007#guide-section-2",
+    "/ccr009-vs-ccr007#guide-section-3",
+    "/ccr009-vs-ccr007#guide-section-4",
+    "/ccr009-vs-ccr007#guide-faq",
+    "/common-ccr009-reporting-mistakes#main-content",
+    "/common-ccr009-reporting-mistakes#guide-sources",
+    "/common-ccr009-reporting-mistakes#guide-navigation",
+    "/common-ccr009-reporting-mistakes#guide-section-1",
+    "/common-ccr009-reporting-mistakes#guide-section-2",
+    "/common-ccr009-reporting-mistakes#guide-section-3",
+    "/common-ccr009-reporting-mistakes#guide-section-4",
+    "/common-ccr009-reporting-mistakes#guide-faq",
+    "/how-to-prepare-for-ccr009-return#main-content",
+    "/how-to-prepare-for-ccr009-return#guide-sources",
+    "/how-to-prepare-for-ccr009-return#guide-navigation",
+    "/how-to-prepare-for-ccr009-return#guide-section-1",
+    "/how-to-prepare-for-ccr009-return#guide-section-2",
+    "/how-to-prepare-for-ccr009-return#guide-section-3",
+    "/how-to-prepare-for-ccr009-return#guide-section-4",
+    "/how-to-prepare-for-ccr009-return#guide-faq",
+    "/when-is-ccr009-due#main-content",
+    "/when-is-ccr009-due#guide-sources",
+    "/when-is-ccr009-due#guide-navigation",
+    "/when-is-ccr009-due#guide-section-1",
+    "/when-is-ccr009-due#guide-section-2",
+    "/when-is-ccr009-due#guide-section-3",
+    "/when-is-ccr009-due#guide-section-4",
+    "/when-is-ccr009-due#guide-section-5",
+    "/when-is-ccr009-due#guide-faq",
+    "/consumer-duty-motor-dealers#main-content",
+    "/consumer-duty-motor-dealers#guide-sources",
+    "/consumer-duty-motor-dealers#guide-navigation",
+    "/consumer-duty-motor-dealers#guide-section-1",
+    "/consumer-duty-motor-dealers#guide-section-2",
+    "/consumer-duty-motor-dealers#guide-section-3",
+    "/consumer-duty-motor-dealers#guide-section-4",
+    "/consumer-duty-motor-dealers#guide-faq",
+    "/website-compliance-motor-dealers#main-content",
+    "/website-compliance-motor-dealers#guide-sources",
+    "/website-compliance-motor-dealers#guide-navigation",
+    "/website-compliance-motor-dealers#guide-section-1",
+    "/website-compliance-motor-dealers#guide-section-2",
+    "/website-compliance-motor-dealers#guide-section-3",
+    "/website-compliance-motor-dealers#guide-section-4",
+    "/website-compliance-motor-dealers#guide-faq",
+    "/fca-compliance-motor-dealers-guide#main-content",
+    "/fca-compliance-motor-dealers-guide#guide-sources",
+    "/fca-compliance-motor-dealers-guide#guide-navigation",
+    "/fca-compliance-motor-dealers-guide#guide-section-1",
+    "/fca-compliance-motor-dealers-guide#guide-section-2",
+    "/fca-compliance-motor-dealers-guide#guide-section-3",
+    "/fca-compliance-motor-dealers-guide#guide-section-4",
+    "/fca-compliance-motor-dealers-guide#guide-section-5",
+    "/fca-compliance-motor-dealers-guide#guide-faq"
+  ],
+  "nonGuide": [
+    {
+      "route": "/",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/referral",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/terms",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/about",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/testimonials",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/contact",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/privacy-policy",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/complaints-policy",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/cookie-policy",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/services",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/ccr009-return-assistance-motor-dealers",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/fca-authorisation-motor-dealers",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/motor-finance-for-dealerships",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/motor-dealer-compliance",
+      "unchangedApartFromCsrfAndWhitespace": true
+    },
+    {
+      "route": "/pricing",
+      "unchangedApartFromCsrfAndWhitespace": true
+    }
+  ],
+  "sourceScope": [
+    {
+      "file": "views/404.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/about.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/account_action.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/after_fca_approval_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/ccr009_guide_page.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/ccr009_reporting_checklist_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/ccr009_return_assistance_motor_dealers.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/ccr009_vs_ccr007_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/common_ccr009_reporting_mistakes_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/complaints_policy.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/consumer_duty_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/contact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/cookie_policy.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/credit_broking_permission_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/dashboard.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/do_motor_dealers_need_fca_authorisation_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/fca_application_documents_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/fca_authorisation_motor_dealers.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/fca_licence_car_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/forgot_password.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/how_to_prepare_for_ccr009_return_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/index.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/layout.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/limited_permission_fca_authorisation_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/login.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/motor_dealer_compliance.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/motor_finance.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/ccr_testimonials.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/closer.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/comparison.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/email_invite.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/faq_list.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/finance_service_art.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/guide_booking.ejs",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "views/partials/guide_offer.ejs",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "views/partials/guide_reporting_offer.ejs",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "views/partials/hub_cta.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/meeting_form.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/meeting_invite.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/meeting_section.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/motor_finance_art.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/offer_card.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/payment_timeline.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/reasons_card.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/referral_animation.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/referral_calculator.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/referral_calculator_page.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/referral_exclusions.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/referral_ladder.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/santa.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/partials/terms_business.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/pricing.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/privacy_policy.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/referral.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/register.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/reports_list.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/report_form.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/reset_password.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/seo_guide.ejs",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "views/services.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/terms.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/testimonials.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/verify_email_notice.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/website_compliance_motor_dealers_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/what_information_is_needed_for_ccr009.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/what_is_ccr009.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/who_needs_to_submit_ccr009.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "views/why_fca_applications_get_delayed_exact.ejs",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/accounts.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/client-login.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/customer-database.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/email.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/guide-links.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/report-validation.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/security.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "utils/seo.js",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "utils/sheets-sync.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "config/asset-manifest.json",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "config/booking.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "config/campaign.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "config/guide-content.json",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "config/guide-links.json",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "config/offer.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "config/referral.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "config/seo-pages.json",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "public/css/about-refresh.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/auth-christmas-card.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/auth-easy-process.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/auth-final-cta.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/auth-referral-animation.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/auth-referral-clean.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/auth-support-refresh.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/booking-studio.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/campaign.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/ccr009-sales.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/email-invite.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/guide-content.css",
+      "unchanged": false,
+      "scopedSharedChange": true
+    },
+    {
+      "file": "public/css/home-christmas-van.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/home-offer.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/home-service-cards.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/legal-layout.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/meeting-invite-refresh.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/message-studio.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/motor-finance.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/ongoing-refresh.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/pricing-services.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/reasons-card.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/redesign.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/referral-refresh.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/service-range.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/simple-process.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/site.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/styles.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/terms-business.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/css/testimonials-page.css",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/about-refresh.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/auth-easy-process.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/auth-final-cta.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/auth-referral-animation.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/auth-referral-clean.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/auth-support-motion.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/booking-availability.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/booking-studio-uk-v41.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/booking-studio.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/campaign.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/ccr009-motion.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/christmas-arrival.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/home-experience.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/home-offer.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/home-service-cards.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/main.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/meeting-invite-refresh.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/motor-finance.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/ongoing-refresh.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/pricing-services.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/reasons-card.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/referral-refresh.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/service-range.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/simple-process.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/site.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/testimonials-page.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "public/js/testimonials.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "booking/blocks.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "booking/routes.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "booking/service.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "server.js",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "package.json",
+      "unchanged": true,
+      "scopedSharedChange": false
+    },
+    {
+      "file": "package-lock.json",
+      "unchanged": true,
+      "scopedSharedChange": false
+    }
+  ],
+  "reduced": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "noJs": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "booking": [
+    {
+      "from": "/do-motor-dealers-need-fca-authorisation",
+      "destination": "http://127.0.0.1:3099/contact?topic=authorisation#book-meeting",
+      "topic": "authorisation",
+      "submitted": false
+    },
+    {
+      "from": "/fca-licence-car-dealers",
+      "destination": "http://127.0.0.1:3099/contact?topic=authorisation#book-meeting",
+      "topic": "authorisation",
+      "submitted": false
+    },
+    {
+      "from": "/limited-permission-fca-authorisation-motor-dealers",
+      "destination": "http://127.0.0.1:3099/contact?topic=authorisation#book-meeting",
+      "topic": "authorisation",
+      "submitted": false
+    },
+    {
+      "from": "/what-is-ccr009",
+      "destination": "http://127.0.0.1:3099/contact?topic=ccr009#book-meeting",
+      "topic": "ccr009",
+      "submitted": false
+    }
+  ],
+  "analytics": [
+    "No consent: no event",
+    "Explicit grant: distinct offer/closing clicks, guide and placement, no query or form data",
+    "Revocation: no event; later default does not override denial",
+    "Unresolved regional consent: no event"
+  ],
+  "errors": []
+}

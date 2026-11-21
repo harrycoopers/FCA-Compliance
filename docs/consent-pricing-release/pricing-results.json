@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "mode": "continue",
+      "variant": "normal",
+      "price": true,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "continue",
+      "variant": "no-js",
+      "price": true,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "continue",
+      "variant": "reduced",
+      "price": true,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "continue",
+      "variant": "live-expiry",
+      "price": true,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "unconfirmed",
+      "variant": "normal",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "unconfirmed",
+      "variant": "no-js",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "unconfirmed",
+      "variant": "reduced",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "unconfirmed",
+      "variant": "live-expiry",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "custom",
+      "variant": "normal",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "custom",
+      "variant": "no-js",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "custom",
+      "variant": "reduced",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    },
+    {
+      "mode": "custom",
+      "variant": "live-expiry",
+      "price": false,
+      "schemaMatches": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

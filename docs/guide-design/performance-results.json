@@ -1,0 +1,3048 @@
+{
+  "observedAt": "2026-11-12T16:50:11.599Z",
+  "baseline": "Start-of-guide-design-task rendered-before.json.gz and matching fingerprinted assets",
+  "conditions": {
+    "browser": "145.0.7632.6",
+    "os": "win32 10.0.26300",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor           ",
+    "viewport": "390 x 844; device scale factor 1",
+    "cpuSlowdown": 4,
+    "latencyMs": 150,
+    "downloadBitsPerSecond": 1600000,
+    "uploadBitsPerSecond": 750000,
+    "cache": "disabled; new browser context each run",
+    "runsPerVariant": 5,
+    "order": "alternating before/after each repeat",
+    "delivery": "same local HTTP replay server, gzip HTML/CSS/JS, original/final HTML and matching fingerprinted assets; external traffic blocked",
+    "timing": "3 seconds after load at top; 1.5 seconds after scrolling calendar into view",
+    "limitations": "Lab simulation, not field Core Web Vitals, not Lighthouse score. No production TTFB/CDN or third-party latency. Long-task blocking is an observation-window sum, not Lighthouse TBT; no INP claim."
+  },
+  "runs": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "before",
+      "repeat": 1,
+      "fcpMs": 988,
+      "lcpMs": 1320,
+      "cls": 0,
+      "blockingMs": 271,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 180968,
+      "htmlBytes": 14743,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.625e9e394336076d.css",
+          "encodedBodySize": 11240,
+          "transferSize": 11540
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "after",
+      "repeat": 1,
+      "fcpMs": 972,
+      "lcpMs": 1408,
+      "cls": 0,
+      "blockingMs": 287,
+      "calendarBlockingMs": 1,
+      "requests": 16,
+      "encodedBytes": 186376,
+      "htmlBytes": 15037,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.5defed6c49306e13.css",
+          "encodedBodySize": 15032,
+          "transferSize": 15332
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "after",
+      "repeat": 2,
+      "fcpMs": 972,
+      "lcpMs": 1424,
+      "cls": 0,
+      "blockingMs": 288,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 186376,
+      "htmlBytes": 15037,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.5defed6c49306e13.css",
+          "encodedBodySize": 15032,
+          "transferSize": 15332
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "before",
+      "repeat": 2,
+      "fcpMs": 1308,
+      "lcpMs": 1308,
+      "cls": 0,
+      "blockingMs": 291,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 180968,
+      "htmlBytes": 14743,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.625e9e394336076d.css",
+          "encodedBodySize": 11240,
+          "transferSize": 11540
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "before",
+      "repeat": 3,
+      "fcpMs": 988,
+      "lcpMs": 1320,
+      "cls": 0,
+      "blockingMs": 268,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 180968,
+      "htmlBytes": 14743,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-original-offers.625e9e394336076d.css",
+          "encodedBodySize": 11240,
+          "transferSize": 11540
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "after",
+      "repeat": 3,
+      "fcpMs": 1000,
+      "lcpMs": 1408,
+      "cls": 0,
+      "blockingMs": 280,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 186376,
+      "htmlBytes": 15037,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.5defed6c49306e13.css",
+          "encodedBodySize": 15032,
+          "transferSize": 15332
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "after",
+      "repeat": 4,
+      "fcpMs": 880,
+      "lcpMs": 1456,
+      "cls": 0,
+      "blockingMs": 478,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 186376,
+      "htmlBytes": 15037,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.5defed6c49306e13.css",
+          "encodedBodySize": 15032,
+          "transferSize": 15332
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "before",
+      "repeat": 4,
+      "fcpMs": 988,
+      "lcpMs": 1320,
+      "cls": 0,
+      "blockingMs": 268,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 180968,
+      "htmlBytes": 14743,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.625e9e394336076d.css",
+          "encodedBodySize": 11240,
+          "transferSize": 11540
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "before",
+      "repeat": 5,
+      "fcpMs": 988,
+      "lcpMs": 1316,
+      "cls": 0,
+      "blockingMs": 263,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 180968,
+      "htmlBytes": 14743,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.625e9e394336076d.css",
+          "encodedBodySize": 11240,
+          "transferSize": 11540
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "after",
+      "repeat": 5,
+      "fcpMs": 972,
+      "lcpMs": 1412,
+      "cls": 0,
+      "blockingMs": 288,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 186376,
+      "htmlBytes": 15037,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-original-offers.5defed6c49306e13.css",
+          "encodedBodySize": 15032,
+          "transferSize": 15332
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        },
+        {
+          "name": "/build/campaign.c902a6fab7578b5e.js",
+          "encodedBodySize": 2498,
+          "transferSize": 2798
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "before",
+      "repeat": 1,
+      "fcpMs": 1008,
+      "lcpMs": 1200,
+      "cls": 0,
+      "blockingMs": 131,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163712,
+      "htmlBytes": 7982,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "after",
+      "repeat": 1,
+      "fcpMs": 1008,
+      "lcpMs": 1216,
+      "cls": 0,
+      "blockingMs": 147,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169257,
+      "htmlBytes": 8301,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "after",
+      "repeat": 2,
+      "fcpMs": 992,
+      "lcpMs": 1200,
+      "cls": 0,
+      "blockingMs": 139,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169257,
+      "htmlBytes": 8301,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "before",
+      "repeat": 2,
+      "fcpMs": 988,
+      "lcpMs": 1180,
+      "cls": 0,
+      "blockingMs": 131,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163712,
+      "htmlBytes": 7982,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "before",
+      "repeat": 3,
+      "fcpMs": 996,
+      "lcpMs": 1176,
+      "cls": 0,
+      "blockingMs": 130,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163712,
+      "htmlBytes": 7982,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "after",
+      "repeat": 3,
+      "fcpMs": 984,
+      "lcpMs": 1192,
+      "cls": 0,
+      "blockingMs": 142,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169257,
+      "htmlBytes": 8301,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "after",
+      "repeat": 4,
+      "fcpMs": 988,
+      "lcpMs": 1192,
+      "cls": 0,
+      "blockingMs": 141,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169257,
+      "htmlBytes": 8301,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "before",
+      "repeat": 4,
+      "fcpMs": 992,
+      "lcpMs": 1168,
+      "cls": 0,
+      "blockingMs": 125,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163712,
+      "htmlBytes": 7982,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "before",
+      "repeat": 5,
+      "fcpMs": 988,
+      "lcpMs": 1184,
+      "cls": 0,
+      "blockingMs": 129,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163712,
+      "htmlBytes": 7982,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "after",
+      "repeat": 5,
+      "fcpMs": 992,
+      "lcpMs": 1188,
+      "cls": 0,
+      "blockingMs": 137,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169257,
+      "htmlBytes": 8301,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "before",
+      "repeat": 1,
+      "fcpMs": 992,
+      "lcpMs": 1164,
+      "cls": 0,
+      "blockingMs": 119,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163991,
+      "htmlBytes": 8261,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "after",
+      "repeat": 1,
+      "fcpMs": 992,
+      "lcpMs": 1192,
+      "cls": 0,
+      "blockingMs": 137,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169534,
+      "htmlBytes": 8578,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "after",
+      "repeat": 2,
+      "fcpMs": 1004,
+      "lcpMs": 1196,
+      "cls": 0,
+      "blockingMs": 134,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169534,
+      "htmlBytes": 8578,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "before",
+      "repeat": 2,
+      "fcpMs": 988,
+      "lcpMs": 1172,
+      "cls": 0,
+      "blockingMs": 129,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163991,
+      "htmlBytes": 8261,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "before",
+      "repeat": 3,
+      "fcpMs": 1004,
+      "lcpMs": 1196,
+      "cls": 0,
+      "blockingMs": 127,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163991,
+      "htmlBytes": 8261,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "after",
+      "repeat": 3,
+      "fcpMs": 1008,
+      "lcpMs": 1196,
+      "cls": 0,
+      "blockingMs": 141,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169534,
+      "htmlBytes": 8578,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "after",
+      "repeat": 4,
+      "fcpMs": 1004,
+      "lcpMs": 1196,
+      "cls": 0,
+      "blockingMs": 127,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169534,
+      "htmlBytes": 8578,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "before",
+      "repeat": 4,
+      "fcpMs": 992,
+      "lcpMs": 1172,
+      "cls": 0,
+      "blockingMs": 126,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163991,
+      "htmlBytes": 8261,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "before",
+      "repeat": 5,
+      "fcpMs": 992,
+      "lcpMs": 1172,
+      "cls": 0,
+      "blockingMs": 117,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 163991,
+      "htmlBytes": 8261,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.8e579da337694383.css",
+          "encodedBodySize": 1782,
+          "transferSize": 2082
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.2fa9775caa2ee823.js",
+          "encodedBodySize": 1113,
+          "transferSize": 1413
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "after",
+      "repeat": 5,
+      "fcpMs": 992,
+      "lcpMs": 1184,
+      "cls": 0,
+      "blockingMs": 131,
+      "calendarBlockingMs": 0,
+      "requests": 16,
+      "encodedBytes": 169534,
+      "htmlBytes": 8578,
+      "resources": [
+        {
+          "name": "/gtag/js",
+          "encodedBodySize": 0,
+          "transferSize": 0
+        },
+        {
+          "name": "/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+          "encodedBodySize": 41344,
+          "transferSize": 41644
+        },
+        {
+          "name": "/fonts/figtree-latin-wght-normal.woff2",
+          "encodedBodySize": 20156,
+          "transferSize": 20456
+        },
+        {
+          "name": "/build/styles.7fd3bdac33087f79.css",
+          "encodedBodySize": 8195,
+          "transferSize": 8495
+        },
+        {
+          "name": "/build/redesign.5a14386ac5502513.css",
+          "encodedBodySize": 9339,
+          "transferSize": 9639
+        },
+        {
+          "name": "/build/site.7de11d88c695b1a3.css",
+          "encodedBodySize": 14910,
+          "transferSize": 15210
+        },
+        {
+          "name": "/build/campaign.74795516ef4613e7.css",
+          "encodedBodySize": 14356,
+          "transferSize": 14656
+        },
+        {
+          "name": "/build/tailwind.00442cbb60e47add.css",
+          "encodedBodySize": 3688,
+          "transferSize": 3988
+        },
+        {
+          "name": "/build/guide-content.4cfd69d8ab1cd3ed.css",
+          "encodedBodySize": 5686,
+          "transferSize": 5986
+        },
+        {
+          "name": "/images/logo1resized.png",
+          "encodedBodySize": 32661,
+          "transferSize": 32961
+        },
+        {
+          "name": "/build/auth-final-cta.5ab6c9bbe26716f0.css",
+          "encodedBodySize": 1461,
+          "transferSize": 1761
+        },
+        {
+          "name": "/build/auth-final-cta.2ee0b4c29b025183.js",
+          "encodedBodySize": 335,
+          "transferSize": 635
+        },
+        {
+          "name": "/build/guide-enhancements.857dc9b62116e0d9.js",
+          "encodedBodySize": 2435,
+          "transferSize": 2735
+        },
+        {
+          "name": "/build/main.bad6510c642443ef.js",
+          "encodedBodySize": 1582,
+          "transferSize": 1882
+        },
+        {
+          "name": "/build/site.99cf73920368493d.js",
+          "encodedBodySize": 4808,
+          "transferSize": 5108
+        }
+      ],
+      "overflow": false,
+      "calendarRunning": true,
+      "errors": []
+    }
+  ],
+  "summary": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "before",
+      "fcpMs": {
+        "median": 988,
+        "min": 988,
+        "max": 1308
+      },
+      "lcpMs": {
+        "median": 1320,
+        "min": 1308,
+        "max": 1320
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "blockingMs": {
+        "median": 268,
+        "min": 263,
+        "max": 291
+      },
+      "calendarBlockingMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requests": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "encodedBytes": {
+        "median": 180968,
+        "min": 180968,
+        "max": 180968
+      }
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "variant": "after",
+      "fcpMs": {
+        "median": 972,
+        "min": 880,
+        "max": 1000
+      },
+      "lcpMs": {
+        "median": 1412,
+        "min": 1408,
+        "max": 1456
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "blockingMs": {
+        "median": 288,
+        "min": 280,
+        "max": 478
+      },
+      "calendarBlockingMs": {
+        "median": 0,
+        "min": 0,
+        "max": 1
+      },
+      "requests": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "encodedBytes": {
+        "median": 186376,
+        "min": 186376,
+        "max": 186376
+      }
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "before",
+      "fcpMs": {
+        "median": 992,
+        "min": 988,
+        "max": 1008
+      },
+      "lcpMs": {
+        "median": 1180,
+        "min": 1168,
+        "max": 1200
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "blockingMs": {
+        "median": 130,
+        "min": 125,
+        "max": 131
+      },
+      "calendarBlockingMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requests": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "encodedBytes": {
+        "median": 163712,
+        "min": 163712,
+        "max": 163712
+      }
+    },
+    {
+      "route": "/what-is-ccr009",
+      "variant": "after",
+      "fcpMs": {
+        "median": 992,
+        "min": 984,
+        "max": 1008
+      },
+      "lcpMs": {
+        "median": 1192,
+        "min": 1188,
+        "max": 1216
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "blockingMs": {
+        "median": 141,
+        "min": 137,
+        "max": 147
+      },
+      "calendarBlockingMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requests": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "encodedBytes": {
+        "median": 169257,
+        "min": 169257,
+        "max": 169257
+      }
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "before",
+      "fcpMs": {
+        "median": 992,
+        "min": 988,
+        "max": 1004
+      },
+      "lcpMs": {
+        "median": 1172,
+        "min": 1164,
+        "max": 1196
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "blockingMs": {
+        "median": 126,
+        "min": 117,
+        "max": 129
+      },
+      "calendarBlockingMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requests": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "encodedBytes": {
+        "median": 163991,
+        "min": 163991,
+        "max": 163991
+      }
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "variant": "after",
+      "fcpMs": {
+        "median": 1004,
+        "min": 992,
+        "max": 1008
+      },
+      "lcpMs": {
+        "median": 1196,
+        "min": 1184,
+        "max": 1196
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "blockingMs": {
+        "median": 134,
+        "min": 127,
+        "max": 141
+      },
+      "calendarBlockingMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requests": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "encodedBytes": {
+        "median": 169534,
+        "min": 169534,
+        "max": 169534
+      }
+    }
+  ]
+}

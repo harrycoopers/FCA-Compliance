@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-12T16:53:33.989Z",
+  "touch": [
+    {
+      "width": 390,
+      "mainGuidesMenu": true,
+      "sectionMenu": true
+    },
+    {
+      "width": 768,
+      "mainGuidesMenu": true,
+      "sectionMenu": true
+    },
+    {
+      "width": 1440,
+      "mainGuidesMenu": true,
+      "sectionMenu": false
+    }
+  ],
+  "bookings": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "destination": "http://127.0.0.1:3100/contact?topic=authorisation#book-meeting",
+      "topic": "authorisation",
+      "submitted": false
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "destination": "http://127.0.0.1:3100/contact?topic=ccr009#book-meeting",
+      "topic": "ccr009",
+      "submitted": false
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "destination": "http://127.0.0.1:3100/contact?topic=ongoing#book-meeting",
+      "topic": "ongoing",
+      "submitted": false
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 768,
+      "destination": "http://127.0.0.1:3100/contact?topic=authorisation#book-meeting",
+      "topic": "authorisation",
+      "submitted": false
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 768,
+      "destination": "http://127.0.0.1:3100/contact?topic=ccr009#book-meeting",
+      "topic": "ccr009",
+      "submitted": false
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 768,
+      "destination": "http://127.0.0.1:3100/contact?topic=ongoing#book-meeting",
+      "topic": "ongoing",
+      "submitted": false
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1440,
+      "destination": "http://127.0.0.1:3100/contact?topic=authorisation#book-meeting",
+      "topic": "authorisation",
+      "submitted": false
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1440,
+      "destination": "http://127.0.0.1:3100/contact?topic=ccr009#book-meeting",
+      "topic": "ccr009",
+      "submitted": false
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1440,
+      "destination": "http://127.0.0.1:3100/contact?topic=ongoing#book-meeting",
+      "topic": "ongoing",
+      "submitted": false
+    }
+  ],
+  "errors": [],
+  "submissions": 0
+}

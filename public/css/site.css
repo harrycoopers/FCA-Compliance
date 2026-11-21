@@ -131,7 +131,7 @@ body.site-v8{background:var(--paper)!important;color:var(--ink)!important;font-f
 @media(min-width:1180px) and (hover:hover) and (pointer:fine){.guide-nav--desktop>summary{position:relative}.guide-nav--desktop[open]>summary::after{content:"";position:absolute;inset:100% 0 auto;height:20px}}
 .guide-nav__all{display:block;font-size:16px;font-weight:700;color:var(--blue-ink);padding:6px 10px 16px;border-bottom:1px solid var(--rule);text-decoration:underline;text-underline-offset:4px}
 .guide-nav__groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-top:20px}
-.guide-nav__groups h2{font-size:15px;line-height:1.4;font-weight:700;margin:0 0 10px;color:var(--ink)}
+.guide-nav__groups .guide-nav__label{font-size:15px;line-height:1.4;font-weight:700;margin:0 0 10px;color:var(--ink)}
 .guide-nav__groups ul{list-style:none;padding:0;margin:0;display:grid;gap:3px}
 .guide-nav__groups a{display:block;font-size:14px;line-height:1.45;padding:10px 8px;border-radius:8px;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
 .guide-nav__groups a:hover,.guide-nav__groups a[aria-current]{background:var(--blue-soft);color:var(--blue-ink);text-decoration:underline}
@@ -183,7 +183,7 @@ body.site-v8{background:var(--paper)!important;color:var(--ink)!important;font-f
 .gf .brand__tag{color:#9FB0CC}
 .gf__brand p{margin:20px 0 22px;max-width:34ch;font-size:15px;color:#AFBBD2}
 .gf__col{display:flex;flex-direction:column;gap:6px;font-size:15px}
-.gf__col h2{font-family:var(--font-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8EA0C0;margin:0 0 10px;font-weight:700}
+.gf__col .gf__label{font-family:var(--font-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8EA0C0;margin:0 0 10px;font-weight:700}
 .gf__col a{color:#E3E9F4;text-decoration:none;padding:4px 0}
 .gf__col a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .gf__col p{margin:4px 0;color:#AFBBD2;font-size:14px}
@@ -768,3 +768,8 @@ body.mobile-menu-open{overflow:hidden}
  .nine-site .portal-page form{padding:22px 16px}
  .nine-site .portal-page h1{font-size:30px}
 }
+
+.guide-directory{display:grid;gap:1.25rem;margin-top:1.5rem}.guide-directory p{margin-top:.25rem;max-width:70ch}
+.guide-menu-label--desktop{display:inline-flex;align-items:center}.guide-menu-label__link{color:inherit;font-weight:600}.guide-menu-label--mobile{position:relative}.guide-menu-label--mobile>.guide-menu-label__link{position:absolute;left:0;top:0;z-index:1;line-height:48px}.guide-menu-label--mobile .guide-nav>summary{justify-content:flex-end}.gf__label>a{font:inherit;color:inherit}
+.page-siblings{margin:12px 0 0;font-size:.95rem;color:var(--muted)}
+.page-siblings a{color:var(--blue-ink);text-decoration:underline;text-underline-offset:2px}

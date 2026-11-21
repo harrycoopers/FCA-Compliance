@@ -12,6 +12,7 @@ process.env.SESSION_SECRET = 'isolated-seo-regression-test-only';
 process.env.TRUST_PROXY = 'loopback'; // This test explicitly simulates the known local reverse proxy.
 process.env.CANONICAL_BASE_URL = 'https://009compliance.com';
 process.env.CAMPAIGN_NOW = '2026-11-01T12:00:00Z';
+process.env.RELEASE_DATE_PREVIEW = '2026-12-01'; // config/release.js keeps its placeholder until deploy day
 for (const key of Object.keys(process.env)) if (/^(GOOGLE_|SMTP_|BOOKING_)/.test(key)) delete process.env[key];
 const delivered = [];
 const load = Module._load;
@@ -26,6 +27,7 @@ const pages = require('../config/seo-pages.json');
 const { guideText } = require('../utils/guide-editorial');
 const manifest = require('../config/asset-manifest.json');
 let server, base;
+const schemasFrom = html => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
 const get = (url, options = {}) => fetch(base + url, { redirect: 'manual', ...options });
 const post = (url, body, cookie = '') => get(url, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', cookie }, body: new URLSearchParams(body) });
 const cookieFrom = response => response.headers.get('set-cookie')?.split(';')[0] || '';
@@ -52,6 +54,7 @@ test('Pricing paragraph and FAQ/schema prices follow confirmed campaign states',
       const html = await (await get('/pricing')).text();
       assert.equal(html.includes('Following FCA authorisation, the existing £100 monthly subscription continues'), scenario.show);
       assert.equal(/£\s*\d/.test(html), scenario.show, scenario.mode + ' no price leakage in HTML/schema');
+      assert(!JSON.stringify(schemasFrom(html).find(node => node['@type'] === 'FAQPage')).includes('£1,000'));
       assert(html.includes('The FCA application fee, which is paid separately.'));
       assert(html.includes('Current pricing confirmed before you start.'));
       assert(html.includes('href="#book-meeting"'));
@@ -76,6 +79,7 @@ test('all public pages have unique metadata, canonical URLs, valid schema, conte
     assert.equal((html.match(/rel="canonical"/g) || []).length, 1, url);
     assert.equal((html.match(/<h1\b/g) || []).length, 1, url);
     assert(!html.includes('cdn.tailwindcss.com'), url);
+    assert(!html.includes('Monthly Submission Complete') && !/\{\{[^}]+\}\}/.test(html), url);
     assert(!html.includes('<meta name="robots" content="noindex'), url);
     for (const schema of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) JSON.parse(schema[1]);
     for (const match of html.matchAll(/(?:href|src)="(\/(?:build|fonts|images)\/[^"?]+)[^"]*"/g)) {
@@ -118,7 +122,7 @@ test('robots, sitemap, private pages, 404 and removed diagnostics', async () => 
   const robots = await (await get('/robots.txt')).text(); assert(robots.includes('\nSitemap:')); assert(!robots.includes('\\r\\n'));
   const sitemap = await (await get('/sitemap.xml')).text();
   assert.equal((sitemap.match(/<loc>/g) || []).length, Object.keys(pages).length);
-  assert(!sitemap.includes('<lastmod>')); assert(!sitemap.includes('/login'));
+  assert.equal((sitemap.match(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g) || []).length, Object.keys(pages).length); assert(!sitemap.includes('/login'));
   for (const url of Object.keys(pages)) assert(sitemap.includes('<loc>https://009compliance.com' + url + '</loc>'));
   for (const url of ['/login', '/register', '/forgot-password']) {
     const r = await get(url), html = await r.text(); assert.equal(r.status, 200); assert.match(r.headers.get('x-robots-tag'), /noindex/); assert(html.includes('content="noindex,follow"')); assert(!html.includes('rel="canonical"'));
@@ -155,22 +159,25 @@ test('contact and account POST routes require CSRF even through SEO middleware',
   assert.equal(delivered.length,0);
 });
 
-test('all 18 guides preserve visible FAQs and render appropriate schema and relevant animated CTAs', async () => {
+test('all 24 guides preserve visible FAQs and render appropriate schema and relevant animated CTAs', async () => {
   const guides = require('../config/guide-content.json');
   const escape = require('ejs').escapeXML;
-  assert.equal(Object.keys(guides).length, 18);
+  const release = require('../config/release');
+  assert.equal(Object.keys(guides).length, 24);
   for (const [url, guide] of Object.entries(guides)) {
     const response = await get(url); assert.equal(response.status, 200, url);
     const html = await response.text();
     const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
     const faq = schemas.filter(s => s['@type'] === 'FAQPage');
-    assert.equal(faq.length, 0, 'retired FAQ rich-result markup omitted: ' + url);
+    assert.equal(faq.length, 1, url);
+    assert.deepEqual(faq[0].mainEntity.map(q => [q.name, q.acceptedAnswer.text]), guide.faqs.map(q => [guideText(q.question), guideText(q.answer)]));
     const article = schemas.find(s => s['@type'] === 'Article');
     assert.equal(article.headline, guide.title);
-    assert.equal(article.dateModified, guide.modified, 'only actual guide revisions have modification dates');
-    assert.equal(article.datePublished, undefined);
+    assert.equal(article.dateModified, release.resolve(guide.modified), 'only actual guide revisions have modification dates');
+    assert.equal(article.datePublished, release.resolve(guide.published) || undefined);
+    assert(article.author && article.image && html.includes('Guide updated <time datetime="' + release.resolve(guide.modified) + '">'));
     const breadcrumb = schemas.find(s => s['@type'] === 'BreadcrumbList');
-    assert.equal(breadcrumb.itemListElement.length, url === '/fca-compliance-motor-dealers-guide' ? 2 : 3);
+    assert.equal(breadcrumb.itemListElement.length, 3);
     assert.equal(breadcrumb.itemListElement.at(-1).name, guide.title);
     assert(html.includes('aria-current="page"'));
     assert(html.includes('property="og:type" content="article"'));
@@ -210,40 +217,68 @@ test('all 18 guides preserve visible FAQs and render appropriate schema and rele
   }
 });
 
-test('guide revisions match the source evidence and preserve all unlisted educational fields', () => {
-  const before = require('../docs/guide-improvements-2026-11/content-before.json');
-  const after = require('../config/guide-content.json');
-  const changes = require('../docs/guide-improvements-2026-11/content-evidence.json').changes;
-  assert.deepEqual(Object.keys(after), Object.keys(before), 'established guide routes preserved');
+// Two evidence stages: the 12 November 2026 revision (docs/guide-improvements-2026-11), then this
+// release (docs/release-final-2026-11). Every changed field needs an exact before/after record.
+function compareStage(before, after, changes, opts) {
   for (const url of Object.keys(before)) {
     const records = changes.filter(c => c.guide === url);
     function compare(oldValue, current, path = '') {
+      if (path === 'description' && opts.skipDescription) return;
       const change = records.find(c => c.section === path);
       if (change) {
-        assert.deepEqual(oldValue, change.before, url + ' evidence before ' + path);
+        assert.deepEqual(oldValue ?? null, change.before, url + ' evidence before ' + path);
         assert.deepEqual(current, change.after, url + ' evidence after ' + path);
-        assert.equal(change.checked, '2026-11-12');
-        for(const source of change.sources) assert(new URL(source.url).hostname.endsWith('fca.org.uk'));
+        assert.equal(change.checked, opts.checked);
+        for (const source of change.sources) assert(opts.hosts.some(h => new URL(source.url).hostname.endsWith(h)), 'primary source only: ' + source.url);
         return;
       }
       if (path === 'sources' || path.endsWith('.sources')) {
-        for(const source of oldValue) assert(current.some(s => JSON.stringify(s) === JSON.stringify(source)), 'original source removed');
-        for(const source of current) assert(oldValue.some(s => s.href === source.href) || records.some(c => c.sources.some(s => s.url === source.href)), 'new source absent from evidence');
+        for (const source of oldValue) assert(current.some(s => JSON.stringify(s) === JSON.stringify(source)), 'original source removed');
+        for (const source of current) assert(oldValue.some(s => s.href === source.href) || records.some(c => c.sources.some(s => s.url === source.href)), 'new source absent from evidence');
         return;
       }
       if (oldValue && typeof oldValue === 'object') {
         assert.equal(Array.isArray(oldValue), Array.isArray(current));
-        if(Array.isArray(oldValue)) assert.equal(current.length, oldValue.length, url + path);
-        else assert.deepEqual(Object.keys(current).filter(k => path || !['modified','updateSummary'].includes(k)), Object.keys(oldValue), url + path);
-        for(const key of Object.keys(oldValue)) compare(oldValue[key],current[key],path ? path+'.'+key : key);
-      } else assert.deepEqual(current, oldValue, url+' unlisted change '+path);
+        if (Array.isArray(oldValue)) assert.equal(current.length, oldValue.length, url + path);
+        else {
+          const extra = Object.keys(current).filter(k => !(k in oldValue) && !(path === '' && opts.ignoredTop.includes(k)));
+          for (const key of extra) assert(records.some(c => c.section === (path ? path + '.' + key : key)), url + ' unrecorded new field ' + key);
+          for (const key of extra) compare(undefined, current[key], path ? path + '.' + key : key);
+          assert.deepEqual(Object.keys(oldValue).filter(k => k in current), Object.keys(oldValue), url + path);
+        }
+        for (const key of Object.keys(oldValue)) if (!(path === '' && opts.ignoredTop.includes(key))) compare(oldValue[key], current[key], path ? path + '.' + key : key);
+      } else assert.deepEqual(current, oldValue, url + ' unlisted change ' + path);
     }
     compare(before[url], after[url]);
     assert.equal(after[url].reviewed, before[url].reviewed, 'original source-check date retained');
-    const revised = records.some(c => !['seoTitle','description'].includes(c.section));
-    assert.equal(after[url].modified, revised ? '2026-11-12' : undefined);
-    assert.equal(pages[url].title, after[url].seoTitle, 'registry title drift: ' + url);
-    assert.equal(pages[url].description, after[url].description, 'registry description drift: ' + url);
+    opts.modified(url, records, after[url]);
+  }
+}
+
+test('guide revisions match the source evidence and preserve all unlisted educational fields', () => {
+  const original = require('../docs/guide-improvements-2026-11/content-before.json');
+  const baseline = require('../docs/release-final-2026-11/content-before.json');
+  const current = require('../config/guide-content.json');
+  const first = require('../docs/guide-improvements-2026-11/content-evidence.json').changes;
+  const second = require('../docs/release-final-2026-11/content-evidence.json').changes;
+  assert.deepEqual(Object.keys(baseline), Object.keys(original), 'established guide routes preserved');
+  compareStage(original, baseline, first, { checked: '2026-11-12', hosts: ['fca.org.uk'], skipDescription: true, ignoredTop: ['modified', 'updateSummary', 'published'],
+    modified: (url, records, guide) => assert.equal(guide.modified, records.some(c => !['seoTitle', 'description'].includes(c.section)) ? '2026-11-12' : '2026-11-02') });
+  compareStage(baseline, current, second, { checked: '2026-11-21', hosts: ['fca.org.uk', 'legislation.gov.uk', 'gov.uk'], skipDescription: false, ignoredTop: ['modified'],
+    modified: (url, records, guide) => assert.equal(guide.modified, records.some(c => !['seoTitle', 'description'].includes(c.section)) ? 'RELEASE_DATE' : baseline[url].modified, 'modified only for revised guides: ' + url) });
+  for (const url of Object.keys(current).filter(url => !(url in baseline))) {
+    const record = second.find(c => c.guide === url && c.section === 'new-guide');
+    assert(record, 'new guide has evidence: ' + url);
+    assert.deepEqual(record.after, current[url], 'new guide matches evidence: ' + url);
+    assert.equal(current[url].published, 'RELEASE_DATE'); assert.equal(current[url].modified, 'RELEASE_DATE');
+    for (const source of current[url].sources) assert(['fca.org.uk', 'legislation.gov.uk', 'gov.uk'].some(h => new URL(source.href).hostname.endsWith(h)), url + ' primary source: ' + source.href);
+    assert(current[url].sections.length >= 4 && current[url].sections.length <= 6, url + ' 4–6 sections');
+    assert(current[url].faqs.length >= 3 && current[url].faqs.length <= 5, url + ' 3–5 FAQs');
+    assert(current[url].sections.some(s => /^Fictional example/.test(s.title)), url + ' labelled fictional example');
+  }
+  for (const url of Object.keys(current)) {
+    assert.equal(pages[url].title, current[url].seoTitle, 'registry title drift: ' + url);
+    assert.equal(pages[url].description, current[url].description, 'registry description drift: ' + url);
   }
 });
 
@@ -291,13 +326,13 @@ test('guides preserve the offer expiry fallback and omit competing finance promo
 test('desktop and mobile Guides navigation contain every existing route exactly once',async()=>{
   const guides=require('../config/guide-content.json'),navigation=require('../utils/guide-navigation');
   assert.equal(navigation.groups.length,4);
-  assert.deepEqual([navigation.hub,...navigation.groups.flatMap(group=>group.links.map(link=>link.href))].sort(),Object.keys(guides).sort());
+  assert.deepEqual([navigation.overview,...navigation.groups.flatMap(group=>group.links.map(link=>link.href))].sort(),Object.keys(guides).sort());
   for(const route of Object.keys(pages)){
     const html=await(await get(route)).text();
     for(const mode of ['desktop','mobile']){
       const menu=html.match(new RegExp('<details class="guide-nav guide-nav--'+mode+'"[\\s\\S]*?</details>'))?.[0];
       assert(menu,route+' '+mode);
-      assert(menu.includes('<summary aria-controls="'+mode+'-guides-panel">'));
+      assert(menu.includes('aria-controls="'+mode+'-guides-panel">'));
       const urls=[...menu.matchAll(/href="([^"]+)"/g)].map(m=>m[1]);
       assert.deepEqual(urls.sort(),Object.keys(guides).sort(),route+' '+mode);
     }
@@ -309,8 +344,8 @@ test('FCA guides reuse original artwork with a same-page offer target and no obs
     const html=await(await get(route)).text();
     assert(!html.includes('guide-offer-cue'),route);
     if(guide.group==='fca'){
-      assert(html.includes('data-guide-gift')&&html.includes('class="gift-lid"')&&html.includes('class="santa-throw-arm"'),route);
-      assert(html.includes('href="#guide-application-offer"')&&html.includes('id="guide-application-offer"'),route);
+      assert(!html.includes('data-guide-gift') && !html.includes('data-guide-full-post'),route);
+      assert(html.indexOf('id="guide-application-offer"') > html.indexOf('id="related-guides"'),route);
       assert(html.includes('data-guide-arrival')&&html.includes('data-offer-countdown')&&html.includes('data-referral-base="100"'),route);
       const block=html.match(/<section class="guide-original-offer[\s\S]*?<\/section>/)[0];
       assert(!block.includes('FCA applications can take 6–12 months.'),route);
@@ -333,10 +368,14 @@ test('every FCA guide gates the complete offer on confirmed pricing in every cam
       for (const url of routes) {
         const html = await (await get(url)).text();
         const block = html.match(/<section class="guide-original-offer[\s\S]*?<\/section>/)[0];
+        assert.equal((block.match(/data-offer-countdown\b/g) || []).length, scenario.now < campaign.DEADLINE_ISO ? 1 : 0);
         const faqBlock = html.match(/<section class="ccr009-section ccr009-faq[\s\S]*?<\/section>/)[0];
+        // No 009 Compliance price in any FCA guide FAQ or FAQPage schema, in any campaign state.
+        // The cost guide may state the FCA's own fees (approved), never 009 Compliance's.
+        const faq = schemasFrom(html).find(s => s['@type'] === 'FAQPage');
+        for (const text of [faqBlock, JSON.stringify(faq)]) assert(!/£\s?(?:100|600|1,000)\b(?!,)|starting payment/.test(text), url + ': no 009 price in FAQs');
         if (url === '/fca-application-documents-motor-dealers') {
-          assert.equal(faqBlock.includes('£100 starting payment'), scenario.show, 'price-specific FAQ follows the same confirmation gate');
-          assert.equal(faqBlock.includes('data-guide-price-only'), scenario.show);
+          assert(faqBlock.includes('Is the FCA application fee included in 009 Compliance’s fees?'));
           assert(faqBlock.includes('Does every motor dealer need the same documents?'), 'non-price educational FAQ remains');
         }
         if (scenario.show) {
@@ -362,4 +401,78 @@ test('every FCA guide gates the complete offer on confirmed pricing in every cam
     campaign.postCampaign.mode = previousMode;
     if (previousNow === undefined) delete process.env.CAMPAIGN_NOW; else process.env.CAMPAIGN_NOW = previousNow;
   }
+});
+
+test('unfilled identity fields stay private and assigned authors resolve to their About profile', async () => {
+  const config = require('../config/site-identity.json');
+  const saved = structuredClone(config);
+  const guide = '/what-is-ccr009';
+  try {
+    config.team = { 'profile-test': { name: '{{AUTHOR_NAME}}', jobTitle: '{{AUTHOR_ROLE}}', linkedIn: '{{LINKEDIN}}' } };
+    config.guideAuthors = { [guide]: 'profile-test' };
+    config.companyLinkedIn = '{{COMPANY_LINKEDIN}}';
+    config.googleBusinessProfile = null;
+    const about = await (await get('/about')).text();
+    const article = await (await get(guide)).text();
+    for (const html of [about, article]) {
+      assert(!html.includes('{{') && !html.includes('class="guide-byline"') && !html.includes('id="team-title"'));
+      assert(!schemasFrom(html).some(node => node['@type'] === 'Person'));
+      assert.deepEqual(schemasFrom(html).find(node => node['@type'] === 'Organization').sameAs,
+        ['https://find-and-update.company-information.service.gov.uk/company/16910484']);
+    }
+    assert.equal(schemasFrom(article).find(node => node['@type'] === 'Article').author['@type'], 'Organization');
+    config.team['profile-test'].name = 'Test fixture';
+    const assigned = await (await get(guide)).text();
+    const profile = await (await get('/about')).text();
+    assert(assigned.includes('class="guide-byline"') && profile.includes('id="profile-test"'));
+    const person = schemasFrom(profile).find(node => node['@type'] === 'Person');
+    const author = schemasFrom(assigned).find(node => node['@type'] === 'Article').author;
+    assert.equal(author['@id'], person['@id']);
+    assert.equal(author.jobTitle, undefined);
+    assert.equal(author.sameAs, undefined);
+    assert(!assigned.includes('{{') && !profile.includes('{{'));
+  } finally {
+    Object.assign(config, saved);
+  }
+});
+
+test('guide directory, llms listings and private file boundaries', async () => {
+  const navigation = require('../utils/guide-navigation');
+  const response = await get('/guides');
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  const listing = schemasFrom(html).find(node => node['@type'] === 'ItemList');
+  const links = navigation.groups.flatMap(group => group.links);
+  assert.equal(links.length, 23);
+  assert.deepEqual(listing.itemListElement.map(item => new URL(item.url).pathname), links.map(link => link.href));
+  const content = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1];
+  const llms = await (await get('/llms.txt')).text();
+  for (const route of [...links.map(link => link.href), navigation.overview]) {
+    assert(content.includes('href="' + route + '"') && llms.includes('https://009compliance.com' + route + ')'));
+  }
+  for (const url of ['/docs/previous-iterations/V8-VERIFICATION.md','/.qa/release-files.txt','/config/site-identity.json','/views/layout.ejs','/server.js','/dashboard/runtime/server.ts']) {
+    assert.equal((await get(url)).status, 404, url);
+  }
+});
+
+test('an open guide hides the expired campaign and requests the server-rendered fallback', () => {
+  const vm = require('node:vm');
+  const deadline = Date.parse('2026-12-26T00:00:00Z');
+  let now = deadline - 1000, callback, reloads = 0;
+  const panel = { dataset: { guideActiveMs: '1000' } };
+  const root = { dataset: {}, querySelector: () => panel };
+  const code = fs.readFileSync(path.join(__dirname, '../public/js/guide-enhancements.js'), 'utf8');
+  const events = {};
+  vm.runInNewContext(code, {
+    document: { querySelector: () => root },
+    Date: { parse: Date.parse, now: () => now },
+    window: { location: { reload() { reloads++; } }, addEventListener(name, listener) { events[name] = listener; } },
+    setTimeout(fn, delay) { assert.equal(delay, 1000); callback = fn; return 1; }, clearTimeout() {}
+  });
+  assert.equal(reloads, 0);
+  now = deadline;
+  callback();
+  events.pageshow();
+  assert.equal(panel.hidden, true);
+  assert.equal(reloads, 1);
 });

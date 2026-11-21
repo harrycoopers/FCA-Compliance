@@ -1,0 +1,24 @@
+{
+  "mobile": [
+    {
+      "width": 320,
+      "giftExecuted": true,
+      "santaFramesChanged": true,
+      "termsOverlap": false,
+      "canvasWithinViewport": true,
+      "dynamicReducedMotion": true
+    },
+    {
+      "width": 390,
+      "giftExecuted": true,
+      "santaFramesChanged": true,
+      "termsOverlap": false,
+      "canvasWithinViewport": true,
+      "dynamicReducedMotion": true
+    }
+  ],
+  "errors": [],
+  "originalServiceSantaExecuted": true,
+  "desktopNoJsDisclosure": true,
+  "animationFailureNavigationUsable": true
+}

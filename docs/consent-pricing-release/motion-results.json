@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-12T17:54:16.195Z",
+  "checks": [
+    {
+      "width": 390,
+      "heroSequence": true,
+      "heroAndAccentsOnce": true,
+      "giftExecuted": true,
+      "santaExecutedAndSettled": true,
+      "bookingExecuted": true,
+      "progressCompletes": true
+    },
+    {
+      "width": 1440,
+      "heroSequence": true,
+      "heroAndAccentsOnce": true,
+      "giftExecuted": true,
+      "santaExecutedAndSettled": true,
+      "bookingExecuted": true,
+      "progressCompletes": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "bookingExecuted": true,
+      "noFcaOffer": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "bookingExecuted": true,
+      "noFcaOffer": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "bookingExecuted": true,
+      "noFcaOffer": true
+    },
+    {
+      "desktopStickyRail": true,
+      "height": 768
+    }
+  ],
+  "errors": [],
+  "cls": [
+    {
+      "width": 390,
+      "value": 0
+    },
+    {
+      "width": 1440,
+      "value": 0
+    }
+  ]
+}

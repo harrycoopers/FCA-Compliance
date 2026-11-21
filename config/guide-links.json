@@ -19,12 +19,6 @@
       "paragraph": 0,
       "text": "customer communications",
       "href": "/website-compliance-motor-dealers"
-    },
-    {
-      "sectionId": "guide-section-4",
-      "paragraph": 1,
-      "text": "Support with documents",
-      "href": "/fca-authorisation-motor-dealers"
     }
   ],
   "/limited-permission-fca-authorisation-motor-dealers": [
@@ -75,12 +69,6 @@
       "paragraph": 0,
       "text": "permission questions",
       "href": "/limited-permission-fca-authorisation-motor-dealers"
-    },
-    {
-      "sectionId": "guide-section-4",
-      "paragraph": 0,
-      "text": "Administrative assistance",
-      "href": "/fca-authorisation-motor-dealers"
     }
   ],
   "/after-fca-approval-motor-dealers": [
@@ -241,12 +229,6 @@
     {
       "sectionId": "guide-section-5",
       "paragraph": 0,
-      "text": "assistance with authorisation",
-      "href": "/fca-authorisation-motor-dealers"
-    },
-    {
-      "sectionId": "guide-section-5",
-      "paragraph": 0,
       "text": "CCR009 returns",
       "href": "/ccr009-return-assistance-motor-dealers"
     },
@@ -256,5 +238,11 @@
       "text": "ongoing compliance work",
       "href": "/motor-dealer-compliance"
     }
-  ]
+  ],
+  "/fca-authorisation-cost-car-dealers": [],
+  "/how-to-apply-fca-limited-permission-car-dealers": [],
+  "/fca-application-refused-motor-dealers": [],
+  "/how-to-offer-car-finance-dealers": [],
+  "/what-is-ccr007": [],
+  "/van-commercial-vehicle-dealers-fca-permissions": []
 }

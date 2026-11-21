@@ -1,0 +1,1269 @@
+{
+  "at": "2026-11-12T17:17:57.390Z",
+  "preserved": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "viewports": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 320,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 390,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 768,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 1440,
+      "status": 200,
+      "duplicateIds": false,
+      "overflow": false,
+      "visibleAnswer": true
+    }
+  ],
+  "anchors": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "section2Top": 176,
+      "progress": 20,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "section2Top": 175.875,
+      "progress": 17,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "section2Top": 176.359375,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "section2Top": 176.125,
+      "progress": 20,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "section2Top": 176.375,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "section2Top": 175.9375,
+      "progress": 22,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 320,
+      "section2Top": 175.890625,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 320,
+      "section2Top": 175.5625,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 320,
+      "section2Top": 176.125,
+      "progress": 26,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 320,
+      "section2Top": 175.875,
+      "progress": 26,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 320,
+      "section2Top": 175.796875,
+      "progress": 29,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 320,
+      "section2Top": 175.5625,
+      "progress": 25,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 320,
+      "section2Top": 175.625,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 320,
+      "section2Top": 175.703125,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 320,
+      "section2Top": 176.34375,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 320,
+      "section2Top": 175.90625,
+      "progress": 27,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 320,
+      "section2Top": 176.21875,
+      "progress": 29,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 320,
+      "section2Top": 175.515625,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "section2Top": 175.625,
+      "progress": 20,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 390,
+      "section2Top": 176.203125,
+      "progress": 17,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 390,
+      "section2Top": 176.25,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 390,
+      "section2Top": 175.75,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 390,
+      "section2Top": 176.234375,
+      "progress": 22,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 390,
+      "section2Top": 176.28125,
+      "progress": 22,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 390,
+      "section2Top": 176.40625,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "section2Top": 175.953125,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 390,
+      "section2Top": 176.4375,
+      "progress": 26,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 390,
+      "section2Top": 175.546875,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 390,
+      "section2Top": 176.1875,
+      "progress": 30,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 390,
+      "section2Top": 175.8125,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 390,
+      "section2Top": 176,
+      "progress": 30,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 390,
+      "section2Top": 175.890625,
+      "progress": 30,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 390,
+      "section2Top": 175.5625,
+      "progress": 29,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "section2Top": 176.328125,
+      "progress": 29,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 390,
+      "section2Top": 176.28125,
+      "progress": 30,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 390,
+      "section2Top": 175.9375,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 768,
+      "section2Top": 176.375,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 768,
+      "section2Top": 176.015625,
+      "progress": 19,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 768,
+      "section2Top": 175.671875,
+      "progress": 24,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 768,
+      "section2Top": 175.6875,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 768,
+      "section2Top": 175.703125,
+      "progress": 26,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 768,
+      "section2Top": 175.75,
+      "progress": 23,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 768,
+      "section2Top": 175.78125,
+      "progress": 19,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 768,
+      "section2Top": 176.40625,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 768,
+      "section2Top": 175.875,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 768,
+      "section2Top": 176.0625,
+      "progress": 29,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 768,
+      "section2Top": 175.828125,
+      "progress": 33,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 768,
+      "section2Top": 175.625,
+      "progress": 31,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 768,
+      "section2Top": 176.125,
+      "progress": 33,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 768,
+      "section2Top": 175.96875,
+      "progress": 33,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 768,
+      "section2Top": 175.71875,
+      "progress": 30,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 768,
+      "section2Top": 175.515625,
+      "progress": 33,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 768,
+      "section2Top": 175.703125,
+      "progress": 34,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 768,
+      "section2Top": 175.984375,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1440,
+      "section2Top": 103.828125,
+      "progress": 20,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 1440,
+      "section2Top": 104.25,
+      "progress": 18,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1440,
+      "section2Top": 104.28125,
+      "progress": 22,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1440,
+      "section2Top": 104.4375,
+      "progress": 21,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1440,
+      "section2Top": 103.921875,
+      "progress": 24,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1440,
+      "section2Top": 103.609375,
+      "progress": 22,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 1440,
+      "section2Top": 104.140625,
+      "progress": 17,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1440,
+      "section2Top": 103.8125,
+      "progress": 20,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 1440,
+      "section2Top": 104.234375,
+      "progress": 27,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 1440,
+      "section2Top": 103.9375,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 1440,
+      "section2Top": 104.234375,
+      "progress": 32,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 1440,
+      "section2Top": 104.125,
+      "progress": 29,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 1440,
+      "section2Top": 103.640625,
+      "progress": 31,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 1440,
+      "section2Top": 104.21875,
+      "progress": 32,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 1440,
+      "section2Top": 104.125,
+      "progress": 28,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1440,
+      "section2Top": 103.625,
+      "progress": 30,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 1440,
+      "section2Top": 104,
+      "progress": 33,
+      "active": "#guide-section-2"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 1440,
+      "section2Top": 104.359375,
+      "progress": 21,
+      "active": "#guide-section-2"
+    }
+  ],
+  "tables": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/what-is-ccr009",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "left": 40,
+      "width": 248,
+      "total": 560
+    }
+  ],
+  "reduced": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "noJs": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "nonGuide": [
+    "/",
+    "/referral",
+    "/terms",
+    "/about",
+    "/testimonials",
+    "/contact",
+    "/privacy-policy",
+    "/complaints-policy",
+    "/cookie-policy",
+    "/services",
+    "/ccr009-return-assistance-motor-dealers",
+    "/fca-authorisation-motor-dealers",
+    "/motor-finance-for-dealerships",
+    "/motor-dealer-compliance",
+    "/pricing"
+  ],
+  "errors": []
+}

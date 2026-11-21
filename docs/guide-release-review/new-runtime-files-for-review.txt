@@ -1,0 +1,16 @@
+config/guide-links.json
+utils/guide-links.js
+utils/guide-navigation.js
+public/css/guide-design.css
+public/css/guide-original-offers.css
+public/js/guide-enhancements.js
+public/js/guide-reading.js
+views/partials/guide_navigation.ejs
+views/partials/guide_original_offers.ejs
+views/partials/home_gift_offer.ejs
+views/partials/guide_reporting_offer.ejs
+views/partials/guide_ongoing_offer.ejs
+scripts/dev-server.cjs
+utils/database.js
+utils/local-development.js
+tests/local-startup.test.cjs

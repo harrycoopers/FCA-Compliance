@@ -1,0 +1,260 @@
+{
+  "/do-motor-dealers-need-fca-authorisation": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "limited-permission secondary credit broking",
+      "href": "/limited-permission-fca-authorisation-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-1",
+      "paragraph": 0,
+      "text": "online enquiries",
+      "href": "/website-compliance-motor-dealers"
+    }
+  ],
+  "/fca-licence-car-dealers": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "customer communications",
+      "href": "/website-compliance-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 1,
+      "text": "Support with documents",
+      "href": "/fca-authorisation-motor-dealers"
+    }
+  ],
+  "/limited-permission-fca-authorisation-motor-dealers": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "Consumer Duty requirements",
+      "href": "/consumer-duty-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 1,
+      "text": "business plan",
+      "href": "/fca-application-documents-motor-dealers"
+    }
+  ],
+  "/credit-broking-permission-motor-dealers": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "limited/full-permission assessment",
+      "href": "/limited-permission-fca-authorisation-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 0,
+      "text": "relevant communications",
+      "href": "/website-compliance-motor-dealers"
+    }
+  ],
+  "/fca-application-documents-motor-dealers": [
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 0,
+      "text": "Consumer Duty arrangements",
+      "href": "/consumer-duty-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "promotions process",
+      "href": "/website-compliance-motor-dealers"
+    }
+  ],
+  "/why-fca-applications-get-delayed": [
+    {
+      "sectionId": "guide-section-1",
+      "paragraph": 0,
+      "text": "permission questions",
+      "href": "/limited-permission-fca-authorisation-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 0,
+      "text": "Administrative assistance",
+      "href": "/fca-authorisation-motor-dealers"
+    }
+  ],
+  "/after-fca-approval-motor-dealers": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "whether CCR009 applies",
+      "href": "/who-needs-to-submit-ccr009"
+    },
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "applicable reporting cycle",
+      "href": "/when-is-ccr009-due"
+    }
+  ],
+  "/what-is-ccr009": [
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 1,
+      "text": "CCR007 with reduced information",
+      "href": "/ccr009-vs-ccr007"
+    },
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "source records you need",
+      "href": "/what-information-is-needed-for-ccr009"
+    }
+  ],
+  "/who-needs-to-submit-ccr009": [
+    {
+      "sectionId": "guide-section-1",
+      "paragraph": 0,
+      "text": "permission record",
+      "href": "/fca-licence-car-dealers"
+    },
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 1,
+      "text": "deadline",
+      "href": "/when-is-ccr009-due"
+    }
+  ],
+  "/what-information-is-needed-for-ccr009": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "different amounts",
+      "href": "/common-ccr009-reporting-mistakes"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 1,
+      "text": "another return",
+      "href": "/ccr009-vs-ccr007"
+    }
+  ],
+  "/ccr009-reporting-checklist-motor-dealers": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 1,
+      "text": "submission error or unresolved discrepancy",
+      "href": "/common-ccr009-reporting-mistakes"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 0,
+      "text": "deal with access problems early",
+      "href": "/how-to-prepare-for-ccr009-return"
+    }
+  ],
+  "/ccr009-vs-ccr007": [
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 0,
+      "text": "period, deadline and owner",
+      "href": "/when-is-ccr009-due"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 1,
+      "text": "source-record pack",
+      "href": "/what-information-is-needed-for-ccr009"
+    }
+  ],
+  "/common-ccr009-reporting-mistakes": [
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 1,
+      "text": "correct question period or date",
+      "href": "/when-is-ccr009-due"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 0,
+      "text": "Review the unresolved items before submission",
+      "href": "/ccr009-reporting-checklist-motor-dealers"
+    }
+  ],
+  "/how-to-prepare-for-ccr009-return": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "relevant period and definition",
+      "href": "/what-information-is-needed-for-ccr009"
+    },
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 1,
+      "text": "unresolved questions",
+      "href": "/common-ccr009-reporting-mistakes"
+    }
+  ],
+  "/when-is-ccr009-due": [
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 1,
+      "text": "check user access",
+      "href": "/how-to-prepare-for-ccr009-return"
+    },
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 0,
+      "text": "map its records to the period required",
+      "href": "/what-information-is-needed-for-ccr009"
+    }
+  ],
+  "/consumer-duty-motor-dealers": [
+    {
+      "sectionId": "guide-section-3",
+      "paragraph": 1,
+      "text": "unclear role wording",
+      "href": "/website-compliance-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 0,
+      "text": "different role from the lender",
+      "href": "/credit-broking-permission-motor-dealers"
+    }
+  ],
+  "/website-compliance-motor-dealers": [
+    {
+      "sectionId": "guide-section-2",
+      "paragraph": 0,
+      "text": "brokers credit",
+      "href": "/credit-broking-permission-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-4",
+      "paragraph": 0,
+      "text": "customer can tell who they are dealing with",
+      "href": "/consumer-duty-motor-dealers"
+    }
+  ],
+  "/fca-compliance-motor-dealers-guide": [
+    {
+      "sectionId": "guide-section-5",
+      "paragraph": 0,
+      "text": "assistance with authorisation",
+      "href": "/fca-authorisation-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-5",
+      "paragraph": 0,
+      "text": "CCR009 returns",
+      "href": "/ccr009-return-assistance-motor-dealers"
+    },
+    {
+      "sectionId": "guide-section-5",
+      "paragraph": 0,
+      "text": "ongoing compliance work",
+      "href": "/motor-dealer-compliance"
+    }
+  ]
+}

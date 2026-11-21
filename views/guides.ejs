@@ -1,0 +1,13 @@
+<section class="sec"><div class="wrap">
+  <h1 class="display-l">Motor dealer compliance guides</h1>
+  <p>Browse guides by topic or start with the <a class="text-link" href="<%= guideNavigation.overview %>">motor dealer compliance overview</a>.</p>
+  <% guideNavigation.groups.forEach(group => { %>
+  <section class="sec" aria-labelledby="group-<%= group.id %>">
+    <h2 class="display-m" id="group-<%= group.id %>"><%= group.title %></h2>
+    <ul class="guide-directory">
+      <% group.links.forEach(link => { %>
+      <li><a class="text-link" href="<%= link.href %>"><%= link.title %></a><p><%= link.description %></p></li>
+      <% }); %>
+    </ul>
+  </section><% }); %>
+</div></section>

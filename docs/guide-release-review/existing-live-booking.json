@@ -1,0 +1,16 @@
+{
+  "checked": "2026-11-12T17:31:50.240Z",
+  "scope": "Existing live booking flow only, not deployment of the audited working tree",
+  "requests": [
+    {
+      "url": "https://009compliance.com/api/bookings/availability?date=2026-11-13",
+      "status": 200,
+      "availableSlotCount": 14
+    }
+  ],
+  "submitted": false,
+  "personalDataEntered": false,
+  "availabilityStatus": 200,
+  "topic": "authorisation",
+  "detailsVisible": true
+}

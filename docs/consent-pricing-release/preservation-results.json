@@ -1,0 +1,477 @@
+{
+  "preserved": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "responsive": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 390,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 768,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=authorisation#book-meeting"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ccr009#book-meeting"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 1440,
+      "overflow": false,
+      "ids": true,
+      "h1": "1",
+      "cta": "/contact?topic=ongoing#book-meeting"
+    }
+  ],
+  "noJs": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "errors": []
+}

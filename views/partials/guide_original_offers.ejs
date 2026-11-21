@@ -1,12 +1,3 @@
-<% const postCampaign={...campaign,active:false,expired:true,showPrice:campaign.post.mode==='continue'}; %>
-<% if(placement==='gift') { %>
-<div data-guide-gift-slot class="guide-home-offer home<%= campaign.active&&campaign.showPrice?' has-festive-offer':'' %>">
-  <%- include('home_gift_offer',{c:campaign,guideGift:true}) %>
-</div>
-<% if(campaign.active) { %><template data-guide-gift-post><div class="guide-home-offer home" data-guide-gift-slot><%- include('home_gift_offer',{c:postCampaign,guideGift:true}) %></div></template><% } %>
-<% } else { %>
-<section class="guide-original-offer" id="guide-application-offer" data-guide-offer data-guide-full-slot data-guide-deadline="<%= campaign.active?campaign.deadlineIso:'' %>" aria-label="FCA application assistance and payment terms">
-  <%- include('offer_card',{cardId:'auth-offer',headingTag:'h2',showTerms:true,santa:true,referralAnimation:true,guideOffer:true}) %>
+<section class="guide-original-offer" id="guide-application-offer" data-guide-offer data-guide-full-slot <% if (campaign.active) { %>data-guide-active-ms="<%= campaign.remainingMs %>"<% } %> aria-label="FCA application assistance and payment terms">
+  <%- include('offer_card',{cardId:'auth-offer',headingTag:'div',showTerms:true,santa:true,referralAnimation:true,guideOffer:true}) %>
 </section>
-<% if(campaign.active) { %><template data-guide-full-post><%- include('offer_card',{campaign:postCampaign,cardId:'auth-offer',headingTag:'h2',showTerms:true,santa:false,referralAnimation:true,guideOffer:true}) %></template><% } %>
-<% } %>

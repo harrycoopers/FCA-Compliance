@@ -35,6 +35,7 @@ const q = {
     answer: `No. £${offer.minimumTotal.amount} is the minimum service commitment across the ${offer.minimumTermWords}-month minimum term. Payments of £${offer.monthlyPayment} per month continue after that until you cancel under the agreed cancellation terms, so what you pay depends on how long you keep the service. The FCA application fee is also separate.`
   }) : null,
   previous: (c) => c.showPrice ? ({
+    historicalPrice: true,
     question: `How does this compare with your previous £${offer.previousPrice.amount.toLocaleString('en-GB')} price?`,
     answer: `Our previous application assistance was a one-off fee of £${offer.previousPrice.amount.toLocaleString('en-GB')}. The new service is a monthly subscription instead: £${offer.monthlyPayment} per month with a ${offer.minimumTermWords}-month minimum, continuing with reporting and compliance support after approval until you cancel. Because the payment structures differ, the total you pay depends on how long you keep the service.`
   }) : null,

@@ -1,0 +1,105 @@
+{
+  "at": "2026-11-12T17:24:43.271Z",
+  "results": [
+    {
+      "url": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/sup12/sup12s2",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/sup12/sup12s2"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/financial-services-register",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/financial-services-register"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/authorisation/apply",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/authorisation/apply"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/credit-broking-rules",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/credit-broking-rules"
+    },
+    {
+      "url": "https://www.fca.org.uk/consumers/how-check-firm-individual-authorised",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/consumers/how-check-firm-individual-authorised"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/sup16/sup16s153",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+    },
+    {
+      "url": "https://www.fca.org.uk/publication/forms/application-for-authorisation-full-consumer-credit-firm-notes.pdf",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/publication/forms/application-for-authorisation-full-consumer-credit-firm-notes.pdf"
+    },
+    {
+      "url": "https://www.fca.org.uk/publication/data/authorisations-operating-service-metrics-2026-27-q1.pdf",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/publication/data/authorisations-operating-service-metrics-2026-27-q1.pdf"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/sup16/sup16s152",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/sup16/sup16s41",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+    },
+    {
+      "url": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data",
+      "status": 200,
+      "finalUrl": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/prin2a",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/prin2a"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/prin2a/prin2as8",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/prin2a/prin2as8"
+    },
+    {
+      "url": "https://handbook.fca.org.uk/handbook/conc4/conc4s5",
+      "status": 200,
+      "finalUrl": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+    }
+  ]
+}

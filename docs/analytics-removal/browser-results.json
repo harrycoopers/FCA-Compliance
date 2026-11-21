@@ -1,0 +1,866 @@
+{
+  "preserved": [
+    "/do-motor-dealers-need-fca-authorisation",
+    "/fca-licence-car-dealers",
+    "/limited-permission-fca-authorisation-motor-dealers",
+    "/credit-broking-permission-motor-dealers",
+    "/fca-application-documents-motor-dealers",
+    "/why-fca-applications-get-delayed",
+    "/after-fca-approval-motor-dealers",
+    "/what-is-ccr009",
+    "/who-needs-to-submit-ccr009",
+    "/what-information-is-needed-for-ccr009",
+    "/ccr009-reporting-checklist-motor-dealers",
+    "/ccr009-vs-ccr007",
+    "/common-ccr009-reporting-mistakes",
+    "/how-to-prepare-for-ccr009-return",
+    "/when-is-ccr009-due",
+    "/consumer-duty-motor-dealers",
+    "/website-compliance-motor-dealers",
+    "/fca-compliance-motor-dealers-guide"
+  ],
+  "pages": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/pricing",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/login",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/cookie-policy",
+      "width": 390,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/pricing",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/login",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    },
+    {
+      "route": "/cookie-policy",
+      "width": 1440,
+      "disabled": true,
+      "preference": null,
+      "essential": "keep",
+      "queue": [
+        {
+          "event": "unrelated-integration"
+        }
+      ],
+      "consentApi": "undefined",
+      "ui": 0,
+      "externalTags": 0,
+      "overflow": false,
+      "uniqueIds": true,
+      "nativeNetwork": true
+    }
+  ],
+  "network": [],
+  "errors": [],
+  "consoleErrors": [],
+  "controls": [
+    "gift anchor and booking navigation",
+    "FAQ and keyboard Guides navigation",
+    "essential session and unsent login field"
+  ],
+  "noJs": [
+    "/what-is-ccr009",
+    "/pricing",
+    "/login"
+  ],
+  "storageBlocked": true
+}

@@ -15,9 +15,35 @@ const highlightReview = (text, phrases) => {
 <link rel="stylesheet" href="<%= assetPath('/css/about-refresh.css?v=64') %>">
 <div class="about-refresh">
   <section class="sec ar-hero"><div class="wrap ar-hero-grid">
-    <div><h1 id="about-title">Motor-trade experience.<br><span class="serif">People you can turn to.</span></h1><p class="ar-lede">Practical compliance support from people who understand your dealership.</p><p>We bring experience from dealerships and vehicle finance to FCA authorisation, CCR009 returns and ongoing compliance administration. Clear explanations, direct contact and help getting organised.</p><div class="actions"><a class="btn btn--primary" href="/contact#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a><a class="text-link" href="/services">Explore our services</a></div></div>
-    <div class="ar-experience" data-ar-motion><div class="ar-orbit" aria-hidden="true"></div><span class="ar-years">30<span>+</span></span><h2>years of motor-trade<br>experience</h2><p>Real experience.<br>Practical understanding.</p><div class="ar-road" aria-hidden="true"><i></i></div></div>
+    <div><h1 id="about-title">Motor-trade experience.<br><span class="serif">People you can turn to.</span></h1><p class="ar-lede">Practical compliance support from people who understand your dealership. Our team brings 30+ years in the motor trade.</p><p>We bring experience from dealerships and vehicle finance to FCA authorisation, CCR009 returns and ongoing compliance administration. Clear explanations, direct contact and help getting organised.</p><div class="actions"><a class="btn btn--primary" href="/contact#book-meeting">Book a 15-minute call <span aria-hidden="true">→</span></a><a class="text-link" href="/services">Explore our services</a></div></div>
+    <div class="ar-experience" data-ar-motion><div class="ar-orbit" aria-hidden="true"></div><span class="ar-years">30<span>+</span></span><h2>years in the motor trade,<br>across our team</h2><p>Our team’s experience.<br>Practical understanding.</p><div class="ar-road" aria-hidden="true"><i></i></div></div>
   </div></section>
+  <section class="sec" aria-labelledby="ar-why-title"><div class="wrap ar-story">
+    <h2 class="display-m" id="ar-why-title">Why we started 009 Compliance</h2>
+    <p>We believe every motor dealer should be able to get help with FCA paperwork at a fair price. That’s the idea behind 009 Compliance. Before you commit, we explain what it will cost, what our team will do and what we’ll need from you. If a question comes up along the way, you can pick up the phone and talk it through with us in plain English.</p>
+    <h2 class="display-m" id="ar-support-title">Who we support</h2>
+    <p>We support motor dealers of every size across England, Scotland, Wales and Northern Ireland. Whether you’re opening your first independent forecourt, running a franchised dealership or managing several sites, we start by getting to know how your business works. Our team can help you <a class="text-link" href="/fca-authorisation-motor-dealers">prepare your first FCA application</a> or <a class="text-link" href="/ccr009-return-assistance-motor-dealers">stay on top of reporting</a> once you’re authorised.</p>
+    <h2 class="display-m" id="ar-facts-title">Company facts</h2>
+    <dl class="ar-facts">
+      <div><dt>Registered name</dt><dd>009 Compliance Ltd</dd></div>
+      <div><dt>Company number</dt><dd>16910484</dd></div>
+      <div><dt>Incorporated</dt><dd><time datetime="2025-12-15">15 December 2025</time></dd></div>
+      <div><dt>ICO registration</dt><dd>ZC072139</dd></div>
+      <div><dt>Based in</dt><dd>Oldham</dd></div>
+    </dl>
+  </div></section>
+  <% if (team.length) { %>
+  <section class="sec" aria-labelledby="team-title"><div class="wrap">
+    <h2 id="team-title" class="display-l">Our team</h2>
+    <% team.forEach(person => { %>
+    <article id="<%= person.url.split('#')[1] %>" class="ar-value">
+      <% if (person.image) { %><img src="<%= person.image %>" width="160" alt="<%= person.name %>" loading="lazy"><% } %>
+      <h3><%= person.name %></h3>
+      <% if (person.jobTitle) { %><p><%= person.jobTitle %></p><% } %>
+      <% if (person.description) { %><p><%= person.description %></p><% } %>
+      <% if (person.sameAs) { %><a href="<%= person.sameAs[0] %>">LinkedIn profile</a><% } %>
+    </article><% }); %>
+  </div></section><% } %>
   <section class="sec sec--flush-top"><div class="wrap"><figure class="ar-feature" data-ar-motion><span class="ar-quote-mark" aria-hidden="true">“</span><blockquote>The team there are <strong>super-efficient, knowledgeable</strong> and we simply <strong>wouldn’t use any other company.</strong></blockquote><figcaption>Andy, Manager, S Cars Limited, Shaw</figcaption><a href="/testimonials">Read our client reviews <span aria-hidden="true">↗</span></a></figure></div></section>
   <section class="sec ar-values" aria-labelledby="ar-values-title"><div class="wrap"><div class="sec-head"><h2 class="display-l" id="ar-values-title">Support that feels<br><span class="serif">personal.</span></h2><p>We understand that compliance sits alongside customers, vehicles and the day-to-day running of your dealership. Our job is to help make it more manageable.</p></div><div class="ar-value-grid">
 <article class="ar-value" data-ar-motion><div class="ar-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M8 9h26v19H20l-9 7v-7H8zM15 16h12M15 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Direct contact</h3><p>Talk directly with experienced professionals who can help you work through your questions.</p></article><article class="ar-value" data-ar-motion><div class="ar-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M12 5h16l7 7v27H12zM28 5v9h7M18 22h11M18 29h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Clear explanations</h3><p>Understand what’s needed, why it matters and what to do next, without unnecessary jargon.</p></article><article class="ar-value" data-ar-motion><div class="ar-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="m22 5 13 5v12c0 8-7 14-13 18-6-4-13-10-13-18V10zM16 22l4 4 9-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Practical assistance</h3><p>Get help organising information and preparing documentation within the scope agreed with your dealership.</p></article></div></div></section>

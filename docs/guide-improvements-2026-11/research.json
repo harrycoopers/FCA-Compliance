@@ -1,0 +1,451 @@
+{
+  "observationDate": "2026-11-12",
+  "method": "UK-focused web queries; limited returned sample, not controlled Google UK geolocation or a fixed rank study. Official FCA sources govern claims. Competitors inform format only. Own-site results, unrelated acronym matches and historic/overbroad rules are excluded as independent support. Search Console export has separate page and query dimensions, not query/page pairs.",
+  "sources": {
+    "motor": {
+      "name": "FCA motor-dealer permissions and applications",
+      "url": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers",
+      "observation": "Activity-specific permission tables and supporting-material lists."
+    },
+    "apply": {
+      "name": "FCA applying for authorisation",
+      "url": "https://www.fca.org.uk/firms/authorisation/apply",
+      "observation": "Application stages, readiness requirements, responsibilities and assessment times."
+    },
+    "register": {
+      "name": "FCA checking a firm",
+      "url": "https://www.fca.org.uk/consumers/how-check-firm-individual-authorised",
+      "observation": "Verification task using official firm records."
+    },
+    "safAR": {
+      "name": "SAF appointed representatives",
+      "url": "https://www.specialistautomotivefinance.org.uk/resources/appointed-representatives.html",
+      "observation": "Short educational explanation distinguishing direct authorisation and representative arrangements."
+    },
+    "safPermission": {
+      "name": "SAF full or limited permission",
+      "url": "https://www.specialistautomotivefinance.org.uk/resources/full-or-limited-permission.html/",
+      "observation": "Training-style comparison for automotive finance participants."
+    },
+    "rh": {
+      "name": "Regulation Hub motor dealers",
+      "url": "https://regulationhub.co.uk/motor-dealers",
+      "observation": "Commercial page covering application documents and ongoing dealer support. Used for format and audience comparison, not adopted as regulatory authority."
+    },
+    "gt": {
+      "name": "Grant Thornton authorisation and beyond",
+      "url": "https://www.grantthornton.co.uk/insights/fca-authorisation-regulatory-engagement/",
+      "observation": "Advisory article and FAQs on preparation, responses and ongoing engagement; contains newer assessment-target discussion."
+    },
+    "ccr": {
+      "name": "FCA CCR009 guidance",
+      "url": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009",
+      "observation": "Single reference page with scope, schedule, access, data-flow diagrams and changes to older returns."
+    },
+    "reporting": {
+      "name": "FCA consumer credit reporting",
+      "url": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting",
+      "observation": "Data-item table and limited/full-permission reporting distinctions."
+    },
+    "bvrla": {
+      "name": "BVRLA CCR009 member checklist (December 2025)",
+      "url": "https://www.bvrla.co.uk/getmedia/f67d02cf-4895-47ab-ba0d-01b0d24c9a9d/FCA-Reporting-Checklist-December-2025.pdf",
+      "observation": "Three-page PDF combines scope, data categories, ownership and sign-off checks. Historic timing and field instructions are not used as current authority."
+    },
+    "ag": {
+      "name": "Addleshaw Goddard Mastering CCR009",
+      "url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2025/financial-regulation/mastering-ccr009-guide-implementing-new-credit-broking-reporting-requirements/",
+      "observation": "Long-form section-by-section reporting preparation and systems questions, including motor vehicle data."
+    },
+    "duty": {
+      "name": "FCA About the Consumer Duty",
+      "url": "https://www.fca.org.uk/firms/consumer-duty/about",
+      "observation": "Principle, cross-cutting rules and four-outcome explanation."
+    },
+    "promotions": {
+      "name": "FCA financial promotions and adverts",
+      "url": "https://www.fca.org.uk/firms/financial-promotions-adverts",
+      "observation": "Cross-channel rules overview with links to relevant Handbook provisions."
+    },
+    "evolution": {
+      "name": "Evolution Funding compliance hub",
+      "url": "https://www.evolutionfunding.com/public/compliance-hub/",
+      "observation": "Dealer resource directory with topic navigation, guides and downloadable tools; some resources require partner access."
+    },
+    "evolutionDuty": {
+      "name": "Evolution Funding annual Consumer Duty board report guide",
+      "url": "https://www.evolutionfunding.com/public/compliance-hub/annual-consumer-duty-board-report/",
+      "observation": "Detailed reporting guidance and examples for introducers."
+    },
+    "evolutionWeb": {
+      "name": "Evolution Funding financial promotions guide",
+      "url": "https://www.evolutionfunding.com/public/financial-promotions-guide/",
+      "observation": "Multi-page guide with contents navigation and good/bad-practice examples."
+    },
+    "haswent": {
+      "name": "Haswent: legal requirements for running a used car dealership",
+      "url": "https://www.haswent.com/blog/legal-requirements-for-running-a-used-car-dealership-uk",
+      "observation": "Checklist with official-source links and a short finance section; wider business setup intent than the licence guide. Regulatory statements were not adopted from this competitor."
+    },
+    "calendar": {
+      "name": "Authorised Compliance: credit-broker reporting calendar",
+      "url": "https://www.authorisedcompliance.com/blog/fca-regulatory-returns-credit-brokers-calendar-ownership",
+      "observation": "Long explanatory article organised around scope, ownership, handover and reporting periods; useful format comparison, not the authority for the FCA rules."
+    },
+    "flow": {
+      "name": "FCA CCR009 credit-broking flow diagram",
+      "url": "https://www.fca.org.uk/publication/consumer-credit-information/ccr009-credit-broking-data-flow-diagram.pdf",
+      "observation": "Visual branching by activity and agreement type; reference source for explaining tailored questions, not a universal dealer checklist."
+    }
+  },
+  "guides": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "primaryPurpose": "Decide whether the proposed dealership activity needs authorisation or a principal arrangement.",
+      "previousQuery": "do motor dealers need FCA authorisation UK",
+      "previousSources": [
+        "motor",
+        "safAR"
+      ],
+      "previousObservation": "Permission scenarios and direct-authorisation/representative explainers.",
+      "queries": [
+        "do car dealers need FCA authorisation to offer finance UK appointed representative"
+      ],
+      "sources": [
+        "motor",
+        "safAR",
+        "haswent"
+      ],
+      "observation": "Results combine eligibility explanations and principal/introducer sales pages. The useful answer is conditional authorisation eligibility with the alternative principal arrangement nearby. Added a direct answer and route comparison; did not treat marketing promises as evidence.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "primaryPurpose": "Understand licence terminology and verify the dealership entity, status and permissions.",
+      "previousQuery": "FCA licence car dealers FRN permissions UK",
+      "previousSources": [
+        "register",
+        "safAR"
+      ],
+      "previousObservation": "Official record-checking guidance and explanations of authorisation status.",
+      "queries": [
+        "FCA licence car dealers FRN check permissions UK",
+        "\"FCA licence\" \"car dealers\" UK permissions register guide"
+      ],
+      "sources": [
+        "register",
+        "safAR",
+        "haswent"
+      ],
+      "observation": "Mixed licence/setup and official status-checking intent. The existing page’s distinct strength is checking the legal entity and permitted activity, so added next steps for matching, AR and mismatched records; did not expand into unrelated business licences.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "primaryPurpose": "Compare limited/full permission routes for the actual stock and sourcing model.",
+      "previousQuery": "limited permission vs full permission FCA motor dealers",
+      "previousSources": [
+        "motor",
+        "safPermission"
+      ],
+      "previousObservation": "Activity-based tables and direct comparisons.",
+      "queries": [
+        "limited full permission FCA motor dealers vehicle sourcing outstanding finance"
+      ],
+      "sources": [
+        "motor",
+        "safPermission"
+      ],
+      "observation": "Official scenarios and trade training comparisons dominate the relevant sample. Generic motor-dealer-limited answers lose important conditions. Added plain definitions and an activity/evidence map while retaining the qualified scenario table.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "primaryPurpose": "Understand the dealer’s credit-broking role and customer introduction chain.",
+      "previousQuery": "credit broking permission motor dealers UK",
+      "previousSources": [
+        "motor",
+        "safPermission"
+      ],
+      "previousObservation": "Permission explanations distinguish dealer, broker and lender activities.",
+      "queries": [],
+      "sources": [
+        "motor",
+        "safPermission"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "primaryPurpose": "Assemble and check the application evidence and supporting documents.",
+      "previousQuery": "FCA application documents motor dealers checklist UK",
+      "previousSources": [
+        "motor",
+        "rh"
+      ],
+      "previousObservation": "Official documentation lists alongside document-preparation services.",
+      "queries": [],
+      "sources": [
+        "motor",
+        "rh"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "primaryPurpose": "Diagnose preparation gaps and respond to FCA clarification requests.",
+      "previousQuery": "why FCA authorisation applications delayed motor dealer UK",
+      "previousSources": [
+        "apply",
+        "gt"
+      ],
+      "previousObservation": "Process/readiness guidance and explanatory articles with timing FAQs.",
+      "queries": [],
+      "sources": [
+        "apply",
+        "gt"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "primaryPurpose": "Put permissions and ongoing responsibilities into operation after approval.",
+      "previousQuery": "after FCA authorisation motor dealer ongoing obligations UK",
+      "previousSources": [
+        "apply",
+        "gt",
+        "evolution"
+      ],
+      "previousObservation": "Readiness guidance, ongoing-engagement advice and dealer resource hubs.",
+      "queries": [],
+      "sources": [
+        "apply",
+        "gt",
+        "evolution"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/what-is-ccr009",
+      "primaryPurpose": "Understand what the return is, what it covers and what it replaced.",
+      "previousQuery": "what is CCR009 motor dealers UK",
+      "previousSources": [
+        "ccr",
+        "ag"
+      ],
+      "previousObservation": "Broad regulatory reference and long-form reporting explainer. Broad keyword results were noisy; own-site results excluded as independent evidence.",
+      "queries": [
+        "\"what is CCR009\" motor dealers UK -site:009compliance.com"
+      ],
+      "sources": [
+        "ccr",
+        "ag"
+      ],
+      "observation": "Official overview and broad reporting explainers; unrelated acronym results also appeared. Added a plain definition and task navigation; kept this introductory rather than expanding it into the preparation workflow.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "primaryPurpose": "Determine which entity and permissions are in reporting scope, including principal arrangements.",
+      "previousQuery": "\"CCR009\" who needs to submit UK",
+      "previousSources": [
+        "ccr",
+        "bvrla"
+      ],
+      "previousObservation": "Scope sections within broad guidance and checklist prerequisites.",
+      "queries": [
+        "\"CCR009\" \"who\" \"submit\" principal"
+      ],
+      "sources": [
+        "ccr",
+        "ag"
+      ],
+      "observation": "Scope and principal issues generally appear within broad guidance. A dedicated scope page is a reasonable editorial division, not proven demand. Added a short scope record and expanded the firm-number abbreviation.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "primaryPurpose": "Map each applicable return question to the correct source records and financial measure.",
+      "previousQuery": "\"CCR009\" information needed records",
+      "previousSources": [
+        "ccr",
+        "ag"
+      ],
+      "previousObservation": "Data-flow/reference resources and granular record-system questions.",
+      "queries": [
+        "\"CCR009\" \"information\" records motor dealers"
+      ],
+      "sources": [
+        "ccr",
+        "ag",
+        "flow"
+      ],
+      "observation": "Official branching diagrams and detailed practitioner data questions support field-to-record mapping. Added a reusable working-record table and clearer fictional amount separation, without inventing field definitions.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "primaryPurpose": "Check readiness, unresolved items and evidence of completed submission.",
+      "previousQuery": "\"CCR009\" reporting checklist motor dealers",
+      "previousSources": [
+        "bvrla",
+        "ccr"
+      ],
+      "previousObservation": "Downloadable checklist and official submission stages; own-site result excluded as independent evidence.",
+      "queries": [
+        "\"CCR009\" information records checklist preparation motor dealers UK",
+        "\"CCR009\" \"prepare\" checklist UK -site:009compliance.com"
+      ],
+      "sources": [
+        "ccr",
+        "bvrla"
+      ],
+      "observation": "Checklist format fits, but can duplicate preparation. Reframed the existing table as final readiness gates. The dated BVRLA document contains timing/field wording not adopted as current regulatory authority.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "primaryPurpose": "Compare the two returns and understand why each may still be required.",
+      "previousQuery": "\"CCR009\" \"CCR007\" difference",
+      "previousSources": [
+        "reporting",
+        "ag"
+      ],
+      "previousObservation": "Official data-item comparison and explanations of replaced/reduced information.",
+      "queries": [
+        "\"CCR009\" \"CCR007\" difference limited permission"
+      ],
+      "sources": [
+        "reporting",
+        "ccr",
+        "ag"
+      ],
+      "observation": "Comparison of return purpose and the continuing CCR007 obligation is distinct from general preparation. Corrected only the period summary; retained the detailed reduced-information qualification.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "primaryPurpose": "Diagnose and prevent reporting errors, including what to do after submission.",
+      "previousQuery": "\"CCR009\" reporting mistakes UK",
+      "previousSources": [
+        "ccr",
+        "ag"
+      ],
+      "previousObservation": "Official validation/reference guidance and practitioner questions. No strong independent dedicated mistakes page in this sample.",
+      "queries": [
+        "\"CCR009\" reporting mistakes deadline UK",
+        "\"CCR009\" \"mistakes\" reporting errors UK -site:009compliance.com"
+      ],
+      "sources": [
+        "ccr",
+        "ag",
+        "calendar"
+      ],
+      "observation": "No strong dedicated mistakes competitor established in the narrow sample. Kept diagnostic intent and added a labelled fictional duplicate-record example; no most-common or measured-frequency claims.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "primaryPurpose": "Assign work and sequence access, gathering, reconciliation, review and submission.",
+      "previousQuery": "how to prepare CCR009 return UK",
+      "previousSources": [
+        "bvrla",
+        "ag",
+        "ccr"
+      ],
+      "previousObservation": "Checklist responsibilities, systems-readiness prompts and official prepare/check/submit sequence. Broad query was noisy.",
+      "queries": [
+        "\"CCR009\" \"prepare\" checklist UK -site:009compliance.com"
+      ],
+      "sources": [
+        "ccr",
+        "bvrla",
+        "calendar"
+      ],
+      "observation": "Workflow ownership, access and review handovers are useful formats. Added tangible outputs for each existing stage and clarified Principal User versus principal firm.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "primaryPurpose": "Find the applicable reporting period, filing frequency and firm-specific due date.",
+      "previousQuery": "\"CCR009\" deadline due date UK",
+      "previousSources": [
+        "ccr",
+        "bvrla"
+      ],
+      "previousObservation": "Official schedule instructions and historic reporting-window explanations.",
+      "queries": [
+        "\"CCR009\" \"deadline\" reporting period UK -site:009compliance.com"
+      ],
+      "sources": [
+        "ccr",
+        "bvrla",
+        "calendar"
+      ],
+      "observation": "Official schedule checks and dated reporting-window explainers. Corrected ongoing periods and the exact boundary while preserving the first-period ambiguity; no single universal due date supplied.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "primaryPurpose": "Understand outcomes and evidence of monitoring for a dealership’s role.",
+      "previousQuery": "Consumer Duty motor dealers practical guidance UK",
+      "previousSources": [
+        "duty",
+        "evolutionDuty"
+      ],
+      "previousObservation": "Outcome explanation and detailed board-report examples.",
+      "queries": [],
+      "sources": [
+        "duty",
+        "evolutionDuty"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "primaryPurpose": "Review dealership website status, promotions, disclosures and customer understanding.",
+      "previousQuery": "motor dealer website compliance FCA financial promotions UK",
+      "previousSources": [
+        "promotions",
+        "evolutionWeb"
+      ],
+      "previousObservation": "Rules reference plus navigable examples of promotional practice.",
+      "queries": [],
+      "sources": [
+        "promotions",
+        "evolutionWeb"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "primaryPurpose": "Navigate to the right authorisation, ongoing-compliance or reporting guide.",
+      "previousQuery": "FCA compliance motor dealers guide UK",
+      "previousSources": [
+        "evolution",
+        "rh"
+      ],
+      "previousObservation": "Resource hub and broad dealer-service landing page: mixed educational and commercial formats.",
+      "queries": [],
+      "sources": [
+        "evolution",
+        "rh"
+      ],
+      "observation": "Earlier same-day research retained; review found no need for a new broad search or unnecessary rewrite.",
+      "researchStatus": "Prior research reviewed; no fresh search for this lower-priority page.",
+      "targetEvidence": "Editorial purpose informed by observed formats. Supplied page/query metrics prioritise work but do not establish query-to-page matching."
+    }
+  ]
+}

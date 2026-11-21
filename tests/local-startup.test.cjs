@@ -69,7 +69,7 @@ test('local startup runs normal migrations, serves guides and blocks bookings an
  const q=query(app.locals.db),tables=(await q.all("SELECT name FROM sqlite_master WHERE type='table'")).map(r=>r.name);
  for(const table of ['users','reports','portal_sessions','report_history','sheet_jobs','meeting_bookings','booking_blocks'])assert(tables.includes(table),table);
  const guide=await fetch(base+'/do-motor-dealers-need-fca-authorisation');assert.equal(guide.status,200);const html=await guide.text();
- assert(html.includes('Do Motor Dealers Need FCA Authorisation?'));assert(html.includes('£600'));assert(html.includes('FCA application fee payable separately'));
+ assert(html.includes('Do Car Dealers Need FCA Authorisation to Offer Finance?'));assert(html.includes('£600'));assert(html.includes('FCA application fee payable separately'));
  const status=await app.locals.bookings.status();assert.equal(status.configured,false);assert.equal(status.confirmationEmailEnabled,false);assert.equal(app.locals.sheetsSync.configured(),false);
  assert.equal((await fetch(base+'/api/bookings/availability?date=2026-11-20')).status,503);
  // Exercise the denial with a valid local CSRF token, but no real booking data.

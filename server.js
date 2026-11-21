@@ -146,6 +146,7 @@ app.use((req,res,next) => {
 app.use(seo.publicSeo);
 app.get('/robots.txt', seo.robots);
 app.get('/sitemap.xml', seo.sitemap);
+app.get('/llms.txt', seo.llms);
 
 // Fingerprinted files may be cached indefinitely; other files revalidate normally.
 app.use('/build', express.static(path.join(__dirname, 'public/build'), { maxAge: '1y', immutable: true }));
@@ -195,7 +196,7 @@ app.use((req, res, next) => {
   if (res.locals.sensitivePage) res.set('Cache-Control','no-store');
   res.locals.success = (req.session.flash?.success ? req.flash('success') : []);
   res.locals.error = (req.session.flash?.error ? req.flash('error') : []);
-  res.locals.showSubmissionToast = (req.session.flash?.showSubmissionToast ? req.flash('showSubmissionToast') : []);
+  res.locals.showSubmissionToast = Boolean(req.session.user && req.path === '/dashboard' && req.session.flash?.showSubmissionToast && req.flash('showSubmissionToast')[0] === 'true');
 
   // ✅ SEO defaults (used by layout.ejs)
   res.locals.pageTitle = '009 Compliance | FCA Compliance Reporting Portal';
@@ -356,6 +357,12 @@ app.get('/api/metrics', (req, res) => {
 accounts.mount(app);
 
 // About page
+app.get('/guides', (req, res) => res.render('guides'));
+// Guides defined only in config/guide-content.json; utils/seo.js renders them with views/seo_guide.ejs.
+for (const route of ['/fca-authorisation-cost-car-dealers', '/how-to-apply-fca-limited-permission-car-dealers',
+  '/fca-application-refused-motor-dealers', '/how-to-offer-car-finance-dealers', '/what-is-ccr007',
+  '/van-commercial-vehicle-dealers-fca-permissions']) app.get(route, (req, res) => res.render('seo_guide'));
+
 app.get('/about', (req, res) => {
   res.render('about', {
     salesPage: true,
@@ -3318,7 +3325,7 @@ app.get('/pricing', (req, res) => {
     pageDescription: `Clear pricing for motor dealers. FCA authorisation assistance: ${priceSentence()} CCR009 Return Assistance and Ongoing Compliance Support are priced separately.`,
     canonicalUrl: 'https://009compliance.com/pricing',
     faqs,
-    pageSchema: [faqData.toSchema(faqs)]
+    pageSchema: [faqData.toSchema(faqs.filter(faq => !faq.historicalPrice))]
   });
 });
 

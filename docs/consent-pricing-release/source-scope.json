@@ -1,0 +1,12 @@
+{
+  "changed": [
+    "public/js/guide-enhancements.js",
+    "config/asset-manifest.json",
+    "public/js/pricing-services.js",
+    "server.js",
+    "tests/seo.test.cjs",
+    "views/cookie_policy.ejs",
+    "views/layout.ejs",
+    "views/pricing.ejs"
+  ]
+}

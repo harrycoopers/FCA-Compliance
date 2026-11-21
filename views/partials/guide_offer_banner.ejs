@@ -1,0 +1,23 @@
+<%
+  /* Compact FCA offer banner: FCA authorisation guides only, after the first editorial section.
+     Plain server-rendered text, no heading (stays out of the H2/H3 outline). The motion is
+     CSS-only (transform/opacity), sits behind the text and stops for reduced motion. Its box is
+     reserved by min-height and containment, so nothing shifts when it starts or stops. */
+  const _c = campaign, _o = offer;
+  const _custom = _c.post.mode === 'custom' && _c.post.headline;
+%>
+<aside class="guide-offer-banner<%= _c.active ? ' is-festive' : '' %>" aria-label="FCA application help" data-compact-offer>
+  <span class="guide-offer-banner__sheen" aria-hidden="true"></span>
+  <div class="guide-offer-banner__body">
+  <% if (_c.showPrice) { %>
+    <p class="guide-offer-banner__tag"><% if (_c.active) { %>Christmas offer · closes <time datetime="<%= _c.closingDateIso %>"><%= _c.closingLabel %></time><% } else { %>Monthly subscription<% } %></p>
+    <p class="guide-offer-banner__text"><strong>FCA application help: <%= _o.summary %></strong></p>
+    <p class="guide-offer-banner__terms"><%= _o.qualifier %></p>
+  <% } else { %>
+    <p class="guide-offer-banner__tag">FCA application help</p>
+    <p class="guide-offer-banner__text"><strong><%= _custom ? _c.post.headline : 'Talk through your FCA application' %></strong></p>
+    <p class="guide-offer-banner__terms"><%= (_c.post.mode === 'custom' && _c.post.text) ? _c.post.text : 'Book a 15-minute call and we’ll explain the current terms for new applications before you commit to anything.' %></p>
+  <% } %>
+  </div>
+  <a class="guide-offer-banner__link" href="/fca-authorisation-motor-dealers"><%= guideOfferAnchor %> <span aria-hidden="true">→</span></a>
+</aside>

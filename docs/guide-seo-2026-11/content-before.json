@@ -1,0 +1,3058 @@
+{
+  "/do-motor-dealers-need-fca-authorisation": {
+    "title": "Do Motor Dealers Need FCA Authorisation?",
+    "answer": "Selling cars does not, by itself, mean a dealership needs FCA authorisation. Introducing customers to regulated credit or consumer hire can bring the business within FCA regulation. Check the activities you actually carry out, the permissions they require and whether you will operate through direct authorisation or an appropriate appointed-representative arrangement.",
+    "sections": [
+      {
+        "title": "Start with what your dealership does",
+        "paragraphs": [
+          "Map the journey from the customer’s first finance enquiry to the lender or broker. Include online enquiries, telephone introductions, showroom conversations and any help with settling finance on a part-exchange. A label such as “we only introduce” does not settle the regulatory position."
+        ],
+        "bullets": [],
+        "columns": [
+          "Dealership activity",
+          "What to investigate"
+        ],
+        "rows": [
+          [
+            "Selling vehicles without arranging or introducing finance",
+            "Vehicle sales alone do not establish a need for credit broking permission. Check any other activities separately."
+          ],
+          [
+            "Introducing customers to lenders or another credit broker",
+            "Assess credit broking and the permissions or principal arrangement needed."
+          ],
+          [
+            "Introducing customers to a consumer hire provider",
+            "Check the scope for consumer hire introductions; do not assume it is the same as selling a car for cash."
+          ],
+          [
+            "Helping settle finance on a part-exchange",
+            "Debt adjusting and debt counselling permissions may also be relevant."
+          ],
+          [
+            "Providing credit or hiring out your own vehicles",
+            "Check lending or consumer hire requirements separately from credit broking."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          },
+          {
+            "id": "broker",
+            "label": "FCA: credit broker authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Direct authorisation and appointed representatives",
+        "paragraphs": [
+          "A directly authorised dealership holds its own permissions and is responsible for complying with their scope and conditions. An appointed representative (AR) carries on the agreed activities under a principal’s responsibility. An AR arrangement is not unrestricted permission to conduct any finance activity.",
+          "An introducer appointed representative (IAR) has a narrower role, limited to introductions to its principal and distributing non-real-time financial promotions. Confirm the proposed activity with the principal before relying on this route."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/limited-permission-fca-authorisation-motor-dealers",
+            "Compare limited and full permission"
+          ],
+          [
+            "/fca-licence-car-dealers",
+            "Understand FRNs and check the Register"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Illustrative dealership example",
+        "paragraphs": [
+          "A dealer owns its stock and plans to introduce buyers to third-party vehicle finance. The FCA’s motor-dealer guidance identifies limited-permission secondary credit broking as the likely route for that activity. If the dealer also takes part-exchanges with outstanding finance, additional permissions need consideration.",
+          "This example is a starting point, not a permission assessment for every dealership. Vehicle sourcing, non-owned stock and unrelated finance introductions can change the position."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Prepare before you apply",
+        "paragraphs": [],
+        "bullets": [
+          "Write down who owns the vehicles and which agreements you will introduce.",
+          "Record the intended lenders, brokers and any principal relationship.",
+          "Describe what staff will say and do at each stage, including part-exchanges.",
+          "Resolve the scope before taking on regulated activities; sending an application does not itself authorise them."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "Prepare the application documents"
+          ],
+          [
+            "/credit-broking-permission-motor-dealers",
+            "Read the credit broking activity guide"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does every car dealer need FCA authorisation?",
+        "answer": "No. The position depends on regulated activities, not simply being a car dealer. Finance introductions, hire and settlement assistance need separate consideration."
+      },
+      {
+        "question": "Does using a finance broker remove the need to check permissions?",
+        "answer": "No. Introducing a customer to another credit broker can itself be credit broking. Check your own role and any principal arrangement."
+      },
+      {
+        "question": "Can we discuss our plans before applying?",
+        "answer": "Yes. A planning discussion does not authorise regulated activity. Establish the required permissions or principal arrangement before starting that activity."
+      }
+    ],
+    "related": [
+      "/limited-permission-fca-authorisation-motor-dealers",
+      "/credit-broking-permission-motor-dealers",
+      "/fca-application-documents-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "broker",
+        "label": "FCA: credit broker authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      }
+    ],
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-01",
+    "description": "Check when vehicle finance introductions need FCA permissions, how appointed representatives differ and which dealership activities to assess.",
+    "seoTitle": "Do Motor Dealers Need FCA Authorisation? | 009 Compliance"
+  },
+  "/fca-licence-car-dealers": {
+    "title": "FCA Licence for Car Dealers: Authorisation, FRNs and Permissions",
+    "answer": "“FCA licence” is a common way of referring to FCA authorisation. For a car dealer, the important checks are the firm’s regulatory status, its permitted activities and any restrictions. A Firm Reference Number (FRN) identifies a firm; the number alone does not show that it can carry out every type of finance activity.",
+    "sections": [
+      {
+        "title": "What the terminology means",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Term",
+          "Meaning for your dealership"
+        ],
+        "rows": [
+          [
+            "Authorisation",
+            "The firm’s authorisation to undertake specified regulated activities, subject to its permissions and requirements."
+          ],
+          [
+            "Permission",
+            "The scope of regulated activities the firm may carry out, including applicable limitations."
+          ],
+          [
+            "FRN",
+            "The reference used to identify a firm in FCA records. Check the associated entry and current status."
+          ],
+          [
+            "Appointed representative",
+            "A firm carrying on agreed activities under a principal’s responsibility; this is different from holding its own direct authorisation."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "register",
+            "label": "FCA: Financial Services Register",
+            "href": "https://www.fca.org.uk/firms/financial-services-register"
+          },
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "How to check a dealership on the Register",
+        "paragraphs": [
+          "Use the FCA’s official Register and search by the legal name or FRN. Match the entry to the business you are dealing with rather than relying on a copied logo or number.",
+          "Check the current status, the relevant permissions and restrictions, and any principal relationship. Read the entry’s details alongside the proposed activity. If something is unclear, use the FCA’s guidance or contact the firm through independently verified details."
+        ],
+        "bullets": [
+          "Match the legal entity, trading name and contact information.",
+          "Check the status is current, not a historical authorisation.",
+          "Look for the activity you intend to carry out and any limitations.",
+          "For an AR, verify the principal and the scope of the arrangement."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "register",
+            "label": "FCA: Financial Services Register",
+            "href": "https://www.fca.org.uk/firms/financial-services-register"
+          }
+        ],
+        "links": [
+          [
+            "/do-motor-dealers-need-fca-authorisation",
+            "Check whether your activities need authorisation"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "An FRN is not an endorsement",
+        "paragraphs": [
+          "Describe the dealership’s actual status accurately in customer communications. Do not treat authorisation as an FCA recommendation of the business or its products. An application in progress is not the same as approval.",
+          "For example, a dealer should not reuse a predecessor company’s regulatory wording just because the trading name and premises look the same. First establish which legal entity will carry on the activity."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "promotions",
+            "label": "FCA: key rules for credit brokers",
+            "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "If you are applying for the first time",
+        "paragraphs": [
+          "Start with your business model and required activities, then prepare an application consistent with them. The application, website and customer process should describe the same business.",
+          "The FCA assesses the applicant firm. Support with documents does not transfer responsibility for understanding and explaining the application."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "See the application document checklist"
+          ],
+          [
+            "/why-fca-applications-get-delayed",
+            "Understand assessment and clarification requests"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is an FCA licence the same as an FRN?",
+        "answer": "No. An FRN is an identifier. Check the firm’s status, permissions and limitations to understand what it may do."
+      },
+      {
+        "question": "Does authorisation cover all finance products?",
+        "answer": "No. The firm must act within the activities and limitations of its permission or the agreed scope of its principal arrangement."
+      },
+      {
+        "question": "Can we describe an application as FCA approval?",
+        "answer": "No. Submitting an application does not mean the FCA has authorised the firm."
+      }
+    ],
+    "related": [
+      "/do-motor-dealers-need-fca-authorisation",
+      "/limited-permission-fca-authorisation-motor-dealers",
+      "/website-compliance-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "register",
+        "label": "FCA: Financial Services Register",
+        "href": "https://www.fca.org.uk/firms/financial-services-register"
+      },
+      {
+        "id": "apply",
+        "label": "FCA: applying for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      },
+      {
+        "id": "promotions",
+        "label": "FCA: key rules for credit brokers",
+        "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+      }
+    ],
+    "group": "fca",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Understand FCA authorisation, Firm Reference Numbers and permissions. Learn what to check on the Register before describing your dealership’s status.",
+    "seoTitle": "FCA Licence for Car Dealers: FRNs and Permissions | 009 Compliance"
+  },
+  "/limited-permission-fca-authorisation-motor-dealers": {
+    "title": "Limited Permission FCA Authorisation for Motor Dealers",
+    "answer": "Limited permission can be appropriate for some motor dealers, but it is not determined simply by the size of the dealership or by calling finance a secondary service. Vehicle ownership, the agreements introduced, sourcing activities and part-exchange finance settlement can change which permissions are needed.",
+    "sections": [
+      {
+        "title": "Compare the business model before choosing permissions",
+        "paragraphs": [
+          "These examples summarise the FCA’s motor-dealer guidance. They are not an exhaustive eligibility test. Consider all proposed regulated activities together."
+        ],
+        "bullets": [],
+        "columns": [
+          "Business model",
+          "Permission points to check"
+        ],
+        "rows": [
+          [
+            "You own the vehicles and introduce buyers to third-party finance",
+            "The FCA identifies limited-permission secondary credit broking as the likely permission."
+          ],
+          [
+            "You own the vehicles and handle part-exchanges with outstanding finance",
+            "Limited debt adjusting and debt counselling permissions may also be needed for the relevant credit activities."
+          ],
+          [
+            "You do not own the vehicles; introductions are only for hire purchase or consumer hire; no part-exchange finance settlement",
+            "The FCA identifies a limited credit broking route restricted to those agreement types."
+          ],
+          [
+            "Same non-owned-stock model, but with part-exchange finance settlement",
+            "The FCA identifies full permission for credit broking plus the relevant debt adjusting and counselling activities."
+          ],
+          [
+            "Non-owned stock with introductions for other forms of credit",
+            "Full-permission credit broking is the route identified by the FCA."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Vehicle sourcing and other activities",
+        "paragraphs": [
+          "The FCA sets separate conditions for finance introductions connected to a vehicle-sourcing service. These include whether the introduction would happen without that service and whether most revenue comes from sourcing rather than the credit introductions. Settlement of existing vehicle finance also affects the permissions to consider.",
+          "Introductions unrelated to the vehicles you sell, direct lending and hiring your own vehicles need their own assessment. Do not extend a permission conclusion from one business model to another."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Limited permission still involves ongoing obligations",
+        "paragraphs": [
+          "“Limited” describes a permission category; it does not mean compliance ends when the application is approved. Customer communications, applicable Consumer Duty requirements, reporting and the firm’s permission limits still matter.",
+          "Prepare policies and processes proportionate to the actual business. A small dealership’s procedures can be practical and concise while still explaining who does what and how problems are handled."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/consumer-duty-motor-dealers",
+            "Consumer Duty in the dealership"
+          ],
+          [
+            "/after-fca-approval-motor-dealers",
+            "What to organise after approval"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "A useful preparation exercise",
+        "paragraphs": [
+          "Create a one-page activity map before choosing an application route. Record stock ownership, agreement types, partner firms, remuneration, part-exchanges and any separate lending or hire activity. Mark uncertainties for resolution before submission.",
+          "This is a suggested preparation method, not an additional FCA form. It helps make the business plan, application answers and website consistent."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "Build your application document pack"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does a small dealership automatically qualify for limited permission?",
+        "answer": "No. The activities and business model matter. Size alone does not establish eligibility."
+      },
+      {
+        "question": "Does non-owned stock always mean full permission?",
+        "answer": "No. The FCA describes a limited route for certain hire purchase and consumer hire introductions where there is no part-exchange finance settlement. Other facts can change the position."
+      },
+      {
+        "question": "Can we add new activities after approval?",
+        "answer": "Check your existing permission and any required variation before starting a new regulated activity. Do not assume the original permission covers a changed business model."
+      }
+    ],
+    "related": [
+      "/do-motor-dealers-need-fca-authorisation",
+      "/credit-broking-permission-motor-dealers",
+      "/fca-application-documents-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "broker",
+        "label": "FCA: credit broker authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      }
+    ],
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-01",
+    "description": "Compare FCA permission scenarios for owned stock, non-owned vehicles and part-exchanges. Understand why your dealership’s activities determine the route.",
+    "seoTitle": "Limited Permission FCA Authorisation for Motor Dealers | 009 Compliance"
+  },
+  "/credit-broking-permission-motor-dealers": {
+    "title": "Credit Broking Permission for Motor Dealers",
+    "answer": "A motor dealer can carry on credit broking by introducing a customer to a lender, a consumer hire provider or another credit broker. The required permission depends on what the dealer does and its business model. Receiving no commission does not, by itself, mean an introduction falls outside credit broking.",
+    "sections": [
+      {
+        "title": "Follow the introduction, not just the payment",
+        "paragraphs": [
+          "Identify where the customer goes after asking about finance. A dealer that passes an enquiry to another broker still needs to consider its own regulated role. The CCR009 completion notes give examples of dealer introductions to finance providers and to intermediaries, whether or not a fee is earned."
+        ],
+        "bullets": [],
+        "columns": [
+          "Stage",
+          "Questions to record"
+        ],
+        "rows": [
+          [
+            "Customer enquiry",
+            "Who explains the service, captures details and provides information?"
+          ],
+          [
+            "Introduction",
+            "Is the recipient a lender, hire provider or another broker?"
+          ],
+          [
+            "Agreement",
+            "What credit or hire agreement is being considered, and who provides it?"
+          ],
+          [
+            "Payment and remuneration",
+            "What fees or commission arise, who pays them and how are they explained?"
+          ],
+          [
+            "Part-exchange",
+            "Does anyone help arrange settlement of existing finance?"
+          ]
+        ],
+        "sources": [
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Credit broking is different from lending",
+        "paragraphs": [
+          "If the dealership introduces a customer to a third-party lender, describe that role accurately. If a business also lends, its lending and broking roles need to be distinguished in the relevant communications.",
+          "An introduction is not a lender’s approval. Avoid wording that promises acceptance or implies every customer will receive finance."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "promotions",
+            "label": "FCA: key rules for credit brokers",
+            "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+          }
+        ],
+        "links": [
+          [
+            "/website-compliance-motor-dealers",
+            "Review finance wording on your website"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Match the permission to the business",
+        "paragraphs": [
+          "Stock ownership and agreement types affect the limited/full-permission assessment. Helping with existing vehicle finance may introduce separate debt adjusting or counselling considerations.",
+          "Use the dedicated permission comparison rather than assuming that every dealership uses the same application. For AR or IAR arrangements, confirm the activity the principal has accepted and the limits of the appointment."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          },
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/limited-permission-fca-authorisation-motor-dealers",
+            "Compare motor-dealer permission scenarios"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Illustrative customer journey",
+        "paragraphs": [
+          "A buyer asks about finance for a vehicle. The dealer explains its role and passes the enquiry to a broker. That broker approaches a lender, which assesses the customer. The dealer should document its own steps, disclosures and responsibilities; the later involvement of a broker does not erase the dealer’s introduction.",
+          "This example illustrates the roles, not a universal compliant sales script. The required process depends on the arrangement and applicable rules."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "Include the customer journey in your business plan"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can introducing a customer to another broker be credit broking?",
+        "answer": "Yes. Credit broking can include introductions to another person carrying on credit broking. Check your own activity and permissions."
+      },
+      {
+        "question": "Do we need to consider permissions if we receive no commission?",
+        "answer": "Yes. Whether a fee or commission is earned is not, by itself, the test for whether an introduction is credit broking."
+      },
+      {
+        "question": "Is motor-finance broker support included in authorisation assistance?",
+        "answer": "No. Motor-finance arrangements are separate. Required permissions and broker onboarding must be in place before the relevant activity starts."
+      }
+    ],
+    "related": [
+      "/limited-permission-fca-authorisation-motor-dealers",
+      "/website-compliance-motor-dealers",
+      "/fca-application-documents-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      },
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      },
+      {
+        "id": "promotions",
+        "label": "FCA: key rules for credit brokers",
+        "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+      }
+    ],
+    "group": "fca",
+    "finance": true,
+    "reviewed": "2026-11-01",
+    "description": "Understand motor-dealer credit broking, lender and broker introductions, permission limits and the customer journey, with official FCA sources.",
+    "seoTitle": "Credit Broking Permission for Motor Dealers | 009 Compliance"
+  },
+  "/fca-application-documents-motor-dealers": {
+    "title": "FCA Application Documents for Motor Dealers: Preparation Checklist",
+    "answer": "A motor-dealer FCA application needs information about the firm, its ownership, proposed regulated activities and how it will operate. The FCA’s motor-dealer guidance specifically describes what it expects in a regulatory business plan. The complete document and form requirements depend on the permissions, legal structure and people involved.",
+    "sections": [
+      {
+        "title": "Documents and information to prepare",
+        "paragraphs": [
+          "Use this as a preparation checklist, then confirm the applicable forms and uploads in the FCA’s current guidance and Connect application. Not every item below is a separate mandatory upload for every dealer."
+        ],
+        "bullets": [],
+        "columns": [
+          "Material",
+          "Purpose and preparation"
+        ],
+        "rows": [
+          [
+            "Regulatory business plan",
+            "Explain the business, customer journey, partners, risks and controls. Use the motor-dealer requirements below."
+          ],
+          [
+            "Company and ownership information",
+            "Make legal names, trading names, directors, controllers and ownership details consistent across the application."
+          ],
+          [
+            "Individual and controller forms",
+            "Check which forms, background checks and supporting details apply to the individuals and structure."
+          ],
+          [
+            "Financial information and forecasts",
+            "Prepare the information requested for the chosen application type; state assumptions and check figures agree with the business plan."
+          ],
+          [
+            "Policies and procedures",
+            "Describe how applicable requirements will work in practice, including complaints, vulnerable customers, promotions and monitoring."
+          ],
+          [
+            "Website and customer materials",
+            "Review status descriptions, finance wording, fees, commission and customer communications against the proposed model."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "docs",
+            "label": "FCA: supporting material for credit and consumer finance applications",
+            "href": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+          },
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          },
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "What the regulatory business plan should explain",
+        "paragraphs": [
+          "For a motor dealer, the FCA asks for an end-to-end customer journey, the intended lenders or brokers and the agreement types to be brokered. It also expects the risks and controls, how good customer outcomes will be delivered, Consumer Duty arrangements, fees and commission, and any unregulated activities to be explained.",
+          "Useful original detail includes a diagram of your own customer journey, the job role responsible for each step and how an exception is escalated. Avoid a generic plan that describes processes your staff will not actually use."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Make policies usable",
+        "paragraphs": [
+          "A complaints procedure should tell staff how to recognise, record and route a complaint. A vulnerable-customer process should describe the support staff can offer and when to ask for help. A promotions process should identify who approves wording and keeps the approved version.",
+          "These are examples of useful operational detail. Match each document to the firm’s actual obligations and scope; copying another dealer’s pack is not a substitute for checking applicability."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/consumer-duty-motor-dealers",
+            "Connect the documents to customer outcomes"
+          ],
+          [
+            "/website-compliance-motor-dealers",
+            "Review your website and promotions"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Check the pack before submission",
+        "paragraphs": [],
+        "bullets": [
+          "Reconcile names, ownership percentages, activities, partners and financial assumptions across documents.",
+          "Use version dates and identify the person responsible for each document.",
+          "Resolve missing information rather than submitting guesses.",
+          "Ensure the applicant can explain the material: the FCA expects to deal with the firm, even when a consultant helps."
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [
+          [
+            "/why-fca-applications-get-delayed",
+            "Understand avoidable clarification requests"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does every motor dealer need the same documents?",
+        "answer": "No. Requirements vary with the application type, activities, legal structure and individuals involved. Check the current FCA supporting-material guidance and the relevant application."
+      },
+      {
+        "question": "Can a consultant prepare the business plan?",
+        "answer": "A consultant can assist, but the applicant remains accountable and must understand and be able to explain the application material."
+      },
+      {
+        "question": "Is the FCA application fee included in the £100 starting payment?",
+        "answer": "No. The £100 starting payment is the first monthly payment for 009 Compliance’s assistance. The FCA application fee is payable separately."
+      }
+    ],
+    "related": [
+      "/limited-permission-fca-authorisation-motor-dealers",
+      "/why-fca-applications-get-delayed",
+      "/website-compliance-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "docs",
+        "label": "FCA: supporting material for credit and consumer finance applications",
+        "href": "https://www.fca.org.uk/firms/authorisation/supporting-material-credit-mortgage-consumer-finance"
+      },
+      {
+        "id": "apply",
+        "label": "FCA: applying for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      }
+    ],
+    "group": "fca",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Prepare your motor-dealer FCA application: business plan, ownership information, applicable forms, financial information and practical document checks.",
+    "seoTitle": "FCA Application Documents for Motor Dealers | 009 Compliance"
+  },
+  "/why-fca-applications-get-delayed": {
+    "title": "Why FCA Applications Get Delayed: A Motor Dealer Guide",
+    "answer": "FCA applications can take longer when the regulator needs missing information, clarification or evidence that the firm is ready to operate. The FCA says it usually assesses a complete FSMA application within six months; an incomplete application can take up to twelve months. These are published assessment timescales, not a guaranteed approval date.",
+    "sections": [
+      {
+        "title": "Separate preparation from FCA assessment",
+        "paragraphs": [
+          "Allow for gathering information and resolving permission questions before submitting. That preparation period is distinct from the FCA’s assessment of the submitted application. A six-month assistance subscription is also a commercial commitment, not an FCA decision timetable.",
+          "The FCA may ask follow-up questions, request documents or hold a call or discussion. Approval depends on the application meeting the applicable standards."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Issues worth checking before you submit",
+        "paragraphs": [
+          "The examples below are preparation checks, not a statistical ranking of delay causes."
+        ],
+        "bullets": [],
+        "columns": [
+          "Issue",
+          "Why it creates questions",
+          "Practical check"
+        ],
+        "rows": [
+          [
+            "Inconsistent activities",
+            "The website, plan and application describe different services.",
+            "Compare all descriptions against one activity map."
+          ],
+          [
+            "Unclear ownership",
+            "The people or entities controlling the business are not explained consistently.",
+            "Reconcile the ownership information and required forms."
+          ],
+          [
+            "Generic policies",
+            "The documents do not explain what the dealership will actually do.",
+            "Ask staff to walk through the process using a realistic example."
+          ],
+          [
+            "Unsupported financial assumptions",
+            "Figures do not match the business model or one another.",
+            "Document assumptions and reconcile the forecast and plan."
+          ],
+          [
+            "Incomplete customer journey",
+            "It is unclear who introduces, discloses, decides or handles problems.",
+            "Identify the responsible party at each stage."
+          ]
+        ],
+        "sources": [],
+        "links": [
+          [
+            "/fca-application-documents-motor-dealers",
+            "Check the supporting document pack"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Respond clearly to FCA questions",
+        "paragraphs": [
+          "A useful response process is to list each question, identify the supporting evidence and check that your answer is consistent with earlier material. Keep a record of what was sent and any requested response date.",
+          "If a business fact has changed, explain the change openly. The FCA warns that substantive changes indicating the firm is not ready may lead to a request to withdraw and reapply."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "What assistance can and cannot do",
+        "paragraphs": [
+          "Administrative assistance can help organise information, prepare documents and coordinate responses. It does not remove the applicant’s responsibility or give a consultant control over the FCA’s decision.",
+          "The FCA expects the applicant to be accountable and able to explain the material. Preparing for a conversation means understanding your business and controls, not memorising a script."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is six to twelve months the average approval time?",
+        "answer": "No average is established by this guide. The FCA publishes assessment timescales of usually within six months for a complete FSMA application and up to twelve months for an incomplete one."
+      },
+      {
+        "question": "Can 009 Compliance guarantee a faster decision?",
+        "answer": "No. We can assist with preparation and administration, but the FCA controls assessment and approval."
+      },
+      {
+        "question": "Should we submit before all required information is ready?",
+        "answer": "The FCA expects firms to be ready, willing and organised. Resolve required information and material uncertainties before submission rather than relying on later corrections."
+      }
+    ],
+    "related": [
+      "/fca-application-documents-motor-dealers",
+      "/limited-permission-fca-authorisation-motor-dealers",
+      "/after-fca-approval-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "apply",
+        "label": "FCA: applying for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      }
+    ],
+    "group": "fca",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Understand FCA assessment timescales, clarification requests and preparation checks for motor dealers. Learn what assistance can and cannot do.",
+    "seoTitle": "Why FCA Applications Get Delayed | 009 Compliance"
+  },
+  "/after-fca-approval-motor-dealers": {
+    "title": "After FCA Approval: A Motor Dealer’s Next Steps",
+    "answer": "After authorisation, start with the FCA’s approval letter: check when permission begins, which activities are allowed and any limitations or requirements. Then align your customer processes, staff, website and reporting arrangements with that permission. Authorisation is the start of ongoing responsibilities, not the end of compliance work.",
+    "sections": [
+      {
+        "title": "Read the decision before starting activity",
+        "paragraphs": [
+          "The FCA confirms the activities, start date and any requirements or limitations in its decision. Make a practical record of these and share the relevant boundaries with staff. Do not assume an activity is permitted because it appeared in an early draft of the application."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Suggested first-month organisation checklist",
+        "paragraphs": [
+          "This is an administrative plan, not a universal FCA rule requiring every item to be completed within 30 days. Follow any actual deadlines or conditions in the FCA’s correspondence."
+        ],
+        "bullets": [],
+        "columns": [
+          "Area",
+          "Action",
+          "Useful evidence"
+        ],
+        "rows": [
+          [
+            "Permission and Register",
+            "Check the approval and the published firm entry.",
+            "Decision letter and a record of the check."
+          ],
+          [
+            "People and procedures",
+            "Brief staff on their roles, disclosures and escalation routes.",
+            "Training record and approved procedures."
+          ],
+          [
+            "Website and documents",
+            "Update status wording to match the authorised entity and scope.",
+            "Approved versions and review notes."
+          ],
+          [
+            "FCA systems",
+            "Arrange access for the people who need to use the relevant systems.",
+            "Named users and access responsibilities."
+          ],
+          [
+            "Reporting",
+            "Check the firm’s task list and schedule; assign owners.",
+            "Calendar containing the actual return deadlines."
+          ],
+          [
+            "Customer outcomes",
+            "Decide what evidence will show whether processes work.",
+            "Monitoring results, actions and follow-up."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Understand your CCR009 reporting position",
+        "paragraphs": [
+          "Check whether CCR009 applies to the permissions held and review the schedule. Do not confuse collecting information each month with submitting the FCA return each month. A monthly internal process can help prepare for the applicable reporting cycle."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [
+          [
+            "/who-needs-to-submit-ccr009",
+            "Who needs CCR009?"
+          ],
+          [
+            "/when-is-ccr009-due",
+            "Reporting periods and deadlines"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Keep changes under review",
+        "paragraphs": [
+          "A new trading model, ownership change, additional finance activity or a different principal relationship may require action before it takes effect. Check the relevant FCA requirements rather than relying on the original application indefinitely.",
+          "Maintain a record of what changed, who checked its implications and what action was taken. This is a practical way to keep responsibility clear."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/consumer-duty-motor-dealers",
+            "Monitor customer outcomes"
+          ],
+          [
+            "/website-compliance-motor-dealers",
+            "Review customer-facing wording"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does FCA approval complete broker onboarding?",
+        "answer": "No. Motor-finance broker arrangements and onboarding are separate from authorisation. Both the required permissions and the commercial arrangement need to be in place."
+      },
+      {
+        "question": "Is monthly data collection a monthly CCR009 filing?",
+        "answer": "No. Internal collection frequency and the FCA reporting schedule are different. Check the firm’s actual return schedule."
+      },
+      {
+        "question": "Does 009 Compliance support authorised dealerships?",
+        "answer": "Yes. Our ongoing compliance and CCR009 services provide administrative support within the agreed scope. The authorised firm retains responsibility for its obligations."
+      }
+    ],
+    "related": [
+      "/who-needs-to-submit-ccr009",
+      "/consumer-duty-motor-dealers",
+      "/website-compliance-motor-dealers"
+    ],
+    "sources": [
+      {
+        "id": "apply",
+        "label": "FCA: applying for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      },
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      }
+    ],
+    "group": "ongoing",
+    "finance": true,
+    "reviewed": "2026-11-01",
+    "description": "Plan your next steps after FCA authorisation: permission conditions, staff, website disclosures, systems access, reporting and ongoing responsibilities.",
+    "seoTitle": "After FCA Approval: Motor Dealer Checklist | 009 Compliance"
+  },
+  "/what-is-ccr009": {
+    "title": "What Is CCR009? FCA Reporting for Motor Dealers",
+    "answer": "CCR009 is the FCA’s Relevant Ancillary Credit Firm return. It collects information from firms with permissions including credit broking, debt adjusting, debt counselling and providing credit information services. For a motor dealer, the return helps describe the regulated activities and how they fit into the business.",
+    "sections": [
+      {
+        "title": "What the return covers",
+        "paragraphs": [
+          "The return covers permissions, the business model, marketing, revenue and staff. Questions are tailored to the activities and answers entered, so there is no single identical questionnaire that every dealership completes.",
+          "Start with the current form and completion notes. Use the FCA’s data-flow diagrams to understand the route through the questions that applies to your business."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          },
+          {
+            "id": "form",
+            "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+          },
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "What changed when CCR009 was introduced",
+        "paragraphs": [
+          "CCR009 took effect on 7 May 2025. It replaced CCR004 and CCR005 and some information previously collected through CCR002 and CCR007. That does not mean every other scheduled return can be ignored.",
+          "Relevant limited-permission firms still submit CCR007 with reduced information alongside CCR009. Follow the current instructions for each scheduled return."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [
+          [
+            "/ccr009-vs-ccr007",
+            "See how CCR009 and CCR007 differ"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "How a dealership can prepare",
+        "paragraphs": [
+          "Use the questions to identify the source records you need, rather than guessing figures from total vehicle sales. Keep a note of the period, definitions and any calculations used. The return should describe the actual firm and the activity covered by the question."
+        ],
+        "bullets": [],
+        "columns": [
+          "Preparation step",
+          "Useful starting point"
+        ],
+        "rows": [
+          [
+            "Confirm scope",
+            "Permissions, activities and the firm’s reporting schedule."
+          ],
+          [
+            "Understand the questions",
+            "The current CCR009 form, completion notes and relevant data-flow diagram."
+          ],
+          [
+            "Gather evidence",
+            "The business records that support each applicable answer."
+          ],
+          [
+            "Review and submit",
+            "A checked return, authorised access and a saved submission record."
+          ]
+        ],
+        "sources": [],
+        "links": [
+          [
+            "/what-information-is-needed-for-ccr009",
+            "Information to gather"
+          ],
+          [
+            "/ccr009-reporting-checklist-motor-dealers",
+            "Preparation checklist"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Reporting is different from internal record collection",
+        "paragraphs": [
+          "Most firms report annually; a larger-firm exception applies. Your internal records can be updated more frequently to make preparation easier. Keeping monthly records does not turn CCR009 into a monthly FCA return."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [
+          [
+            "/when-is-ccr009-due",
+            "Read the reporting-cycle and deadline guide"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is CCR009 a tax return?",
+        "answer": "No. It is an FCA regulatory return about relevant consumer credit activities, separate from tax filings and company accounts."
+      },
+      {
+        "question": "Does every firm see the same questions?",
+        "answer": "No. The return uses the firm’s activities and answers to determine which questions are relevant."
+      },
+      {
+        "question": "Does CCR009 replace all other FCA reporting?",
+        "answer": "No. Check each return on your schedule. CCR009 replaces specified returns and information, not every reporting obligation."
+      }
+    ],
+    "related": [
+      "/who-needs-to-submit-ccr009",
+      "/what-information-is-needed-for-ccr009",
+      "/when-is-ccr009-due"
+    ],
+    "sources": [
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      },
+      {
+        "id": "form",
+        "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+      },
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Understand the FCA CCR009 return, what it covers, which reporting it replaces and how a motor dealer can prepare, with official source links.",
+    "seoTitle": "What Is CCR009? A Motor Dealer Guide | 009 Compliance"
+  },
+  "/who-needs-to-submit-ccr009": {
+    "title": "Who Needs to Submit CCR009? A Motor Dealer Guide",
+    "answer": "Start with the firm’s permissions. CCR009 applies to relevant ancillary credit firms with credit broking, debt adjusting, debt counselling or credit information services permissions, subject to the applicable reporting rules. A dealership’s legal status and principal arrangements matter; receiving commission alone is not the test.",
+    "sections": [
+      {
+        "title": "Check the authorised firm and its activities",
+        "paragraphs": [
+          "Match the legal entity and FRN to the permission record. Then review the actual reporting schedule and the relevant Handbook scope rules. Do not assume that another company in the same group, or a previous owner, has the same reporting position."
+        ],
+        "bullets": [],
+        "columns": [
+          "Situation",
+          "What to check"
+        ],
+        "rows": [
+          [
+            "Directly authorised dealership with credit broking permission",
+            "CCR009 applicability, the relevant activities and scheduled reporting period."
+          ],
+          [
+            "Dealership with debt adjusting or counselling permission",
+            "The questions and reporting requirements for those activities as well as any credit broking."
+          ],
+          [
+            "Appointed representative of a principal",
+            "The principal’s reporting arrangements and the information it requires from the AR."
+          ],
+          [
+            "No recent introductions or commission",
+            "How to answer the activity questions; inactivity does not itself establish that no return is required."
+          ],
+          [
+            "Only unregulated vehicle sales",
+            "Whether any relevant permissions or other regulated activities exist before drawing a reporting conclusion."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          },
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          },
+          {
+            "id": "sup",
+            "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Appointed representatives and principals",
+        "paragraphs": [
+          "The CCR009 form provides for principal firms to include their own and their appointed representatives’ activity unless the question states otherwise. Where an AR has more than one principal, a principal reports the AR activity for which that principal is responsible.",
+          "An AR should agree what records its principal needs and when. Do not copy a directly authorised dealership’s filing process without checking the arrangement."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "form",
+            "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+          },
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "What if the dealership has been inactive?",
+        "paragraphs": [
+          "The form includes questions about use of permissions and expected activity. An empty commission ledger is not enough to decide that reporting can stop. Check the return’s instructions and describe the position accurately.",
+          "If the schedule appears inconsistent with the firm’s permissions or circumstances, raise the discrepancy with the FCA. Keep a record of the issue; do not assume that a query has cancelled or extended a deadline."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "form",
+            "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+          }
+        ],
+        "links": [
+          [
+            "/what-information-is-needed-for-ccr009",
+            "Check the information needed"
+          ],
+          [
+            "/when-is-ccr009-due",
+            "Find the reporting deadline"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Keep a short scope record",
+        "paragraphs": [
+          "As a suggested administrative step, record the entity, FRN, permissions, principal relationships, returns shown and the person responsible for checking them. Review the record when the business changes.",
+          "This helps distinguish the question “does the firm report?” from “which questions does this firm answer?” The tailored questionnaire addresses the second question."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do limited-permission dealers have to consider CCR009?",
+        "answer": "Yes. Limited permission does not by itself remove CCR009 reporting. Check the relevant permissions and reporting rules."
+      },
+      {
+        "question": "Does no commission mean no CCR009 return?",
+        "answer": "No. Commission income alone does not determine whether a return is required. Follow the permission-based scope and the current activity questions."
+      },
+      {
+        "question": "Should an appointed representative follow the same process as a directly authorised firm?",
+        "answer": "Not automatically. Check the principal’s reporting responsibilities and agree the information the AR must supply."
+      }
+    ],
+    "related": [
+      "/what-is-ccr009",
+      "/ccr009-vs-ccr007",
+      "/when-is-ccr009-due"
+    ],
+    "sources": [
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      },
+      {
+        "id": "form",
+        "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+      },
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      },
+      {
+        "id": "sup",
+        "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Check CCR009 scope for motor dealers, relevant permissions, inactive firms and principal or appointed-representative arrangements.",
+    "seoTitle": "Who Needs to Submit CCR009? | 009 Compliance"
+  },
+  "/what-information-is-needed-for-ccr009": {
+    "title": "What Information Is Needed for CCR009?",
+    "answer": "The information needed for CCR009 depends on the firm’s permissions, activities and answers in the form. Use the current data items in SUP 16 Annex 38C with the completion notes in Annex 38D. Build a record of each applicable question, its definition and the evidence supporting your answer.",
+    "sections": [
+      {
+        "title": "Map questions to evidence",
+        "paragraphs": [
+          "The table below is a preparation map, not a replacement for the full return or a claim that every category appears for every firm. Use the exact field wording, reporting period and any specified snapshot date when preparing the answer."
+        ],
+        "bullets": [],
+        "columns": [
+          "Question or topic",
+          "Records to consult",
+          "Check before entering"
+        ],
+        "rows": [
+          [
+            "Credit broking activities — field 101A",
+            "Customer journey, introduction records and partner arrangements.",
+            "Select the applicable activity categories; introductions to a lender, hire provider and another broker are distinct."
+          ],
+          [
+            "Business model and permissions",
+            "Permission record, business plan and current operating arrangements.",
+            "Describe the actual business, including relevant changes."
+          ],
+          [
+            "Marketing questions that appear",
+            "Website, advertising channels and approved promotional material.",
+            "Use the question’s scope rather than assuming all marketing is identical."
+          ],
+          [
+            "Revenue and remuneration questions that appear",
+            "Accounts, transaction records and broker/lender statements.",
+            "Apply that field’s definition; vehicle sale value, credit advanced and commission are different figures."
+          ],
+          [
+            "Staff questions that appear",
+            "Role descriptions, staffing and training records.",
+            "Use the population and date specified by the question."
+          ],
+          [
+            "Principal and AR information, where applicable",
+            "Agreed AR data and records of which activity the principal is responsible for.",
+            "Follow the consolidation instructions and avoid duplication."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "form",
+            "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+          },
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Create a working data dictionary",
+        "paragraphs": [
+          "For each applicable field, record its reference, wording, definition, period or date, evidence location, calculation and preparer. Add a reviewer column if another person checks the work. This is a suggested working method, not an extra return to submit.",
+          "If a question’s meaning is uncertain, resolve it against the notes or with the FCA before entering a figure. Do not fill the gap with a total that happens to be available."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/ccr009-reporting-checklist-motor-dealers",
+            "Use the completion checklist"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Illustrative reconciliation example",
+        "paragraphs": [
+          "A dealer may hold a vehicle invoice, a finance agreement and a commission statement for the same transaction. These documents describe different amounts. Label each amount before deciding which record answers a particular return question.",
+          "For instance, a £12,000 vehicle sale, £10,000 credit amount and £200 commission are not interchangeable. These are fictional figures illustrating record separation, not instructions to place a particular amount in a particular field."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Separate the return from wider compliance records",
+        "paragraphs": [
+          "Complaints files, training evidence and monitoring records may be useful to the wider compliance process. Do not describe every internal record as a mandatory CCR009 submission item. Only the applicable form and its definitions determine what to enter.",
+          "Likewise, do not carry a calculation or proxy from another return into CCR009 unless its own instructions support that treatment."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/ccr009-vs-ccr007",
+            "Compare CCR009 with CCR007"
+          ],
+          [
+            "/common-ccr009-reporting-mistakes",
+            "Check for reporting errors"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can we use total vehicle sales as the answer to a revenue question?",
+        "answer": "Not automatically. Use the definition for the particular field. Vehicle sales, finance amounts and commission are different measures."
+      },
+      {
+        "question": "Do all dealers need the same data pack?",
+        "answer": "No. The relevant questions depend on the firm’s activities and responses. Map the questions that apply to your firm."
+      },
+      {
+        "question": "Can last year’s figures be copied?",
+        "answer": "Only where they are genuinely the correct answer for the current question and period. Reconcile current evidence rather than carrying figures forward without checking."
+      }
+    ],
+    "related": [
+      "/ccr009-reporting-checklist-motor-dealers",
+      "/how-to-prepare-for-ccr009-return",
+      "/common-ccr009-reporting-mistakes"
+    ],
+    "sources": [
+      {
+        "id": "form",
+        "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+      },
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      },
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Map CCR009 questions to dealership records. Check definitions, reporting periods, revenue measures and evidence before preparing your return.",
+    "seoTitle": "What Information Is Needed for CCR009? | 009 Compliance"
+  },
+  "/ccr009-reporting-checklist-motor-dealers": {
+    "title": "CCR009 Reporting Checklist for Motor Dealers",
+    "answer": "Before submitting CCR009, confirm the correct firm and reporting period, check access, map the applicable questions to evidence and review the answers. This practical checklist is designed to help organise that work. It does not replace the current FCA form, completion notes or your firm’s submission deadline.",
+    "sections": [
+      {
+        "title": "Use the checklist with your actual schedule",
+        "paragraphs": [
+          "Copy these tasks into your own working record and add an owner, target date and status. The suggested evidence helps demonstrate how an answer was prepared; it is not a list of additional documents the FCA always requires you to upload."
+        ],
+        "bullets": [],
+        "columns": [
+          "Task",
+          "Suggested completion evidence"
+        ],
+        "rows": [
+          [
+            "Confirm entity and reporting period",
+            "FRN, return name, period and deadline recorded."
+          ],
+          [
+            "Check viewing, editing and submission access",
+            "Relevant users can access the return; responsibilities agreed."
+          ],
+          [
+            "Read the current question route",
+            "Applicable questions identified using the form and notes."
+          ],
+          [
+            "Collect the source records",
+            "Each answer has a traceable record or explanation."
+          ],
+          [
+            "Reconcile figures",
+            "Definitions, period boundaries and calculations checked."
+          ],
+          [
+            "Review activities and changes",
+            "Answers match the actual business and relevant changes."
+          ],
+          [
+            "Resolve uncertainties",
+            "Open questions investigated before submission."
+          ],
+          [
+            "Review the completed return",
+            "Final answers checked by the responsible person."
+          ],
+          [
+            "Submit and retain confirmation",
+            "Submission status checked and confirmation retained."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          },
+          {
+            "id": "form",
+            "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+          },
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Questions for the final review",
+        "paragraphs": [],
+        "bullets": [
+          "Are we reporting the correct legal entity rather than a trading name’s previous owner?",
+          "Have we distinguished the reporting period from our accounting year?",
+          "Does each number answer its particular question?",
+          "Have we avoided duplicate records and unsupported zero answers?",
+          "Where AR data is relevant, is the responsible activity included correctly?",
+          "Have changes in staff, activities or partners been considered where the form asks about them?"
+        ],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/what-information-is-needed-for-ccr009",
+            "See the data preparation map"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Saving a draft is not submission",
+        "paragraphs": [
+          "Check the return’s final status and keep the confirmation after submitting. A useful internal record includes the version submitted, source records, preparer and date. Follow the firm’s applicable retention and data-protection arrangements.",
+          "If a submission error or unresolved discrepancy appears, investigate promptly. Do not describe the work as complete merely because the figures have been entered."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "A suggested readiness check",
+        "paragraphs": [
+          "Mark each task complete, awaiting information or blocked. Assign an owner to every open item and deal with access problems early. A shorter, accurate checklist that somebody uses is more helpful than a long checklist nobody owns."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/how-to-prepare-for-ccr009-return",
+            "Plan the preparation process"
+          ],
+          [
+            "/when-is-ccr009-due",
+            "Check reporting periods and deadlines"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this checklist an FCA form?",
+        "answer": "No. It is an administrative preparation aid. The actual return and official completion notes determine the required answers."
+      },
+      {
+        "question": "Do we need a second reviewer?",
+        "answer": "A second check can be useful where proportionate. This checklist does not claim that every firm must use a separate reviewer for CCR009."
+      },
+      {
+        "question": "What confirms the return has been submitted?",
+        "answer": "Check the submission status in the FCA system and retain the confirmation. Saving a draft or spreadsheet is not the same as submission."
+      }
+    ],
+    "related": [
+      "/what-information-is-needed-for-ccr009",
+      "/how-to-prepare-for-ccr009-return",
+      "/common-ccr009-reporting-mistakes"
+    ],
+    "sources": [
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      },
+      {
+        "id": "form",
+        "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+      },
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Use a practical CCR009 checklist covering access, reporting periods, evidence, reconciliation, review and submission confirmation.",
+    "seoTitle": "CCR009 Reporting Checklist for Motor Dealers | 009 Compliance"
+  },
+  "/ccr009-vs-ccr007": {
+    "title": "CCR009 vs CCR007: What Motor Dealers Need to Know",
+    "answer": "CCR009 and CCR007 are different FCA returns. CCR009 covers relevant ancillary credit firms; CCR007 is Key Data for Credit Firms with Limited Permissions. CCR009 replaces some CCR007 information, but relevant limited-permission firms can still need to submit both. Follow each return’s current instructions and schedule.",
+    "sections": [
+      {
+        "title": "Compare the returns",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Point",
+          "CCR009",
+          "CCR007"
+        ],
+        "rows": [
+          [
+            "Purpose",
+            "Information about relevant ancillary credit activities and the business carrying them on.",
+            "Key data for limited-permission credit firms."
+          ],
+          [
+            "Scope",
+            "Relevant credit broking, debt adjusting, debt counselling and credit information services permissions, subject to the rules.",
+            "Limited-permission firms under the applicable reporting rules."
+          ],
+          [
+            "Frequency",
+            "Usually annual; qualifying larger firms report every six months.",
+            "Annual."
+          ],
+          [
+            "Submission period",
+            "40 business days.",
+            "30 business days."
+          ],
+          [
+            "What to do",
+            "Answer the tailored questions using the current form and notes.",
+            "Submit the scheduled return and apply only the permitted reductions to information."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "reporting",
+            "label": "FCA: consumer credit reporting",
+            "href": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+          },
+          {
+            "id": "sup",
+            "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+          },
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "What CCR009 changes in CCR007",
+        "paragraphs": [
+          "The FCA permits firms submitting CCR009 to report zero in CCR007 fields 1A and 3A where those fields relate only to credit broking or not-for-profit debt management. Where other limited-permission activities are carried on, accurate information for those activities is still needed. The remaining fields still require accurate information.",
+          "This is a specific concession, not permission to put zero everywhere or stop submitting CCR007. Check the current FCA instructions before relying on it."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Do not confuse the returns with complaints reporting",
+        "paragraphs": [
+          "CCR007 is a key-data return and can include complaints information for limited-permission firms. It should not simply be renamed “the complaints return”. Other complaints-reporting requirements depend on the firm’s scope.",
+          "Maintain the underlying complaints records and determine which reporting requirements apply. Do not assume that submitting CCR009 satisfies every other obligation."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "reporting",
+            "label": "FCA: consumer credit reporting",
+            "href": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+          }
+        ],
+        "links": [
+          [
+            "/fca-compliance-motor-dealers-guide",
+            "See the wider compliance guide"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "A practical way to manage both",
+        "paragraphs": [
+          "Keep a separate line in the reporting calendar for each scheduled return, with its own period, deadline and owner. Link each answer to the correct return’s definition.",
+          "For a dealer with both returns, preparing one shared source-record pack can be efficient, but the answers must still be worked out separately. A rule or calculation used for CCR007 should not automatically be transferred to CCR009."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/when-is-ccr009-due",
+            "Understand the CCR009 deadline"
+          ],
+          [
+            "/what-information-is-needed-for-ccr009",
+            "Prepare CCR009 information"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Has CCR009 completely replaced CCR007?",
+        "answer": "No. Relevant limited-permission firms still submit CCR007 with reduced information alongside CCR009 under the current FCA instructions."
+      },
+      {
+        "question": "Do both returns have the same submission period?",
+        "answer": "No. The reporting table specifies 40 business days for CCR009 and 30 business days for CCR007. Check the exact due dates on the firm’s schedule."
+      },
+      {
+        "question": "Can all CCR007 fields be entered as zero after submitting CCR009?",
+        "answer": "No. The FCA’s concession applies to specified fields and activities. Accurate information remains required elsewhere."
+      }
+    ],
+    "related": [
+      "/what-is-ccr009",
+      "/who-needs-to-submit-ccr009",
+      "/when-is-ccr009-due"
+    ],
+    "sources": [
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      },
+      {
+        "id": "reporting",
+        "label": "FCA: consumer credit reporting",
+        "href": "https://www.fca.org.uk/firms/regulatory-reporting/consumer-credit-reporting"
+      },
+      {
+        "id": "sup",
+        "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+      },
+      {
+        "id": "ccr007",
+        "label": "FCA: completing CCR007",
+        "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Compare CCR009 and CCR007: purpose, applicability, reporting frequency, submission periods and the FCA’s reduced-information instructions.",
+    "seoTitle": "CCR009 vs CCR007: Motor Dealer Reporting | 009 Compliance"
+  },
+  "/common-ccr009-reporting-mistakes": {
+    "title": "CCR009 Reporting Mistakes Motor Dealers Should Check For",
+    "answer": "Useful CCR009 checks include the wrong reporting period, confusing different financial measures, unsupported zero answers, duplicated records and incomplete submission. These are errors to check for, not a claim about which mistakes occur most often. Start with the current form and its definitions.",
+    "sections": [
+      {
+        "title": "Error, example and prevention",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Error to check",
+          "Illustrative example",
+          "Practical prevention"
+        ],
+        "rows": [
+          [
+            "Wrong period",
+            "Using the accounts year without checking the return period.",
+            "Record the exact period before exporting data."
+          ],
+          [
+            "Wrong financial measure",
+            "Using vehicle sales where the question asks about a different revenue measure.",
+            "Map each field to its definition and source."
+          ],
+          [
+            "Double counting",
+            "Adding the same introduction from two exports.",
+            "Use transaction identifiers to investigate duplicates."
+          ],
+          [
+            "Unsupported zero",
+            "Entering zero because records are missing.",
+            "Resolve missing data and follow the relevant instructions."
+          ],
+          [
+            "Outdated activity description",
+            "Copying answers from before a partner or process changed.",
+            "Check the current business against each relevant question."
+          ],
+          [
+            "Incorrect principal/AR scope",
+            "Including activity for which a different principal is responsible.",
+            "Follow the consolidation and responsibility rules."
+          ],
+          [
+            "Draft mistaken for a filing",
+            "Saving answers without completing submission.",
+            "Check the final status and retain confirmation."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "form",
+            "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+          },
+          {
+            "id": "notes",
+            "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+          },
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Build checks around definitions",
+        "paragraphs": [
+          "Two totals can look plausible while measuring different things. Write the field definition beside the source figure and explain any adjustments. If a number is unexpectedly different from the previous period, investigate the reason rather than changing it simply to make it look consistent.",
+          "Use the correct question period or date. A field asking for a snapshot cannot safely be answered with an annual total."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/what-information-is-needed-for-ccr009",
+            "Map information to the return"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "If you identify an error after submission",
+        "paragraphs": [
+          "Identify the affected answer, the evidence and the corrected position. Check the current FCA process for correcting or resubmitting the data item, and contact the FCA if you cannot resolve the route. Keep a record of the issue and the action taken.",
+          "Do not submit a different return as a workaround or assume that changing an internal spreadsheet changes the filed return. This guide does not promise that every return can be corrected through the same screen."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Keep the review proportionate",
+        "paragraphs": [
+          "A small firm can use a short exception log: issue, owner, evidence, resolution and date. Review the unresolved items before submission. Where another person checks the return, make the evidence easy for them to follow."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/ccr009-reporting-checklist-motor-dealers",
+            "Use the submission checklist"
+          ],
+          [
+            "/how-to-prepare-for-ccr009-return",
+            "Organise preparation responsibilities"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can an unexpected change in a figure be correct?",
+        "answer": "Yes. A genuine business change can affect an answer. Investigate and document the reason rather than changing a valid figure to match the previous period."
+      },
+      {
+        "question": "Can we enter zero when information is missing?",
+        "answer": "Not simply because it is missing. Resolve the information gap and follow the relevant field instructions."
+      },
+      {
+        "question": "Will updating our spreadsheet amend the submitted return?",
+        "answer": "No. Follow the FCA’s applicable correction process and confirm the status of any replacement or amendment."
+      }
+    ],
+    "related": [
+      "/what-information-is-needed-for-ccr009",
+      "/ccr009-reporting-checklist-motor-dealers",
+      "/how-to-prepare-for-ccr009-return"
+    ],
+    "sources": [
+      {
+        "id": "form",
+        "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+      },
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      },
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Check CCR009 reporting periods, financial measures, duplicate records, zero answers and submission status with practical motor-dealer examples.",
+    "seoTitle": "CCR009 Reporting Mistakes to Check For | 009 Compliance"
+  },
+  "/how-to-prepare-for-ccr009-return": {
+    "title": "How to Prepare for a CCR009 Return",
+    "answer": "Prepare for CCR009 by confirming the reporting scope and deadline, arranging access, gathering evidence for the applicable questions and assigning responsibility for review and submission. A clear preparation process can reduce last-minute work without changing the firm’s FCA obligations.",
+    "sections": [
+      {
+        "title": "Organise the work in stages",
+        "paragraphs": [
+          "The timetable below is a suggested internal workflow, not an FCA-prescribed preparation schedule. Set dates that leave room to resolve questions before your actual deadline."
+        ],
+        "bullets": [],
+        "columns": [
+          "Stage",
+          "Work to complete",
+          "Suggested owner"
+        ],
+        "rows": [
+          [
+            "Plan",
+            "Confirm entity, scope, period and deadline; identify the relevant questions.",
+            "Person responsible for reporting."
+          ],
+          [
+            "Enable access",
+            "Check who can view, edit and submit the return.",
+            "RegData Principal User."
+          ],
+          [
+            "Gather",
+            "Collect the records needed for each applicable answer.",
+            "Relevant records owners."
+          ],
+          [
+            "Reconcile",
+            "Check definitions, periods, duplicates and calculations.",
+            "Preparer, with finance input as needed."
+          ],
+          [
+            "Review",
+            "Resolve exceptions and agree the final answers.",
+            "Responsible person or appropriate reviewer."
+          ],
+          [
+            "Submit and close",
+            "Submit, check status and retain the confirmation and working record.",
+            "User authorised to submit."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Check access before the deadline approaches",
+        "paragraphs": [
+          "The FCA says the firm’s Principal User has access to CCR009 and can grant other users the permissions needed to view, edit or submit it. Confirm the access each person actually needs.",
+          "Do not rely on sharing another person’s login. Keep responsibilities clear and make sure an absence does not leave the business unable to complete its reporting."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Gather information against the questions",
+        "paragraphs": [
+          "Start with the current form and completion notes. Create a list of applicable questions and ask each records owner for the relevant period and definition. This is more reliable than asking for “all finance figures” without explaining what is required.",
+          "Save an explanation of any calculation so the answer can be checked later. Mark unresolved questions rather than filling them with guesses."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/what-information-is-needed-for-ccr009",
+            "Use the data preparation guide"
+          ],
+          [
+            "/common-ccr009-reporting-mistakes",
+            "Check avoidable reporting errors"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Maintain records between returns",
+        "paragraphs": [
+          "Regular internal updates can make reporting easier. Choose a frequency that fits the business and its risks, then check that records remain complete and accessible. Monthly collection is an administrative choice, not a statement that CCR009 must be filed monthly.",
+          "After filing, note what caused difficulty and improve the next preparation cycle. An access issue, unclear definition or missing record can be assigned a specific action and owner."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/ccr009-reporting-checklist-motor-dealers",
+            "Complete the final checklist"
+          ],
+          [
+            "/when-is-ccr009-due",
+            "Check the FCA reporting cycle"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When should preparation begin?",
+        "answer": "Early enough to obtain access, gather evidence, resolve questions and review before the actual deadline. The appropriate lead time depends on the firm’s records and complexity."
+      },
+      {
+        "question": "Who grants access to CCR009?",
+        "answer": "The firm’s RegData Principal User can grant other users access to view, edit or submit the return."
+      },
+      {
+        "question": "Does using administrative support transfer responsibility?",
+        "answer": "No. The authorised firm remains responsible for the accuracy of its information, access arrangements and reporting obligations."
+      }
+    ],
+    "related": [
+      "/what-information-is-needed-for-ccr009",
+      "/ccr009-reporting-checklist-motor-dealers",
+      "/when-is-ccr009-due"
+    ],
+    "sources": [
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      },
+      {
+        "id": "form",
+        "label": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s152"
+      },
+      {
+        "id": "notes",
+        "label": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s153"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Organise CCR009 preparation: access, responsibilities, source records, reconciliation, review and submission. Separate internal collection from FCA filing.",
+    "seoTitle": "How to Prepare for a CCR009 Return | 009 Compliance"
+  },
+  "/when-is-ccr009-due": {
+    "title": "When Is CCR009 Due? Reporting Periods and Deadlines",
+    "answer": "Most firms submit CCR009 annually, using a calendar-year reporting period. Firms with annual revenue of £5 million or more from credit-related regulated activities report every six months. The FCA gives a 40-business-day submission window. Check your firm’s My FCA task list and reporting schedule for the exact period and due date.",
+    "sections": [
+      {
+        "title": "Reporting frequency and the submission window",
+        "paragraphs": [],
+        "bullets": [],
+        "columns": [
+          "Point",
+          "What it means"
+        ],
+        "rows": [
+          [
+            "Most firms",
+            "Annual reporting using the calendar year, 1 January to 31 December."
+          ],
+          [
+            "Larger-firm exception",
+            "Six-monthly reporting where annual credit-related regulated activity revenue is £5 million or more."
+          ],
+          [
+            "Submission window",
+            "40 business days; do not treat this as 40 calendar days."
+          ],
+          [
+            "Firm-specific deadline",
+            "Use the period and due date shown on the firm’s schedule and resolve discrepancies with the FCA."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          },
+          {
+            "id": "sup",
+            "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Where to find the exact deadline",
+        "paragraphs": [
+          "Sign in through the official My FCA portal and review the firm’s tasks and reporting schedule. Confirm the legal entity, data item, period and due date. Ensure the relevant user can access CCR009 in RegData.",
+          "If a return is missing or the details appear wrong, check user access and raise the issue with the FCA. Do not assume that not seeing a return proves it is not required."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Do not use the company accounts year by default",
+        "paragraphs": [
+          "CCR009 uses calendar-based periods, rather than the firm’s accounting reference date. A dealer with a different accounts year-end should map its records to the period required by the return.",
+          "For example, an annual filer with a September accounts year-end should not automatically use its October-to-September accounts totals for a January-to-December reporting period. This example explains period alignment; it is not a substitute for the firm’s actual schedule."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Plan back from the deadline",
+        "paragraphs": [
+          "Set internal dates for gathering information, resolving questions, reviewing and submitting. Leave time for access problems and discrepancies. These internal target dates are suggested administration, not extra FCA deadlines.",
+          "If the deadline has been missed or submission is blocked, address it promptly with the FCA and retain a record of the issue. Do not assume a grace period or that raising a query automatically extends the deadline."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/how-to-prepare-for-ccr009-return",
+            "Plan the preparation stages"
+          ],
+          [
+            "/ccr009-reporting-checklist-motor-dealers",
+            "Use the final checklist"
+          ]
+        ],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "CCR007 has a separate schedule",
+        "paragraphs": [
+          "Where CCR007 is also required, manage it separately. Its submission period is 30 business days under the reporting table, compared with 40 for CCR009. Preparing both together does not make their deadlines interchangeable."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "sup",
+            "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+            "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+          }
+        ],
+        "links": [
+          [
+            "/ccr009-vs-ccr007",
+            "Compare the two returns"
+          ]
+        ],
+        "id": "guide-section-5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is CCR009 due monthly?",
+        "answer": "No. Most firms report annually; the specified larger firms report every six months. Monthly internal data collection is separate from the FCA filing schedule."
+      },
+      {
+        "question": "Is the £5 million threshold based on all vehicle sales?",
+        "answer": "The FCA describes the threshold as annual revenue from credit-related regulated activities. Do not automatically substitute total vehicle sales turnover."
+      },
+      {
+        "question": "Can I use a single deadline found online?",
+        "answer": "Check the exact period and due date on your firm’s schedule. A general deadline article should not replace that check."
+      },
+      {
+        "question": "Does our accounting year-end determine the CCR009 period?",
+        "answer": "No. FCA guidance specifies calendar-based CCR009 reporting rather than the firm’s accounting reference date."
+      }
+    ],
+    "related": [
+      "/who-needs-to-submit-ccr009",
+      "/how-to-prepare-for-ccr009-return",
+      "/ccr009-vs-ccr007"
+    ],
+    "sources": [
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      },
+      {
+        "id": "sup",
+        "label": "FCA Handbook: SUP 16.12 — reporting schedules",
+        "href": "https://handbook.fca.org.uk/handbook/sup16/sup16s41"
+      }
+    ],
+    "group": "ccr",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Understand annual and six-monthly CCR009 reporting, the 40-business-day submission window and where to find your firm’s exact deadline.",
+    "seoTitle": "When Is CCR009 Due? Periods and Deadlines | 009 Compliance"
+  },
+  "/consumer-duty-motor-dealers": {
+    "title": "Consumer Duty for Motor Dealers: Outcomes and Practical Checks",
+    "answer": "Consumer Duty requires firms in scope to act to deliver good outcomes for retail customers. For a motor dealer, the practical focus includes the finance service offered, fair value, customer understanding and support. Responsibilities depend on the firm’s role and ability to influence outcomes; they are not identical for a dealer, broker and lender.",
+    "sections": [
+      {
+        "title": "The four outcomes in a dealership",
+        "paragraphs": [
+          "These examples show possible evidence and actions. They are suggested ways to assess outcomes, not a mandatory list of documents or a complete compliance assessment."
+        ],
+        "bullets": [],
+        "columns": [
+          "Outcome",
+          "Dealership example",
+          "Evidence and possible action"
+        ],
+        "rows": [
+          [
+            "Products and services",
+            "Consider whether the finance introduction service fits its intended customers.",
+            "Review the customer journey, partner information and instances where the process did not fit customer needs."
+          ],
+          [
+            "Price and value",
+            "Consider the relationship between what customers pay and the benefits received.",
+            "Review relevant charges, remuneration and value information; do not judge value only by a low monthly payment."
+          ],
+          [
+            "Consumer understanding",
+            "Help customers understand the dealer’s role and the information relevant to their decision.",
+            "Check customer questions and sample communications; improve wording that repeatedly causes confusion."
+          ],
+          [
+            "Consumer support",
+            "Provide support that meets customers’ needs through the relevant journey.",
+            "Review delays, contact difficulties and support needs; allocate and follow up corrective actions."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "duty",
+            "label": "FCA Handbook: PRIN 2A — Consumer Duty",
+            "href": "https://handbook.fca.org.uk/handbook/prin2a"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Match responsibilities to your role",
+        "paragraphs": [
+          "A dealership distributing a lender’s product has a different role from the lender that designs it. That difference does not mean the dealership can ignore outcomes it influences. Identify what the firm controls, what it relies on partners for and how concerns are escalated.",
+          "The Duty’s cross-cutting obligations include acting in good faith, avoiding foreseeable harm and enabling and supporting retail customers to pursue their financial objectives. Apply the relevant rules to the actual service and customer journey."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "duty",
+            "label": "FCA Handbook: PRIN 2A — Consumer Duty",
+            "href": "https://handbook.fca.org.uk/handbook/prin2a"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Turn observations into action",
+        "paragraphs": [
+          "A useful monitoring record sets out the issue, the evidence, which customers may be affected, the owner, the action and whether it worked. Use proportionate evidence from the business rather than collecting figures with no purpose.",
+          "For example, repeated questions about who provides finance may indicate unclear role wording. Review the wording, brief staff and check whether customers understand it better afterwards. This is an illustrative improvement cycle, not a claim that one test proves compliance."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Support vulnerable customers",
+        "paragraphs": [
+          "Build a practical route for staff to recognise and respond to support needs. Consider communication preferences, time to understand information and escalation to an appropriate person. Avoid treating vulnerability as a single label that explains every customer’s needs.",
+          "The governing body’s review of retail customer outcomes is required at least annually under PRIN 2A.8.4R for firms within its application. A monthly internal check may help your business, but it is not a universal monthly reporting requirement under that rule."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "duty",
+            "label": "FCA Handbook: PRIN 2A — Consumer Duty",
+            "href": "https://handbook.fca.org.uk/handbook/prin2a"
+          },
+          {
+            "id": "governance",
+            "label": "FCA Handbook: PRIN 2A.8 — governance and culture",
+            "href": "https://handbook.fca.org.uk/handbook/prin2a/prin2as8"
+          }
+        ],
+        "links": [
+          [
+            "/website-compliance-motor-dealers",
+            "Check customer-facing website content"
+          ],
+          [
+            "/fca-compliance-motor-dealers-guide",
+            "Organise the wider compliance process"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does a small dealership have no Consumer Duty responsibilities?",
+        "answer": "Size alone does not remove responsibilities. Check whether the firm and activity are in scope and apply the requirements proportionately to its role and customers."
+      },
+      {
+        "question": "Does fair value simply mean the lowest monthly payment?",
+        "answer": "No. Price and value concerns the relationship between the price paid and the benefits received, taking account of the relevant product or service."
+      },
+      {
+        "question": "Is a written policy enough?",
+        "answer": "A policy should be supported by how the business operates, monitors outcomes and addresses problems. A document alone does not show that customers receive good outcomes."
+      }
+    ],
+    "related": [
+      "/website-compliance-motor-dealers",
+      "/after-fca-approval-motor-dealers",
+      "/fca-compliance-motor-dealers-guide"
+    ],
+    "sources": [
+      {
+        "id": "duty",
+        "label": "FCA Handbook: PRIN 2A — Consumer Duty",
+        "href": "https://handbook.fca.org.uk/handbook/prin2a"
+      },
+      {
+        "id": "governance",
+        "label": "FCA Handbook: PRIN 2A.8 — governance and culture",
+        "href": "https://handbook.fca.org.uk/handbook/prin2a/prin2as8"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      }
+    ],
+    "group": "ongoing",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Understand the four Consumer Duty outcomes, dealership responsibilities, practical evidence and monitoring actions, with FCA Handbook sources.",
+    "seoTitle": "Consumer Duty for Motor Dealers | 009 Compliance"
+  },
+  "/website-compliance-motor-dealers": {
+    "title": "Website Compliance for Motor Dealers: A Practical Checklist",
+    "answer": "A motor dealer’s website should describe its legal identity, regulatory status and finance role accurately. Financial promotions must be clear, fair and not misleading. Review the whole customer journey, including vehicle listings, finance calculators, enquiry forms and mobile views; a footer alone cannot explain every relevant condition.",
+    "sections": [
+      {
+        "title": "Website review checklist",
+        "paragraphs": [
+          "Use the checks below as a working review. Which disclosures and detailed promotion rules apply depends on the firm, its status and the communication."
+        ],
+        "bullets": [],
+        "columns": [
+          "Area",
+          "What to check",
+          "Useful review evidence"
+        ],
+        "rows": [
+          [
+            "Identity and status",
+            "Legal name, trading name and regulatory wording match the actual firm and its status.",
+            "Register check and approved wording."
+          ],
+          [
+            "Broker or lender role",
+            "The page makes the relevant role clear and does not imply the dealer provides credit when it only brokers it.",
+            "Reviewed finance pages and customer journey."
+          ],
+          [
+            "Finance claims",
+            "Availability, eligibility and approval wording are accurate and appropriately qualified.",
+            "A record of claims and supporting information."
+          ],
+          [
+            "Prices and examples",
+            "Check applicable CONC rules on rates, representative APRs, examples and prominence when advertising credit.",
+            "Reviewed advertisement and the basis for the figures."
+          ],
+          [
+            "Fees and commission",
+            "Review applicable pre-contractual disclosures as well as general website wording.",
+            "Approved disclosure process and customer materials."
+          ],
+          [
+            "Complaints and support",
+            "Customers can find the relevant contact route and understand how to get help.",
+            "Working links and a tested enquiry route."
+          ],
+          [
+            "Mobile presentation",
+            "Important qualifications remain readable next to the relevant claim.",
+            "Checks on a narrow screen and with expanded content."
+          ]
+        ],
+        "sources": [
+          {
+            "id": "promotions",
+            "label": "FCA: key rules for credit brokers",
+            "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+          },
+          {
+            "id": "commission",
+            "label": "FCA Handbook: CONC 4.5 — commissions",
+            "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "Use wording that describes the real arrangement",
+        "paragraphs": [
+          "If the firm only brokers credit, do not present it as the lender. If it is an AR, do not copy the status wording of a directly authorised firm. Do not describe a pending application as authorisation.",
+          "An example such as “We act as a credit broker, not a lender” can explain a broker-only role, but is not a complete disclosure template for every business. Check the entity, permissions, principal arrangement and other applicable requirements before publication."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "promotions",
+            "label": "FCA: key rules for credit brokers",
+            "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+          },
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/fca-licence-car-dealers",
+            "Check status, FRNs and permissions"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "Commission disclosures need a process",
+        "paragraphs": [
+          "CONC 4.5 sets conditions for disclosure of the existence and nature of commission or other remuneration, including where it could affect impartiality or the customer’s decision. Where that disclosure is required, the rules also address its possible effect on amounts payable. Amount or likely amount must be disclosed on request in the circumstances specified by the rules.",
+          "Review the actual arrangements and timing against the current rules. A generic footer sentence should not be treated as proof that all pre-contractual disclosure requirements have been met. This guide does not supply a universal commission clause."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "commission",
+            "label": "FCA Handbook: CONC 4.5 — commissions",
+            "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Check understanding and maintain approved versions",
+        "paragraphs": [
+          "Test whether a customer can tell who they are dealing with, what happens after an enquiry and where to obtain help. Distinguish financial-services disclosures from separate privacy and cookie obligations; this checklist is not a complete data-protection audit.",
+          "Keep a record of the pages reviewed, the changes made and the person approving them. Review again when the business model, permissions, partners or promotional terms change. Choose a proportionate routine review frequency rather than describing an arbitrary interval as an FCA requirement."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/consumer-duty-motor-dealers",
+            "Connect website checks to Consumer Duty"
+          ],
+          [
+            "/fca-application-documents-motor-dealers",
+            "Prepare website information for an application"
+          ]
+        ],
+        "id": "guide-section-4"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is an FCA number in the footer enough?",
+        "answer": "No. The website must accurately explain the relevant identity, role and status, and applicable financial-promotion and disclosure requirements still need to be met."
+      },
+      {
+        "question": "Can one disclosure template be used by every dealership?",
+        "answer": "No. Wording depends on whether the firm is directly authorised or an AR, its activities and the particular arrangement."
+      },
+      {
+        "question": "Can 009 Compliance help review website content?",
+        "answer": "We provide administrative support with reviewing and organising customer-facing information within the agreed scope. The authorised firm remains responsible for its content and compliance."
+      }
+    ],
+    "related": [
+      "/consumer-duty-motor-dealers",
+      "/credit-broking-permission-motor-dealers",
+      "/fca-licence-car-dealers"
+    ],
+    "sources": [
+      {
+        "id": "promotions",
+        "label": "FCA: key rules for credit brokers",
+        "href": "https://www.fca.org.uk/firms/credit-broking-rules"
+      },
+      {
+        "id": "commission",
+        "label": "FCA Handbook: CONC 4.5 — commissions",
+        "href": "https://handbook.fca.org.uk/handbook/conc4/conc4s5"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      },
+      {
+        "id": "duty",
+        "label": "FCA Handbook: PRIN 2A — Consumer Duty",
+        "href": "https://handbook.fca.org.uk/handbook/prin2a"
+      }
+    ],
+    "group": "ongoing",
+    "finance": false,
+    "reviewed": "2026-11-01",
+    "description": "Review dealership status wording, finance promotions, commission disclosures, customer support and mobile readability using a practical checklist.",
+    "seoTitle": "Website Compliance for Motor Dealers | 009 Compliance"
+  },
+  "/fca-compliance-motor-dealers-guide": {
+    "title": "FCA Compliance for Motor Dealers: Guides and Next Steps",
+    "answer": "Motor-dealer compliance begins with understanding the activities the business carries on and continues through customer communications, staff processes, reporting and business changes. Use this guide to find the detailed article for your stage: preparing for authorisation, operating after approval or organising CCR009 reporting.",
+    "sections": [
+      {
+        "title": "Before authorisation: understand the business",
+        "paragraphs": [
+          "Establish the legal entity, activities and relevant permission or principal arrangement before building the application. Make the business plan, website and customer journey consistent. The FCA expects the applicant to understand and explain the material submitted."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "motor",
+            "label": "FCA: permissions and applications for motor dealers",
+            "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+          },
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          }
+        ],
+        "links": [
+          [
+            "/do-motor-dealers-need-fca-authorisation",
+            "Do motor dealers need FCA authorisation?"
+          ],
+          [
+            "/fca-licence-car-dealers",
+            "FCA licence, FRN and permissions explained"
+          ],
+          [
+            "/limited-permission-fca-authorisation-motor-dealers",
+            "Limited versus full permission"
+          ],
+          [
+            "/credit-broking-permission-motor-dealers",
+            "Credit broking activities"
+          ],
+          [
+            "/fca-application-documents-motor-dealers",
+            "Application documents"
+          ],
+          [
+            "/why-fca-applications-get-delayed",
+            "Assessment times and delays"
+          ]
+        ],
+        "id": "guide-section-1"
+      },
+      {
+        "title": "After approval: make the processes work",
+        "paragraphs": [
+          "Check the permission conditions, brief staff and organise access to relevant systems. Monitor whether customers can understand the service and obtain the support they need. Keep evidence of issues, decisions and follow-up rather than treating compliance as a set of unused policies."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "apply",
+            "label": "FCA: applying for authorisation",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply"
+          },
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [
+          [
+            "/after-fca-approval-motor-dealers",
+            "Post-approval checklist"
+          ],
+          [
+            "/consumer-duty-motor-dealers",
+            "Consumer Duty and customer outcomes"
+          ],
+          [
+            "/website-compliance-motor-dealers",
+            "Website and promotion checks"
+          ]
+        ],
+        "id": "guide-section-2"
+      },
+      {
+        "title": "CCR009: understand, prepare and submit",
+        "paragraphs": [
+          "Begin with scope and the current schedule. Then map the applicable questions to source records, organise preparation and check submission. Internal monthly collection is an administrative method; the FCA filing frequency comes from the reporting rules."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "ccr",
+            "label": "FCA: CCR009 reporting, scope and submission",
+            "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+          }
+        ],
+        "links": [
+          [
+            "/what-is-ccr009",
+            "What CCR009 is"
+          ],
+          [
+            "/who-needs-to-submit-ccr009",
+            "Who needs to report"
+          ],
+          [
+            "/when-is-ccr009-due",
+            "Reporting periods and deadlines"
+          ],
+          [
+            "/ccr009-vs-ccr007",
+            "CCR009 compared with CCR007"
+          ],
+          [
+            "/what-information-is-needed-for-ccr009",
+            "Information to gather"
+          ],
+          [
+            "/how-to-prepare-for-ccr009-return",
+            "Preparation process"
+          ],
+          [
+            "/ccr009-reporting-checklist-motor-dealers",
+            "Completion checklist"
+          ],
+          [
+            "/common-ccr009-reporting-mistakes",
+            "Errors to check for"
+          ]
+        ],
+        "id": "guide-section-3"
+      },
+      {
+        "title": "Keep a practical responsibility calendar",
+        "paragraphs": [
+          "A suggested internal calendar records each obligation or task, why it applies, the source of any deadline, the owner and the completion evidence. Separate recurring reporting from events triggered by a business change.",
+          "For example, reviewing a proposed new activity is different from completing an annual return. An ownership change, new permission requirement or change to a principal arrangement should be considered when proposed, rather than left until a routine review."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [
+          {
+            "id": "small",
+            "label": "FCA: regulatory guide for credit brokers",
+            "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+          }
+        ],
+        "links": [],
+        "id": "guide-section-4"
+      },
+      {
+        "title": "Choose support for the task in front of you",
+        "paragraphs": [
+          "009 Compliance provides administrative assistance with authorisation, CCR009 returns and ongoing compliance work within the agreed scope. Motor-finance broker arrangements are a separate service to discuss. The dealership retains responsibility for its information, permissions and obligations."
+        ],
+        "bullets": [],
+        "columns": [],
+        "rows": [],
+        "sources": [],
+        "links": [
+          [
+            "/fca-authorisation-motor-dealers",
+            "FCA authorisation assistance"
+          ],
+          [
+            "/ccr009-return-assistance-motor-dealers",
+            "CCR009 return assistance"
+          ],
+          [
+            "/motor-dealer-compliance",
+            "Ongoing compliance support"
+          ]
+        ],
+        "id": "guide-section-5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does every dealership have the same compliance requirements?",
+        "answer": "No. Activities, permissions, status, customers and business arrangements affect the requirements. Start with the actual firm and its scope."
+      },
+      {
+        "question": "Must every compliance check be performed monthly?",
+        "answer": "No universal monthly timetable is established by these guides. Follow applicable rules and deadlines, and choose proportionate internal monitoring routines."
+      },
+      {
+        "question": "Does support replace the dealership’s responsibility?",
+        "answer": "No. Administrative assistance supports the work; the firm remains responsible for its information, regulatory obligations and business decisions."
+      }
+    ],
+    "related": [
+      "/do-motor-dealers-need-fca-authorisation",
+      "/consumer-duty-motor-dealers",
+      "/when-is-ccr009-due"
+    ],
+    "sources": [
+      {
+        "id": "motor",
+        "label": "FCA: permissions and applications for motor dealers",
+        "href": "https://www.fca.org.uk/firms/authorisation/consumer-credit-brokers/motor-dealers"
+      },
+      {
+        "id": "apply",
+        "label": "FCA: applying for authorisation",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply"
+      },
+      {
+        "id": "small",
+        "label": "FCA: regulatory guide for credit brokers",
+        "href": "https://www.fca.org.uk/firms/regulatory-guide-credit-brokers"
+      },
+      {
+        "id": "ccr",
+        "label": "FCA: CCR009 reporting, scope and submission",
+        "href": "https://www.fca.org.uk/firms/consumer-credit-reporting/ccr009"
+      }
+    ],
+    "group": "ongoing",
+    "finance": true,
+    "reviewed": "2026-11-01",
+    "description": "Find motor-dealer guides for FCA authorisation, permissions, Consumer Duty, website compliance and CCR009 preparation, reporting and deadlines.",
+    "seoTitle": "FCA Compliance for Motor Dealers: Guides | 009 Compliance"
+  }
+}

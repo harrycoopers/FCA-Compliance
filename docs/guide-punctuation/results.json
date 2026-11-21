@@ -1,0 +1,2323 @@
+{
+  "pages": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "changedTextNodes": 21,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "changedTextNodes": 10,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "changedTextNodes": 24,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "changedTextNodes": 17,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "changedTextNodes": 16,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "changedTextNodes": 15,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "changedTextNodes": 9,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "changedTextNodes": 13,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "changedTextNodes": 14,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "changedTextNodes": 10,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "changedTextNodes": 10,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "changedTextNodes": 14,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "changedTextNodes": 9,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "changedTextNodes": 10,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "changedTextNodes": 20,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "changedTextNodes": 11,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "changedTextNodes": 11,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "changedTextNodes": 7,
+      "wordsIdentical": true,
+      "attributesStructureMetadataSchemaUnchanged": true
+    }
+  ],
+  "changes": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.3.1.1.5.0",
+      "before": "Usually, yes, if you introduce customers to regulated car finance: you need the relevant Financial Conduct Authority (FCA) authorisation or a valid appointed-representative arrangement covering that activity. Selling vehicles for cash alone does not require credit-broking permission. Check the actual activities and any applicable exclusions before starting; using another finance broker does not automatically remove your own responsibilities.",
+      "after": "Usually, yes, if you introduce customers to regulated car finance: you need the relevant Financial Conduct Authority (FCA) authorisation or a valid appointed representative arrangement covering that activity. Selling vehicles for cash alone does not require credit broking permission. Check the actual activities and any applicable exclusions before starting; using another finance broker does not automatically remove your own responsibilities.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.1.3.2",
+      "before": ", telephone introductions, showroom conversations and any help with settling finance on a part-exchange. A label such as “we only introduce” does not settle the regulatory position.",
+      "after": ", telephone introductions, showroom conversations and any help with settling finance on a part exchange. A label such as “we only introduce” does not settle the regulatory position.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.1.5.0.2.3.0.0",
+      "before": "Helping settle finance on a part-exchange",
+      "after": "Helping settle finance on a part exchange",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.3.10.3.0",
+      "before": "FCA Handbook: SUP 12.2 — appointed representatives",
+      "after": "FCA Handbook: SUP 12.2: appointed representatives",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.5.1.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.7.0.0.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.9.3.0",
+      "before": "A dealer owns its stock and plans to introduce buyers to third-party vehicle finance. The FCA’s motor-dealer guidance identifies",
+      "after": "A dealer owns its stock and plans to introduce buyers to third party vehicle finance. The FCA’s motor dealer guidance identifies",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.9.3.1.0",
+      "before": "limited-permission secondary credit broking",
+      "after": "limited permission secondary credit broking",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.9.3.2",
+      "before": "as the likely route for that activity. If the dealer also takes part-exchanges with outstanding finance, additional permissions need consideration.",
+      "after": "as the likely route for that activity. If the dealer also takes part exchanges with outstanding finance, additional permissions need consideration.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.9.4.0",
+      "before": "This example is a starting point, not a permission assessment for every dealership. Vehicle sourcing, non-owned stock and unrelated finance introductions can change the position.",
+      "after": "This example is a starting point, not a permission assessment for every dealership. Vehicle sourcing, non owned stock and unrelated finance introductions can change the position.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.11.3.0",
+      "before": "Before a planning meeting, bring a short description of your stock, finance introductions, partner firms and part-exchange process. Note which points are uncertain. This gives the discussion a practical starting point; a meeting does not conclusively determine permissions or authorise trading.",
+      "after": "Before a planning meeting, bring a short description of your stock, finance introductions, partner firms and part exchange process. Note which points are uncertain. This gives the discussion a practical starting point; a meeting does not conclusively determine permissions or authorise trading.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.11.5.2.0",
+      "before": "Describe what staff will say and do at each stage, including part-exchanges.",
+      "after": "Describe what staff will say and do at each stage, including part exchanges.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.13.1.3.11.15.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.13.1.3.11.19.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.13.1.3.11.23.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.15.1.1.5.11.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.15.1.1.5.15.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.15.1.1.5.19.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.19.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.5.1.19.2.3.0.0",
+      "before": "FCA Handbook: SUP 12.2 — appointed representatives",
+      "after": "FCA Handbook: SUP 12.2: appointed representatives",
+      "approvedProposal": true
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.5.1.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.7.0.0.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.13.1.3.11.15.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.13.1.3.11.19.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.13.1.3.11.23.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.15.1.1.5.11.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.15.1.1.5.15.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.15.1.1.5.19.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.5.1.19.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.3.1.1.5.0",
+      "before": "A motor dealer selling its own vehicles and introducing buyers to third-party finance may qualify for limited-permission secondary credit broking. That is a starting point, not a rule for every dealer. The Financial Conduct Authority (FCA) route depends on stock ownership, agreement types, sourcing, part-exchanges and other regulated activities—not simply the size of the business.",
+      "after": "A motor dealer selling its own vehicles and introducing buyers to third party finance may qualify for limited permission secondary credit broking. That is a starting point, not a rule for every dealer. The Financial Conduct Authority (FCA) route depends on stock ownership, agreement types, sourcing, part exchanges and other regulated activities, not simply the size of the business.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.0.0.0",
+      "before": "You own the vehicles and introduce buyers to third-party finance",
+      "after": "You own the vehicles and introduce buyers to third party finance",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.0.1.0",
+      "before": "The FCA identifies limited-permission secondary credit broking as the likely permission.",
+      "after": "The FCA identifies limited permission secondary credit broking as the likely permission.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.1.0.0",
+      "before": "You own the vehicles and handle part-exchanges with outstanding finance",
+      "after": "You own the vehicles and handle part exchanges with outstanding finance",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.2.0.0",
+      "before": "You do not own the vehicles; introductions are only for hire purchase or consumer hire; no part-exchange finance settlement",
+      "after": "You do not own the vehicles; introductions are only for hire purchase or consumer hire; no part exchange finance settlement",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.3.0.0",
+      "before": "Same non-owned-stock model, but with part-exchange finance settlement",
+      "after": "Same non owned stock model, but with part exchange finance settlement",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.4.0.0",
+      "before": "Non-owned stock with introductions for other forms of credit",
+      "after": "Non owned stock with introductions for other forms of credit",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.1.6.0.2.4.1.0",
+      "before": "Full-permission credit broking is the route identified by the FCA.",
+      "after": "Full permission credit broking is the route identified by the FCA.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.3.3.0",
+      "before": "The FCA sets separate conditions for finance introductions connected to a vehicle-sourcing service. These include whether the introduction would happen without that service and whether most revenue comes from sourcing rather than the credit introductions. Settlement of existing vehicle finance also affects the permissions to consider.",
+      "after": "The FCA sets separate conditions for finance introductions connected to a vehicle sourcing service. These include whether the introduction would happen without that service and whether most revenue comes from sourcing rather than the credit introductions. Settlement of existing vehicle finance also affects the permissions to consider.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.5.1.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.7.0.0.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.11.3.0",
+      "before": "Create a one-page activity map before choosing an application route. Record stock ownership, agreement types, partner firms, remuneration, part-exchanges and any separate lending or hire activity. Mark uncertainties for resolution before submission.",
+      "after": "Create a one page activity map before choosing an application route. Record stock ownership, agreement types, partner firms, remuneration, part exchanges and any separate lending or hire activity. Mark uncertainties for resolution before submission.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.11.6.0.2.2.0.0",
+      "before": "What happens to outstanding part-exchange finance?",
+      "after": "What happens to outstanding part exchange finance?",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.11.10.1.0",
+      "before": "FCA: motor-dealer permissions and application guidance",
+      "after": "FCA: motor dealer permissions and application guidance",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.15.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.19.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.23.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.11.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.15.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.19.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.17.2.0.0",
+      "before": "Does non-owned stock always mean full permission?",
+      "after": "Does non owned stock always mean full permission?",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.17.2.1.0",
+      "before": "No. The FCA describes a limited route for certain hire purchase and consumer hire introductions where there is no part-exchange finance settlement. Other facts can change the position.",
+      "after": "No. The FCA describes a limited route for certain hire purchase and consumer hire introductions where there is no part exchange finance settlement. Other facts can change the position.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.5.1.19.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.1.5.0.2.4.0.0",
+      "before": "Part-exchange",
+      "after": "Part exchange",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.1.7.1.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.3.3.0",
+      "before": "If the dealership introduces a customer to a third-party lender, describe that role accurately. If a business also lends, its lending and broking roles need to be distinguished in the",
+      "after": "If the dealership introduces a customer to a third party lender, describe that role accurately. If a business also lends, its lending and broking roles need to be distinguished in the",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.5.1.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.7.0.0.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.9.3.1.0",
+      "before": "limited/full-permission assessment",
+      "after": "limited/full permission assessment",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.9.6.0.0.0",
+      "before": "Compare motor-dealer permission scenarios",
+      "after": "Compare motor dealer permission scenarios",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.15.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.19.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.23.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.11.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.15.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.19.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.17.3.0.0",
+      "before": "Is motor-finance broker support included in authorisation assistance?",
+      "after": "Is motor finance broker support included in authorisation assistance?",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.17.3.1.0",
+      "before": "No. Motor-finance arrangements are separate. Required permissions and broker onboarding must be in place before the relevant activity starts.",
+      "after": "No. Motor finance arrangements are separate. Required permissions and broker onboarding must be in place before the relevant activity starts.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.5.1.19.2.0.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.3.1.1.5.0",
+      "before": "A motor-dealer FCA application needs information about the firm, its ownership, proposed regulated activities and how it will operate. The FCA’s motor-dealer guidance specifically describes what it expects in a regulatory business plan. The complete document and form requirements depend on the permissions, legal structure and people involved.",
+      "after": "A motor dealer FCA application needs information about the firm, its ownership, proposed regulated activities and how it will operate. The FCA’s motor dealer guidance specifically describes what it expects in a regulatory business plan. The complete document and form requirements depend on the permissions, legal structure and people involved.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.1.5.0.2.0.1.0",
+      "before": "Explain the business, customer journey, partners, risks and controls. Use the motor-dealer requirements below.",
+      "after": "Explain the business, customer journey, partners, risks and controls. Use the motor dealer requirements below.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.3.3.0",
+      "before": "For a motor dealer, the FCA asks for an end-to-end customer journey, the intended lenders or brokers and the agreement types to be brokered. It also expects the risks and controls, how good customer outcomes will be delivered,",
+      "after": "For a motor dealer, the FCA asks for an end to end customer journey, the intended lenders or brokers and the agreement types to be brokered. It also expects the risks and controls, how good customer outcomes will be delivered,",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.5.1.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.7.0.0.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.9.3.0",
+      "before": "A complaints procedure should tell staff how to recognise, record and route a complaint. A vulnerable-customer process should describe the support staff can offer and when to ask for help. A",
+      "after": "A complaints procedure should tell staff how to recognise, record and route a complaint. A vulnerable customer process should describe the support staff can offer and when to ask for help. A",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.11.9.3.0",
+      "before": "FCA: motor-dealer permissions and application guidance",
+      "after": "FCA: motor dealer permissions and application guidance",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.15.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.19.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.13.1.3.11.23.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.11.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.15.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.15.1.1.5.19.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.17.1.1.0",
+      "before": "No. Requirements vary with the application type, activities, legal structure and individuals involved. Check the current FCA supporting-material guidance and the relevant application.",
+      "after": "No. Requirements vary with the application type, activities, legal structure and individuals involved. Check the current FCA supporting material guidance and the relevant application.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.5.1.19.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.1.3.2",
+      "before": "before submitting. That preparation period is distinct from the FCA’s assessment of the submitted application. A six-month assistance subscription is also a commercial commitment, not an FCA decision timetable.",
+      "after": "before submitting. That preparation period is distinct from the FCA’s assessment of the submitted application. A six month assistance subscription is also a commercial commitment, not an FCA decision timetable.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.1.4.0",
+      "before": "The FCA may ask follow-up questions, request documents or hold a call or discussion. Approval depends on the application meeting the applicable standards.",
+      "after": "The FCA may ask follow up questions, request documents or hold a call or discussion. Approval depends on the application meeting the applicable standards.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.1.6.0.2.0.1.0",
+      "before": "The FCA’s consumer-credit application notes describe the legal determination period as the earlier of six months from receipt of a completed application or twelve months from receipt of an incomplete application.",
+      "after": "The FCA’s consumer credit application notes describe the legal determination period as the earlier of six months from receipt of a completed application or twelve months from receipt of an incomplete application.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.1.8.3.0",
+      "before": "FCA: consumer credit application notes — assessment periods",
+      "after": "FCA: consumer credit application notes: assessment periods",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.5.1.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. Offer closes 25 December 2026.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.7.0.0.0.2.4.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.13.1.3.11.15.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.13.1.3.11.19.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.13.1.3.11.23.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.15.1.1.5.11.0",
+      "before": "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "after": "First month included. Six month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.15.1.1.5.15.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.15.1.1.5.19.9.0",
+      "before": "The FCA decides applications and timescales. We can’t guarantee approval, and the six-month term isn’t a promised decision date.",
+      "after": "The FCA decides applications and timescales. We can’t guarantee approval, and the six month term isn’t a promised decision date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.19.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.5.1.19.2.2.0.0",
+      "before": "FCA: consumer credit application notes — assessment periods",
+      "after": "FCA: consumer credit application notes: assessment periods",
+      "approvedProposal": true
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your application",
+      "after": "Book a 15 minute meeting about your application",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.3.1.0",
+      "before": "Suggested first-month organisation checklist",
+      "after": "Suggested first month organisation checklist",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.3.5.0.0.0",
+      "before": "Suggested first-month organisation checklist",
+      "after": "Suggested first month organisation checklist",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.3.5.0.2.5.2.0",
+      "before": "Monitoring results, actions and follow-up.",
+      "after": "Monitoring results, actions and follow up.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.7.6.1.0.0",
+      "before": "Review customer-facing wording",
+      "after": "Review customer facing wording",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.9.1.2.9.0",
+      "before": "Support is provided on a fair-use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "after": "Support is provided on a fair use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.9.1.2.11.0.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.1.11.1.1.0",
+      "before": "No. Motor-finance broker arrangements and onboarding are separate from authorisation. Both the required permissions and the commercial arrangement need to be in place.",
+      "after": "No. Motor finance broker arrangements and onboarding are separate from authorisation. Both the required permissions and the commercial arrangement need to be in place.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.5.3.0.0.1.1.0.0",
+      "before": "Suggested first-month organisation checklist",
+      "after": "Suggested first month organisation checklist",
+      "approvedProposal": true
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.3.1.1.5.0",
+      "before": "CCR009 is a regulatory return: information a firm submits to the Financial Conduct Authority (FCA), not a licence or a tax return. Its formal name is the Relevant Ancillary Credit Firm return. It covers specified consumer-credit permissions, including credit broking, and asks about the firm’s activities and business. The questions shown depend on the firm’s answers.",
+      "after": "CCR009 is a regulatory return: information a firm submits to the Financial Conduct Authority (FCA), not a licence or a tax return. Its formal name is the Relevant Ancillary Credit Firm return. It covers specified consumer credit permissions, including credit broking, and asks about the firm’s activities and business. The questions shown depend on the firm’s answers.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.1.4.0",
+      "before": "Start with the current form and completion notes. Use the FCA’s data-flow diagrams to understand the route through the questions that applies to your business.",
+      "after": "Start with the current form and completion notes. Use the FCA’s data flow diagrams to understand the route through the questions that applies to your business.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.1.6.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.1.6.5.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.3.4.0",
+      "before": "Relevant limited-permission firms still submit",
+      "after": "Relevant limited permission firms still submit",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.7.3.0",
+      "before": "Most firms report annually; a larger-firm exception applies. Your internal records can be updated more frequently to make preparation easier. Keeping monthly records does not turn CCR009 into a monthly FCA return.",
+      "after": "Most firms report annually; a larger firm exception applies. Your internal records can be updated more frequently to make preparation easier. Keeping monthly records does not turn CCR009 into a monthly FCA return.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.7.5.0.0.0",
+      "before": "Read the reporting-cycle and deadline guide",
+      "after": "Read the reporting cycle and deadline guide",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.5.1.13.2.2.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.1.7.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.1.7.5.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.3.6.1.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.3.6.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.5.8.1.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.11.1.0.0",
+      "before": "Do limited-permission dealers have to consider CCR009?",
+      "after": "Do limited permission dealers have to consider CCR009?",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.11.2.1.0",
+      "before": "No. Commission income alone does not determine whether a return is required. Follow the permission-based scope and the current activity questions.",
+      "after": "No. Commission income alone does not determine whether a return is required. Follow the permission based scope and the current activity questions.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.13.2.2.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.5.1.13.2.3.0.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.1.5.0.2.0.0.0",
+      "before": "Credit broking activities — field 101A",
+      "after": "Credit broking activities: field 101A",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.1.7.1.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.1.7.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.3.6.0.1.0.0.0",
+      "before": "Working-record column",
+      "after": "Working record column",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.13.2.0.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.1.7.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.1.7.5.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.3.3.4.0",
+      "before": "Where appointed-representative (AR) data is relevant, is the responsible activity included correctly?",
+      "after": "Where appointed representative (AR) data is relevant, is the responsible activity included correctly?",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.5.3.0",
+      "before": "Check the return’s final status and keep the confirmation after submitting. A useful internal record includes the version submitted, source records, preparer and date. Follow the firm’s applicable retention and data-protection arrangements.",
+      "after": "Check the return’s final status and keep the confirmation after submitting. A useful internal record includes the version submitted, source records, preparer and date. Follow the firm’s applicable retention and data protection arrangements.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.5.1.13.2.2.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.3.1.1.5.0",
+      "before": "CCR009 and CCR007 are different FCA returns. CCR009 covers relevant ancillary credit firms; CCR007 is Key Data for Credit Firms with Limited Permissions. CCR009 replaces some CCR007 information, but relevant limited-permission firms can still need to submit both. Follow each return’s current instructions and schedule.",
+      "after": "CCR009 and CCR007 are different FCA returns. CCR009 covers relevant ancillary credit firms; CCR007 is Key Data for Credit Firms with Limited Permissions. CCR009 replaces some CCR007 information, but relevant limited permission firms can still need to submit both. Follow each return’s current instructions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.1.3.0.2.0.2.0",
+      "before": "Key data for limited-permission credit firms.",
+      "after": "Key data for limited permission credit firms.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.1.3.0.2.1.2.0",
+      "before": "Limited-permission firms under the applicable reporting rules.",
+      "after": "Limited permission firms under the applicable reporting rules.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.1.3.0.2.2.1.0",
+      "before": "Usually annual. Under the ongoing larger-firm rule, twice yearly: January–June and January–December. Check first-period rules and the £5 million boundary.",
+      "after": "Usually annual. Under the ongoing larger firm rule, twice yearly: January–June and January–December. Check first period rules and the £5 million boundary.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.1.5.3.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.3.3.0",
+      "before": "The FCA permits firms submitting CCR009 to report zero in CCR007 fields 1A and 3A where those fields relate only to credit broking or not-for-profit debt management. Where other limited-permission activities are carried on, accurate information for those activities is still needed. The remaining fields still require accurate information.",
+      "after": "The FCA permits firms submitting CCR009 to report zero in CCR007 fields 1A and 3A where those fields relate only to credit broking or not for profit debt management. Where other limited permission activities are carried on, accurate information for those activities is still needed. The remaining fields still require accurate information.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.5.3.0",
+      "before": "CCR007 is a key-data return and can include complaints information for limited-permission firms. It should not simply be renamed “the complaints return”. Other complaints-reporting requirements depend on the firm’s scope.",
+      "after": "CCR007 is a key data return and can include complaints information for limited permission firms. It should not simply be renamed “the complaints return”. Other complaints reporting requirements depend on the firm’s scope.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.7.4.1.0",
+      "before": "source-record pack",
+      "after": "source record pack",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.11.1.1.0",
+      "before": "No. Relevant limited-permission firms still submit CCR007 with reduced information alongside CCR009 under the current FCA instructions.",
+      "after": "No. Relevant limited permission firms still submit CCR007 with reduced information alongside CCR009 under the current FCA instructions.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.5.1.13.2.2.0.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.1.3.0.2.5.0.0",
+      "before": "Incorrect principal/appointed-representative scope",
+      "after": "Incorrect principal/appointed representative scope",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.1.5.1.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.1.5.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.13.2.0.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.3.1.1.5.0",
+      "before": "Prepare for CCR009 by confirming the reporting scope and deadline, arranging access, gathering evidence for the applicable questions and assigning responsibility for review and submission. A clear preparation process can reduce last-minute work without changing the firm’s FCA obligations.",
+      "after": "Prepare for CCR009 by confirming the reporting scope and deadline, arranging access, gathering evidence for the applicable questions and assigning responsibility for review and submission. A clear preparation process can reduce last minute work without changing the firm’s FCA obligations.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.1.3.0",
+      "before": "The timetable below is a suggested internal workflow, not an FCA-prescribed preparation schedule. Set dates that leave room to resolve questions before your actual deadline.",
+      "after": "The timetable below is a suggested internal workflow, not an FCA prescribed preparation schedule. Set dates that leave room to resolve questions before your actual deadline.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.3.3.0",
+      "before": "The FCA says the firm’s Principal User has access to CCR009 and can grant other users the permissions needed to view, edit or submit it. Confirm the access each person actually needs. “Principal User” here is a RegData access role; it does not mean the firm is an appointed-representative principal.",
+      "after": "The FCA says the firm’s Principal User has access to CCR009 and can grant other users the permissions needed to view, edit or submit it. Confirm the access each person actually needs. “Principal User” here is a RegData access role; it does not mean the firm is an appointed representative principal.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.3.6.3.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.9.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.9.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.13.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38C — CCR009 data items",
+      "after": "FCA Handbook: SUP 16 Annex 38C: CCR009 data items",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.5.1.13.2.2.0.0",
+      "before": "FCA Handbook: SUP 16 Annex 38D — completion notes",
+      "after": "FCA Handbook: SUP 16 Annex 38D: completion notes",
+      "approvedProposal": true
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.3.1.1.5.0",
+      "before": "CCR009 uses calendar-based reporting periods, with a 40-business-day submission window. Most firms report annually; some report twice a year. Check the exact period and due date on your firm’s My FCA schedule. The £5 million boundary and first reporting period need care because the FCA’s overview and Handbook wording are not fully aligned.",
+      "after": "CCR009 uses calendar based reporting periods, with a 40 business day submission window. Most firms report annually; some report twice a year. Check the exact period and due date on your firm’s My FCA schedule. The £5 million boundary and first reporting period need care because the FCA’s overview and Handbook wording are not fully aligned.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.3.0.2.0.1.0",
+      "before": "Annual credit-related regulated activity revenue of £5 million or less: 1 January–31 December.",
+      "after": "Annual credit related regulated activity revenue of £5 million or less: 1 January–31 December.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.3.0.2.1.0.0",
+      "before": "Ongoing twice-yearly rule",
+      "after": "Ongoing twice yearly rule",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.3.0.2.1.1.0",
+      "before": "Revenue above £5 million: 1 January–30 June and 1 January–31 December. The year-end submission is not just July–December.",
+      "after": "Revenue above £5 million: 1 January–30 June and 1 January–31 December. The year end submission is not just July–December.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.3.0.2.2.1.0",
+      "before": "Separate first-period provisions apply; check Note 12(f)–(i) and the firm’s schedule.",
+      "after": "Separate first period provisions apply; check Note 12(f)–(i) and the firm’s schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.3.0.2.4.0.0",
+      "before": "Firm-specific deadline",
+      "after": "Firm specific deadline",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.5.0.0",
+      "before": "At exactly £5 million, the ongoing Handbook rule uses “£5 million or less” for annual reporting, but the FCA overview uses “£5m or more” for twice-yearly reporting. Note 12(g) and (h) also overlap at that boundary for firms entering scope in January–June from 2026. Ask the FCA to confirm the applicable schedule if this affects your firm; this guide does not resolve that official inconsistency.",
+      "after": "At exactly £5 million, the ongoing Handbook rule uses “£5 million or less” for annual reporting, but the FCA overview uses “£5m or more” for twice yearly reporting. Note 12(g) and (h) also overlap at that boundary for firms entering scope in January–June from 2026. Ask the FCA to confirm the applicable schedule if this affects your firm; this guide does not resolve that official inconsistency.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.1.7.3.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.5.3.0",
+      "before": "CCR009 uses calendar-based periods, rather than the firm’s accounting reference date. A dealer with a different accounts year-end should",
+      "after": "CCR009 uses calendar based periods, rather than the firm’s accounting reference date. A dealer with a different accounts year end should",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.5.4.0",
+      "before": "For example, an annual filer with a September accounts year-end should not automatically use its October-to-September accounts totals for a January-to-December reporting period. This example explains period alignment; it is not a substitute for the firm’s actual schedule.",
+      "after": "For example, an annual filer with a September accounts year end should not automatically use its October to September accounts totals for a January to December reporting period. This example explains period alignment; it is not a substitute for the firm’s actual schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.9.7.1.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.11.1.4.9.0",
+      "before": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation-assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "after": "Standalone CCR009 assistance is priced for the work agreed. If you already have a continuing authorisation assistance subscription after FCA approval, routine FCA reporting assistance, including CCR007 and CCR009, is included without an additional subscription. Check your existing engagement before arranging separate work.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.11.1.4.13.0.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.13.1.1.0",
+      "before": "No. Most firms report annually; the ongoing larger-firm rule requires two submissions, covering January–June and January–December. Separate first-period rules and the exact £5 million boundary need checking. Monthly internal data collection is not monthly FCA filing.",
+      "after": "No. Most firms report annually; the ongoing larger firm rule requires two submissions, covering January–June and January–December. Separate first period rules and the exact £5 million boundary need checking. Monthly internal data collection is not monthly FCA filing.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.13.2.1.0",
+      "before": "The FCA describes the threshold as annual revenue from credit-related regulated activities. Do not automatically substitute total vehicle sales turnover.",
+      "after": "The FCA describes the threshold as annual revenue from credit related regulated activities. Do not automatically substitute total vehicle sales turnover.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.13.4.0.0",
+      "before": "Does our accounting year-end determine the CCR009 period?",
+      "after": "Does our accounting year end determine the CCR009 period?",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.13.4.1.0",
+      "before": "No. FCA guidance specifies calendar-based CCR009 reporting rather than the firm’s accounting reference date.",
+      "after": "No. FCA guidance specifies calendar based CCR009 reporting rather than the firm’s accounting reference date.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.15.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.5.1.15.2.1.0.0",
+      "before": "FCA Handbook: SUP 16.12 — reporting schedules",
+      "after": "FCA Handbook: SUP 16.12: reporting schedules",
+      "approvedProposal": true
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about your CCR009 return",
+      "after": "Book a 15 minute meeting about your CCR009 return",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.1.7.1.0",
+      "before": "FCA Handbook: PRIN 2A — Consumer Duty",
+      "after": "FCA Handbook: PRIN 2A: Consumer Duty",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.3.4.0",
+      "before": "The Duty’s cross-cutting obligations include acting in good faith, avoiding foreseeable harm and enabling and supporting retail customers to pursue their financial objectives. Apply the relevant rules to the actual service and customer journey.",
+      "after": "The Duty’s cross cutting obligations include acting in good faith, avoiding foreseeable harm and enabling and supporting retail customers to pursue their financial objectives. Apply the relevant rules to the actual service and customer journey.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.3.6.1.0",
+      "before": "FCA Handbook: PRIN 2A — Consumer Duty",
+      "after": "FCA Handbook: PRIN 2A: Consumer Duty",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.7.6.0.0.0",
+      "before": "Check customer-facing website content",
+      "after": "Check customer facing website content",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.7.8.1.0",
+      "before": "FCA Handbook: PRIN 2A — Consumer Duty",
+      "after": "FCA Handbook: PRIN 2A: Consumer Duty",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.7.8.3.0",
+      "before": "FCA Handbook: PRIN 2A.8 — governance and culture",
+      "after": "FCA Handbook: PRIN 2A.8: governance and culture",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.9.1.2.9.0",
+      "before": "Support is provided on a fair-use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "after": "Support is provided on a fair use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.9.1.2.11.0.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.13.2.0.0.0",
+      "before": "FCA Handbook: PRIN 2A — Consumer Duty",
+      "after": "FCA Handbook: PRIN 2A: Consumer Duty",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: PRIN 2A.8 — governance and culture",
+      "after": "FCA Handbook: PRIN 2A.8: governance and culture",
+      "approvedProposal": true
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.1.7.3.0",
+      "before": "FCA Handbook: CONC 4.5 — commissions",
+      "after": "FCA Handbook: CONC 4.5: commissions",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.3.4.0",
+      "before": "An example such as “We act as a credit broker, not a lender” can explain a broker-only role, but is not a complete disclosure template for every business. Check the entity, permissions, principal arrangement and other applicable requirements before publication.",
+      "after": "An example such as “We act as a credit broker, not a lender” can explain a broker only role, but is not a complete disclosure template for every business. Check the entity, permissions, principal arrangement and other applicable requirements before publication.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.5.6.1.0",
+      "before": "FCA Handbook: CONC 4.5 — commissions",
+      "after": "FCA Handbook: CONC 4.5: commissions",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.7.3.2",
+      "before": ", what happens after an enquiry and where to obtain help. Distinguish financial-services disclosures from separate privacy and cookie obligations; this checklist is not a complete data-protection audit.",
+      "after": ", what happens after an enquiry and where to obtain help. Distinguish financial services disclosures from separate privacy and cookie obligations; this checklist is not a complete data protection audit.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.9.1.2.9.0",
+      "before": "Support is provided on a fair-use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "after": "Support is provided on a fair use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.9.1.2.11.0.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.11.1.1.0",
+      "before": "No. The website must accurately explain the relevant identity, role and status, and applicable financial-promotion and disclosure requirements still need to be met.",
+      "after": "No. The website must accurately explain the relevant identity, role and status, and applicable financial promotion and disclosure requirements still need to be met.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.11.3.1.0",
+      "before": "We provide administrative support with reviewing and organising customer-facing information within the agreed scope. The authorised firm remains responsible for its content and compliance.",
+      "after": "We provide administrative support with reviewing and organising customer facing information within the agreed scope. The authorised firm remains responsible for its content and compliance.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.13.2.1.0.0",
+      "before": "FCA Handbook: CONC 4.5 — commissions",
+      "after": "FCA Handbook: CONC 4.5: commissions",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.5.1.13.2.3.0.0",
+      "before": "FCA Handbook: PRIN 2A — Consumer Duty",
+      "after": "FCA Handbook: PRIN 2A: Consumer Duty",
+      "approvedProposal": true
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.5.1.3.3.0",
+      "before": "Check the permission conditions, brief staff and organise access to relevant systems. Monitor whether customers can understand the service and obtain the support they need. Keep evidence of issues, decisions and follow-up rather than treating compliance as a set of unused policies.",
+      "after": "Check the permission conditions, brief staff and organise access to relevant systems. Monitor whether customers can understand the service and obtain the support they need. Keep evidence of issues, decisions and follow up rather than treating compliance as a set of unused policies.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.5.1.3.5.0.0.0",
+      "before": "Post-approval checklist",
+      "after": "Post approval checklist",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.5.1.9.3.6",
+      "before": "within the agreed scope. Motor-finance broker arrangements are a separate service to discuss. The dealership retains responsibility for its information, permissions and obligations.",
+      "after": "within the agreed scope. Motor finance broker arrangements are a separate service to discuss. The dealership retains responsibility for its information, permissions and obligations.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.5.1.11.1.2.9.0",
+      "before": "Support is provided on a fair-use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "after": "Support is provided on a fair use basis. Scope, frequency and fees depend on the work required; additional work is agreed in advance. Administrative assistance, not legal or regulatory advice. Your firm remains responsible for its obligations.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.5.1.11.1.2.11.0.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.5.1.15.1.0",
+      "before": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source-check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "after": "The original regulatory explanations were checked on 1 November 2026. Updated explanations and practical aids checked on 12 November 2026; original source check date retained for unchanged material. Suggested checklists and fictional examples are identified separately. Requirements depend on the firm and activity; check the current rules and your firm’s actual permissions and schedule.",
+      "approvedProposal": true
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "guide.7.1.1.1.5.0",
+      "before": "Book a 15-minute meeting about ongoing support",
+      "after": "Book a 15 minute meeting about ongoing support",
+      "approvedProposal": true
+    }
+  ],
+  "exceptions": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "text": "An introducer appointed representative (IAR) has a narrower role, limited to introductions to its principal and distributing non-real-time financial promotions. Confirm the proposed activity with the principal before relying on this route.",
+      "path": "guide.5.1.3.4.0"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "text": "A narrower appointment for introductions and non-real-time promotions.",
+      "path": "guide.5.1.3.6.0.2.2.1.0"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.0.0.0"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.1.0.0"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.2.0.0"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.3.0.0"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.0.0.0"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.1.0.0"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.2.0.0"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.3.0.0"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.0.0.0"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.1.0.0"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.2.0.0"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.3.0.0"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.0.0.0"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.1.0.0"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.2.0.0"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.3.0.0"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.0.0.0"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.1.0.0"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.2.0.0"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.3.0.0"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.0.0.0"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.1.0.0"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.2.0.0"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "text": "--",
+      "path": "guide.5.1.13.1.3.11.9.3.3.0.0"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "text": "No. Six and twelve months describe formal assessment periods, not an average approval time. The FCA separately publishes a 95% four-/ten-month operating target for complete/incomplete new Part 4A applications. Neither means that an individual firm is guaranteed approval.",
+      "path": "guide.5.1.17.1.1.0"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "text": "Usually annual. Under the ongoing larger firm rule, twice yearly: January–June and January–December. Check first period rules and the £5 million boundary.",
+      "path": "guide.5.1.1.3.0.2.2.1.0"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "text": "Annual credit related regulated activity revenue of £5 million or less: 1 January–31 December.",
+      "path": "guide.5.1.1.3.0.2.0.1.0"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "text": "Revenue above £5 million: 1 January–30 June and 1 January–31 December. The year end submission is not just July–December.",
+      "path": "guide.5.1.1.3.0.2.1.1.0"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "text": "Separate first period provisions apply; check Note 12(f)–(i) and the firm’s schedule.",
+      "path": "guide.5.1.1.3.0.2.2.1.0"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "text": "At exactly £5 million, the ongoing Handbook rule uses “£5 million or less” for annual reporting, but the FCA overview uses “£5m or more” for twice yearly reporting. Note 12(g) and (h) also overlap at that boundary for firms entering scope in January–June from 2026. Ask the FCA to confirm the applicable schedule if this affects your firm; this guide does not resolve that official inconsistency.",
+      "path": "guide.5.1.1.5.0.0"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "text": "No. Most firms report annually; the ongoing larger firm rule requires two submissions, covering January–June and January–December. Separate first period rules and the exact £5 million boundary need checking. Monthly internal data collection is not monthly FCA filing.",
+      "path": "guide.5.1.13.1.1.0"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "text": "Review applicable pre-contractual disclosures as well as general website wording.",
+      "path": "guide.5.1.1.5.0.2.4.1.0"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "text": "Review the actual arrangements and timing against the current rules. A generic footer sentence should not be treated as proof that all pre-contractual disclosure requirements have been met. This guide does not supply a universal commission clause.",
+      "path": "guide.5.1.5.4.0"
+    }
+  ],
+  "nonGuide": [
+    "/",
+    "/pricing",
+    "/fca-authorisation-motor-dealers",
+    "/contact",
+    "/robots.txt",
+    "/sitemap.xml"
+  ],
+  "viewports": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/what-is-ccr009",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "sourceChanges": [
+    "views/partials/guide_ongoing_offer.ejs",
+    "views/partials/guide_reporting_offer.ejs",
+    "views/partials/home_gift_offer.ejs",
+    "tests/seo.test.cjs",
+    "utils/seo.js",
+    "views/partials/offer_card.ejs",
+    "views/seo_guide.ejs"
+  ]
+}

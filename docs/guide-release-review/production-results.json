@@ -1,0 +1,456 @@
+{
+  "at": "2026-11-12T17:17:59.252Z",
+  "mode": "NODE_ENV=production, isolated fixture database, no deployment .env, no outbound integrations",
+  "redirects": [
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "/DO-MOTOR-DEALERS-NEED-FCA-AUTHORISATION/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/do-motor-dealers-need-fca-authorisation?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "/do-motor-dealers-need-fca-authorisation",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/do-motor-dealers-need-fca-authorisation?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "path": "/do-motor-dealers-need-fca-authorisation",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/do-motor-dealers-need-fca-authorisation?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "/FCA-LICENCE-CAR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-licence-car-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "/fca-licence-car-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-licence-car-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "path": "/fca-licence-car-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-licence-car-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "/LIMITED-PERMISSION-FCA-AUTHORISATION-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/limited-permission-fca-authorisation-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "/limited-permission-fca-authorisation-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/limited-permission-fca-authorisation-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "path": "/limited-permission-fca-authorisation-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/limited-permission-fca-authorisation-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "/CREDIT-BROKING-PERMISSION-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/credit-broking-permission-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "/credit-broking-permission-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/credit-broking-permission-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "path": "/credit-broking-permission-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/credit-broking-permission-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "/FCA-APPLICATION-DOCUMENTS-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-application-documents-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "/fca-application-documents-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-application-documents-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "path": "/fca-application-documents-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-application-documents-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "/WHY-FCA-APPLICATIONS-GET-DELAYED/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/why-fca-applications-get-delayed?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "/why-fca-applications-get-delayed",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/why-fca-applications-get-delayed?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "path": "/why-fca-applications-get-delayed",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/why-fca-applications-get-delayed?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "/AFTER-FCA-APPROVAL-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/after-fca-approval-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "/after-fca-approval-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/after-fca-approval-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/after-fca-approval-motor-dealers",
+      "path": "/after-fca-approval-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/after-fca-approval-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "/WHAT-IS-CCR009/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/what-is-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "/what-is-ccr009",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/what-is-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/what-is-ccr009",
+      "path": "/what-is-ccr009",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/what-is-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "/WHO-NEEDS-TO-SUBMIT-CCR009/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/who-needs-to-submit-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "/who-needs-to-submit-ccr009",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/who-needs-to-submit-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/who-needs-to-submit-ccr009",
+      "path": "/who-needs-to-submit-ccr009",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/who-needs-to-submit-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "/WHAT-INFORMATION-IS-NEEDED-FOR-CCR009/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/what-information-is-needed-for-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "/what-information-is-needed-for-ccr009",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/what-information-is-needed-for-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/what-information-is-needed-for-ccr009",
+      "path": "/what-information-is-needed-for-ccr009",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/what-information-is-needed-for-ccr009?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "/CCR009-REPORTING-CHECKLIST-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/ccr009-reporting-checklist-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "/ccr009-reporting-checklist-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/ccr009-reporting-checklist-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "path": "/ccr009-reporting-checklist-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/ccr009-reporting-checklist-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "/CCR009-VS-CCR007/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/ccr009-vs-ccr007?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "/ccr009-vs-ccr007",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/ccr009-vs-ccr007?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "path": "/ccr009-vs-ccr007",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/ccr009-vs-ccr007?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "/COMMON-CCR009-REPORTING-MISTAKES/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/common-ccr009-reporting-mistakes?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "/common-ccr009-reporting-mistakes",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/common-ccr009-reporting-mistakes?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/common-ccr009-reporting-mistakes",
+      "path": "/common-ccr009-reporting-mistakes",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/common-ccr009-reporting-mistakes?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "/HOW-TO-PREPARE-FOR-CCR009-RETURN/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/how-to-prepare-for-ccr009-return?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "/how-to-prepare-for-ccr009-return",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/how-to-prepare-for-ccr009-return?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/how-to-prepare-for-ccr009-return",
+      "path": "/how-to-prepare-for-ccr009-return",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/how-to-prepare-for-ccr009-return?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "/WHEN-IS-CCR009-DUE/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/when-is-ccr009-due?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "/when-is-ccr009-due",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/when-is-ccr009-due?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "path": "/when-is-ccr009-due",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/when-is-ccr009-due?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "/CONSUMER-DUTY-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/consumer-duty-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "/consumer-duty-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/consumer-duty-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "path": "/consumer-duty-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/consumer-duty-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "/WEBSITE-COMPLIANCE-MOTOR-DEALERS/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/website-compliance-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "/website-compliance-motor-dealers",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/website-compliance-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/website-compliance-motor-dealers",
+      "path": "/website-compliance-motor-dealers",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/website-compliance-motor-dealers?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "/FCA-COMPLIANCE-MOTOR-DEALERS-GUIDE/",
+      "host": "www.009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-compliance-motor-dealers-guide?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "/fca-compliance-motor-dealers-guide",
+      "host": "009compliance.com",
+      "protocol": "http",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-compliance-motor-dealers-guide?utm_source=release-review&referrals=3"
+    },
+    {
+      "route": "/fca-compliance-motor-dealers-guide",
+      "path": "/fca-compliance-motor-dealers-guide",
+      "host": "www.009compliance.com",
+      "protocol": "https",
+      "status": 301,
+      "destination": "https://009compliance.com/fca-compliance-motor-dealers-guide?utm_source=release-review&referrals=3"
+    }
+  ],
+  "utility": [
+    {
+      "route": "/login",
+      "status": 200,
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/register",
+      "status": 200,
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/nonexistent-release-review",
+      "status": 404,
+      "robots": "noindex, follow"
+    }
+  ],
+  "errors": []
+}

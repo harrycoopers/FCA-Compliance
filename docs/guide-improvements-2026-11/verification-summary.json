@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-11-12T14:48:13.668Z",
+  "productionBuild": {
+    "passed": true,
+    "assets": 59,
+    "warning": "Existing caniuse-lite database freshness warning"
+  },
+  "regressionTests": {
+    "passed": 67,
+    "failed": 0
+  },
+  "browserRouteWidths": 72,
+  "internalTargets": 186,
+  "reducedMotionRoutes": 18,
+  "noJavaScriptRoutes": 18,
+  "campaignCases": 56,
+  "bookingNavigations": 4,
+  "realBookingsSubmitted": 0,
+  "browserErrors": 0,
+  "nonGuidePublicRoutesUnchanged": 15,
+  "sourceFilesCompared": 148,
+  "performanceLabRuns": 30,
+  "maxObservedCls": 0,
+  "reportTablesValidated": true,
+  "scope": "Guides and guide hub only, compared to start-of-task working tree; previous unrelated edits preserved",
+  "uncommitted": true,
+  "deployed": false
+}

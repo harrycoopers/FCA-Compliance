@@ -1,4 +1,7 @@
 'use strict';
+const { people, organization, identity } = require('./site-identity');
+const navigation = require('./guide-navigation');
+const { toSchema } = require('../data/faqs');
 const pages = require('../config/seo-pages.json');
 const guides = require('../config/guide-content.json');
 const { paragraphParts } = require('./guide-links');
@@ -7,6 +10,8 @@ const guideTitles = Object.fromEntries(Object.entries(guides).map(([url, guide])
 const offer = require('../config/offer');
 const campaign = require('../config/campaign');
 const assets = require('../config/asset-manifest.json');
+const release = require('../config/release');
+const offerLinks = require('../config/guide-offer-links.json');
 const origin = new URL(process.env.CANONICAL_BASE_URL || 'https://009compliance.com').origin;
 const indexable = new Set(Object.keys(pages));
 const serialize = value => JSON.stringify(value).replace(/</g, '\\u003c');
@@ -28,7 +33,7 @@ function publicSeo(req, res, next) {
       return res.redirect(301, (live ? origin : '') + canonicalPath + query);
     }
   }
-  if (!indexable.has(req.path) && !/^\/(?:build|css|js|fonts|images)\//.test(req.path) && !['/robots.txt', '/sitemap.xml', '/logo-dark.png', '/logo-light.png'].includes(req.path)) {
+  if (!indexable.has(req.path) && !/^\/(?:build|css|js|fonts|images)\//.test(req.path) && !['/robots.txt', '/sitemap.xml', '/llms.txt', '/logo-dark.png', '/logo-light.png'].includes(req.path)) {
     res.set('X-Robots-Tag', 'noindex, follow');
   }
   // HTML is personalized when signed in: never publicly cache it.
@@ -39,7 +44,8 @@ function publicSeo(req, res, next) {
 }
 
 function templateSeo(req, res, next) {
-  res.locals.guideNavigation = require('./guide-navigation');
+  res.locals.guideNavigation = navigation;
+  res.locals.organization = organization(origin);
   res.locals.assetPath = assetPath;
   res.locals.jsonLd = serialize;
   const render = res.render;
@@ -61,6 +67,16 @@ function templateSeo(req, res, next) {
           ? `Get help with your motor dealership’s FCA authorisation application. Start for £${offer.startPayment}, then £${offer.monthlyPayment}/month. ${offer.minimumTermTitle}-month minimum. FCA application fee paid separately.`
           : 'FCA authorisation assistance for car, motorcycle, van and commercial vehicle dealers. Help with applications, documents and FCA information requests.';
       }
+      if (req.path === '/about') {
+        data.team = people(origin);
+        data.pageSchema = data.team.map(person => ({ '@context': 'https://schema.org', ...person }));
+      }
+      if (req.path === navigation.hub) {
+        const items = navigation.groups.flatMap(group => group.links);
+        data.pageSchema = [{ '@context': 'https://schema.org', '@type': 'ItemList',
+          '@id': origin + navigation.hub + '#list', numberOfItems: items.length,
+          itemListElement: items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.title, url: origin + item.href })) }];
+      }
       if (guide) {
         data.guide = guide;
         data.guideText = guideText;
@@ -69,22 +85,32 @@ function templateSeo(req, res, next) {
         data.guideTitles = guideTitles;
         data.pageTitle = guide.seoTitle;
         data.pageDescription = guide.description;
-        const dateLabel = value => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(value + 'T12:00:00Z'));
+        const dateLabel = value => release.isDate(value) ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(value + 'T12:00:00Z')) : value;
+        const published = release.resolve(guide.published), modified = release.resolve(guide.modified);
+        data.guideModified = modified;
         data.guideReviewedLabel = dateLabel(guide.reviewed);
-        data.guideModifiedLabel = guide.modified ? dateLabel(guide.modified) : '';
-        // A source-check date is not a publication/modification date. Keep visible
-        // FAQs, but omit FAQPage: Google retired FAQ rich results in May 2026.
+        data.guideModifiedLabel = modified ? dateLabel(modified) : '';
+        data.guideDateLabel = dateLabel;
+        // Offer links use a descriptive anchor rotated by the guide's position in the registry.
+        data.guideOfferAnchor = offerLinks.anchors[Object.keys(guides).indexOf(req.path) % offerLinks.anchors.length];
+        data.guideOfferBanner = guide.group === 'fca' && !offerLinks.bannerExcluded.includes(req.path);
+        const authorAnchor = Object.hasOwn(identity.guideAuthors, req.path) ? identity.guideAuthors[req.path] : identity.defaultGuideAuthor;
+        data.author = people(origin).find(person => person.url === origin + '/about#' + authorAnchor);
+        data.guideFaqs = guide.faqs.map(faq => ({ question: guideText(faq.question), answer: guideText(faq.answer), feeNote: Boolean(faq.feeNote) }));
         data.pageSchema = [
           { '@context': 'https://schema.org', '@type': 'Article', '@id': origin + req.path + '#article',
             headline: guide.title, description: guide.description,
-            ...(guide.modified ? { dateModified: guide.modified } : {}),
+            author: data.author || { '@type': 'Organization', '@id': origin + '/#organization', name: data.organization.name },
+            image: data.organization.logo, ...(release.isDate(published) ? { datePublished: published } : {}),
+            ...(release.isDate(modified) ? { dateModified: modified } : {}),
             mainEntityOfPage: { '@id': origin + req.path + '#webpage' }, inLanguage: 'en-GB',
             publisher: { '@id': origin + '/#organization' },
             citation: guide.sources.map(source => source.href) }
         ];
+        data.pageSchema.push(toSchema(data.guideFaqs.map(({ question, answer }) => ({ question, answer }))));
         data.guideBreadcrumbs = [
           { name: 'Home', path: '/' },
-          ...(req.path === '/fca-compliance-motor-dealers-guide' ? [] : [{ name: 'Motor dealer guides', path: '/fca-compliance-motor-dealers-guide' }]),
+          { name: 'Motor dealer guides', path: navigation.hub },
           { name: guide.title, path: req.path }
         ];
         data.pageSchema.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -101,7 +127,8 @@ function templateSeo(req, res, next) {
       data.robots = 'index,follow,max-image-preview:large';
       const schemas = (Array.isArray(data.pageSchema) ? data.pageSchema : data.pageSchema ? [data.pageSchema] : []).slice();
       const websiteId = origin + '/#website';
-      schemas.push({ '@context': 'https://schema.org', '@type': 'WebPage', '@id': data.canonicalUrl + '#webpage', url: data.canonicalUrl,
+      schemas.push({ '@context': 'https://schema.org', '@type': req.path === navigation.hub ? 'CollectionPage' : 'WebPage',
+        ...(req.path === navigation.hub ? { mainEntity: { '@id': origin + navigation.hub + '#list' } } : {}), '@id': data.canonicalUrl + '#webpage', url: data.canonicalUrl,
         name: data.pageTitle, description: data.pageDescription, inLanguage: 'en-GB', isPartOf: { '@id': websiteId }, publisher: { '@id': origin + '/#organization' } });
       if (req.path === '/') schemas.push({ '@context': 'https://schema.org', '@type': 'WebSite', '@id': websiteId, url: origin + '/', name: '009 Compliance', inLanguage: 'en-GB', publisher: { '@id': origin + '/#organization' } });
       if (req.path !== '/' && !schemas.some(s => s['@type'] === 'BreadcrumbList')) {
@@ -138,8 +165,18 @@ function templateSeo(req, res, next) {
 function robots(req, res) {
   res.type('text/plain').send(`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 }
-function sitemap(req, res) {
-  // No manufactured lastmod dates: this list and metadata share one registry.
-  res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + [...indexable].map(p => `  <url><loc>${xml(origin + p)}</loc></url>`).join('\n') + '\n</urlset>\n');
+function sitemapXml(base = origin) {
+  return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + [...indexable].map(p => `  <url><loc>${xml(base + p)}</loc><lastmod>${xml(release.resolve(guides[p]?.modified || pages[p].lastmod))}</lastmod></url>`).join('\n') + '\n</urlset>\n';
 }
-module.exports = { publicSeo, templateSeo, robots, sitemap, assetPath };
+function sitemap(req, res) {
+  res.type('application/xml').send(sitemapXml());
+}
+function llms(req, res) {
+  const link = path => '- [' + (guides[path]?.title || pages[path].title.split(' | ')[0]) + '](' + origin + path + ')';
+  const services = Object.keys(pages).filter(path => pages[path].service);
+  res.type('text/plain').send(['# 009 Compliance', '', '> ' + organization(origin).description,
+    '', '## Services', ...[...new Set(['/services', ...services, '/pricing'])].map(link),
+    '', '## Guides', link(navigation.hub), link(navigation.overview),
+    ...navigation.groups.flatMap(group => ['', '### ' + group.title, ...group.links.map(item => link(item.href))]), ''].join('\n'));
+}
+module.exports = { publicSeo, templateSeo, robots, sitemap, sitemapXml, llms, assetPath };

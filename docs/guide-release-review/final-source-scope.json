@@ -1,0 +1,8 @@
+{
+  "changed": [
+    "public/js/guide-enhancements.js",
+    "config/asset-manifest.json",
+    "tests/seo.test.cjs",
+    "views/seo_guide.ejs"
+  ]
+}

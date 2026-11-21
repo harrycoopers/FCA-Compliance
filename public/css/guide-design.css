@@ -63,16 +63,16 @@
 .nine-site .guide-studio .ccr009-aside{position:sticky;top:calc(var(--header-height,76px) + 22px);max-height:calc(100dvh - var(--header-height,76px) - 44px);overflow-y:auto;scrollbar-width:thin;padding:0 2px 12px}
 .nine-site .guide-studio #guide-navigation{padding:22px;background:#fff;border:1px solid #cadbed;border-radius:20px;box-shadow:0 12px 32px -24px #14243a55;scroll-margin-top:0}
 .guide-studio .guide-toc>summary{cursor:pointer;list-style:none}.guide-studio .guide-toc>summary::-webkit-details-marker{display:none}
-.guide-studio .guide-toc>summary h2{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:16px;color:#14243a;line-height:1.5;margin:0}
-.guide-studio .guide-toc>summary h2::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform var(--guide-fast);flex:none;margin:0 3px 4px}
-.guide-studio .guide-toc[open]>summary h2::after{transform:rotate(225deg);margin-bottom:0}
+.guide-studio .guide-toc>summary .guide-label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:16px;color:#14243a;line-height:1.5;margin:0}
+.guide-studio .guide-toc>summary .guide-label::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform var(--guide-fast);flex:none;margin:0 3px 4px}
+.guide-studio .guide-toc[open]>summary .guide-label::after{transform:rotate(225deg);margin-bottom:0}
 .guide-studio .guide-toc .guide-links{margin:18px 0 0;gap:4px;border-top:1px solid #e1eaf3;padding-top:12px}
 .nine-site .guide-studio .guide-toc li{padding:0;border:0;font-size:13px}
 .nine-site .guide-studio .guide-toc a{display:block;position:relative;padding:10px 12px;border-radius:9px;color:#425a72;line-height:1.55;text-decoration:none;border-left:3px solid transparent;transition:background var(--guide-fast),color var(--guide-fast),border-color var(--guide-fast)}
 .nine-site .guide-studio .guide-toc a:hover,.nine-site .guide-studio .guide-toc a:focus-visible{background:#f0f6fc;color:#174faf}
 .nine-site .guide-studio .guide-toc a[aria-current="location"]{background:#e9f2fe;color:#1c4ba0;border-left-color:#2563eb;font-weight:650}
 .nine-site .guide-studio .guide-support{margin-top:20px;padding:24px;border-radius:20px;background:linear-gradient(140deg,#e7f1fb,#f6faff);border:1px solid #cfdeec;box-shadow:none}
-.guide-studio .guide-support h2{font-size:19px;line-height:1.35}.guide-studio .guide-support p{font-size:14px;color:#425a72}.nine-site .guide-studio .guide-support>a{font-size:14px;color:#1a5088;text-decoration:underline;text-underline-offset:4px}
+.guide-studio .guide-support .guide-label{font-size:19px;line-height:1.35}.guide-studio .guide-support p{font-size:14px;color:#425a72}.nine-site .guide-studio .guide-support>a{font-size:14px;color:#1a5088;text-decoration:underline;text-underline-offset:4px}
 .nine-site .guide-studio #related-guides{background:#edf4fb;border-color:#ccdded}
 .guide-studio #related-guides .guide-links,.guide-studio--hub .ccr009-section>.guide-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 0}
 .guide-studio #related-guides .guide-links li:last-child:nth-child(odd){grid-column:1/-1}

@@ -40,6 +40,7 @@ function state(now = new Date()) {
     active,
     expired: !active,
     deadlineIso: DEADLINE_ISO,
+    remainingMs: Math.max(0, deadline.getTime() - at.getTime()),
     closingLabel: CLOSING_LABEL,
     closingDateIso: CLOSING_DATE_ISO,
     daysLeft: active ? Math.ceil((deadline.getTime() - at.getTime()) / 86400000) : 0,

@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-11-12T13:33:44.878Z",
+  "previews": [
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "status": 200,
+      "target": ".guide-offer",
+      "animation": [
+        "orbit"
+      ]
+    },
+    {
+      "route": "/ccr009-reporting-checklist-motor-dealers",
+      "status": 200,
+      "target": ".guide-offer",
+      "animation": [
+        "orbit"
+      ]
+    },
+    {
+      "route": "/consumer-duty-motor-dealers",
+      "status": 200,
+      "target": ".afc-panel",
+      "animation": [
+        "afc-orbit",
+        "afc-arrive, afc-float",
+        "afc-check"
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "route": "/referral",
+      "matches": [
+        "If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope. Continuing reporting support is £100 per month before active referral discounts, which continue after authorisation. Payments continue until you cancel under the agreed cancellation terms.",
+        "It’s £100 to get started, then £100 per month by Direct Debit. The first £100 is your first monthly payment, not an extra setup fee. There’s a six-month minimum term, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms. The FCA application fee is separate. This is our Christmas offer for new customers, open until 25 December 2026.",
+        "After six months, payments continue monthly until you cancel under the agreed cancellation terms.",
+        "If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope. Continuing reporting support is £100 per month before any active referral discounts, which continue after authorisation."
+      ]
+    },
+    {
+      "route": "/terms",
+      "matches": [
+        "3.5 The FCA alone determines the outcome, conditions and timing. Authorisation may take longer than six months, and refusal does not mean 009 failed to provide its service. Application support continues on the terms above while you remain subscribed; it is not a one-off fee contingent on approval.",
+        "10.1 009 may end your subscription at any time, including within the initial six months, with immediate effect by written notice and without needing to give a reason. If we do so without relying on your breach, we will not charge for periods after termination, will return any unearned prepaid subscription charges for those periods and will not demand the balance of the minimum term."
+      ]
+    },
+    {
+      "route": "/ccr009-vs-ccr007",
+      "matches": [
+        "Usually annual; qualifying larger firms report every six months."
+      ]
+    },
+    {
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "matches": [
+        "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "Payments are by Direct Debit. Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms."
+      ]
+    },
+    {
+      "route": "/fca-licence-car-dealers",
+      "matches": [
+        "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "Payments are by Direct Debit. Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms."
+      ]
+    },
+    {
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "matches": [
+        "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "Payments are by Direct Debit. Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms."
+      ]
+    },
+    {
+      "route": "/credit-broking-permission-motor-dealers",
+      "matches": [
+        "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "Payments are by Direct Debit. Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms."
+      ]
+    },
+    {
+      "route": "/fca-application-documents-motor-dealers",
+      "matches": [
+        "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "Payments are by Direct Debit. Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms."
+      ]
+    },
+    {
+      "route": "/why-fca-applications-get-delayed",
+      "matches": [
+        "FCA applications can take longer when the regulator needs missing information, clarification or evidence that the firm is ready to operate. The FCA says it usually assesses a complete FSMA application within six months; an incomplete application can take up to twelve months. These are published assessment timescales, not a guaranteed approval date.",
+        "First month included. Six-month minimum term: £600 minimum service commitment. Payments continue monthly until cancellation. FCA application fee payable separately. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "Payments are by Direct Debit. Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms.",
+        "Is six to twelve months the average approval time?",
+        "No average is established by this guide. The FCA publishes assessment timescales of usually within six months for a complete FSMA application and up to twelve months for an incomplete one."
+      ]
+    },
+    {
+      "route": "/when-is-ccr009-due",
+      "matches": [
+        "Most firms submit CCR009 annually, using a calendar-year reporting period. Firms with annual revenue of £5 million or more from credit-related regulated activities report every six months. The FCA gives a 40-business-day submission window. Check your firm’s My FCA task list and reporting schedule for the exact period and due date.",
+        "Six-monthly reporting where annual credit-related regulated activity revenue is £5 million or more.",
+        "No. Most firms report annually; the specified larger firms report every six months. Monthly internal data collection is separate from the FCA filing schedule.",
+        "Is the £5 million threshold based on all vehicle sales?"
+      ]
+    },
+    {
+      "route": "/fca-authorisation-motor-dealers",
+      "matches": [
+        "FCA applications can take 6–12 months.Timing depends on the application’s completeness and complexity. Approval is not guaranteed.",
+        "Approved sooner? If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope. Continuing reporting support is £100 per month before any active referral discounts, which continue after authorisation.",
+        "Payments are collected by Direct Debit. After six months, payments continue monthly until you cancel under the agreed cancellation terms."
+      ]
+    },
+    {
+      "route": "/pricing",
+      "matches": [
+        "Your £100 first payment is the first of the six monthly payments, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope.",
+        "It’s £100 to get started, then £100 per month by Direct Debit. The first £100 is your first monthly payment, not an extra setup fee. There’s a six-month minimum term, so the minimum service commitment is £600, before any applicable referral adjustments. After six months, payments continue monthly until you cancel under the agreed cancellation terms. The FCA application fee is separate. This is our Christmas offer for new customers, open until 25 December 2026.",
+        "Does the six-month term mean I’ll be approved within six months?",
+        "No. The six-month minimum is our contract term, not an FCA timescale or a promised decision date. Only the FCA decides applications and how long they take, and we can’t guarantee approval. If authorisation is approved before six months, the service continues with reporting and compliance support within the agreed scope."
+      ]
+    }
+  ]
+}

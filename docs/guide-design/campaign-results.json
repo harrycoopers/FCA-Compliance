@@ -1,0 +1,552 @@
+{
+  "at": "2026-11-12T16:46:22.687Z",
+  "checks": [
+    {
+      "scenario": "active",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1280,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/fca-licence-car-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1280,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1280,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/fca-licence-car-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1280,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1280,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/fca-licence-car-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/fca-licence-car-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 320,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/fca-licence-car-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/limited-permission-fca-authorisation-motor-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/credit-broking-permission-motor-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/fca-application-documents-motor-dealers",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom",
+      "route": "/why-fca-applications-get-delayed",
+      "width": 1280,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active-no-js",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed-no-js",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed-no-js",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom-no-js",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "active-reduced",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": true,
+      "festive": true,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-confirmed-reduced",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-unconfirmed-reduced",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "expired-custom-reduced",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "live-expiry-continue",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": true,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "live-expiry-unconfirmed",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    },
+    {
+      "scenario": "live-expiry-custom",
+      "route": "/do-motor-dealers-need-fca-authorisation",
+      "width": 390,
+      "priceShown": false,
+      "festive": false,
+      "duplicateIds": false,
+      "overflow": false
+    }
+  ],
+  "liveExpiry": [
+    {
+      "mode": "continue",
+      "fallbackAppliedWithoutReload": true
+    },
+    {
+      "mode": "unconfirmed",
+      "fallbackAppliedWithoutReload": true
+    },
+    {
+      "mode": "custom",
+      "fallbackAppliedWithoutReload": true
+    }
+  ],
+  "errors": [],
+  "submissions": 0
+}
