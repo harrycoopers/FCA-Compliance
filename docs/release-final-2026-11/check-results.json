@@ -1,5 +1,5 @@
 {
-  "ran": "2026-11-21T10:35:10.079Z",
+  "ran": "2026-11-21T10:46:56.010Z",
   "results": [
     {
       "name": "No [CONFIRM, [VERIFY or {{ in public pages, sitemap or llms.txt",
@@ -63,7 +63,7 @@
       "detail": "FCA fees and regulatory thresholds allowed"
     },
     {
-      "name": "FCA fee figures carry an \"FCA fees checked [date]\" note with an FCA link",
+      "name": "FCA fee figures carry an \"FCA fees/guidance checked [date]\" note with an FCA link",
       "pass": true,
       "detail": "cost guide, CCR007 guide"
     },

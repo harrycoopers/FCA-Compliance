@@ -3542,7 +3542,7 @@
           ],
           [
             "Refunds",
-            "Not refunded if the application is withdrawn or refused. If the FCA rejects a submission without assessing it because minimum information is missing, it refunds the fee."
+            "The FCA’s fees page says the fee is non-refundable. If the FCA rejects a submission without assessing it because minimum information is missing, you can resubmit it with the missing information. Check the FCA’s current fees page on refunds."
           ]
         ],
         "sources": [
@@ -3691,7 +3691,7 @@
       },
       {
         "question": "Is the FCA application fee refundable?",
-        "answer": "Not if the application is withdrawn or refused. The FCA refunds the fee if it rejects a submission without assessing it because minimum information is missing."
+        "answer": "The FCA’s fees page says the application fee is non-refundable. If the FCA rejects a submission because minimum information is missing, you can resubmit it with the missing information. Check the FCA’s current fees page on refunds."
       },
       {
         "question": "Do I still need a consumer credit licence?",
@@ -4032,7 +4032,7 @@
     "title": "FCA Application Refused or Rejected: What Motor Dealers Can Do",
     "seoTitle": "FCA Application Refused? Options for Motor Dealers",
     "description": "Why the FCA refuses or rejects applications, how this differs from withdrawal, what a warning notice means and what to change before you reapply.",
-    "answer": "An FCA refusal follows a set process: the FCA gives feedback and you can withdraw; if you continue, you receive a warning notice and can make written representations before any decision notice, which you can refer to the Upper Tribunal. A submission rejected for missing minimum information is different: the fee is refunded and you can resubmit at any time.",
+    "answer": "An FCA refusal follows a set process: the FCA gives feedback and you can withdraw; if you continue, you receive a warning notice and can make written representations before any decision notice, which you can refer to the Upper Tribunal. A submission rejected for missing minimum information is different: you can resubmit it with the missing information. Check the FCA’s current fees page on refunds.",
     "sections": [
       {
         "title": "Rejected, withdrawn or refused: the difference",
@@ -4046,8 +4046,8 @@
         "rows": [
           [
             "Rejected",
-            "The FCA rejects a submission without assessing it if minimum information is missing, explains why and refunds the fee.",
-            "Resubmit with all the relevant information at any time."
+            "The FCA rejects a submission without assessing it if minimum information is missing and explains why.",
+            "Resubmit with the missing information. Check the FCA’s current fees page on refunds."
           ],
           [
             "Withdrawn",
@@ -4070,6 +4070,11 @@
             "id": "refusal",
             "label": "FCA: our refusal process",
             "href": "https://www.fca.org.uk/firms/authorisation/apply/refusal-process"
+          },
+          {
+            "id": "fees",
+            "label": "FCA: authorisation application fees",
+            "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
           },
           {
             "id": "s55V",
@@ -4224,7 +4229,7 @@
     "faqs": [
       {
         "question": "Is the application fee refunded if the FCA refuses my application?",
-        "answer": "No. The fee is not refunded after a refusal or a withdrawal. It is refunded only if the FCA rejects a submission without assessing it because minimum information is missing."
+        "answer": "No. The FCA says the application fee is non-refundable, including after a refusal or a withdrawal. A submission rejected for missing minimum information can be resubmitted with that information; check the FCA’s current fees page on refunds."
       },
       {
         "question": "Can I withdraw instead of being refused?",
@@ -4260,6 +4265,11 @@
         "id": "refusal",
         "label": "FCA: our refusal process",
         "href": "https://www.fca.org.uk/firms/authorisation/apply/refusal-process"
+      },
+      {
+        "id": "fees",
+        "label": "FCA: authorisation application fees",
+        "href": "https://www.fca.org.uk/firms/authorisation/apply/fees"
       },
       {
         "id": "s55V",
@@ -4577,7 +4587,9 @@
     "feeNote": {
       "checked": "2026-11-21",
       "href": "https://www.fca.org.uk/firms/ccr007-consumer-credit-data",
-      "label": "FCA: completing CCR007"
+      "label": "FCA: completing CCR007",
+      "prefix": "FCA guidance checked",
+      "inOpening": false
     },
     "sections": [
       {

@@ -109,8 +109,8 @@ const fcaGuides = Object.keys(guides).filter(p => guides[p].group === 'fca' && !
     check('No 009 Compliance prices (' + ownPrices.map(p => '£' + p).join(', ') + ') in guide openings, FAQs or FAQ schema', priceIssues.length === 0, priceIssues.join(', ') || 'FCA fees and regulatory thresholds allowed');
     // A sentence that states a £ figure and mentions a fee is treated as an FCA fee figure.
     const feeSentences = url => JSON.stringify(guides[url]).split(/[.":]/).filter(s => /£\s?\d/.test(s) && /fees?/i.test(s) && !ownPrice.test(s));
-    const feeNoteIssues = Object.keys(guides).filter(url => feeSentences(url).length && !html[url].includes('FCA fees checked <time'));
-    check('FCA fee figures carry an "FCA fees checked [date]" note with an FCA link', feeNoteIssues.length === 0, feeNoteIssues.join(', ') || 'cost guide, CCR007 guide');
+    const feeNoteIssues = Object.keys(guides).filter(url => feeSentences(url).length && !/FCA (?:fees|guidance) checked <time/.test(html[url]));
+    check('FCA fee figures carry an "FCA fees/guidance checked [date]" note with an FCA link', feeNoteIssues.length === 0, feeNoteIssues.join(', ') || 'cost guide, CCR007 guide');
 
     // 5. Offer placements and anchors.
     const placement = [], anchorIssues = [], used = new Set();

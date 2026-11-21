@@ -176,7 +176,7 @@ newGuides[P.cost] = { ...base, navigationGroup: 'preparation',
       ['Limited permission (fee-block CC1)', 'Category 2 application fee: £560.'],
       ['Range across all applications', 'From £280 (Category 1) up to £225,170 (Category 10).'],
       ['When it is paid', 'In Connect, by credit or debit card. You have to pay the fee to submit the application.'],
-      ['Refunds', 'Not refunded if the application is withdrawn or refused. If the FCA rejects a submission without assessing it because minimum information is missing, it refunds the fee.']],
+      ['Refunds', 'The FCA’s fees page says the fee is non-refundable. If the FCA rejects a submission without assessing it because minimum information is missing, you can resubmit it with the missing information. Check the FCA’s current fees page on refunds.']],
       p: ['The fee pays for the FCA’s assessment, not for an approval.'], s: [S.fees, S.feesIndex, S.apply] }),
     sec('guide-section-3', 'Annual FCA fees and levies', { fee: true, c: ['Cost', 'What applies to a limited-permission firm'], r: [
       ['Annual FCA fee', 'Fee-block CC01 (credit-related regulated activities with limited permission), based on consumer credit annual income, subject to a minimum fee.'],
@@ -195,7 +195,7 @@ newGuides[P.cost] = { ...base, navigationGroup: 'preparation',
   ],
   faqs: [
     { question: 'How much is the FCA application fee for limited permission?', answer: 'The FCA places limited consumer credit permission (fee-block CC1) in Category 2, with an application fee of £560, paid in Connect when you submit.', feeNote: true },
-    { question: 'Is the FCA application fee refundable?', answer: 'Not if the application is withdrawn or refused. The FCA refunds the fee if it rejects a submission without assessing it because minimum information is missing.' },
+    { question: 'Is the FCA application fee refundable?', answer: 'The FCA’s fees page says the application fee is non-refundable. If the FCA rejects a submission because minimum information is missing, you can resubmit it with the missing information. Check the FCA’s current fees page on refunds.' },
     { question: 'Do I still need a consumer credit licence?', answer: 'No. The FCA took over consumer credit regulation from the Office of Fair Trading on 1 April 2014. Car dealers now need FCA authorisation with the right permissions.' },
     { question: 'Are there annual FCA fees after authorisation?', answer: 'Yes. Authorised firms pay an annual FCA fee and levies. For 2026/27 the minimum annual fee for a limited-permission firm is £1,100.', feeNote: true }
   ],
@@ -250,13 +250,13 @@ newGuides[P.refused] = { ...base, navigationGroup: 'preparation',
   title: 'FCA Application Refused or Rejected: What Motor Dealers Can Do',
   seoTitle: 'FCA Application Refused? Options for Motor Dealers',
   description: 'Why the FCA refuses or rejects applications, how this differs from withdrawal, what a warning notice means and what to change before you reapply.',
-  answer: 'An FCA refusal follows a set process: the FCA gives feedback and you can withdraw; if you continue, you receive a warning notice and can make written representations before any decision notice, which you can refer to the Upper Tribunal. A submission rejected for missing minimum information is different: the fee is refunded and you can resubmit at any time.',
+  answer: 'An FCA refusal follows a set process: the FCA gives feedback and you can withdraw; if you continue, you receive a warning notice and can make written representations before any decision notice, which you can refer to the Upper Tribunal. A submission rejected for missing minimum information is different: you can resubmit it with the missing information. Check the FCA’s current fees page on refunds.',
   sections: [
     sec('guide-section-1', 'Rejected, withdrawn or refused: the difference', { c: ['Outcome', 'What it means', 'Next step'], r: [
-      ['Rejected', 'The FCA rejects a submission without assessing it if minimum information is missing, explains why and refunds the fee.', 'Resubmit with all the relevant information at any time.'],
+      ['Rejected', 'The FCA rejects a submission without assessing it if minimum information is missing and explains why.', 'Resubmit with the missing information. Check the FCA’s current fees page on refunds.'],
       ['Withdrawn', 'The applicant can withdraw at any time before the application is determined. The fee is not refunded.', 'Another application can be made later.'],
       ['Refused', 'The FCA recommends refusal where it thinks the application does not meet the standard for authorisation. The fee is not refunded.', 'The warning notice and decision notice process applies.']],
-      s: [S.apply, S.refusal, S.s55V] }),
+      s: [S.apply, S.refusal, S.fees, S.s55V] }),
     sec('guide-section-2', 'Why applications fall short', { p: [
       'The FCA assesses applicants against the threshold conditions, which include effective supervision and appropriate resources. Its review of applications gives examples of weaknesses, such as relying on a compliance consultant without being able to show the firm understands its own obligations, and not submitting historic financial accounts with the initial application.',
       'The FCA also says a business model should not be generic, and that it might refuse an application if information is deliberately withheld, false or incomplete.'],
@@ -277,7 +277,7 @@ newGuides[P.refused] = { ...base, navigationGroup: 'preparation',
       'The company withdraws, rewrites the plan around its actual customer journey, adds the permission it needs for part-exchanges and reapplies. This example is illustrative and does not predict any FCA decision.'], s: [S.motor, S.refusal] })
   ],
   faqs: [
-    { question: 'Is the application fee refunded if the FCA refuses my application?', answer: 'No. The fee is not refunded after a refusal or a withdrawal. It is refunded only if the FCA rejects a submission without assessing it because minimum information is missing.' },
+    { question: 'Is the application fee refunded if the FCA refuses my application?', answer: 'No. The FCA says the application fee is non-refundable, including after a refusal or a withdrawal. A submission rejected for missing minimum information can be resubmitted with that information; check the FCA’s current fees page on refunds.' },
     { question: 'Can I withdraw instead of being refused?', answer: 'Yes, at any time before the application is determined, including after informal feedback. Once a decision notice is given, the application has been determined and cannot be withdrawn.' },
     { question: 'How long do I have to respond to a warning notice?', answer: 'The warning notice sets the period, which must be at least 14 days. The FCA can extend it.' },
     { question: 'Can I challenge a refusal?', answer: 'Yes. An applicant can refer the decision to the Upper Tribunal. The decision notice confirms the right, the procedure and the deadline.' }
@@ -329,7 +329,7 @@ newGuides[P.ccr007] = { ...base, group: 'ccr', navigationGroup: 'reporting',
   seoTitle: 'What Is CCR007? FCA Key Data Return | 009 Compliance',
   description: 'CCR007 is the FCA Key Data return for limited-permission credit firms: who submits it, how often, what it asks and how it links to CCR009.',
   answer: 'CCR007 is the FCA’s Key Data return for credit firms with limited permission, and all firms with limited permission must submit it. It asks for revenue, transaction and complaint figures for credit-related regulated activities, reported on a calendar-year basis from 2026. Dealers that also submit CCR009 can enter zero in some CCR007 fields.',
-  feeNote: { checked: CHECKED, href: S.ccr007.href, label: 'FCA: completing CCR007' },
+  feeNote: { checked: CHECKED, href: S.ccr007.href, label: 'FCA: completing CCR007', prefix: 'FCA guidance checked', inOpening: false },
   sections: [
     sec('guide-section-1', 'What CCR007 is and who submits it', { p: [
       'CCR007 is the data item “Key Data for Credit Firms with Limited Permissions”. The FCA says all firms with limited permission must submit it, so a car dealer with limited permission for secondary credit broking should expect it on its reporting schedule.',
