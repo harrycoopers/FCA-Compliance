@@ -1,5 +1,5 @@
 {
-  "ran": "2026-11-21T10:52:08.139Z",
+  "ran": "2026-11-21T10:55:23.794Z",
   "results": [
     {
       "name": "No [CONFIRM, [VERIFY or {{ in public pages, sitemap or llms.txt",
@@ -8,8 +8,8 @@
     },
     {
       "name": "RELEASE_DATE set to a real date (config/release.js)",
-      "pass": false,
-      "detail": "value: [YYYY-MM-DD]"
+      "pass": true,
+      "detail": "value: 2026-11-21"
     },
     {
       "name": "No duplicate or empty titles",

@@ -11,7 +11,7 @@
  * the placeholder and scripts/release-final-check.cjs fails the release.
  * RELEASE_DATE_PREVIEW is for local tests and previews only.
  */
-const RELEASE_DATE = '[YYYY-MM-DD]';
+const RELEASE_DATE = '2026-11-21';
 
 const TOKEN = 'RELEASE_DATE';
 const current = () => process.env.RELEASE_DATE_PREVIEW || RELEASE_DATE;
